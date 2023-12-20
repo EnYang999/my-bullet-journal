@@ -3,7 +3,7 @@
 	width: 124px;
 	height: 24px;
 }
-input {
+.todo input {
 	appearance: none;
 	border: 0.1em solid;
 	border-radius: 0.4em;

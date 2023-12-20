@@ -20,9 +20,7 @@ const Checkbox: React.FC<CheckboxProps> = () => {
 						<polyline points='1 5 4 8 11 1'></polyline>
 					</svg>
 				</span>
-				<span>
-					<input />
-				</span>
+				<span>default</span>
 			</label>
 		</div>
 	);

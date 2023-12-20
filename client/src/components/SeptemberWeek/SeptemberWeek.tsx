@@ -32,7 +32,7 @@ import { StarShape } from "../../icons/starShape/starShape";
 import { Todo } from "../Todo/Todo";
 import "./SeptemberWeek.css";
 import Checkbox from "../checkbox-2/checkbox";
-
+import { CheckboxB } from "../checkbox/checkbox-b";
 interface Props {
 	className: string;
 }
@@ -131,7 +131,31 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 							src={fridayShape}
 						/>
 						<div className='to-do-lines-2'>
-							<Todo
+							<CheckboxB
+								className='my-todo-list-1'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							<CheckboxB
+								className='my-todo-list-2'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							{/* <CheckboxB
+								className='my-todo-list-3'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							<CheckboxB
+								className='my-todo-list-4'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/> */}
+							{/* <Todo
 								className='my-todo-list'
 								defaultClassName='my-todo-list-2'
 								inputFieldClassName='design-component-instance-node'
@@ -160,7 +184,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 								defaultClassName='my-todo-list-2'
 								inputFieldClassName='design-component-instance-node'
 								tickBoxClassName='todo-instance'
-							/>
+							/> */}
 						</div>
 					</div>
 				</div>
