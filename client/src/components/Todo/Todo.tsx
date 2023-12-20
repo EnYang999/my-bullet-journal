@@ -1,11 +1,6 @@
-/*
-We're constantly improving the code you see. 
-Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
-*/
 import React, { useState } from "react";
 import "normalize.css";
 import "./Todo.css";
-
 interface Props {
 	className: any;
 	tickBoxClassName: any;
@@ -19,21 +14,32 @@ export const Todo = ({
 	inputFieldClassName,
 }: Props): JSX.Element => {
 	const [inputValue, setInputValue] = useState<string>("");
-
+	const [isChecked, setIsChecked] = useState<boolean>(false);
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setInputValue(event.target.value);
+	};
+	const handleCheckboxChange = () => {
+		setIsChecked(!isChecked);
 	};
 
 	return (
 		<div className={`todo ${className}`}>
-			<label className='todo-label'>
-				<input type='checkbox' className={`tick-box ${tickBoxClassName}`} />
-				<input
-					value={inputValue}
-					onChange={handleInputChange}
-					className={`input-field ${inputFieldClassName}`}
-				/>
-			</label>
+			{isChecked && <i className='bi bi-check check-tick'></i>}
+			<input
+				type='checkbox'
+				className={`tick-box ${tickBoxClassName}`}
+				checked={isChecked}
+				onChange={handleCheckboxChange}
+			/>
+
+			<input
+				value={inputValue}
+				onChange={handleInputChange}
+				className={`input-field ${inputFieldClassName} ${
+					isChecked ? "checked" : ""
+				}`}
+				disabled={isChecked}
+			/>
 		</div>
 	);
 };

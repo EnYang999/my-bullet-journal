@@ -31,6 +31,7 @@ import star4 from "../../assets/img/star-shape.svg";
 import { StarShape } from "../../icons/starShape/starShape";
 import { Todo } from "../Todo/Todo";
 import "./SeptemberWeek.css";
+import Checkbox from "../checkbox-2/checkbox";
 
 interface Props {
 	className: string;
@@ -80,7 +81,11 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 							src={tuesdayShape}
 						/>
 						<div className='to-do-lines'>
-							<Todo
+							<Checkbox />
+							<Checkbox />
+							<Checkbox />
+							<Checkbox />
+							{/* <Todo
 								className='my-todo-list'
 								defaultClassName='my-todo-list-2'
 								inputFieldClassName='design-component-instance-node'
@@ -109,7 +114,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 								defaultClassName='my-todo-list-2'
 								inputFieldClassName='design-component-instance-node'
 								tickBoxClassName='todo-instance'
-							/>
+							/> */}
 						</div>
 					</div>
 				</div>
