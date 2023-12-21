@@ -4,13 +4,14 @@ interface Props {
 	className: any;
 	tickBoxClassName: any;
 	inputFieldClassName: any;
-	defaultClassName: any;
+	inputBoxClassName: any;
 }
 
 export const ToDoLine = ({
-	className,
-	tickBoxClassName,
-	inputFieldClassName,
+	className, // sep-week-3-tuesday
+	tickBoxClassName, // className + tickbox
+	inputFieldClassName, // className + inputfield
+	inputBoxClassName, // className + inputbox
 }: Props): JSX.Element => {
 	const [inputValue, setInputValue] = useState<string>("");
 	const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -20,13 +21,18 @@ export const ToDoLine = ({
 	const handleCheckboxChange = () => {
 		setIsChecked(!isChecked);
 	};
+	console.log(`todo-wrapper ${className}`);
+	console.log(`cbx ${className}`);
+	console.log(`tick-box ${className + tickBoxClassName}`);
+	console.log(`input-box ${className + inputBoxClassName}`);
+	console.log(`input-field ${className + inputFieldClassName}`);
 
 	return (
 		<div className={`todo-wrapper ${className}`}>
 			<input
 				type='checkbox'
 				id={`cbx ${className}`}
-				className={`tick-box ${tickBoxClassName}`}
+				className={`tick-box ${className}`}
 				checked={isChecked}
 				onChange={handleCheckboxChange}
 				style={{ display: "none" }}
@@ -38,13 +44,11 @@ export const ToDoLine = ({
 						<polyline points='1 5 4 8 11 1'></polyline>
 					</svg>
 				</span>
-				<span className='input-box'>
+				<span className={`input-box ${className}`}>
 					<input
 						value={inputValue}
 						onChange={handleInputChange}
-						className={`input-field ${inputFieldClassName} ${
-							isChecked ? "checked" : ""
-						}`}
+						className={`input-field ${className} ${isChecked ? "checked" : ""}`}
 						disabled={isChecked}
 					/>
 				</span>

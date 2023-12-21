@@ -23,12 +23,6 @@
 	box-shadow: 0.1em 0.1em 0.4em var(--border-shadow);
 	padding: 0.25em 0.4em;
 }
-.todo-wrapper input:disabled {
-	cursor: default;
-	background-color: none;
-	color: none;
-	border-color: none;
-}
 
 .todo-wrapper .cbx {
 	-webkit-user-select: none;
@@ -127,11 +121,14 @@
 	border-color: var(--focus-border);
 }
 
-.todo-wrapper .tick-box:checked + .cbx .tick-box,
-.todo-wrapper .tick-box:checked + .cbx .input-field {
+.todo-wrapper .tick-box:checked + .cbx .tick-box {
 	border-color: var(--tick-border-checked);
 	background: var(--tick-box-checked-background);
 	animation: check 0.6s ease;
+}
+.todo-wrapper .tick-box:checked + .cbx .input-field {
+	border-color: var(--tick-border-checked);
+	background: var(--tick-box-checked-background);
 }
 
 .todo-wrapper .tick-box:checked + .cbx .tick-box svg {
