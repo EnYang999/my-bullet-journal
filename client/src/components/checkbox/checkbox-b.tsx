@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "normalize.css";
-import "./Todo.css";
+import "./checkbox-b.css";
 interface Props {
 	className: any;
 	tickBoxClassName: any;
@@ -8,7 +7,7 @@ interface Props {
 	defaultClassName: any;
 }
 
-export const Todo = ({
+export const CheckboxB = ({
 	className,
 	tickBoxClassName,
 	inputFieldClassName,
@@ -23,23 +22,33 @@ export const Todo = ({
 	};
 
 	return (
-		<div className={`todo ${className}`}>
-			{isChecked && <i className='bi bi-check check-tick'></i>}
+		<div className={`todo-wrapper ${className}`}>
 			<input
 				type='checkbox'
+				id={`cbx ${className}`}
 				className={`tick-box ${tickBoxClassName}`}
 				checked={isChecked}
 				onChange={handleCheckboxChange}
+				style={{ display: "none" }}
 			/>
 
-			<input
-				value={inputValue}
-				onChange={handleInputChange}
-				className={`input-field ${inputFieldClassName} ${
-					isChecked ? "checked" : ""
-				}`}
-				disabled={isChecked}
-			/>
+			<label className='cbx' htmlFor={`cbx ${className}`}>
+				<span className='tick-box'>
+					<svg viewBox='0 0 12 9'>
+						<polyline points='1 5 4 8 11 1'></polyline>
+					</svg>
+				</span>
+				<span className='input-box'>
+					<input
+						value={inputValue}
+						onChange={handleInputChange}
+						className={`input-field ${inputFieldClassName} ${
+							isChecked ? "checked" : ""
+						}`}
+						disabled={isChecked}
+					/>
+				</span>
+			</label>
 		</div>
 	);
 };
