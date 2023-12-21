@@ -1,23 +1,27 @@
 .september-week {
+	margin: 0 2rem;
+	padding: 0;
 	background-color: #ffffff;
-	box-shadow: 0px 4px 4px #00000040;
+	/* box-shadow: 0.2rem #00000040; */
 	height: 982px;
-	width: 1512px;
+	max-width: 1512px;
+	border: 1rem, solid, #54a5d2;
 }
 
 .september-week .overlap {
-	height: 982px;
+	height: 100%;
+	width: 100%;
 	position: relative;
 }
 
 .september-week .background {
 	background-image: url(../../assets/img/background.png);
 	background-size: 100% 100%;
-	height: 982px;
-	left: 0;
+	height: 100%;
+	width: 100%;
+	/* left: 0;
 	position: absolute;
-	top: 0;
-	width: 1512px;
+	top: 0; */
 }
 
 .september-week .rabbit-mother-overlap-group {
@@ -25,7 +29,7 @@
 	left: 212px;
 	position: absolute;
 	top: 729px;
-	width: 228px;
+	max-width: 228px;
 }
 
 .september-week .star-vector-3 {
@@ -33,7 +37,7 @@
 	left: 167px;
 	position: absolute;
 	top: 98px;
-	width: 61px;
+	max-width: 61px;
 }
 
 .september-week .rabbit-mother {
@@ -41,7 +45,7 @@
 	left: 0;
 	position: absolute;
 	top: 0;
-	width: 202px;
+	max-width: 202px;
 }
 
 .september-week .star-vector-2 {
@@ -49,7 +53,7 @@
 	left: 492px;
 	position: absolute;
 	top: 228px;
-	width: 64px;
+	max-width: 64px;
 }
 
 .september-week .star-vector-1 {
@@ -57,7 +61,7 @@
 	left: 953px;
 	position: absolute;
 	top: 727px;
-	width: 61px;
+	max-width: 61px;
 }
 
 .september-week .september-overlap-group {
@@ -65,7 +69,7 @@
 	left: 135px;
 	position: absolute;
 	top: 600px;
-	width: 279px;
+	max-width: 279px;
 }
 
 .september-week .star-vector-4 {
@@ -73,100 +77,99 @@
 	left: 0;
 	position: absolute;
 	top: 0;
-	width: 73px;
+	max-width: 73px;
 }
 
-.september-week .september {
+.september-week .september-label {
 	height: 115px !important;
 	left: 0 !important;
 	position: absolute !important;
 	top: 14px !important;
-	width: 279px !important;
+	max-width: 279px !important;
 }
 
+/* rabbit-stamp-overlap-group   */
+
 .september-week .rabbit-stamp-overlap-group {
-	height: 275px;
+	height: 17em;
+	width: 16em;
 	left: 1141px;
 	position: absolute;
 	top: 119px;
-	width: 202px;
+	max-width: 202px;
+	border: 5px solid red;
 }
-
-.september-week .overlap-group-1 {
-	height: 276px;
-	position: relative;
-	width: 203px;
-}
-
-.september-week .star-vector-5 {
-	height: 38px;
-	left: 143px;
+.september-week .rabbit-stamp-overlap-group > *:not(.border-of-stamp) {
 	position: absolute;
-	top: 175px;
-	width: 40px;
 }
-
 .september-week .border-of-stamp {
-	height: 276px;
+	width: 100%;
 	left: 0;
 	object-fit: cover;
 	position: absolute;
 	top: 0;
-	width: 203px;
+	max-width: 203px;
+}
+.september-week .star-vector-5 {
+	height: 3rem;
+	right: 1rem;
+	bottom: 2rem;
+	max-width: 40px;
 }
 
 .september-week .shadow {
-	height: 64px;
-	left: 28px;
-	position: absolute;
-	top: 200px;
-	width: 115px;
+	height: 4rem;
+	left: 17%;
+	bottom: 1%;
+	max-width: 115px;
 	box-shadow: none !important;
 }
 
 .september-week .rabbit-run {
-	height: 189px;
-	left: 36px;
+	height: 12rem;
+	left: 17%;
+	top: 15%;
 	object-fit: cover;
-	position: absolute;
-	top: 40px;
-	width: 126px;
+	max-width: 126px;
 }
 
 .september-week .head-shadow {
-	height: 43px;
-	left: 14px;
-	position: absolute;
-	top: 18px;
-	width: 31px;
+	height: 3rem;
+	left: 5%;
+	top: 5%;
+	max-width: 31px;
 }
 
 .september-week .text-wrapper-inspiration {
 	color: #54a5d2;
 	font-family: "Inspiration", Helvetica;
-	font-size: 28px;
+	font-size: 2rem;
 	font-weight: 400;
-	left: 164px;
+	right: 1rem;
 	letter-spacing: 0;
 	line-height: normal;
 	position: absolute;
-	top: 8px;
+	top: 5%;
 }
 
 .september-week .rabbit-stamp-line {
-	height: 39px;
-	left: 158px;
-	position: absolute;
-	top: 12px;
-	width: 3px;
+	height: 5rem;
+	right: 2.7rem;
+	top: 0%;
+	max-width: 3px;
 }
 
+.september-week .overlap-group-1 {
+	height: 276px;
+	position: relative;
+	max-width: 203px;
+}
 .september-week .tuesday {
 	height: 300px;
 	left: 564px;
 	position: absolute;
 	top: 165px;
-	width: 222px;
+	max-width: 222px;
 }
 
 .september-week .overlap-2 {
@@ -180,7 +183,7 @@
 	object-fit: cover;
 	position: absolute;
 	top: 30px;
-	width: 222px;
+	max-width: 222px;
 }
 
 .september-week .tuesday-shape {
@@ -188,7 +191,7 @@
 	left: 25px;
 	position: absolute;
 	top: 0;
-	width: 167px;
+	max-width: 167px;
 }
 
 .september-week .to-do-lines-2 {
@@ -196,7 +199,7 @@
 	left: 25px;
 	position: absolute;
 	top: 72px;
-	width: 173px;
+	max-width: 173px;
 }
 
 .september-week .my-todo-list-1 {
