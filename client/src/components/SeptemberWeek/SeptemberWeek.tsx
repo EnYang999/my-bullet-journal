@@ -69,9 +69,13 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						<img className='rabbit-stamp-line' alt='Line' src={line} />
 					</div>
 				</div>
-				<div className='monday'>
+				<div className='week-box monday'>
 					<div className='overlap-1'>
-						<img className='img-2' alt='Monday vector' src={mondayVector} />
+						<img
+							className='monday-vector'
+							alt='Monday vector'
+							src={mondayVector}
+						/>
 						<img
 							className='monday-shape'
 							alt='Monday shape'
@@ -111,9 +115,13 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 				</div>
-				<div className='tuesday'>
+				<div className='week-box tuesday'>
 					<div className='overlap-2'>
-						<img className='img-2' alt='Tuesday vector' src={tuesdayVector} />
+						<img
+							className='tuesday-vector'
+							alt='Tuesday vector'
+							src={tuesdayVector}
+						/>
 						<img
 							className='tuesday-shape'
 							alt='Tuesday shape'
@@ -153,7 +161,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 				</div>
-				<div className='wednesday'>
+				<div className='week-box wednesday'>
 					<div className='overlap-3'>
 						<img
 							className='wednesday-vector'
@@ -199,7 +207,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 				</div>
-				<div className='thursday'>
+				<div className='week-box thursday'>
 					<div className='overlap-4'>
 						<img
 							className='thursday-vector'
@@ -245,7 +253,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 				</div>
-				<div className='friday'>
+				<div className='week-box friday'>
 					<div className='overlap-5'>
 						<img
 							className='friday-vector'
@@ -315,7 +323,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 				</div>
-				<div className='weekend'>
+				<div className='week-box weekend'>
 					<div className='overlap-6'>
 						<img
 							className='weekend-shape'
