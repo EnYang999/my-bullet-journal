@@ -32,7 +32,7 @@ export const ToDoLine = ({
 			<input
 				type='checkbox'
 				id={`cbx ${className}`}
-				className={`tick-box ${className}`}
+				className={`tick-box`}
 				checked={isChecked}
 				onChange={handleCheckboxChange}
 				style={{ display: "none" }}
@@ -44,11 +44,11 @@ export const ToDoLine = ({
 						<polyline points='1 5 4 8 11 1'></polyline>
 					</svg>
 				</span>
-				<span className={`input-box ${className}`}>
+				<span className={`input-box`}>
 					<input
 						value={inputValue}
 						onChange={handleInputChange}
-						className={`input-field ${className} ${isChecked ? "checked" : ""}`}
+						className={`input-field ${isChecked ? "checked" : ""}`}
 						disabled={isChecked}
 					/>
 				</span>

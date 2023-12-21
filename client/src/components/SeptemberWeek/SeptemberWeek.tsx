@@ -29,7 +29,6 @@ import star5 from "../../assets/img/star-vector-5.svg";
 import star4 from "../../assets/img/star-shape.svg";
 
 import { StarShape } from "../../icons/starShape/starShape";
-import { Todo } from "../Todo/Todo";
 import "./SeptemberWeek.css";
 import { ToDoLine } from "../checkbox/todoline";
 interface Props {
@@ -84,31 +83,31 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 							/>
 							<div className='to-do-lines-container to-do-lines-1'>
 								<ToDoLine
-									className='my-todo-list my-todo-list-1'
+									className='my-todo-list sep-week-3-monday-1 my-todo-list-1'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-3'
+									className='my-todo-list sep-week-3-monday-2 my-todo-list-2'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-4'
+									className='my-todo-list sep-week-3-monday-3 my-todo-list-3'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-5'
+									className='my-todo-list sep-week-3-monday-4 my-todo-list-4'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-6'
+									className='my-todo-list sep-week-3-monday-5 my-todo-list-5'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
@@ -128,7 +127,38 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 								alt='Tuesday shape'
 								src={tuesdayShape}
 							/>
-							<div className='to-do-lines-container to-do-lines-2'></div>
+							<div className='to-do-lines-container to-do-lines-2'>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-1 my-todo-list-1'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-2 my-todo-list-2'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-3 my-todo-list-3'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-4 my-todo-list-4'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-5 my-todo-list-5'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+							</div>
 						</div>
 					</div>
 					<div className='week-box wednesday'>
@@ -145,31 +175,31 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 							/>
 							<div className='to-do-lines-container  to-do-lines-3'>
 								<ToDoLine
-									className='my-todo-list my-todo-list-1'
+									className='my-todo-list sep-week-3-wednesday-1 my-todo-list-1'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-3'
+									className='my-todo-list sep-week-3-wednesday-2 my-todo-list-2'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-4'
+									className='my-todo-list sep-week-3-wednesday-3 my-todo-list-3'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-5'
+									className='my-todo-list sep-week-3-wednesday-4 my-todo-list-4'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-6'
+									className='my-todo-list sep-week-3-wednesday-5 my-todo-list-5'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
@@ -191,31 +221,31 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 							/>
 							<div className='to-do-lines-container to-do-lines-4'>
 								<ToDoLine
-									className='my-todo-list my-todo-list-1'
+									className='my-todo-list sep-week-3-thursday-1 my-todo-list-1'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-3'
+									className='my-todo-list sep-week-3-thursday-2 my-todo-list-2'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-4'
+									className='my-todo-list sep-week-3-thursday-3 my-todo-list-3'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-5'
+									className='my-todo-list sep-week-3-thursday-4 my-todo-list-4'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-6'
+									className='my-todo-list sep-week-3-thursday-5 my-todo-list-5'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
@@ -237,37 +267,31 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 							/>
 							<div className='to-do-lines-container to-do-lines-5'>
 								<ToDoLine
-									className='my-todo-list  sep-week-3-tuesday-1'
+									className='my-todo-list sep-week-3-friday-1 my-todo-list-1'
 									inputBoxClassName='-inputbox'
 									inputFieldClassName='-inputfield'
 									tickBoxClassName='-tickbox'
 								/>
 								<ToDoLine
-									className='my-todo-list sep-week-3-tuesday-2'
+									className='my-todo-list sep-week-3-friday-2 my-todo-list-2'
 									inputBoxClassName='inputbox'
 									inputFieldClassName='-inputfield'
 									tickBoxClassName='-tickbox'
 								/>
 								<ToDoLine
-									className='my-todo-list sep-week-3-tuesday-3'
+									className='my-todo-list sep-week-3-friday-3 my-todo-list-3'
 									inputBoxClassName='inputbox'
 									inputFieldClassName='-inputfield'
 									tickBoxClassName='-tickbox'
 								/>
 								<ToDoLine
-									className='my-todo-list sep-week-3-tuesday-4'
+									className='my-todo-list sep-week-3-friday-4 my-todo-list-4'
 									inputBoxClassName='inputbox'
 									inputFieldClassName='-inputfield'
 									tickBoxClassName='-tickbox'
 								/>
 								<ToDoLine
-									className='my-todo-list sep-week-3-tuesday-5'
-									inputBoxClassName='inputbox'
-									inputFieldClassName='-inputfield'
-									tickBoxClassName='-tickbox'
-								/>
-								<ToDoLine
-									className='my-todo-list sep-week-3-tuesday-6'
+									className='my-todo-list sep-week-3-friday-5 my-todo-list-5'
 									inputBoxClassName='inputbox'
 									inputFieldClassName='-inputfield'
 									tickBoxClassName='-tickbox'
@@ -289,31 +313,31 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 							/>
 							<div className='to-do-lines-container to-do-lines-6'>
 								<ToDoLine
-									className='my-todo-list my-todo-list-1'
+									className='my-todo-list sep-week-3-weekend-1 my-todo-list-1'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-2'
+									className='my-todo-list sep-week-3-weekend-2 my-todo-list-2'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-3'
+									className='my-todo-list sep-week-3-weekend-3 my-todo-list-3'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-4'
+									className='my-todo-list sep-week-3-weekend-4 my-todo-list-4'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
 								/>
 								<ToDoLine
-									className='my-todo-list my-todo-list-5'
+									className='my-todo-list sep-week-3-weekend-5 my-todo-list-5'
 									inputBoxClassName='my-todo-list-2'
 									inputFieldClassName='design-component-instance-node'
 									tickBoxClassName='todo-instance'
