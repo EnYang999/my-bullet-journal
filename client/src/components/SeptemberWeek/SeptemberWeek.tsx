@@ -15,7 +15,7 @@ import tuesdayVector from "../../assets/img/tuesday-vector.svg";
 import wednesdayVector from "../../assets/img/wednesday-vector.svg";
 import thursdayVector from "../../assets/img/thursday-vector.svg";
 import weekendVector from "../../assets/img/weekend-vector.svg";
-
+import background from "../../assets/img/background.png";
 import borderOfStamp from "../../assets/img/border-of-stamp.svg";
 import headShadow from "../../assets/img/head-shadow.svg";
 import line from "../../assets/img/line-1.svg";
@@ -31,7 +31,7 @@ import star4 from "../../assets/img/star-shape.svg";
 import { StarShape } from "../../icons/starShape/starShape";
 import { Todo } from "../Todo/Todo";
 import "./SeptemberWeek.css";
-import { CheckboxB } from "../checkbox/checkbox-b";
+import { ToDoLine } from "../checkbox/todoline";
 interface Props {
 	className: string;
 }
@@ -68,6 +68,49 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 							<img className='head-shadow' alt='Head shadow' src={headShadow} />
 							<div className='text-wrapper-inspiration'>Sep</div>
 							<img className='line' alt='Line' src={line} />
+						</div>
+					</div>
+					<img src={background} alt='' />
+				</div>
+				<div className='monday'>
+					<div className='overlap-2'>
+						<img className='img-2' alt='Monday vector' src={mondayVector} />
+						<img
+							className='monday-shape'
+							alt='Monday shape'
+							src={mondayShape}
+						/>
+						<div className='to-do-lines-5'>
+							<Todo
+								className='my-todo-list'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							<Todo
+								className='my-todo-list-3'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							<Todo
+								className='my-todo-list-4'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							<Todo
+								className='my-todo-list-5'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							<Todo
+								className='my-todo-list-6'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
 						</div>
 					</div>
 				</div>
@@ -113,89 +156,19 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 				</div>
-				<div className='friday'>
-					<div className='overlap-3'>
+				<div className='wednesday'>
+					<div className='overlap-6'>
 						<img
-							className='friday-vector'
-							alt='Friday vector'
-							src={fridayVector}
+							className='wednesday-vector'
+							alt='Wednesday vector'
+							src={wednesdayVector}
 						/>
 						<img
-							className='friday-shape'
-							alt='Friday shape'
-							src={fridayShape}
+							className='wednesday-shape'
+							alt='Wednesday shape'
+							src={wednesdayShape}
 						/>
-						<div className='to-do-lines-2'>
-							<CheckboxB
-								className='my-todo-list-1'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<CheckboxB
-								className='my-todo-list-2'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							{/* <CheckboxB
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<CheckboxB
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/> */}
-							{/* <Todo
-								className='my-todo-list'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-5'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-6'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/> */}
-						</div>
-					</div>
-				</div>
-				<div className='weekend'>
-					<div className='overlap-4'>
-						<img
-							className='weekend-shape'
-							alt='Weekend shape'
-							src={weekendShape}
-						/>
-						<img
-							className='weekend-vector'
-							alt='Weekend vector'
-							src={weekendVector}
-						/>
-						<div className='to-do-lines-3'>
+						<div className='to-do-lines-6'>
 							<Todo
 								className='my-todo-list'
 								defaultClassName='my-todo-list-2'
@@ -275,16 +248,44 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 				</div>
-				<div className='monday'>
-					<div className='overlap-2'>
-						<img className='img-2' alt='Monday vector' src={mondayVector} />
+				<div className='friday'>
+					<div className='overlap-3'>
 						<img
-							className='monday-shape'
-							alt='Monday shape'
-							src={mondayShape}
+							className='friday-vector'
+							alt='Friday vector'
+							src={fridayVector}
 						/>
-						<div className='to-do-lines-5'>
-							<Todo
+						<img
+							className='friday-shape'
+							alt='Friday shape'
+							src={fridayShape}
+						/>
+						<div className='to-do-lines-2'>
+							<ToDoLine
+								className='my-todo-list-1'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							<ToDoLine
+								className='my-todo-list-2'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							{/* <CheckboxB
+								className='my-todo-list-3'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/>
+							<CheckboxB
+								className='my-todo-list-4'
+								defaultClassName='my-todo-list-2'
+								inputFieldClassName='design-component-instance-node'
+								tickBoxClassName='todo-instance'
+							/> */}
+							{/* <Todo
 								className='my-todo-list'
 								defaultClassName='my-todo-list-2'
 								inputFieldClassName='design-component-instance-node'
@@ -313,23 +314,23 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 								defaultClassName='my-todo-list-2'
 								inputFieldClassName='design-component-instance-node'
 								tickBoxClassName='todo-instance'
-							/>
+							/> */}
 						</div>
 					</div>
 				</div>
-				<div className='wednesday'>
-					<div className='overlap-6'>
+				<div className='weekend'>
+					<div className='overlap-4'>
 						<img
-							className='wednesday-vector'
-							alt='Wednesday vector'
-							src={wednesdayVector}
+							className='weekend-shape'
+							alt='Weekend shape'
+							src={weekendShape}
 						/>
 						<img
-							className='wednesday-shape'
-							alt='Wednesday shape'
-							src={wednesdayShape}
+							className='weekend-vector'
+							alt='Weekend vector'
+							src={weekendVector}
 						/>
-						<div className='to-do-lines-6'>
+						<div className='to-do-lines-3'>
 							<Todo
 								className='my-todo-list'
 								defaultClassName='my-todo-list-2'

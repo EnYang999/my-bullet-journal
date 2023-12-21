@@ -133,6 +133,7 @@
 	background: var(--tick-box-checked-background);
 	animation: check 0.6s ease;
 }
+
 .todo-wrapper .tick-box:checked + .cbx .tick-box svg {
 	stroke-dashoffset: 0;
 }
