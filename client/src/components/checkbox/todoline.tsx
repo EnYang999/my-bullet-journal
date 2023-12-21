@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./checkbox-b.css";
+import "./todoline.css";
 interface Props {
 	className: any;
 	tickBoxClassName: any;
@@ -7,7 +7,7 @@ interface Props {
 	defaultClassName: any;
 }
 
-export const CheckboxB = ({
+export const ToDoLine = ({
 	className,
 	tickBoxClassName,
 	inputFieldClassName,
