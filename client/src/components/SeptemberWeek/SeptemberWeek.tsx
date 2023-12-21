@@ -15,13 +15,13 @@ import tuesdayVector from "../../assets/img/tuesday-vector.svg";
 import wednesdayVector from "../../assets/img/wednesday-vector.svg";
 import thursdayVector from "../../assets/img/thursday-vector.svg";
 import weekendVector from "../../assets/img/weekend-vector.svg";
-import background from "../../assets/img/background.png";
+
 import borderOfStamp from "../../assets/img/border-of-stamp.svg";
 import headShadow from "../../assets/img/head-shadow.svg";
 import line from "../../assets/img/line-1.svg";
 import RabbitMother from "../../assets/img/rabbit-mother.png";
 import rabbitRun from "../../assets/img/rabbit-run.png";
-import shodow from "../../assets/img/shodow.png";
+import shadow from "../../assets/img/shodow.png";
 import star1 from "../../assets/img/star-vector-1.svg";
 import star2 from "../../assets/img/star-vector-2.svg";
 import star3 from "../../assets/img/star-vector-3.svg";
@@ -41,39 +41,36 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 		<div className={`september-week ${className}`}>
 			<div className='overlap'>
 				<div className='background'>
-					<div className='overlap-group'>
-						<img className='star-vector' alt='Star vector' src={star3} />
+					<div className='rabbit-mother-overlap-group'>
+						<img className='star-vector-3' alt='Star vector' src={star3} />
 						<img
 							className='rabbit-mother'
 							alt='Rabbit mother'
 							src={RabbitMother}
 						/>
 					</div>
-					<img className='img' alt='Star vector' src={star2} />
-					<img className='star-vector-2' alt='Star vector' src={star1} />
-					<div className='div'>
-						<img className='star-shape' alt='Star shape' src={star4} />
+					<img className='star-vector-2' alt='Star vector' src={star2} />
+					<img className='star-vector-1' alt='Star vector' src={star1} />
+					<div className='september-overlap-group'>
+						<img className='star-vector-4' alt='Star shape' src={star4} />
 						<StarShape className='september' />
 					</div>
-					<div className='rabbit-stamp'>
-						<div className='overlap-group-2'>
-							<img className='star-vector-3' alt='Star vector' src={star5} />
-							<img
-								className='border-of-stamp'
-								alt='Border of stamp'
-								src={borderOfStamp}
-							/>
-							<img className='shodow' alt='Shodow' src={shodow} />
-							<img className='rabbit-run' alt='Rabbit run' src={rabbitRun} />
-							<img className='head-shadow' alt='Head shadow' src={headShadow} />
-							<div className='text-wrapper-inspiration'>Sep</div>
-							<img className='line' alt='Line' src={line} />
-						</div>
+					<div className='rabbit-stamp-overlap-group'>
+						<img className='star-vector-5' alt='Star vector' src={star5} />
+						<img
+							className='border-of-stamp'
+							alt='Border of stamp'
+							src={borderOfStamp}
+						/>
+						<img className='shadow' alt='Shadow' src={shadow} />
+						<img className='rabbit-run' alt='Rabbit run' src={rabbitRun} />
+						<img className='head-shadow' alt='Head shadow' src={headShadow} />
+						<div className='text-wrapper-inspiration'>Sep</div>
+						<img className='rabbit-stamp-line' alt='Line' src={line} />
 					</div>
-					<img src={background} alt='' />
 				</div>
 				<div className='monday'>
-					<div className='overlap-2'>
+					<div className='overlap-1'>
 						<img className='img-2' alt='Monday vector' src={mondayVector} />
 						<img
 							className='monday-shape'
@@ -157,7 +154,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 				</div>
 				<div className='wednesday'>
-					<div className='overlap-6'>
+					<div className='overlap-3'>
 						<img
 							className='wednesday-vector'
 							alt='Wednesday vector'
@@ -203,7 +200,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 				</div>
 				<div className='thursday'>
-					<div className='overlap-5'>
+					<div className='overlap-4'>
 						<img
 							className='thursday-vector'
 							alt='Thursday vector'
@@ -249,7 +246,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 				</div>
 				<div className='friday'>
-					<div className='overlap-3'>
+					<div className='overlap-5'>
 						<img
 							className='friday-vector'
 							alt='Friday vector'
@@ -262,16 +259,16 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						/>
 						<div className='to-do-lines-2'>
 							<ToDoLine
-								className='my-todo-list-1'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+								className='sep-week-3-tuesday-1'
+								inputBoxClassName='-inputbox'
+								inputFieldClassName='-inputfield'
+								tickBoxClassName='-tickbox'
 							/>
 							<ToDoLine
-								className='my-todo-list-2'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+								className='sep-week-3-tuesday-2'
+								inputBoxClassName='inputbox'
+								inputFieldClassName='-inputfield'
+								tickBoxClassName='-tickbox'
 							/>
 							{/* <CheckboxB
 								className='my-todo-list-3'
@@ -319,7 +316,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 				</div>
 				<div className='weekend'>
-					<div className='overlap-4'>
+					<div className='overlap-6'>
 						<img
 							className='weekend-shape'
 							alt='Weekend shape'
