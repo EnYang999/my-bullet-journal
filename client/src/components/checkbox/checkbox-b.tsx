@@ -34,7 +34,7 @@ export const CheckboxB = ({
 
 			<label className='cbx' htmlFor={`cbx ${className}`}>
 				<span className='tick-box'>
-					<svg width='12px' height='9px' viewBox='0 0 12 9'>
+					<svg viewBox='0 0 12 9'>
 						<polyline points='1 5 4 8 11 1'></polyline>
 					</svg>
 				</span>
