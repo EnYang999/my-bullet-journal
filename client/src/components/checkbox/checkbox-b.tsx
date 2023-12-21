@@ -38,7 +38,7 @@ export const CheckboxB = ({
 						<polyline points='1 5 4 8 11 1'></polyline>
 					</svg>
 				</span>
-				<span className='input-field'>
+				<span className='input-box'>
 					<input
 						value={inputValue}
 						onChange={handleInputChange}
