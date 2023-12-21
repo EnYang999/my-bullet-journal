@@ -69,303 +69,256 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						<img className='rabbit-stamp-line' alt='Line' src={line} />
 					</div>
 				</div>
-				<div className='week-box monday'>
-					<div className='overlap-1'>
-						<img
-							className='monday-vector'
-							alt='Monday vector'
-							src={mondayVector}
-						/>
-						<img
-							className='monday-shape'
-							alt='Monday shape'
-							src={mondayShape}
-						/>
-						<div className='to-do-lines-5'>
-							<Todo
-								className='my-todo-list'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+				<div className='week-box-container'>
+					<div className='week-box monday'>
+						<div className='overlap-1'>
+							<img
+								className='monday-vector'
+								alt='Monday vector'
+								src={mondayVector}
 							/>
-							<Todo
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+							<img
+								className='monday-shape'
+								alt='Monday shape'
+								src={mondayShape}
 							/>
-							<Todo
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-5'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-6'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
+							<div className='to-do-lines-container to-do-lines-1'>
+								<ToDoLine
+									className='my-todo-list my-todo-list-1'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-3'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-4'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-5'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-6'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className='week-box tuesday'>
-					<div className='overlap-2'>
-						<img
-							className='tuesday-vector'
-							alt='Tuesday vector'
-							src={tuesdayVector}
-						/>
-						<img
-							className='tuesday-shape'
-							alt='Tuesday shape'
-							src={tuesdayShape}
-						/>
-						<div className='to-do-lines'>
-							{/* <Todo
-								className='my-todo-list'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+					<div className='week-box tuesday'>
+						<div className='overlap-2'>
+							<img
+								className='tuesday-vector'
+								alt='Tuesday vector'
+								src={tuesdayVector}
 							/>
-							<Todo
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+							<img
+								className='tuesday-shape'
+								alt='Tuesday shape'
+								src={tuesdayShape}
 							/>
-							<Todo
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-5'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-6'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/> */}
+							<div className='to-do-lines-container to-do-lines-2'></div>
 						</div>
 					</div>
-				</div>
-				<div className='week-box wednesday'>
-					<div className='overlap-3'>
-						<img
-							className='wednesday-vector'
-							alt='Wednesday vector'
-							src={wednesdayVector}
-						/>
-						<img
-							className='wednesday-shape'
-							alt='Wednesday shape'
-							src={wednesdayShape}
-						/>
-						<div className='to-do-lines-6'>
-							<Todo
-								className='my-todo-list'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+					<div className='week-box wednesday'>
+						<div className='overlap-3'>
+							<img
+								className='wednesday-vector'
+								alt='Wednesday vector'
+								src={wednesdayVector}
 							/>
-							<Todo
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+							<img
+								className='wednesday-shape'
+								alt='Wednesday shape'
+								src={wednesdayShape}
 							/>
-							<Todo
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-5'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-6'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
+							<div className='to-do-lines-container  to-do-lines-3'>
+								<ToDoLine
+									className='my-todo-list my-todo-list-1'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-3'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-4'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-5'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-6'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className='week-box thursday'>
-					<div className='overlap-4'>
-						<img
-							className='thursday-vector'
-							alt='Thursday vector'
-							src={thursdayVector}
-						/>
-						<img
-							className='thursday-shape'
-							alt='Thursday shape'
-							src={thursdayShape}
-						/>
-						<div className='to-do-lines-4'>
-							<Todo
-								className='my-todo-list'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+					<div className='week-box thursday'>
+						<div className='overlap-4'>
+							<img
+								className='thursday-vector'
+								alt='Thursday vector'
+								src={thursdayVector}
 							/>
-							<Todo
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+							<img
+								className='thursday-shape'
+								alt='Thursday shape'
+								src={thursdayShape}
 							/>
-							<Todo
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-5'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-6'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
+							<div className='to-do-lines-container to-do-lines-4'>
+								<ToDoLine
+									className='my-todo-list my-todo-list-1'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-3'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-4'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-5'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-6'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className='week-box friday'>
-					<div className='overlap-5'>
-						<img
-							className='friday-vector'
-							alt='Friday vector'
-							src={fridayVector}
-						/>
-						<img
-							className='friday-shape'
-							alt='Friday shape'
-							src={fridayShape}
-						/>
-						<div className='to-do-lines-2'>
-							<ToDoLine
-								className='sep-week-3-tuesday-1'
-								inputBoxClassName='-inputbox'
-								inputFieldClassName='-inputfield'
-								tickBoxClassName='-tickbox'
+					<div className='week-box friday'>
+						<div className='overlap-5'>
+							<img
+								className='friday-vector'
+								alt='Friday vector'
+								src={fridayVector}
 							/>
-							<ToDoLine
-								className='sep-week-3-tuesday-2'
-								inputBoxClassName='inputbox'
-								inputFieldClassName='-inputfield'
-								tickBoxClassName='-tickbox'
+							<img
+								className='friday-shape'
+								alt='Friday shape'
+								src={fridayShape}
 							/>
-							{/* <CheckboxB
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<CheckboxB
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/> */}
-							{/* <Todo
-								className='my-todo-list'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-5'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-6'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/> */}
+							<div className='to-do-lines-container to-do-lines-5'>
+								<ToDoLine
+									className='my-todo-list  sep-week-3-tuesday-1'
+									inputBoxClassName='-inputbox'
+									inputFieldClassName='-inputfield'
+									tickBoxClassName='-tickbox'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-2'
+									inputBoxClassName='inputbox'
+									inputFieldClassName='-inputfield'
+									tickBoxClassName='-tickbox'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-3'
+									inputBoxClassName='inputbox'
+									inputFieldClassName='-inputfield'
+									tickBoxClassName='-tickbox'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-4'
+									inputBoxClassName='inputbox'
+									inputFieldClassName='-inputfield'
+									tickBoxClassName='-tickbox'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-5'
+									inputBoxClassName='inputbox'
+									inputFieldClassName='-inputfield'
+									tickBoxClassName='-tickbox'
+								/>
+								<ToDoLine
+									className='my-todo-list sep-week-3-tuesday-6'
+									inputBoxClassName='inputbox'
+									inputFieldClassName='-inputfield'
+									tickBoxClassName='-tickbox'
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div className='week-box weekend'>
-					<div className='overlap-6'>
-						<img
-							className='weekend-shape'
-							alt='Weekend shape'
-							src={weekendShape}
-						/>
-						<img
-							className='weekend-vector'
-							alt='Weekend vector'
-							src={weekendVector}
-						/>
-						<div className='to-do-lines-3'>
-							<Todo
-								className='my-todo-list'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+					<div className='week-box weekend'>
+						<div className='overlap-6'>
+							<img
+								className='weekend-shape'
+								alt='Weekend shape'
+								src={weekendShape}
 							/>
-							<Todo
-								className='my-todo-list-3'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
+							<img
+								className='weekend-vector'
+								alt='Weekend vector'
+								src={weekendVector}
 							/>
-							<Todo
-								className='my-todo-list-4'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-5'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
-							<Todo
-								className='my-todo-list-6'
-								defaultClassName='my-todo-list-2'
-								inputFieldClassName='design-component-instance-node'
-								tickBoxClassName='todo-instance'
-							/>
+							<div className='to-do-lines-container to-do-lines-6'>
+								<ToDoLine
+									className='my-todo-list my-todo-list-1'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-2'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-3'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-4'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+								<ToDoLine
+									className='my-todo-list my-todo-list-5'
+									inputBoxClassName='my-todo-list-2'
+									inputFieldClassName='design-component-instance-node'
+									tickBoxClassName='todo-instance'
+								/>
+							</div>
 						</div>
 					</div>
 				</div>

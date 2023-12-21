@@ -191,7 +191,7 @@
 	width: 167px;
 }
 
-.september-week .to-do-lines {
+.september-week .to-do-lines-2 {
 	height: 186px;
 	left: 25px;
 	position: absolute;
@@ -199,7 +199,7 @@
 	width: 173px;
 }
 
-.september-week .my-todo-list {
+.september-week .my-todo-list-1 {
 	height: 22px !important;
 	left: 0 !important;
 	position: absolute !important;
@@ -216,11 +216,11 @@
 	width: 141px !important;
 } */
 
-.september-week .my-todo-list-2 {
+/* .september-week .my-todo-list-2 {
 	margin-right: unset !important;
-}
+} */
 
-.september-week .my-todo-list-3 {
+.september-week .my-todo-list-2 {
 	height: 22px !important;
 	left: 0 !important;
 	position: absolute !important;
@@ -228,7 +228,7 @@
 	width: 173px !important;
 }
 
-.september-week .my-todo-list-4 {
+.september-week .my-todo-list-3 {
 	height: 22px !important;
 	left: 0 !important;
 	position: absolute !important;
@@ -236,7 +236,7 @@
 	width: 173px !important;
 }
 
-.september-week .my-todo-list-5 {
+.september-week .my-todo-list-4 {
 	height: 22px !important;
 	left: 0 !important;
 	position: absolute !important;
@@ -244,7 +244,7 @@
 	width: 173px !important;
 }
 
-.september-week .my-todo-list-6 {
+.september-week .my-todo-list-5 {
 	height: 22px !important;
 	left: 0 !important;
 	position: absolute !important;
@@ -283,7 +283,7 @@
 	width: 161px;
 }
 
-.september-week .to-do-lines-2 {
+.september-week .to-do-lines-5 {
 	height: 186px;
 	left: 24px;
 	position: absolute;
@@ -321,7 +321,7 @@
 	width: 223px;
 }
 
-.september-week .to-do-lines-3 {
+.september-week .to-do-lines-6 {
 	height: 186px;
 	left: 26px;
 	position: absolute;
@@ -384,7 +384,7 @@
 	width: 171px;
 }
 
-.september-week .to-do-lines-5 {
+.september-week .to-do-lines-1 {
 	height: 186px;
 	left: 28px;
 	position: absolute;
@@ -422,7 +422,7 @@
 	width: 204px;
 }
 
-.september-week .to-do-lines-6 {
+.september-week .to-do-lines-3 {
 	height: 186px;
 	left: 24px;
 	position: absolute;
