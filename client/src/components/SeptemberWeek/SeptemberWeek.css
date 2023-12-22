@@ -159,6 +159,16 @@
 	max-width: 3px;
 }
 /* monday */
+
+.september-week .monday {
+	height: 300px;
+	left: 281px;
+	position: absolute;
+	top: 165px;
+	width: 224px;
+}
+
+/* 
 .september-week .overlap-1 {
 	height: 276px;
 	position: relative;
@@ -173,13 +183,7 @@
 	top: 30px;
 	max-width: 222px;
 }
-.september-week .monday {
-	height: 300px;
-	left: 281px;
-	position: absolute;
-	top: 165px;
-	width: 222px;
-}
+
 
 .september-week .monday-shape {
 	height: 66px;
@@ -195,7 +199,7 @@
 	position: absolute;
 	top: 76px;
 	width: 173px;
-}
+} */
 
 /* tuesday */
 .september-week .tuesday {
@@ -203,9 +207,9 @@
 	left: 564px;
 	position: absolute;
 	top: 165px;
-	max-width: 222px;
+	width: 224px;
 }
-
+/* 
 .september-week .overlap-2 {
 	height: 300px;
 	position: relative;
@@ -225,18 +229,18 @@
 	position: absolute;
 	top: 72px;
 	max-width: 173px;
-}
+} */
 
 /*wednesday*/
 .september-week .wednesday {
-	height: 297px;
+	height: 300px;
 	left: 849px;
 	position: absolute;
 	top: 168px;
-	width: 222px;
+	width: 224px;
 }
 
-.september-week .overlap-3 {
+/* .september-week .overlap-3 {
 	height: 297px;
 	position: relative;
 }
@@ -264,9 +268,10 @@
 	position: absolute;
 	top: 69px;
 	width: 173px;
-}
+} */
 
 /*thursday*/
+/* 
 .september-week .thursday {
 	height: 288px;
 	left: 430px;
@@ -304,17 +309,40 @@
 	position: absolute;
 	top: 68px;
 	width: 173px;
-}
+} */
 
+/*THURSDAY*/
+.thursday {
+	height: 300px;
+	left: 430px;
+	position: absolute;
+	top: 512px;
+	width: 224px;
+}
+.week-overlap {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.week-vector {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.to-do-lines-container {
+	position: absolute;
+	top: 25%;
+	left: 10%;
+}
 /* friday */
 .september-week .friday {
-	height: 292px;
+	height: 300px;
 	left: 714px;
 	position: absolute;
 	top: 507px;
-	width: 222px;
+	width: 224px;
 }
-
+/* 
 .september-week .overlap-5 {
 	height: 292px;
 	position: relative;
@@ -344,7 +372,7 @@
 	position: absolute;
 	top: 73px;
 	width: 173px;
-}
+} */
 
 /*weekend*/
 .september-week .weekend {

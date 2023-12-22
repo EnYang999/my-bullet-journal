@@ -71,14 +71,14 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 				{/* <!-- div className='background'> */}
 				<div className='week-box-container'>
 					<div className='week-box monday'>
-						<div className='overlap-1'>
+						<div className='week-overlap overlap-1'>
 							<img
-								className='monday-vector'
+								className='week-vector monday-vector'
 								alt='Monday vector'
 								src={mondayVector}
 							/>
 							<img
-								className='monday-shape'
+								className='week-shape monday-shape'
 								alt='Monday shape'
 								src={mondayShape}
 							/>
@@ -118,14 +118,14 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 					{/* <!-- div className='week-box monday'> */}
 					<div className='week-box tuesday'>
-						<div className='overlap-2'>
+						<div className='week-overlap overlap-2'>
 							<img
-								className='tuesday-vector'
+								className='week-vector tuesday-vector'
 								alt='Tuesday vector'
 								src={tuesdayVector}
 							/>
 							<img
-								className='tuesday-shape'
+								className='week-shape tuesday-shape'
 								alt='Tuesday shape'
 								src={tuesdayShape}
 							/>
@@ -165,14 +165,14 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 					{/* <!-- div className='week-box tuesday'> */}
 					<div className='week-box wednesday'>
-						<div className='overlap-3'>
+						<div className='week-overlap overlap-3'>
 							<img
-								className='wednesday-vector'
+								className='week-vector wednesday-vector'
 								alt='Wednesday vector'
 								src={wednesdayVector}
 							/>
 							<img
-								className='wednesday-shape'
+								className='week-shape wednesday-shape'
 								alt='Wednesday shape'
 								src={wednesdayShape}
 							/>
@@ -212,14 +212,14 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 					{/* <!-- div className='week-box wednesday'> */}
 					<div className='week-box thursday'>
-						<div className='overlap-4'>
+						<div className='week-overlap overlap-4'>
 							<img
-								className='thursday-vector'
+								className='week-vector thursday-vector'
 								alt='Thursday vector'
 								src={thursdayVector}
 							/>
 							<img
-								className='thursday-shape'
+								className='week-shape thursday-shape'
 								alt='Thursday shape'
 								src={thursdayShape}
 							/>
@@ -259,14 +259,14 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 					{/* <!-- div className='week-box thursday'> */}
 					<div className='week-box friday'>
-						<div className='overlap-5'>
+						<div className='week-overlap overlap-5'>
 							<img
-								className='friday-vector'
+								className='week-vector friday-vector'
 								alt='Friday vector'
 								src={fridayVector}
 							/>
 							<img
-								className='friday-shape'
+								className='week-shape friday-shape'
 								alt='Friday shape'
 								src={fridayShape}
 							/>
