@@ -159,7 +159,6 @@
 	max-width: 3px;
 }
 /* monday */
-
 .september-week .monday {
 	height: 300px;
 	left: 281px;
@@ -167,39 +166,6 @@
 	top: 165px;
 	width: 224px;
 }
-
-/* 
-.september-week .overlap-1 {
-	height: 276px;
-	position: relative;
-	max-width: 203px;
-}
-
-.september-week .monday-vector {
-	height: 270px;
-	left: 0;
-	object-fit: cover;
-	position: absolute;
-	top: 30px;
-	max-width: 222px;
-}
-
-
-.september-week .monday-shape {
-	height: 66px;
-	left: 30px;
-	position: absolute;
-	top: 0;
-	width: 171px;
-}
-
-.september-week .to-do-lines-1 {
-	height: 186px;
-	left: 28px;
-	position: absolute;
-	top: 76px;
-	width: 173px;
-} */
 
 /* tuesday */
 .september-week .tuesday {
@@ -209,27 +175,6 @@
 	top: 165px;
 	width: 224px;
 }
-/* 
-.september-week .overlap-2 {
-	height: 300px;
-	position: relative;
-}
-
-.september-week .tuesday-shape {
-	height: 66px;
-	left: 25px;
-	position: absolute;
-	top: 0;
-	max-width: 167px;
-}
-
-.september-week .to-do-lines-2 {
-	height: 186px;
-	left: 25px;
-	position: absolute;
-	top: 72px;
-	max-width: 173px;
-} */
 
 /*wednesday*/
 .september-week .wednesday {
@@ -240,78 +185,7 @@
 	width: 224px;
 }
 
-/* .september-week .overlap-3 {
-	height: 297px;
-	position: relative;
-}
-
-.september-week .wednesday-vector {
-	height: 270px;
-	left: 0;
-	object-fit: cover;
-	position: absolute;
-	top: 27px;
-	width: 222px;
-}
-
-.september-week .wednesday-shape {
-	height: 66px;
-	left: 10px;
-	position: absolute;
-	top: 0;
-	width: 204px;
-}
-
-.september-week .to-do-lines-3 {
-	height: 186px;
-	left: 24px;
-	position: absolute;
-	top: 69px;
-	width: 173px;
-} */
-
 /*thursday*/
-/* 
-.september-week .thursday {
-	height: 288px;
-	left: 430px;
-	position: absolute;
-	top: 512px;
-	width: 222px;
-}
-
-.september-week .overlap-4 {
-	height: 288px;
-	position: relative;
-	width: 224px;
-}
-
-.september-week .thursday-vector {
-	height: 270px;
-	left: 0;
-	object-fit: cover;
-	position: absolute;
-	top: 18px;
-	width: 224px;
-}
-
-.september-week .thursday-shape {
-	height: 61px;
-	left: 10px;
-	position: absolute;
-	top: 0;
-	width: 201px;
-}
-
-.september-week .to-do-lines-4 {
-	height: 186px;
-	left: 24px;
-	position: absolute;
-	top: 68px;
-	width: 173px;
-} */
-
-/*THURSDAY*/
 .thursday {
 	height: 300px;
 	left: 430px;
@@ -319,6 +193,27 @@
 	top: 512px;
 	width: 224px;
 }
+
+/* friday */
+.september-week .friday {
+	height: 300px;
+	left: 714px;
+	position: absolute;
+	top: 507px;
+	width: 224px;
+}
+
+/*weekend*/
+.september-week .weekend {
+	height: 300px;
+	left: 998px;
+	position: absolute;
+	top: 507px;
+	width: 224px;
+}
+
+/*public*/
+
 .week-overlap {
 	position: relative;
 	height: 100%;
@@ -334,86 +229,7 @@
 	top: 25%;
 	left: 10%;
 }
-/* friday */
-.september-week .friday {
-	height: 300px;
-	left: 714px;
-	position: absolute;
-	top: 507px;
-	width: 224px;
-}
-/* 
-.september-week .overlap-5 {
-	height: 292px;
-	position: relative;
-	width: 223px;
-}
 
-.september-week .friday-vector {
-	height: 270px;
-	left: 0;
-	object-fit: cover;
-	position: absolute;
-	top: 23px;
-	width: 223px;
-}
-
-.september-week .friday-shape {
-	height: 66px;
-	left: 30px;
-	position: absolute;
-	top: 0;
-	width: 161px;
-}
-
-.september-week .to-do-lines-5 {
-	height: 186px;
-	left: 24px;
-	position: absolute;
-	top: 73px;
-	width: 173px;
-} */
-
-/*weekend*/
-.september-week .weekend {
-	height: 293px;
-	left: 998px;
-	position: absolute;
-	top: 507px;
-	width: 222px;
-}
-
-.september-week .overlap-6 {
-	height: 294px;
-	position: relative;
-	width: 223px;
-}
-
-.september-week .weekend-shape {
-	height: 42px;
-	left: 14px;
-	position: absolute;
-	top: 0;
-	width: 196px;
-}
-
-.september-week .weekend-vector {
-	height: 270px;
-	left: 0;
-	position: absolute;
-	top: 24px;
-	width: 223px;
-}
-
-.september-week .to-do-lines-6 {
-	height: 186px;
-	left: 26px;
-	position: absolute;
-	top: 77px;
-	width: 173px;
-}
-
-/*public*/
 .september-week .my-todo-list-1 {
 	height: 22px !important;
 	left: 0 !important;
@@ -452,16 +268,3 @@
 	top: 164px !important;
 	width: 173px !important;
 }
-
-.september-week .todo-instance {
-	top: -1px !important;
-}
-
-/* .september-week .design-component-instance-node {
-	height: 22px !important;
-	width: 141px !important;
-} */
-
-/* .september-week .my-todo-list-2 {
-	margin-right: unset !important;
-} */

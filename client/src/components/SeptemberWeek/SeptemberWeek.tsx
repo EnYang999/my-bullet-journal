@@ -306,14 +306,14 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 					{/* <!-- div className='week-box friday'> */}
 					<div className='week-box weekend'>
-						<div className='overlap-6'>
+						<div className='week-overlap overlap-6'>
 							<img
-								className='weekend-shape'
+								className='week-shape weekend-shape'
 								alt='Weekend shape'
 								src={weekendShape}
 							/>
 							<img
-								className='weekend-vector'
+								className='week-vector weekend-vector'
 								alt='Weekend vector'
 								src={weekendVector}
 							/>
