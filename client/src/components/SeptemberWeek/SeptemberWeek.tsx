@@ -70,6 +70,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 				</div>
 				{/* <!-- div className='background'> */}
 				<div className='week-box-container'>
+					{/* <div className='week-line week-top'> */}
 					<div className='week-box monday'>
 						<div className='week-overlap overlap-1'>
 							<img
@@ -211,6 +212,9 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 					{/* <!-- div className='week-box wednesday'> */}
+					{/* </div> */}
+					{/* <!-- div className='week-line week-top'> */}
+					{/* <div className='week-line week-bottom'> */}
 					<div className='week-box thursday'>
 						<div className='week-overlap overlap-4'>
 							<img
@@ -352,6 +356,8 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 						</div>
 					</div>
 					{/* <!-- div className='week-box weekend'> */}
+					{/* </div> */}
+					{/* <!-- div className='week-line week-bottom'> */}
 				</div>
 				{/* <!-- div className='week-box-container'> */}
 			</div>
