@@ -19,9 +19,6 @@
 	background-size: 100% 100%;
 	height: 100%;
 	width: 100%;
-	/* left: 0;
-	position: absolute;
-	top: 0; */
 }
 
 .september-week .rabbit-mother-overlap-group {
@@ -161,112 +158,30 @@
 /* week-box-container */
 .week-box-container {
 	margin: 0 auto;
+}
+.week-line {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas: "monday tuesday wednesday top-blank" "bottom-blank thursday friday weekend";
+	grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+	grid-template-rows: 355px;
 	gap: 2rem;
-	justify-content: center;
-	height: 710px;
-	width: 1200px;
-	/* border: 20px solid deeppink; */
-}
-.week-box {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: auto;
-	width: auto;
-}
-/* .week-overlap {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-} */
-.monday {
-	grid-area: monday;
-}
-.tuesday {
-	grid-area: tuesday;
-}
-.wednesday {
-	grid-area: wednesday;
-}
-.thursday {
-	grid-area: thursday;
-}
-.friday {
-	grid-area: friday;
-}
-.weekend {
-	grid-area: weekend;
-}
-/* .week-line {
-	display: flex;
-	justify-content: space-evenly;
-}
-.week-top {
-	flex-wrap: wrap;
-	justify-content: flex-start;
 }
 .week-bottom {
-	flex-wrap: wrap;
-	justify-content: space-between;
-} */
-/* monday */
-/* .september-week .monday {
-	grid-area: monday;
-	height: 300px;
-	left: 281px;
-	position: absolute;
-	top: 165px;
-	width: 224px;
-} */
+	direction: rtl;
+}
+.week-box {
+	border: 20px solid blue;
+	direction: ltr;
+}
+.thursday {
+	order: 3;
+}
+.friday {
+	order: 2;
+}
 
-/* tuesday */
-/* .september-week .tuesday {
-	height: 300px;
-	left: 564px;
-	position: absolute;
-	top: 165px;
-	width: 224px;
-} */
-
-/*wednesday*/
-/* .september-week .wednesday {
-	height: 300px;
-	left: 849px;
-	position: absolute;
-	top: 168px;
-	width: 224px;
-} */
-
-/*thursday*/
-/* .thursday {
-	height: 300px;
-	left: 430px;
-	position: absolute;
-	top: 512px;
-	width: 224px;
-} */
-
-/* friday */
-/* .september-week .friday {
-	height: 300px;
-	left: 714px;
-	position: absolute;
-	top: 507px;
-	width: 224px;
-} */
-
-/*weekend*/
-/* .september-week .weekend {
-	height: 300px;
-	left: 998px;
-	position: absolute;
-	top: 507px;
-	width: 224px;
-} */
+.weekend {
+	order: 1;
+}
 
 /*public*/
 
@@ -277,19 +192,27 @@
 }
 .week-shape {
 	position: absolute;
+	/* top: -8%;
+	left: 15%; */
 	top: 0;
-	left: 8%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 .week-vector {
 	position: absolute;
-	width: 90%;
+	width: 100%;
+	height: 100%;
 	bottom: 0;
 	left: 0;
 }
 .to-do-lines-container {
 	position: absolute;
-	top: 25%;
-	left: 10%;
+	width: 75%;
+	height: 65%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: aqua;
 }
 
 .september-week .my-todo-list-1 {
