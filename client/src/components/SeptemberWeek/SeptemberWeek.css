@@ -158,14 +158,17 @@
 	top: 0%;
 	max-width: 3px;
 }
+
 /* week-box-container */
 .week-box-container {
-	margin: 0 auto;
+	/* margin: 0 10rem; */
 	position: relative;
+	width: 80%;
 	z-index: 1;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	/* margin: 0 calc(10rem - 50%); */
 }
 .week-line {
 	display: grid;
@@ -175,7 +178,7 @@
 }
 .week-bottom {
 	direction: rtl;
-	margin-top: 2rem;
+	margin-top: 3rem;
 }
 .week-box {
 	/* border: 20px solid blue; */
@@ -212,18 +215,6 @@
 	transform: translate(-50%, -50%);
 	z-index: 100;
 }
-.week-vector {
-	display: block;
-	position: absolute;
-	max-width: 100%;
-	min-height: 100%;
-	/* border: 0.1rem solid black; */
-	border-top: #ffffff;
-	min-height: 224px;
-	bottom: 0;
-	left: 0;
-	background-color: rgb(207, 207, 241);
-}
 
 .to-do-lines-container {
 	position: absolute;
@@ -232,44 +223,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: aqua;
-}
-
-.september-week .my-todo-list-1 {
-	height: 22px !important;
-	left: 0 !important;
-	position: absolute !important;
-	top: 0 !important;
-	width: 173px !important;
-}
-.september-week .my-todo-list-2 {
-	height: 22px !important;
-	left: 0 !important;
-	position: absolute !important;
-	top: 41px !important;
-	width: 173px !important;
-}
-
-.september-week .my-todo-list-3 {
-	height: 22px !important;
-	left: 0 !important;
-	position: absolute !important;
-	top: 82px !important;
-	width: 173px !important;
-}
-
-.september-week .my-todo-list-4 {
-	height: 22px !important;
-	left: 0 !important;
-	position: absolute !important;
-	top: 123px !important;
-	width: 173px !important;
-}
-
-.september-week .my-todo-list-5 {
-	height: 22px !important;
-	left: 0 !important;
-	position: absolute !important;
-	top: 164px !important;
-	width: 173px !important;
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-columns: 100%;
+	gap: 1rem;
 }
