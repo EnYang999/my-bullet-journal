@@ -175,6 +175,7 @@
 }
 .week-bottom {
 	direction: rtl;
+	margin-top: 2rem;
 }
 .week-box {
 	/* border: 20px solid blue; */
@@ -197,22 +198,33 @@
 	position: relative;
 	height: 100%;
 	width: 100%;
+	border-image-source: url(../../assets/img/friday-vector.svg);
+	border-image-slice: 13 27 27 27;
+	border-image-width: 1em 2em 2em 2em;
+	border-image-outset: 0em 0em 0em 0em;
+	border-image-repeat: stretch stretch;
 }
+
 .week-shape {
 	position: absolute;
-	/* top: -8%;
-	left: 15%; */
 	top: 0;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	z-index: 100;
 }
 .week-vector {
+	display: block;
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	/* border: 0.1rem solid black; */
+	border-top: #ffffff;
+	min-height: 224px;
 	bottom: 0;
 	left: 0;
+	background-color: rgb(207, 207, 241);
 }
+
 .to-do-lines-container {
 	position: absolute;
 	width: 75%;
