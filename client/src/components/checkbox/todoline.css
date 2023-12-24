@@ -28,7 +28,7 @@
 	-webkit-user-select: none;
 	user-select: none;
 	-webkit-tap-highlight-color: transparent;
-	cursor: pointer;
+	/* cursor: pointer; */
 	height: 100%;
 	width: 100%;
 	position: relative;
