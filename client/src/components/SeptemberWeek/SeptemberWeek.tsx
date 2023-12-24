@@ -56,11 +56,7 @@ export const SeptemberWeek = ({ className }: Props): JSX.Element => {
 					</div>
 					<div className='rabbit-stamp-overlap-group'>
 						<img className='star-vector-5' alt='Star vector' src={star5} />
-						<img
-							className='border-of-stamp'
-							alt='Border of stamp'
-							src={borderOfStamp}
-						/>
+
 						<img className='shadow' alt='Shadow' src={shadow} />
 						<img className='rabbit-run' alt='Rabbit run' src={rabbitRun} />
 						<img className='head-shadow' alt='Head shadow' src={headShadow} />
