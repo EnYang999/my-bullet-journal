@@ -1,0 +1,33 @@
+.september-week-mobile {
+	margin: 0 auto;
+	border: 10px solid green;
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+	align-items: center;
+	position: relative;
+	background-image: url(../../assets/img/blue-circle-deep.png),
+		url(../../assets/img/blue-circle.png),
+		url(../../assets/img/star-vector-1.svg),
+		url(../../assets/img/star-vector-2.svg);
+	background-size: 400px, 400px, 61px, 62px;
+	background-repeat: no-repeat;
+	background-position: top -150px left -150px, bottom -150px right -150px,
+		top 40% right 30%, bottom 20% left 20%;
+	height: 100%;
+	width: 100%;
+}
+.september-week-mobile .rabbit {
+	width: 10vw;
+	position: absolute;
+	top: 1%;
+	right: 2%;
+	z-index: -1;
+}
+.september-week-mobile .WeekContainer {
+	padding-top: 10rem;
+}
+.september-week-mobile .WeekContainer .week-box {
+	min-width: 274px;
+	max-width: 314px;
+}
