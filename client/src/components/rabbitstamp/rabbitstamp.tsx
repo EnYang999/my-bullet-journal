@@ -6,11 +6,12 @@ import line from "../../assets/img/line-1.svg";
 import "./rabbitstamp.css";
 interface Props {
 	stampWidth: number;
+	className: string;
 }
 
-const RabbitStamp = ({ stampWidth }: Props) => {
+const RabbitStamp = ({ stampWidth, className }: Props): JSX.Element => {
 	return (
-		<div className='rabbit-stamp-overlap-group'>
+		<div className={`rabbit-stamp-overlap-group ${className}`}>
 			<img className='star-vector-5' alt='Star vector' src={star5} />
 
 			<figure className='fig-rabbit'>
