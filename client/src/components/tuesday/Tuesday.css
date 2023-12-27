@@ -1,12 +1,12 @@
 :root {
-	--sep-monday-todolines-height: 1.75rem;
+	--sep-tuesday-todolines-height: 1.75rem;
 }
 figure {
 	padding: 0;
 	margin: 0;
 }
 
-.sep-monday-box {
+.sep-tuesday-box {
 	width: 100%;
 	height: auto;
 	border-image-source: url(../../assets/img/friday-vector.svg);
@@ -15,7 +15,7 @@ figure {
 	border-image-outset: 0em 0em 0em 0em;
 	border-image-repeat: stretch stretch;
 }
-.sep-monday-box .week-overlap {
+.sep-tuesday-box .week-overlap {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: center;
@@ -24,14 +24,14 @@ figure {
 	padding: 1.5em;
 	position: relative;
 }
-.sep-monday-box .fig-monday {
+.sep-tuesday-box .fig-tuesday {
 	position: absolute;
 	top: 0;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
-.sep-monday-box .to-do-lines-container {
+.sep-tuesday-box .to-do-lines-container {
 	width: 80%;
 	height: 65%;
 	display: grid;
@@ -39,14 +39,14 @@ figure {
 	grid-template-columns: 100%;
 	gap: 0.5rem;
 }
-.sep-monday-box .my-todo-list .tick-box {
-	width: var(--sep-monday-todolines-height);
+.sep-tuesday-box .my-todo-list .tick-box {
+	width: var(--sep-tuesday-todolines-height);
 }
-.sep-monday-box .my-todo-list .cbx {
+.sep-tuesday-box .my-todo-list .cbx {
 	column-gap: 5%;
 }
-.sep-monday-box .my-todo-list .tick-box,
-.sep-monday-box .my-todo-list .input-box,
-.sep-monday-box .my-todo-list .input-field {
-	height: var(--sep-monday-todolines-height);
+.sep-tuesday-box .my-todo-list .tick-box,
+.sep-tuesday-box .my-todo-list .input-box,
+.sep-tuesday-box .my-todo-list .input-field {
+	height: var(--sep-tuesday-todolines-height);
 }
