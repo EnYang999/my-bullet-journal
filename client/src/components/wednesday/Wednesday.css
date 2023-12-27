@@ -1,0 +1,52 @@
+:root {
+	--sep-wednesday-todolines-height: 1.75rem;
+}
+figure {
+	padding: 0;
+	margin: 0;
+}
+
+.sep-wednesday-box {
+	width: 100%;
+	height: auto;
+	border-image-source: url(../../assets/img/friday-vector.svg);
+	border-image-slice: 13 27 27 27;
+	border-image-width: 1em 2em 2em 2em;
+	border-image-outset: 0em 0em 0em 0em;
+	border-image-repeat: stretch stretch;
+}
+.sep-wednesday-box .week-overlap {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1.2rem;
+	padding: 1.5em;
+	position: relative;
+}
+.sep-wednesday-box .fig-wednesday {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.sep-wednesday-box .to-do-lines-container {
+	width: 80%;
+	height: 65%;
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-columns: 100%;
+	gap: 0.5rem;
+}
+.sep-wednesday-box .my-todo-list .tick-box {
+	width: var(--sep-wednesday-todolines-height);
+}
+.sep-wednesday-box .my-todo-list .cbx {
+	column-gap: 5%;
+}
+.sep-wednesday-box .my-todo-list .tick-box,
+.sep-wednesday-box .my-todo-list .input-box,
+.sep-wednesday-box .my-todo-list .input-field {
+	height: var(--sep-wednesday-todolines-height);
+}
