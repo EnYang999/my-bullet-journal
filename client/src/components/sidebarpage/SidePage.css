@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@300;400;500;600&display=swap");
+* {
+	font-family: "Sono", monospace;
+}
+:root {
+	--sidebar-color: #c5dafb;
+	--sidebar-thickness: 5px;
+}
+.pagination-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pagination-overlap {
+	background: transparent;
+	box-shadow: var(--sidebar-thickness) 0 0 var(--sidebar-color);
+	transition: all 0.5s;
+	overflow: hidden;
+	/* display: flex;
+	justify-content: right; */
+}
+
+.pagination-overlap ul {
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5em;
+	align-items: flex-end;
+	justify-content: left;
+}
+
+.pagination-overlap li {
+	position: relative;
+	list-style: none;
+	width: 50px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	transition: all 0.5s;
+	padding-left: 1.5em;
+	padding-right: 0.5em;
+}
+
+.pagination-overlap li.active {
+	background-color: var(--sidebar-color);
+}
+.pagination-overlap li:hover {
+	width: 90px;
+	padding-left: 0.5em;
+}
+.pagination-overlap li.active::before {
+	content: "";
+	position: absolute;
+	top: -30px;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 15px 15px 0 var(--sidebar-color);
+	z-index: 1;
+}
+.pagination-overlap li.active::after {
+	content: "";
+	position: absolute;
+	bottom: -30px;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 15px -15px 0 var(--sidebar-color);
+	z-index: 1;
+}
+.pagination-overlap a {
+	position: relative;
+	/* right: -25px; */
+	display: block;
+	padding-left: 0.5em;
+	width: 100%;
+	display: flex;
+	justify-content: left;
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: #fff;
+}
+.pagination-overlap .icon {
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+
+.pagination-overlap .month-name {
+	height: 60px;
+	line-height: 60px;
+	white-space: nowrap;
+}
