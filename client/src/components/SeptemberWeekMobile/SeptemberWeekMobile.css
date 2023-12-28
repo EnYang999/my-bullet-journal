@@ -1,6 +1,7 @@
 .september-week-mobile {
-	margin: 0 auto;
-	border: 10px solid green;
+	margin: 5em auto;
+	/* border: 0.1em solid green; */
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 	display: flex;
 	flex-direction: column;
 	place-content: center;
@@ -14,8 +15,13 @@
 	background-repeat: no-repeat;
 	background-position: top -150px left -150px, bottom -150px right -150px,
 		top 40% right 30%, bottom 20% left 20%;
-	height: 100%;
-	width: 100%;
+	height: auto;
+	width: 90%;
+	padding-bottom: 5em;
+}
+.sidebar {
+	position: absolute;
+	left: 0;
 }
 .september-week-mobile .rabbit {
 	width: 10vw;
