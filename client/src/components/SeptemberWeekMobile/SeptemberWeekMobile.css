@@ -14,7 +14,7 @@
 	background-size: 400px, 400px, 61px, 62px;
 	background-repeat: no-repeat;
 	background-position: top -150px left -150px, bottom -150px right -150px,
-		top 40% right 30%, bottom 20% left 20%;
+		top 40% right 30%, bottom 40% left 20%;
 	height: auto;
 	width: 90%;
 	min-width: 342px;
@@ -32,7 +32,7 @@
 	z-index: -1;
 }
 .september-week-mobile .WeekContainer {
-	padding-top: 10rem;
+	padding: 10rem 0;
 	width: auto;
 }
 .september-week-mobile .WeekContainer .week-box {
@@ -46,4 +46,10 @@
 	bottom: 1%;
 	left: 2%;
 	z-index: -1;
+}
+.september-week-mobile .septemberlabel {
+	position: absolute;
+	bottom: 15rem;
+	left: 2%;
+	z-index: -2;
 }
