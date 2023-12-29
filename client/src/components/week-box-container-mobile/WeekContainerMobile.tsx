@@ -8,9 +8,9 @@ import "./WeekContainer.css";
 interface Props {
 	className: string;
 }
-const WeekContainer = ({ className }: Props): JSX.Element => {
+const WeekContainerMobile = ({ className }: Props): JSX.Element => {
 	return (
-		<div className={`week-box-container sep-week-box ${className}`}>
+		<div className={`week-box-container sep-week-box-mobile ${className}`}>
 			<Monday />
 			<Tuesday />
 			<Wednesday />
@@ -21,4 +21,4 @@ const WeekContainer = ({ className }: Props): JSX.Element => {
 	);
 };
 
-export default WeekContainer;
+export default WeekContainerMobile;
