@@ -1,0 +1,30 @@
+.sep-week-box-computer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	/* flex-flow: wrap; */
+	flex-grow: 1;
+	width: 80%;
+	text-align: center;
+}
+.week-line {
+	display: flex;
+	gap: 2em;
+}
+.week-bottom {
+	direction: rtl;
+	margin-top: 3rem;
+}
+.week-box {
+	direction: ltr;
+}
+.thursday {
+	order: 3;
+}
+.friday {
+	order: 2;
+}
+
+.weekend {
+	order: 1;
+}

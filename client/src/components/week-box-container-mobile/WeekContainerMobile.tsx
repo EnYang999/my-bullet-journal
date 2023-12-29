@@ -4,7 +4,7 @@ import Wednesday from "../wednesday/Wednesday";
 import Thursday from "../thursday/Thursday";
 import Friday from "../friday/Friday";
 import Weekend from "../weekend/Weekend";
-import "./WeekContainer.css";
+import "./WeekContainerMobile.css";
 interface Props {
 	className: string;
 }

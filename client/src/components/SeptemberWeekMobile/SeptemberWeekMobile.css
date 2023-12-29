@@ -18,7 +18,8 @@
 	height: auto;
 	width: 90%;
 	min-width: 342px;
-	padding-bottom: 5em;
+	max-width: 1694px;
+	/* padding-bottom: 5em; */
 }
 /* .sidebar {
 	position: absolute;
@@ -33,7 +34,7 @@
 }
 .september-week-mobile .WeekContainer {
 	padding: 10rem 0;
-	width: auto;
+	max-width: 1210px;
 }
 .september-week-mobile .WeekContainer .week-box {
 	min-width: 274px;
