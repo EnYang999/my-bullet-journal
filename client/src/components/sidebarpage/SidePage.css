@@ -7,7 +7,7 @@
 	--sidebar-thickness: 5px;
 	--sidebar-padding: 5px;
 	--sidebar-width: 2rem;
-	--sidebar-width-hover: 5rem;
+	--sidebar-width-hover: 3.5rem;
 	--sidebar-curve: 1.875rem;
 	--sidebar-curve-mask: 0.938rem;
 	--sidebar-letter-height: 3.75rem;
@@ -16,14 +16,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 2;
 }
 .pagination-overlap {
 	background: transparent;
-	box-shadow: var(--sidebar-thickness) 0 0 var(--sidebar-color);
+	box-shadow: var(--sidebar-thickness) 0 0 transparent;
 	transition: all 0.5s;
 	overflow: hidden;
-	/* display: flex;
-	justify-content: right; */
 }
 
 .pagination-overlap ul {
@@ -47,18 +46,17 @@
 	padding-left: 1em;
 	padding-right: 0.5em;
 	background-color: var(--sidebar-color);
-	background-image: url(../../assets/img/rabbit-run.png);
-	background-size: cover;
 }
 
 .pagination-overlap li.active {
 	background-color: var(--sidebar-color);
 }
-.pagination-overlap li:hover {
+.pagination-overlap li:hover,
+.pagination-overlap li:focus {
 	width: var(--sidebar-width-hover);
 	padding-left: 0.5em;
 }
-.pagination-overlap li::before,
+/* .pagination-overlap li::before,
 .pagination-overlap li::after {
 	content: "";
 	position: absolute;
@@ -77,7 +75,7 @@
 .pagination-overlap li.active::after {
 	bottom: -30px;
 	box-shadow: 15px -15px 0 var(--sidebar-color);
-}
+} */
 .pagination-overlap a {
 	display: block;
 	/* padding-left: 0.5em; */
@@ -96,4 +94,11 @@
 .pagination-overlap .month-name {
 	height: var(--sidebar-letter-height);
 	line-height: var(--sidebar-letter-height);
+}
+.pagination-container .jan {
+	background-color: #88ab8e;
+}
+
+.pagination-container .feb {
+	background-color: #9bb8cd;
 }
