@@ -20,10 +20,10 @@
 	min-width: 342px;
 	padding-bottom: 5em;
 }
-.sidebar {
+/* .sidebar {
 	position: absolute;
 	left: 0;
-}
+} */
 .september-week-mobile .rabbit {
 	width: 10vw;
 	position: absolute;
@@ -33,8 +33,17 @@
 }
 .september-week-mobile .WeekContainer {
 	padding-top: 10rem;
+	width: auto;
 }
 .september-week-mobile .WeekContainer .week-box {
 	min-width: 274px;
-	max-width: 314px;
+	max-width: 280px;
+}
+
+.september-week-mobile .rabbitmother {
+	width: 10vw;
+	position: absolute;
+	bottom: 1%;
+	left: 2%;
+	z-index: -1;
 }

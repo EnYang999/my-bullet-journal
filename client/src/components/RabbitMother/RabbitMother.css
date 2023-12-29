@@ -1,0 +1,22 @@
+.rabbit-mother-overlap-group {
+	position: relative;
+	min-width: 224px;
+}
+.rabbit-mother-overlap-group figure {
+	padding: 0;
+	margin: 0;
+}
+.rabbit-mother-overlap-group img {
+	display: block;
+}
+
+.rabbit-mother {
+	width: 100%;
+	height: auto;
+}
+.figure-rabbitmother-star {
+	position: absolute;
+	right: 0;
+	bottom: 40%;
+	z-index: -1;
+}
