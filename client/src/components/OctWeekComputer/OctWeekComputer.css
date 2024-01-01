@@ -1,0 +1,11 @@
+.october-week-computer {
+	background-color: #f5f0e5;
+}
+.october-week-computer .october-week-computer-layout {
+}
+.october-week-computer .week-box-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 2em;
+}

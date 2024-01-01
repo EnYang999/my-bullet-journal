@@ -1,0 +1,19 @@
+.octtitle {
+	margin: 0 auto;
+	max-width: 80vw;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+}
+.octtitle figure {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+.octtitle img {
+	width: 100%;
+	height: auto;
+}
+.octtitle .octlabel {
+	display: flex;
+	justify-content: center;
+}
