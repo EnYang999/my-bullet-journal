@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-.log-container body {
+.log-container {
 	background: #f6f5f7;
+	margin: 20px auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	font-family: "Montserrat", sans-serif;
-	height: 100vh;
-	margin: -20px 0 50px;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	height: auto;
+	max-width: 100%;
+	min-height: 480px;
 }
 
 .log-container h1 {
@@ -49,19 +56,19 @@
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.log-container button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.log-container button:focus {
 	outline: none;
 }
 
-button.ghost {
+.log-container button.ghost {
 	background-color: transparent;
 }
 
-form {
+.log-container form {
 	background-color: #ffffff;
 	display: flex;
 	align-items: center;
@@ -72,23 +79,12 @@ form {
 	text-align: center;
 }
 
-input {
+.log-container input {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
-}
-
-.log-container {
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-	position: relative;
-	overflow: hidden;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
 }
 
 .form-container {
@@ -216,6 +212,10 @@ input {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
+}
+
+.log-container .invalid-feedback {
+	display: inline-block;
 }
 
 footer {

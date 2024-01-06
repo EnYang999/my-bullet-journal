@@ -1,16 +1,49 @@
 import React, { useState } from "react";
 import "./login.css";
-import OverlayButton from "../overlaybutton/OverlayButton";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+interface FormData {
+	name: string;
+	email: string;
+	password: string;
+}
+const userSchema = yup
+	.object({
+		name: yup
+			.string()
+			.required("No name provided.")
+			.min(4, "Name is too short - should be 4 chars minimum."),
+		email: yup
+			.string()
+			.required("No email provided.")
+			.email("No email provided."),
+		password: yup
+			.string()
+			.required("No password provided.")
+			.matches(
+				/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+				"Minimum eight characters, at least one uppercase letter, one lowercase letter and one number"
+			),
+	})
+	.required();
+
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
-
 	const handleSignUpClick = () => {
 		setSignUp(true);
 	};
-
 	const handleSignInClick = () => {
 		setSignUp(false);
 	};
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<FormData>({
+		resolver: yupResolver(userSchema),
+	});
+	console.log(errors);
 
 	return (
 		<>
@@ -19,7 +52,14 @@ const Login: React.FC = () => {
 				id='container'
 			>
 				<div className='form-container sign-up-container'>
-					<form action='#'>
+					<form
+						action='#'
+						className='needs-validation'
+						onSubmit={handleSubmit((data) => {
+							console.log(data);
+						})}
+						noValidate
+					>
 						<h1>Create Account</h1>
 						<div className='social-container'>
 							<a href='#' className='social'>
@@ -33,10 +73,50 @@ const Login: React.FC = () => {
 							</a>
 						</div>
 						<span>or use your email for registration</span>
-						<input type='text' placeholder='Name' />
-						<input type='email' placeholder='Email' />
-						<input type='password' placeholder='Password' />
-						<button>Sign Up</button>
+						<div className='form-floating mb-2 mt-2'>
+							<input
+								{...register("name")}
+								type='text'
+								className='form-control'
+								id='floatingName'
+								placeholder='Username'
+								aria-label='Username'
+							/>
+							<label htmlFor='floatingName'>name</label>
+							{errors.name && (
+								<div className='invalid-feedback'>{errors.name.message}</div>
+							)}
+						</div>
+						<div className='form-floating mb-2'>
+							<input
+								{...register("email")}
+								type='email'
+								className='form-control'
+								id='floatingEmail'
+								placeholder='name@example.com'
+							/>
+							<label htmlFor='floatingEmail'>Email address</label>
+							{errors.email && (
+								<div className='invalid-feedback'>{errors.email.message}</div>
+							)}
+						</div>
+
+						<div className='form-floating  mb-2'>
+							<input
+								{...register("password")}
+								type='password'
+								className='form-control'
+								id='floatingPassword'
+								placeholder='Password'
+							/>
+							<label htmlFor='floatingPassword'>Password</label>
+							{errors.password && (
+								<div className='invalid-feedback'>
+									{errors.password.message}
+								</div>
+							)}
+						</div>
+						<button type='submit'>Sign Up</button>
 					</form>
 				</div>
 				<div className='form-container sign-in-container'>

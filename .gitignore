@@ -261,3 +261,4 @@ dist
 *.DS_Store
 *.pdf
 *test*.*
+*.jpg
