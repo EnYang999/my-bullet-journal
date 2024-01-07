@@ -227,6 +227,15 @@
 	top: 50%;
 	right: 10px;
 }
+.log-container .tracker-box {
+	display: flex;
+	justify-content: space-between;
+	white-space: nowrap;
+	flex-wrap: wrap;
+	font-size: 0.5rem;
+	width: 100%;
+}
+
 footer {
 	background-color: #222;
 	color: #fff;

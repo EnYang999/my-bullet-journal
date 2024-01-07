@@ -3,8 +3,7 @@ import "./login.css";
 import Icon from "react-icons-kit";
 import { arrows_exclamation } from "react-icons-kit/linea/arrows_exclamation";
 import { arrows_circle_check } from "react-icons-kit/linea/arrows_circle_check";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import PasswordValidation from "../passwordvalidation/PasswordValidation";
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
 	const handleSignUpClick = () => {
@@ -51,6 +50,7 @@ const Login: React.FC = () => {
 			setLengthValidated(false);
 		}
 	};
+
 	return (
 		<>
 			<div
@@ -113,67 +113,33 @@ const Login: React.FC = () => {
 						</div>
 						{/* validation tracker */}
 						<div className='tracker-box'>
-							<div className={lowerValidated ? "validated" : "not-validated"}>
-								{lowerValidated ? (
-									<span className='list-icon green'>
-										<i className='bi bi-check2-circle'></i>
-									</span>
-								) : (
-									<span className='list-icon'>
-										<i className='bi bi-circle'></i>
-									</span>
-								)}
-								At least one lowercase letter
-							</div>
-							<div className={upperValidated ? "validated" : "not-validated"}>
-								{upperValidated ? (
-									<span className='list-icon green'>
-										<i className='bi bi-check2-circle'></i>
-									</span>
-								) : (
-									<span className='list-icon'>
-										<i className='bi bi-circle'></i>
-									</span>
-								)}
-								At least one uppercase letter
-							</div>
-							<div className={numberValidated ? "validated" : "not-validated"}>
-								{numberValidated ? (
-									<span className='list-icon green'>
-										<i className='bi bi-check2-circle'></i>
-									</span>
-								) : (
-									<span className='list-icon'>
-										<i className='bi bi-circle'></i>
-									</span>
-								)}
-								At least one number
-							</div>
-							<div className={specialValidated ? "validated" : "not-validated"}>
-								{specialValidated ? (
-									<span className='list-icon green'>
-										<i className='bi bi-check2-circle'></i>
-									</span>
-								) : (
-									<span className='list-icon'>
-										<i className='bi bi-circle'></i>
-									</span>
-								)}
-								At least one special character
-							</div>
-							<div className={lengthValidated ? "validated" : "not-validated"}>
-								{lengthValidated ? (
-									<span className='list-icon green'>
-										<i className='bi bi-check2-circle'></i>
-									</span>
-								) : (
-									<span className='list-icon'>
-										<i className='bi bi-circle'></i>
-									</span>
-								)}
-								At least 8 characters
-							</div>
+							<PasswordValidation
+								className='validation-message lowercase'
+								validated={lowerValidated}
+								text='At least one lowercase letter'
+							/>
+							<PasswordValidation
+								className='validation-message  uppercase'
+								validated={upperValidated}
+								text='At least one uppercase letter'
+							/>
+							<PasswordValidation
+								className='validation-message  number'
+								validated={numberValidated}
+								text='At least one number'
+							/>
+							<PasswordValidation
+								className='validation-message  specialchr'
+								validated={specialValidated}
+								text='At least one special character'
+							/>
+							<PasswordValidation
+								className='validation-message  eightchr'
+								validated={lengthValidated}
+								text='At least 8 characters'
+							/>
 						</div>
+
 						<button type='submit'>Sign Up</button>
 					</form>
 				</div>
