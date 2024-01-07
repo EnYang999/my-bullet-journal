@@ -86,17 +86,17 @@ const Login: React.FC = () => {
 							<input
 								type='email'
 								className='form-control'
-								id='floatingEmail'
+								id='floatingEmail-signup'
 								placeholder='name@example.com'
 							/>
-							<label htmlFor='floatingEmail'>Email address</label>
+							<label htmlFor='floatingEmail-signup'>Email address</label>
 						</div>
 
 						<div className='form-floating  mb-2 password-input'>
 							<input
 								type={type}
 								className='form-control'
-								id='floatingPassword'
+								id='floatingPassword-signup'
 								placeholder='Password'
 								onChange={(e) => handleChange(e.target.value)}
 							/>
@@ -109,7 +109,7 @@ const Login: React.FC = () => {
 								></i>
 							</span>
 
-							<label htmlFor='floatingPassword'>Password</label>
+							<label htmlFor='floatingPassword-signup'>Password</label>
 						</div>
 						{/* validation tracker */}
 						<div className='tracker-box'>
@@ -146,7 +146,7 @@ const Login: React.FC = () => {
 				<div className='form-container sign-in-container'>
 					<form action='#'>
 						<h1>Sign in</h1>
-						<div className='social-container'>
+						{/* <div className='social-container'>
 							<a href='#' className='social'>
 								<i className='fab fa-facebook-f'></i>
 							</a>
@@ -157,10 +157,37 @@ const Login: React.FC = () => {
 								<i className='fab fa-linkedin-in'></i>
 							</a>
 						</div>
-						<span>or use your account</span>
-						<input type='email' placeholder='Email' />
-						<input type='password' placeholder='Password' />
-						<a href='#'>Forgot your password?</a>
+						<span>or use your account</span> */}
+						<div className='form-floating mb-2 email-input'>
+							<input
+								type='email'
+								className='form-control'
+								id='floatingEmail-login'
+								placeholder='name@example.com'
+							/>
+							<label htmlFor='floatingEmail-login'>Email address</label>
+						</div>
+
+						<div className='form-floating  mb-2 password-input'>
+							<input
+								type={type}
+								className='form-control'
+								id='floatingPassword-login'
+								placeholder='Password'
+								onChange={(e) => handleChange(e.target.value)}
+							/>
+							<span
+								className='icon-span'
+								onClick={() => setType(type === "text" ? "password" : "text")}
+							>
+								<i
+									className={`bi bi-eye${type === "text" ? "-slash" : ""}`}
+								></i>
+							</span>
+
+							<label htmlFor='floatingPassword-login'>Password</label>
+						</div>
+						{/* <a href='#'>Forgot your password?</a> */}
 						<button>Sign In</button>
 					</form>
 				</div>
