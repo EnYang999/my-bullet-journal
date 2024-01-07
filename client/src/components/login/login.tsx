@@ -8,6 +8,23 @@ interface FormData {
 	email: string;
 	password: string;
 }
+
+const pwdValidationMessages = {
+	required: "New Password is required",
+	lowerCase: "One lowercase character",
+	upperCase: "One uppercase character",
+	number: "One number",
+	special: "One special character",
+	min: "Must be at least 8 characters in length",
+};
+const lowerCaseRegex = new RegExp(".*[a-z].*");
+const upperCaseRegex = new RegExp(".*[A-Z].*");
+const numberRegex = new RegExp(".*\\d.*");
+const specialCharacterRegex = new RegExp(
+	".*[`~<>?,./!@#$%^&*()\\-_+=\"'|{}\\[\\];:\\\\].*"
+);
+
+const minLength = 8;
 const userSchema = yup
 	.object({
 		name: yup
@@ -17,14 +34,15 @@ const userSchema = yup
 		email: yup
 			.string()
 			.required("No email provided.")
-			.email("No email provided."),
+			.email("Not legally email address."),
 		password: yup
 			.string()
-			.required("No password provided.")
-			.matches(
-				/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
-				"Minimum eight characters, at least one uppercase letter, one lowercase letter and one number"
-			),
+			.matches(upperCaseRegex, pwdValidationMessages.upperCase)
+			.matches(lowerCaseRegex, pwdValidationMessages.lowerCase)
+			.matches(numberRegex, pwdValidationMessages.number)
+			.matches(specialCharacterRegex, pwdValidationMessages.special)
+			.min(minLength, pwdValidationMessages.min)
+			.required(pwdValidationMessages.required),
 	})
 	.required();
 
@@ -41,10 +59,11 @@ const Login: React.FC = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<FormData>({
-		resolver: yupResolver(userSchema),
+		resolver: yupResolver(userSchema, { abortEarly: false }),
+		criteriaMode: "all",
+		mode: "onChange",
 	});
 	console.log(errors);
-
 	return (
 		<>
 			<div
@@ -60,7 +79,7 @@ const Login: React.FC = () => {
 						})}
 						noValidate
 					>
-						<h1>Create Account</h1>
+						{/* <h1>Create Account</h1>
 						<div className='social-container'>
 							<a href='#' className='social'>
 								<i className='fab fa-facebook-f'></i>
@@ -72,7 +91,7 @@ const Login: React.FC = () => {
 								<i className='fab fa-linkedin-in'></i>
 							</a>
 						</div>
-						<span>or use your email for registration</span>
+						<span>or use your email for registration</span> */}
 						<div className='form-floating mb-2 mt-2'>
 							<input
 								{...register("name")}
@@ -110,6 +129,12 @@ const Login: React.FC = () => {
 								placeholder='Password'
 							/>
 							<label htmlFor='floatingPassword'>Password</label>
+							{errors?.password?.types?.required && <p>Password is required</p>}
+							{errors?.password?.types?.minLength && (
+								<p>Password must be at least 10 characters long</p>
+							)}
+							<ul></ul>
+
 							{errors.password && (
 								<div className='invalid-feedback'>
 									{errors.password.message}
