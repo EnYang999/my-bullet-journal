@@ -1,23 +1,61 @@
 import React, { useState } from "react";
 import "./login.css";
-import Icon from "react-icons-kit";
-import { arrows_exclamation } from "react-icons-kit/linea/arrows_exclamation";
-import { arrows_circle_check } from "react-icons-kit/linea/arrows_circle_check";
+import axios from "axios";
 import PasswordValidation from "../passwordvalidation/PasswordValidation";
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
-	const handleSignUpClick = () => {
-		setSignUp(true);
-	};
-	const handleSignInClick = () => {
-		setSignUp(false);
-	};
 	const [type, setType] = useState("password");
 	const [lowerValidated, setLowerValidated] = useState(false);
 	const [upperValidated, setUpperValidated] = useState(false);
 	const [numberValidated, setNumberValidated] = useState(false);
 	const [specialValidated, setSpecialValidated] = useState(false);
 	const [lengthValidated, setLengthValidated] = useState(false);
+	const [password, setPassword] = useState("");
+	const [accountName, setAccountName] = useState("");
+	const [email, setEmail] = useState("");
+	const handleSignUpClick = () => {
+		setSignUp(true);
+	};
+	const handleSignInClick = () => {
+		setSignUp(false);
+	};
+	const handleLogin = async (e: React.SyntheticEvent) => {
+		e.preventDefault();
+		// axios({
+		// 	method: "post",
+		// 	url: "/user/login",
+		// 	data: {
+		// 		email: email,
+		// 		password: password,
+		// 	},
+		// });
+		try {
+			await axios.post("http://localhost:8000/login", { email, password });
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	const handleSignup = async (e: React.SyntheticEvent) => {
+		e.preventDefault();
+		// axios({
+		// 	method: "post",
+		// 	url: "/user/signup",
+		// 	data: {
+		// 		accountName: accountName,
+		// 		email: email,
+		// 		password: password,
+		// 	},
+		// });
+		try {
+			await axios.post("http://localhost:8000/signup", {
+				name: accountName,
+				email,
+				password,
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	const handleChange = (value: string) => {
 		const lower = new RegExp("(?=.*[a-z])");
 		const upper = new RegExp("(?=.*[A-Z])");
@@ -79,6 +117,7 @@ const Login: React.FC = () => {
 								id='floatingName'
 								placeholder='Username'
 								aria-label='Username'
+								onChange={(e) => setAccountName(e.target.value)}
 							/>
 							<label htmlFor='floatingName'>name</label>
 						</div>
@@ -88,6 +127,7 @@ const Login: React.FC = () => {
 								className='form-control'
 								id='floatingEmail-signup'
 								placeholder='name@example.com'
+								onChange={(e) => setEmail(e.target.value)}
 							/>
 							<label htmlFor='floatingEmail-signup'>Email address</label>
 						</div>
@@ -98,7 +138,9 @@ const Login: React.FC = () => {
 								className='form-control'
 								id='floatingPassword-signup'
 								placeholder='Password'
-								onChange={(e) => handleChange(e.target.value)}
+								onChange={(e) => {
+									handleChange(e.target.value), setPassword(e.target.value);
+								}}
 							/>
 							<span
 								className='icon-span'
@@ -140,7 +182,9 @@ const Login: React.FC = () => {
 							/>
 						</div>
 
-						<button type='submit'>Sign Up</button>
+						<button type='submit' onSubmit={handleSignup}>
+							Sign Up
+						</button>
 					</form>
 				</div>
 				<div className='form-container sign-in-container'>
@@ -164,6 +208,7 @@ const Login: React.FC = () => {
 								className='form-control'
 								id='floatingEmail-login'
 								placeholder='name@example.com'
+								onChange={(e) => setEmail(e.target.value)}
 							/>
 							<label htmlFor='floatingEmail-login'>Email address</label>
 						</div>
@@ -174,7 +219,9 @@ const Login: React.FC = () => {
 								className='form-control'
 								id='floatingPassword-login'
 								placeholder='Password'
-								onChange={(e) => handleChange(e.target.value)}
+								onChange={(e) => {
+									handleChange(e.target.value), setPassword(e.target.value);
+								}}
 							/>
 							<span
 								className='icon-span'
@@ -188,7 +235,7 @@ const Login: React.FC = () => {
 							<label htmlFor='floatingPassword-login'>Password</label>
 						</div>
 						{/* <a href='#'>Forgot your password?</a> */}
-						<button>Sign In</button>
+						<button onSubmit={handleLogin}>Sign In</button>
 					</form>
 				</div>
 				<div className='overlay-container'>
