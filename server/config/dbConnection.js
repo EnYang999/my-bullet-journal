@@ -9,7 +9,6 @@ const connectDb = async () => {
 			connect.connection.name,
 			process.env.CONNECTION_STRING
 		);
-		// const connect = await mongoose.connect(process.env.CONNECTION_STRING);
 	} catch (err) {
 		console.log(err);
 		process.exit(1);
