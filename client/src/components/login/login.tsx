@@ -11,7 +11,7 @@ const Login: React.FC = () => {
 	const [specialValidated, setSpecialValidated] = useState(false);
 	const [lengthValidated, setLengthValidated] = useState(false);
 	const [password, setPassword] = useState("");
-	const [accountName, setAccountName] = useState("");
+	const [userName, setUserName] = useState("");
 	const [email, setEmail] = useState("");
 	const handleSignUpClick = () => {
 		setSignUp(true);
@@ -21,14 +21,6 @@ const Login: React.FC = () => {
 	};
 	const handleLogin = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
-		// axios({
-		// 	method: "post",
-		// 	url: "/user/login",
-		// 	data: {
-		// 		email: email,
-		// 		password: password,
-		// 	},
-		// });
 		try {
 			await axios.post("http://localhost:8000/login", { email, password });
 		} catch (error) {
@@ -37,18 +29,9 @@ const Login: React.FC = () => {
 	};
 	const handleSignup = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
-		// axios({
-		// 	method: "post",
-		// 	url: "/user/signup",
-		// 	data: {
-		// 		accountName: accountName,
-		// 		email: email,
-		// 		password: password,
-		// 	},
-		// });
 		try {
 			await axios.post("http://localhost:8000/signup", {
-				name: accountName,
+				userName,
 				email,
 				password,
 			});
@@ -117,7 +100,7 @@ const Login: React.FC = () => {
 								id='floatingName'
 								placeholder='Username'
 								aria-label='Username'
-								onChange={(e) => setAccountName(e.target.value)}
+								onChange={(e) => setUserName(e.target.value)}
 							/>
 							<label htmlFor='floatingName'>name</label>
 						</div>

@@ -48,7 +48,7 @@ const createToken = (id, username) => {
 
 module.exports.signup_post = async (req, res) => {
 	const { email, password, username } = req.body;
-
+	console.log("server:", email, password, username);
 	try {
 		const isExisted = await User.findOne({ email: email });
 		if (!isExisted) {
