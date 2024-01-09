@@ -48,22 +48,20 @@ const createToken = (id, username) => {
 
 module.exports.signup_post = async (req, res) => {
 	const { email, password, username } = req.body;
-	console.log("server:", email, password, username);
 	try {
-		const isExisted = await User.findOne({ email: email });
-		if (!isExisted) {
-			const user = await User.create({
-				email,
-				password,
-				username,
-			});
-			const token = createToken(user._id, user.username, user.email);
-			res.cookie("userid", token, { maxAge: maxAge * 1000 });
-			res.status(201).json({ user: user._id });
-		} else {
-			// 	throw new Error("Already Existed");
-			res.status(400).json({ error: "Already Existed" });
+		const existed = await User.findOne({ email: email });
+		if (existed) {
+			res.status(400).json({ error: "Existed User" });
+			throw Error("User Existed");
 		}
+		const user = await User.create({
+			email,
+			password,
+			username,
+		});
+		const token = createToken(user._id, user.username, user.email);
+		res.cookie("userid", token, { maxAge: maxAge * 1000 });
+		res.status(201).json({ user: user._id });
 	} catch (err) {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
@@ -77,18 +75,19 @@ module.exports.signup_post = async (req, res) => {
 
 module.exports.login_post = async (req, res) => {
 	const { email, password } = req.body;
-
 	try {
-		const isExisted = await User.findOne({ email: email });
-		if (isExisted) {
-			const user = await User.login(email, password);
-			const token = createToken(user._id, user.username, user.email);
-			console.log(user);
-			res.cookie("userid", token, { maxAge: maxAge * 1000 });
-			res.status(200).json({ user: user._id });
-		} else {
+		const user = await User.findOne({ email: email });
+		if (!user) {
 			res.status(400).json({ error: "Not Existed User" });
+			throw Error("User not found");
 		}
+		const auth = await bcrypt.compare(password, user.password);
+		if (!auth) {
+			throw Error("incorrect password");
+		}
+		const token = createToken(user._id, user.username, user.email);
+		res.cookie("userid", token, { maxAge: maxAge * 1000 });
+		res.status(200).json({ user: user._id });
 	} catch (err) {
 		const errors = handleErrors(err);
 		res.status(400).json({ errors });
