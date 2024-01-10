@@ -3,39 +3,6 @@ const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
 const fetch = require("node-fetch");
 
-// handle errors
-const handleErrors = (err) => {
-	console.log(err.message, err.code);
-	let errors = { email: "", password: "", username: "" };
-
-	// incorrect email
-	if (err.message === "incorrect email") {
-		errors.email = "That email is not registered";
-	}
-
-	// incorrect password
-	if (err.message === "incorrect password") {
-		errors.password = "That password is incorrect";
-	}
-	// incorrect password
-	if (err.message === "incorrect username") {
-		errors.username = "Please use a minimum of 3 characters";
-	}
-
-	// duplicate email error
-	if (err.code === 11000) {
-		errors.email = "that email is already registered";
-	}
-
-	if (err.message.includes("user validation failed")) {
-		Object.values(err.errors).forEach(({ properties }) => {
-			errors[properties.path] = properties.message;
-		});
-	}
-
-	return errors;
-};
-
 // create json web token
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id, username, email) => {
@@ -48,7 +15,6 @@ module.exports.signup_post = async (req, res) => {
 	const { email, username, password } = req.body;
 	try {
 		const existed = await User.findOne({ email: email });
-
 		if (existed) {
 			res.status(400).json({ error: "Existed User" }); // frontend side
 			return;
