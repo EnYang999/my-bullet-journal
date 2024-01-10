@@ -11,7 +11,10 @@ const Login: React.FC = () => {
 	const [specialValidated, setSpecialValidated] = useState(false);
 	const [lengthValidated, setLengthValidated] = useState(false);
 	const [password, setPassword] = useState("");
+	const [isValidNameLength, setValidNameLength] = useState(false);
+	const [isValidNameCharacters, setIsValidNameCharacters] = useState(false);
 	const [userName, setUserName] = useState("");
+	const [isValidEmail, setIsValidEmail] = useState(false);
 	const [email, setEmail] = useState("");
 	const handleSignUpClick = () => {
 		setSignUp(true);
@@ -30,17 +33,53 @@ const Login: React.FC = () => {
 	const handleSignup = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		try {
-			await axios.post("http://localhost:8000/signup", {
-				email,
-				username: userName,
-				password,
-			});
+			if (
+				lowerValidated &&
+				upperValidated &&
+				numberValidated &&
+				specialValidated &&
+				lengthValidated &&
+				isValidNameLength &&
+				isValidNameCharacters &&
+				isValidEmail
+			) {
+				await axios.post("http://localhost:8000/signup", {
+					email,
+					username: userName,
+					password,
+				});
+			} else {
+			}
 			console.log("ok");
 		} catch (error) {
 			console.log(error);
 		}
 	};
-	const handleChange = (value: string) => {
+	const handleUserNameChange = (value: string) => {
+		const validNameLength = new RegExp("^.{3,16}$");
+		const validCharacters = new RegExp("^[a-zA-Z0-9_-]+$");
+		if (validCharacters.test(value)) {
+			setIsValidNameCharacters(true);
+		} else {
+			setIsValidNameCharacters(false);
+		}
+		if (validNameLength.test(value)) {
+			setValidNameLength(true);
+		} else {
+			setValidNameLength(false);
+		}
+	};
+	const handleEmailChange = (value: string) => {
+		const validEmail = new RegExp(
+			"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"
+		);
+		if (validEmail.test(value)) {
+			setIsValidEmail(true);
+		} else {
+			setIsValidEmail(false);
+		}
+	};
+	const handlePasswordChange = (value: string) => {
 		const lower = new RegExp("(?=.*[a-z])");
 		const upper = new RegExp("(?=.*[A-Z])");
 		const number = new RegExp("(?=.*[0-9])");
@@ -80,14 +119,14 @@ const Login: React.FC = () => {
 				id='container'
 			>
 				<div className='form-container sign-up-container'>
+					<h1>Create Account</h1>
 					<form
 						action='#'
 						className='needs-validation'
 						noValidate
 						onSubmit={handleSignup}
 					>
-						{/* <h1>Create Account</h1>
-						<div className='social-container'>
+						{/*<div className='social-container'>
 							<a href='#' className='social'>
 								<i className='fab fa-facebook-f'></i>
 							</a>
@@ -99,36 +138,82 @@ const Login: React.FC = () => {
 							</a>
 						</div>
 						<span>or use your email for registration</span> */}
-						<div className='form-floating mb-2 mt-2 name-input'>
+						<div
+							className={`form-floating mb-2 mt-2 name-input ${
+								isValidNameLength && isValidNameCharacters
+									? "validated-box"
+									: "not-validated-box"
+							}`}
+						>
 							<input
 								type='text'
 								className='form-control'
 								id='floatingName'
 								placeholder='Username'
 								aria-label='Username'
-								onChange={(e) => setUserName(e.target.value)}
+								onChange={(e) => {
+									handleUserNameChange(e.target.value),
+										setUserName(e.target.value);
+								}}
 							/>
 							<label htmlFor='floatingName'>name</label>
+							<div className='tracker-box email-check-box'>
+								<PasswordValidation
+									className='validation-message  threechr'
+									validated={isValidNameLength}
+									text='username must be 3 to 16 characters long'
+								/>
+								<PasswordValidation
+									className='validation-message  validchr'
+									validated={isValidNameCharacters}
+									text='only alphanumeric characters, (_), or
+								 (-).'
+								/>
+							</div>
 						</div>
-						<div className='form-floating mb-2 email-input'>
+						<div
+							className={`form-floating mb-2 email-input ${
+								isValidEmail ? "validated-box" : "not-validated-box"
+							}`}
+						>
 							<input
 								type='email'
 								className='form-control'
 								id='floatingEmail-signup'
 								placeholder='name@example.com'
-								onChange={(e) => setEmail(e.target.value)}
+								onChange={(e) => {
+									handleEmailChange(e.target.value), setEmail(e.target.value);
+								}}
 							/>
 							<label htmlFor='floatingEmail-signup'>Email address</label>
+							<div className='tracker-box email-check-box'>
+								<PasswordValidation
+									className='validation-message  valid-email'
+									validated={isValidEmail}
+									text='please enter valid email addresss'
+								/>
+							</div>
 						</div>
 
-						<div className='form-floating  mb-2 password-input'>
+						<div
+							className={`form-floating mb-2 password-input ${
+								lowerValidated &&
+								upperValidated &&
+								numberValidated &&
+								specialValidated &&
+								lengthValidated
+									? "validated-box"
+									: "not-validated-box"
+							}`}
+						>
 							<input
 								type={type}
 								className='form-control'
 								id='floatingPassword-signup'
 								placeholder='Password'
 								onChange={(e) => {
-									handleChange(e.target.value), setPassword(e.target.value);
+									handlePasswordChange(e.target.value),
+										setPassword(e.target.value);
 								}}
 							/>
 							<span
@@ -141,34 +226,33 @@ const Login: React.FC = () => {
 							</span>
 
 							<label htmlFor='floatingPassword-signup'>Password</label>
-						</div>
-						{/* validation tracker */}
-						<div className='tracker-box'>
-							<PasswordValidation
-								className='validation-message lowercase'
-								validated={lowerValidated}
-								text='At least one lowercase letter'
-							/>
-							<PasswordValidation
-								className='validation-message  uppercase'
-								validated={upperValidated}
-								text='At least one uppercase letter'
-							/>
-							<PasswordValidation
-								className='validation-message  number'
-								validated={numberValidated}
-								text='At least one number'
-							/>
-							<PasswordValidation
-								className='validation-message  specialchr'
-								validated={specialValidated}
-								text='At least one special character'
-							/>
-							<PasswordValidation
-								className='validation-message  eightchr'
-								validated={lengthValidated}
-								text='At least 8 characters'
-							/>
+							<div className='tracker-box password-check-box'>
+								<PasswordValidation
+									className='validation-message lowercase'
+									validated={lowerValidated}
+									text='At least one lowercase letter'
+								/>
+								<PasswordValidation
+									className='validation-message  uppercase'
+									validated={upperValidated}
+									text='At least one uppercase letter'
+								/>
+								<PasswordValidation
+									className='validation-message  number'
+									validated={numberValidated}
+									text='At least one number'
+								/>
+								<PasswordValidation
+									className='validation-message  specialchr'
+									validated={specialValidated}
+									text='At least one special character'
+								/>
+								<PasswordValidation
+									className='validation-message  eightchr'
+									validated={lengthValidated}
+									text='At least 8 characters'
+								/>
+							</div>
 						</div>
 
 						<button type='submit'>Sign Up</button>
@@ -206,9 +290,7 @@ const Login: React.FC = () => {
 								className='form-control'
 								id='floatingPassword-login'
 								placeholder='Password'
-								onChange={(e) => {
-									handleChange(e.target.value), setPassword(e.target.value);
-								}}
+								onChange={(e) => setPassword(e.target.value)}
 							/>
 							<span
 								className='icon-span'

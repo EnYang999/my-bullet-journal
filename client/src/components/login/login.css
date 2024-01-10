@@ -12,15 +12,24 @@
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 	position: relative;
 	overflow: hidden;
-	width: 768px;
+	width: max(768px, 80%);
 	height: auto;
 	max-width: 100%;
 	min-height: 480px;
 }
-
+.log-container form {
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
 .log-container h1 {
-	font-weight: bold;
-	margin: 0;
+	font-weight: 600;
+	font-size: large;
+	margin: 0.5em auto 0 0.5em;
 }
 
 .log-container p {
@@ -46,7 +55,8 @@
 	border-radius: 2em;
 	border-color: #fff;
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-	background-image: url(../../assets/login/AestheticCloudWllpapersForiPhoneFree.jpg);
+	background-color: #ffecd6;
+	/* background-image: url(../../assets/login/AestheticCloudWllpapersForiPhoneFree.jpg); */
 	color: #ffffff;
 	font-size: 1rem;
 	font-weight: bold;
@@ -68,21 +78,9 @@
 	background-color: transparent;
 }
 
-.log-container form {
-	background-color: #ffffff;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
-	height: 100%;
-	text-align: center;
-}
-
 .log-container input {
 	background-color: #eee;
 	border: none;
-	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
 }
@@ -150,7 +148,7 @@
 .overlay {
 	background: #ff416c;
 	background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-	background-image: url(../../assets/login/CloudySparkleSkackgroundPosterWallrtDigitalPrintPhoneWallpaper.jpg);
+	background-color: #86b6f6;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
