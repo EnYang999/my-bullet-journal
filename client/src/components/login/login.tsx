@@ -31,10 +31,11 @@ const Login: React.FC = () => {
 		e.preventDefault();
 		try {
 			await axios.post("http://localhost:8000/signup", {
-				userName,
 				email,
+				username: userName,
 				password,
 			});
+			console.log("ok");
 		} catch (error) {
 			console.log(error);
 		}
@@ -79,7 +80,12 @@ const Login: React.FC = () => {
 				id='container'
 			>
 				<div className='form-container sign-up-container'>
-					<form action='#' className='needs-validation' noValidate>
+					<form
+						action='#'
+						className='needs-validation'
+						noValidate
+						onSubmit={handleSignup}
+					>
 						{/* <h1>Create Account</h1>
 						<div className='social-container'>
 							<a href='#' className='social'>
@@ -165,9 +171,7 @@ const Login: React.FC = () => {
 							/>
 						</div>
 
-						<button type='submit' onSubmit={handleSignup}>
-							Sign Up
-						</button>
+						<button type='submit'>Sign Up</button>
 					</form>
 				</div>
 				<div className='form-container sign-in-container'>

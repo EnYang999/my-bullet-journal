@@ -38,21 +38,20 @@ const handleErrors = (err) => {
 
 // create json web token
 const maxAge = 3 * 24 * 60 * 60;
-const createToken = (id, username) => {
+const createToken = (id, username, email) => {
 	return jwt.sign({ id, username, email }, "secret", {
 		expiresIn: maxAge,
 	});
 };
 
-// controller actions
-
 module.exports.signup_post = async (req, res) => {
-	const { email, password, username } = req.body;
+	const { email, username, password } = req.body;
 	try {
 		const existed = await User.findOne({ email: email });
+
 		if (existed) {
-			res.status(400).json({ error: "Existed User" });
-			throw Error("User Existed");
+			res.status(400).json({ error: "Existed User" }); // frontend side
+			return;
 		}
 		const user = await User.create({
 			email,
@@ -61,14 +60,13 @@ module.exports.signup_post = async (req, res) => {
 		});
 		const token = createToken(user._id, user.username, user.email);
 		res.cookie("userid", token, { maxAge: maxAge * 1000 });
-		res.status(201).json({ user: user._id });
+		return res.status(201).json({ user: user._id });
 	} catch (err) {
 		const errors = handleErrors(err);
-		res.status(400).json({ errors });
-
+		console.log("server:", errors);
 		if (!res.headersSent) {
-			const errors = handleErrors(err);
-			res.status(400).json({ errors });
+			console.log("inside");
+			res.status(400).json({ errors: "no headers" });
 		}
 	}
 };
@@ -79,11 +77,12 @@ module.exports.login_post = async (req, res) => {
 		const user = await User.findOne({ email: email });
 		if (!user) {
 			res.status(400).json({ error: "Not Existed User" });
-			throw Error("User not found");
+			return;
 		}
 		const auth = await bcrypt.compare(password, user.password);
 		if (!auth) {
-			throw Error("incorrect password");
+			res.status(400).json({ error: "incorrect password" });
+			return;
 		}
 		const token = createToken(user._id, user.username, user.email);
 		res.cookie("userid", token, { maxAge: maxAge * 1000 });
