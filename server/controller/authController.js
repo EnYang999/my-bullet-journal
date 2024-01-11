@@ -28,10 +28,8 @@ module.exports.signup_post = async (req, res) => {
 		res.cookie("userid", token, { maxAge: maxAge * 1000 });
 		return res.status(201).json({ user: user._id });
 	} catch (err) {
-		const errors = handleErrors(err);
-		console.log("server:", errors);
+		console.log(errors);
 		if (!res.headersSent) {
-			console.log("inside");
 			res.status(400).json({ errors: "no headers" });
 		}
 	}

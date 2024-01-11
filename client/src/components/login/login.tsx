@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./login.css";
 import axios from "axios";
 import PasswordValidation from "../passwordvalidation/PasswordValidation";
+import { toast } from "../errortoast/ErrorToastManager";
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
 	const [type, setType] = useState("password");
@@ -16,6 +17,7 @@ const Login: React.FC = () => {
 	const [userName, setUserName] = useState("");
 	const [isValidEmail, setIsValidEmail] = useState(false);
 	const [email, setEmail] = useState("");
+
 	const handleSignUpClick = () => {
 		setSignUp(true);
 	};
@@ -43,18 +45,22 @@ const Login: React.FC = () => {
 				isValidNameCharacters &&
 				isValidEmail
 			) {
-				await axios.post("http://localhost:8000/signup", {
+				const response = await axios.post("http://localhost:8000/signup", {
 					email,
 					username: userName,
 					password,
 				});
-			} else {
+				if (response.status === 201) {
+					console.log("User signed up successfully:", response.data.user);
+				} else {
+					console.error("Error:", response.data.error);
+				}
 			}
-			console.log("ok");
 		} catch (error) {
 			console.log(error);
 		}
 	};
+	// const handleErrorClick =
 	const handleUserNameChange = (value: string) => {
 		const validNameLength = new RegExp("^.{3,16}$");
 		const validCharacters = new RegExp("^[a-zA-Z0-9_-]+$");
@@ -71,7 +77,7 @@ const Login: React.FC = () => {
 	};
 	const handleEmailChange = (value: string) => {
 		const validEmail = new RegExp(
-			"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$"
+			"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$"
 		);
 		if (validEmail.test(value)) {
 			setIsValidEmail(true);
@@ -255,7 +261,18 @@ const Login: React.FC = () => {
 							</div>
 						</div>
 
-						<button type='submit'>Sign Up</button>
+						<button
+							type='submit'
+							onClick={() =>
+								toast.show({
+									title: "Toast title",
+									content: "Toast body",
+									duration: 900000,
+								})
+							}
+						>
+							Sign Up
+						</button>
 					</form>
 				</div>
 				<div className='form-container sign-in-container'>
