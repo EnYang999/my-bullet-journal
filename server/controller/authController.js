@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
-const fetch = require("node-fetch");
+const bcrypt = require("bcrypt");
 
 // create json web token
 const maxAge = 3 * 24 * 60 * 60;
@@ -27,7 +27,7 @@ module.exports.signup_post = async (req, res) => {
 		const token = createToken(user._id, user.username, user.email);
 		res.cookie("userid", token, { maxAge: maxAge * 1000 });
 		return res.status(201).json({ user: user._id });
-	} catch (err) {
+	} catch (errors) {
 		console.log(errors);
 		if (!res.headersSent) {
 			res.status(400).json({ errors: "no headers" });
@@ -50,9 +50,9 @@ module.exports.login_post = async (req, res) => {
 		}
 		const token = createToken(user._id, user.username, user.email);
 		res.cookie("userid", token, { maxAge: maxAge * 1000 });
-		res.status(200).json({ user: user._id });
-	} catch (err) {
-		const errors = handleErrors(err);
+		return res.status(200).json({ user: user._id });
+	} catch (errors) {
+		console.log(errors);
 		res.status(400).json({ errors });
 	}
 };

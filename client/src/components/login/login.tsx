@@ -27,18 +27,20 @@ const Login: React.FC = () => {
 	const handleLogin = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		try {
-			await axios.post("http://localhost:8000/login", { email, password });
-		} catch (error) {
-			console.log(error);
+			await axios.post("http://localhost:8000/login", {
+				email,
+				password,
+			});
+		} catch (error: any) {
+			if (error.response) {
+				toast.show({
+					title: "Error",
+					content: error.response.data.error,
+					duration: 3000,
+				});
+			}
 		}
 	};
-	// const handleSignupError = () => {
-	// 	toast.show({
-	// 		title: "Toast title",
-	// 		content: "Toast body",
-	// 		duration: 3000,
-	// 	});
-	// };
 	const handleSignup = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		try {
@@ -69,11 +71,17 @@ const Login: React.FC = () => {
 					duration: 3000,
 				});
 			}
-		} catch (error) {
-			console.log(error);
+		} catch (error: any) {
+			if (error.response) {
+				toast.show({
+					title: "Error",
+					content: error.response.data.error,
+					duration: 3000,
+				});
+			}
 		}
 	};
-	// const handleErrorClick =
+
 	const handleUserNameChange = (value: string) => {
 		const validNameLength = new RegExp("^.{3,16}$");
 		const validCharacters = new RegExp("^[a-zA-Z0-9_-]+$");
@@ -140,7 +148,7 @@ const Login: React.FC = () => {
 				<div className='form-container sign-up-container'>
 					<h1>Create Account</h1>
 					<form
-						action='#'
+						// action='#'
 						className='needs-validation'
 						noValidate
 						onSubmit={handleSignup}
@@ -278,7 +286,7 @@ const Login: React.FC = () => {
 					</form>
 				</div>
 				<div className='form-container sign-in-container'>
-					<form action='#'>
+					<form noValidate onSubmit={handleLogin}>
 						<h1>Sign in</h1>
 						{/* <div className='social-container'>
 							<a href='#' className='social'>
@@ -323,7 +331,7 @@ const Login: React.FC = () => {
 							<label htmlFor='floatingPassword-login'>Password</label>
 						</div>
 						{/* <a href='#'>Forgot your password?</a> */}
-						<button onSubmit={handleLogin}>Sign In</button>
+						<button>Sign In</button>
 					</form>
 				</div>
 				<div className='overlay-container'>
