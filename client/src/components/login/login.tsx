@@ -32,6 +32,13 @@ const Login: React.FC = () => {
 			console.log(error);
 		}
 	};
+	// const handleSignupError = () => {
+	// 	toast.show({
+	// 		title: "Toast title",
+	// 		content: "Toast body",
+	// 		duration: 3000,
+	// 	});
+	// };
 	const handleSignup = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		try {
@@ -55,6 +62,12 @@ const Login: React.FC = () => {
 				} else {
 					console.error("Error:", response.data.error);
 				}
+			} else {
+				toast.show({
+					title: "Error",
+					content: "please enter valid input",
+					duration: 3000,
+				});
 			}
 		} catch (error) {
 			console.log(error);
@@ -261,18 +274,7 @@ const Login: React.FC = () => {
 							</div>
 						</div>
 
-						<button
-							type='submit'
-							onClick={() =>
-								toast.show({
-									title: "Toast title",
-									content: "Toast body",
-									duration: 900000,
-								})
-							}
-						>
-							Sign Up
-						</button>
+						<button type='submit'>Sign Up</button>
 					</form>
 				</div>
 				<div className='form-container sign-in-container'>

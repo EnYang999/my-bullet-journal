@@ -47,7 +47,7 @@ const Toast: React.FC<ToastProps> = (props) => {
 	);
 };
 // export default Toast;
-// const shouldRerender = (prevProps: ToastProps, nextProps: ToastProps) => {
-// 	return prevProps.id === nextProps.id;
-// };
-// export default React.memo(Toast, shouldRerender);
+const shouldRerender = (prevProps: ToastProps, nextProps: ToastProps) => {
+	return prevProps.id === nextProps.id;
+};
+export default React.memo(Toast, shouldRerender);

@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import Toast, { ToastProps } from "./ErrorToast";
-
+import "./ErrorToast.css";
 interface ToastOptions {
 	id?: string;
 	title: string;
@@ -35,6 +35,11 @@ export class ToastManager {
 	}
 
 	public destroy(id: string): void {
+		// fade out doesn't work
+		// const toastElement = document.getElementById(id);
+		// if (toastElement) {
+		// 	toastElement.classList.add("fadeOut");
+		// }
 		this.toasts = this.toasts.filter((toast: ToastProps) => toast.id !== id);
 		this.render();
 	}
