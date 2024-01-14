@@ -4,10 +4,8 @@ import img28 from "../../assets/img/28.jpg";
 import img29 from "../../assets/img/29.jpg";
 import img30 from "../../assets/img/30.jpg";
 import img31 from "../../assets/img/31.jpg";
-// import Flickity from "react-flickity-component";
 import { useRef, useEffect } from "react";
 import Flickity from "flickity";
-// import Flickity from "react-flickity-component";
 import "flickity/css/flickity.css";
 
 const LandingDish = () => {
