@@ -7,16 +7,21 @@ import Wednesday from "./components/wednesday/Wednesday";
 import Thursday from "./components/thursday/Thursday";
 import Friday from "./components/friday/Friday";
 import Weekend from "./components/weekend/Weekend";
-import WeekContainer from "./components/week-box-container/WeekContainer";
 import SeptemberWeekMobile from "./components/SeptemberWeekMobile/SeptemberWeekMobile";
 import SidePage from "./components/sidebarpage/SidePage";
+import LandingAbout from "./components/landingsection/LandingAbout";
+import LandingSectiona from "./components/landingsection/LandingSectiona";
+import LandingSectionb from "./components/landingsection/LandingSectionb";
+import HeaderLanding from "./components/header/HeaderLanding";
+import TempNavbar from "./components/tempnav/TempNavbar";
 function App() {
 	return (
 		<>
-			{/* <RabbitStamp stampWidth={10} /> */}
-			{/* <SeptemberWeek className={"temp_1"} /> */}
-			<SeptemberWeekMobile />
-			{/* <SidePage /> */}
+			<TempNavbar />
+			<HeaderLanding />
+			<LandingSectiona />
+			<LandingSectionb />
+			<LandingAbout />
 		</>
 	);
 }
