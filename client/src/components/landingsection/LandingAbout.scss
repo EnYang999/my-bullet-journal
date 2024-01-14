@@ -1,22 +1,23 @@
 
-@import '../scss/theme/mixins';
-@import '../scss/theme/type';
-@import '../scss/theme/descorations';
-@import "../../../node_modules/bootstrap/scss/bootstrap";
-@import 'bootstrap';
+// @import '../scss/theme/mixins';
+// @import '../scss/theme/type';
+// @import '../scss/theme/descorations';
+// @import "../../../node_modules/bootstrap/scss/bootstrap";
+// @import 'bootstrap';
 // Required
-@import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/functions";
 
-// Required
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/variables-dark";
-@import "../../../node_modules/bootstrap/scss/maps";
-@import "../../../node_modules/bootstrap/scss/mixins";
-@import "../../../node_modules/bootstrap/scss/root";
+// // Required
+// @import "../../../node_modules/bootstrap/scss/variables";
+// @import "../../../node_modules/bootstrap/scss/variables-dark";
+// @import "../../../node_modules/bootstrap/scss/maps";
+// @import "../../../node_modules/bootstrap/scss/mixins";
+// @import "../../../node_modules/bootstrap/scss/root";
 
 // Optional Bootstrap components here
-@import "../../../node_modules/bootstrap/scss/reboot";
-@import "../../../node_modules/bootstrap/scss/type";
+// @import "../../../node_modules/bootstrap/scss/reboot";
+// @import "../../../node_modules/bootstrap/scss/type";
+
 section.about{
     background-image: url(./../../assets/img/19.jpg);
     position: relative;
