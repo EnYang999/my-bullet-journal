@@ -15,6 +15,7 @@ import LandingSectionb from "./components/landingsection/LandingSectionb";
 import HeaderLanding from "./components/header/HeaderLanding";
 import TempNavbar from "./components/tempnav/TempNavbar";
 import LandingMenu from "./components/landingsection/LandingMenu";
+import LandingDish from "./components/landingsection/LandingDish";
 function App() {
 	return (
 		<>
@@ -24,6 +25,7 @@ function App() {
 			<LandingSectionb />
 			<LandingAbout />
 			<LandingMenu />
+			<LandingDish />
 		</>
 	);
 }
