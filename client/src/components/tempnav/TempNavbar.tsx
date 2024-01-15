@@ -50,7 +50,7 @@ const TempNavbar = () => {
 					data-bs-toggle='collapse'
 					data-bs-target='#navbarCollapse'
 					aria-controls='navbarCollapse'
-					aria-expanded='false'
+					aria-expanded={showCollapse ? "true" : "false"}
 					aria-label='Toggle navigation'
 					onClick={handleNavClick}
 				>
