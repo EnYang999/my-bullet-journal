@@ -1,6 +1,6 @@
 import "./RabbitMother.css";
-import star3 from "../../assets/img/star-vector-3.svg";
-import rabbitMother from "../../assets/img/rabbit-mother.png";
+import star3 from "../../../assets/img/star-vector-3.svg";
+import rabbitMother from "../../../assets/img/rabbit-mother.png";
 interface Props {
 	className: string;
 }

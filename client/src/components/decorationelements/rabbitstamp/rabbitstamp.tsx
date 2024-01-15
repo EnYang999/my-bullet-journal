@@ -1,8 +1,8 @@
-import rabbitRun from "../../assets/img/rabbit-run.png";
-import shadow from "../../assets/img/shodow.png";
-import star5 from "../../assets/img/star-vector-5.svg";
-import headShadow from "../../assets/img/head-shadow.svg";
-import line from "../../assets/img/line-1.svg";
+import rabbitRun from "../../../assets/img/rabbit-run.png";
+import shadow from "../../../assets/img/shodow.png";
+import star5 from "../../../assets/img/star-vector-5.svg";
+import headShadow from "../../../assets/img/head-shadow.svg";
+import line from "../../../assets/img/line-1.svg";
 import "./rabbitstamp.css";
 interface Props {
 	stampWidth: number;

@@ -1,5 +1,4 @@
 import "./App.css";
-import { SeptemberWeek } from "../src/components/SeptemberWeek/SeptemberWeek";
 import RabbitStamp from "./components/decorationelements/rabbitstamp/rabbitstamp";
 import Monday from "./components/monday/Monday";
 import Tuesday from "./components/tuesday/Tuesday";
@@ -8,6 +7,7 @@ import Thursday from "./components/thursday/Thursday";
 import Friday from "./components/friday/Friday";
 import Weekend from "./components/weekend/Weekend";
 import SeptemberWeekMobile from "./components/SeptemberWeekMobile/SeptemberWeekMobile";
+import SeptemberWeekComputer from "./components/SeptemberWeekComputer/septemberweekcomputer";
 import SidePage from "./components/sidebarpage/SidePage";
 import LandingAbout from "./components/landingsection/LandingAbout";
 import LandingSectiona from "./components/landingsection/LandingSectiona";
@@ -21,7 +21,7 @@ import LandingGallary from "./components/landingsection/LandingGallary";
 function App() {
 	return (
 		<>
-			<LandingNavbar />
+			{/* <LandingNavbar />
 			<LandingHeader />
 			<LandingSectiona />
 			<LandingSectionb />
@@ -29,7 +29,8 @@ function App() {
 			<LandingMenu />
 			<LandingDish />
 			<LandingTestimonial />
-			<LandingGallary />
+			<LandingGallary /> */}
+			<SeptemberWeekComputer />
 		</>
 	);
 }

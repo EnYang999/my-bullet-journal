@@ -1,11 +1,11 @@
 import { ToDoLine } from "../todolines/todoline";
-import "./Thursday.css";
+import "../scss/theme/_todobox.scss";
 import thursdayShape from "../../assets/img/thursday-shape.svg";
 const Thursday = () => {
 	return (
 		<div className='week-box thursday  sep-thursday-box'>
 			<div className='week-overlap overlap-4'>
-				<figure className='fig-thursday'>
+				<figure className='week-fig fig-thursday'>
 					<img
 						className='week-shape thursday-shape'
 						alt='Thursday shape'

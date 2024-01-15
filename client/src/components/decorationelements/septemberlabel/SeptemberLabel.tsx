@@ -1,6 +1,6 @@
 import "./SeptemberLabel.css";
 import { StarShape } from "../starShape";
-import star4 from "../../assets/img/star-shape.svg";
+import star4 from "../../../assets/img/star-shape.svg";
 
 interface Props {
 	className: string;
