@@ -20,17 +20,13 @@ const LandingGallary = () => {
 			iso.destroy();
 		};
 	}, []);
-	const handleImageClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+	const handleImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		e.preventDefault();
-		const imgSrc = e.currentTarget.dataset.imgsrc;
-
-		if (imgSrc) {
-			BigPicture({
-				gallery: "#landing_gallary_container",
-				imgSrc: imgSrc,
-				loop: true,
-			});
-		}
+		BigPicture({
+			el: e.target,
+			gallery: "#landing_gallary_container",
+			galleryAttribute: "src",
+		});
 	};
 	return (
 		<section className='py-7 py-md-9'>
@@ -50,18 +46,14 @@ const LandingGallary = () => {
 					className='row gx-3'
 					id='landing_gallary_container'
 					data-isotope
-					style={{ position: "relative" }}
+					onClick={handleImageClick}
 				>
-					<div
-						className='col-6 col-sm-6 col-md-4 grid-item'
-						style={{ position: "absolute" }}
-					>
+					<div className='col-6 col-sm-6 col-md-4 grid-item'>
 						{/* <!--Item  --> */}
 						<a
 							className='d-block mb-3'
 							data-imgsrc={img11}
 							data-bigpicture={img11}
-							onClick={handleImageClick}
 						>
 							<img
 								className='img-fluid'
@@ -71,17 +63,13 @@ const LandingGallary = () => {
 							/>
 						</a>
 					</div>
-					<div
-						className='col-6 col-sm-6 col-md-4 grid-item'
-						style={{ position: "absolute" }}
-					>
+					<div className='col-6 col-sm-6 col-md-4 grid-item'>
 						{/* <!--Item  --> */}
 						<a
 							className='d-block mb-3'
 							// data-bigpicture={img16}
 							data-imgsrc={img16}
 							data-bigpicture={img16}
-							onClick={handleImageClick}
 						>
 							<img
 								className='img-fluid'
@@ -92,16 +80,12 @@ const LandingGallary = () => {
 							/>
 						</a>
 					</div>
-					<div
-						className='col-6 col-sm-6 col-md-4 grid-item'
-						style={{ position: "absolute" }}
-					>
+					<div className='col-6 col-sm-6 col-md-4 grid-item'>
 						{/* <!--Item  --> */}
 						<a
 							className='d-block mb-3'
 							data-bigpicture={img13}
 							data-imgsrc={img13}
-							onClick={handleImageClick}
 						>
 							<img
 								className='img-fluid'
@@ -111,16 +95,12 @@ const LandingGallary = () => {
 							/>
 						</a>
 					</div>
-					<div
-						className='col-6 col-sm-6 col-md-4 grid-item'
-						style={{ position: "absolute" }}
-					>
+					<div className='col-6 col-sm-6 col-md-4 grid-item'>
 						{/* <!--Item  --> */}
 						<a
 							className='d-block mb-3'
 							data-bigpicture={img15}
 							data-imgsrc={img15}
-							onClick={handleImageClick}
 						>
 							<img
 								className='img-fluid'
@@ -130,16 +110,12 @@ const LandingGallary = () => {
 							/>
 						</a>
 					</div>
-					<div
-						className='col-6 col-sm-6 col-md-4 grid-item'
-						style={{ position: "absolute" }}
-					>
+					<div className='col-6 col-sm-6 col-md-4 grid-item'>
 						{/* <!--Item  --> */}
 						<a
 							className='d-block mb-3'
 							data-bigpicture={img14}
 							data-imgsrc={img14}
-							onClick={handleImageClick}
 						>
 							<img
 								className='img-fluid'
@@ -149,16 +125,12 @@ const LandingGallary = () => {
 							/>
 						</a>
 					</div>
-					<div
-						className='col-6 col-sm-6 col-md-4 grid-item'
-						style={{ position: "absolute" }}
-					>
+					<div className='col-6 col-sm-6 col-md-4 grid-item'>
 						{/* <!--Item  --> */}
 						<a
 							className='d-block mb-3'
 							data-bigpicture={img18}
 							data-imgsrc={img18}
-							onClick={handleImageClick}
 						>
 							<img
 								className='img-fluid'
@@ -168,16 +140,12 @@ const LandingGallary = () => {
 							/>
 						</a>
 					</div>
-					<div
-						className='col-6 col-sm-6 col-md-4 grid-item'
-						style={{ position: "absolute" }}
-					>
+					<div className='col-6 col-sm-6 col-md-4 grid-item'>
 						{/* <!--Item  --> */}
 						<a
 							className='d-block mb-3'
 							data-bigpicture={img17}
 							data-imgsrc={img17}
-							onClick={handleImageClick}
 						>
 							<img
 								className='img-fluid'
@@ -187,16 +155,12 @@ const LandingGallary = () => {
 							/>
 						</a>
 					</div>
-					<div
-						className='col-6 col-sm-6 col-md-4 grid-item'
-						style={{ position: "absolute" }}
-					>
+					<div className='col-6 col-sm-6 col-md-4 grid-item'>
 						{/* <!--Item  --> */}
 						<a
 							className='d-block mb-3'
 							data-bigpicture={img12}
 							data-imgsrc={img12}
-							onClick={handleImageClick}
 						>
 							<img
 								className='img-fluid'
@@ -213,26 +177,3 @@ const LandingGallary = () => {
 };
 
 export default LandingGallary;
-
-{
-	/* <div className='row gx-3' data-isotope style={{ position: "relative" }}>
-	<div className='col-6 col-sm-6 col-md-4' style={{ position: "absolute" }}>
-		<a
-			className='d-block mb-3'
-			
-			data-bigpicture='{ "imgSrc": "assets/img/11.jpg" }'
-		>
-			<img className='img-fluid' src={img11} alt='...' />
-		</a>
-	</div>
-	<div className='col-6 col-sm-6 col-md-4' style={{ position: "absolute" }}>
-		<a
-			className='d-block mb-3'
-			href='#'
-			data-bigpicture='{ "imgSrc": "assets/img/16.jpg" }'
-		>
-			<img className='img-fluid' src={img16} alt='...' />
-		</a>
-	</div>
-</div>; */
-}
