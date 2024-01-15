@@ -1,7 +1,19 @@
 import "./HeaderLanding.css";
+import { useEffect } from "react";
+import { jarallax } from "jarallax";
+import landingBackground from "../../assets/landing/sixteen-miles-out-6Ahp8-YMoww-unsplash.jpg";
 const HeaderLanding = () => {
+	useEffect(() => {
+		jarallax(document.querySelectorAll(".jarallaxHeader"), {
+			speed: 0.8,
+			imgSrc: landingBackground,
+		});
+		return () => {
+			jarallax(document.querySelectorAll(".jarallaxHeader"), "destroy");
+		};
+	}, []);
 	return (
-		<header data-jarallax data-speed='.8' className='welcome'>
+		<header data-jarallax data-speed='.8' className='welcome jarallaxHeader'>
 			<div className='d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0'>
 				<div className='container my-auto'>
 					<div className='row justify-content-center'>
