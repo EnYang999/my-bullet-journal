@@ -17,6 +17,7 @@ import TempNavbar from "./components/tempnav/TempNavbar";
 import LandingMenu from "./components/landingsection/LandingMenu";
 import LandingDish from "./components/landingsection/LandingDish";
 import LandingTestimonial from "./components/landingsection/LandingPeoplesay";
+import LandingGallary from "./components/landingsection/LandingGallary";
 function App() {
 	return (
 		<>
@@ -28,6 +29,7 @@ function App() {
 			<LandingMenu />
 			<LandingDish />
 			<LandingTestimonial />
+			<LandingGallary />
 		</>
 	);
 }
