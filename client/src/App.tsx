@@ -1,6 +1,6 @@
 import "./App.css";
 import { SeptemberWeek } from "../src/components/SeptemberWeek/SeptemberWeek";
-import RabbitStamp from "./components/rabbitstamp/rabbitstamp";
+import RabbitStamp from "./components/decorationelements/rabbitstamp/rabbitstamp";
 import Monday from "./components/monday/Monday";
 import Tuesday from "./components/tuesday/Tuesday";
 import Wednesday from "./components/wednesday/Wednesday";

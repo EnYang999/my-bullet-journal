@@ -9,7 +9,7 @@ interface Props {
 	className: string;
 }
 
-const RabbitStamp = ({ stampWidth, className }: Props): JSX.Element => {
+const RabbitStamp = ({ className }: Props): JSX.Element => {
 	return (
 		<div className={`rabbit-stamp-overlap-group ${className}`}>
 			<img className='star-vector-5' alt='Star vector' src={star5} />

@@ -1,8 +1,8 @@
 import WeekContainerMobile from "../week-box-container-mobile/WeekContainerMobile";
-import RabbitStamp from "../rabbitstamp/rabbitstamp";
+import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
 import "./SeptemberWeekMobile.css";
-import RabbitMother from "../RabbitMother/RabbitMother";
-import SeptemberLabel from "../septemberlabel/SeptemberLabel";
+import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
+import SeptemberLabel from "../decorationelements/septemberlabel/SeptemberLabel";
 const SeptemberWeekMobile = () => {
 	return (
 		<div className='september-week-mobile'>

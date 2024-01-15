@@ -1,6 +1,5 @@
-import React from "react";
 import "./SeptemberLabel.css";
-import { StarShape } from "../../icons/starShape/starShape";
+import { StarShape } from "../starShape";
 import star4 from "../../assets/img/star-shape.svg";
 
 interface Props {

@@ -11,18 +11,11 @@ import thursdayShape from "../../assets/img/thursday-shape.svg";
 import weekendShape from "../../assets/img/weekend-shape.svg";
 import RabbitMother from "../../assets/img/rabbit-mother.png";
 
-import star1 from "../../assets/img/star-vector-1.svg";
-import star2 from "../../assets/img/star-vector-2.svg";
-import star3 from "../../assets/img/star-vector-3.svg";
-
-import star4 from "../../assets/img/star-shape.svg";
-
-import { StarShape } from "../../icons/starShape/starShape";
 import "./SeptemberWeek.css";
 // import "./test.css";
 import { ToDoLine } from "../todolines/todoline";
-import RabbitStamp from "../rabbitstamp/rabbitstamp";
-import Monday from "../monday/Monday";
+import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
+
 interface Props {
 	className: string;
 }

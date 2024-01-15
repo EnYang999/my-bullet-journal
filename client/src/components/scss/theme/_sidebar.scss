@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Sono:wght@300;400;500;600&display=swap");
 
-* {
-    font-family: "Sono", monospace;
-}
 
 :root {
     --sidebar-color: #c5dafb;
@@ -84,7 +81,6 @@
 } */
 .pagination-overlap a {
     display: block;
-    /* padding-left: 0.5em; */
     width: 100%;
     display: flex;
     justify-content: left;
@@ -103,10 +99,3 @@
     line-height: var(--sidebar-letter-height);
 }
 
-.pagination-container .jan {
-    background-color: #88ab8e;
-}
-
-.pagination-container .feb {
-    background-color: #9bb8cd;
-}
