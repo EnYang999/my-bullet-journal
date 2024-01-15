@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./todoline.css";
+import "../scss/theme/_todolines.scss";
 interface Props {
 	className: any;
 	tickBoxClassName: any;

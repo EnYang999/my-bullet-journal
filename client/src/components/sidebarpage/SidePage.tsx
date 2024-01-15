@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./SidePage.css";
+import "../scss/theme/_sidebar.scss";
 interface Props {
 	className: string;
 }
