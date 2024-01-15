@@ -70,13 +70,13 @@ const TempNavbar = () => {
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./menu.html'>
-								Menu
+							<a className='nav-link ' href='./month-planner.html'>
+								Month Planner
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./reservation.html'>
-								Reservation
+							<a className='nav-link ' href='./weekly-planner.html'>
+								Weekly
 							</a>
 						</li>
 					</ul>
@@ -102,8 +102,8 @@ const TempNavbar = () => {
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./contact-us.html'>
-								Contact
+							<a className='nav-link ' href='./login.html'>
+								Log In
 							</a>
 						</li>
 					</ul>
