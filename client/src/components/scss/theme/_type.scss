@@ -2,6 +2,17 @@
 // type.scss
 //
 
+.no-wrap{
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+    .no-wrap {
+        white-space: normal;
+    }
+}
+
+
 // Text
  
 .text-xs {

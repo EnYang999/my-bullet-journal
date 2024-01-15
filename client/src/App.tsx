@@ -12,8 +12,8 @@ import SidePage from "./components/sidebarpage/SidePage";
 import LandingAbout from "./components/landingsection/LandingAbout";
 import LandingSectiona from "./components/landingsection/LandingSectiona";
 import LandingSectionb from "./components/landingsection/LandingSectionb";
-import HeaderLanding from "./components/header/HeaderLanding";
-import TempNavbar from "./components/tempnav/TempNavbar";
+import LandingHeader from "./components/landingsection/LandingHeader";
+import LandingNavbar from "./components/landingsection/LandingNavbar";
 import LandingMenu from "./components/landingsection/LandingMenu";
 import LandingDish from "./components/landingsection/LandingDish";
 import LandingTestimonial from "./components/landingsection/LandingPeoplesay";
@@ -21,8 +21,8 @@ import LandingGallary from "./components/landingsection/LandingGallary";
 function App() {
 	return (
 		<>
-			<TempNavbar />
-			<HeaderLanding />
+			<LandingNavbar />
+			<LandingHeader />
 			<LandingSectiona />
 			<LandingSectionb />
 			<LandingAbout />

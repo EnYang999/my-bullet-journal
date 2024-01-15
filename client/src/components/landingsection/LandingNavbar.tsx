@@ -1,6 +1,5 @@
-import "./TempNavbar.css";
 import { useState, useEffect } from "react";
-const TempNavbar = () => {
+const LandingNavbar = () => {
 	const [prevScrollPos, setPrevScrollPos] = useState(0);
 	const [visible, setVisible] = useState(true);
 	const [showCollapse, setShowCollapse] = useState(false);
@@ -113,4 +112,4 @@ const TempNavbar = () => {
 	);
 };
 
-export default TempNavbar;
+export default LandingNavbar;

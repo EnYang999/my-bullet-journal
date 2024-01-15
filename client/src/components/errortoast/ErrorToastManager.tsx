@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import Toast, { ToastProps } from "./ErrorToast";
-import "./ErrorToast.css";
+import "../scss/theme/_toast.scss";
 interface ToastOptions {
 	id?: string;
 	title: string;

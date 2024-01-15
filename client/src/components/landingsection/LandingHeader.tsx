@@ -1,8 +1,8 @@
-import "./HeaderLanding.css";
 import { useEffect } from "react";
 import { jarallax } from "jarallax";
 import landingBackground from "../../assets/landing/sixteen-miles-out-6Ahp8-YMoww-unsplash.jpg";
-const HeaderLanding = () => {
+
+const LandingHeader = () => {
 	useEffect(() => {
 		jarallax(document.querySelectorAll(".jarallaxHeader"), {
 			speed: 0.8,
@@ -20,16 +20,16 @@ const HeaderLanding = () => {
 						<div className='col-12 col-md-8 col-lg-6 text-center'>
 							{/* <!--Preheading  --> */}
 							<h6 className='text-xs text-white-75'>
-								<span className='text-primary'>Café</span> / Restaurant
+								<span className='text-primary'>TEMPO</span> / Vita
 							</h6>
 
 							{/* <!--Heading  --> */}
-							<h1 className='display-1 text-white mb-4'>Touché</h1>
+							<h1 className='display-1 text-white mb-4'>journal</h1>
 
 							{/* <!--Subheading  --> */}
 							<p className='text-center text-white-75 mb-7'>
-								A unique café located in the heart of Los Angeles. Always fresh
-								coffee and biscuits. Open for indoor dining and to-go orders.
+								Time, like a river, flows with each passing second, carrying the
+								stories of our lives
 							</p>
 
 							{/* <!--Button  --> */}
@@ -78,4 +78,4 @@ const HeaderLanding = () => {
 	);
 };
 
-export default HeaderLanding;
+export default LandingHeader;
