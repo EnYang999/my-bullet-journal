@@ -1,9 +1,9 @@
-import Monday from "../monday/Monday";
-import Tuesday from "../tuesday/Tuesday";
-import Wednesday from "../wednesday/Wednesday";
-import Thursday from "../thursday/Thursday";
-import Friday from "../friday/Friday";
-import Weekend from "../weekend/Weekend";
+import Monday from "../Monday";
+import Tuesday from "../Tuesday";
+import Wednesday from "../Wednesday";
+import Thursday from "../Thursday";
+import Friday from "../Friday";
+import Weekend from "../Weekend";
 import "./WeekContainerComputer.css";
 
 interface Props {
