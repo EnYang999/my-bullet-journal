@@ -70,12 +70,12 @@ const LandingNavbar = () => {
 						</li>
 						<li className='nav-item'>
 							<a className='nav-link ' href='./month-planner.html'>
-								Month Planner
+								Monthly Planner
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./weekly-planner.html'>
-								Weekly
+							<a className='nav-link ' href='./habits.html'>
+								Habits Tracker
 							</a>
 						</li>
 					</ul>
@@ -91,8 +91,8 @@ const LandingNavbar = () => {
 					{/* <!--Navbar nav  --> */}
 					<ul className='navbar-nav'>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./news-and-events.html'>
-								News & Events
+							<a className='nav-link ' href='./themes.html'>
+								Themes
 							</a>
 						</li>
 						<li className='nav-item'>

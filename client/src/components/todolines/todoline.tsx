@@ -22,8 +22,7 @@ export const ToDoLine = ({
 		<div className={`todo-wrapper ${className}`}>
 			<input
 				type='checkbox'
-				id={`cbx-${boxId} `}
-				className={`tick-box`}
+				id={`cbx-${boxId}`}
 				checked={isChecked}
 				onChange={handleCheckboxChange}
 				style={{ display: "none" }}

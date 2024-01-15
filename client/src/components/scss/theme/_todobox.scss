@@ -1,7 +1,7 @@
 // &:root {
-//     --sep-friday-todolines-height: 1.75rem;
+//     
 // }
-
+$sep-friday-todolines-height: 1.75rem;
 figure {
     padding: 0;
     margin: 0;
@@ -48,10 +48,6 @@ figure {
         .tick-box {
             width: var(--sep-friday-todolines-height);
             height: var(--sep-friday-todolines-height);
-        }
-
-        .cbx {
-            column-gap: 5%;
         }
 
         .input-box {

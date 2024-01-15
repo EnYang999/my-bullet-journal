@@ -1,3 +1,20 @@
+$color_1: var(--font-active);
+$color_2: var(--font-disabled);
+$font-family_1: monospace;
+$background-color_1: var(--tick-box-background);
+$background-color_2: var(--input-box-background);
+$background-color_3: var(--tick-box-checked-background);
+$border-color_1: var(--input-border-default);
+$border-color_2: var(--focus-border);
+$border-color_3: var(--tick-border-checked);
+
+
+@keyframes check {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
 .todo-wrapper {
     position: relative;
     width: 100%;
@@ -16,153 +33,157 @@
     --strike-line: #e3e3e3;
     --blink-color: rgb(170, 225, 255);
     --focus-border: rgb(198, 226, 241);
-}
 
-.todo-wrapper input {
-    appearance: none;
-    border: 0.1em solid var(--input-border);
-    box-shadow: 0.1em 0.1em 0.4em var(--border-shadow);
-    padding: 0.25em 0.4em;
-}
+    input {
+        appearance: none;
+        border: 0.1em solid var(--input-border);
+        box-shadow: 0.1em 0.1em 0.4em var(--border-shadow);
+        padding: 0.25em 0.4em;
+    }
 
-.todo-wrapper .cbx {
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    /* cursor: pointer; */
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: grid;
-    grid-template-columns: 1.5em 2fr;
-    grid-template-areas: "tick-box input-field";
-    column-gap: 0.5em;
-}
+    .cbx {
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.5em 2fr;
+        grid-template-areas: "tick-box input-field";
+        column-gap: 5%;
 
-.todo-wrapper .cbx span {
-    transform: translate3d(0, 0, 0);
-    outline: none;
-}
+        span {
+            transform: translate3d(0, 0, 0);
+            outline: none;
+        }
 
-.todo-wrapper .cbx .tick-box {
-    display: grid;
-    grid-area: tick-box;
-    position: relative;
-    background-color: var(--tick-box-background);
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 30%;
-    transform: scale(1);
-    border: 0.1em solid var(--input-border-default);
-    transition: all 0.2s ease;
-}
+        .tick-box {
+            display: grid;
+            grid-area: tick-box;
+            position: relative;
+            background-color: $background-color_1;
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 30%;
+            transform: scale(1);
+            border: 0.1em solid var(--input-border-default);
+            transition: all 0.2s ease;
 
-.todo-wrapper .cbx .tick-box svg {
-    position: absolute;
-    top: 0.2em;
-    left: 0.2em;
-    z-index: 1;
-    width: 80%;
-    height: 70%;
-    fill: none;
-    stroke: white;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 16px;
-    stroke-dashoffset: 16px;
-    transition: all 0.3s ease;
-    transition-delay: 0.1s;
-    transform: translate3d(0, 0, 0);
-}
+            svg {
+                position: absolute;
+                top: 0.2em;
+                left: 0.2em;
+                z-index: 1;
+                width: 80%;
+                height: 70%;
+                fill: none;
+                stroke: white;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-dasharray: 16px;
+                stroke-dashoffset: 16px;
+                transition: all 0.3s ease;
+                transition-delay: 0.1s;
+                transform: translate3d(0, 0, 0);
+            }
 
-.todo-wrapper .cbx .tick-box:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--blink-color);
-    display: block;
-    transform: scale(0);
-    opacity: 1;
-    border-radius: 50%;
-    transition-delay: 0.2s;
-}
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: var(--blink-color);
+                display: block;
+                transform: scale(0);
+                opacity: 1;
+                border-radius: 50%;
+                transition-delay: 0.2s;
+            }
+        }
 
-.todo-wrapper .cbx .input-box {
-    display: grid;
-    grid-area: input-field;
-    height: 1.5em;
-    position: absolute;
-    width: 100%;
-}
+        .input-box {
+            display: grid;
+            grid-area: input-field;
+            height: 1.5em;
+            position: absolute;
+            width: 100%;
 
-.todo-wrapper .cbx .input-field {
-    width: 100%;
-    height: 1.5em;
-    border-radius: 0.4em;
-    color: var(--font-active);
-    border: 0.1em solid var(--input-border-default);
-    border-color: var(--input-border-default);
-    background-color: var(--input-box-background);
-    font-family: monospace;
-}
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0.7em;
+                left: 0;
+                height: 1px;
+                width: 100%;
+                background: var(--strike-line);
+                transform-origin: 0 0;
+                transform: scaleX(0);
+            }
+        }
 
-.todo-wrapper .cbx .input-box:after {
-    content: "";
-    position: absolute;
-    top: 0.7em;
-    left: 0;
-    height: 1px;
-    width: 100%;
-    background: var(--strike-line);
-    transform-origin: 0 0;
-    transform: scaleX(0);
-}
+        .input-field {
+            width: 100%;
+            height: 1.5em;
+            border-radius: 0.4em;
+            color: $color_1;
+            border: 0.1em solid var(--input-border-default);
+            border-color: $border-color_1;
+            background-color: $background-color_2;
+            font-family: $font-family_1;
 
-.todo-wrapper .cbx .input-field:focus,
-.todo-wrapper .cbx .input-field:focus-visible {
-    outline: none;
-}
+            &:focus {
+                outline: none;
+            }
 
-.todo-wrapper .cbx:hover .tick-box,
-.todo-wrapper .cbx:hover .input-field {
-    border-color: var(--focus-border);
-}
+            &:focus-visible {
+                outline: none;
+            }
+        }
 
-.todo-wrapper .tick-box:checked+.cbx .tick-box {
-    border-color: var(--tick-border-checked);
-    background: var(--tick-box-checked-background);
-    animation: check 0.6s ease;
-}
+        &:hover {
+            .tick-box {
+                border-color: $border-color_2;
+            }
 
-.todo-wrapper .tick-box:checked+.cbx .input-field {
-    border-color: var(--tick-border-checked);
-    background: var(--tick-box-checked-background);
-}
+            .input-field {
+                border-color: $border-color_2;
+            }
+        }
+    }
 
-.todo-wrapper .tick-box:checked+.cbx .tick-box svg {
-    stroke-dashoffset: 0;
-}
+    .tick-box {
+        &:checked+.cbx {
+            .tick-box {
+                border-color: $border-color_3;
+                background: var(--tick-box-checked-background);
+                animation: check 0.6s ease;
 
-.todo-wrapper .tick-box:checked+.cbx .tick-box:before {
-    transform: scale(2.2);
-    opacity: 0;
-    transition: all 0.6s ease;
-}
+                svg {
+                    stroke-dashoffset: 0;
+                }
 
-.todo-wrapper .tick-box:checked+.cbx .input-field {
-    color: var(--font-disabled);
-    background-color: var(--tick-box-checked-background);
-    transition: all 0.3s ease;
-}
+                &:before {
+                    transform: scale(2.2);
+                    opacity: 0;
+                    transition: all 0.6s ease;
+                }
+            }
 
-.todo-wrapper .tick-box:checked+.cbx .input-box:after {
-    transform: scaleX(1);
-    transition: all 0.3s ease;
-}
+            .input-field {
+                border-color: $border-color_3;
+                background: var(--tick-box-checked-background);
+                color: $color_2;
+                background-color: $background-color_3;
+                transition: all 0.3s ease;
+            }
 
-@keyframes check {
-    50% {
-        transform: scale(1.2);
+            .input-box {
+                &:after {
+                    transform: scaleX(1);
+                    transition: all 0.3s ease;
+                }
+            }
+        }
     }
 }
