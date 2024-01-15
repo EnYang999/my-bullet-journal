@@ -1,7 +1,36 @@
 import "./TempNavbar.css";
+import { useState, useEffect } from "react";
 const TempNavbar = () => {
+	const [prevScrollPos, setPrevScrollPos] = useState(0);
+	const [visible, setVisible] = useState(true);
+
+	const handleScroll = () => {
+		const currentScrollPos = window.scrollY;
+
+		setVisible(
+			(prevScrollPos > currentScrollPos &&
+				prevScrollPos - currentScrollPos > 70) ||
+				(prevScrollPos < currentScrollPos &&
+					currentScrollPos - prevScrollPos > 70)
+		);
+
+		setPrevScrollPos(currentScrollPos);
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
-		<nav className='navbar navbar-dark navbar-expand-lg navbar-togglable fixed-top'>
+		<nav
+			className={`navbar ${
+				visible ? "navbar-light" : "navbar-dark"
+			} navbar-expand-lg navbar-togglable fixed-top`}
+		>
 			<div className='container'>
 				{/*  {/* <!--Navbar brand (mobile)  --> */}
 				<a className='navbar-brand d-lg-none' href='./index.html'>
