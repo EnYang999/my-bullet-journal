@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@300;400;500;600&display=swap");
+
+
+:root {
+    --sidebar-color: #c5dafb;
+    --sidebar-thickness: 5px;
+    --sidebar-padding: 5px;
+    --sidebar-width: 2rem;
+    --sidebar-width-hover: 3.5rem;
+    --sidebar-curve: 1.875rem;
+    --sidebar-curve-mask: 0.938rem;
+    --sidebar-letter-height: 3.75rem;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.pagination-overlap {
+    background: transparent;
+    box-shadow: var(--sidebar-thickness) 0 0 transparent;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.pagination-overlap ul {
+    padding-left: var(--sidebar-padding);
+    padding-top: var(--sidebar-padding);
+    padding-bottom: var(--sidebar-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2em;
+    justify-content: left;
+}
+
+.pagination-overlap li {
+    position: relative;
+    list-style: none;
+    width: var(--sidebar-width);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: all 0.5s;
+    padding-left: 1em;
+    padding-right: 0.5em;
+    background-color: var(--sidebar-color);
+}
+
+.pagination-overlap li.active {
+    background-color: var(--sidebar-color);
+}
+
+.pagination-overlap li:hover,
+.pagination-overlap li:focus {
+    width: var(--sidebar-width-hover);
+    padding-left: 0.5em;
+}
+
+/* .pagination-overlap li::before,
+.pagination-overlap li::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	width: var(--sidebar-curve);
+	height: var(--sidebar-curve);
+	background: transparent;
+	border-radius: 50%;
+	z-index: 1;
+	transition: all 0.5s;
+}
+.pagination-overlap li.active::before {
+	top: -30px;
+	box-shadow: 15px 15px 0 var(--sidebar-color);
+}
+.pagination-overlap li.active::after {
+	bottom: -30px;
+	box-shadow: 15px -15px 0 var(--sidebar-color);
+} */
+.pagination-overlap a {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.pagination-overlap .month-cap {
+    height: var(--sidebar-letter-height);
+    line-height: var(--sidebar-letter-height);
+}
+
+.pagination-overlap .month-name {
+    height: var(--sidebar-letter-height);
+    line-height: var(--sidebar-letter-height);
+}
+

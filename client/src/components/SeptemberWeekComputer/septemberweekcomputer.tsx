@@ -1,8 +1,8 @@
-import RabbitStamp from "../rabbitstamp/rabbitstamp";
+import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
 import "./septemberweekcomputer.css";
-import RabbitMother from "../RabbitMother/RabbitMother";
-import SeptemberLabel from "../septemberlabel/SeptemberLabel";
-import WeekContainerComputer from "../weeb-box-container-computer/WeekContainerComputer";
+import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
+import SeptemberLabel from "../decorationelements/septemberlabel/SeptemberLabel";
+import WeekContainerComputer from "./weeb-box-container-computer/WeekContainerComputer";
 import SidePage from "../sidebarpage/SidePage";
 
 const SeptemberWeekComputer = () => {

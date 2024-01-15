@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./ErrorToast.css";
+import "../scss/theme/_toast.scss";
 import ballonicon from "../../assets/login/balloon-heart.svg";
 export interface ToastProps {
 	id: string;

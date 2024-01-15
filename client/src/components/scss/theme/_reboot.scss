@@ -1,0 +1,12 @@
+//
+// reboot.scss
+//
+@import "./variables";
+*:focus {
+    outline: none;
+}
+
+::selection {
+    background-color: $primary;
+    color: $white;
+}

@@ -98,9 +98,9 @@ $variable-prefix: bs- !default;
 $spacer: 1rem !default;
 $spacers: (
     0: 0,
-    1: $spacer / 4,
+    1: calc($spacer / 4),
     // 4px
-    2: $spacer / 2,
+    2: calc($spacer / 2),
     // 8px
     3: $spacer,
     // 16px
@@ -189,7 +189,7 @@ $border-radius: 0 !default;
 $border-radius-sm: $border-radius !default;
 $border-radius-lg: $border-radius !default;
 
-$caret-spacing: $spacer / 2 !default;
+$caret-spacing: calc($spacer / 2) !default;
 
 $transition-base: all .1s ease-in-out !default;
 
