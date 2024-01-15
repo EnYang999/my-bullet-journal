@@ -3,10 +3,9 @@ import { useState, useEffect } from "react";
 const TempNavbar = () => {
 	const [prevScrollPos, setPrevScrollPos] = useState(0);
 	const [visible, setVisible] = useState(true);
-
+	const [showCollapse, setShowCollapse] = useState(false);
 	const handleScroll = () => {
 		const currentScrollPos = window.scrollY;
-
 		setVisible(
 			(prevScrollPos > currentScrollPos &&
 				prevScrollPos - currentScrollPos > 70) ||
@@ -16,10 +15,17 @@ const TempNavbar = () => {
 
 		setPrevScrollPos(currentScrollPos);
 	};
-
+	const handleNavClick = () => {
+		if (showCollapse) {
+			setShowCollapse(false);
+			setVisible(false);
+		} else {
+			setShowCollapse(true);
+			setVisible(true);
+		}
+	};
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
-
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
@@ -46,12 +52,16 @@ const TempNavbar = () => {
 					aria-controls='navbarCollapse'
 					aria-expanded='false'
 					aria-label='Toggle navigation'
+					onClick={handleNavClick}
 				>
 					<span className='navbar-toggler-icon'></span>
 				</button>
 
 				{/*  <!--Navbar collaps --> */}
-				<div className='collapse navbar-collapse' id='navbarCollapse'>
+				<div
+					className={`collapse navbar-collapse ${showCollapse ? "show" : ""}`}
+					id='navbarCollapse'
+				>
 					{/* <!--Navbar nav  --> */}
 					<ul className='navbar-nav'>
 						<li className='nav-item'>
