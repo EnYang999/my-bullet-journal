@@ -1,7 +1,7 @@
 import React from "react";
 import "./OctWeekComputer.css";
-import MondayOct from "../mondayOct/MondayOct";
-import OctoberTitle from "../octoberTitle/OctoberTitle";
+import MondayOct from "./MondayOct";
+import OctoberTitle from "./OctoberTitle";
 export const OctWeekComputer = () => {
 	return (
 		<div className='october-week-computer'>
