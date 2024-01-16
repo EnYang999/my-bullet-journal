@@ -42,36 +42,11 @@ const MondayOct = () => {
 						</foreignObject>
 					</svg>
 					<div className='to-do-lines-container  to-do-lines-3'>
-						<ToDoLine
-							className='my-todo-list sep-week-3-wednesday-1 my-todo-list-1'
-							inputBoxClassName='my-todo-list-2'
-							inputFieldClassName='design-component-instance-node'
-							tickBoxClassName='todo-instance'
-						/>
-						<ToDoLine
-							className='my-todo-list sep-week-3-wednesday-2 my-todo-list-2'
-							inputBoxClassName='my-todo-list-2'
-							inputFieldClassName='design-component-instance-node'
-							tickBoxClassName='todo-instance'
-						/>
-						<ToDoLine
-							className='my-todo-list sep-week-3-wednesday-3 my-todo-list-3'
-							inputBoxClassName='my-todo-list-2'
-							inputFieldClassName='design-component-instance-node'
-							tickBoxClassName='todo-instance'
-						/>
-						<ToDoLine
-							className='my-todo-list sep-week-3-wednesday-4 my-todo-list-4'
-							inputBoxClassName='my-todo-list-2'
-							inputFieldClassName='design-component-instance-node'
-							tickBoxClassName='todo-instance'
-						/>
-						<ToDoLine
-							className='my-todo-list sep-week-3-wednesday-5 my-todo-list-5'
-							inputBoxClassName='my-todo-list-2'
-							inputFieldClassName='design-component-instance-node'
-							tickBoxClassName='todo-instance'
-						/>
+						<ToDoLine className='my-todo-list' boxId='oct-week-3-monday-1' />
+						<ToDoLine className='my-todo-list' boxId='oct-week-3-monday-2' />
+						<ToDoLine className='my-todo-list' boxId='oct-week-3-monday-3' />
+						<ToDoLine className='my-todo-list' boxId='oct-week-3-monday-4' />
+						<ToDoLine className='my-todo-list' boxId='oct-week-3-monday-5' />
 					</div>
 				</div>
 			</div>

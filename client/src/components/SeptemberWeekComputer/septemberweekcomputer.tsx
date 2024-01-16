@@ -7,8 +7,8 @@ import Thursday from "./Thursday";
 import Friday from "./Friday";
 import Weekend from "./Weekend";
 import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
-import "./septemberweekcomputer.css";
 import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
+import "./septemberweekcomputer.css";
 const SeptemberWeekComputer = () => {
 	return (
 		<>
