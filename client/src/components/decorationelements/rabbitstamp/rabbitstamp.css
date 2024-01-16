@@ -12,20 +12,12 @@
 	max-width: 225px;
 	min-width: 160px;
 	aspect-ratio: 2/3;
-	border-image-source: url(../../assets/img/border-of-stamp.svg);
+	border-image-source: url(../../../assets/img/border-of-stamp.svg);
 	border-image-slice: 19 16 19 16;
 	border-image-width: 1em 1em 1em 1em;
 	position: relative;
 	background-color: #fff;
-	/* background-image: url(../../assets/img/head-shadow.svg),
-		url(../../assets/img/star-vector-5.svg);
-	background-position: left 5% top 5%, left 20% top 30%;
-	background-repeat: no-repeat; */
 }
-
-/* .rabbit-stamp-overlap-group > *:not(.border-of-stamp) {
-	position: absolute;
-} */
 
 .star-vector-5 {
 	position: absolute;
