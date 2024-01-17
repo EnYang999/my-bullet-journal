@@ -1,6 +1,4 @@
-// &:root {
-//
-// }
+// sep-week-box
 $sep-friday-todolines-height: 1.75rem;
 figure {
     padding: 0;
@@ -36,8 +34,6 @@ figure {
     }
 
     .to-do-lines-container {
-        width: 80%;
-        height: 65%;
         display: grid;
         grid-template-rows: repeat(5, 1fr);
         grid-template-columns: 100%;
@@ -47,15 +43,6 @@ figure {
     .my-todo-list {
         .tick-box {
             width: var(--sep-friday-todolines-height);
-            // height: var(--sep-friday-todolines-height);
-        }
-
-        .input-box {
-            // height: var(--sep-friday-todolines-height);
-        }
-
-        .input-field {
-            // height: var(--sep-friday-todolines-height);
         }
     }
 }

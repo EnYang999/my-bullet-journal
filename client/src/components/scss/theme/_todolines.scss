@@ -17,7 +17,6 @@ $border-color_3: var(--tick-border-checked);
 .todo-wrapper {
     position: relative;
     width: 100%;
-    height: 1.8rem; // to customize it
     margin: 0.2em 0;
     --tick-box-background: #bfdeef;
     --tick-box-checked-background: #9fb9c7;
@@ -37,7 +36,6 @@ $border-color_3: var(--tick-border-checked);
         appearance: none;
         border: 0.1em solid var(--input-border);
         box-shadow: 0.1em 0.1em 0.4em var(--border-shadow);
-        padding: 0.25em 0.4em;
     }
 
     .cbx {
@@ -49,6 +47,7 @@ $border-color_3: var(--tick-border-checked);
         position: relative;
         display: grid;
         grid-template-columns: 0.5fr 2fr;
+        grid-template-rows: 100%;
         grid-template-areas: "tick-box input-field";
         column-gap: 5%;
 
@@ -103,7 +102,6 @@ $border-color_3: var(--tick-border-checked);
         .input-box {
             display: grid;
             grid-area: input-field;
-            position: absolute;
             width: 100%;
 
             &:after {
@@ -121,9 +119,10 @@ $border-color_3: var(--tick-border-checked);
 
         .input-field {
             width: 100%;
+            height: 100%;
             border-radius: 0.4em;
             color: $color_1;
-            border: 0.1em solid var(--input-border-default);
+            border: 2px solid var(--input-border-default);
             border-color: $border-color_1;
             background-color: $background-color_2;
             font-family: $font-family_1;
