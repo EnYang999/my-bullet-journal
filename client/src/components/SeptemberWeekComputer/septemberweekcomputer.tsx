@@ -14,30 +14,30 @@ const SeptemberWeekComputer = () => {
 			<div className='container py-8 px-6 d-flex flex-column week-box-container'>
 				<SidePage className='sidebar' />
 				<div className='row'>
-					<div className='col-3 d-flex align-items-center'>
+					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 						<Monday />
 					</div>
-					<div className='col-3 d-flex align-items-center'>
+					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 						<Tuesday />
 					</div>
-					<div className='col-3 d-flex align-items-center'>
+					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 						<Wednesday />
 					</div>
-					<div className='col-3 d-flex align-items-center justify-content-center'>
+					<div className='col-lg-3 col-md-6 d-flex align-items-center justify-content-center'>
 						<RabbitStamp stampWidth={10} className='rabbit' />
 					</div>
 
 					<div className='w-100 d-none d-md-block mt-7'></div>
-					<div className='col-3 d-flex align-items-center'>
+					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 						<RabbitMother className='rabbitmother' />
 					</div>
-					<div className='col-3 d-flex align-items-center'>
+					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 						<Thursday />
 					</div>
-					<div className='col-3 d-flex align-items-center'>
+					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 						<Friday />
 					</div>
-					<div className='col-3 d-flex align-items-center'>
+					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 						<Weekend />
 					</div>
 				</div>
