@@ -1,0 +1,23 @@
+.rabbit-mother-overlap-group {
+    position: relative;
+    min-width: 224px;
+    height: 100%;
+
+    .rabbit-mother {
+        width: 100%;
+        height: auto;
+    }
+
+    .figure-seplabel {
+        position: absolute;
+        right: 0;
+        top: -10;
+        z-index: -1;
+    }
+    .fig-rabbitmother {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.8);
+    }
+}
