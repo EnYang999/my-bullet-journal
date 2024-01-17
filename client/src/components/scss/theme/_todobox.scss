@@ -1,5 +1,5 @@
 // &:root {
-//     
+//
 // }
 $sep-friday-todolines-height: 1.75rem;
 figure {
@@ -47,15 +47,15 @@ figure {
     .my-todo-list {
         .tick-box {
             width: var(--sep-friday-todolines-height);
-            height: var(--sep-friday-todolines-height);
+            // height: var(--sep-friday-todolines-height);
         }
 
         .input-box {
-            height: var(--sep-friday-todolines-height);
+            // height: var(--sep-friday-todolines-height);
         }
 
         .input-field {
-            height: var(--sep-friday-todolines-height);
+            // height: var(--sep-friday-todolines-height);
         }
     }
 }
