@@ -22,7 +22,8 @@ function App() {
 			<LandingMenu />
 			<LandingDish />
 			<LandingTestimonial />
-			<LandingGallary /> */}
+			<SeptemberWeek1 /> */}
+			{/* <SeptemberWeek4 /> */}
 			<Calendar month={9} year={2023} />
 		</>
 	);
