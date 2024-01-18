@@ -7,13 +7,18 @@ import {
 	isSameMonth,
 	startOfWeek,
 } from "date-fns";
-
-const Calendar: React.FC = () => {
-	const currentMonth = new Date(2022, 8);
+import "bootstrap/scss/bootstrap.scss";
+interface Props {
+	month: number;
+	year: number;
+}
+const Calendar = ({ month, year }: Props) => {
+	const currentMonth = new Date(year, month - 1); // 1 represents February
 	const firstDayOfMonth = startOfMonth(currentMonth);
 	const lastDayOfMonth = endOfMonth(currentMonth);
 
-	const startOfWeekOfMonth = startOfWeek(firstDayOfMonth);
+	// Ensure that the calendar starts from Sunday
+	const startOfWeekOfMonth = startOfWeek(firstDayOfMonth, { weekStartsOn: 1 });
 
 	const calendarDays = eachDayOfInterval({
 		start: startOfWeekOfMonth,
@@ -22,13 +27,17 @@ const Calendar: React.FC = () => {
 
 	const totalDaysInMonth = calendarDays.length;
 	const daysInLastRow = 7 - (totalDaysInMonth % 7);
+	console.log(daysInLastRow);
 
-	const paddedCalendarDays = calendarDays.concat(
-		Array.from({ length: daysInLastRow })
-	);
+	// Create an array with additional empty cells to fill the last row
+	const paddedCalendarDays =
+		daysInLastRow == 7
+			? calendarDays
+			: calendarDays.concat(Array.from({ length: daysInLastRow }));
 
 	return (
 		<div className='container mt-5'>
+			<header></header>
 			{[0, 1, 2, 3, 4, 5].map((row) => (
 				<div key={row} className='row'>
 					{paddedCalendarDays
@@ -36,7 +45,7 @@ const Calendar: React.FC = () => {
 						.map((day, index) => (
 							<div
 								key={index}
-								className={`col border p-2 text-center calendar-day ${
+								className={`col p-2 text-center calendar-day ${
 									!isSameMonth(day, currentMonth) ? "text-muted" : ""
 								}`}
 							>
