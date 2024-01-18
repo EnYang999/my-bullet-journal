@@ -1,22 +1,108 @@
 import SidePage from "../sidebarpage/SidePage";
+import "./septemberweek1.scss";
+import WeekBox from "./weekday1";
+import fridayShape from "../../assets/img/friday-sepweek1.svg";
+import tuesdayShape from "../../assets/img/tuesday-sepweek1.svg";
+import mondayShape from "../../assets/img/monday-sepweek1.svg";
+import wednesdayShape from "../../assets/img/wednesday-sepweek1.svg";
+import thursdayShape from "../../assets/img/thursday-sepweek1.svg";
+import weekendShape from "../../assets/img/weekend-sepweek1.svg";
 
-const septemberweek1 = () => {
+const SeptemberWeek1 = () => {
 	return (
-		<div className='september-week-computer'>
-			<div className='container py-8 px-6 d-flex flex-column week-box-container'>
+		<div className='september-week-1'>
+			<div className='container py-8 px-6 week-box-container'>
 				<SidePage className='sidebar' />
 				<div className='row'>
-					<div className='col-lg-3 col-md-6 d-flex align-items-center'></div>
-					<div className='col-lg-3 col-md-6 d-flex align-items-center'></div>
-					<div className='col-lg-3 col-md-6 d-flex align-items-center'></div>
+					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+						<WeekBox
+							day='monday'
+							shapeImage={mondayShape}
+							dateTime={"04"}
+							boxIds={[
+								`sep-week-1-monday-1`,
+								`sep-week-1-monday-2`,
+								`sep-week-1-monday-1`,
+								`sep-week-1-monday-4`,
+								`sep-week-1-monday-5`,
+							]}
+						/>
+					</div>
+					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+						<WeekBox
+							day='tuesday'
+							shapeImage={tuesdayShape}
+							dateTime={"05"}
+							boxIds={[
+								`sep-week-1-tuesday-1`,
+								`sep-week-1-tuesday-2`,
+								`sep-week-1-tuesday-1`,
+								`sep-week-1-tuesday-4`,
+								`sep-week-1-tuesday-5`,
+							]}
+						/>
+					</div>
+					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+						<WeekBox
+							day='wednesday'
+							shapeImage={wednesdayShape}
+							dateTime={"06"}
+							boxIds={[
+								`sep-week-1-wednesday-1`,
+								`sep-week-1-wednesday-2`,
+								`sep-week-1-wednesday-1`,
+								`sep-week-1-wednesday-4`,
+								`sep-week-1-wednesday-5`,
+							]}
+						/>
+					</div>
 
-					<div className='col-lg-3 col-md-6 d-flex align-items-center'></div>
-					<div className='col-lg-3 col-md-6 d-flex align-items-center'></div>
-					<div className='col-lg-3 col-md-6 d-flex align-items-center'></div>
+					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+						<WeekBox
+							day='thursday'
+							shapeImage={thursdayShape}
+							dateTime={"07"}
+							boxIds={[
+								`sep-week-1-thursday-1`,
+								`sep-week-1-thursday-2`,
+								`sep-week-1-thursday-1`,
+								`sep-week-1-thursday-4`,
+								`sep-week-1-thursday-5`,
+							]}
+						/>
+					</div>
+					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+						<WeekBox
+							day='friday'
+							shapeImage={fridayShape}
+							dateTime={"08"}
+							boxIds={[
+								`sep-week-1-friday-1`,
+								`sep-week-1-friday-2`,
+								`sep-week-1-friday-1`,
+								`sep-week-1-friday-4`,
+								`sep-week-1-friday-5`,
+							]}
+						/>
+					</div>
+					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+						<WeekBox
+							day='weekend'
+							shapeImage={weekendShape}
+							dateTime={"09/10"}
+							boxIds={[
+								`sep-week-1-weekend-1`,
+								`sep-week-1-weekend-2`,
+								`sep-week-1-weekend-1`,
+								`sep-week-1-weekend-4`,
+								`sep-week-1-weekend-5`,
+							]}
+						/>
+					</div>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default septemberweek1;
+export default SeptemberWeek1;

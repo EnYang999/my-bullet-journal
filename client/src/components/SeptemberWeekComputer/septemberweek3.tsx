@@ -1,5 +1,4 @@
 import SidePage from "../sidebarpage/SidePage";
-
 import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
 import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
 import "./septemberweek3.scss";
