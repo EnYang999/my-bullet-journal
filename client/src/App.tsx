@@ -11,6 +11,7 @@ import LandingDish from "./components/landingsection/LandingDish";
 import LandingTestimonial from "./components/landingsection/LandingPeoplesay";
 import LandingGallary from "./components/landingsection/LandingGallary";
 import Calendar from "./components/calender/Calendar";
+import SeptemberWeek2 from "./components/SeptemberWeekComputer/septemberweek2";
 function App() {
 	return (
 		<>
@@ -23,8 +24,7 @@ function App() {
 			<LandingDish />
 			<LandingTestimonial />
 			<SeptemberWeek1 /> */}
-			{/* <SeptemberWeek4 /> */}
-			<Calendar month={9} year={2023} />
+			<SeptemberWeek2 />
 		</>
 	);
 }

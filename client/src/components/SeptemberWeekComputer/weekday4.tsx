@@ -1,6 +1,5 @@
 // WeekBox.js
 import { ToDoLine } from "../todolines/todoline";
-import "../scss/theme/_todobox.scss";
 interface Props {
 	day: string;
 	shapeImage: string;
