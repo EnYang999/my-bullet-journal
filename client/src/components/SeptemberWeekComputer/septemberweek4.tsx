@@ -1,17 +1,17 @@
 import SidePage from "../sidebarpage/SidePage";
 import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
 import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
-import "./septemberweek3.scss";
+import "./septemberweek4.scss";
 import mondayShape from "../../assets/img/monday-shape.svg";
 import tuesdayShape from "../../assets/img/thursday-shape.svg";
 import wednesdayShape from "../../assets/img/wednesday-shape.svg";
 import thursdayShape from "../../assets/img/thursday-shape.svg";
 import fridayShape from "../../assets/img/friday-shape.svg";
 import weekendShape from "../../assets/img/weekend-shape.svg";
-import WeekBox from "./weekday3";
+import WeekBox from "./weekday4";
 const SeptemberWeek3 = () => {
 	return (
-		<div className='september-week-3'>
+		<div className='september-week-4'>
 			<div className='container py-8 px-6 d-flex flex-column week-box-container'>
 				<SidePage className='sidebar' />
 				<div className='row'>
@@ -20,11 +20,11 @@ const SeptemberWeek3 = () => {
 							day='monday'
 							shapeImage={mondayShape}
 							boxIds={[
-								`sep-week-3-monday-1`,
-								`sep-week-3-monday-2`,
-								`sep-week-3-monday-3`,
-								`sep-week-3-monday-4`,
-								`sep-week-3-monday-5`,
+								`sep-week-4-monday-1`,
+								`sep-week-4-monday-2`,
+								`sep-week-4-monday-3`,
+								`sep-week-4-monday-4`,
+								`sep-week-4-monday-5`,
 							]}
 						/>
 					</div>
@@ -33,11 +33,11 @@ const SeptemberWeek3 = () => {
 							day='tuesday'
 							shapeImage={tuesdayShape}
 							boxIds={[
-								"sep-week-3-tuesday-1",
-								"sep-week-3-tuesday-2",
-								"sep-week-3-tuesday-3",
-								"sep-week-3-tuesday-4",
-								"sep-week-3-tuesday-5",
+								"sep-week-4-tuesday-1",
+								"sep-week-4-tuesday-2",
+								"sep-week-4-tuesday-3",
+								"sep-week-4-tuesday-4",
+								"sep-week-4-tuesday-5",
 							]}
 						/>
 					</div>
@@ -46,11 +46,11 @@ const SeptemberWeek3 = () => {
 							day='wednesday'
 							shapeImage={wednesdayShape}
 							boxIds={[
-								"sep-week-3-wednesday-1",
-								"sep-week-3-wednesday-2",
-								"sep-week-3-wednesday-3",
-								"sep-week-3-wednesday-4",
-								"sep-week-3-wednesday-5",
+								"sep-week-4-wednesday-1",
+								"sep-week-4-wednesday-2",
+								"sep-week-4-wednesday-3",
+								"sep-week-4-wednesday-4",
+								"sep-week-4-wednesday-5",
 							]}
 						/>
 					</div>
@@ -67,11 +67,11 @@ const SeptemberWeek3 = () => {
 							day='thursday'
 							shapeImage={thursdayShape}
 							boxIds={[
-								"sep-week-3-thursday-1",
-								"sep-week-3-thursday-2",
-								"sep-week-3-thursday-3",
-								"sep-week-3-thursday-4",
-								"sep-week-3-thursday-5",
+								"sep-week-4-thursday-1",
+								"sep-week-4-thursday-2",
+								"sep-week-4-thursday-3",
+								"sep-week-4-thursday-4",
+								"sep-week-4-thursday-5",
 							]}
 						/>
 					</div>
@@ -80,11 +80,11 @@ const SeptemberWeek3 = () => {
 							day='friday'
 							shapeImage={fridayShape}
 							boxIds={[
-								"sep-week-3-friday-1",
-								"sep-week-3-friday-2",
-								"sep-week-3-friday-3",
-								"sep-week-3-friday-4",
-								"sep-week-3-friday-5",
+								"sep-week-4-friday-1",
+								"sep-week-4-friday-2",
+								"sep-week-4-friday-3",
+								"sep-week-4-friday-4",
+								"sep-week-4-friday-5",
 							]}
 						/>
 					</div>
@@ -93,11 +93,11 @@ const SeptemberWeek3 = () => {
 							day='weekend'
 							shapeImage={weekendShape}
 							boxIds={[
-								"sep-week-3-weekend-1",
-								"sep-week-3-weekend-2",
-								"sep-week-3-weekend-3",
-								"sep-week-3-weekend-4",
-								"sep-week-3-weekend-5",
+								"sep-week-4-weekend-1",
+								"sep-week-4-weekend-2",
+								"sep-week-4-weekend-3",
+								"sep-week-4-weekend-4",
+								"sep-week-4-weekend-5",
 							]}
 						/>
 					</div>

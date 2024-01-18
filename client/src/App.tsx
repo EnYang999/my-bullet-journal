@@ -1,5 +1,5 @@
 // import "./App.css";
-import SeptemberWeek3 from "./components/SeptemberWeekComputer/septemberweek3";
+import SeptemberWeek4 from "./components/SeptemberWeekComputer/septemberweek4";
 import SeptemberWeek1 from "./components/SeptemberWeekComputer/septemberweek1";
 import LandingAbout from "./components/landingsection/LandingAbout";
 import LandingSectiona from "./components/landingsection/LandingSectiona";
@@ -22,7 +22,7 @@ function App() {
 			<LandingDish />
 			<LandingTestimonial />
 			<LandingGallary /> */}
-			<SeptemberWeek1 />
+			<SeptemberWeek4 />
 		</>
 	);
 }
