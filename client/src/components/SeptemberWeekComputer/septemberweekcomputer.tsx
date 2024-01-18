@@ -1,13 +1,15 @@
 import SidePage from "../sidebarpage/SidePage";
-import Monday from "./Monday";
-import Tuesday from "./Tuesday";
-import Wednesday from "./Wednesday";
-import Thursday from "./Thursday";
-import Friday from "./Friday";
-import Weekend from "./Weekend";
+
 import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
 import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
 import "./septemberweekcomputer.scss";
+import mondayShape from "../../assets/img/monday-shape.svg";
+import tuesdayShape from "../../assets/img/thursday-shape.svg";
+import wednesdayShape from "../../assets/img/wednesday-shape.svg";
+import thursdayShape from "../../assets/img/thursday-shape.svg";
+import fridayShape from "../../assets/img/friday-shape.svg";
+import weekendShape from "../../assets/img/weekend-shape.svg";
+import WeekBox from "./weekday3";
 const SeptemberWeekComputer = () => {
 	return (
 		<div className='september-week-computer'>
@@ -15,13 +17,43 @@ const SeptemberWeekComputer = () => {
 				<SidePage className='sidebar' />
 				<div className='row'>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
-						<Monday />
+						<WeekBox
+							day='monday'
+							shapeImage={mondayShape}
+							boxIds={[
+								`sep-week-3-monday-1`,
+								`sep-week-3-monday-2`,
+								`sep-week-3-monday-3`,
+								`sep-week-3-monday-4`,
+								`sep-week-3-monday-5`,
+							]}
+						/>
 					</div>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
-						<Tuesday />
+						<WeekBox
+							day='tuesday'
+							shapeImage={tuesdayShape}
+							boxIds={[
+								"sep-week-3-tuesday-1",
+								"sep-week-3-tuesday-2",
+								"sep-week-3-tuesday-3",
+								"sep-week-3-tuesday-4",
+								"sep-week-3-tuesday-5",
+							]}
+						/>
 					</div>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
-						<Wednesday />
+						<WeekBox
+							day='wednesday'
+							shapeImage={wednesdayShape}
+							boxIds={[
+								"sep-week-3-wednesday-1",
+								"sep-week-3-wednesday-2",
+								"sep-week-3-wednesday-3",
+								"sep-week-3-wednesday-4",
+								"sep-week-3-wednesday-5",
+							]}
+						/>
 					</div>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center justify-content-center'>
 						<RabbitStamp stampWidth={10} className='rabbit' />
@@ -32,13 +64,43 @@ const SeptemberWeekComputer = () => {
 						<RabbitMother className='rabbitmother' />
 					</div>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
-						<Thursday />
+						<WeekBox
+							day='thursday'
+							shapeImage={thursdayShape}
+							boxIds={[
+								"sep-week-3-thursday-1",
+								"sep-week-3-thursday-2",
+								"sep-week-3-thursday-3",
+								"sep-week-3-thursday-4",
+								"sep-week-3-thursday-5",
+							]}
+						/>
 					</div>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
-						<Friday />
+						<WeekBox
+							day='friday'
+							shapeImage={fridayShape}
+							boxIds={[
+								"sep-week-3-friday-1",
+								"sep-week-3-friday-2",
+								"sep-week-3-friday-3",
+								"sep-week-3-friday-4",
+								"sep-week-3-friday-5",
+							]}
+						/>
 					</div>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
-						<Weekend />
+						<WeekBox
+							day='weekend'
+							shapeImage={weekendShape}
+							boxIds={[
+								"sep-week-3-weekend-1",
+								"sep-week-3-weekend-2",
+								"sep-week-3-weekend-3",
+								"sep-week-3-weekend-4",
+								"sep-week-3-weekend-5",
+							]}
+						/>
 					</div>
 				</div>
 			</div>
