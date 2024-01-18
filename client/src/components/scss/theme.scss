@@ -5,7 +5,7 @@
 
 // Bootstrap functions
 // @import '~bootstrap/scss/functions';
-@import '../../../node_modules/bootstrap/scss/functions';
+@import "../../../node_modules/bootstrap/scss/functions";
 // Theme functions
 // @import 'theme/functions';
 
@@ -13,14 +13,17 @@
 // @import 'user-variables';
 
 // Theme variables
-@import './theme/variables';
+@import "./theme/variables";
 
 // Bootstrap core
 // @import '~bootstrap/scss/bootstrap';
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import "../../../node_modules/bootstrap/scss/bootstrap";
 
 // Theme core
 // @import 'theme/theme';
 
 // Custom core
 // @import 'user';
+
+@import "./theme/utilities/background";
+@import "./theme/utilities/figure";

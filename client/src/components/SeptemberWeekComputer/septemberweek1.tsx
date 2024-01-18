@@ -11,10 +11,10 @@ import weekendShape from "../../assets/img/weekend-sepweek1.svg";
 const SeptemberWeek1 = () => {
 	return (
 		<div className='september-week-1'>
-			<div className='container py-8 px-6 week-box-container'>
+			<div className='container py-8 px-6 week-box-container bg-cover'>
 				<SidePage className='sidebar' />
 				<div className='row'>
-					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+					<div className='col-lg-2 col-md-4 d-flex day-box'>
 						<WeekBox
 							day='monday'
 							shapeImage={mondayShape}
@@ -22,13 +22,13 @@ const SeptemberWeek1 = () => {
 							boxIds={[
 								`sep-week-1-monday-1`,
 								`sep-week-1-monday-2`,
-								`sep-week-1-monday-1`,
+								`sep-week-1-monday-3`,
 								`sep-week-1-monday-4`,
 								`sep-week-1-monday-5`,
 							]}
 						/>
 					</div>
-					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+					<div className='col-lg-2 col-md-4 d-flex day-box'>
 						<WeekBox
 							day='tuesday'
 							shapeImage={tuesdayShape}
@@ -36,13 +36,13 @@ const SeptemberWeek1 = () => {
 							boxIds={[
 								`sep-week-1-tuesday-1`,
 								`sep-week-1-tuesday-2`,
-								`sep-week-1-tuesday-1`,
+								`sep-week-1-tuesday-3`,
 								`sep-week-1-tuesday-4`,
 								`sep-week-1-tuesday-5`,
 							]}
 						/>
 					</div>
-					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+					<div className='col-lg-2 col-md-4 d-flex day-box'>
 						<WeekBox
 							day='wednesday'
 							shapeImage={wednesdayShape}
@@ -50,14 +50,14 @@ const SeptemberWeek1 = () => {
 							boxIds={[
 								`sep-week-1-wednesday-1`,
 								`sep-week-1-wednesday-2`,
-								`sep-week-1-wednesday-1`,
+								`sep-week-1-wednesday-3`,
 								`sep-week-1-wednesday-4`,
 								`sep-week-1-wednesday-5`,
 							]}
 						/>
 					</div>
 
-					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+					<div className='col-lg-2 col-md-4 d-flex day-box'>
 						<WeekBox
 							day='thursday'
 							shapeImage={thursdayShape}
@@ -65,13 +65,13 @@ const SeptemberWeek1 = () => {
 							boxIds={[
 								`sep-week-1-thursday-1`,
 								`sep-week-1-thursday-2`,
-								`sep-week-1-thursday-1`,
+								`sep-week-1-thursday-3`,
 								`sep-week-1-thursday-4`,
 								`sep-week-1-thursday-5`,
 							]}
 						/>
 					</div>
-					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+					<div className='col-lg-2 col-md-4 d-flex day-box'>
 						<WeekBox
 							day='friday'
 							shapeImage={fridayShape}
@@ -79,13 +79,13 @@ const SeptemberWeek1 = () => {
 							boxIds={[
 								`sep-week-1-friday-1`,
 								`sep-week-1-friday-2`,
-								`sep-week-1-friday-1`,
+								`sep-week-1-friday-3`,
 								`sep-week-1-friday-4`,
 								`sep-week-1-friday-5`,
 							]}
 						/>
 					</div>
-					<div className='col-lg-2 col-md-4 d-flex align-items-center'>
+					<div className='col-lg-2 col-md-4 d-flex day-box'>
 						<WeekBox
 							day='weekend'
 							shapeImage={weekendShape}
@@ -93,7 +93,7 @@ const SeptemberWeek1 = () => {
 							boxIds={[
 								`sep-week-1-weekend-1`,
 								`sep-week-1-weekend-2`,
-								`sep-week-1-weekend-1`,
+								`sep-week-1-weekend-3`,
 								`sep-week-1-weekend-4`,
 								`sep-week-1-weekend-5`,
 							]}

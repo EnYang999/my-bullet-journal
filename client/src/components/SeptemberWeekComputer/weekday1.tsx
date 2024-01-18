@@ -19,7 +19,9 @@ const WeekBox = ({ day, shapeImage, dateTime, boxIds }: Props) => {
 						src={shapeImage}
 					/>
 				</figure>
-				<div className={`to-do-lines-container to-do-lines-${boxIds.length}`}>
+				<div
+					className={`mt-6 to-do-lines-container to-do-lines-${boxIds.length}`}
+				>
 					{boxIds.map((boxId, index) => (
 						<ToDoLine key={index} className='my-todo-list' boxId={boxId} />
 					))}

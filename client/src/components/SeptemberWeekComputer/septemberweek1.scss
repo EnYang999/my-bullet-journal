@@ -9,9 +9,13 @@
     max-width: 2000px;
     .week-box-container {
         position: relative;
+        box-shadow:
+            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 2px 6px 2px,
+            1px 0px 0px 2em #b3a492;
+        border-radius: 0.5em;
         background-image: url(../../assets/img/sepweek1bg.png);
-        background-repeat: no-repeat;
-        background-size: cover;
+        height: 700px;
         .sidebar {
             position: absolute;
             display: block;
@@ -21,9 +25,33 @@
             top: 50%;
             transform: translateY(-50%);
         }
-        .week-date-num {
-            font-family: Aleo;
-            border-radius: 50%;
+        .row {
+            height: 100%;
+            .day-box {
+                border-left: 2px solid rgba(151, 157, 160, 0.455);
+                .week-overlap {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    .week-date-num {
+                        display: flex;
+                        height: 2rem;
+                        width: 2rem;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: Aleo;
+                        font-style: italic;
+                        border-radius: 50%;
+                        background-color: rgb(217, 241, 252);
+                    }
+                }
+                &:last-child {
+                    .week-date-num {
+                        font-size: 12px;
+                    }
+                }
+            }
         }
     }
 }
