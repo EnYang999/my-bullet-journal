@@ -1,4 +1,3 @@
-import React from "react";
 import {
 	startOfMonth,
 	endOfMonth,
@@ -7,7 +6,7 @@ import {
 	isSameMonth,
 	startOfWeek,
 } from "date-fns";
-import "bootstrap/scss/bootstrap.scss";
+import "./Calendar.scss";
 interface Props {
 	month: number;
 	year: number;
@@ -34,10 +33,17 @@ const Calendar = ({ month, year }: Props) => {
 		daysInLastRow == 7
 			? calendarDays
 			: calendarDays.concat(Array.from({ length: daysInLastRow }));
+	const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 	return (
 		<div className='container mt-5'>
-			<header></header>
+			<header className='row'>
+				{weekDays.map((day, index) => (
+					<div key={index} className='col text-center p-1 font-weight-bold'>
+						{day.charAt(0)}
+					</div>
+				))}
+			</header>
 			{[0, 1, 2, 3, 4, 5].map((row) => (
 				<div key={row} className='row'>
 					{paddedCalendarDays
@@ -45,7 +51,7 @@ const Calendar = ({ month, year }: Props) => {
 						.map((day, index) => (
 							<div
 								key={index}
-								className={`col p-2 text-center calendar-day ${
+								className={`col text-center p-1 calendar-day ${
 									!isSameMonth(day, currentMonth) ? "text-muted" : ""
 								}`}
 							>
