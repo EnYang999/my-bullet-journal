@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { jarallax } from "jarallax";
 import SidePage from "../sidebarpage/SidePage";
 import "./septemberweek1.scss";
 import WeekBox from "./weekday1";
@@ -7,11 +9,20 @@ import mondayShape from "../../assets/img/monday-sepweek1.svg";
 import wednesdayShape from "../../assets/img/wednesday-sepweek1.svg";
 import thursdayShape from "../../assets/img/thursday-sepweek1.svg";
 import weekendShape from "../../assets/img/weekend-sepweek1.svg";
-
+import background from "../../assets/img/sepweek1bg.png";
 const SeptemberWeek1 = () => {
+	useEffect(() => {
+		jarallax(document.querySelectorAll(".jarallaxSepWeek1"), {
+			speed: 0.6,
+			imgSrc: background,
+		});
+		return () => {
+			jarallax(document.querySelectorAll(".jarallaxSepWeek1"), "destroy");
+		};
+	}, []);
 	return (
 		<div className='september-week-1'>
-			<div className='container py-8 px-6 week-box-container bg-cover'>
+			<div className='container py-8 px-6 week-box-container bg-cover jarallaxSepWeek1'>
 				<SidePage className='sidebar' />
 				<div className='row'>
 					<div className='col-lg-2 col-md-4 d-flex day-box'>
