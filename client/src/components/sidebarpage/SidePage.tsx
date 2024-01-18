@@ -44,9 +44,9 @@ const SidePage = ({ className }: Props): JSX.Element => {
 					{months.map((month, index) => (
 						<li
 							key={index}
-							className={`${
+							className={`${month.abbreviation.toLowerCase()} ${
 								index === activeIndex ? "active" : ""
-							} ${month.abbreviation.toLowerCase()}`}
+							}`}
 							onMouseEnter={() => handleMouseEnter(index)}
 							onMouseLeave={handleMouseLeave}
 							onFocus={() => handleFocus(index)}
