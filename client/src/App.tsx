@@ -10,6 +10,7 @@ import LandingMenu from "./components/landingsection/LandingMenu";
 import LandingDish from "./components/landingsection/LandingDish";
 import LandingTestimonial from "./components/landingsection/LandingPeoplesay";
 import LandingGallary from "./components/landingsection/LandingGallary";
+import Calender from "./components/calender/Calender";
 function App() {
 	return (
 		<>
@@ -22,7 +23,7 @@ function App() {
 			<LandingDish />
 			<LandingTestimonial />
 			<LandingGallary /> */}
-			<SeptemberWeek4 />
+			<Calender />
 		</>
 	);
 }

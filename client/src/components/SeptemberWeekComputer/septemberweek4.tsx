@@ -9,7 +9,7 @@ import thursdayShape from "../../assets/img/thursday-shape.svg";
 import fridayShape from "../../assets/img/friday-shape.svg";
 import weekendShape from "../../assets/img/weekend-shape.svg";
 import WeekBox from "./weekday4";
-const SeptemberWeek3 = () => {
+const SeptemberWeek4 = () => {
 	return (
 		<div className='september-week-4'>
 			<div className='container py-8 px-6 d-flex flex-column week-box-container'>
@@ -107,4 +107,4 @@ const SeptemberWeek3 = () => {
 	);
 };
 
-export default SeptemberWeek3;
+export default SeptemberWeek4;
