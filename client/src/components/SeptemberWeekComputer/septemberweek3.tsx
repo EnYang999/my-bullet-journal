@@ -2,7 +2,7 @@ import SidePage from "../sidebarpage/SidePage";
 
 import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
 import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
-import "./septemberweekcomputer.scss";
+import "./septemberweek3.scss";
 import mondayShape from "../../assets/img/monday-shape.svg";
 import tuesdayShape from "../../assets/img/thursday-shape.svg";
 import wednesdayShape from "../../assets/img/wednesday-shape.svg";
@@ -10,9 +10,9 @@ import thursdayShape from "../../assets/img/thursday-shape.svg";
 import fridayShape from "../../assets/img/friday-shape.svg";
 import weekendShape from "../../assets/img/weekend-shape.svg";
 import WeekBox from "./weekday3";
-const SeptemberWeekComputer = () => {
+const SeptemberWeek3 = () => {
 	return (
-		<div className='september-week-computer'>
+		<div className='september-week-3'>
 			<div className='container py-8 px-6 d-flex flex-column week-box-container'>
 				<SidePage className='sidebar' />
 				<div className='row'>
@@ -108,4 +108,4 @@ const SeptemberWeekComputer = () => {
 	);
 };
 
-export default SeptemberWeekComputer;
+export default SeptemberWeek3;
