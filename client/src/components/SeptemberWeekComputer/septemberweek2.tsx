@@ -5,19 +5,19 @@ import mondayShape from "../../assets/img/monday-sepweek2.svg";
 import wednesdayShape from "../../assets/img/wednesday-sepweek2.svg";
 import thursdayShape from "../../assets/img/thursday-sepweek2.svg";
 import weekendShape from "../../assets/img/weekend-sepweek2.svg";
-import WeekBox from "./weekday4";
+import WeekBox from "./weekday2";
 import SidePage from "../sidebarpage/SidePage";
 import "./septemberweek2.scss";
 import SeptemberLabel from "../decorationelements/septemberlabel/SeptemberLabel";
-import BunnyRabbit from "../../assets/img/BunnyRabbitWeek2Sep.png";
+import walkingrabbit from "../../assets/img/walkingrabbit.png";
 const SeptemberWeek2 = () => {
 	return (
 		<div className='september-week-2'>
 			<div className='container py-8 px-6 d-flex week-box-container'>
 				<SidePage className='sidebar' />
-				<div className='row'>
-					<div className='col-lg-9'>
-						<div className='row'>
+				<div className='row outer-row'>
+					<div className='col-lg-9 h-100'>
+						<div className='row inner-row h-100'>
 							<div className='col-lg-4 col-md-6 d-flex day-box'>
 								<WeekBox
 									day='monday'
@@ -57,7 +57,6 @@ const SeptemberWeek2 = () => {
 									]}
 								/>
 							</div>
-							<div className='w-100 d-none d-md-block mt-7'></div>
 
 							<div className='col-lg-4 col-md-6 d-flex day-box'>
 								<WeekBox
@@ -100,11 +99,11 @@ const SeptemberWeek2 = () => {
 							</div>
 						</div>
 					</div>
-					<div className='col-lg-3'>
-						<SeptemberLabel className='septemberlabel' />
-						<figure>
-							<img src={BunnyRabbit} alt='' />
+					<div className='col-lg-3 text-center'>
+						<figure className={"align-self-center"}>
+							<img src={walkingrabbit} alt='' />
 						</figure>
+						<SeptemberLabel className={"septemberlabel align-self-center"} />
 						<Calendar month={9} year={2023} />
 					</div>
 				</div>
