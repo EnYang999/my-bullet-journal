@@ -10,12 +10,13 @@ import LandingMenu from "./components/landingsection/LandingMenu";
 import LandingDish from "./components/landingsection/LandingDish";
 import LandingTestimonial from "./components/landingsection/LandingPeoplesay";
 import LandingGallary from "./components/landingsection/LandingGallary";
-import Calendar from "./components/calender/Calendar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SeptemberWeek3 from "./components/SeptemberWeekComputer/septemberweek3";
+import SeptemberWeek2 from "./components/SeptemberWeekComputer/septemberweek2";
 function App() {
 	return (
 		<>
-			{/* <LandingNavbar />
+			<LandingNavbar />
 			<LandingHeader />
 			<LandingSectiona />
 			<LandingSectionb />
@@ -23,8 +24,9 @@ function App() {
 			<LandingMenu />
 			<LandingDish />
 			<LandingTestimonial />
-			<SeptemberWeek1 /> */}
-			<SeptemberWeek3 />
+			<LandingGallary />
+			{/* <SeptemberWeek1 /> */}
+			{/* <SeptemberWeek3 /> */}
 		</>
 	);
 }
