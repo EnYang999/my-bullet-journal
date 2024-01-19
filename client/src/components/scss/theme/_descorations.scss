@@ -3,8 +3,8 @@
 //
 
 // Media decoration
-@import './variables';
-@import '../theme.scss';
+// @import './variables';
+// @import '../theme.scss';
 .media-decoration {
     position: relative;
 }
@@ -35,18 +35,17 @@
 // Media decoration 1
 
 .media-decoration-1 {
-
     @include media-breakpoint-up(md) {
         max-width: 80%;
     }
 }
 
-.media-decoration-1>.media-decoration-border {
+.media-decoration-1 > .media-decoration-border {
     top: 10%;
     left: 20%;
 }
 
-.media-decoration-1>.media-decoration-solid {
+.media-decoration-1 > .media-decoration-solid {
     top: -10%;
     left: -30%;
 }
@@ -90,7 +89,9 @@
         bottom: 25%;
         width: 35%;
         height: 100%;
-        background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='5' fill='#{$gray-200}' /></svg>"));
+        background-image: escape-svg(
+            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='5' fill='#{$gray-200}' /></svg>")
+        );
         background-size: 10px 10px;
     }
 }

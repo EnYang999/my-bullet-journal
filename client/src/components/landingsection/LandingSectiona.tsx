@@ -1,4 +1,3 @@
-import "./LanddingSectiona.scss";
 import img2 from "../../assets/img/2.jpg";
 const LandingSectiona = () => {
 	return (
