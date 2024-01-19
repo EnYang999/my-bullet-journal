@@ -11,7 +11,7 @@ import LandingDish from "./components/landingsection/LandingDish";
 import LandingTestimonial from "./components/landingsection/LandingPeoplesay";
 import LandingGallary from "./components/landingsection/LandingGallary";
 import Calendar from "./components/calender/Calendar";
-import SeptemberWeek2 from "./components/SeptemberWeekComputer/septemberweek2";
+import SeptemberWeek3 from "./components/SeptemberWeekComputer/septemberweek3";
 function App() {
 	return (
 		<>
@@ -24,7 +24,7 @@ function App() {
 			<LandingDish />
 			<LandingTestimonial />
 			<SeptemberWeek1 /> */}
-			<SeptemberWeek2 />
+			<SeptemberWeek3 />
 		</>
 	);
 }
