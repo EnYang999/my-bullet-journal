@@ -8,6 +8,7 @@
     max-width: 2000px;
     .week-box-container {
         position: relative;
+        aspect-ratio: 16/9;
         box-shadow:
             rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px,
@@ -54,6 +55,11 @@
                         border-radius: 20px;
                         background-color: rgba(176, 218, 233, 0.726);
                     }
+                }
+                .week-date-num {
+                    font-family: "Aleo", serif;
+                    font-style: italic;
+                    color: rgb(67, 144, 196);
                 }
                 .to-do-lines-container {
                     height: 80%;

@@ -24,7 +24,7 @@ const SeptemberWeek3 = () => {
 		<div className='september-week-3'>
 			<div className='container py-8 px-6 d-flex week-box-container jarallaxSepWeek3'>
 				<SidePage className='sidebar' />
-				<div className='row'>
+				<div className='row h-100'>
 					<div className='col-lg-4 col-md-6 d-flex day-box'>
 						<WeekBox
 							day='monday'
