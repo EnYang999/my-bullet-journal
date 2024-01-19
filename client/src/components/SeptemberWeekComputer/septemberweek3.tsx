@@ -5,7 +5,7 @@ import mondayShape from "../../assets/img/monday_sepweek3.svg";
 import wednesdayShape from "../../assets/img/wednesday_sepweek3.svg";
 import thursdayShape from "../../assets/img/thursday_sepweek3.svg";
 import weekendShape from "../../assets/img/weekend_sepweek3.svg";
-import WeekBox from "./weekday2";
+import WeekBox from "./weekday3"; // very similar to weekday2
 import { jarallax } from "jarallax";
 import SidePage from "../sidebarpage/SidePage";
 import background from "../../assets/img/sepweek3bgwithwhite.png";
@@ -29,6 +29,7 @@ const SeptemberWeek3 = () => {
 						<WeekBox
 							day='monday'
 							shapeImage={mondayShape}
+							dateTime={"11"}
 							boxIds={[
 								`sep-week-3-monday-1`,
 								`sep-week-3-monday-2`,
@@ -42,6 +43,7 @@ const SeptemberWeek3 = () => {
 						<WeekBox
 							day='tuesday'
 							shapeImage={tuesdayShape}
+							dateTime={"12"}
 							boxIds={[
 								`sep-week-3-tuesday-1`,
 								`sep-week-3-tuesday-2`,
@@ -55,6 +57,7 @@ const SeptemberWeek3 = () => {
 						<WeekBox
 							day='wednesday'
 							shapeImage={wednesdayShape}
+							dateTime={"13"}
 							boxIds={[
 								`sep-week-3-wednesday-1`,
 								`sep-week-3-wednesday-2`,
@@ -69,6 +72,7 @@ const SeptemberWeek3 = () => {
 						<WeekBox
 							day='thursday'
 							shapeImage={thursdayShape}
+							dateTime={"14"}
 							boxIds={[
 								`sep-week-3-thursday-1`,
 								`sep-week-3-thursday-2`,
@@ -82,6 +86,7 @@ const SeptemberWeek3 = () => {
 						<WeekBox
 							day='friday'
 							shapeImage={fridayShape}
+							dateTime={"15"}
 							boxIds={[
 								`sep-week-3-friday-1`,
 								`sep-week-3-friday-2`,
@@ -97,6 +102,7 @@ const SeptemberWeek3 = () => {
 						<WeekBox
 							day='weekend'
 							shapeImage={weekendShape}
+							dateTime={"16-17"}
 							boxIds={[
 								`sep-week-3-weekend-1`,
 								`sep-week-3-weekend-2`,

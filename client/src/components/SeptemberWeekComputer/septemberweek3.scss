@@ -16,7 +16,7 @@
         background-color: #f0e4e4;
         background-image: url("../../assets/img/sepweek3bgwithwhite.png");
         background-size: cover;
-        height: 700px;
+        min-height: 700px;
         .sidebar {
             position: absolute;
             display: block;
@@ -32,65 +32,52 @@
                 padding: 0;
             }
             margin-right: 0;
+            .week-overlap {
+                .week-fig {
+                    height: 25%;
+                    position: relative;
+                    z-index: 1;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        height: 30%;
+                        width: 130%;
+                        left: 50%;
+                        top: 50%;
+                        z-index: -1;
+                        transform: translate(-50%, -50%);
+                        border-radius: 20px;
+                        background-color: rgba(176, 218, 233, 0.726);
+                    }
+                }
+                .to-do-lines-container {
+                    height: 80%;
+                }
+            }
         }
-        .outer-row {
-            .inner-row {
-                .week-overlap {
-                    border: rgb(189, 213, 239) solid 1.5px;
-                    .week-fig {
-                        height: 25%;
-                        position: relative;
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            height: 50%;
-                            width: 120%;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            z-index: -1;
-                            border-radius: 20px;
-                            background-color: rgba(184, 223, 252, 0.726);
-                        }
-                    }
-                    .to-do-lines-container {
-                        height: 80%;
-                    }
-                }
-                .day-box:last-child {
-                    .week-fig {
-                        height: 18%;
-                        &::after {
-                            height: 70%;
-                            top: 70%;
-                        }
-                    }
-                }
+        header {
+            position: relative;
+            .font-weight-bold {
+                font-family: "Patrick Hand", cursive;
             }
-            header {
-                position: relative;
-                .font-weight-bold {
-                    font-family: "Patrick Hand", cursive;
-                }
-                &::after {
-                    content: "";
-                    position: absolute;
-                    height: 50%;
-                    width: 100%;
-                    top: 25%;
-                    z-index: -1;
-                    border-radius: 20px;
-                    background-color: rgba(100, 151, 190, 0.726);
-                }
+            &::after {
+                content: "";
+                position: absolute;
+                height: 50%;
+                width: 100%;
+                top: 25%;
+                z-index: -1;
+                border-radius: 20px;
+                background-color: rgba(100, 151, 190, 0.726);
             }
-            .calendar-day {
-                font-family: "Aleo", serif;
-            }
+        }
+        .calendar-day {
+            font-family: "Aleo", serif;
         }
     }
 }
