@@ -6,7 +6,6 @@ import img30 from "../../assets/img/30.jpg";
 import img31 from "../../assets/img/31.jpg";
 import { useRef, useEffect } from "react";
 import Flickity from "flickity";
-import "flickity/css/flickity.css";
 
 const LandingDish = () => {
 	const flickityRef = useRef<HTMLDivElement | null>(null);

@@ -2,7 +2,6 @@ import img20 from "../../assets/img/20.jpg";
 import img21 from "../../assets/img/21.jpg";
 import img22 from "../../assets/img/22.jpg";
 import Flickity from "flickity";
-import "flickity/css/flickity.css";
 import { useRef, useEffect } from "react";
 const LandingTestimonial = () => {
 	const flickityRef = useRef<HTMLDivElement | null>(null);
