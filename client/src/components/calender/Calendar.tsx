@@ -6,7 +6,6 @@ import {
 	isSameMonth,
 	startOfWeek,
 } from "date-fns";
-import "./Calendar.scss";
 interface Props {
 	month: number;
 	year: number;
