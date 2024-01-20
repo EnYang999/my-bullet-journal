@@ -3,8 +3,9 @@ import "../scss/theme/_rightsidebar.scss";
 import { Link } from "react-router-dom";
 interface Props {
 	className: string;
+	month: string;
 }
-const RightSideBar = ({ className }: Props): JSX.Element => {
+const RightSideBar = ({ className, month }: Props): JSX.Element => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
 	const handleMouseEnter = (index: number) => {
@@ -51,7 +52,7 @@ const RightSideBar = ({ className }: Props): JSX.Element => {
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-center'
-								to={`themes/${label}`}
+								to={`/themes/2023/${month}/${label.full}`}
 							>
 								<span className='label-cap'>
 									{label.full.split(" ").map((word, index) => (

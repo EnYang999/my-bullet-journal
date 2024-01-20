@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { jarallax } from "jarallax";
 import SidePage from "../sidebarpage/SidePage";
 import RightSideBar from "../sidebarpage/RightPage";
@@ -12,6 +12,11 @@ import thursdayShape from "../../assets/img/thursday-sepweek1.svg";
 import weekendShape from "../../assets/img/weekend-sepweek1.svg";
 import background from "../../assets/img/sepweek1bg.png";
 const SeptemberWeek1 = () => {
+	const [selectedMonth, setSelectedMonth] = useState<string>("09");
+	function handleMonthChange(month: string) {
+		console.log(month);
+		setSelectedMonth(month);
+	}
 	useEffect(() => {
 		jarallax(document.querySelectorAll(".jarallaxSepWeek1"), {
 			speed: 0.6,
@@ -24,8 +29,8 @@ const SeptemberWeek1 = () => {
 	return (
 		<div className='september-week-1'>
 			<div className='container py-8 px-6 week-box-container bg-cover jarallaxSepWeek1'>
-				<SidePage className='sidebar' />
-				<RightSideBar className='rightside' />
+				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
+				<RightSideBar className='rightside' month={selectedMonth} />
 				<div className='row'>
 					<div className='col-lg-2 col-md-4 d-flex day-box'>
 						<WeekBox

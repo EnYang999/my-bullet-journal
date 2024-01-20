@@ -64,17 +64,17 @@ const LandingNavbar = () => {
 					{/* <!--Navbar nav  --> */}
 					<ul className='navbar-nav'>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./about-us.html'>
+							<a className='nav-link ' href='./about-us'>
 								About Us
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./month-planner.html'>
+							<a className='nav-link ' href='./month-planner'>
 								Monthly Planner
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./habits.html'>
+							<a className='nav-link ' href='./habits'>
 								Habits Tracker
 							</a>
 						</li>
@@ -83,7 +83,7 @@ const LandingNavbar = () => {
 					{/* <!--Navbar brand  --> */}
 					<a
 						className='navbar-brand d-none d-lg-flex mx-lg-auto'
-						href='./index.html'
+						href='./index'
 					>
 						Bullet Journal
 					</a>
@@ -91,17 +91,17 @@ const LandingNavbar = () => {
 					{/* <!--Navbar nav  --> */}
 					<ul className='navbar-nav'>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./themes.html'>
+							<a className='nav-link ' href='./themes'>
 								Themes
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./gallery.html'>
+							<a className='nav-link ' href='./gallery'>
 								Gallery
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./login.html'>
+							<a className='nav-link ' href='./login'>
 								Log In
 							</a>
 						</li>

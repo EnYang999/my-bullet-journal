@@ -10,13 +10,20 @@ function App() {
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<Login />} />
-				<Route path='/themes/'>
+				<Route path='/' element={<LandingPage />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/themes'>
 					<Route index element={<SeptemberWeek1 />} />
-					<Route path='week1' element={<SeptemberWeek1 />} />
-					<Route path='week2' element={<SeptemberWeek2 />} />
-					<Route path='week3' element={<SeptemberWeek3 />} />
-					<Route path='week4' element={<SeptemberWeek4 />} />
+					<Route path=':year'>
+						<Route index element={<SeptemberWeek1 />} />
+						<Route path=':month'>
+							<Route index element={<SeptemberWeek1 />} />
+							<Route path='week1' element={<SeptemberWeek1 />} />
+							<Route path='week2' element={<SeptemberWeek2 />} />
+							<Route path='week3' element={<SeptemberWeek3 />} />
+							<Route path='week4' element={<SeptemberWeek4 />} />
+						</Route>
+					</Route>
 				</Route>
 			</Routes>
 		</>
