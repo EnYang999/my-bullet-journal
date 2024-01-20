@@ -25,7 +25,6 @@ const Calendar = ({ month, year }: Props) => {
 
 	const totalDaysInMonth = calendarDays.length;
 	const daysInLastRow = 7 - (totalDaysInMonth % 7);
-	console.log(daysInLastRow);
 
 	// Create an array with additional empty cells to fill the last row
 	const paddedCalendarDays =
