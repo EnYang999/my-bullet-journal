@@ -5,11 +5,11 @@ interface Props {
 	className: string;
 	setSelectedMonth: React.Dispatch<React.SetStateAction<string>>;
 }
-const SidePage = ({ className, setSelectedMonth }: Props): JSX.Element => {
+const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
-	console.log("====================================");
-	console.log(setSelectedMonth);
-	console.log("====================================");
+	const handleClick = (index: number) => {
+		setSelectedMonth((index + 1).toString());
+	};
 	const months = [
 		{ abbreviation: "Jan", number: "01" },
 		{ abbreviation: "Feb", number: "02" },
@@ -48,7 +48,7 @@ const SidePage = ({ className, setSelectedMonth }: Props): JSX.Element => {
 							onBlur={() => {
 								setActiveIndex(null);
 							}}
-							onClick={() => setSelectedMonth("09")}
+							onClick={() => handleClick(index)}
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-left'
