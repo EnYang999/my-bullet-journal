@@ -19,9 +19,6 @@ function App() {
 					<Route path='week4' element={<SeptemberWeek4 />} />
 				</Route>
 			</Routes>
-
-			{/* <SeptemberWeek1 /> */}
-			{/* <SeptemberWeek3 /> */}
 		</>
 	);
 }

@@ -25,8 +25,8 @@ const RightSideBar = ({ className }: Props): JSX.Element => {
 
 	const labels = [
 		{ abbreviation: "Ind", full: "Index" },
-		{ abbreviation: "Mon", full: "Monthly Planner" },
-		{ abbreviation: "Hab", full: "Habits Tracker" },
+		{ abbreviation: "Mon", full: "Monthly" },
+		{ abbreviation: "Hab", full: "Habits" },
 		{ abbreviation: "W-1", full: "Week-1" },
 		{ abbreviation: "W-2", full: "Week-2" },
 		{ abbreviation: "W-3", full: "Week-3" },
@@ -50,14 +50,13 @@ const RightSideBar = ({ className }: Props): JSX.Element => {
 							onBlur={handleBlur}
 						>
 							<Link
-								className='align-items-center w-100 h-100 d-flex justify-content-left'
+								className='align-items-center w-100 h-100 d-flex justify-content-center'
 								to={`themes/${label}`}
 							>
 								<span className='label-cap'>
-									{label.abbreviation.charAt(0)}
-								</span>
-								<span className='label-name'>
-									{label.abbreviation.slice(1)}
+									{label.full.split(" ").map((word, index) => (
+										<span key={index}>{word}</span>
+									))}
 								</span>
 							</Link>
 						</li>
