@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { jarallax } from "jarallax";
 import SidePage from "../sidebarpage/SidePage";
+import RightSideBar from "../sidebarpage/RightPage";
 import "./septemberweek1.scss";
 import WeekBox from "./weekday1";
 import fridayShape from "../../assets/img/friday-sepweek1.svg";
@@ -24,6 +25,7 @@ const SeptemberWeek1 = () => {
 		<div className='september-week-1'>
 			<div className='container py-8 px-6 week-box-container bg-cover jarallaxSepWeek1'>
 				<SidePage className='sidebar' />
+				<RightSideBar className='rightside' />
 				<div className='row'>
 					<div className='col-lg-2 col-md-4 d-flex day-box'>
 						<WeekBox

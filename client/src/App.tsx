@@ -5,11 +5,12 @@ import SeptemberWeek1 from "./components/SeptemberWeekComputer/septemberweek1";
 import LandingPage from "./components/landingsection/LandingPage";
 import SeptemberWeek3 from "./components/SeptemberWeekComputer/septemberweek3";
 import SeptemberWeek2 from "./components/SeptemberWeekComputer/septemberweek2";
+import Login from "./components/login/login";
 function App() {
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<LandingPage />} />
+				<Route path='/' element={<Login />} />
 				<Route path='/themes/'>
 					<Route index element={<SeptemberWeek1 />} />
 					<Route path='week1' element={<SeptemberWeek1 />} />

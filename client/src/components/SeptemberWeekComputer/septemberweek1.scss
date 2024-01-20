@@ -25,6 +25,15 @@
             top: 50%;
             transform: translateY(-50%);
         }
+        .rightside {
+            position: absolute;
+            display: block;
+            height: 100%;
+            z-index: 3;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
         .row {
             height: 100%;
             .day-box {

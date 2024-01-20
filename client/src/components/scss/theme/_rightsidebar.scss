@@ -11,7 +11,7 @@
     --sidebar-letter-height: 3.75rem;
 }
 
-.pagination-container {
+.right-pagination-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,15 +25,11 @@
         overflow: hidden;
 
         ul {
-            padding-left: var(--sidebar-padding);
-            padding-top: var(--sidebar-padding);
-            padding-bottom: var(--sidebar-padding);
+            padding-left: 0;
 
             li {
-                border-top-left-radius: 20px;
-                border-bottom-left-radius: 20px;
-                padding-left: 1em;
-                padding-right: 0.5em;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
                 width: var(--sidebar-width);
                 background-color: var(--sidebar-color);
                 transition: all 0.5s;

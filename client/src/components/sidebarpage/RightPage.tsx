@@ -1,10 +1,10 @@
 import { useState } from "react";
-import "../scss/theme/_sidebar.scss";
+import "../scss/theme/_rightsidebar.scss";
 import { Link } from "react-router-dom";
 interface Props {
 	className: string;
 }
-const SidePage = ({ className }: Props): JSX.Element => {
+const RightSideBar = ({ className }: Props): JSX.Element => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
 	const handleMouseEnter = (index: number) => {
@@ -23,29 +23,25 @@ const SidePage = ({ className }: Props): JSX.Element => {
 		setActiveIndex(null);
 	};
 
-	const months = [
-		{ abbreviation: "Jan", full: "January" },
-		{ abbreviation: "Feb", full: "February" },
-		{ abbreviation: "Mar", full: "March" },
-		{ abbreviation: "Apr", full: "April" },
-		{ abbreviation: "May", full: "May" },
-		{ abbreviation: "Jun", full: "June" },
-		{ abbreviation: "Jul", full: "July" },
-		{ abbreviation: "Aug", full: "August" },
-		{ abbreviation: "Sep", full: "September" },
-		{ abbreviation: "Oct", full: "October" },
-		{ abbreviation: "Nov", full: "November" },
-		{ abbreviation: "Dec", full: "December" },
+	const labels = [
+		{ abbreviation: "Ind", full: "Index" },
+		{ abbreviation: "Mon", full: "Monthly Planner" },
+		{ abbreviation: "Hab", full: "Habits Tracker" },
+		{ abbreviation: "W-1", full: "Week-1" },
+		{ abbreviation: "W-2", full: "Week-2" },
+		{ abbreviation: "W-3", full: "Week-3" },
+		{ abbreviation: "W-4", full: "Week-4" },
+		{ abbreviation: "W-5", full: "Week-5" },
 	];
 
 	return (
-		<div className={`pagination-container ${className}`}>
+		<div className={`right-pagination-container ${className}`}>
 			<div className='pagination-overlap'>
-				<ul className='d-flex flex-column align-items-end h-100 gap-1'>
-					{months.map((month, index) => (
+				<ul className='d-flex flex-column h-100 gap-1'>
+					{labels.map((label, index) => (
 						<li
 							key={index}
-							className={`position-relative h-100 d-flex align-items-center ${month.abbreviation.toLowerCase()} ${
+							className={`position-relative h-100 d-flex align-items-center ${label.abbreviation.toLowerCase()} ${
 								index === activeIndex ? "active" : ""
 							}`}
 							onMouseEnter={() => handleMouseEnter(index)}
@@ -55,13 +51,13 @@ const SidePage = ({ className }: Props): JSX.Element => {
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-left'
-								to={`themes/${month}`}
+								to={`themes/${label}`}
 							>
-								<span className='month-cap'>
-									{month.abbreviation.charAt(0)}
+								<span className='label-cap'>
+									{label.abbreviation.charAt(0)}
 								</span>
-								<span className='month-name'>
-									{month.abbreviation.slice(1)}
+								<span className='label-name'>
+									{label.abbreviation.slice(1)}
 								</span>
 							</Link>
 						</li>
@@ -72,4 +68,4 @@ const SidePage = ({ className }: Props): JSX.Element => {
 	);
 };
 
-export default SidePage;
+export default RightSideBar;
