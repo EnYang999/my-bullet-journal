@@ -52,7 +52,7 @@ const RightSideBar = ({ className, month }: Props): JSX.Element => {
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-center'
-								to={`/themes/2023/${month}/${label.full}`}
+								to={`/themes/2023/${month}/${label.full.toLowerCase()}`}
 							>
 								<span className='label-cap'>
 									{label.full.split(" ").map((word, index) => (

@@ -18,10 +18,10 @@ function App() {
 						<Route index element={<SeptemberWeek1 />} />
 						<Route path=':month'>
 							<Route index element={<SeptemberWeek1 />} />
-							<Route path='week1' element={<SeptemberWeek1 />} />
-							<Route path='week2' element={<SeptemberWeek2 />} />
-							<Route path='week3' element={<SeptemberWeek3 />} />
-							<Route path='week4' element={<SeptemberWeek4 />} />
+							<Route path='week-1' element={<SeptemberWeek1 />} />
+							<Route path='week-2' element={<SeptemberWeek2 />} />
+							<Route path='week-3' element={<SeptemberWeek3 />} />
+							<Route path='week-4' element={<SeptemberWeek4 />} />
 						</Route>
 					</Route>
 				</Route>

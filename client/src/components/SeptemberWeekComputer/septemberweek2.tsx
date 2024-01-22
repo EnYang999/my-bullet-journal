@@ -1,3 +1,5 @@
+import { useState } from "react";
+import RightSideBar from "../sidebarpage/RightPage";
 import Calendar from "../calender/Calendar";
 import fridayShape from "../../assets/img/friday-sepweek2.svg";
 import tuesdayShape from "../../assets/img/tuesday-sepweek2.svg";
@@ -11,10 +13,17 @@ import "./septemberweek2.scss";
 import SeptemberLabel from "../decorationelements/septemberlabel/SeptemberLabel";
 import walkingrabbit from "../../assets/img/walkingrabbit.png";
 const SeptemberWeek2 = () => {
+	const [selectedMonth, setSelectedMonth] = useState<string>("09");
 	return (
 		<div className='september-week-2'>
 			<div className='container py-8 px-6 d-flex week-box-container'>
-				<SidePage className='sidebar' />
+				<SidePage
+					className='sidebar'
+					setSelectedMonth={(selectedMonth) => {
+						setSelectedMonth(selectedMonth);
+					}}
+				/>
+				<RightSideBar className='rightside' month={selectedMonth} />
 				<div className='row outer-row'>
 					<div className='col-lg-9 h-100'>
 						<div className='row inner-row h-100'>
