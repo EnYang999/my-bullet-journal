@@ -2,14 +2,16 @@
 import { ToDoLine } from "../todolines/todoline";
 interface Props {
 	boxIds: string[];
+	day: string;
 }
-const WeekBox = ({ boxIds }: Props) => {
+const WeekBox = ({ boxIds, day }: Props) => {
 	return (
-		<div
-			className={`week-overlap overlap-${boxIds.length} d-flex flex-column align-items-center`}
-		>
+		<div className={`week-overlap overlap-${boxIds.length} d-flex flex-column`}>
+			<div className='week-header d-flex w-100 mb-5 justify-content-start ps-2'>
+				<span className='d-flex'>{day}</span>
+			</div>
 			<div
-				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column justify-content-center`}
+				className={`to-do-lines-container flex-grow-1 d-flex mx-3 flex-column`}
 			>
 				{boxIds.map((boxId, index) => (
 					<ToDoLine key={index} className='my-todo-list' boxId={boxId} />
