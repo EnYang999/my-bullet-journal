@@ -16,12 +16,7 @@ const SeptemberWeek4 = () => {
 	return (
 		<div className='september-week-4'>
 			<div className='container py-8 px-6 d-flex flex-column week-box-container'>
-				<SidePage
-					className='sidebar'
-					setSelectedMonth={(selectedMonth) => {
-						setSelectedMonth(selectedMonth);
-					}}
-				/>
+				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
 				<RightSideBar className='rightside' month={selectedMonth} />
 				<div className='row'>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center'>

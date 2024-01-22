@@ -48,7 +48,7 @@ const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
 							onBlur={() => {
 								setActiveIndex(null);
 							}}
-							onClick={() => handleClick(index)}
+							onClick={() => setSelectedMonth((index + 1).toString())}
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-left'

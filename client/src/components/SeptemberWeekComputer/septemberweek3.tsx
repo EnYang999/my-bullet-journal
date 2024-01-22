@@ -25,12 +25,7 @@ const SeptemberWeek3 = () => {
 	return (
 		<div className='september-week-3'>
 			<div className='container py-8 px-6 d-flex week-box-container jarallaxSepWeek3'>
-				<SidePage
-					className='sidebar'
-					setSelectedMonth={(selectedMonth) => {
-						setSelectedMonth(selectedMonth);
-					}}
-				/>
+				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
 				<RightSideBar className='rightside' month={selectedMonth} />
 				<div className='row h-100'>
 					<div className='col-lg-4 col-md-6 d-flex day-box'>
