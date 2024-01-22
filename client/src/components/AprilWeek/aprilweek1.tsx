@@ -1,6 +1,6 @@
 import { useState } from "react";
 import WeekBox from "./weekday1";
-import greenpage from "../../assets/april2022/week1page.jpg";
+import greenpage from "../../assets/april2022/aprilweek1.jpg";
 import RightSideBar from "../sidebarpage/RightPage";
 import SidePage from "../sidebarpage/SidePage";
 const AprilWeek1 = () => {
