@@ -1,4 +1,4 @@
-import img2 from "../../assets/img/2.jpg";
+import img2 from "../../assets/landing/2.jpg";
 const LandingSectiona = () => {
 	return (
 		<section className='pt-7 pt-md-9'>

@@ -1,6 +1,6 @@
-import img20 from "../../assets/img/20.jpg";
-import img21 from "../../assets/img/21.jpg";
-import img22 from "../../assets/img/22.jpg";
+import img20 from "../../assets/landing/20.jpg";
+import img21 from "../../assets/landing/21.jpg";
+import img22 from "../../assets/landing/22.jpg";
 import Flickity from "flickity";
 import { useRef, useEffect } from "react";
 const LandingTestimonial = () => {

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { jarallax } from "jarallax";
-import landingBackground from "../../assets/landing/sixteen-miles-out-6Ahp8-YMoww-unsplash.jpg";
+import landingBackground from "../../assets/landing/1.jpg";
 
 const LandingHeader = () => {
 	useEffect(() => {

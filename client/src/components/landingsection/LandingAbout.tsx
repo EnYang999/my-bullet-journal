@@ -1,5 +1,5 @@
 import "./LandingAbout.scss";
-import img19 from "../../assets/img/19.jpg";
+import img19 from "../../assets/landing/19.jpg";
 import { useEffect } from "react";
 import { jarallax } from "jarallax";
 import "jarallax/dist/jarallax.min.css";

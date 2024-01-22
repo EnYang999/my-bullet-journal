@@ -1,4 +1,4 @@
-import img7 from "../../assets/img/7.jpg";
+import img7 from "../../assets/landing/7.jpg";
 const LandingSectionb = () => {
 	return (
 		<section className='py-7 py-md-9'>

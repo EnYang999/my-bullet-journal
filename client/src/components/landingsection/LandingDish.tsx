@@ -1,9 +1,9 @@
-import img26 from "../../assets/img/26.jpg";
-import img27 from "../../assets/img/27.jpg";
-import img28 from "../../assets/img/28.jpg";
-import img29 from "../../assets/img/29.jpg";
-import img30 from "../../assets/img/30.jpg";
-import img31 from "../../assets/img/31.jpg";
+import img26 from "../../assets/landing/26.jpg";
+import img27 from "../../assets/landing/27.jpg";
+import img28 from "../../assets/landing/28.jpg";
+import img29 from "../../assets/landing/29.jpg";
+import img30 from "../../assets/landing/30.jpg";
+import img31 from "../../assets/landing/31.jpg";
 import { useRef, useEffect } from "react";
 import Flickity from "flickity";
 
