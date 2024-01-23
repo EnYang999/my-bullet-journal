@@ -28,7 +28,7 @@ const AprilWeek1 = () => {
 					className='d-flex position-absolute'
 					style={{ left: "0.5%", bottom: "5%" }}
 				>
-					<LineDots />
+					<LineDots lineLeft={true} />
 				</div>
 				<div className='row outer-row'>
 					<div className='col-lg-9 h-100'>
