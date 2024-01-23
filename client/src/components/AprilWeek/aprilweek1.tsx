@@ -2,6 +2,7 @@ import { useState } from "react";
 import WeekBox from "./weekday1";
 import RightSideBar from "../sidebarpage/RightPage";
 import SidePage from "../sidebarpage/SidePage";
+import LineDots from "../decorationelements/lineanddots/lineanddots";
 const AprilWeek1 = () => {
 	const [selectedMonth, setSelectedMonth] = useState<string>("09");
 	return (
@@ -86,6 +87,7 @@ const AprilWeek1 = () => {
 								/>
 							</div>
 						</div>
+						<LineDots />
 					</div>
 					<div className='col-lg-3 text-center'></div>
 				</div>
