@@ -6,6 +6,7 @@ import LandingPage from "./components/landingsection/LandingPage";
 import SeptemberWeek3 from "./components/SeptemberWeekComputer/septemberweek3";
 import SeptemberWeek2 from "./components/SeptemberWeekComputer/septemberweek2";
 import AprilWeek1 from "./components/AprilWeek/aprilweek1";
+import AprilWeek2 from "./components/AprilWeek/aprilweek2";
 import Login from "./components/login/login";
 function App() {
 	return (
@@ -19,8 +20,8 @@ function App() {
 						<Route index element={<SeptemberWeek1 />} />
 						<Route path=':month'>
 							<Route index element={<SeptemberWeek1 />} />
-							<Route path='week-1' element={<SeptemberWeek1 />} />
-							<Route path='week-2' element={<SeptemberWeek2 />} />
+							<Route path='week-1' element={<AprilWeek1 />} />
+							<Route path='week-2' element={<AprilWeek2 />} />
 							<Route path='week-3' element={<SeptemberWeek3 />} />
 							<Route path='week-4' element={<SeptemberWeek4 />} />
 						</Route>

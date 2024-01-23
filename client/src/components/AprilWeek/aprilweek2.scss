@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,500;1,200;1,300;1,500&family=Caveat&family=Indie+Flower&family=Josefin+Slab:wght@300;400&family=Kalam:wght@300;400&family=Patrick+Hand&family=Shadows+Into+Light&family=Sono:wght@300;400;500;600&display=swap");
-.april-week-1 {
+.april-week-2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@
             linear-gradient(to right bottom, rgba(#fff, 1), rgba(#fff, 1) 15%, rgba(#fff, 0) 30%, rgba(#fff, 0) 100%),
             url(../../assets/april2022/aprilweek1.jpg);
         background-repeat: no-repeat;
-        background-position: right center;
+        background-position: left center;
         background-size: 40%;
         .sidebar {
             position: absolute;
@@ -64,7 +64,6 @@
                 .week-overlap {
                     border: rgb(189, 213, 239) solid 1.5px;
                     background-color: white;
-                    box-shadow: 10px 5px 5px rgb(100, 116, 87);
                     .to-do-lines-container {
                         height: 80%;
                         .cbx {
