@@ -1,6 +1,6 @@
 const LineDots = () => {
 	return (
-		<div className='container d-flex align-items-center mt-3'>
+		<div className='container d-flex align-items-center'>
 			<div className='dots-container d-flex'>
 				<div
 					className='dot'
@@ -34,9 +34,10 @@ const LineDots = () => {
 				></div>
 			</div>
 			<div
-				className='long-line ms-2 w-50'
+				className='long-line ms-2'
 				style={{
 					height: "2px",
+					width: "300px",
 					backgroundColor: "#6E8061",
 				}}
 			></div>
