@@ -14,7 +14,9 @@
             1px 0px 0px 2em #b3a492;
         border-radius: 0.5em;
         min-height: 700px;
-        background-image: url(../../assets/april2022/aprilweek1.jpg);
+        background-image: linear-gradient(to bottom, rgba(#fff, 1), rgba(#fff, 0.1) 30%, rgba(#fff, 0)),
+            linear-gradient(to right bottom, rgba(#fff, 1), rgba(#fff, 1) 15%, rgba(#fff, 0) 30%, rgba(#fff, 0) 100%),
+            url(../../assets/april2022/aprilweek1.jpg);
         background-repeat: no-repeat;
         background-position: right center;
         background-size: 40%;
@@ -64,21 +66,35 @@
                     background-color: white;
                     .to-do-lines-container {
                         height: 80%;
+                        .cbx {
+                            &:hover {
+                                .tick-box {
+                                    border-color: $focus-border-apr2022;
+                                }
 
-                        .input-field {
-                            --tick-box-background: #5c7f64;
-                            --tick-box-checked-background: #d79908;
-                            --input-box-background: #a2d0adae;
-                            --input-border-default: #69696a;
-                            --input-border-focus: #2112cf;
-                            --tick-border-checked: #1394da;
-                            --border-shadow: #00000040;
-                            --white: #ffffff;
-                            --font-active: #9739af;
-                            --font-disabled: #d8d8d8;
-                            --strike-line: #e3e3e3;
-                            --blink-color: rgb(230, 178, 22);
-                            --focus-border: rgb(241, 198, 240);
+                                .input-field {
+                                    border-color: $focus-border-apr2022;
+                                }
+                            }
+                            input {
+                                border-color: $input-border-default-apr2022;
+                                box-shadow: $border-shadow-apr2022;
+                            }
+                            .tick-box {
+                                background-color: $tick-box-background-apr2022;
+                                border: 0.1em solid $input-border-default-apr2022;
+                                &:before {
+                                    background: $blink-color-apr2022;
+                                }
+                            }
+                            .input-box {
+                                &::after {
+                                    background: $strike-line-apr2022;
+                                }
+                            }
+                            .input-field {
+                                background-color: $input-box-background-apr2022;
+                            }
                         }
                     }
                 }

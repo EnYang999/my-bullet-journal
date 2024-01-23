@@ -1,7 +1,5 @@
 import { useState } from "react";
 import WeekBox from "./weekday1";
-import "./aprilweek1.scss";
-import greenpage from "../../assets/april2022/aprilweek1.jpg";
 import RightSideBar from "../sidebarpage/RightPage";
 import SidePage from "../sidebarpage/SidePage";
 const AprilWeek1 = () => {
@@ -89,11 +87,7 @@ const AprilWeek1 = () => {
 							</div>
 						</div>
 					</div>
-					<div className='col-lg-3 text-center p-1'>
-						{/* <figure className={"align-self-center h-100"}>
-							<img src={greenpage} className={"h-100"} alt='' />
-						</figure> */}
-					</div>
+					<div className='col-lg-3 text-center'></div>
 				</div>
 			</div>
 		</div>

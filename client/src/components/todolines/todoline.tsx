@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../scss/theme/_todolines.scss";
 interface Props {
 	className: string;
 	boxId: string;

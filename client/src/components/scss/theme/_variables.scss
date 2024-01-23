@@ -26,7 +26,8 @@ $grays: (
     "600": $gray-600,
     "700": $gray-700,
     "800": $gray-800,
-    "900": $gray-900) !default;
+    "900": $gray-900
+) !default;
 
 $blue: #0d6efd !default;
 $indigo: #6610f2 !default;
@@ -52,7 +53,8 @@ $colors: (
     "cyan": $cyan,
     "white": $white,
     "gray": $gray-600,
-    "gray-dark": $gray-800) !default;
+    "gray-dark": $gray-800
+) !default;
 
 $primary: $orange !default;
 $secondary: $gray-600 !default;
@@ -71,8 +73,8 @@ $theme-colors: (
     "warning": $warning,
     "danger": $danger,
     "light": $light,
-    "dark": $dark) !default;
-
+    "dark": $dark
+) !default;
 
 // Options
 //
@@ -83,11 +85,9 @@ $enable-rfs: false !default;
 $enable-validation-icons: false !default;
 $enable-negative-margins: true !default;
 
-
 // Prefix for :root CSS variables
 
 $variable-prefix: bs- !default;
-
 
 // Spacing
 //
@@ -128,8 +128,7 @@ $spacers: (
     // 216px
     15: $spacer * 15,
     // 240px
-    ) !default;
-
+) !default;
 
 // Position
 //
@@ -139,9 +138,8 @@ $position-values: (
     0: 0,
     50: 50%,
     100: 100%,
-    auto: auto,
-    ) !default;
-
+    auto: auto
+) !default;
 
 // Body
 //
@@ -150,14 +148,12 @@ $position-values: (
 $body-bg: $white !default;
 $body-color: $gray-600 !default;
 
-
 // Links
 //
 // Style anchor elements.
 
 $link-color: $primary !default;
 $link-hover-color: $link-color !default;
-
 
 // Grid containers
 //
@@ -167,16 +163,14 @@ $container-max-widths: (
     sm: 540px,
     md: 720px,
     lg: 960px,
-    xl: 1140px,
-    ) !default;
-
+    xl: 1140px
+) !default;
 
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
 
 $grid-gutter-width: 2rem !default;
-
 
 // Components
 //
@@ -191,22 +185,19 @@ $border-radius-lg: $border-radius !default;
 
 $caret-spacing: calc($spacer / 2) !default;
 
-$transition-base: all .1s ease-in-out !default;
-
+$transition-base: all 0.1s ease-in-out !default;
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: 'Lato',
-    sans-serif !default;
-$font-family-serif: 'Playfair Display',
-    serif !default;
+$font-family-sans-serif: "Lato", sans-serif !default;
+$font-family-serif: "Playfair Display", serif !default;
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 1rem !default; // 16px
-$font-size-xs: .75rem !default; // 12px
-$font-size-sm: .875rem !default; // 14px
+$font-size-xs: 0.75rem !default; // 12px
+$font-size-sm: 0.875rem !default; // 14px
 $font-size-lg: 1.125rem !default; // 18px
 
 $line-height-base: 1.7 !default;
@@ -228,10 +219,10 @@ $font-sizes: (
     6: $h6-font-size,
     xs: $font-size-xs,
     sm: $font-size-sm,
-    lg: $font-size-lg,
-    ) !default;
+    lg: $font-size-lg
+) !default;
 
-$headings-margin-bottom: .8em !default;
+$headings-margin-bottom: 0.8em !default;
 $headings-font-family: $font-family-serif !default;
 $headings-font-weight: 400 !default;
 $headings-line-height: 1.4 !default;
@@ -243,7 +234,8 @@ $display-font-sizes: (
     3: 4rem,
     4: 3.5rem,
     5: 3rem,
-    6: 2.5rem) !default;
+    6: 2.5rem
+) !default;
 
 $display-font-weight: 700 !default;
 $display-line-height: 1 !default;
@@ -257,17 +249,15 @@ $blockquote-footer-font-size: $font-size-sm !default;
 $hr-color: $border-color !default;
 $hr-opacity: 1 !default;
 
-
 // Navs
 
 $nav-link-color: $body-color !default;
 $nav-link-hover-color: $black !default;
 $nav-link-active-color: $black !default;
 
-
 // Navbar
 
-$navbar-padding-y: .5625rem !default;
+$navbar-padding-y: 0.5625rem !default;
 
 $navbar-nav-link-padding-x: 1rem !default;
 
@@ -284,7 +274,6 @@ $navbar-light-hover-color: $primary !default;
 $navbar-light-active-color: $primary !default;
 $navbar-light-toggler-border-color: transparent !default;
 
-
 // Dropdowns
 //
 // Dropdown menu container and contents.
@@ -300,12 +289,11 @@ $dropdown-link-hover-bg: transparent !default;
 $dropdown-link-active-color: $black !default;
 $dropdown-link-active-bg: transparent !default;
 
-$dropdown-item-padding-y: $spacer * .25 !default;
+$dropdown-item-padding-y: $spacer * 0.25 !default;
 $dropdown-item-padding-x: $spacer * 1.5 !default;
 
 $dropdown-header-color: $black !default;
-$dropdown-header-padding: $spacer * .25 $spacer * 1.5 $spacer * .5 !default;
-
+$dropdown-header-padding: $spacer * 0.25 $spacer * 1.5 $spacer * 0.5 !default;
 
 // Buttons + Forms
 //
@@ -318,20 +306,17 @@ $input-btn-line-height: 1.25 !default;
 
 $input-btn-focus-width: 0 !default;
 
-$input-btn-padding-y-sm: .75rem !default;
+$input-btn-padding-y-sm: 0.75rem !default;
 $input-btn-padding-x-sm: 1.5rem !default;
 $input-btn-line-height-sm: $input-btn-line-height !default;
-
 
 // Buttons
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 
-$btn-line-height: calc(#{$input-btn-font-size} * #{$input-btn-line-height}
-);
+$btn-line-height: calc(#{$input-btn-font-size} * #{$input-btn-line-height});
 
-$btn-transition: color .1s ease-in-out !default;
-
+$btn-transition: color 0.1s ease-in-out !default;
 
 // Forms
 
@@ -345,12 +330,10 @@ $input-focus-border-color: $primary !default;
 
 $input-placeholder-color: $body-color !default;
 
-
 // Cards
 
 $card-spacer-y: $spacer * 1.5 !default;
 $card-border-color: $border-color !default;
-
 
 // Toasts
 
@@ -362,7 +345,6 @@ $toast-background-color: $white !default;
 $toast-border-width: $border-width * 3 !default;
 $toast-border-color: $primary !default;
 
-
 // Alerts
 //
 // Define alert colors, border radius, and padding.
@@ -370,52 +352,101 @@ $toast-border-color: $primary !default;
 $alert-padding-y: 1.5rem !default;
 $alert-border-radius: $border-radius !default;
 
-
 // Utilities
 
-
 $utilities: (
-    "max-width": (property: max-width,
+    "max-width": (
+        property: max-width,
         class: mw,
         responsive: true,
-        values: (100: 100%,
-            120: 120%,
-        )),
-    "background-color": (property: background-color,
+        values: (
+            100: 100%,
+            120: 120%
+        )
+    ),
+    "background-color": (
+        property: background-color,
         class: bg,
-        values: map-merge($theme-colors,
-            ("body": $body-bg,
-                "white": $white,
-                "transparent": transparent,
-                "black": $black,
-                "black-50": rgba($black, .5),
-                "black-75": rgba($black, .75),
-            ))),
-    "color": (property: color,
+        values:
+            map-merge(
+                $theme-colors,
+                (
+                    "body": $body-bg,
+                    "white": $white,
+                    "transparent": transparent,
+                    "black": $black,
+                    "black-50": rgba($black, 0.5),
+                    "black-75": rgba($black, 0.75)
+                )
+            )
+    ),
+    "color": (
+        property: color,
         class: text,
         state: hover,
-        values: map-merge($theme-colors,
-            ("white": $white,
-                "white-50": rgba($white, .5),
-                "white-75": rgba($white, .75),
-                "black": $black,
-                "black-50": rgba($black, .5),
-                "body": $body-color,
-                "muted": $text-muted,
-                "reset": inherit,
-            ))),
-    "font-family": (property: font-family,
+        values:
+            map-merge(
+                $theme-colors,
+                (
+                    "white": $white,
+                    "white-50": rgba($white, 0.5),
+                    "white-75": rgba($white, 0.75),
+                    "black": $black,
+                    "black-50": rgba($black, 0.5),
+                    "body": $body-color,
+                    "muted": $text-muted,
+                    "reset": inherit
+                )
+            )
+    ),
+    "font-family": (
+        property: font-family,
         class: font,
-        values: (monospace: var(--#{$variable-prefix}font-monospace),
+        values: (
+            monospace: var(--#{$variable-prefix}font-monospace),
             sans-serif: $font-family-sans-serif,
-            serif: $font-family-serif,
-        )),
-    "object-fit": (property: object-fit,
+            serif: $font-family-serif
+        )
+    ),
+    "object-fit": (
+        property: object-fit,
         class: object-fit,
-        values: (fill: fill,
+        values: (
+            fill: fill,
             contain: contain,
             cover: cover,
             none: none,
-            scale-down: scale-down,
-        )),
+            scale-down: scale-down
+        )
+    )
 );
+
+// TO DO LINES
+$font-active-sep2023: #83caf0;
+$font-disabled-sep2023: #d8d8d8;
+$font-family_1-sep2023: monospace;
+$strike-line-sep2023: #e3e3e3;
+$tick-box-background-sep2023: #bfdeef;
+$input-box-background-sep2023: #d9ecf7;
+$tick-box-checked-background-sep2023: #9fb9c7;
+$input-border-default-sep2023: #69696a;
+$focus-border-sep2023: rgb(198, 226, 241);
+$blink-color-sep2023: rgb(170, 225, 255);
+$tick-border-checked-sep2023: #69696a;
+$border-shadow-sep2023: #00000040;
+$tick-border-checked-sep2023: #b4c8d3;
+$input-border-focus-sep2023: #b9b8c3;
+
+$font-active-apr2022: #414f44;
+$font-disabled-apr2022: #d8d8d8;
+$font-family_1-apr2022: monospace;
+$strike-line-apr2022: #e3e3e3;
+$tick-box-background-apr2022: #799d76;
+$tick-box-checked-background-apr2022: #64725e;
+$input-border-default-apr2022: #5f916d;
+$input-border-focus-apr2022: #b9b8c3;
+$input-box-background-apr2022: #779d80;
+$focus-border-apr2022: rgb(89, 123, 97);
+$blink-color-apr2022: rgb(118, 147, 120);
+$tick-border-checked-apr2022: #69696a;
+$border-shadow-apr2022: #00000040;
