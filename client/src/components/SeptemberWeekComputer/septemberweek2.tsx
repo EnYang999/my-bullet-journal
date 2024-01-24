@@ -13,12 +13,21 @@ import "./septemberweek2.scss";
 import SeptemberLabel from "../decorationelements/septemberlabel/SeptemberLabel";
 import walkingrabbit from "../../assets/img/walkingrabbit.png";
 const SeptemberWeek2 = () => {
-	const [selectedMonth, setSelectedMonth] = useState<string>("09");
+	const [selectedMonth, setSelectedMonth] = useState<string>("04");
+	const [selectedTab, setSelectedTab] = useState<string>("index");
 	return (
 		<div className='september-week-2'>
 			<div className='container py-8 px-6 d-flex week-box-container'>
-				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
-				<RightSideBar className='rightside' month={selectedMonth} />
+				<SidePage
+					className='sidebar'
+					setSelectedMonth={setSelectedMonth}
+					tab={selectedTab}
+				/>
+				<RightSideBar
+					className='rightside'
+					month={selectedMonth}
+					setSelectedTab={setSelectedTab}
+				/>
 				<div className='row outer-row'>
 					<div className='col-lg-9 h-100'>
 						<div className='row inner-row h-100'>

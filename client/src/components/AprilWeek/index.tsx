@@ -3,7 +3,8 @@ import RightSideBar from "../sidebarpage/RightPage";
 import SidePage from "../sidebarpage/SidePage";
 import bgAprIndex from "../../assets/april2022/2022AprDigitalBujo.png";
 const AprilIndex = () => {
-	const [selectedMonth, setSelectedMonth] = useState<string>("09");
+	const [selectedMonth, setSelectedMonth] = useState<string>("04");
+	const [selectedTab, setSelectedTab] = useState<string>("index");
 	return (
 		<div className='april-week-index week-container-layout'>
 			<div
@@ -15,8 +16,16 @@ const AprilIndex = () => {
 					backgroundSize: "50%",
 				}}
 			>
-				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
-				<RightSideBar className='rightside' month={selectedMonth} />
+				<SidePage
+					className='sidebar'
+					setSelectedMonth={setSelectedMonth}
+					tab={selectedTab}
+				/>
+				<RightSideBar
+					className='rightside'
+					month={selectedMonth}
+					setSelectedTab={setSelectedTab}
+				/>
 				<div
 					className='d-flex position-absolute'
 					style={{ left: "0.5%", bottom: "5%" }}

@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 interface Props {
 	className: string;
 	setSelectedMonth: React.Dispatch<React.SetStateAction<string>>;
+	tab: string;
 }
-const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
+const SidePage: React.FC<Props> = ({ className, setSelectedMonth, tab }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 	const months = [
 		{ abbreviation: "Jan", number: "01" },
@@ -49,7 +50,7 @@ const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-left'
-								to={`/themes/${month.number}/week2`}
+								to={`/themes/${month.number}/${tab}`}
 							>
 								<span className='month-cap'>
 									{month.abbreviation.charAt(0)}

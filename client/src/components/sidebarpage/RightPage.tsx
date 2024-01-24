@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 interface Props {
 	className: string;
 	month: string;
+	setSelectedTab: React.Dispatch<React.SetStateAction<string>>;
 }
-const RightSideBar = ({ className, month }: Props): JSX.Element => {
+const RightSideBar = ({
+	className,
+	month,
+	setSelectedTab,
+}: Props): JSX.Element => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
 	const handleMouseEnter = (index: number) => {
@@ -49,6 +54,7 @@ const RightSideBar = ({ className, month }: Props): JSX.Element => {
 							onMouseLeave={handleMouseLeave}
 							onFocus={() => handleFocus(index)}
 							onBlur={handleBlur}
+							onClick={() => setSelectedTab(label.full)}
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-center'

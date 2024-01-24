@@ -6,12 +6,21 @@ import LineDots from "../decorationelements/lineanddots/lineanddots";
 import FourSquares from "../decorationelements/lineanddots/squares";
 import Square from "../decorationelements/lineanddots/square";
 const AprilWeek1 = () => {
-	const [selectedMonth, setSelectedMonth] = useState<string>("09");
+	const [selectedMonth, setSelectedMonth] = useState<string>("04");
+	const [selectedTab, setSelectedTab] = useState<string>("index");
 	return (
 		<div className='april-week-1'>
 			<div className='container py-8 px-6 d-flex week-box-container'>
-				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
-				<RightSideBar className='rightside' month={selectedMonth} />
+				<SidePage
+					className='sidebar'
+					setSelectedMonth={setSelectedMonth}
+					tab={selectedTab}
+				/>
+				<RightSideBar
+					className='rightside'
+					month={selectedMonth}
+					setSelectedTab={setSelectedTab}
+				/>
 				<div
 					className='d-flex position-absolute align-items-center justify-content-center'
 					style={{ left: "0.5%", top: "5%" }}
