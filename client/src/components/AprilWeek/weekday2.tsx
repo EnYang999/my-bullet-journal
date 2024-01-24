@@ -1,21 +1,21 @@
 import { ToDoLine } from "../todolines/todoline";
 interface Props {
 	day: string;
-	// shapeImage: string;
+	shapeImage: string;
 	boxIds: string[];
 }
-const WeekBox = ({ day, boxIds }: Props) => {
+const WeekBox = ({ day, shapeImage, boxIds }: Props) => {
 	return (
 		<div
 			className={`week-overlap overlap-${boxIds.length} d-flex flex-column align-items-center`}
 		>
-			{/* <figure className={`week-fig fig-${day.toLowerCase()}`}>
+			<figure className={`week-fig fig-${day.toLowerCase()}`}>
 				<img
 					className={`week-shape ${day.toLowerCase()}-shape`}
 					alt={`${day} shape`}
 					src={shapeImage}
 				/>
-			</figure> */}
+			</figure>
 			<div
 				className='round'
 				style={{
