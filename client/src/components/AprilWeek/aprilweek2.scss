@@ -48,17 +48,6 @@
         .outer-row {
             .inner-row {
                 .day-box {
-                    .week-header {
-                        color: white;
-                        font-family: "Josefin Slab", serif;
-                        font-size: 1.5rem;
-                    }
-                    &:nth-child(even) .week-header {
-                        background-color: rgb(56, 93, 67);
-                    }
-                    &:nth-child(odd) .week-header {
-                        background-color: rgb(176, 199, 183);
-                    }
                     &:nth-child(odd) .week-fig::after {
                         background-color: rgba(155, 197, 149, 0.726);
                     }
@@ -68,7 +57,8 @@
                 }
 
                 .week-overlap {
-                    border: rgb(189, 213, 239) solid 1.5px;
+                    border: rgb(145, 176, 159) solid 1.5px;
+                    background-color: rgba(#fff, 0.5);
                     .week-fig {
                         height: 25%;
                         position: relative;

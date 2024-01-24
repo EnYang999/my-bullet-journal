@@ -58,11 +58,11 @@ const AprilWeek2 = () => {
 									day='Monday'
 									shapeImage={monShape}
 									boxIds={[
-										`apr-week-1-monday-1`,
-										`apr-week-1-monday-2`,
-										`apr-week-1-monday-3`,
-										`apr-week-1-monday-4`,
-										`apr-week-1-monday-5`,
+										`apr-week-2-monday-1`,
+										`apr-week-2-monday-2`,
+										`apr-week-2-monday-3`,
+										`apr-week-2-monday-4`,
+										`apr-week-2-monday-5`,
 									]}
 								/>
 							</div>
@@ -71,11 +71,11 @@ const AprilWeek2 = () => {
 									day='Tuesday'
 									shapeImage={tuesShape}
 									boxIds={[
-										`apr-week-1-tuesday-1`,
-										`apr-week-1-tuesday-2`,
-										`apr-week-1-tuesday-3`,
-										`apr-week-1-tuesday-4`,
-										`apr-week-1-tuesday-5`,
+										`apr-week-2-tuesday-1`,
+										`apr-week-2-tuesday-2`,
+										`apr-week-2-tuesday-3`,
+										`apr-week-2-tuesday-4`,
+										`apr-week-2-tuesday-5`,
 									]}
 								/>
 							</div>
@@ -84,11 +84,11 @@ const AprilWeek2 = () => {
 									day='Wednesday'
 									shapeImage={wedShape}
 									boxIds={[
-										`apr-week-1-wednesday-1`,
-										`apr-week-1-wednesday-2`,
-										`apr-week-1-wednesday-3`,
-										`apr-week-1-wednesday-4`,
-										`apr-week-1-wednesday-5`,
+										`apr-week-2-wednesday-1`,
+										`apr-week-2-wednesday-2`,
+										`apr-week-2-wednesday-3`,
+										`apr-week-2-wednesday-4`,
+										`apr-week-2-wednesday-5`,
 									]}
 								/>
 							</div>
@@ -98,11 +98,11 @@ const AprilWeek2 = () => {
 									day='Thursday'
 									shapeImage={thursShape}
 									boxIds={[
-										`apr-week-1-thursday-1`,
-										`apr-week-1-thursday-2`,
-										`apr-week-1-thursday-3`,
-										`apr-week-1-thursday-4`,
-										`apr-week-1-thursday-5`,
+										`apr-week-2-thursday-1`,
+										`apr-week-2-thursday-2`,
+										`apr-week-2-thursday-3`,
+										`apr-week-2-thursday-4`,
+										`apr-week-2-thursday-5`,
 									]}
 								/>
 							</div>
@@ -111,11 +111,11 @@ const AprilWeek2 = () => {
 									day='Friday'
 									shapeImage={friShape}
 									boxIds={[
-										`apr-week-1-friday-1`,
-										`apr-week-1-friday-2`,
-										`apr-week-1-friday-3`,
-										`apr-week-1-friday-4`,
-										`apr-week-1-friday-5`,
+										`apr-week-2-friday-1`,
+										`apr-week-2-friday-2`,
+										`apr-week-2-friday-3`,
+										`apr-week-2-friday-4`,
+										`apr-week-2-friday-5`,
 									]}
 								/>
 							</div>
@@ -124,11 +124,11 @@ const AprilWeek2 = () => {
 									day='Weekend'
 									shapeImage={weekendShape}
 									boxIds={[
-										`apr-week-1-weekend-1`,
-										`apr-week-1-weekend-2`,
-										`apr-week-1-weekend-3`,
-										`apr-week-1-weekend-4`,
-										`apr-week-1-weekend-5`,
+										`apr-week-2-weekend-1`,
+										`apr-week-2-weekend-2`,
+										`apr-week-2-weekend-3`,
+										`apr-week-2-weekend-4`,
+										`apr-week-2-weekend-5`,
 									]}
 								/>
 							</div>

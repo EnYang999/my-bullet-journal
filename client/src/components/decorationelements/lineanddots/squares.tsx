@@ -1,4 +1,7 @@
-const FourSquares = () => {
+interface Props {
+	isVertical?: boolean;
+}
+const FourSquares = ({ isVertical = false }: Props) => {
 	const squareStyles = [
 		{ backgroundColor: "#727E66" },
 		{ backgroundColor: "#5A7642" },
@@ -8,7 +11,11 @@ const FourSquares = () => {
 	];
 
 	return (
-		<div className='d-flex justify-content-center'>
+		<div
+			className={`d-flex justify-content-center ${
+				isVertical ? "flex-column" : ""
+			}`}
+		>
 			{squareStyles.map((style, index) => (
 				<div
 					className='m-1'
