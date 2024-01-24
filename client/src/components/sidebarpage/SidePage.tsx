@@ -7,9 +7,6 @@ interface Props {
 }
 const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
-	const handleClick = (index: number) => {
-		setSelectedMonth((index + 1).toString());
-	};
 	const months = [
 		{ abbreviation: "Jan", number: "01" },
 		{ abbreviation: "Feb", number: "02" },
@@ -52,7 +49,7 @@ const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-left'
-								to={`/themes/2023/${month.number}/week2`}
+								to={`/themes/${month.number}/week2`}
 							>
 								<span className='month-cap'>
 									{month.abbreviation.charAt(0)}
