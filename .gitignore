@@ -260,5 +260,6 @@ dist
 
 *.DS_Store
 *.pdf
+*.psd
 *test*.*
 *test*

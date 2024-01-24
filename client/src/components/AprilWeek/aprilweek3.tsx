@@ -126,8 +126,14 @@ const AprilWeek3 = () => {
 							</div>
 						</div>
 					</div>
-					<div className='col-lg-2 text-center d-flex flex-column align-items-center justify-content-around'>
+					<div className='col-lg-2 text-center d-flex align-items-start justify-content-center p-5'>
 						<FourSquares isVertical={true} />
+						<p
+							className='mt-1 mx-0'
+							style={{ writingMode: "vertical-rl", fontFamily: "Josefin Slab" }}
+						>
+							Basking in the Warm Glow of the Afternoon Sun
+						</p>
 					</div>
 				</div>
 			</div>
