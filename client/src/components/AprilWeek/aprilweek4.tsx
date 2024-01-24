@@ -20,6 +20,22 @@ const AprilWeek4 = () => {
 				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
 				<RightSideBar className='rightside' month={selectedMonth} />
 				<div
+					className='d-flex flex-column position-absolute align-items-center'
+					style={{ right: "2.5%", top: "4%" }}
+				>
+					<p
+						style={{
+							fontFamily: "Josefin Slab",
+							fontSize: "4rem",
+							marginBottom: 0,
+							color: "white",
+						}}
+					>
+						April.
+					</p>
+					<FourSquares />
+				</div>
+				<div
 					className='d-flex position-absolute align-items-center justify-content-center'
 					style={{ right: "0.5%", bottom: "5%" }}
 				>
