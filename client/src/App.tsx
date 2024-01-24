@@ -8,6 +8,7 @@ import SeptemberWeek2 from "./components/SeptemberWeekComputer/septemberweek2";
 import AprilWeek1 from "./components/AprilWeek/aprilweek1";
 import AprilWeek2 from "./components/AprilWeek/aprilweek2";
 import AprilWeek3 from "./components/AprilWeek/aprilweek3";
+import AprilWeek4 from "./components/AprilWeek/aprilweek4";
 import Login from "./components/login/login";
 function App() {
 	return (
@@ -24,7 +25,7 @@ function App() {
 							<Route path='week-1' element={<AprilWeek1 />} />
 							<Route path='week-2' element={<AprilWeek2 />} />
 							<Route path='week-3' element={<AprilWeek3 />} />
-							<Route path='week-4' element={<SeptemberWeek4 />} />
+							<Route path='week-4' element={<AprilWeek4 />} />
 						</Route>
 					</Route>
 				</Route>
