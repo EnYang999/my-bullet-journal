@@ -1,24 +1,22 @@
 import { useState } from "react";
 import RightSideBar from "../sidebarpage/RightPage";
 import SidePage from "../sidebarpage/SidePage";
+import bgAprIndex from "../../assets/april2022/2022AprDigitalBujo.png";
 const AprilIndex = () => {
 	const [selectedMonth, setSelectedMonth] = useState<string>("09");
 	return (
-		<div className='april-week-1'>
-			<div className='container py-8 px-6 d-flex week-box-container'>
+		<div className='april-week-index week-container-layout'>
+			<div
+				className='container py-8 px-6 d-flex week-box-container'
+				style={{
+					backgroundImage: `url(${bgAprIndex})`,
+					backgroundRepeat: "no-repeat",
+					backgroundPosition: "right center",
+					backgroundSize: "50%",
+				}}
+			>
 				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
 				<RightSideBar className='rightside' month={selectedMonth} />
-				<div
-					className='d-flex position-absolute align-items-center justify-content-center'
-					style={{ left: "0.5%", top: "5%" }}
-				>
-					<p
-						className='d-flex align-items-center justify-content-center m-0 px-2'
-						style={{ fontFamily: "Aleo" }}
-					>
-						My Year
-					</p>
-				</div>
 				<div
 					className='d-flex position-absolute'
 					style={{ left: "0.5%", bottom: "5%" }}

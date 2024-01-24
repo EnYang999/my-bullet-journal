@@ -14,7 +14,7 @@ import monShape from "../../assets/april2022/Mon-aprweek2.png";
 const AprilWeek2 = () => {
 	const [selectedMonth, setSelectedMonth] = useState<string>("09");
 	return (
-		<div className='april-week-2'>
+		<div className='april-week-2 week-container-layout'>
 			<div className='container py-8 px-6 d-flex week-box-container'>
 				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
 				<RightSideBar className='rightside' month={selectedMonth} />
