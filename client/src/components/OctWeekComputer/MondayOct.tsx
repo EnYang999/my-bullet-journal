@@ -1,7 +1,7 @@
 import React from "react";
 import { ToDoLine } from "../todolines/todoline";
-import MondayShape from "../../assets/oct2023/MONDAY.svg";
-import stampa from "../../assets/oct2023/stampa.png";
+import MondayShape from "../../assets/oct2020/MONDAY.svg";
+import stampa from "../../assets/oct2020/stampa.png";
 import "./MondayOct.css";
 const MondayOct = () => {
 	return (
