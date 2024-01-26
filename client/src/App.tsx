@@ -10,10 +10,10 @@ import AprilWeek2 from "./components/AprilWeek/aprilweek2";
 import AprilWeek3 from "./components/AprilWeek/aprilweek3";
 import AprilWeek4 from "./components/AprilWeek/aprilweek4";
 import Login from "./components/login/login";
-import AprilIndex from "./components/AprilWeek";
-import JanIndex from "./components/JanuaryWeek";
-import FebIndex from "./components/FebWeek";
+import AprilIndex from "./assets/april2022/2022AprDigitalBujo.png";
 import Index from "./components/index";
+import JanIndex from "./assets/jan2024/2024JanuaryDigitalPlanner.png";
+import FebIndex from "./assets/feb2024/2024FeburaryDigitalPlanner.png";
 import marchIndex from "./assets/mar2022/2022MarDigitalBujo.png";
 import mayIndex from "./assets/may2021/2021MayDigitalBujo.png";
 import JuneIndex from "./assets/june2021/2021JuneDigitalBujo.png";
@@ -21,6 +21,8 @@ import JulyIndex from "./assets/july2020/2020JulyBujoTemplate.png";
 import AugIndex from "./assets/aug2022/2022AugustDigitalBujo.png";
 import SepIndex from "./assets/img/2023SeptemberDigitalBujo.png";
 import OctIndex from "./assets/oct2020/2020OctBujoTemplate.png";
+import NovIndex from "./assets/nov2022/2022NovDigitalBujo.png";
+import DecIndex from "./assets/dec2020/2020DecBujoTemplate.png";
 function App() {
 	return (
 		<Routes>
@@ -31,12 +33,28 @@ function App() {
 				<Route index element={<AprilWeek1 />} />
 
 				{/* Route for /themes/:year */}
-				<Route path='01/index' element={<JanIndex />} />
-				<Route path='02/index' element={<FebIndex />} />
+				<Route
+					path='01/index'
+					element={
+						<Index sourceImage={JanIndex} month='January' color='#6DABC5' />
+					}
+				/>
+				<Route
+					path='02/index'
+					element={
+						<Index sourceImage={FebIndex} month='February' color='#D8E3EB' />
+					}
+				/>
 				<Route
 					path='03/index'
 					element={
 						<Index sourceImage={marchIndex} month='March' color='#6566AE' />
+					}
+				/>
+				<Route
+					path='04/index'
+					element={
+						<Index sourceImage={AprilIndex} month='April' color='#9FB8A2' />
 					}
 				/>
 
@@ -69,11 +87,21 @@ function App() {
 						<Index sourceImage={OctIndex} month='October' color='#37658A' />
 					}
 				/>
-				<Route path='11/index' element={<FebIndex />} />
-				<Route path='12/index' element={<FebIndex />} />
+				<Route
+					path='11/index'
+					element={
+						<Index sourceImage={NovIndex} month='November' color='#DFDED7' />
+					}
+				/>
+				<Route
+					path='12/index'
+					element={
+						<Index sourceImage={DecIndex} month='December' color='#E9AE6A' />
+					}
+				/>
 
 				{/* Routes for /themes/:year/4/week-1 to week-4 */}
-				<Route path='04/index' element={<AprilIndex />} />
+
 				<Route path='04/week1' element={<AprilWeek1 />} />
 				<Route path='04/week2' element={<AprilWeek2 />} />
 				<Route path='04/week3' element={<AprilWeek3 />} />

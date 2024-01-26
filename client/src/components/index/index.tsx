@@ -18,7 +18,7 @@ const Index = ({ sourceImage, month, color }: Props) => {
 					backgroundImage: `url(${sourceImage})`,
 					backgroundRepeat: "no-repeat",
 					backgroundPosition: "right center",
-					backgroundSize: "50%",
+					backgroundSize: "contain",
 				}}
 			>
 				<SidePage
