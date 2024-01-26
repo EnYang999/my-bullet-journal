@@ -1,37 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,500;1,200;1,300;1,500&family=Caveat&family=Indie+Flower&family=Kalam:wght@300;400&family=Patrick+Hand&family=Shadows+Into+Light&family=Sono:wght@300;400;500;600&display=swap");
 .september-week-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    min-width: 1200px;
-    max-width: 2000px;
     .week-box-container {
-        position: relative;
-        box-shadow:
-            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-            rgba(60, 64, 67, 0.15) 0px 2px 6px 2px,
-            1px 0px 0px 2em #b3a492;
-        border-radius: 0.5em;
-        height: 700px;
-        .sidebar {
-            position: absolute;
-            display: block;
-            height: 100%;
-            z-index: 3;
-            right: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .rightside {
-            position: absolute;
-            display: block;
-            height: 100%;
-            z-index: 3;
-            left: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
         .row {
             padding: 0;
             & > * {

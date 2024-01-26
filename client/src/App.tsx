@@ -31,8 +31,6 @@ function App() {
 			<Route path='/themes'>
 				{/* Default route for /themes */}
 				<Route index element={<AprilWeek1 />} />
-
-				{/* Route for /themes/:year */}
 				<Route
 					path='01/index'
 					element={

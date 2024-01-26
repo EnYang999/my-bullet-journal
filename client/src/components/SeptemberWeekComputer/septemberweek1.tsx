@@ -24,7 +24,7 @@ const SeptemberWeek1 = () => {
 		};
 	}, []);
 	return (
-		<div className='september-week-1'>
+		<div className='september-week-1 week-container-layout'>
 			<div className='container py-8 px-6 week-box-container bg-cover jarallaxSepWeek1'>
 				<SidePage
 					className='sidebar'

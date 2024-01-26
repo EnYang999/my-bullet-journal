@@ -16,7 +16,7 @@ const SeptemberWeek2 = () => {
 	const [selectedMonth, setSelectedMonth] = useState<string>("04");
 	const [selectedTab, setSelectedTab] = useState<string>("index");
 	return (
-		<div className='september-week-2'>
+		<div className='september-week-2 week-container-layout'>
 			<div className='container py-8 px-6 d-flex week-box-container'>
 				<SidePage
 					className='sidebar'
