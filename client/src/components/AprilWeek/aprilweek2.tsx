@@ -12,12 +12,21 @@ import wedShape from "../../assets/april2022/Wed-aprweek2.png";
 import tuesShape from "../../assets/april2022/Tues-aprweek2.png";
 import monShape from "../../assets/april2022/Mon-aprweek2.png";
 const AprilWeek2 = () => {
-	const [selectedMonth, setSelectedMonth] = useState<string>("09");
+	const [selectedMonth, setSelectedMonth] = useState<string>("04");
+	const [selectedTab, setSelectedTab] = useState<string>("index");
 	return (
-		<div className='april-week-2'>
+		<div className='april-week-2 week-container-layout'>
 			<div className='container py-8 px-6 d-flex week-box-container'>
-				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
-				<RightSideBar className='rightside' month={selectedMonth} />
+				<SidePage
+					className='sidebar'
+					setSelectedMonth={setSelectedMonth}
+					tab={selectedTab}
+				/>
+				<RightSideBar
+					className='rightside'
+					month={selectedMonth}
+					setSelectedTab={setSelectedTab}
+				/>
 				<div
 					className='d-flex position-absolute align-items-center justify-content-center'
 					style={{ right: "0.5%", top: "5%" }}

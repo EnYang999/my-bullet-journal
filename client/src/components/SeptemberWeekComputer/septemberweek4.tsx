@@ -12,12 +12,21 @@ import fridayShape from "../../assets/img/friday-shape.svg";
 import weekendShape from "../../assets/img/weekend-shape.svg";
 import WeekBox from "./weekday4";
 const SeptemberWeek4 = () => {
-	const [selectedMonth, setSelectedMonth] = useState<string>("09");
+	const [selectedMonth, setSelectedMonth] = useState<string>("04");
+	const [selectedTab, setSelectedTab] = useState<string>("index");
 	return (
-		<div className='september-week-4'>
+		<div className='september-week-4 week-container-layout'>
 			<div className='container py-8 px-6 d-flex flex-column week-box-container'>
-				<SidePage className='sidebar' setSelectedMonth={setSelectedMonth} />
-				<RightSideBar className='rightside' month={selectedMonth} />
+				<SidePage
+					className='sidebar'
+					setSelectedMonth={setSelectedMonth}
+					tab={selectedTab}
+				/>
+				<RightSideBar
+					className='rightside'
+					month={selectedMonth}
+					setSelectedTab={setSelectedTab}
+				/>
 				<div className='row'>
 					<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 						<WeekBox

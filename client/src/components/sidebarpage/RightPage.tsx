@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 interface Props {
 	className: string;
 	month: string;
+	setSelectedTab: React.Dispatch<React.SetStateAction<string>>;
 }
-const RightSideBar = ({ className, month }: Props): JSX.Element => {
+const RightSideBar = ({
+	className,
+	month,
+	setSelectedTab,
+}: Props): JSX.Element => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
 	const handleMouseEnter = (index: number) => {
@@ -28,11 +33,11 @@ const RightSideBar = ({ className, month }: Props): JSX.Element => {
 		{ abbreviation: "Ind", full: "Index" },
 		{ abbreviation: "Mon", full: "Monthly" },
 		{ abbreviation: "Hab", full: "Habits" },
-		{ abbreviation: "W-1", full: "Week-1" },
-		{ abbreviation: "W-2", full: "Week-2" },
-		{ abbreviation: "W-3", full: "Week-3" },
-		{ abbreviation: "W-4", full: "Week-4" },
-		{ abbreviation: "W-5", full: "Week-5" },
+		{ abbreviation: "W-1", full: "Week1" },
+		{ abbreviation: "W-2", full: "Week2" },
+		{ abbreviation: "W-3", full: "Week3" },
+		{ abbreviation: "W-4", full: "Week4" },
+		{ abbreviation: "W-5", full: "Week5" },
 	];
 
 	return (
@@ -49,10 +54,11 @@ const RightSideBar = ({ className, month }: Props): JSX.Element => {
 							onMouseLeave={handleMouseLeave}
 							onFocus={() => handleFocus(index)}
 							onBlur={handleBlur}
+							onClick={() => setSelectedTab(label.full)}
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-center'
-								to={`/themes/2023/${month}/${label.full.toLowerCase()}`}
+								to={`/themes/${month}/${label.full.toLowerCase()}`}
 							>
 								<span className='label-cap'>
 									{label.full.split(" ").map((word, index) => (

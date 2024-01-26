@@ -35,12 +35,7 @@
                 padding-left: 1em;
                 padding-right: 0.5em;
                 width: var(--sidebar-width);
-                background-color: var(--sidebar-color);
                 transition: all 0.5s;
-
-                &.active {
-                    background-color: var(--sidebar-color);
-                }
 
                 &:hover,
                 &:focus {
@@ -53,8 +48,77 @@
                     color: #fff;
                 }
             }
+            .jan {
+                background-color: #bce4f7;
+                &.active {
+                    background-color: #8ed4f5;
+                }
+            }
+            .feb {
+                background-color: #dee7ee;
+                &.active {
+                    background-color: #d3e8f8;
+                }
+            }
+            .mar {
+                background-color: #b3b4ee;
+                &.active {
+                    background-color: #999ad7;
+                }
+            }
             .apr {
-                background-color: rgb(120, 146, 119);
+                background-color: rgb(179, 206, 178);
+                &.active {
+                    background-color: rgb(158, 175, 157);
+                }
+            }
+            .may {
+                background-color: #cce0bf;
+                &.active {
+                    background-color: #b6d7a0;
+                }
+            }
+            .jun {
+                background-color: #c7cff9;
+                &.active {
+                    background-color: #b2bced;
+                }
+            }
+            .jul {
+                background-color: #d1d4ea;
+                &.active {
+                    background-color: #b7bdeb;
+                }
+            }
+            .aug {
+                background-color: #96d1f3;
+                &.active {
+                    background-color: #b5dcfb;
+                }
+            }
+            .sep {
+                background-color: #80c1e7;
+                &.active {
+                    background-color: #c1e2fc;
+                }
+            }
+            .oct {
+                background-color: #c8e7ff;
+                &.active {
+                    background-color: #d3e8f8;
+                }
+            }
+            .nov {
+                background-color: #dfded7;
+                &.active {
+                    background-color: #eeebd5;
+                }
+            }
+            .dec {
+                background-color: #f6c286;
+                &.active {
+                    background-color: #ceb497;
+                }
             }
         }
     }

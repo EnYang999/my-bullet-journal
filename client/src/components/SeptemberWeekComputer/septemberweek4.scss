@@ -1,18 +1,6 @@
 .september-week-4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    min-width: 1200px;
-    max-width: 2000px;
-
     .week-box-container {
         position: relative;
-        box-shadow:
-            rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-            rgba(60, 64, 67, 0.15) 0px 2px 6px 2px,
-            1px 0px 0px 2em #b3a492;
-        border-radius: 0.5em;
         background-image: url(../../assets/img/blue-circle-deep.png), url(../../assets/img/blue-circle.png),
             url(../../assets/img/star-vector-1.svg), url(../../assets/img/star-vector-2.svg);
         background-size: 400px, 400px, 61px, 62px;
@@ -22,30 +10,9 @@
             bottom -150px right -150px,
             top 40% right 30%,
             bottom 40% left 20%;
-        min-width: 342px;
-
-        .sidebar {
-            position: absolute;
-            display: block;
-            height: 100%;
-            z-index: 3;
-            right: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .rightside {
-            position: absolute;
-            display: block;
-            height: 100%;
-            z-index: 3;
-            left: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
         .row {
             height: 45%;
         }
-
         .week-box {
             width: 100%;
             height: auto;

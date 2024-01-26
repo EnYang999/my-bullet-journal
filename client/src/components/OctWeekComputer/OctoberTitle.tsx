@@ -1,6 +1,6 @@
-import octlabel from "../../assets/oct2023/octlabel.svg";
-import envelop from "../../assets/oct2023/envelop_copy.png";
-import dish from "../../assets/oct2023/food.png";
+import octlabel from "../../assets/oct2020/octlabel.svg";
+import envelop from "../../assets/oct2020/envelop_copy.png";
+import dish from "../../assets/oct2020/food.png";
 import "./OctoberTitle.css";
 const OctoberTitle = () => {
 	return (
