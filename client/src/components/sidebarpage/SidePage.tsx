@@ -6,11 +6,8 @@ interface Props {
 	setSelectedMonth: React.Dispatch<React.SetStateAction<string>>;
 	tab: string;
 }
-const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
+const SidePage: React.FC<Props> = ({ className, setSelectedMonth, tab }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
-	// useEffect(() => {
-	// 	console.log(tab);
-	// }, [tab]);
 
 	const months = [
 		{ abbreviation: "Jan", number: "01" },
@@ -38,14 +35,12 @@ const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
 							}`}
 							onMouseEnter={() => {
 								setActiveIndex(index);
-								// setSelectedMonth(month.number);
 							}}
 							onMouseLeave={() => {
 								setActiveIndex(null);
 							}}
 							onFocus={() => {
 								setActiveIndex(index);
-								// setSelectedMonth(month.number);
 							}}
 							onBlur={() => {
 								setActiveIndex(null);
@@ -55,17 +50,14 @@ const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
 									console.log("click", (index + 1).toString().padStart(2, "0"));
 							}}
 						>
-							<Link
-								className='align-items-center w-100 h-100 d-flex justify-content-left'
-								to={`/themes/${month.number}/index`}
-							>
+							<div className='align-items-center w-100 h-100 d-flex justify-content-left'>
 								<span className='month-cap'>
 									{month.abbreviation.charAt(0)}
 								</span>
 								<span className='month-name'>
 									{month.abbreviation.slice(1)}
 								</span>
-							</Link>
+							</div>
 						</li>
 					))}
 				</ul>

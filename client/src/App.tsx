@@ -42,35 +42,90 @@ function App() {
 						<Index sourceImage={JanIndex} month='January' color='#6DABC5' />
 					}
 				/>
-				<Route path='01/week1' element={<AprilWeek1 />} />
-				<Route path='01/week2' element={<AprilWeek2 />} />
-				<Route path='01/week3' element={<AprilWeek3 />} />
-				<Route path='01/week4' element={<AprilWeek4 />} />
+				<Route
+					path='01/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='01/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='01/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='01/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='02/index'
 					element={
 						<Index sourceImage={FebIndex} month='February' color='#D8E3EB' />
 					}
 				/>{" "}
-				<Route path='02/week1' element={<AprilWeek1 />} />
-				<Route path='02/week2' element={<AprilWeek2 />} />
-				<Route path='02/week3' element={<AprilWeek3 />} />
-				<Route path='02/week4' element={<AprilWeek4 />} />
+				<Route
+					path='02/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='02/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='02/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='02/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='03/index'
 					element={
 						<Index sourceImage={marchIndex} month='March' color='#6566AE' />
 					}
 				/>{" "}
-				<Route path='03/week1' element={<AprilWeek1 />} />
-				<Route path='03/week2' element={<AprilWeek2 />} />
+				<Route
+					path='03/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='03/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
 				<Route
 					path='03/week3'
 					element={
 						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
 					}
 				/>
-				<Route path='03/week4' element={<AprilWeek4 />} />
+				<Route
+					path='03/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='04/index'
 					element={
@@ -105,40 +160,120 @@ function App() {
 					path='05/index'
 					element={<Index sourceImage={mayIndex} month='May' color='#A5CC8D' />}
 				/>{" "}
-				<Route path='05/week1' element={<AprilWeek1 />} />
-				<Route path='05/week2' element={<AprilWeek2 />} />
-				<Route path='05/week3' element={<AprilWeek3 />} />
-				<Route path='05/week4' element={<AprilWeek4 />} />
+				<Route
+					path='05/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='05/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='05/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='05/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='06/index'
 					element={
 						<Index sourceImage={JuneIndex} month='June' color='#969BB7' />
 					}
 				/>{" "}
-				<Route path='06/week1' element={<AprilWeek1 />} />
-				<Route path='06/week2' element={<AprilWeek2 />} />
-				<Route path='06/week3' element={<AprilWeek3 />} />
-				<Route path='06/week4' element={<AprilWeek4 />} />
+				<Route
+					path='06/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='06/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='06/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='06/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='07/index'
 					element={
 						<Index sourceImage={JulyIndex} month='July' color='#9197BB' />
 					}
 				/>
-				<Route path='07/week1' element={<AprilWeek1 />} />
-				<Route path='07/week2' element={<AprilWeek2 />} />
-				<Route path='07/week3' element={<AprilWeek3 />} />
-				<Route path='07/week4' element={<AprilWeek4 />} />
+				<Route
+					path='07/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='07/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='07/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='07/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='08/index'
 					element={
 						<Index sourceImage={AugIndex} month='August' color='#0077BB' />
 					}
 				/>
-				<Route path='08/week1' element={<AprilWeek1 />} />
-				<Route path='08/week2' element={<AprilWeek2 />} />
-				<Route path='08/week3' element={<AprilWeek3 />} />
-				<Route path='08/week4' element={<AprilWeek4 />} />
+				<Route
+					path='08/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='08/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='08/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='08/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='09/index'
 					element={
@@ -188,29 +323,84 @@ function App() {
 					}
 				/>
 				<Route path='10/week1' element={<SeptemberWeek1 />} />
-				<Route path='10/week2' element={<AprilWeek2 />} />
-				<Route path='10/week3' element={<AprilWeek3 />} />
-				<Route path='10/week4' element={<AprilWeek4 />} />
+				<Route
+					path='10/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='10/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='10/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='11/index'
 					element={
 						<Index sourceImage={NovIndex} month='November' color='#DFDED7' />
 					}
 				/>
-				<Route path='11/week1' element={<AprilWeek1 />} />
-				<Route path='11/week2' element={<AprilWeek2 />} />
-				<Route path='11/week3' element={<AprilWeek3 />} />
-				<Route path='11/week4' element={<AprilWeek4 />} />
+				<Route
+					path='11/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='11/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='11/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='11/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 				<Route
 					path='12/index'
 					element={
 						<Index sourceImage={DecIndex} month='December' color='#E9AE6A' />
 					}
 				/>
-				<Route path='12/week1' element={<AprilWeek1 />} />
-				<Route path='12/week2' element={<AprilWeek2 />} />
-				<Route path='12/week3' element={<AprilWeek3 />} />
-				<Route path='12/week4' element={<AprilWeek4 />} />
+				<Route
+					path='12/week1'
+					element={
+						<BookTab journalpage={AprilWeek3} customName='april-week-3' />
+					}
+				/>
+				<Route
+					path='12/week2'
+					element={
+						<BookTab journalpage={AprilWeek1} customName='april-week-1' />
+					}
+				/>
+				<Route
+					path='12/week3'
+					element={
+						<BookTab journalpage={AprilWeek2} customName='april-week-2' />
+					}
+				/>
+				<Route
+					path='12/week4'
+					element={
+						<BookTab journalpage={AprilWeek4} customName='april-week-4' />
+					}
+				/>
 			</Route>
 		</Routes>
 	);

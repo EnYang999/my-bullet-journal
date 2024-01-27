@@ -1,6 +1,7 @@
 import { useState } from "react";
 import RightSideBar from "../sidebarpage/RightPage";
 import SidePage from "../sidebarpage/SidePage";
+import { useParams } from "react-router-dom";
 interface Props {
 	journalpage: React.ComponentType<any>;
 	customName: string;
