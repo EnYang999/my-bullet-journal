@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "../scss/theme/_sidebar.scss";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 interface Props {
 	className: string;
 }
 const SidePage: React.FC<Props> = ({ className }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
+	const { week } = useParams();
 	const months = [
 		{ abbreviation: "Jan", number: "01" },
 		{ abbreviation: "Feb", number: "02" },
@@ -44,14 +45,17 @@ const SidePage: React.FC<Props> = ({ className }) => {
 								setActiveIndex(null);
 							}}
 						>
-							<div className='align-items-center w-100 h-100 d-flex justify-content-left'>
+							<Link
+								className='align-items-center w-100 h-100 d-flex justify-content-left'
+								to={`/themes/${month.number}/${week}`}
+							>
 								<span className='month-cap'>
 									{month.abbreviation.charAt(0)}
 								</span>
 								<span className='month-name'>
 									{month.abbreviation.slice(1)}
 								</span>
-							</div>
+							</Link>
 						</li>
 					))}
 				</ul>

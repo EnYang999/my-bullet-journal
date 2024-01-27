@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import "../scss/theme/_rightsidebar.scss";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 interface Props {
 	className: string;
 }
 const RightSideBar = ({ className }: Props): JSX.Element => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
+	const { month } = useParams();
 	const handleMouseEnter = (index: number) => {
 		setActiveIndex(index);
 	};
@@ -49,13 +50,16 @@ const RightSideBar = ({ className }: Props): JSX.Element => {
 							onFocus={() => handleFocus(index)}
 							onBlur={handleBlur}
 						>
-							<div className='align-items-center w-100 h-100 d-flex justify-content-center'>
+							<Link
+								className='align-items-center w-100 h-100 d-flex justify-content-center'
+								to={`/themes/${month}/${label.full.toLowerCase()}`}
+							>
 								<span className='label-cap'>
 									{label.full.split(" ").map((word, index) => (
 										<span key={index}>{word}</span>
 									))}
 								</span>
-							</div>
+							</Link>
 						</li>
 					))}
 				</ul>
