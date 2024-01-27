@@ -4,7 +4,6 @@ import SidePage from "../sidebarpage/SidePage";
 import { useParams } from "react-router-dom";
 const BookTab = () => {
 	const { month, week } = useParams();
-	console.log(month, week);
 
 	if (month && week) {
 		const monthMap: { [key: string]: string } = {
@@ -23,21 +22,13 @@ const BookTab = () => {
 		};
 
 		const componentPath = `../${monthMap[month]}/${week}`;
-
 		const DynamicComponent = React.lazy(() => import(`${componentPath}`));
-		console.log(
-			week.toLowerCase().substring(0, 4) + "-" + week.toLowerCase().substring(4)
-		);
 
 		return (
 			<div className='week-container-layout'>
 				<div
 					className={`container py-8 px-6 d-flex week-box-container ${
-						monthMap[month].toLowerCase() +
-						"-" +
-						week.substring(0, 4) +
-						"-" +
-						week.substring(4)
+						monthMap[month].toLowerCase() + "-" + week
 					}`}
 				>
 					<SidePage className='sidebar' />
