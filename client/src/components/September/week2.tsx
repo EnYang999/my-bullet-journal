@@ -1,5 +1,3 @@
-import { useState } from "react";
-import RightSideBar from "../sidebarpage/RightPage";
 import Calendar from "../calender/Calendar";
 import fridayShape from "../../assets/img/friday-sepweek2.svg";
 import tuesdayShape from "../../assets/img/tuesday-sepweek2.svg";
@@ -8,8 +6,7 @@ import wednesdayShape from "../../assets/img/wednesday-sepweek2.svg";
 import thursdayShape from "../../assets/img/thursday-sepweek2.svg";
 import weekendShape from "../../assets/img/weekend-sepweek2.svg";
 import WeekBox from "./weekday2";
-import SidePage from "../sidebarpage/SidePage";
-import "./septemberweek2.scss";
+import "./week2.scss";
 import SeptemberLabel from "../decorationelements/septemberlabel/SeptemberLabel";
 import walkingrabbit from "../../assets/img/walkingrabbit.png";
 const SeptemberWeek2 = () => {

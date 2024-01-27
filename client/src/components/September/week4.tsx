@@ -1,6 +1,6 @@
 import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
 import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
-import "./septemberweek4.scss";
+import "./week4.scss";
 import mondayShape from "../../assets/img/monday-shape.svg";
 import tuesdayShape from "../../assets/img/thursday-shape.svg";
 import wednesdayShape from "../../assets/img/wednesday-shape.svg";

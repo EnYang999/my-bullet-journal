@@ -3,10 +3,8 @@ import "../scss/theme/_sidebar.scss";
 import { Link } from "react-router-dom";
 interface Props {
 	className: string;
-	setSelectedMonth: React.Dispatch<React.SetStateAction<string>>;
-	tab: string;
 }
-const SidePage: React.FC<Props> = ({ className, setSelectedMonth, tab }) => {
+const SidePage: React.FC<Props> = ({ className }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
 	const months = [
@@ -44,10 +42,6 @@ const SidePage: React.FC<Props> = ({ className, setSelectedMonth, tab }) => {
 							}}
 							onBlur={() => {
 								setActiveIndex(null);
-							}}
-							onClick={() => {
-								setSelectedMonth((index + 1).toString().padStart(2, "0")),
-									console.log("click", (index + 1).toString().padStart(2, "0"));
 							}}
 						>
 							<div className='align-items-center w-100 h-100 d-flex justify-content-left'>

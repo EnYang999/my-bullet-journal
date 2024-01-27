@@ -3,14 +3,8 @@ import "../scss/theme/_rightsidebar.scss";
 import { Link } from "react-router-dom";
 interface Props {
 	className: string;
-	month: string;
-	setSelectedTab: React.Dispatch<React.SetStateAction<string>>;
 }
-const RightSideBar = ({
-	className,
-	month,
-	setSelectedTab,
-}: Props): JSX.Element => {
+const RightSideBar = ({ className }: Props): JSX.Element => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
 	const handleMouseEnter = (index: number) => {
@@ -28,9 +22,6 @@ const RightSideBar = ({
 	const handleBlur = () => {
 		setActiveIndex(null);
 	};
-	useEffect(() => {
-		console.log("righttab", month);
-	}, [month]);
 
 	const labels = [
 		{ abbreviation: "Ind", full: "Index" },
@@ -57,18 +48,14 @@ const RightSideBar = ({
 							onMouseLeave={handleMouseLeave}
 							onFocus={() => handleFocus(index)}
 							onBlur={handleBlur}
-							onClick={() => setSelectedTab(label.full)}
 						>
-							<Link
-								className='align-items-center w-100 h-100 d-flex justify-content-center'
-								to={`/themes/${month}/${label.full.toLowerCase()}`}
-							>
+							<div className='align-items-center w-100 h-100 d-flex justify-content-center'>
 								<span className='label-cap'>
 									{label.full.split(" ").map((word, index) => (
 										<span key={index}>{word}</span>
 									))}
 								</span>
-							</Link>
+							</div>
 						</li>
 					))}
 				</ul>

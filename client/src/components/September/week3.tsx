@@ -8,7 +8,7 @@ import weekendShape from "../../assets/img/weekend_sepweek3.svg";
 import WeekBox from "./weekday3"; // very similar to weekday2
 import { jarallax } from "jarallax";
 import background from "../../assets/img/sepweek3bgwithwhite.png";
-import "./septemberweek3.scss";
+import "./week3.scss";
 const SeptemberWeek3 = () => {
 	useEffect(() => {
 		jarallax(document.querySelectorAll(".jarallaxSepWeek1"), {

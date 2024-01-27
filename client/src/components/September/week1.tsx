@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { jarallax } from "jarallax";
-import "./septemberweek1.scss";
+import "./week1.scss";
 import WeekBox from "./weekday1";
 import fridayShape from "../../assets/img/friday-sepweek1.svg";
 import tuesdayShape from "../../assets/img/tuesday-sepweek1.svg";
