@@ -1,67 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,500;1,200;1,300;1,500&family=Caveat&family=Indie+Flower&family=Kalam:wght@300;400&family=Patrick+Hand&family=Shadows+Into+Light&family=Sono:wght@300;400;500;600&display=swap");
 .september-week-3 {
-    .week-box-container {
-        background-color: #f0e4e4;
-        background-image: url("../../assets/img/sepweek3bgwithwhite.png");
-        background-size: cover;
-        min-height: 700px;
-        .row {
+    background-color: #f0e4e4;
+    background-image: url("../../assets/img/sepweek3bgwithwhite.png");
+    background-size: cover;
+    min-height: 700px;
+    .row {
+        padding: 0;
+        & > * {
             padding: 0;
-            & > * {
-                padding: 0;
-            }
-            margin-right: 0;
-            .week-overlap {
-                .week-fig {
-                    height: 25%;
-                    position: relative;
-                    z-index: 1;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        height: 30%;
-                        width: 130%;
-                        left: 50%;
-                        top: 50%;
-                        z-index: -1;
-                        transform: translate(-50%, -50%);
-                        border-radius: 20px;
-                        background-color: rgba(176, 218, 233, 0.726);
-                    }
+        }
+        margin-right: 0;
+        .week-overlap {
+            .week-fig {
+                height: 25%;
+                position: relative;
+                z-index: 1;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
-                .week-date-num {
-                    font-family: "Aleo", serif;
-                    font-style: italic;
-                    color: rgb(67, 144, 196);
-                }
-                .to-do-lines-container {
-                    height: 80%;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 30%;
+                    width: 130%;
+                    left: 50%;
+                    top: 50%;
+                    z-index: -1;
+                    transform: translate(-50%, -50%);
+                    border-radius: 20px;
+                    background-color: rgba(176, 218, 233, 0.726);
                 }
             }
-        }
-        header {
-            position: relative;
-            .font-weight-bold {
-                font-family: "Patrick Hand", cursive;
+            .week-date-num {
+                font-family: "Aleo", serif;
+                font-style: italic;
+                color: rgb(67, 144, 196);
             }
-            &::after {
-                content: "";
-                position: absolute;
-                height: 50%;
-                width: 100%;
-                top: 25%;
-                z-index: -1;
-                border-radius: 20px;
-                background-color: rgba(100, 151, 190, 0.726);
+            .to-do-lines-container {
+                height: 80%;
             }
         }
-        .calendar-day {
-            font-family: "Aleo", serif;
+    }
+    header {
+        position: relative;
+        .font-weight-bold {
+            font-family: "Patrick Hand", cursive;
         }
+        &::after {
+            content: "";
+            position: absolute;
+            height: 50%;
+            width: 100%;
+            top: 25%;
+            z-index: -1;
+            border-radius: 20px;
+            background-color: rgba(100, 151, 190, 0.726);
+        }
+    }
+    .calendar-day {
+        font-family: "Aleo", serif;
     }
 }

@@ -145,10 +145,42 @@ function App() {
 						<Index sourceImage={SepIndex} month='September' color='#9CCDF0' />
 					}
 				/>
-				<Route path='09/week1' element={<SeptemberWeek1 />} />
-				<Route path='09/week2' element={<SeptemberWeek2 />} />
-				<Route path='09/week3' element={<SeptemberWeek3 />} />
-				<Route path='09/week4' element={<SeptemberWeek4 />} />
+				<Route
+					path='09/week1'
+					element={
+						<BookTab
+							journalpage={SeptemberWeek1}
+							customName='september-week-1'
+						/>
+					}
+				/>
+				<Route
+					path='09/week2'
+					element={
+						<BookTab
+							journalpage={SeptemberWeek2}
+							customName='september-week-2'
+						/>
+					}
+				/>
+				<Route
+					path='09/week3'
+					element={
+						<BookTab
+							journalpage={SeptemberWeek3}
+							customName='september-week-3'
+						/>
+					}
+				/>
+				<Route
+					path='09/week4'
+					element={
+						<BookTab
+							journalpage={SeptemberWeek4}
+							customName='september-week-4'
+						/>
+					}
+				/>
 				<Route
 					path='10/index'
 					element={
