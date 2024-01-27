@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../scss/theme/_rightsidebar.scss";
 import { Link } from "react-router-dom";
 interface Props {
@@ -28,6 +28,9 @@ const RightSideBar = ({
 	const handleBlur = () => {
 		setActiveIndex(null);
 	};
+	useEffect(() => {
+		console.log("righttab", month);
+	}, [month]);
 
 	const labels = [
 		{ abbreviation: "Ind", full: "Index" },

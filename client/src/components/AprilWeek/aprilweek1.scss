@@ -1,70 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,500;1,200;1,300;1,500&family=Caveat&family=Indie+Flower&family=Josefin+Slab:wght@300;400&family=Kalam:wght@300;400&family=Patrick+Hand&family=Shadows+Into+Light&family=Sono:wght@300;400;500;600&display=swap");
 .april-week-1 {
-    .week-box-container {
-        background-image: linear-gradient(to bottom, rgba(#fff, 1), rgba(#fff, 0.1) 30%, rgba(#fff, 0)),
-            linear-gradient(to right bottom, rgba(#fff, 1), rgba(#fff, 1) 15%, rgba(#fff, 0) 30%, rgba(#fff, 0) 100%),
-            url(../../assets/april2022/aprilweek1.jpg);
-        background-repeat: no-repeat;
-        background-position: right center;
-        background-size: 40%;
-        .row {
-            padding: 0;
-            & > * {
-                padding: 0.5em;
-            }
-            margin-right: 0;
+    background-image: linear-gradient(to bottom, rgba(#fff, 1), rgba(#fff, 0.1) 30%, rgba(#fff, 0)),
+        linear-gradient(to right bottom, rgba(#fff, 1), rgba(#fff, 1) 15%, rgba(#fff, 0) 30%, rgba(#fff, 0) 100%),
+        url(../../assets/april2022/aprilweek1.jpg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 40%;
+    .row {
+        padding: 0;
+        & > * {
+            padding: 0.5em;
         }
-        .outer-row {
-            .inner-row {
-                .day-box {
-                    .week-header {
-                        color: white;
-                        font-family: "Josefin Slab", serif;
-                        font-size: 1.5rem;
-                    }
-                    &:nth-child(even) .week-header {
-                        background-color: rgb(56, 93, 67);
-                    }
-                    &:nth-child(odd) .week-header {
-                        background-color: rgb(176, 199, 183);
-                    }
+        margin-right: 0;
+    }
+    .outer-row {
+        .inner-row {
+            .day-box {
+                .week-header {
+                    color: white;
+                    font-family: "Josefin Slab", serif;
+                    font-size: 1.5rem;
                 }
+                &:nth-child(even) .week-header {
+                    background-color: rgb(56, 93, 67);
+                }
+                &:nth-child(odd) .week-header {
+                    background-color: rgb(176, 199, 183);
+                }
+            }
 
-                .week-overlap {
-                    border: rgb(136, 159, 132) solid 1.5px;
-                    background-color: white;
-                    box-shadow: 10px 5px 5px rgb(100, 116, 87);
-                    .to-do-lines-container {
-                        height: 80%;
-                        .cbx {
-                            &:hover {
-                                .tick-box {
-                                    border-color: $focus-border-apr2022;
-                                }
-
-                                .input-field {
-                                    border-color: $focus-border-apr2022;
-                                }
-                            }
-                            input {
-                                border-color: $input-border-default-apr2022;
-                                box-shadow: $border-shadow-apr2022;
-                            }
+            .week-overlap {
+                border: rgb(136, 159, 132) solid 1.5px;
+                background-color: white;
+                box-shadow: 10px 5px 5px rgb(100, 116, 87);
+                .to-do-lines-container {
+                    height: 80%;
+                    .cbx {
+                        &:hover {
                             .tick-box {
-                                background-color: $tick-box-background-apr2022;
-                                border: 0.1em solid $input-border-default-apr2022;
-                                &:before {
-                                    background: $blink-color-apr2022;
-                                }
+                                border-color: $focus-border-apr2022;
                             }
-                            .input-box {
-                                &::after {
-                                    background: $strike-line-apr2022;
-                                }
-                            }
+
                             .input-field {
-                                background-color: $input-box-background-apr2022;
+                                border-color: $focus-border-apr2022;
                             }
+                        }
+                        input {
+                            border-color: $input-border-default-apr2022;
+                            box-shadow: $border-shadow-apr2022;
+                        }
+                        .tick-box {
+                            background-color: $tick-box-background-apr2022;
+                            border: 0.1em solid $input-border-default-apr2022;
+                            &:before {
+                                background: $blink-color-apr2022;
+                            }
+                        }
+                        .input-box {
+                            &::after {
+                                background: $strike-line-apr2022;
+                            }
+                        }
+                        .input-field {
+                            background-color: $input-box-background-apr2022;
                         }
                     }
                 }

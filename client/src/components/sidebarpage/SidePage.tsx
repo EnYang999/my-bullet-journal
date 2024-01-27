@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../scss/theme/_sidebar.scss";
 import { Link } from "react-router-dom";
 interface Props {
@@ -6,8 +6,12 @@ interface Props {
 	setSelectedMonth: React.Dispatch<React.SetStateAction<string>>;
 	tab: string;
 }
-const SidePage: React.FC<Props> = ({ className, setSelectedMonth, tab }) => {
+const SidePage: React.FC<Props> = ({ className, setSelectedMonth }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
+	// useEffect(() => {
+	// 	console.log(tab);
+	// }, [tab]);
+
 	const months = [
 		{ abbreviation: "Jan", number: "01" },
 		{ abbreviation: "Feb", number: "02" },
@@ -46,11 +50,14 @@ const SidePage: React.FC<Props> = ({ className, setSelectedMonth, tab }) => {
 							onBlur={() => {
 								setActiveIndex(null);
 							}}
-							onClick={() => setSelectedMonth((index + 1).toString())}
+							onClick={() => {
+								setSelectedMonth((index + 1).toString().padStart(2, "0")),
+									console.log("click", (index + 1).toString().padStart(2, "0"));
+							}}
 						>
 							<Link
 								className='align-items-center w-100 h-100 d-flex justify-content-left'
-								to={`/themes/${month.number}/${tab}`}
+								to={`/themes/${month.number}/index`}
 							>
 								<span className='month-cap'>
 									{month.abbreviation.charAt(0)}
