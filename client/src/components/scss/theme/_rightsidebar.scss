@@ -1,16 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Sono:wght@300;400;500;600&display=swap");
-
-:root {
-    --sidebar-color: #c5dafb;
-    --sidebar-thickness: 5px;
-    --sidebar-padding: 5px;
-    --sidebar-width: 2rem;
-    --sidebar-width-hover: 3.5rem;
-    --sidebar-curve: 1.875rem;
-    --sidebar-curve-mask: 0.938rem;
-    --sidebar-letter-height: 3.75rem;
-}
-
 .right-pagination-container {
     display: flex;
     justify-content: center;
@@ -19,7 +6,7 @@
 
     .pagination-overlap {
         background: transparent;
-        box-shadow: var(--sidebar-thickness) 0 0 transparent;
+        box-shadow: $sidebar-thickness 0 0 transparent;
         transition: all 0.5s;
         height: 100%;
         overflow: hidden;
@@ -30,17 +17,17 @@
             li {
                 border-top-right-radius: 20px;
                 border-bottom-right-radius: 20px;
-                width: var(--sidebar-width);
-                background-color: var(--sidebar-color);
+                width: $sidebar-width;
+                background-color: $sidebar-color;
                 transition: all 0.5s;
                 writing-mode: vertical-rl;
                 &.active {
-                    background-color: var(--sidebar-color);
+                    background-color: $sidebar-color;
                 }
 
                 &:hover,
                 &:focus {
-                    width: var(--sidebar-width-hover);
+                    width: $sidebar-width-hover;
                     padding-left: 0.5em;
                 }
                 a {
@@ -54,11 +41,11 @@
 }
 // Uncomment the following styles as needed
 // .pagination-overlap .month-cap {
-//     height: var(--sidebar-letter-height);
-//     line-height: var(--sidebar-letter-height);
+//     height: $sidebar-letter-height);
+//     line-height: $sidebar-letter-height);
 // }
 
 // .pagination-overlap .month-name {
-//     height: var(--sidebar-letter-height);
-//     line-height: var(--sidebar-letter-height);
+//     height: $sidebar-letter-height);
+//     line-height: $sidebar-letter-height);
 // }

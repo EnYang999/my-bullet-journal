@@ -1,8 +1,8 @@
 //
 // type.scss
 //
-
-.no-wrap{
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@300;400;500;600&display=swap");
+.no-wrap {
     white-space: nowrap;
 }
 
@@ -12,9 +12,8 @@
     }
 }
 
-
 // Text
- 
+
 .text-xs {
     @include text-xs;
 }
@@ -31,8 +30,7 @@
 
 // Blockquote
 
-.blockquote>p {
-
+.blockquote > p {
     &::before {
         content: open-quote;
     }

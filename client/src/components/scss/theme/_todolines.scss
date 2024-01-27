@@ -11,8 +11,6 @@
 
     input {
         appearance: none;
-        border: 0.1em solid $input-border-default-sep2023;
-        box-shadow: 0.1em 0.1em 0.4em $border-shadow-sep2023;
     }
 
     .cbx {
@@ -37,11 +35,9 @@
             display: grid;
             grid-area: tick-box;
             position: relative;
-            background-color: $tick-box-background-sep2023;
             width: 1.5em;
             border-radius: 30%;
             transform: scale(1);
-            border: 0.1em solid $input-border-default-sep2023;
             transition: all 0.2s ease;
 
             svg {
@@ -67,7 +63,6 @@
                 content: "";
                 width: 100%;
                 height: 100%;
-                background: $blink-color-sep2023;
                 display: block;
                 transform: scale(0);
                 opacity: 1;
@@ -88,7 +83,6 @@
                 left: 0;
                 height: 1px;
                 width: 100%;
-                background: $strike-line-sep2023;
                 transform-origin: 0 0;
                 transform: scaleX(0);
             }
@@ -98,9 +92,6 @@
             width: 100%;
             height: 100%;
             border-radius: 0.4em;
-            color: $font-active-sep2023;
-            border: 1.5px solid $input-border-default-sep2023;
-            background-color: $input-box-background-sep2023;
             font-family: monospace;
 
             &:focus {
@@ -111,23 +102,11 @@
                 outline: none;
             }
         }
-
-        &:hover {
-            .tick-box {
-                border-color: $focus-border-sep2023;
-            }
-
-            .input-field {
-                border-color: $focus-border-sep2023;
-            }
-        }
     }
     /*tick-box checked*/
     .tick-box {
         &:checked + .cbx {
             .tick-box {
-                border-color: $tick-border-checked-sep2023;
-                background: $tick-box-checked-background-sep2023;
                 animation: check 0.6s ease;
 
                 svg {
@@ -142,9 +121,6 @@
             }
 
             .input-field {
-                border-color: $tick-border-checked-sep2023;
-                color: $font-disabled-sep2023;
-                background-color: $tick-box-checked-background-sep2023;
                 transition: all 0.3s ease;
             }
 

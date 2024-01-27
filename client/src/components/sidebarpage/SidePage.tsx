@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../scss/theme/_sidebar.scss";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 interface Props {

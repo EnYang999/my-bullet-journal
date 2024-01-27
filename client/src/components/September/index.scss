@@ -1,3 +1,57 @@
 .september-index {
     background-image: url(../../assets/img/2023SeptemberDigitalBujo.png);
 }
+.september {
+    .to-do-lines-container {
+        height: 80%;
+        input {
+            border: 0.1em solid $input-border-default-sep2023;
+            box-shadow: 0.1em 0.1em 0.4em $border-shadow-sep2023;
+        }
+        .cbx {
+            &:hover {
+                .tick-box {
+                    border-color: $focus-border-sep2023;
+                }
+
+                .input-field {
+                    border-color: $focus-border-sep2023;
+                }
+            }
+            input {
+                border-color: $input-border-default-sep2023;
+                box-shadow: $border-shadow-sep2023;
+            }
+            .tick-box {
+                background-color: $tick-box-background-sep2023;
+                border: 0.1em solid $input-border-default-sep2023;
+                &:before {
+                    background: $blink-color-sep2023;
+                }
+            }
+            .input-box {
+                &::after {
+                    background: $strike-line-sep2023;
+                }
+            }
+            .input-field {
+                background-color: $input-box-background-sep2023;
+                border: 1.5px solid $input-border-default-sep2023;
+                color: $font-active-sep2023;
+            }
+        }
+        .tick-box {
+            &:checked + .cbx {
+                .tick-box {
+                    border-color: $tick-border-checked-sep2023;
+                    background: $tick-box-checked-background-sep2023;
+                }
+                .input-field {
+                    border-color: $tick-border-checked-sep2023;
+                    color: $font-disabled-sep2023;
+                    background-color: $tick-box-checked-background-sep2023;
+                }
+            }
+        }
+    }
+}

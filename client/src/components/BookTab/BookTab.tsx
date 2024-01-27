@@ -29,7 +29,7 @@ const BookTab = () => {
 				<div
 					className={`container py-8 px-6 d-flex week-box-container ${
 						monthMap[month].toLowerCase() + "-" + week
-					} ${week}`}
+					} ${week} ${monthMap[month].toLowerCase()}`}
 				>
 					<SidePage className='sidebar' />
 					<RightSideBar className='rightside' />

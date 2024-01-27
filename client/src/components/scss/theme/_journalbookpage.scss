@@ -36,41 +36,5 @@
             top: 50%;
             transform: translateY(-50%);
         }
-
-        .week-overlap {
-            .to-do-lines-container {
-                height: 80%;
-                .cbx {
-                    &:hover {
-                        .tick-box {
-                            border-color: $focus-border-apr2022;
-                        }
-
-                        .input-field {
-                            border-color: $focus-border-apr2022;
-                        }
-                    }
-                    input {
-                        border-color: $input-border-default-apr2022;
-                        box-shadow: $border-shadow-apr2022;
-                    }
-                    .tick-box {
-                        background-color: $tick-box-background-apr2022;
-                        border: 0.1em solid $input-border-default-apr2022;
-                        &:before {
-                            background: $blink-color-apr2022;
-                        }
-                    }
-                    .input-box {
-                        &::after {
-                            background: $strike-line-apr2022;
-                        }
-                    }
-                    .input-field {
-                        background-color: $input-box-background-apr2022;
-                    }
-                }
-            }
-        }
     }
 }

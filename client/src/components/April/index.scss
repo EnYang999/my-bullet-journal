@@ -1,3 +1,53 @@
 .april-index {
     background-image: url("../../assets/april2022/2022AprDigitalBujo.png");
 }
+.april {
+    .week-overlap {
+        .to-do-lines-container {
+            height: 80%;
+            .cbx {
+                &:hover {
+                    .tick-box {
+                        border-color: $focus-border-apr2022;
+                    }
+
+                    .input-field {
+                        border-color: $focus-border-apr2022;
+                    }
+                }
+
+                .tick-box {
+                    background-color: $tick-box-background-apr2022;
+                    border: 0.1em solid $input-border-default-apr2022;
+                    &:before {
+                        background: $blink-color-apr2022;
+                    }
+                }
+                .input-box {
+                    &::after {
+                        background: $strike-line-apr2022;
+                    }
+                }
+                .input-field {
+                    background-color: $input-box-background-apr2022; // 1
+                    border: 1.5px solid $input-border-default-apr2022;
+                    box-shadow: 0.1em 0.1em 0.4em $border-shadow-apr2022;
+                    color: $font-active-apr2022;
+                }
+            }
+            .tick-box {
+                &:checked + .cbx {
+                    .tick-box {
+                        border-color: $tick-border-checked-apr2022;
+                        background: $tick-box-checked-background-apr2022;
+                    }
+                    .input-field {
+                        border-color: $tick-border-checked-apr2022;
+                        color: $font-disabled-apr2022;
+                        background-color: $tick-box-checked-background-apr2022;
+                    }
+                }
+            }
+        }
+    }
+}
