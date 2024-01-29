@@ -17,7 +17,7 @@ const LandingAbout = () => {
 		};
 	}, []);
 	return (
-		<section className='about jarallax'>
+		<section className='about jarallax position-relative'>
 			<div className='min-vh-100 py-7 py-md-9 bg-gradient-bottom-end-white'>
 				<div className='container'>
 					<div className='row'>

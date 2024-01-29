@@ -31,7 +31,9 @@
     "react-dom": "^18.2.0",
     "react-flickity-component": "^4.0.7",
     "react-hook-form": "^7.49.2",
-    "react-router-dom": "^6.21.3"
+    "react-router-dom": "^6.21.3",
+    "reactstrap": "^9.2.2",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@types/flickity": "^2.2.11",

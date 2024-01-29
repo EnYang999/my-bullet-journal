@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./components/scss/theme.scss";
+import "./components/scss/themebau/_themebau.scss";
 import "flickity/dist/flickity.min.css";
 import { BrowserRouter } from "react-router-dom";
 

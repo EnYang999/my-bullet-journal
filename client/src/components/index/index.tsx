@@ -3,6 +3,20 @@ interface Props {
 	color: string;
 }
 const Index = ({ month, color }: Props) => {
+	const month_color: { [key: string]: string } = {
+		"01": "#6DABC5",
+		"02": "#D8E3EB",
+		"03": "#6566AE",
+		"04": "#9FB8A2",
+		"05": "#A5CC8D",
+		"06": "#969BB7",
+		"07": "#9197BB",
+		"08": "#0077BB",
+		"09": "#9CCDF0",
+		"10": "#37658A",
+		"11": "#DFDED7",
+		"12": "#E9AE6A",
+	};
 	return (
 		<>
 			<div
