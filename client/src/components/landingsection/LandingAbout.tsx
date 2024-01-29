@@ -9,8 +9,6 @@ const LandingAbout = () => {
 			speed: 0.8,
 			imgSrc: img19,
 		});
-
-		// Cleanup on component unmount
 		return () => {
 			jarallax(document.querySelectorAll(".jarallax"), "destroy");
 		};
