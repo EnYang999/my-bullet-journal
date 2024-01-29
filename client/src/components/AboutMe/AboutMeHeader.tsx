@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
-
+import CreativeTeam from "./AboutMeCreative";
 import Aboutus from "../../assets/about/about-us-1920-1080.bb39b4e2236cc58ece00.jpg";
 import AboutContect from "../../assets/about/about-us-content.03e01d0ffdc863522afe.jpg";
 import Slide1 from "../../assets/about/about-us-slide-940-1000.8e9fa4120e2262aa6f25.jpg";
@@ -12,6 +12,7 @@ import Slide2 from "../../assets/about/about-us-slide-2-940-1000.59395e8ea1ab620
 import Slide3 from "../../assets/about/about-us-slide-3-940-1000.3802c4b4a7379c1284c3.jpg";
 import { Col, Container, Row } from "reactstrap";
 import { jarallax } from "jarallax";
+
 const Main = () => {
 	useEffect(() => {
 		// Initialize Jarallax when the component mounts
@@ -24,7 +25,7 @@ const Main = () => {
 		};
 	}, []);
 	return (
-		<React.Fragment>
+		<>
 			<div className='py-160 min-vh-100 d-flex align-items-center position-relative lines-style-3'>
 				<div className='line text-white'></div>
 				<div className='background bg-dark'>
@@ -250,7 +251,8 @@ const Main = () => {
 					</Row>
 				</Container>
 			</div>
-		</React.Fragment>
+			<CreativeTeam />
+		</>
 	);
 };
 

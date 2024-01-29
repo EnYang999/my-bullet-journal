@@ -5,7 +5,6 @@ import { jarallax } from "jarallax";
 import "jarallax/dist/jarallax.min.css";
 const LandingAbout = () => {
 	useEffect(() => {
-		// Initialize Jarallax when the component mounts
 		jarallax(document.querySelectorAll(".jarallax"), {
 			speed: 0.8,
 			imgSrc: img19,
