@@ -30,6 +30,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 							style={{
 								backgroundImage: `url(${img54})`,
 								backgroundSize: "cover",
+								transitionDelay: "1000ms",
 							}}
 						/>
 						{/* Overlay */}
@@ -43,7 +44,9 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 								<div className='col-md-8 col-lg-7'>
 									{/* Preheading */}
 									<p
-										className='font-weight-medium text-center text-xs text-uppercase text-white text-muted animate'
+										className={`font-weight-medium text-center text-xs text-uppercase text-white text-muted ${
+											activeSection === "hero" ? "animate" : ""
+										}`}
 										data-toggle='animation'
 										data-animation='fadeUp'
 										data-animation-order={0}
@@ -53,7 +56,9 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 									</p>
 									{/* Heading */}
 									<h1
-										className='text-white text-center mb-4 animate'
+										className={`text-white text-center mb-4 ${
+											activeSection === "hero" ? "animate" : ""
+										}`}
 										data-toggle='animation'
 										data-animation='fadeUp'
 										data-animation-order={1}
@@ -63,7 +68,9 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 									</h1>
 									{/* Subheading */}
 									<p
-										className='lead text-white text-muted text-center mb-5 animate'
+										className={`lead text-white text-muted text-center mb-5 ${
+											activeSection === "hero" ? "animate" : ""
+										}`}
 										data-toggle='animation'
 										data-animation='fadeUp'
 										data-animation-order={2}
@@ -75,7 +82,9 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 									</p>
 									{/* Button */}
 									<p
-										className='text-center mb-0 animate'
+										className={`text-center mb-0 ${
+											activeSection === "hero" ? "animate" : ""
+										}`}
 										data-toggle='animation'
 										data-animation='fadeUp'
 										data-animation-order={3}

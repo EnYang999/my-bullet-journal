@@ -265,33 +265,6 @@ html.fp-enabled {
     white-space: nowrap;
     border: 0;
 }
-.fp-section.fp-table {
-    &.fp-completely {
-        &[data-anchor="hero"] {
-            main {
-                transform: translate3d(0px, -678px, 0px);
-            }
-        }
-
-        &[data-anchor="about-1"] {
-            main {
-                transform: translate3d(0px, -2035px, 0px);
-            }
-        }
-
-        &[data-anchor="about-2"] {
-            main {
-                transform: translate3d(0px, -2035px, 0px);
-            }
-        }
-
-        &[data-anchor="promo"] {
-            main {
-                transform: translate3d(0px, -2713px, 0px);
-            }
-        }
-    }
-}
 
 article,
 aside,

@@ -16,11 +16,7 @@ const FullPage = () => {
 	const about1Ref = useRef(null);
 	const about2Ref = useRef(null);
 	const promoRef = useRef(null);
-	// const [heroRefIsVisible, setHeroRefIsVisible] = useState();
-	// const [about1RefIsVisible, setAbout1RefIsVisible] = useState();
-	// const [about2RefIsVisible, setAbout2RefIsVisible] = useState();
-	// const [promoRefIsVisible, setPromoRefIsVisible] = useState();
-	const [activeSection, setActiveSection] = useState<string>(""); // Initialize with an empty string
+	const [activeSection, setActiveSection] = useState<string>("");
 
 	useEffect(() => {
 		const observeElement = (
@@ -30,12 +26,10 @@ const FullPage = () => {
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						console.log(name + "Element is visible in the viewport!");
-						console.log(name + "entry", entry);
-						console.log(name + "entry.isIntersecting", entry.isIntersecting);
 						setActiveSection(name);
 					}
 				});
+				console.log(name);
 			});
 
 			if (elementRef.current) {
@@ -70,6 +64,16 @@ const FullPage = () => {
 					height: "100%",
 					position: "relative",
 					transition: "all 700ms cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s",
+					transform:
+						activeSection === "hero"
+							? "translate3d(0px, 0px, 0px)"
+							: activeSection === "about1"
+							? "translate3d(0px, -678px, 0px)"
+							: activeSection === "about2"
+							? "translate3d(0px,-1357px, 0px)"
+							: activeSection === "promo"
+							? "translate3d(0px, -2035px, 0px)"
+							: "",
 				}}
 			>
 				<FullPageHero
@@ -79,6 +83,7 @@ const FullPage = () => {
 					promoRef={promoRef}
 					activeSection={activeSection}
 				/>
+				<hr />
 				{/* ABOUT */}
 				<FullPageAbout1
 					heroRef={heroRef}
@@ -87,6 +92,7 @@ const FullPage = () => {
 					promoRef={promoRef}
 					activeSection={activeSection}
 				/>
+				<hr />
 				{/* ABOUT */}
 				<FullPageAbout2
 					heroRef={heroRef}
@@ -95,14 +101,15 @@ const FullPage = () => {
 					promoRef={promoRef}
 					activeSection={activeSection}
 				/>
+				<hr />
 				{/* PROMO */}
-				<FullPagePromo
+				{/* <FullPagePromo
 					heroRef={heroRef}
 					about1Ref={about1Ref}
 					about2Ref={about2Ref}
 					promoRef={promoRef}
 					activeSection={activeSection}
-				/>
+				/> */}
 			</main>
 		</div>
 	);

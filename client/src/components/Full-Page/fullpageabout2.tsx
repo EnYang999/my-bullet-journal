@@ -31,6 +31,7 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 							transitionTimingFunction: "cubic-bezier(0.1, 0.57, 0.1, 1)",
 							transitionDuration: "0ms",
 							transform: "translate(0px, 0px) translateZ(0px)",
+							transitionDelay: "2000ms",
 						}}
 					>
 						<div className='section section-top'>
@@ -46,7 +47,9 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 									<div className='col-md-6 col-lg-4 offset-lg-1 order-md-1'>
 										{/* Heading */}
 										<h2
-											className='mb-4'
+											className={`text-center mb-4  ${
+												activeSection === "about2" ? "animate" : ""
+											}`}
 											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={0}
@@ -56,7 +59,9 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 										</h2>
 										{/* Content */}
 										<p
-											className='text-muted'
+											className={`lead text-muted text-center mb-5 ${
+												activeSection === "about2" ? "animate" : ""
+											}`}
 											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={1}
@@ -71,7 +76,9 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 										{/* Button */}
 										<a
 											href='#pricing'
-											className='btn btn-outline-primary'
+											className={`btn btn-outline-primary ${
+												activeSection === "about2" ? "animate" : ""
+											}`}
 											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={2}
