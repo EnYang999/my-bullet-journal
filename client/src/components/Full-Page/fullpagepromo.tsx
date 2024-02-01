@@ -1,14 +1,27 @@
 import React from "react";
 import img56 from "../../assets/about/56.jpg";
-const FullPagePromo = () => {
+interface FullPagePromoProps {
+	heroRef: React.RefObject<HTMLDivElement>;
+	about1Ref: React.RefObject<HTMLDivElement>;
+	about2Ref: React.RefObject<HTMLDivElement>;
+	promoRef: React.RefObject<HTMLDivElement>;
+	activeSection: string;
+}
+const FullPagePromo: React.FC<FullPagePromoProps> = ({
+	promoRef,
+	activeSection,
+}) => {
 	return (
 		<section
 			key='promo'
 			id='promo'
-			className={`fp-section fp-table`}
+			className={`fp-section fp-table ${
+				activeSection === "promo" ? "active fp-completely" : ""
+			}`}
 			data-fp-styles='null'
 			data-anchor='promo'
 			style={{ height: 764 }}
+			ref={promoRef}
 		>
 			<div className='fp-tableCell' style={{ height: 764 }}>
 				<div className='section section-top'>

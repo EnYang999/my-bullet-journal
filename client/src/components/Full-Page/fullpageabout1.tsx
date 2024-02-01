@@ -1,15 +1,27 @@
 import React from "react";
-
 import img47 from "../../assets/about/47.jpg";
-const FullPageAbout1 = () => {
+interface FullPageAbout1Props {
+	heroRef: React.RefObject<HTMLDivElement>;
+	about1Ref: React.RefObject<HTMLDivElement>;
+	about2Ref: React.RefObject<HTMLDivElement>;
+	promoRef: React.RefObject<HTMLDivElement>;
+	activeSection: string;
+}
+const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
+	about1Ref,
+	activeSection,
+}) => {
 	return (
 		<section
 			key='about-1'
 			id='about-1'
-			className={`fp-section fp-table`}
+			className={`fp-section fp-table ${
+				activeSection === "about1" ? "active fp-completely" : ""
+			}`}
 			data-fp-styles='null'
 			data-anchor='about-1'
 			style={{ height: 764 }}
+			ref={about1Ref}
 		>
 			<div className='fp-tableCell' style={{ height: 764 }}>
 				<div className='fp-scrollable' style={{ height: 764 }}>
@@ -38,7 +50,7 @@ const FullPageAbout1 = () => {
 											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={0}
-											data-animation-trigger='fpAfterLoad'
+											data-animation-trigger='load'
 										>
 											Fast and professional multilingual translation services
 										</h2>
@@ -48,7 +60,7 @@ const FullPageAbout1 = () => {
 											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={1}
-											data-animation-trigger='fpAfterLoad'
+											data-animation-trigger='load'
 										>
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 											Sint, maiores, aperiam. Excepturi assumenda non quasi ipsa
@@ -63,7 +75,7 @@ const FullPageAbout1 = () => {
 											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={2}
-											data-animation-trigger='fpAfterLoad'
+											data-animation-trigger='load'
 										>
 											Get a free quote
 										</a>

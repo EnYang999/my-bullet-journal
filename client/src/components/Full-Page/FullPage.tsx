@@ -10,49 +10,58 @@ import React, { useEffect, useRef, useState } from "react";
 import FullPageAbout1 from "./fullpageabout1";
 import FullPageAbout2 from "./fullpageabout2";
 import FullPagePromo from "./fullpagepromo";
-import { useInView } from "react-intersection-observer";
-const FullPage = () => {
-	const sections = ["hero", "about-1", "about-2", "promo"];
-	const [activeSection, setActiveSection] = useState<string>("hero");
-	// const { ref, inView } = useInView();
-	const mainRef = useRef();
-	const sectionRefs = sections.reduce((acc, section) => {
-		acc[section] = useRef<HTMLDivElement>(null);
-		return acc;
-	}, {} as Record<string, React.RefObject<HTMLDivElement>>);
 
-	const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-		entries.forEach((entry) => {
-			const anchor = entry.target.getAttribute("data-anchor");
-			if (entry.isIntersecting && anchor !== null) {
-				setActiveSection(anchor);
-			}
-		});
-	};
+const FullPage = () => {
+	const heroRef = useRef(null);
+	const about1Ref = useRef(null);
+	const about2Ref = useRef(null);
+	const promoRef = useRef(null);
+	// const [heroRefIsVisible, setHeroRefIsVisible] = useState();
+	// const [about1RefIsVisible, setAbout1RefIsVisible] = useState();
+	// const [about2RefIsVisible, setAbout2RefIsVisible] = useState();
+	// const [promoRefIsVisible, setPromoRefIsVisible] = useState();
+	const [activeSection, setActiveSection] = useState<string>(""); // Initialize with an empty string
 
 	useEffect(() => {
-		const options = {
-			root: null,
-			rootMargin: "0px",
-			threshold: 0.5,
+		const observeElement = (
+			elementRef: React.RefObject<HTMLDivElement>,
+			name: string
+		) => {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						console.log(name + "Element is visible in the viewport!");
+						console.log(name + "entry", entry);
+						console.log(name + "entry.isIntersecting", entry.isIntersecting);
+						setActiveSection(name);
+					}
+				});
+			});
+
+			if (elementRef.current) {
+				observer.observe(elementRef.current);
+			}
+
+			return () => {
+				observer.disconnect();
+			};
 		};
 
-		const observer = new IntersectionObserver(handleIntersection, options);
-
-		sections.forEach((section) => {
-			if (sectionRefs[section].current) {
-				observer.observe(sectionRefs[section].current!);
-			}
-		});
+		const cleanupFunctions = [
+			observeElement(heroRef, "hero"),
+			observeElement(about1Ref, "about1"),
+			observeElement(about2Ref, "about2"),
+			observeElement(promoRef, "promo"),
+		];
 
 		return () => {
-			observer.disconnect();
+			cleanupFunctions.forEach((cleanup) => cleanup());
 		};
-	}, [sectionRefs]);
+	}, [heroRef, about1Ref, about2Ref, promoRef]);
 
 	return (
 		<div
-			className={`fp-viewing-${activeSection} fp-responsive`}
+			className={`fp-responsive`}
 			style={{ overflow: "visible", height: "initial" }}
 		>
 			<main
@@ -63,13 +72,37 @@ const FullPage = () => {
 					transition: "all 700ms cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s",
 				}}
 			>
-				<FullPageHero />
+				<FullPageHero
+					heroRef={heroRef}
+					about1Ref={about1Ref}
+					about2Ref={about2Ref}
+					promoRef={promoRef}
+					activeSection={activeSection}
+				/>
 				{/* ABOUT */}
-				<FullPageAbout1 />
+				<FullPageAbout1
+					heroRef={heroRef}
+					about1Ref={about1Ref}
+					about2Ref={about2Ref}
+					promoRef={promoRef}
+					activeSection={activeSection}
+				/>
 				{/* ABOUT */}
-				<FullPageAbout2 />
+				<FullPageAbout2
+					heroRef={heroRef}
+					about1Ref={about1Ref}
+					about2Ref={about2Ref}
+					promoRef={promoRef}
+					activeSection={activeSection}
+				/>
 				{/* PROMO */}
-				<FullPagePromo />
+				<FullPagePromo
+					heroRef={heroRef}
+					about1Ref={about1Ref}
+					about2Ref={about2Ref}
+					promoRef={promoRef}
+					activeSection={activeSection}
+				/>
 			</main>
 		</div>
 	);

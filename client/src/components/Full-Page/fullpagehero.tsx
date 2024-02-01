@@ -1,13 +1,26 @@
 import img54 from "../../assets/about/54.jpg";
-const FullPageHero = () => {
+interface FullPageHeroProps {
+	heroRef: React.RefObject<HTMLDivElement>;
+	about1Ref: React.RefObject<HTMLDivElement>;
+	about2Ref: React.RefObject<HTMLDivElement>;
+	promoRef: React.RefObject<HTMLDivElement>;
+	activeSection: string;
+}
+const FullPageHero: React.FC<FullPageHeroProps> = ({
+	heroRef,
+	activeSection,
+}) => {
 	return (
 		<>
 			{/* HERO */}
 			<section
-				className='fp-section fp-table active fp-completely'
+				className={`fp-section fp-table ${
+					activeSection === "hero" ? "active fp-completely" : ""
+				}`}
 				data-fp-styles='null'
 				data-anchor='hero'
 				style={{ height: 764 }}
+				ref={heroRef}
 			>
 				<div className='fp-tableCell' style={{ height: 764 }}>
 					<div className='section section-top'>

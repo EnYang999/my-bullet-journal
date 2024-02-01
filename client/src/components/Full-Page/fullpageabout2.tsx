@@ -1,14 +1,27 @@
 import React from "react";
 import img55 from "../../assets/about/55.jpg";
-const FullPageAbout2 = () => {
+interface FullPageAbout2Props {
+	heroRef: React.RefObject<HTMLDivElement>;
+	about1Ref: React.RefObject<HTMLDivElement>;
+	about2Ref: React.RefObject<HTMLDivElement>;
+	promoRef: React.RefObject<HTMLDivElement>;
+	activeSection: string;
+}
+const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
+	about2Ref,
+	activeSection,
+}) => {
 	return (
 		<section
 			key='about-2'
 			id='about-2'
-			className={`fp-section fp-table`}
+			className={`fp-section fp-table  ${
+				activeSection === "about2" ? "active fp-completely" : ""
+			}`}
 			data-fp-styles='null'
 			data-anchor='about-2'
 			style={{ height: 764 }}
+			ref={about2Ref}
 		>
 			<div className='fp-tableCell' style={{ height: 764 }}>
 				<div className='fp-scrollable' style={{ height: 764 }}>
