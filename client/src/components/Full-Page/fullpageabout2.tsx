@@ -23,6 +23,7 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 			style={{ height: 764 }}
 			ref={about2Ref}
 		>
+			<h1>{activeSection}</h1>
 			<div className='fp-tableCell' style={{ height: 764 }}>
 				<div className='fp-scrollable' style={{ height: 764 }}>
 					<div
@@ -47,10 +48,10 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 									<div className='col-md-6 col-lg-4 offset-lg-1 order-md-1'>
 										{/* Heading */}
 										<h2
-											className={`text-center mb-4  ${
-												activeSection === "about2" ? "animate" : ""
+											className={`text-center mb-4  animate`}
+											data-toggle={`${
+												activeSection === "about1" ? "animation" : ""
 											}`}
-											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={0}
 											data-animation-trigger='fpAfterLoad'
@@ -59,10 +60,10 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 										</h2>
 										{/* Content */}
 										<p
-											className={`lead text-muted text-center mb-5 ${
-												activeSection === "about2" ? "animate" : ""
+											className={`lead text-muted text-center mb-5 animate`}
+											data-toggle={`${
+												activeSection === "about1" ? "animation" : ""
 											}`}
-											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={1}
 											data-animation-trigger='fpAfterLoad'
@@ -76,10 +77,10 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 										{/* Button */}
 										<a
 											href='#pricing'
-											className={`btn btn-outline-primary ${
-												activeSection === "about2" ? "animate" : ""
+											className={`btn btn-outline-primary animate`}
+											data-toggle={`${
+												activeSection === "about1" ? "animation" : ""
 											}`}
-											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={2}
 											data-animation-trigger='fpAfterLoad'
@@ -124,6 +125,7 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 					</div>
 				</div>
 			</div>
+			<h1 style={{ zIndex: "9999" }}>{activeSection}</h1>
 		</section>
 	);
 };

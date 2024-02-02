@@ -23,6 +23,7 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 			style={{ height: 764 }}
 			ref={about1Ref}
 		>
+			<h1>{activeSection}</h1>
 			<div className='fp-tableCell' style={{ height: 764 }}>
 				<div className='fp-scrollable' style={{ height: 764 }}>
 					<div
@@ -47,25 +48,25 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 									<div className='col-md-6 col-lg-4 offset-lg-1'>
 										{/* Heading */}
 										<h2
-											className={`mb-4 ${
-												activeSection === "about1" ? "animate" : ""
+											className={`mb-4 animate`}
+											data-toggle={`${
+												activeSection === "about1" ? "animation" : ""
 											}`}
-											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={0}
-											data-animation-trigger='fpAfterLoad'
+											data-animation-trigger='load'
 										>
 											Fast and professional multilingual translation services
 										</h2>
 										{/* Content */}
 										<p
-											className={`text-muted ${
-												activeSection === "about1" ? "animate" : ""
+											className={`text-muted animate`}
+											data-toggle={`${
+												activeSection === "about1" ? "animation" : ""
 											}`}
-											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={1}
-											data-animation-trigger='fpAfterLoad'
+											data-animation-trigger='load'
 										>
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 											Sint, maiores, aperiam. Excepturi assumenda non quasi ipsa
@@ -76,13 +77,13 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 										{/* Button */}
 										<a
 											href='contact.html'
-											className={`btn btn-outline-primary ${
-												activeSection === "about1" ? "animate" : ""
+											className={`btn btn-outline-primary animate`}
+											data-toggle={`${
+												activeSection === "about1" ? "animation" : ""
 											}`}
-											data-toggle='animation'
 											data-animation='fadeUp'
 											data-animation-order={2}
-											data-animation-trigger='fpAfterLoad'
+											data-animation-trigger='load'
 										>
 											Get a free quote
 										</a>
@@ -124,6 +125,7 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 					</div>
 				</div>
 			</div>
+			<h1 style={{ zIndex: "9999" }}>{activeSection}</h1>
 		</section>
 	);
 };

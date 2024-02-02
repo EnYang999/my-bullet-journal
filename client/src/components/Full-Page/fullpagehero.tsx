@@ -22,6 +22,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 				style={{ height: 764 }}
 				ref={heroRef}
 			>
+				<h1 style={{ zIndex: "9999" }}>{activeSection}</h1>
 				<div className='fp-tableCell' style={{ height: 764 }}>
 					<div className='section section-top'>
 						{/* Cover */}
@@ -44,10 +45,10 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 								<div className='col-md-8 col-lg-7'>
 									{/* Preheading */}
 									<p
-										className={`font-weight-medium text-center text-xs text-uppercase text-white text-muted ${
-											activeSection === "hero" ? "animate" : ""
+										className={`font-weight-medium text-center text-xs text-uppercase text-white text-muted animate`}
+										data-toggle={`${
+											activeSection === "about1" ? "animation" : ""
 										}`}
-										data-toggle='animation'
 										data-animation='fadeUp'
 										data-animation-order={0}
 										data-animation-trigger='load'
@@ -56,10 +57,10 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 									</p>
 									{/* Heading */}
 									<h1
-										className={`text-white text-center mb-4 ${
-											activeSection === "hero" ? "animate" : ""
+										className={`text-white text-center mb-4 animate`}
+										data-toggle={`${
+											activeSection === "about1" ? "animation" : ""
 										}`}
-										data-toggle='animation'
 										data-animation='fadeUp'
 										data-animation-order={1}
 										data-animation-trigger='load'
@@ -68,10 +69,10 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 									</h1>
 									{/* Subheading */}
 									<p
-										className={`lead text-white text-muted text-center mb-5 ${
-											activeSection === "hero" ? "animate" : ""
+										className={`lead text-white text-muted text-center mb-5 animate`}
+										data-toggle={`${
+											activeSection === "about1" ? "animation" : ""
 										}`}
-										data-toggle='animation'
 										data-animation='fadeUp'
 										data-animation-order={2}
 										data-animation-trigger='load'
@@ -104,6 +105,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 						{/* / .container */}
 					</div>
 				</div>
+				<h1 style={{ zIndex: "9999" }}>{activeSection}</h1>
 			</section>
 		</>
 	);
