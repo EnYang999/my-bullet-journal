@@ -1,15 +1,17 @@
 interface Props {
 	isVertical?: boolean;
+	squareStyles?: React.CSSProperties[];
 }
-const FourSquares = ({ isVertical = false }: Props) => {
-	const squareStyles = [
+const FourSquares = ({
+	isVertical = false,
+	squareStyles = [
 		{ backgroundColor: "#727E66" },
 		{ backgroundColor: "#5A7642" },
 		{ backgroundColor: "#889480" },
 		{ backgroundColor: "#C0C9BA" },
 		{ backgroundColor: "#DEE1DD" },
-	];
-
+	],
+}: Props) => {
 	return (
 		<div
 			className={`d-flex justify-content-center ${

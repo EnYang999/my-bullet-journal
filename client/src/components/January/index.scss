@@ -51,3 +51,37 @@
         }
     }
 }
+.january-week2 {
+    background-image: linear-gradient(to bottom, rgba(#fff, 1), rgba(#fff, 0.1) 30%, rgba(#fff, 0)),
+        linear-gradient(to right bottom, rgba(#fff, 1), rgba(#fff, 1) 15%, rgba(#fff, 0) 30%, rgba(#fff, 0) 100%),
+        url(../../assets/jan2024/JenniferMosesfireworks.jpg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    .row {
+        padding: 0;
+        & > * {
+            padding: 0.5em;
+        }
+        margin-right: 0;
+    }
+    .outer-row {
+        .inner-row {
+            .day-box {
+                .week-header {
+                    color: white;
+                    font-family: "Josefin Slab", serif;
+                    font-size: 1.5rem;
+                }
+                .week-header {
+                    background-color: #3d5c8a;
+                }
+            }
+            .week-overlap {
+                border: #3d5c8a solid 1.5px;
+                background-color: rgba(#fff, 0.5);
+                box-shadow: 10px 5px 5px #f8ecee;
+            }
+        }
+    }
+}

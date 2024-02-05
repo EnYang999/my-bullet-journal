@@ -14,6 +14,9 @@ interface Props {
 	rowfont?: string;
 	rowColor?: string;
 	rowfontstyle?: string;
+	headerStyle?: React.CSSProperties;
+	rowStyle?: React.CSSProperties;
+	containerStyle?: React.CSSProperties;
 }
 const Calendar = ({
 	month,
@@ -23,6 +26,9 @@ const Calendar = ({
 	rowfont = "Mono",
 	rowColor = "white",
 	rowfontstyle = "normal",
+	containerStyle,
+	headerStyle,
+	rowStyle,
 }: Props) => {
 	const currentMonth = new Date(year, month - 1); // 1 represents February
 	const firstDayOfMonth = startOfMonth(currentMonth);
@@ -47,13 +53,17 @@ const Calendar = ({
 	const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 	return (
-		<div className='container mt-5'>
+		<div className='container mt-5' style={containerStyle}>
 			<header className='row'>
 				{weekDays.map((day, index) => (
 					<div
 						key={index}
 						className='col text-center p-1 font-weight-bold'
-						style={{ fontFamily: headerfont, color: headerColor }}
+						style={{
+							fontFamily: headerfont,
+							color: headerColor,
+							...headerStyle,
+						}}
 					>
 						{day.charAt(0)}
 					</div>
@@ -73,6 +83,7 @@ const Calendar = ({
 									fontFamily: rowfont,
 									color: rowColor,
 									fontStyle: rowfontstyle,
+									...rowStyle,
 								}}
 							>
 								{isSameMonth(day, currentMonth) && format(day, "d")}
