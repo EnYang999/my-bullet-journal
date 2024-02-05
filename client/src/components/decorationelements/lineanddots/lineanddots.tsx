@@ -1,8 +1,9 @@
 interface Props {
 	lineLeft: boolean;
+	backgroundColor?: string;
 }
 
-const LineDots = ({ lineLeft }: Props) => {
+const LineDots = ({ lineLeft, backgroundColor = "#6E8061" }: Props) => {
 	const dotsContainer = (
 		<div className='dots-container d-flex'>
 			{[...Array(3)].map((_, index) => (
@@ -12,7 +13,7 @@ const LineDots = ({ lineLeft }: Props) => {
 					style={{
 						width: "10px",
 						height: "10px",
-						backgroundColor: "#6E8061",
+						backgroundColor: backgroundColor,
 						borderRadius: "50%",
 						margin: "0 5px",
 					}}
@@ -29,7 +30,7 @@ const LineDots = ({ lineLeft }: Props) => {
 				style={{
 					height: "2px",
 					width: "300px",
-					backgroundColor: "#6E8061",
+					backgroundColor: backgroundColor,
 				}}
 			></div>
 			{lineLeft ? null : dotsContainer}

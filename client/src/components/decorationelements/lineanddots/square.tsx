@@ -1,4 +1,7 @@
-const Square = () => {
+interface Props {
+	backgroundColor?: string;
+}
+const Square = ({ backgroundColor = "#6E8061" }: Props) => {
 	return (
 		<div className='d-flex'>
 			<div
@@ -7,7 +10,7 @@ const Square = () => {
 					width: "1.8rem",
 					height: "1.8rem",
 					borderRadius: "0.2rem",
-					backgroundColor: "#6E8061",
+					backgroundColor: backgroundColor,
 				}}
 			></div>
 		</div>

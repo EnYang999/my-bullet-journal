@@ -1,7 +1,6 @@
 import WeekBox from "./weekday1";
 import Calendar from "../calender/Calendar";
 import LineDots from "../decorationelements/lineanddots/lineanddots";
-import FourSquares from "../decorationelements/lineanddots/squares";
 import Square from "../decorationelements/lineanddots/square";
 import weekendShape from "../../assets/jan2024/weekendShape.png";
 import friShape from "../../assets/jan2024/fridayShape.png";
@@ -22,17 +21,16 @@ const JanuaryWeek1 = () => {
 				>
 					My Year
 				</p>
-				<Square />
+				<Square backgroundColor='#424769' />
 			</div>
 			<div
 				className='d-flex position-absolute'
 				style={{ right: "0.5%", bottom: "5%" }}
 			>
-				<LineDots lineLeft={false} />
+				<LineDots lineLeft={false} backgroundColor='#424769' />
 			</div>
 			<div className='row outer-row'>
 				<div className='col-lg-3 text-center d-flex flex-column align-items-center justify-content-around'>
-					<FourSquares />
 					<Calendar
 						month={1}
 						year={2024}
