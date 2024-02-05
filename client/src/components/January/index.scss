@@ -85,3 +85,68 @@
         }
     }
 }
+.january-week3 {
+    .background-img {
+        background-image: url(../../assets/jan2024/JanuaryShape.png), url(../../assets/jan2024/Fireworks.jpg);
+        background-repeat: no-repeat;
+        background-position:
+            center center,
+            center center;
+        background-size: contain, cover;
+        height: 10vh;
+    }
+    .row {
+        &:nth-child(-n + 1) .day-box {
+            &:nth-child(odd) {
+                border-left: 2px solid #ec98b8;
+                .week-fig::after {
+                    background-color: #e7c8d3;
+                }
+            }
+            &:nth-child(even) {
+                border-left: 2px solid #bbb2da;
+                .week-fig::after {
+                    background-color: #bbb2da;
+                }
+            }
+        }
+        &:nth-child(n + 2) .day-box {
+            &:nth-child(odd) {
+                border-right: 2px solid #e7c8d3;
+                .week-fig::after {
+                    background-color: #e7c8d3;
+                }
+            }
+            &:nth-child(even) {
+                border-right: 2px solid #bbb2da;
+                .week-fig::after {
+                    background-color: #bbb2da;
+                }
+            }
+        }
+    }
+
+    .week-overlap {
+        .week-fig {
+            height: 25%;
+            position: relative;
+            z-index: 1;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                height: 30%;
+                width: 100%;
+                left: 50%;
+                top: 60%;
+                z-index: -1;
+                transform: translate(-50%, -50%);
+                border-radius: 20px;
+            }
+        }
+    }
+}
