@@ -97,14 +97,32 @@
     }
     .row {
         &:nth-child(-n + 1) .day-box {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                transform: translate(-50%, 0);
+                width: 2px;
+            }
+            &:first-child::before {
+                background-color: #e7c8d3;
+                bottom: 0;
+                height: 80%;
+                left: 0;
+            }
+            &:nth-child(2)::before {
+                background-color: #e7c8d3;
+                bottom: 0;
+                height: 50%;
+                left: -1rem;
+            }
+
             &:nth-child(odd) {
-                border-left: 2px solid #ec98b8;
                 .week-fig::after {
                     background-color: #e7c8d3;
                 }
             }
             &:nth-child(even) {
-                border-left: 2px solid #bbb2da;
                 .week-fig::after {
                     background-color: #bbb2da;
                 }
@@ -112,13 +130,11 @@
         }
         &:nth-child(n + 2) .day-box {
             &:nth-child(odd) {
-                border-right: 2px solid #e7c8d3;
                 .week-fig::after {
                     background-color: #e7c8d3;
                 }
             }
             &:nth-child(even) {
-                border-right: 2px solid #bbb2da;
                 .week-fig::after {
                     background-color: #bbb2da;
                 }

@@ -62,7 +62,10 @@ const week3 = () => {
 					</div>
 				</div>
 
-				<div className='w-100 d-none d-md-block background-img'></div>
+				<div
+					className='d-none d-md-block background-img'
+					style={{ width: "100%" }}
+				></div>
 				<div className='row'>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
@@ -101,7 +104,14 @@ const week3 = () => {
 						/>
 					</div>
 					<div className='col-lg-3 col-md-4 d-flex'>
-						<Calendar month={1} year={2022} rowColor='black' />
+						<Calendar
+							month={1}
+							year={2022}
+							headerColor='#bfb8dd'
+							headerStyle={{ marginBottom: "2px", fontFamily: "Protest Riot" }}
+							rowColor='#bfb8dd'
+							rowStyle={{ fontFamily: "Protest Riot" }}
+						/>
 					</div>
 				</div>
 			</div>
