@@ -9,8 +9,21 @@ import {
 interface Props {
 	month: number;
 	year: number;
+	headerfont?: string;
+	headerColor?: string;
+	rowfont?: string;
+	rowColor?: string;
+	rowfontstyle?: string;
 }
-const Calendar = ({ month, year }: Props) => {
+const Calendar = ({
+	month,
+	year,
+	headerfont = "Mono",
+	headerColor = "white",
+	rowfont = "Mono",
+	rowColor = "white",
+	rowfontstyle = "normal",
+}: Props) => {
 	const currentMonth = new Date(year, month - 1); // 1 represents February
 	const firstDayOfMonth = startOfMonth(currentMonth);
 	const lastDayOfMonth = endOfMonth(currentMonth);
@@ -37,7 +50,11 @@ const Calendar = ({ month, year }: Props) => {
 		<div className='container mt-5'>
 			<header className='row'>
 				{weekDays.map((day, index) => (
-					<div key={index} className='col text-center p-1 font-weight-bold'>
+					<div
+						key={index}
+						className='col text-center p-1 font-weight-bold'
+						style={{ fontFamily: headerfont, color: headerColor }}
+					>
 						{day.charAt(0)}
 					</div>
 				))}
@@ -52,6 +69,11 @@ const Calendar = ({ month, year }: Props) => {
 								className={`col text-center p-1 calendar-day ${
 									!isSameMonth(day, currentMonth) ? "text-muted" : ""
 								}`}
+								style={{
+									fontFamily: rowfont,
+									color: rowColor,
+									fontStyle: rowfontstyle,
+								}}
 							>
 								{isSameMonth(day, currentMonth) && format(day, "d")}
 							</div>
