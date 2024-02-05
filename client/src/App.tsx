@@ -14,7 +14,6 @@ function App() {
 			<Route path='/about-us' element={<FullPage />} />
 			<Route path='/themes'>
 				<Route index element={<BookTab />} />
-
 				<Route path=':month/:week' element={<BookTab />} />
 			</Route>
 		</Routes>

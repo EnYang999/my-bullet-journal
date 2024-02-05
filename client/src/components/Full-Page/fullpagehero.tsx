@@ -19,11 +19,11 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 				}`}
 				data-fp-styles='null'
 				data-anchor='hero'
-				style={{ height: 764 }}
+				style={{ height: "100vh" }}
 				ref={heroRef}
 			>
 				<h1 style={{ zIndex: "9999" }}>{activeSection}</h1>
-				<div className='fp-tableCell' style={{ height: 764 }}>
+				<div className='fp-tableCell' style={{ height: "100vh" }}>
 					<div className='section section-top'>
 						{/* Cover */}
 						<div

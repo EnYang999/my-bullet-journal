@@ -20,12 +20,12 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 			}`}
 			data-fp-styles='null'
 			data-anchor='about-1'
-			style={{ height: 764 }}
+			style={{ height: "100vh" }}
 			ref={about1Ref}
 		>
 			<h1>{activeSection}</h1>
-			<div className='fp-tableCell' style={{ height: 764 }}>
-				<div className='fp-scrollable' style={{ height: 764 }}>
+			<div className='fp-tableCell' style={{ height: "100vh" }}>
+				<div className='fp-scrollable' style={{ height: "100vh" }}>
 					<div
 						className='fp-scroller'
 						style={{
