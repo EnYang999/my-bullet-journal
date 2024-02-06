@@ -67,3 +67,58 @@
         }
     }
 }
+.march-week5 {
+    .row {
+        height: 45%;
+    }
+    .violet-img {
+        background-image: url(../../assets/mar2022/week5decor.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .bluerose-img {
+        background-image: url(../../assets/mar2022/bluerose.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .week-box {
+        width: 100%;
+        height: auto;
+        border-image-source: url(../../assets/img/friday-vector.svg);
+        border-image-slice: 13 27 27 27;
+        border-image-width: 1em 2em 2em 2em;
+        border-image-outset: 0em 0em 0em 0em;
+        border-image-repeat: stretch stretch;
+
+        .week-overlap {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.5em;
+            position: relative;
+            .week-fig {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                .week-shape {
+                    width: auto;
+                }
+            }
+
+            .to-do-lines-container {
+                display: grid;
+                grid-template-rows: repeat(5, 1fr);
+                grid-template-columns: 100%;
+                gap: 0.5rem;
+                .my-todo-list {
+                    .tick-box {
+                        width: var(--sep-friday-todolines-height);
+                    }
+                }
+            }
+        }
+    }
+}
