@@ -53,7 +53,7 @@ const Calendar = ({
 	const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 	return (
-		<div className='container mt-5' style={containerStyle}>
+		<div className='container' style={containerStyle}>
 			<header className='row'>
 				{weekDays.map((day, index) => (
 					<div
@@ -76,7 +76,7 @@ const Calendar = ({
 						.map((day, index) => (
 							<div
 								key={index}
-								className={`col text-center p-1 calendar-day ${
+								className={`col text-center calendar-day ${
 									!isSameMonth(day, currentMonth) ? "text-muted" : ""
 								}`}
 								style={{
