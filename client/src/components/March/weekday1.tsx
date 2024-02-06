@@ -16,7 +16,7 @@ const WeekBox = ({ day, boxIds }: Props) => {
 			</div>
 
 			<div
-				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column justify-content-center`}
+				className={`to-do-lines-container mx-3 mt-5 flex-grow-1 d-flex flex-column justify-content-center`}
 			>
 				{boxIds.map((boxId, index) => (
 					<ToDoLine key={index} className='my-todo-list' boxId={boxId} />

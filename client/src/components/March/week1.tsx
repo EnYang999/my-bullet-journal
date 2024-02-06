@@ -8,7 +8,7 @@ const MarchWeek1 = () => {
 		<>
 			<div
 				className='d-flex flex-column position-absolute align-items-center'
-				style={{ left: "20%", top: "4%", width: "15rem", height: "auto" }}
+				style={{ right: "20%", top: "4%", width: "20rem", height: "auto" }}
 			>
 				<figure className={`week-fig w-100`}>
 					<img className={`week-shape w-100`} alt={`march`} src={marchShape} />
@@ -23,33 +23,12 @@ const MarchWeek1 = () => {
 					]}
 				/>
 			</div>
-			<Calendar
-				month={3}
-				year={2022}
-				containerStyle={{
-					position: "absolute",
-					right: "10%",
-					top: "4%",
-					width: "12.5rem",
-					height: "auto",
-					marginTop: "0",
-				}}
-				headerColor='black'
-				rowColor='black'
-				headerfont='Open Sans'
-				rowfont='Open Sans'
-				headerStyle={{
-					marginBottom: "2px",
-				}}
-				rowStyle={{
-					padding: "0px auto",
-				}}
-			/>
+
 			<div
 				className='d-flex position-absolute'
 				style={{ left: "0.5%", bottom: "5%" }}
 			>
-				<LineDots lineLeft={true} />
+				<LineDots lineLeft={true} backgroundColor='#176B87' />
 			</div>
 			<div className='row h-100'>
 				<div className='col d-flex day-box'>
