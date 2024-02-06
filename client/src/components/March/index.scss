@@ -32,3 +32,38 @@
         }
     }
 }
+.march-week3 {
+    background-image: url(../../assets/mar2022/backgroundbypurplelavenderf.jpg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    .row {
+        padding: 0;
+        & > * {
+            padding: 0.5em;
+        }
+        margin-right: 0;
+    }
+    .outer-row {
+        .inner-row {
+            .day-box {
+                .week-header {
+                    color: white;
+                    font-family: "Josefin Slab", serif;
+                    font-size: 1.5rem;
+                }
+                &:nth-child(even) .week-header {
+                    background-color: #ac87c5;
+                }
+                &:nth-child(odd) .week-header {
+                    background-color: #756ab6;
+                }
+            }
+            .week-overlap {
+                border: rgb(108, 124, 187) solid 1.5px;
+                background-color: rgba(#fff, 0.5);
+                box-shadow: 10px 5px 5px rgb(164, 160, 187);
+            }
+        }
+    }
+}
