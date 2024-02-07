@@ -1,16 +1,38 @@
-import RabbitStamp from "../decorationelements/rabbitstamp/rabbitstamp";
-import RabbitMother from "../decorationelements/rabbitmother/RabbitMother";
+import FourSquares from "../decorationelements/lineanddots/squares";
 import mondayShape from "../../assets/img/monday-shape.svg";
 import tuesdayShape from "../../assets/img/thursday-shape.svg";
 import wednesdayShape from "../../assets/img/wednesday-shape.svg";
 import thursdayShape from "../../assets/img/thursday-shape.svg";
 import fridayShape from "../../assets/img/friday-shape.svg";
 import weekendShape from "../../assets/img/weekend-shape.svg";
-import violet from "../../assets/mar2022/week5decor.png";
 import WeekBox from "./weekday5";
 const MarchWeek5 = () => {
 	return (
 		<>
+			<div
+				className='col-lg-3 text-center d-flex flex-column align-items-center justify-content-around position-absolute'
+				style={{ right: "0.5%", top: "35%" }}
+			>
+				<p
+					style={{
+						fontFamily: "Josefin Slab",
+						fontSize: "4rem",
+						marginBottom: 0,
+						color: "#0B60B0",
+					}}
+				>
+					March.
+				</p>
+				<FourSquares
+					squareStyles={[
+						{ backgroundColor: "#1D5D9B" },
+						{ backgroundColor: "#91C8E4" },
+						{ backgroundColor: "#749BC2" },
+						{ backgroundColor: "#4682A9" },
+						{ backgroundColor: "#DEE1DD" },
+					]}
+				/>
+			</div>
 			<div className='row'>
 				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 					<WeekBox
