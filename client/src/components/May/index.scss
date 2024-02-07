@@ -33,6 +33,23 @@
     background: repeating-linear-gradient(-45deg, #abc29c, #abc29c 10px, #fff 50px, #fff 150px);
     .week-overlap {
         border: #718b44 solid 2px;
+
+        .week-header {
+            position: relative;
+            span.d-flex {
+                position: absolute;
+                font-family: "Parisienne", cursive;
+                font-size: 1.5em;
+                left: 50%;
+                top: 0;
+                transform: translate(-50%, -50%);
+                width: 2rem;
+                height: 2rem;
+                text-align: center;
+                border-radius: 50%;
+                background-color: #99bc85;
+            }
+        }
     }
     .col.col-lg-3 {
         .row {

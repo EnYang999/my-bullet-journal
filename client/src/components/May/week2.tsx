@@ -3,54 +3,54 @@ import Calendar from "../calender/Calendar";
 const week2 = () => {
 	return (
 		<>
-			<div className='row justify-content-md-center h-100 align-items-center'>
-				<div className='col-lg-9'>
-					<div className='row mb-2'>
+			<div className='row h-100 align-items-center'>
+				<div className='col-lg-9 h-100 d-flex flex-column justify-content-evenly'>
+					<div className='row'>
 						<div className='col-lg-3'>
 							<WeekBox
-								day='25'
+								day='M'
 								boxIds={[
-									`mar-week-1-monday-1`,
-									`mar-week-1-monday-2`,
-									`mar-week-1-monday-3`,
-									`mar-week-1-monday-4`,
-									`mar-week-1-monday-5`,
+									`may-week-2-monday-1`,
+									`may-week-2-monday-2`,
+									`may-week-2-monday-3`,
+									`may-week-2-monday-4`,
+									`may-week-2-monday-5`,
 								]}
 							/>
 						</div>
 						<div className='col-lg-3'>
 							<WeekBox
-								day='26'
+								day='T'
 								boxIds={[
-									`mar-week-1-tuesday-1`,
-									`mar-week-1-tuesday-2`,
-									`mar-week-1-tuesday-3`,
-									`mar-week-1-tuesday-4`,
-									`mar-week-1-tuesday-5`,
+									`may-week-2-tuesday-1`,
+									`may-week-2-tuesday-2`,
+									`may-week-2-tuesday-3`,
+									`may-week-2-tuesday-4`,
+									`may-week-2-tuesday-5`,
 								]}
 							/>
 						</div>
 						<div className='col-lg-3'>
 							<WeekBox
-								day='27'
+								day='W'
 								boxIds={[
-									`mar-week-1-wednesday-1`,
-									`mar-week-1-wednesday-2`,
-									`mar-week-1-wednesday-3`,
-									`mar-week-1-wednesday-4`,
-									`mar-week-1-wednesday-5`,
+									`may-week-2-wednesday-1`,
+									`may-week-2-wednesday-2`,
+									`may-week-2-wednesday-3`,
+									`may-week-2-wednesday-4`,
+									`may-week-2-wednesday-5`,
 								]}
 							/>
 						</div>
 						<div className='col-lg-3'>
 							<WeekBox
-								day='28'
+								day='T'
 								boxIds={[
-									`mar-week-1-thursday-1`,
-									`mar-week-1-thursday-2`,
-									`mar-week-1-thursday-3`,
-									`mar-week-1-thursday-4`,
-									`mar-week-1-thursday-5`,
+									`may-week-2-thursday-1`,
+									`may-week-2-thursday-2`,
+									`may-week-2-thursday-3`,
+									`may-week-2-thursday-4`,
+									`may-week-2-thursday-5`,
 								]}
 							/>
 						</div>
@@ -58,30 +58,52 @@ const week2 = () => {
 					<div className='row'>
 						<div className='col-lg-3'>
 							<WeekBox
-								day='29'
+								day='F'
 								boxIds={[
-									`mar-week-1-friday-1`,
-									`mar-week-1-friday-2`,
-									`mar-week-1-friday-3`,
-									`mar-week-1-friday-4`,
-									`mar-week-1-friday-5`,
+									`may-week-2-friday-1`,
+									`may-week-2-friday-2`,
+									`may-week-2-friday-3`,
+									`may-week-2-friday-4`,
+									`may-week-2-friday-5`,
 								]}
 							/>
 						</div>
 						<div className='col-lg-3'>
 							<WeekBox
-								day='30'
+								day='S'
 								boxIds={[
-									`mar-week-1-saturday-1`,
-									`mar-week-1-saturday-2`,
-									`mar-week-1-saturday-3`,
-									`mar-week-1-saturday-4`,
-									`mar-week-1-saturday-5`,
+									`may-week-2-saturday-1`,
+									`may-week-2-saturday-2`,
+									`may-week-2-saturday-3`,
+									`may-week-2-saturday-4`,
+									`may-week-2-saturday-5`,
 								]}
 							/>
 						</div>
-						<div className='col-lg-3'>1 of 3</div>
-						<div className='col-lg-3'>1 of 3</div>
+						<div className='col-lg-3'>
+							<WeekBox
+								day='S'
+								boxIds={[
+									`may-week-2-sunday-1`,
+									`may-week-2-sunday-2`,
+									`may-week-2-sunday-3`,
+									`may-week-2-sunday-4`,
+									`may-week-2-sunday-5`,
+								]}
+							/>
+						</div>
+						<div className='col-lg-3'>
+							<WeekBox
+								day='N'
+								boxIds={[
+									`may-week-2-notes-1`,
+									`may-week-2-notes-2`,
+									`may-week-2-notes-3`,
+									`may-week-2-notes-4`,
+									`may-week-2-notes-5`,
+								]}
+							/>
+						</div>
 					</div>
 				</div>
 
@@ -92,9 +114,13 @@ const week2 = () => {
 					<div className='row div-img-2 d-flex justify-content-end mb-1'>
 						<div
 							className='img-2'
-							style={{ fontFamily: "Parisienne", color: "#718b44" }}
+							style={{
+								fontFamily: "Parisienne",
+								color: "black",
+								zIndex: "2",
+							}}
 						>
-							May
+							May.
 						</div>
 					</div>
 					<div className='row div-img-3 mb-2'>
