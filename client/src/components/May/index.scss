@@ -1,3 +1,31 @@
 .may-index {
     background-image: url(../../assets/may2021/2021MayDigitalBujo.png);
 }
+.may-week1 {
+    .flower-bg {
+        background-image: url(../../assets/may2021/VanGoghGreenWheatFields.jpg);
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .flower-bg-re {
+        background-image: url(../../assets/may2021/VanGoghGreenWheatFields.jpg);
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .week-fig {
+        width: 55%;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 15%;
+            left: 0;
+            width: 180%;
+            transform: translate(-25%, 0);
+            height: 2px;
+            background-color: #718b44;
+        }
+    }
+}

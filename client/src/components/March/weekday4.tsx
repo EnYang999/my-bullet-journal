@@ -15,7 +15,7 @@ const WeekBox = ({ boxIds, day, shapeImage }: Props) => {
 						src={shapeImage}
 						style={{
 							filter:
-								"invert(40%) sepia(20%) saturate(1229%) hue-rotate(201deg) brightness(97%) contrast(85%)",
+								"brightness(0) saturate(100%) invert(40%) sepia(20%) saturate(1229%) hue-rotate(201deg) brightness(97%) contrast(85%)",
 						}}
 					/>
 				</figure>
