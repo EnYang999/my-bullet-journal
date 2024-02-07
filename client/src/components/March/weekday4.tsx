@@ -8,13 +8,14 @@ const WeekBox = ({ boxIds, day, shapeImage }: Props) => {
 	return (
 		<div className={`week-overlap overlap-${boxIds.length} d-flex flex-column`}>
 			<div className='week-header d-flex w-100 justify-content-center align-items-center'>
-				<figure className={`week-fig fig-${day.toLowerCase()} w-50`}>
+				<figure className={`week-fig`}>
 					<img
-						className={`week-shape ${day.toLowerCase()}-shape `}
+						className={`week-shape position-relative`}
 						alt={`${day} shape`}
 						src={shapeImage}
 						style={{
-							filter: "brightness(0) invert(1)",
+							filter:
+								"invert(40%) sepia(20%) saturate(1229%) hue-rotate(201deg) brightness(97%) contrast(85%)",
 						}}
 					/>
 				</figure>
