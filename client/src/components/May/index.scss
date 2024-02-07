@@ -29,3 +29,38 @@
         }
     }
 }
+.may-week2 {
+    background: repeating-linear-gradient(-45deg, #abc29c, #abc29c 10px, #fff 50px, #fff 150px);
+    .week-overlap {
+        border: #718b44 solid 2px;
+    }
+    .col.col-lg-3 {
+        .row {
+            height: 20%;
+            &:last-child {
+                height: 40%;
+            }
+            [class^="img-"] {
+                width: 80%;
+                border: #718b44 solid 2px;
+            }
+        }
+    }
+
+    .img-1 {
+        background-image: url(../../assets/may2021/VanGoghGreenWheatFields.jpg);
+    }
+
+    .img-2 {
+        background-image: url(../../assets/may2021/VanGoghWheatVintagePrint.jpg);
+        background-position: center center;
+    }
+
+    .img-3 {
+        background-image: url(../../assets/may2021/VincentvanGogLeSaintesMariesdea-Mer1888.jpg);
+    }
+
+    .img-4 {
+        background-image: url(../../assets/may2021/WheatFieldwithCypressesCrossStithPattern.jpg);
+    }
+}

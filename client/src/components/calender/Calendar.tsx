@@ -21,9 +21,9 @@ interface Props {
 const Calendar = ({
 	month,
 	year,
-	headerfont = "Mono",
+	headerfont = "Roboto Mono",
 	headerColor = "white",
-	rowfont = "Mono",
+	rowfont = "Roboto Mono",
 	rowColor = "white",
 	rowfontstyle = "normal",
 	containerStyle,
