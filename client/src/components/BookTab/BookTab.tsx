@@ -27,7 +27,7 @@ const BookTab = () => {
 		return (
 			<div className='week-container-layout'>
 				<div
-					className={`container py-8 px-6 d-flex week-box-container ${
+					className={`container py-8 px-6 d-flex week-box-container align-items-center justify-content-center w-100 ${
 						monthMap[month].toLowerCase() + "-" + week
 					} ${week} ${monthMap[month].toLowerCase()}`}
 				>

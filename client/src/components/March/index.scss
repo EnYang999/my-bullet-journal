@@ -32,6 +32,29 @@
         }
     }
 }
+.march-week2 {
+    .flower-bg {
+        background-image: url(../../assets/mar2022/flowerrepeated.jpeg);
+    }
+    .flower-bg-re {
+        background-image: url(../../assets/mar2022/flowerrepeated.jpeg);
+        background-position: bottom left;
+    }
+    .week-fig {
+        width: 55%;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 15%;
+            left: 0;
+            width: 180%;
+            transform: translate(-25%, 0);
+            height: 2px;
+            background-color: #b2c0dd;
+        }
+    }
+}
 .march-week3 {
     background-image: url(../../assets/mar2022/backgroundbypurplelavenderf.jpg);
     background-repeat: no-repeat;
