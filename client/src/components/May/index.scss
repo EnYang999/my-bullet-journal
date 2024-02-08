@@ -92,12 +92,44 @@
             flex-direction: column;
             justify-content: space-between;
             border: #64766b solid 2px;
+            position: relative;
             .doughnut {
                 position: absolute;
-                border: 5px solid rgba(26, 144, 85, 0.38);
-                border-radius: 100px;
-                height: 20px;
+
+                &.tue-dn {
+                    top: 0;
+                    left: 20%;
+                    border: 10px solid rgba(10, 160, 85, 0.76);
+                    border-radius: 100%;
+                    height: 30px;
+                    width: 30px;
+                }
+                &.wed-dn {
+                    bottom: 32%;
+                    right: 20%;
+                    border: 5px solid rgba(56, 103, 79, 0.38);
+                    border-radius: 100px;
+                    height: 20px;
+                    width: 20px;
+                }
+                &.fri-dn {
+                    bottom: 20%;
+                    left: 20%;
+                    border: 5px solid rgba(26, 144, 85, 0.38);
+                    border-radius: 100px;
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+            &:nth-child(6) .week-fig::after {
+                content: "";
+                background: repeating-linear-gradient(-45deg, #abc29c, #abc29c 4px, #fff 5px, #fff 5px);
                 width: 20px;
+                height: 70px;
+                top: -10%;
+                left: 2%;
+                z-index: -1;
+                position: absolute;
             }
             .img-header {
                 height: 100px;
@@ -117,21 +149,18 @@
                     color: white;
                 }
                 &:nth-child(even) {
-                    .img-header {
-                        margin-top: 0.2em;
-                    }
+                    margin-top: 0.2em;
                     span.d-flex {
                         top: -5%;
                     }
                 }
                 &:nth-child(odd) {
-                    .img-header {
-                        margin-bottom: 0.2em;
-                    }
+                    margin-bottom: 0.2em;
                     span.d-flex {
                         bottom: -40%;
                     }
                 }
+
                 &.header-img-mon {
                     background-image: url(../../assets/may2021/VanGoghGreenWheatFields.jpg);
                 }

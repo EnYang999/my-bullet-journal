@@ -106,7 +106,6 @@ const MarchWeek3 = () => {
 							`apr-week-4-saturday-5`,
 						]}
 					/>
-					<div className='diagline'></div>
 					<div className='img-header header-img-sat'>
 						<span className='d-flex'>{25}</span>
 					</div>
