@@ -1,3 +1,136 @@
 .june-index {
     background-image: url(../../assets/june2021/2021JuneDigitalBujo.png);
 }
+.june-week1 {
+    height: 100%;
+    .row {
+        height: 100%;
+        .col {
+            padding: 0;
+            margin: 0 4px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            position: relative;
+            &:nth-child(1) {
+                .img-header,
+                .img-footer {
+                    background-image: url(../../assets/june2021/monet-june-1.jpg);
+                }
+                .img-header {
+                    height: 10%;
+                }
+                .img-footer {
+                    height: 20%;
+                    background-position: bottom center;
+                }
+                .week-overlap {
+                    height: 60%;
+                }
+            }
+            &:nth-child(2) {
+                .img-header {
+                    background-image: url(../../assets/june2021/monet-june-6.png);
+                    background-position: top 30% center;
+                    height: 15%;
+                }
+                .img-footer {
+                    background-image: url(../../assets/june2021/monet-june-5.png);
+                    background-position: bottom center;
+                    height: 25%;
+                }
+                .week-overlap {
+                    height: 55%;
+                }
+            }
+            &:nth-child(3) {
+                .img-header,
+                .img-footer {
+                    background-image: url(../../assets/june2021/monet-june-3.jpg);
+                }
+                .img-header {
+                    height: 15%;
+                }
+                .img-footer {
+                    height: 15%;
+                    background-position: bottom 20% right;
+                }
+                .week-overlap {
+                    height: 60%;
+                }
+            }
+            &:nth-child(4) {
+                .img-header,
+                .img-footer {
+                    background-image: url(../../assets/june2021/monet-june-4.jpg);
+                }
+                .img-header {
+                    height: 20%;
+                    background-position: top 20% center;
+                }
+                .img-footer {
+                    height: 20%;
+                    background-position: bottom 20% center;
+                }
+                .week-overlap {
+                    height: 55%;
+                }
+            }
+            &:nth-child(5) {
+                .img-header,
+                .img-footer {
+                    background-image: url(../../assets/june2021/monet-june-2.jpg);
+                }
+                .img-header {
+                    height: 12%;
+                }
+                .img-footer {
+                    height: 18%;
+                    background-position: bottom center;
+                }
+                .week-overlap {
+                    height: 65%;
+                }
+            }
+            &:nth-child(6) {
+                .img-header,
+                .img-footer {
+                    background-image: url(../../assets/june2021/monet-june-4.jpg);
+                }
+                .img-header {
+                    height: 14%;
+                    background-position: top 30% center;
+                }
+                .img-footer {
+                    height: 16%;
+                    background-position: top 50% right;
+                }
+                .week-overlap {
+                    height: 58%;
+                }
+            }
+            .img-header,
+            .img-footer {
+                width: 100%;
+                position: relative;
+                border: #b5a2bf solid 4px;
+                background-size: cover;
+                &:nth-child(even) {
+                    span.d-flex {
+                        top: -5%;
+                    }
+                }
+                &:nth-child(odd) {
+                    span.d-flex {
+                        bottom: -40%;
+                    }
+                }
+            }
+            .week-overlap {
+                border: #b5a2bf solid 3px;
+            }
+        }
+    }
+}
