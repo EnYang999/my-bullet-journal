@@ -5,7 +5,7 @@ import thursShape from "../../assets/jan2024/thursdayShape.png";
 import wedShape from "../../assets/jan2024/wednesdayShape.png";
 import tuesShape from "../../assets/jan2024/tuesdayShape.png";
 import monShape from "../../assets/jan2024/mondayShape.png";
-const MarchWeek2 = () => {
+const MarchWeek1 = () => {
 	return (
 		<>
 			<div className='row justify-content-between'>
@@ -99,4 +99,4 @@ const MarchWeek2 = () => {
 	);
 };
 
-export default MarchWeek2;
+export default MarchWeek1;

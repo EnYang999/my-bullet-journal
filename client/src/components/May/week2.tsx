@@ -1,6 +1,6 @@
 import WeekBox from "./weekday2";
 import Calendar from "../calender/Calendar";
-const week2 = () => {
+const MarchWeek2 = () => {
 	return (
 		<>
 			<div className='row h-100 align-items-center'>
@@ -116,8 +116,9 @@ const week2 = () => {
 							className='img-2'
 							style={{
 								fontFamily: "Parisienne",
-								color: "black",
+								color: "#718b44",
 								zIndex: "2",
+								fontSize: "5rem",
 							}}
 						>
 							May.
@@ -142,4 +143,4 @@ const week2 = () => {
 	);
 };
 
-export default week2;
+export default MarchWeek2;
