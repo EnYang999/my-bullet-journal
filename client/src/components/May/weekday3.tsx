@@ -1,6 +1,5 @@
 import { ToDoLine } from "../todolines/todoline";
 interface Props {
-	day: string;
 	shapeImage: string;
 	boxIds: string[];
 }
