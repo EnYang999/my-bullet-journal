@@ -5,9 +5,7 @@ interface Props {
 }
 const WeekBox = ({ day, boxIds }: Props) => {
 	return (
-		<div
-			className={`week-overlap overlap-${boxIds.length} d-flex flex-column align-items-center`}
-		>
+		<div className={`week-overlap  d-flex flex-column align-items-center`}>
 			<div className='week-header d-flex w-100 mb-5 justify-content-center align-items-center ps-2'>
 				<span className='d-flex'>{day}</span>
 			</div>

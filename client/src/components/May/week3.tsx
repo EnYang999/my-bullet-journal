@@ -42,7 +42,7 @@ const MarchWeek3 = () => {
 					<div className='img-header header-img-tue'>
 						<span className='d-flex'>{25}</span>
 					</div>
-					<div className='doughnut'></div>
+					<div className='doughnut tue-dn'></div>
 				</div>
 				<div className='col'>
 					<div className='img-header header-img-wed'>
@@ -59,7 +59,7 @@ const MarchWeek3 = () => {
 							`apr-week-4-wednesday-5`,
 						]}
 					/>
-					<div className='doughnut'></div>
+					<div className='doughnut wed-dn'></div>
 				</div>
 				<div className='col'>
 					<WeekBox
@@ -92,7 +92,7 @@ const MarchWeek3 = () => {
 							`apr-week-4-friday-5`,
 						]}
 					/>
-					<div className='doughnut'></div>
+					<div className='doughnut fri-dn'></div>
 				</div>
 				<div className='col'>
 					<WeekBox
@@ -106,10 +106,10 @@ const MarchWeek3 = () => {
 							`apr-week-4-saturday-5`,
 						]}
 					/>
+					<div className='diagline'></div>
 					<div className='img-header header-img-sat'>
 						<span className='d-flex'>{25}</span>
 					</div>
-					<div className='diagline'></div>
 				</div>
 				<div className='col'>
 					<div className='img-header header-img-sun'>

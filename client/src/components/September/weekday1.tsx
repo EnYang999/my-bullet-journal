@@ -8,7 +8,7 @@ interface Props {
 const WeekBox = ({ day, shapeImage, dateTime, boxIds }: Props) => {
 	return (
 		<div className={`week-box sep-${day.toLowerCase()}-box`}>
-			<div className={`week-overlap overlap-${boxIds.length}`}>
+			<div className={`week-overlap `}>
 				<div className={`week-date-num fig-${day.toLowerCase()}`}>
 					{dateTime}
 				</div>
