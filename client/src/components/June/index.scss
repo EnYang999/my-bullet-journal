@@ -272,10 +272,10 @@
                     background-size: 80%;
                     background-repeat: no-repeat;
                     background-position: right center;
-                    width: 120%;
+                    width: 125%;
                     height: 100%;
                     top: 80%;
-                    left: 60%;
+                    left: 50%;
                 }
                 .topline {
                     border-top: #6875e7 solid 3px;
@@ -312,7 +312,7 @@
                 .rightline {
                     width: 10px;
                     height: 150%;
-                    border-right: #6875e7 solid 3px;
+                    border-left: #6875e7 solid 3px;
                     top: 80%;
                     left: 100%;
                 }
@@ -326,26 +326,26 @@
             position: relative;
             .row:first-child {
                 height: 50%;
-                border: #6875e7 solid 4px;
             }
 
             .row:last-child {
                 height: 50%;
-                background-color: #dd6161;
+                width: 100%;
+                position: relative;
+                // background-color: #dd6161;
                 & > * {
                     position: absolute;
                     transform: translate(-50%, -50%);
                 }
-
                 .img-bg {
                     background-image: url(../../assets/june2021/monet-june-9.JPG);
-                    background-size: 40%;
+                    background-size: 100%;
                     background-repeat: no-repeat;
                     background-position: right center;
                     width: 100%;
                     height: 100%;
-                    top: 80%;
-                    left: 60%;
+                    top: 50%;
+                    left: 45%;
                 }
                 .topline {
                     border-top: #6875e7 solid 3px;
@@ -365,24 +365,24 @@
                     width: 10px;
                     height: 125%;
                     border-left: #6875e7 solid 3px;
-                    top: 70%;
+                    top: 40%;
                     left: 20%;
                 }
                 .rightline {
-                    width: 10px;
-                    height: 150%;
+                    width: 1px;
+                    height: 100%;
                     border-right: #6875e7 solid 3px;
-                    top: 80%;
+                    top: 55%;
                     left: 100%;
                     &::before {
                         position: absolute;
                         content: "";
-                        width: 5rem;
-                        height: 5rem;
+                        width: 3rem;
+                        height: 3rem;
                         border-radius: 50%;
                         background-color: #6875e7;
                         top: 40%;
-                        left: 0;
+                        left: 35px;
                         transform: translate(-50%, -50%);
                     }
                 }
