@@ -248,6 +248,152 @@
         }
     }
 }
+.june-week3 {
+    height: 100%;
+    justify-content: space-between;
+    .row {
+        height: 100%;
+    }
+    .siderow {
+        height: 100%;
+        width: 100%;
+        &.left-side {
+            margin-right: 5%;
+            background-color: bisque;
+            .row:first-child {
+                position: relative;
+                height: calc(100% / 3);
+                & > * {
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+                .img-bg {
+                    background-image: url(../../assets/june2021/monet-june-4.jpg);
+                    background-size: 80%;
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    width: 120%;
+                    height: 100%;
+                    top: 80%;
+                    left: 60%;
+                }
+                .topline {
+                    border-top: #6875e7 solid 3px;
+                    top: 20%;
+                    left: 60%;
+                    width: 110%;
+                    height: 4px;
+                }
+                .bottomline {
+                    border-bottom: #6875e7 solid 3px;
+                    bottom: 0;
+                    left: 60%;
+                    width: 120%;
+                    height: 4px;
+                }
+                .leftline {
+                    width: 10px;
+                    height: 125%;
+                    border-left: #6875e7 solid 3px;
+                    top: 70%;
+                    left: 20%;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 50%;
+                        background-color: #6875e7;
+                        top: 40%;
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                .rightline {
+                    width: 10px;
+                    height: 150%;
+                    border-right: #6875e7 solid 3px;
+                    top: 80%;
+                    left: 100%;
+                }
+            }
+            .row:last-child {
+                height: calc(100% / 3 * 2);
+            }
+        }
+        &.right-side {
+            background-color: #86bb74;
+            position: relative;
+            .row:first-child {
+                height: 50%;
+                border: #6875e7 solid 4px;
+            }
+
+            .row:last-child {
+                height: 50%;
+                background-color: #dd6161;
+                & > * {
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+
+                .img-bg {
+                    background-image: url(../../assets/june2021/monet-june-9.JPG);
+                    background-size: 40%;
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    width: 100%;
+                    height: 100%;
+                    top: 80%;
+                    left: 60%;
+                }
+                .topline {
+                    border-top: #6875e7 solid 3px;
+                    top: 20%;
+                    left: 60%;
+                    width: 110%;
+                    height: 4px;
+                }
+                .bottomline {
+                    border-bottom: #6875e7 solid 3px;
+                    bottom: 0;
+                    left: 60%;
+                    width: 120%;
+                    height: 4px;
+                }
+                .leftline {
+                    width: 10px;
+                    height: 125%;
+                    border-left: #6875e7 solid 3px;
+                    top: 70%;
+                    left: 20%;
+                }
+                .rightline {
+                    width: 10px;
+                    height: 150%;
+                    border-right: #6875e7 solid 3px;
+                    top: 80%;
+                    left: 100%;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 5rem;
+                        height: 5rem;
+                        border-radius: 50%;
+                        background-color: #6875e7;
+                        top: 40%;
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+
+        .weekdaybox {
+            border: #6875e7;
+        }
+    }
+}
 .june-week4 {
     background-image: url(../../assets/june2021/monet-june-6.png);
     background-repeat: no-repeat;
