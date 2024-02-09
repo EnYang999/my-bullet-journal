@@ -92,7 +92,20 @@ const JuneWeek4 = () => {
 					/>
 				</div>
 				<div className='col-lg-3'>
-					<Calendar month={6} year={2023} />
+					<span className='d-flex justify-content-center'>
+						<span style={{ fontFamily: "Kalam", fontSize: "2em" }}>June</span>
+					</span>
+					<Calendar
+						month={6}
+						year={2023}
+						headerColor='#B0A4A4'
+						rowColor='#B0A4A4'
+						rowfont='Kalam'
+						rowStyle={{ padding: "1px" }}
+						containerStyle={{
+							border: "#8095c0 solid 4px;",
+						}}
+					/>
 				</div>
 			</div>
 		</>

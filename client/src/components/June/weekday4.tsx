@@ -7,13 +7,13 @@ interface Props {
 const WeekBox = ({ boxIds, day }: Props) => {
 	return (
 		<div className={`week-overlap d-flex flex-column`}>
-			<div className='week-header d-flex w-100 mb-5 justify-content-start ps-2'>
+			<div className='week-header d-flex w-100 justify-content-center'>
 				<span className='d-flex'>
 					<span>{day}</span>
 				</span>
 			</div>
 			<div
-				className={`to-do-lines-container flex-grow-1 d-flex mx-3 flex-column`}
+				className={`to-do-lines-container flex-grow-1 d-flex mx-3 flex-column mb-3`}
 			>
 				{boxIds.map((boxId, index) => (
 					<ToDoLine key={index} className='my-todo-list' boxId={boxId} />
