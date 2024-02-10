@@ -175,7 +175,6 @@
             margin: 4px 0;
         }
     }
-
     .left-banner {
         .row {
             width: 120%;
@@ -259,7 +258,6 @@
         width: 100%;
         &.left-side {
             margin-right: 5%;
-            background-color: bisque;
             .row:first-child {
                 position: relative;
                 height: calc(100% / 3);
@@ -276,6 +274,7 @@
                     height: 100%;
                     top: 80%;
                     left: 50%;
+                    margin-bottom: 5rem;
                 }
                 .topline {
                     border-top: #6875e7 solid 3px;
@@ -322,7 +321,6 @@
             }
         }
         &.right-side {
-            background-color: #86bb74;
             position: relative;
             .row:first-child {
                 height: 50%;
@@ -332,7 +330,6 @@
                 height: 50%;
                 width: 100%;
                 position: relative;
-                // background-color: #dd6161;
                 & > * {
                     position: absolute;
                     transform: translate(-50%, -50%);
@@ -390,7 +387,34 @@
         }
 
         .weekdaybox {
-            border: #6875e7;
+            border-top: #6875e7 solid 2px;
+            &:last-child {
+                border-bottom: #6875e7 solid 2px;
+            }
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            & > * {
+                font-family: "Style Script", cursive;
+                font-size: 2.5rem;
+                line-height: 2;
+                text-align: center;
+            }
+
+            .weekdaytxt {
+                border-left: #6875e7 solid 2px;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                justify-content: center;
+                align-items: center;
+            }
+            .weekdaydoes {
+                border-left: #6875e7 solid 2px;
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
         }
     }
 }
