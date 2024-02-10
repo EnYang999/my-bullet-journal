@@ -91,12 +91,14 @@ const NovemberWeek4 = () => {
 						November.
 					</p>
 					<FourSquares
+						isVertical={true}
+						cusStyle={{ position: "absolute", left: "30%" }}
 						squareStyles={[
-							{ backgroundColor: "#1D5D9B" },
-							{ backgroundColor: "#91C8E4" },
-							{ backgroundColor: "#749BC2" },
-							{ backgroundColor: "#4682A9" },
-							{ backgroundColor: "#DEE1DD" },
+							{ backgroundColor: "#ECE3CE" },
+							{ backgroundColor: "#739072" },
+							{ backgroundColor: "#4F6F52" },
+							{ backgroundColor: "#3A4D39" },
+							{ backgroundColor: "#86A789" },
 						]}
 					/>
 				</div>

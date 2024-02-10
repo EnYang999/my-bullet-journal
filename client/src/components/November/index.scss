@@ -5,6 +5,10 @@
     &.container {
         align-items: start !important;
     }
+    background: white;
+    background-image: radial-gradient(#2d9496 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: -19px -19px;
     .col-lg-3.col-md-6:nth-child(4) {
         position: relative;
         & > * {
