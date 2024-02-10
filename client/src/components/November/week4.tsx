@@ -1,7 +1,7 @@
 import FourSquares from "../decorationelements/lineanddots/squares";
 
 import WeekBox from "./weekday4";
-const MarchWeek5 = () => {
+const NovemberWeek4 = () => {
 	return (
 		<>
 			{/* <div
@@ -35,11 +35,11 @@ const MarchWeek5 = () => {
 					<WeekBox
 						day='Monday'
 						boxIds={[
-							`sep-week-4-monday-1`,
-							`sep-week-4-monday-2`,
-							`sep-week-4-monday-3`,
-							`sep-week-4-monday-4`,
-							`sep-week-4-monday-5`,
+							`nov-week-4-monday-1`,
+							`nov-week-4-monday-2`,
+							`nov-week-4-monday-3`,
+							`nov-week-4-monday-4`,
+							`nov-week-4-monday-5`,
 						]}
 					/>
 				</div>
@@ -47,11 +47,11 @@ const MarchWeek5 = () => {
 					<WeekBox
 						day='Tuesday'
 						boxIds={[
-							"sep-week-4-tuesday-1",
-							"sep-week-4-tuesday-2",
-							"sep-week-4-tuesday-3",
-							"sep-week-4-tuesday-4",
-							"sep-week-4-tuesday-5",
+							"nov-week-4-tuesday-1",
+							"nov-week-4-tuesday-2",
+							"nov-week-4-tuesday-3",
+							"nov-week-4-tuesday-4",
+							"nov-week-4-tuesday-5",
 						]}
 					/>
 				</div>
@@ -59,11 +59,11 @@ const MarchWeek5 = () => {
 					<WeekBox
 						day='Wednesday'
 						boxIds={[
-							"sep-week-4-wednesday-1",
-							"sep-week-4-wednesday-2",
-							"sep-week-4-wednesday-3",
-							"sep-week-4-wednesday-4",
-							"sep-week-4-wednesday-5",
+							"nov-week-4-wednesday-1",
+							"nov-week-4-wednesday-2",
+							"nov-week-4-wednesday-3",
+							"nov-week-4-wednesday-4",
+							"nov-week-4-wednesday-5",
 						]}
 					/>
 				</div>
@@ -78,9 +78,6 @@ const MarchWeek5 = () => {
 					<div className='doughnut dn-6' />
 					<div className='doughnut dn-7' />
 					<div className='doughnut dn-8' />
-					<div className='doughnut dn-9' />
-					<div className='doughnut dn-10' />
-					<div className='doughnut dn-11' />
 					<p
 						style={{
 							fontFamily: "Pinyon Script",
@@ -93,6 +90,15 @@ const MarchWeek5 = () => {
 					>
 						November.
 					</p>
+					<FourSquares
+						squareStyles={[
+							{ backgroundColor: "#1D5D9B" },
+							{ backgroundColor: "#91C8E4" },
+							{ backgroundColor: "#749BC2" },
+							{ backgroundColor: "#4682A9" },
+							{ backgroundColor: "#DEE1DD" },
+						]}
+					/>
 				</div>
 
 				<div className='w-100 d-none d-md-block mt-7'></div>
@@ -101,11 +107,11 @@ const MarchWeek5 = () => {
 					<WeekBox
 						day='Thursday'
 						boxIds={[
-							"sep-week-4-thursday-1",
-							"sep-week-4-thursday-2",
-							"sep-week-4-thursday-3",
-							"sep-week-4-thursday-4",
-							"sep-week-4-thursday-5",
+							"nov-week-4-thursday-1",
+							"nov-week-4-thursday-2",
+							"nov-week-4-thursday-3",
+							"nov-week-4-thursday-4",
+							"nov-week-4-thursday-5",
 						]}
 					/>
 				</div>
@@ -113,11 +119,11 @@ const MarchWeek5 = () => {
 					<WeekBox
 						day='Friday'
 						boxIds={[
-							"sep-week-4-friday-1",
-							"sep-week-4-friday-2",
-							"sep-week-4-friday-3",
-							"sep-week-4-friday-4",
-							"sep-week-4-friday-5",
+							"nov-week-4-friday-1",
+							"nov-week-4-friday-2",
+							"nov-week-4-friday-3",
+							"nov-week-4-friday-4",
+							"nov-week-4-friday-5",
 						]}
 					/>
 				</div>
@@ -125,11 +131,11 @@ const MarchWeek5 = () => {
 					<WeekBox
 						day='Saturday'
 						boxIds={[
-							"sep-week-4-saturday-1",
-							"sep-week-4-saturday-2",
-							"sep-week-4-saturday-3",
-							"sep-week-4-saturday-4",
-							"sep-week-4-saturday-5",
+							"nov-week-4-saturday-1",
+							"nov-week-4-saturday-2",
+							"nov-week-4-saturday-3",
+							"nov-week-4-saturday-4",
+							"nov-week-4-saturday-5",
 						]}
 					/>
 				</div>
@@ -137,11 +143,11 @@ const MarchWeek5 = () => {
 					<WeekBox
 						day='Sunday'
 						boxIds={[
-							"sep-week-4-sunday-1",
-							"sep-week-4-sunday-2",
-							"sep-week-4-sunday-3",
-							"sep-week-4-sunday-4",
-							"sep-week-4-sunday-5",
+							"nov-week-4-sunday-1",
+							"nov-week-4-sunday-2",
+							"nov-week-4-sunday-3",
+							"nov-week-4-sunday-4",
+							"nov-week-4-sunday-5",
 						]}
 					/>
 				</div>
@@ -150,4 +156,4 @@ const MarchWeek5 = () => {
 	);
 };
 
-export default MarchWeek5;
+export default NovemberWeek4;
