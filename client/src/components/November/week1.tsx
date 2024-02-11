@@ -1,6 +1,6 @@
 import FourSquares from "../decorationelements/lineanddots/squares";
 
-import WeekBox from "./weekday4";
+import WeekBox from "./weekday5";
 const NovemberWeek1 = () => {
 	return (
 		<>
