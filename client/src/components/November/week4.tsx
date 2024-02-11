@@ -4,32 +4,6 @@ import WeekBox from "./weekday4";
 const NovemberWeek4 = () => {
 	return (
 		<>
-			{/* <div
-				className='col-lg-3 text-center d-flex flex-column align-items-center justify-content-around position-absolute'
-				style={{ right: "0.5%", top: "35%" }}
-			>
-				<p
-					style={{
-						fontFamily: "Josefin Slab",
-						fontSize: "4rem",
-						marginBottom: 0,
-						color: "#0B60B0",
-						writingMode: "vertical-rl",
-						textOrientation: "mixed",
-					}}
-				>
-					November.
-				</p>
-				<FourSquares
-					squareStyles={[
-						{ backgroundColor: "#1D5D9B" },
-						{ backgroundColor: "#91C8E4" },
-						{ backgroundColor: "#749BC2" },
-						{ backgroundColor: "#4682A9" },
-						{ backgroundColor: "#DEE1DD" },
-					]}
-				/>
-			</div> */}
 			<div className='row'>
 				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 					<WeekBox
