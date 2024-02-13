@@ -217,6 +217,42 @@
     }
 }
 .november-week4 {
+    background: white;
+    background-image: radial-gradient(#4a55a2 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: -19px -19px;
+    .inner-row {
+        max-height: 80%;
+        height: 80%;
+        .col-lg-4 {
+            padding: 0;
+
+            &:nth-child(3n + 1) .week-overlap,
+            &:nth-child(2) .week-overlap,
+            &:nth-child(5) .week-overlap {
+                border-right: none;
+            }
+            &:nth-child(-n + 5) .week-overlap {
+                border-bottom: none;
+            }
+            .week-overlap {
+                max-height: 180px;
+                overflow-y: scroll;
+                border: #4a55a2 solid 2px;
+                .week-header {
+                    background-color: #7895cb;
+                    font-family: "Parisienne", cursive;
+                    margin-bottom: 1.3rem !important;
+                    color: aliceblue;
+                    font-weight: bold;
+                    letter-spacing: 4px;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+.november-week5 {
     &.container {
         align-items: start !important;
     }
