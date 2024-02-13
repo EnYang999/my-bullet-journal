@@ -1,8 +1,53 @@
 import WeekBox from "./weekday5";
-import BlueEllip from "../decorationelements/svgs/blueIrregularelliptical";
+import Circles from "../decorationelements/lineanddots/circles";
+import FourSquares from "../decorationelements/lineanddots/squares";
 const NovemberWeek2 = () => {
 	return (
 		<>
+			<div className='dec-text'>
+				<div
+					className='november-text'
+					style={{
+						fontFamily: "Style Script",
+						fontSize: "3rem",
+						position: "absolute",
+						right: "3rem",
+						top: "2rem",
+						letterSpacing: "8px",
+						zIndex: "1",
+						color: "#c3dcff",
+					}}
+				>
+					November
+				</div>
+				<Circles
+					cus_circle_style={{
+						background: "#6DB9EF",
+						position: "absolute",
+						right: "15.5rem",
+						top: "3rem",
+					}}
+				/>
+				<FourSquares
+					squareStyles={[
+						{ backgroundColor: "#4A55A2" },
+						{ backgroundColor: "#7895CB" },
+						{ backgroundColor: "#A0BFE0" },
+						{ backgroundColor: "#C5DFF8" },
+						{ backgroundColor: "#A1C2F1" },
+					]}
+					cusStyle={{ position: "absolute", right: "4rem", top: "6rem" }}
+				/>
+			</div>
+			<div className='blobs'>
+				<div className='blob d-flex justify-content-center align-items-center'>
+					<span style={{ color: "aliceblue" }}>ETERNITY</span>
+				</div>
+				<div className='blob'></div>
+				<div className='blob'></div>
+				<div className='blob'></div>
+				<div className='blob'></div>
+			</div>
 			<div className='row h-100 justify-content-center align-items-center'>
 				<div className='col-lg-2'>
 					<WeekBox
