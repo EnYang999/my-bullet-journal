@@ -138,6 +138,32 @@
         }
     }
 }
+.november-week2 {
+    flex-direction: column;
+
+    background-image: url(../decorationelements/svgs/curveline2.svg), url(../decorationelements/svgs/blob1.svg),
+        url(../decorationelements/svgs/curveline1.svg), url(../decorationelements/svgs/blob2.svg);
+    background-size: 800px, 400px, 800px, 600px;
+    background-repeat: no-repeat;
+    background-position:
+        top -10px left -180px,
+        top -150px left -150px,
+        bottom -30px right -50px,
+        bottom -240px right -150px;
+
+    .col-lg-2 {
+        .week-overlap {
+            border: #176b87 solid 2px;
+            font-family: "Dancing Script", cursive;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: #176b87;
+            .week-header {
+                justify-content: center !important;
+            }
+        }
+    }
+}
 .november-week4 {
     &.container {
         align-items: start !important;
