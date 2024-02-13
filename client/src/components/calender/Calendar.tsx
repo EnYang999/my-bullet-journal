@@ -17,6 +17,8 @@ interface Props {
 	headerStyle?: React.CSSProperties;
 	rowStyle?: React.CSSProperties;
 	containerStyle?: React.CSSProperties;
+	headersStyle?: React.CSSProperties;
+	cusName?: string;
 }
 const Calendar = ({
 	month,
@@ -28,6 +30,8 @@ const Calendar = ({
 	rowfontstyle = "normal",
 	containerStyle,
 	headerStyle,
+	headersStyle,
+	cusName,
 	rowStyle,
 }: Props) => {
 	const currentMonth = new Date(year, month - 1); // 1 represents February
@@ -53,8 +57,8 @@ const Calendar = ({
 	const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 	return (
-		<div className='container' style={containerStyle}>
-			<header className='row'>
+		<div className={`container ${cusName}`} style={containerStyle}>
+			<header className='row' style={{ ...headersStyle }}>
 				{weekDays.map((day, index) => (
 					<div
 						key={index}

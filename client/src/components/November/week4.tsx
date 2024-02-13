@@ -1,30 +1,42 @@
 import WeekBox from "./weekday5";
 import FourSquares from "../decorationelements/lineanddots/squares";
+import Circles from "../decorationelements/lineanddots/circles";
 import Calendar from "../calender/Calendar";
 const NovemberWeek4 = () => {
 	return (
 		<>
 			<div className='row outer-row'>
-				<div className='col-lg-3 text-center d-flex align-items-center'>
-					<div className='d-flex flex-column'>
+				<div className='col-lg-3 text-center position-relative'>
+					<div className='img-dec-1 position-absolute'></div>
+					<div className='img-dec-2 position-absolute'></div>
+					<div className='doughnut dn-1 position-absolute'></div>
+					<div className='doughnut dn-2 position-absolute'></div>
+					<div className='d-flex text-dec flex-column position-absolute'>
 						<p
 							style={{
-								fontFamily: "Josefin Slab",
-								fontSize: "5rem",
+								fontFamily: "Dancing Script",
+								fontSize: "2.5rem",
 								marginBottom: 0,
+								zIndex: 2,
 							}}
 						>
 							November.
 						</p>
-						<FourSquares />
+						<Circles cusName='circle-nov-dec' />
 						<Calendar
 							month={11}
 							year={2024}
-							rowColor='black'
-							headerColor='black'
-							containerStyle={{ width: "50%", backgroundColor: "#ADC4CE" }}
-							headerStyle={{ backgroundColor: "#ADC4CE" }}
-							rowStyle={{ padding: "2px" }}
+							rowColor='#4A55A2'
+							headerColor='#4A55A2'
+							cusName='nove-week4-cal'
+							headerfont='Indie Flower'
+							rowfont='Caveat'
+							containerStyle={{
+								width: "80%",
+								minWidth: "150px",
+								zIndex: 1,
+							}}
+							rowStyle={{ padding: "1px", margin: "0" }}
 						/>
 					</div>
 				</div>

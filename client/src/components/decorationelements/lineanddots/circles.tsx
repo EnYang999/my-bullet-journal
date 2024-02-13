@@ -4,6 +4,7 @@ interface Props {
 	numElements?: number;
 	rot?: number;
 	circleSize?: string;
+	cusName?: string;
 	radius?: number;
 	container_style?: React.CSSProperties;
 	cus_container_style?: React.CSSProperties;
@@ -15,6 +16,7 @@ const Circles: React.FC<Props> = ({
 	rot = 0,
 	circleSize = "6px",
 	radius = 20,
+	cusName,
 	container_style = {
 		// left: "50%",
 		// top: "50%",
@@ -53,7 +55,7 @@ const Circles: React.FC<Props> = ({
 
 	return (
 		<div
-			className='circle-container'
+			className={`circle-container ${cusName}`}
 			style={{ ...container_style, ...cus_container_style }}
 		>
 			{circles}

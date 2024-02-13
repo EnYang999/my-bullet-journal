@@ -221,32 +221,138 @@
     background-image: radial-gradient(#4a55a2 1px, transparent 0);
     background-size: 40px 40px;
     background-position: -19px -19px;
-    .inner-row {
-        max-height: 80%;
-        height: 80%;
-        .col-lg-4 {
-            padding: 0;
+    .nove-week4-cal {
+        position: relative;
+        &:after {
+            position: absolute;
+            content: "";
+            opacity: 0.4;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #98c1fa;
+            border-radius: 12px;
+            width: 130%;
+            height: 110%;
+        }
+        header {
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                opacity: 0.4;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #98c1fa;
+                border-radius: 10px;
+                width: 110%;
+                height: 50%;
+            }
+        }
+    }
+    .img-dec-1 {
+        background-image: url(../../assets/nov2022/ocean-nov-11.jpg);
+        background-repeat: no-repeat;
+        max-width: 200px;
+        width: 70%;
+        max-height: 400px;
+        height: 30%;
+        top: -10%;
+        left: 100%;
+        border-radius: 20px;
+    }
+    .img-dec-2 {
+        background-image: url(../../assets/nov2022/ocean-nov-8.jpg);
+        background-position: right center;
+        top: 10%;
+        left: 20%;
+        max-width: 300px;
+        width: 100%;
+        max-height: 300px;
+        height: 60%;
+        border-radius: 10px;
+    }
+    .circle-nov-dec {
+        position: relative;
+        & > .circle-dot {
+            position: absolute;
+        }
+    }
+    .dn-1 {
+        right: -60%;
+        top: 20%;
+        border: 5px solid rgba(21, 108, 194, 0.76);
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+    }
+    .dn-2 {
+        right: -80%;
+        top: 12%;
+        border: 10px solid rgba(78, 133, 188, 0.76);
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+    }
+    .text-dec {
+        bottom: -5%;
+        right: -10%;
+        p {
+            color: transparent;
+            isolation: isolate;
+            mix-blend-mode: multiply;
+            background: linear-gradient(
+                to left bottom,
+                #4a55a2,
+                #5161aa,
+                #586db3,
+                #6179ba,
+                #6a85c2,
+                #718ec7,
+                #7997cc,
+                #81a0d1,
+                #88a8d5,
+                #8fb0d9,
+                #97b7dc,
+                #a0bfe0
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .col-lg-9 {
+        z-index: 1;
+        .inner-row {
+            max-height: 80%;
+            height: 80%;
+            .col-lg-4 {
+                padding: 0;
 
-            &:nth-child(3n + 1) .week-overlap,
-            &:nth-child(2) .week-overlap,
-            &:nth-child(5) .week-overlap {
-                border-right: none;
-            }
-            &:nth-child(-n + 5) .week-overlap {
-                border-bottom: none;
-            }
-            .week-overlap {
-                max-height: 180px;
-                overflow-y: scroll;
-                border: #4a55a2 solid 2px;
-                .week-header {
-                    background-color: #7895cb;
-                    font-family: "Parisienne", cursive;
-                    margin-bottom: 1.3rem !important;
-                    color: aliceblue;
-                    font-weight: bold;
-                    letter-spacing: 4px;
-                    font-size: 1.3rem;
+                &:nth-child(3n + 1) .week-overlap,
+                &:nth-child(2) .week-overlap,
+                &:nth-child(5) .week-overlap {
+                    border-right: none;
+                }
+                &:nth-child(-n + 5) .week-overlap {
+                    border-bottom: none;
+                }
+                .week-overlap {
+                    max-height: 180px;
+
+                    border: #4a55a2 solid 2px;
+                    .week-header {
+                        background-color: #7895cb;
+                        font-family: "Parisienne", cursive;
+                        margin-bottom: 1.3rem !important;
+                        color: aliceblue;
+                        font-weight: bold;
+                        letter-spacing: 4px;
+                        font-size: 1.3rem;
+                    }
+                    .to-do-lines-container {
+                        overflow-y: scroll;
+                    }
                 }
             }
         }
