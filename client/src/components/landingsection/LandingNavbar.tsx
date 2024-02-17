@@ -70,12 +70,12 @@ const LandingNavbar = () => {
 						</li>
 						<li className='nav-item'>
 							<a className='nav-link ' href='./month-planner'>
-								Monthly Planner
+								Planner
 							</a>
 						</li>
 						<li className='nav-item'>
 							<a className='nav-link ' href='./habits'>
-								Habits Tracker
+								Tracker
 							</a>
 						</li>
 					</ul>

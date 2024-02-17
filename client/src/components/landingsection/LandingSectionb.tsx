@@ -1,4 +1,4 @@
-import img7 from "../../assets/landing/7.jpg";
+import img7 from "../../assets/landing/landing-04.jpg";
 const LandingSectionb = () => {
 	return (
 		<section className='py-7 py-md-9'>
@@ -10,7 +10,7 @@ const LandingSectionb = () => {
 
 						{/* <!--Text  --> */}
 						<p className='fs-lg lh-lg text-black mb-5 mb-md-0'>
-							Great variety of foods you will enjoy.
+							Pause to revel in the small joys.
 						</p>
 					</div>
 					<div className='col-md-4 order-md-3'>
@@ -39,14 +39,14 @@ const LandingSectionb = () => {
 					<div className='col-md-5 order-md-1 align-self-center mx-auto'>
 						{/* <!--Heading  --> */}
 						<h2 className='mb-2'>
-							<em>Beautiful</em> outdoor seating
+							<em>Eternal</em> enchanting adventure
 						</h2>
 
 						{/* <!--Text  --> */}
 						<p className='mb-0'>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-							quae similique asperiores consequatur! Nihil temporibus qui enim.
-							Accusamus voluptates a, et quidem! Quo, et?
+							Embrace the journey, for it is in the winding paths and unexpected
+							detours that the beauty of life unfolds, offering lessons in
+							resilience and invitations to grow.
 						</p>
 					</div>
 				</div>

@@ -1,4 +1,4 @@
-import img2 from "../../assets/landing/2.jpg";
+import img2 from "../../assets/landing/landing-03.jpg";
 const LandingSectiona = () => {
 	return (
 		<section className='pt-7 pt-md-9'>
@@ -10,7 +10,7 @@ const LandingSectiona = () => {
 
 						{/* <!--Text  --> */}
 						<p className='fs-lg lh-lg text-black mb-5 mb-md-0'>
-							Take a coffee break or enjoy a meal.
+							Embrace the Gentle Symphony of Time.
 						</p>
 					</div>
 					<div className='col-md-4'>
@@ -33,15 +33,14 @@ const LandingSectiona = () => {
 					<div className='col-md-5 align-self-center mx-auto'>
 						{/* <!--Heading  --> */}
 						<h2 className='mb-2'>
-							<em>Always</em> amazing experience
+							<em>Perpetual</em> mesmerizing journey
 						</h2>
 
 						{/* <!--Text  --> */}
 						<p className='mb-0'>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Molestias veritatis nisi, consequatur, laborum libero a neque
-							ducimus. Porro rem illum quo nostrum quisquam asperiores. Possimus
-							facilis velit, voluptatibus!
+							In the delicate dance between past and future, find solace in the
+							tender embrace of the present moment, where each breath is a
+							melody of possibility and each heartbeat a rhythm of gratitude.
 						</p>
 					</div>
 				</div>

@@ -1,5 +1,5 @@
 import "./LandingAbout.scss";
-import img19 from "../../assets/landing/19.jpg";
+import img19 from "../../assets/landing/landing-02.jpg";
 import { useEffect } from "react";
 import { jarallax } from "jarallax";
 import "jarallax/dist/jarallax.min.css";
@@ -24,8 +24,8 @@ const LandingAbout = () => {
 
 							{/* <!--Text  --> */}
 							<p className='fs-lg lh-lg text-black mb-0'>
-								Enjoy our specialty coffees and award winning doughnuts in a
-								friendly atmosphere.
+								May your days be adorned with moments of serenity, sprinkled
+								with the fragrance of intentionality.
 							</p>
 						</div>
 					</div>

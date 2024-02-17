@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { jarallax } from "jarallax";
-import landingBackground from "../../assets/landing/1.jpg";
+import landingBackground from "../../assets/landing/landing-01.jpg";
 
 const LandingHeader = () => {
 	useEffect(() => {
@@ -37,7 +37,7 @@ const LandingHeader = () => {
 								className='btn btn-outline-primary text-white text-primary-hover mb-7 mb-md-0'
 								href='#reservation'
 							>
-								Make reservation
+								View Templates
 							</a>
 						</div>
 					</div>
