@@ -1,4 +1,3 @@
-import "./LandingAbout.scss";
 import img19 from "../../assets/landing/landing-02.jpg";
 import { useEffect } from "react";
 import { jarallax } from "jarallax";
@@ -14,7 +13,7 @@ const LandingAbout = () => {
 		};
 	}, []);
 	return (
-		<section className='about jarallax position-relative'>
+		<section className='landing-about jarallax position-relative'>
 			<div className='min-vh-100 py-7 py-md-9 bg-gradient-bottom-end-white'>
 				<div className='container'>
 					<div className='row'>

@@ -1,8 +1,4 @@
-import img26 from "../../assets/landing/26.jpg";
-import img27 from "../../assets/landing/27.jpg";
 import img28 from "../../assets/landing/28.jpg";
-// import img29 from "../../assets/landing/29.jpg";
-import img30 from "../../assets/landing/30.jpg";
 import img31 from "../../assets/landing/31.jpg";
 import frost1 from "../../assets/landing/landing-frost-2105.jpg";
 import frost2 from "../../assets/landing/landing-frost-2112.jpg";
@@ -31,8 +27,11 @@ import { useState } from "react";
 
 const LandingMenu = () => {
 	const [activeTab, setActiveTab] = useState<string>("gold"); // Set the default active tab
-
-	const handleTabClick = (tabId: string) => {
+	const handleTabClick = (
+		tabId: string,
+		event: React.MouseEvent<HTMLAnchorElement>
+	) => {
+		event.preventDefault();
 		setActiveTab(tabId);
 	};
 	return (
@@ -41,13 +40,12 @@ const LandingMenu = () => {
 				<div className='row justify-content-center'>
 					<div className='col-12 col-md-8 col-lg-6 text-center'>
 						{/* <!--Heading  --> */}
-						<h2 className='mb-2'>Themes options</h2>
+						<h2 className='mb-2'>Themes Options</h2>
 
 						{/* <!--Subheading  --> */}
 						<p className='mb-6'>
 							Let the pages of your journal become a sanctuary where you weave
-							dreams into plans, where the whispers of inspiration guide your
-							pen to map out the landscape of your aspirations.
+							dreams into plans.
 						</p>
 					</div>
 				</div>
@@ -63,11 +61,11 @@ const LandingMenu = () => {
 								className={`nav-link ${activeTab === "gold" ? "active" : ""}`}
 								id='goldTab'
 								data-bs-toggle='tab'
-								href='#gold'
+								// href='#gold'
 								role='tab'
 								aria-controls='gold'
 								aria-selected={activeTab === "gold"}
-								onClick={() => handleTabClick("gold")}
+								onClick={(event) => handleTabClick("gold", event)}
 							>
 								gold
 							</a>
@@ -77,11 +75,11 @@ const LandingMenu = () => {
 								}`}
 								id='preludeTab'
 								data-bs-toggle='tab'
-								href='#prelude'
+								// href='#prelude'
 								role='tab'
 								aria-controls='prelude'
 								aria-selected={activeTab === "prelude"}
-								onClick={() => handleTabClick("prelude")}
+								onClick={(event) => handleTabClick("prelude", event)}
 							>
 								prelude
 							</a>
@@ -89,11 +87,11 @@ const LandingMenu = () => {
 								className={`nav-link ${activeTab === "perano" ? "active" : ""}`}
 								id='peranoTab'
 								data-bs-toggle='tab'
-								href='#perano'
+								// href='#perano'
 								role='tab'
 								aria-controls='perano'
 								aria-selected={activeTab === "perano"}
-								onClick={() => handleTabClick("perano")}
+								onClick={(event) => handleTabClick("perano", event)}
 							>
 								perano
 							</a>
@@ -101,11 +99,11 @@ const LandingMenu = () => {
 								className={`nav-link ${activeTab === "frost" ? "active" : ""}`}
 								id='frostTab'
 								data-bs-toggle='tab'
-								href='#frost'
+								// href='#frost'
 								role='tab'
 								aria-controls='frost'
 								aria-selected={activeTab === "frost"}
-								onClick={() => handleTabClick("frost")}
+								onClick={(event) => handleTabClick("frost", event)}
 							>
 								frost
 							</a>
@@ -115,11 +113,11 @@ const LandingMenu = () => {
 								}`}
 								id='moccasinTab'
 								data-bs-toggle='tab'
-								href='#moccasin'
+								// href='#moccasin'
 								role='tab'
 								aria-controls='moccasin'
 								aria-selected={activeTab === "moccasin"}
-								onClick={() => handleTabClick("moccasin")}
+								onClick={(event) => handleTabClick("moccasin", event)}
 							>
 								moccasin
 							</a>
@@ -127,11 +125,11 @@ const LandingMenu = () => {
 								className={`nav-link ${activeTab === "tomato" ? "active" : ""}`}
 								id='tomatoTab'
 								data-bs-toggle='tab'
-								href='#tomato'
+								// href='#tomato'
 								role='tab'
 								aria-controls='tomato'
 								aria-selected={activeTab === "tomato"}
-								onClick={() => handleTabClick("tomato")}
+								onClick={(event) => handleTabClick("tomato", event)}
 							>
 								tomato
 							</a>
@@ -167,19 +165,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>Golden September</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Amber leaves, golden jewelry—September gleams with
+														nature's and metal's brilliance.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -199,19 +195,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>May's Golden Charm</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Spring blossoms, golden adornments—May sparkles with
+														nature's and gold's allure.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -231,19 +225,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>June's Gilded Glow</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Summer's warmth, golden accents—June shimmers with
+														radiance and elegance.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -263,19 +255,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>September Shine</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Autumn's hues, golden accents—September glows with
+														timeless beauty and richness.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -295,19 +285,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>Golden May Bloom</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Spring's bloom, golden hues—May blossoms with
+														elegance and opulence.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -320,26 +308,24 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img31}
+															src={gold4}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>Harvest of Gold</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Nature's bounty, golden adornments—September
+														harvests beauty and prosperity.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -371,19 +357,18 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>Ethereal Light in Lavender</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														As autumn's whisper unfolds, September bathes in the
+														delicate hue of light purple, a prelude to the
+														changing seasons—a serene symphony of nature.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -403,19 +388,21 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>
+														Frosty Mornings in Soft Lilac
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														In the quiet embrace of winter, January emerges in
+														hues of light purple, casting a gentle glow over
+														frost-kissed landscapes—a tranquil beginning to the
+														new year.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -428,26 +415,25 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img26}
+															src={prelude1}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>Awakening in Pale Lavender</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														With the promise of spring on the horizon, March
+														awakens in shades of light purple—a delicate prelude
+														to nature's vibrant rebirth.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -460,26 +446,25 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img27}
+															src={prelude2}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>Sunset Dreams in Muted Mauve</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														As summer's warmth envelops the land, June dances in
+														hues of light purple—a dreamy prelude to balmy
+														evenings and sun-kissed days.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -492,26 +477,27 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img28}
+															src={prelude1}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>
+														Harvest Moon in Lavender Mist
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Amidst the golden harvest fields, October is bathed
+														in the soft glow of light purple—a mystical prelude
+														to autumn's enchantment.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -524,26 +510,27 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img31}
+															src={prelude2}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>
+														Winter's Eve in Hushed Violet
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Underneath a blanket of snow, December unfolds in
+														whispers of light purple—a serene prelude to the
+														quiet beauty of winter's embrace.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -576,19 +563,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>Whispering Blue</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														In June's embrace, Perano's light blue whispers of
+														endless skies.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -608,19 +593,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>Soft Blue Hue</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														September bathes in serene light blue, a tranquil
+														melody.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -640,19 +623,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>
+														August Breeze: Gentle Blue Touch
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														August carries gentle light blue, a breeze of
+														calmness.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -672,19 +655,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>
+														August Tranquility: Subtle Blue Essence
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Amidst August's tranquility, light blue essence
+														soothes the soul.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -697,26 +680,24 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img27}
+															src={perano1}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>Whispering Blue Waters</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														In November's dreams, light blue waters beckon with
+														tranquility.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -729,26 +710,23 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img30}
+															src={perano2}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>Light Blue Vista</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														On horizon, light blue paints a serene vista.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -780,19 +758,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>Emerald Awakening</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Emerald hues of Frost greet May, a verdant
+														awakening.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -812,19 +788,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>
+														December Chill: Frost's Evergreen Charm
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Frost's green charm enchants December with evergreen
+														allure.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -844,19 +820,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>Sprouting Verdancy</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Sprouting verdancy in April, Frost casts a green
+														spell.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -876,19 +850,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>
+														March Frost: Whispering Green Symphony
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														March echoes with Frost's whispering green symphony,
+														a tranquil melody.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -908,19 +882,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>
+														December Glow: Frost's Enigmatic Green
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														December basks in Frost's enigmatic green, a
+														mystical glow.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -933,26 +907,24 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img31}
+															src={frost2}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>Frost's Shaded Green</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														July unveils Frost's shaded green, a mystery in
+														midsummer's warmth.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -984,19 +956,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>October Hues: Grey Embrace</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Moccasin grey envelops October, a cozy embrace
+														amidst autumn's palette.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -1016,19 +986,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>
+														November Chill: Subtle Grey Veil
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Subtle grey veils November, warmth against the
+														chill.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -1048,19 +1018,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>
+														October Whispers: Grey Whimsy
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Moccasin grey whispers through October, a whimsical
+														touch in fall's air.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -1080,19 +1050,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>
+														November Mists: Grey Serenity
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														In November mists, grey exudes serenity, a tranquil
+														cloak.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -1105,26 +1075,24 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img28}
+															src={moccasin2}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>Reverie: Soft Grey Dream</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Soft grey dream of embraces time, a reverie of
+														tranquility.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -1137,26 +1105,24 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img31}
+															src={moccasin3}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>July Twilight: Misty Grey</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Misty grey adorns July twilight, a subtle hue in
+														summer's warmth.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -1188,19 +1154,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>February Blaze: Crimson Fire</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Crimson fire of Red ignites February, warming hearts
+														with passion.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -1220,19 +1184,19 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>
+														August Harvest: Vibrant Bounty
+													</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Vibrant red bounty crowns August, ripe with summer's
+														richness.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -1252,19 +1216,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Lorem ipsum dolor sit amet</h5>
+													<h5 className='mb-2'>November Spice: Rich Essence</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Rich red essence of spices up November, adding
+														warmth.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$15
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
@@ -1284,19 +1246,17 @@ const LandingMenu = () => {
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce id ante ut arcu</h5>
+													<h5 className='mb-2'>April Bloom: Bold Blossoms</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Bold red blossoms of herald vibrant bloom, a
+														spectacle.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$23
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -1309,26 +1269,23 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img28}
+															src={tomato2}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>Radiance: Sunlit Glow</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Sunlit red glow beams, a radiant hue.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													<div className='fs-4 font-serif text-center text-black'></div>
 												</div>
 											</div>
 										</div>
@@ -1341,26 +1298,24 @@ const LandingMenu = () => {
 													<div className='ratio ratio-1x1'>
 														<img
 															className='object-fit-cover'
-															src={img31}
+															src={tomato3}
 															alt='...'
 														/>
 													</div>
 												</div>
 												<div className='col-7'>
 													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Fusce sed dolor eget tortor</h5>
+													<h5 className='mb-2'>October Harvest: Deep Bounty</h5>
 
 													{/* <!--Text  --> */}
 													<p className='mb-0'>
-														Lorem ipsum dolor sit amet, consectetur adipisicing
-														elit. Modi, obcaecati! Sapiente laudantium.
+														Deep red bounty crowns October, a harvest of
+														richness.
 													</p>
 												</div>
 												<div className='col-2'>
 													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'>
-														$16
-													</div>
+													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
 												</div>
 											</div>
 										</div>
