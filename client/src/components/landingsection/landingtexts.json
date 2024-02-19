@@ -1,13 +1,117 @@
 {
-  "imgSrcs": ["gold1", "gold2", "gold3", "gold4", "gold5","gold4"],
-  "months": ["September","May","June","September","May","September"],
-  "headings": ["Golden September","May's Golden Charm","June's Gilded Glow","September Shine","Golden May Bloom","Harvest of Gold"],
-  "textHeadings": [
-    "Amber leaves, golden jewelry—September gleams with nature's and metal's brilliance.",
-    "Spring blossoms, golden adornments—May sparkles with nature's and gold's allure.",
-    "Summer's warmth, golden accents—June shimmers with radiance and elegance.",
-    "Autumn's hues, golden accents—September glows with timeless beauty and richness.",
-    "Spring's bloom, golden hues—May blossoms with elegance and opulence.",
-    "Nature's bounty, golden adornments—September harvests beauty and prosperity."
-  ]
+  "gold": {
+    "months": [
+      "September",
+      "May",
+      "June",
+      "September",
+      "May",
+      "September"
+    ],
+    "headings": [
+      "Golden September",
+      "May's Golden Charm",
+      "June's Gilded Glow",
+      "September Shine",
+      "Golden May Bloom",
+      "Harvest of Gold"
+    ],
+    "textHeadings": [
+      "Amber leaves, golden jewelry—September gleams with nature's and metal's brilliance.",
+      "Spring blossoms, golden adornments—May sparkles with nature's and gold's allure.",
+      "Summer's warmth, golden accents—June shimmers with radiance and elegance.",
+      "Autumn's hues, golden accents—September glows with timeless beauty and richness.",
+      "Spring's bloom, golden hues—May blossoms with elegance and opulence.",
+      "Nature's bounty, golden adornments—September harvests beauty and prosperity."
+    ]
+  },
+  "prelude":{
+    "months":["June", "January", "June", "January", "June", "January"],
+    "headings": [
+        "Ethereal Light in Lavender",
+        "Frosty Mornings in Soft Lilac",
+        "Awakening in Pale Lavender",
+        "Sunset Dreams in Muted Mauve",
+        "Harvest Moon in Lavender Mist",
+        "Winter's Eve in Hushed Violet"],
+     "textHeadings": [
+        "As autumn's whisper unfolds, September bathes in the delicate hue of light purple, a prelude to the changing seasons—a serene symphony of nature.",
+        "In the quiet embrace of winter, January emerges in hues of light purple, casting a gentle glow over frost-kissed landscapes—a tranquil beginning to the new year.",
+        "With the promise of spring on the horizon, March awakens in shades of light purple—a delicate prelude to nature's vibrant rebirth.",
+        "As summer's warmth envelops the land, June dances in hues of light purple—a dreamy prelude to balmy evenings and sun-kissed days.",
+        "Amidst the golden harvest fields, October is bathed in the soft glow of light purple—a mystical prelude to autumn's enchantment.",
+        "Underneath a blanket of snow, December unfolds in whispers of light purple—a serene prelude to the quiet beauty of winter's embrace."
+    ]
+  },
+  "perano":{
+    "months":["June","September","August","August","June","September"],
+    "headings": [
+        "Whispering Blue",
+        "Soft Blue Hue",
+        "August Breeze: Gentle Blue Touch",
+        "August Tranquility: Subtle Blue Essence",
+        "Whispering Blue Waters",
+        "Light Blue Vista"],
+    "textHeadings": [
+        "In June's embrace, Perano's light blue whispers of endless skies.",
+        "September bathes in serene light blue, a tranquil melody.",
+        "August carries gentle light blue, a breeze of calmness.",
+        "Amidst August's tranquility, light blue essence soothes the soul.",
+        "In November's dreams, light blue waters beckon with tranquility.",
+        "On horizon, light blue paints a serene vista."]
+  },
+  "frost":{
+    "months":["May","December","April","March","December","May"],
+    "headings": [
+        "Emerald Awakening",
+        "December Chill: Frost's Evergreen Charm",
+        "Sprouting Verdancy",
+        "March Frost: Whispering Green Symphony",
+        "December Glow: Frost's Enigmatic Green",
+        "Frost's Shaded Green"],
+    "textHeadings": [
+        "Emerald hues of Frost greet May, a verdant awakening.",
+        "Frost's green charm enchants December with evergreen allure.",
+        "Sprouting verdancy in April, Frost casts a green spell.",
+        "March echoes with Frost's whispering green symphony, a tranquil melody.",
+        "December basks in Frost's enigmatic green, a mystical glow.",
+        "July unveils Frost's shaded green, a mystery in midsummer's warmth."]
+  },
+  "moccasin":{
+    "months":["October", "October", "November", "November", "October", "November"],
+    "headings": [
+        "October Hues: Grey Embrace",
+        "November Chill: Subtle Grey Veil",
+        "October Whispers: Grey Whimsy",
+        "November Mists: Grey Serenity",
+        "Reverie: Soft Grey Dream",
+        "July Twilight: Misty Grey"
+    ],
+    "textHeadings": [
+        "Moccasin grey envelops October, a cozy embrace amidst autumn's palette.",
+        "Subtle grey veils November, warmth against the chill.",
+        "Moccasin grey whispers through October, a whimsical touch in fall's air.",
+        "In November mists, grey exudes serenity, a tranquil cloak.",
+        "Soft grey dream of embraces time, a reverie of tranquility.",
+        "Misty grey adorns July twilight, a subtle hue in summer's warmth."
+    ]
+  },
+  "tomato":{
+        "months":["February", "August", "November", "February", "August", "November"],
+        "headings": [
+            "February Blaze: Crimson Fire",
+            "August Harvest: Vibrant Bounty",
+            "November Spice: Rich Essence",
+            "April Bloom: Bold Blossoms",
+            "Radiance: Sunlit Glow",
+            "October Harvest: Deep Bounty"],
+        "textHeadings": [
+            "Crimson fire of Red ignites February, warming hearts with passion.",
+            "Vibrant red bounty crowns August, ripe with summer's richness.",
+            "Rich red essence of spices up November, adding warmth.",
+            "Bold red blossoms of herald vibrant bloom, a spectacle.",
+            "Sunlit red glow beams, a radiant hue.",
+            "Deep red bounty crowns October, a harvest of richness."]
+  }
 }
+

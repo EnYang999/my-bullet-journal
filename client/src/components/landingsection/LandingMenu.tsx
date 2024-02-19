@@ -25,7 +25,7 @@ import { useState } from "react";
 import LandingMenuTab from "./LandingMenuTab";
 import text from "./landingtexts.json";
 const LandingMenu = () => {
-	const [activeTab, setActiveTab] = useState<string>("gold"); // Set the default active tab
+	const [activeTab, setActiveTab] = useState<string>("gold");
 	const handleTabClick = (
 		tabId: string,
 		event: React.MouseEvent<HTMLAnchorElement>
@@ -154,39 +154,39 @@ const LandingMenu = () => {
 								<div className='row'>
 									<LandingMenuTab
 										imgSrc={gold1}
-										month={text.months[0]}
-										heading={text.headings[0]}
-										textHeading={text.textHeadings[0]}
+										month={text.gold.months[0]}
+										heading={text.gold.headings[0]}
+										textHeading={text.gold.textHeadings[0]}
 									/>
 									<LandingMenuTab
 										imgSrc={gold2}
-										month={text.months[1]}
-										heading={text.headings[1]}
-										textHeading={text.textHeadings[1]}
+										month={text.gold.months[1]}
+										heading={text.gold.headings[1]}
+										textHeading={text.gold.textHeadings[1]}
 									/>
 									<LandingMenuTab
 										imgSrc={gold3}
-										month={text.months[2]}
-										heading={text.headings[2]}
-										textHeading={text.textHeadings[2]}
+										month={text.gold.months[2]}
+										heading={text.gold.headings[2]}
+										textHeading={text.gold.textHeadings[2]}
 									/>
 									<LandingMenuTab
 										imgSrc={gold4}
-										month={text.months[3]}
-										heading={text.headings[3]}
-										textHeading={text.textHeadings[3]}
+										month={text.gold.months[3]}
+										heading={text.gold.headings[3]}
+										textHeading={text.gold.textHeadings[3]}
 									/>
 									<LandingMenuTab
 										imgSrc={gold5}
-										month={text.months[4]}
-										heading={text.headings[4]}
-										textHeading={text.textHeadings[4]}
+										month={text.gold.months[4]}
+										heading={text.gold.headings[4]}
+										textHeading={text.gold.textHeadings[4]}
 									/>
 									<LandingMenuTab
 										imgSrc={gold4}
-										month={text.months[5]}
-										heading={text.headings[5]}
-										textHeading={text.textHeadings[5]}
+										month={text.gold.months[5]}
+										heading={text.gold.headings[5]}
+										textHeading={text.gold.textHeadings[5]}
 									/>
 								</div>
 							</div>
@@ -200,204 +200,42 @@ const LandingMenu = () => {
 								aria-labelledby='preludeTab'
 							>
 								<div className='row'>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={prelude1}
-															alt='...'
-														/>
-														<div className='overlay'></div>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Ethereal Light in Lavender</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														As autumn's whisper unfolds, September bathes in the
-														delicate hue of light purple, a prelude to the
-														changing seasons—a serene symphony of nature.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={prelude2}
-															alt='...'
-														/>
-														<div className='overlay'></div>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														Frosty Mornings in Soft Lilac
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														In the quiet embrace of winter, January emerges in
-														hues of light purple, casting a gentle glow over
-														frost-kissed landscapes—a tranquil beginning to the
-														new year.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={prelude1}
-															alt='...'
-														/>
-														<div className='overlay'></div>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Awakening in Pale Lavender</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														With the promise of spring on the horizon, March
-														awakens in shades of light purple—a delicate prelude
-														to nature's vibrant rebirth.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={prelude2}
-															alt='...'
-														/>
-														<div className='overlay'></div>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Sunset Dreams in Muted Mauve</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														As summer's warmth envelops the land, June dances in
-														hues of light purple—a dreamy prelude to balmy
-														evenings and sun-kissed days.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={prelude1}
-															alt='...'
-														/>
-														<div className='overlay'></div>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														Harvest Moon in Lavender Mist
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Amidst the golden harvest fields, October is bathed
-														in the soft glow of light purple—a mystical prelude
-														to autumn's enchantment.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={prelude2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														Winter's Eve in Hushed Violet
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Underneath a blanket of snow, December unfolds in
-														whispers of light purple—a serene prelude to the
-														quiet beauty of winter's embrace.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
+									<LandingMenuTab
+										imgSrc={prelude1}
+										month={text.prelude.months[0]}
+										heading={text.prelude.headings[0]}
+										textHeading={text.prelude.textHeadings[0]}
+									/>
+									<LandingMenuTab
+										imgSrc={prelude2}
+										month={text.prelude.months[1]}
+										heading={text.prelude.headings[1]}
+										textHeading={text.prelude.textHeadings[1]}
+									/>
+									<LandingMenuTab
+										imgSrc={prelude1}
+										month={text.prelude.months[2]}
+										heading={text.prelude.headings[2]}
+										textHeading={text.prelude.textHeadings[2]}
+									/>
+									<LandingMenuTab
+										imgSrc={prelude2}
+										month={text.prelude.months[3]}
+										heading={text.prelude.headings[3]}
+										textHeading={text.prelude.textHeadings[3]}
+									/>
+									<LandingMenuTab
+										imgSrc={prelude1}
+										month={text.prelude.months[4]}
+										heading={text.prelude.headings[4]}
+										textHeading={text.prelude.textHeadings[4]}
+									/>
+									<LandingMenuTab
+										imgSrc={prelude2}
+										month={text.prelude.months[5]}
+										heading={text.prelude.headings[5]}
+										textHeading={text.prelude.textHeadings[5]}
+									/>
 								</div>
 							</div>
 							{/* <!--perano  --> */}
@@ -411,189 +249,42 @@ const LandingMenu = () => {
 								aria-labelledby='peranoTab'
 							>
 								<div className='row'>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={perano1}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Whispering Blue</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														In June's embrace, Perano's light blue whispers of
-														endless skies.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={perano2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Soft Blue Hue</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														September bathes in serene light blue, a tranquil
-														melody.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={perano3}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														August Breeze: Gentle Blue Touch
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														August carries gentle light blue, a breeze of
-														calmness.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={perano4}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														August Tranquility: Subtle Blue Essence
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Amidst August's tranquility, light blue essence
-														soothes the soul.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={perano1}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Whispering Blue Waters</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														In November's dreams, light blue waters beckon with
-														tranquility.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={perano2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Light Blue Vista</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														On horizon, light blue paints a serene vista.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
+									<LandingMenuTab
+										imgSrc={perano1}
+										month={text.perano.months[0]}
+										heading={text.perano.headings[0]}
+										textHeading={text.perano.textHeadings[0]}
+									/>
+									<LandingMenuTab
+										imgSrc={perano2}
+										month={text.perano.months[1]}
+										heading={text.perano.headings[1]}
+										textHeading={text.perano.textHeadings[1]}
+									/>
+									<LandingMenuTab
+										imgSrc={perano3}
+										month={text.perano.months[2]}
+										heading={text.perano.headings[2]}
+										textHeading={text.perano.textHeadings[2]}
+									/>
+									<LandingMenuTab
+										imgSrc={perano4}
+										month={text.perano.months[3]}
+										heading={text.perano.headings[3]}
+										textHeading={text.perano.textHeadings[3]}
+									/>
+									<LandingMenuTab
+										imgSrc={perano1}
+										month={text.perano.months[4]}
+										heading={text.perano.headings[4]}
+										textHeading={text.perano.textHeadings[4]}
+									/>
+									<LandingMenuTab
+										imgSrc={perano2}
+										month={text.perano.months[5]}
+										heading={text.perano.headings[5]}
+										textHeading={text.perano.textHeadings[5]}
+									/>
 								</div>
 							</div>
 							{/* <!--frost  --> */}
@@ -606,192 +297,42 @@ const LandingMenu = () => {
 								aria-labelledby='frostTab'
 							>
 								<div className='row'>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={frost1}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Emerald Awakening</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Emerald hues of Frost greet May, a verdant
-														awakening.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={frost2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														December Chill: Frost's Evergreen Charm
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Frost's green charm enchants December with evergreen
-														allure.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={frost3}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Sprouting Verdancy</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Sprouting verdancy in April, Frost casts a green
-														spell.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={frost4}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														March Frost: Whispering Green Symphony
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														March echoes with Frost's whispering green symphony,
-														a tranquil melody.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={frost5}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														December Glow: Frost's Enigmatic Green
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														December basks in Frost's enigmatic green, a
-														mystical glow.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={frost2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Frost's Shaded Green</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														July unveils Frost's shaded green, a mystery in
-														midsummer's warmth.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
+									<LandingMenuTab
+										imgSrc={frost1}
+										month={text.frost.months[0]}
+										heading={text.frost.headings[0]}
+										textHeading={text.frost.textHeadings[0]}
+									/>
+									<LandingMenuTab
+										imgSrc={frost2}
+										month={text.frost.months[1]}
+										heading={text.frost.headings[1]}
+										textHeading={text.frost.textHeadings[1]}
+									/>
+									<LandingMenuTab
+										imgSrc={frost3}
+										month={text.frost.months[2]}
+										heading={text.frost.headings[2]}
+										textHeading={text.frost.textHeadings[2]}
+									/>
+									<LandingMenuTab
+										imgSrc={frost4}
+										month={text.frost.months[3]}
+										heading={text.frost.headings[3]}
+										textHeading={text.frost.textHeadings[3]}
+									/>
+									<LandingMenuTab
+										imgSrc={frost5}
+										month={text.frost.months[4]}
+										heading={text.frost.headings[4]}
+										textHeading={text.frost.textHeadings[4]}
+									/>
+									<LandingMenuTab
+										imgSrc={frost1}
+										month={text.frost.months[5]}
+										heading={text.frost.headings[5]}
+										textHeading={text.frost.textHeadings[5]}
+									/>
 								</div>
 							</div>
 							{/* <!--moccasin --> */}
@@ -804,192 +345,42 @@ const LandingMenu = () => {
 								aria-labelledby='moccasinTab'
 							>
 								<div className='row'>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={moccasin1}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>October Hues: Grey Embrace</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Moccasin grey envelops October, a cozy embrace
-														amidst autumn's palette.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={moccasin2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														November Chill: Subtle Grey Veil
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Subtle grey veils November, warmth against the
-														chill.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={moccasin3}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														October Whispers: Grey Whimsy
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Moccasin grey whispers through October, a whimsical
-														touch in fall's air.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={moccasin4}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														November Mists: Grey Serenity
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														In November mists, grey exudes serenity, a tranquil
-														cloak.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={moccasin2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Reverie: Soft Grey Dream</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Soft grey dream of embraces time, a reverie of
-														tranquility.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={moccasin3}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>July Twilight: Misty Grey</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Misty grey adorns July twilight, a subtle hue in
-														summer's warmth.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
+									<LandingMenuTab
+										imgSrc={moccasin1}
+										month={text.moccasin.months[0]}
+										heading={text.moccasin.headings[0]}
+										textHeading={text.moccasin.textHeadings[0]}
+									/>
+									<LandingMenuTab
+										imgSrc={moccasin2}
+										month={text.moccasin.months[1]}
+										heading={text.moccasin.headings[1]}
+										textHeading={text.moccasin.textHeadings[1]}
+									/>
+									<LandingMenuTab
+										imgSrc={moccasin3}
+										month={text.moccasin.months[2]}
+										heading={text.moccasin.headings[2]}
+										textHeading={text.moccasin.textHeadings[2]}
+									/>
+									<LandingMenuTab
+										imgSrc={moccasin4}
+										month={text.moccasin.months[3]}
+										heading={text.moccasin.headings[3]}
+										textHeading={text.moccasin.textHeadings[3]}
+									/>
+									<LandingMenuTab
+										imgSrc={moccasin2}
+										month={text.moccasin.months[4]}
+										heading={text.moccasin.headings[4]}
+										textHeading={text.moccasin.textHeadings[4]}
+									/>
+									<LandingMenuTab
+										imgSrc={moccasin3}
+										month={text.moccasin.months[5]}
+										heading={text.moccasin.headings[5]}
+										textHeading={text.moccasin.textHeadings[5]}
+									/>
 								</div>
 							</div>
 							{/* <!-- tomato --> */}
@@ -1002,187 +393,42 @@ const LandingMenu = () => {
 								aria-labelledby='tomatoTab'
 							>
 								<div className='row'>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={tomato1}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>February Blaze: Crimson Fire</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Crimson fire of Red ignites February, warming hearts
-														with passion.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={tomato2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>
-														August Harvest: Vibrant Bounty
-													</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Vibrant red bounty crowns August, ripe with summer's
-														richness.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={tomato3}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>November Spice: Rich Essence</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Rich red essence of spices up November, adding
-														warmth.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={tomato1}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>April Bloom: Bold Blossoms</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Bold red blossoms of herald vibrant bloom, a
-														spectacle.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={tomato2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Radiance: Sunlit Glow</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Sunlit red glow beams, a radiant hue.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={tomato3}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>October Harvest: Deep Bounty</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Deep red bounty crowns October, a harvest of
-														richness.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
+									<LandingMenuTab
+										imgSrc={tomato1}
+										month={text.tomato.months[0]}
+										heading={text.tomato.headings[0]}
+										textHeading={text.tomato.textHeadings[0]}
+									/>
+									<LandingMenuTab
+										imgSrc={tomato2}
+										month={text.tomato.months[1]}
+										heading={text.tomato.headings[1]}
+										textHeading={text.tomato.textHeadings[1]}
+									/>
+									<LandingMenuTab
+										imgSrc={tomato3}
+										month={text.tomato.months[2]}
+										heading={text.tomato.headings[2]}
+										textHeading={text.tomato.textHeadings[2]}
+									/>
+									<LandingMenuTab
+										imgSrc={tomato1}
+										month={text.tomato.months[3]}
+										heading={text.tomato.headings[3]}
+										textHeading={text.tomato.textHeadings[3]}
+									/>
+									<LandingMenuTab
+										imgSrc={tomato2}
+										month={text.tomato.months[4]}
+										heading={text.tomato.headings[4]}
+										textHeading={text.tomato.textHeadings[4]}
+									/>
+									<LandingMenuTab
+										imgSrc={tomato3}
+										month={text.tomato.months[5]}
+										heading={text.tomato.headings[5]}
+										textHeading={text.tomato.textHeadings[5]}
+									/>
 								</div>
 							</div>
 						</div>
