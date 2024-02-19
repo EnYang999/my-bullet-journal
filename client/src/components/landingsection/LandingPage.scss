@@ -1,4 +1,18 @@
 .landing-menu {
+    // navbar
+    .nav #marker {
+        position: absolute;
+        left: 0;
+        height: 4px;
+        width: 0;
+        bottom: 0;
+        transition: 0.5s;
+        border-radius: 4px;
+    }
+    .nav-link::after {
+        content: none !important;
+    }
+    // content
     #gold .overlay {
         background-color: #ebd9b4;
     }

@@ -21,17 +21,29 @@ import moccasin4 from "../../assets/landing/landing-Moccasin-2311.jpg";
 import tomato1 from "../../assets/landing/landing-tomato-2302.jpg";
 import tomato2 from "../../assets/landing/landing-tomato-2308.jpg";
 import tomato3 from "../../assets/landing/landing-tomato-2311.jpg";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import LandingMenuTab from "./LandingMenuTab";
 import text from "./landingtexts.json";
 const LandingMenu = () => {
 	const [activeTab, setActiveTab] = useState<string>("gold");
+	const [markerColor, setMarkerColor] = useState<string>("#fff");
+	const markerRef = useRef<HTMLDivElement>(null);
+	const indicator = (e: HTMLElement) => {
+		if (markerRef.current) {
+			markerRef.current.style.left = e.offsetLeft + "px";
+			markerRef.current.style.width = e.offsetWidth + "px";
+			// markerRef.current.style.background = markerColor;
+		}
+	};
 	const handleTabClick = (
 		tabId: string,
-		event: React.MouseEvent<HTMLAnchorElement>
+		event: React.MouseEvent<HTMLAnchorElement>,
+		color: string
 	) => {
-		event.preventDefault();
 		setActiveTab(tabId);
+		const target = event.target as HTMLElement;
+		indicator(target);
+		setMarkerColor(color);
 	};
 
 	return (
@@ -54,10 +66,15 @@ const LandingMenu = () => {
 					<div className='col'>
 						{/* <!--Navigation  --> */}
 						<div
-							className='nav justify-content-center mb-6'
+							className='nav justify-content-center mb-6 position-relative'
 							id='menuTabs'
 							role='tablist'
 						>
+							<div
+								id='marker'
+								ref={markerRef}
+								style={{ backgroundColor: markerColor }}
+							></div>
 							<a
 								className={`nav-link ${activeTab === "gold" ? "active" : ""}`}
 								id='goldTab'
@@ -66,7 +83,7 @@ const LandingMenu = () => {
 								role='tab'
 								aria-controls='gold'
 								aria-selected={activeTab === "gold"}
-								onClick={(event) => handleTabClick("gold", event)}
+								onClick={(event) => handleTabClick("gold", event, "#ebd9b4")}
 							>
 								gold
 							</a>
@@ -80,7 +97,7 @@ const LandingMenu = () => {
 								role='tab'
 								aria-controls='prelude'
 								aria-selected={activeTab === "prelude"}
-								onClick={(event) => handleTabClick("prelude", event)}
+								onClick={(event) => handleTabClick("prelude", event, "#c3acd0")}
 							>
 								prelude
 							</a>
@@ -92,7 +109,7 @@ const LandingMenu = () => {
 								role='tab'
 								aria-controls='perano'
 								aria-selected={activeTab === "perano"}
-								onClick={(event) => handleTabClick("perano", event)}
+								onClick={(event) => handleTabClick("perano", event, "#adc4ce")}
 							>
 								perano
 							</a>
@@ -104,7 +121,7 @@ const LandingMenu = () => {
 								role='tab'
 								aria-controls='frost'
 								aria-selected={activeTab === "frost"}
-								onClick={(event) => handleTabClick("frost", event)}
+								onClick={(event) => handleTabClick("frost", event, "#86a789")}
 							>
 								frost
 							</a>
@@ -118,7 +135,9 @@ const LandingMenu = () => {
 								role='tab'
 								aria-controls='moccasin'
 								aria-selected={activeTab === "moccasin"}
-								onClick={(event) => handleTabClick("moccasin", event)}
+								onClick={(event) =>
+									handleTabClick("moccasin", event, "#eeedeb")
+								}
 							>
 								moccasin
 							</a>
@@ -130,7 +149,7 @@ const LandingMenu = () => {
 								role='tab'
 								aria-controls='tomato'
 								aria-selected={activeTab === "tomato"}
-								onClick={(event) => handleTabClick("tomato", event)}
+								onClick={(event) => handleTabClick("tomato", event, "#c68484")}
 							>
 								tomato
 							</a>
