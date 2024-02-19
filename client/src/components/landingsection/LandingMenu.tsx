@@ -32,7 +32,6 @@ const LandingMenu = () => {
 		if (markerRef.current) {
 			markerRef.current.style.left = e.offsetLeft + "px";
 			markerRef.current.style.width = e.offsetWidth + "px";
-			// markerRef.current.style.background = markerColor;
 		}
 	};
 	const handleTabClick = (
