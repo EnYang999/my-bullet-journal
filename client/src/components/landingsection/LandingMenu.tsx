@@ -1,5 +1,3 @@
-import img28 from "../../assets/landing/28.jpg";
-import img31 from "../../assets/landing/31.jpg";
 import frost1 from "../../assets/landing/landing-frost-2105.jpg";
 import frost2 from "../../assets/landing/landing-frost-2112.jpg";
 import frost3 from "../../assets/landing/landing-frost-2204.jpg";
@@ -24,7 +22,8 @@ import tomato1 from "../../assets/landing/landing-tomato-2302.jpg";
 import tomato2 from "../../assets/landing/landing-tomato-2308.jpg";
 import tomato3 from "../../assets/landing/landing-tomato-2311.jpg";
 import { useState } from "react";
-
+import LandingMenuTab from "./LandingMenuTab";
+import text from "./landingtexts.json";
 const LandingMenu = () => {
 	const [activeTab, setActiveTab] = useState<string>("gold"); // Set the default active tab
 	const handleTabClick = (
@@ -34,8 +33,9 @@ const LandingMenu = () => {
 		event.preventDefault();
 		setActiveTab(tabId);
 	};
+
 	return (
-		<section className='py-7 py-md-9'>
+		<section className='landing-menu py-7 py-md-9'>
 			<div className='container'>
 				<div className='row justify-content-center'>
 					<div className='col-12 col-md-8 col-lg-6 text-center'>
@@ -49,6 +49,7 @@ const LandingMenu = () => {
 						</p>
 					</div>
 				</div>
+				{/* navigation */}
 				<div className='row'>
 					<div className='col'>
 						{/* <!--Navigation  --> */}
@@ -136,6 +137,7 @@ const LandingMenu = () => {
 						</div>
 					</div>
 				</div>
+				{/* content for tabs */}
 				<div className='row'>
 					<div className='col-12'>
 						{/* <!--Content  --> */}
@@ -150,186 +152,42 @@ const LandingMenu = () => {
 								aria-labelledby='goldTab'
 							>
 								<div className='row'>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={gold1}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Golden September</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Amber leaves, golden jewelry—September gleams with
-														nature's and metal's brilliance.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={gold2}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>May's Golden Charm</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Spring blossoms, golden adornments—May sparkles with
-														nature's and gold's allure.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={gold3}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>June's Gilded Glow</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Summer's warmth, golden accents—June shimmers with
-														radiance and elegance.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													{/* <div className='fs-4 font-serif text-center text-black'></div> */}
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={gold4}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>September Shine</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Autumn's hues, golden accents—September glows with
-														timeless beauty and richness.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={gold5}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Golden May Bloom</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Spring's bloom, golden hues—May blossoms with
-														elegance and opulence.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className='col-12 col-md-6'>
-										<div className='py-3 border-bottom'>
-											<div className='row'>
-												<div className='col-3 align-self-center'>
-													{/* <!--Image  --> */}
-													<div className='ratio ratio-1x1'>
-														<img
-															className='object-fit-cover'
-															src={gold4}
-															alt='...'
-														/>
-													</div>
-												</div>
-												<div className='col-7'>
-													{/* <!--Heading  --> */}
-													<h5 className='mb-2'>Harvest of Gold</h5>
-
-													{/* <!--Text  --> */}
-													<p className='mb-0'>
-														Nature's bounty, golden adornments—September
-														harvests beauty and prosperity.
-													</p>
-												</div>
-												<div className='col-2'>
-													{/* <!--Price  --> */}
-													<div className='fs-4 font-serif text-center text-black'></div>
-												</div>
-											</div>
-										</div>
-									</div>
+									<LandingMenuTab
+										imgSrc={gold1}
+										month={text.months[0]}
+										heading={text.headings[0]}
+										textHeading={text.textHeadings[0]}
+									/>
+									<LandingMenuTab
+										imgSrc={gold2}
+										month={text.months[1]}
+										heading={text.headings[1]}
+										textHeading={text.textHeadings[1]}
+									/>
+									<LandingMenuTab
+										imgSrc={gold3}
+										month={text.months[2]}
+										heading={text.headings[2]}
+										textHeading={text.textHeadings[2]}
+									/>
+									<LandingMenuTab
+										imgSrc={gold4}
+										month={text.months[3]}
+										heading={text.headings[3]}
+										textHeading={text.textHeadings[3]}
+									/>
+									<LandingMenuTab
+										imgSrc={gold5}
+										month={text.months[4]}
+										heading={text.headings[4]}
+										textHeading={text.textHeadings[4]}
+									/>
+									<LandingMenuTab
+										imgSrc={gold4}
+										month={text.months[5]}
+										heading={text.headings[5]}
+										textHeading={text.textHeadings[5]}
+									/>
 								</div>
 							</div>
 							{/* <!--prelude  --> */}
@@ -353,6 +211,7 @@ const LandingMenu = () => {
 															src={prelude1}
 															alt='...'
 														/>
+														<div className='overlay'></div>
 													</div>
 												</div>
 												<div className='col-7'>
@@ -384,6 +243,7 @@ const LandingMenu = () => {
 															src={prelude2}
 															alt='...'
 														/>
+														<div className='overlay'></div>
 													</div>
 												</div>
 												<div className='col-7'>
@@ -418,6 +278,7 @@ const LandingMenu = () => {
 															src={prelude1}
 															alt='...'
 														/>
+														<div className='overlay'></div>
 													</div>
 												</div>
 												<div className='col-7'>
@@ -449,6 +310,7 @@ const LandingMenu = () => {
 															src={prelude2}
 															alt='...'
 														/>
+														<div className='overlay'></div>
 													</div>
 												</div>
 												<div className='col-7'>
@@ -480,6 +342,7 @@ const LandingMenu = () => {
 															src={prelude1}
 															alt='...'
 														/>
+														<div className='overlay'></div>
 													</div>
 												</div>
 												<div className='col-7'>

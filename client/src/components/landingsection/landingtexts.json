@@ -1,0 +1,13 @@
+{
+  "imgSrcs": ["gold1", "gold2", "gold3", "gold4", "gold5","gold4"],
+  "months": ["September","May","June","September","May","September"],
+  "headings": ["Golden September","May's Golden Charm","June's Gilded Glow","September Shine","Golden May Bloom","Harvest of Gold"],
+  "textHeadings": [
+    "Amber leaves, golden jewelry—September gleams with nature's and metal's brilliance.",
+    "Spring blossoms, golden adornments—May sparkles with nature's and gold's allure.",
+    "Summer's warmth, golden accents—June shimmers with radiance and elegance.",
+    "Autumn's hues, golden accents—September glows with timeless beauty and richness.",
+    "Spring's bloom, golden hues—May blossoms with elegance and opulence.",
+    "Nature's bounty, golden adornments—September harvests beauty and prosperity."
+  ]
+}
