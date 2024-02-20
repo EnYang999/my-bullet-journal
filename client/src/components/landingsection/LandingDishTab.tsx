@@ -1,9 +1,15 @@
 interface Props {
 	imgSrc: string;
+	imgSrcHover: string;
 	heading: string;
 	textHeading: string;
 }
-const LandingDishTab = ({ imgSrc, heading, textHeading }: Props) => {
+const LandingDishTab = ({
+	imgSrc,
+	imgSrcHover,
+	heading,
+	textHeading,
+}: Props) => {
 	return (
 		<>
 			<div className='w-100 px-2' style={{ maxWidth: "320px" }}>
@@ -12,6 +18,7 @@ const LandingDishTab = ({ imgSrc, heading, textHeading }: Props) => {
 					{/* <!--Image  --> */}
 					<div className='ratio ratio-4x3 card-img-top'>
 						<img src={imgSrc} alt='...' />
+						<img src={imgSrcHover} alt='' className='img-overlay' />
 					</div>
 
 					{/* <!--Body  --> */}

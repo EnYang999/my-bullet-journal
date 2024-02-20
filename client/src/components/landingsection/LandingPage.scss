@@ -4,9 +4,8 @@
     .container > .row:nth-child(3) {
         min-height: 80%;
         .row > .col-12.col-md-6 {
-            // min-height: calc(100% / 3);
-            // max-height: calc(100% / 3);
-            height: calc(100% / 3) !important;
+            min-height: calc(100% / 3); // unless it is evenly
+            max-height: calc(100% / 3); // unless it is evenly
             .py-3 {
                 height: 100% !important;
             }
@@ -90,4 +89,18 @@
     from {
         width: 0;
     }
+}
+.landing-dish {
+    .img-overlay {
+        overflow: hidden;
+        width: 0 !important;
+        height: 100%;
+        transition: 0.5s ease;
+    }
+    .card.border-0:hover .img-overlay {
+        width: 100%;
+    }
+    // .card.border-0:hover {
+    //     transform: scale(2);
+    // }
 }
