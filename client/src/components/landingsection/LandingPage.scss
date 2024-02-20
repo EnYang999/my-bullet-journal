@@ -95,12 +95,15 @@
         overflow: hidden;
         width: 0 !important;
         height: 100%;
-        transition: 0.5s ease;
+        transition: 0.5s ease-in-out;
     }
-    .card.border-0:hover .img-overlay {
-        width: 100%;
+    .card:hover .img-overlay {
+        width: 100% !important;
     }
-    // .card.border-0:hover {
-    //     transform: scale(2);
-    // }
+    .card.border-0:hover {
+        .img-overlay {
+            width: 100%;
+            // transform: scale(0.95);
+        }
+    }
 }
