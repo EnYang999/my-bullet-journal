@@ -103,7 +103,23 @@
     .card.border-0:hover {
         .img-overlay {
             width: 100%;
-            // transform: scale(0.95);
         }
+    }
+}
+.landing-peoplesay {
+    min-height: 60vh;
+    /* Brightness-zoom Container */
+    .img-hover-zoom--brightness img {
+        transition:
+            transform 1s,
+            filter 1s ease-in-out;
+        transform-origin: center center;
+        filter: brightness(80%);
+    }
+
+    /* The Transformation */
+    .img-hover-zoom--brightness:hover img {
+        filter: brightness(100%);
+        transform: scale(0.8);
     }
 }

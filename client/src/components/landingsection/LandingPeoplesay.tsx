@@ -1,8 +1,10 @@
-import img20 from "../../assets/landing/20.jpg";
-import img21 from "../../assets/landing/21.jpg";
-import img22 from "../../assets/landing/22.jpg";
+import img20 from "../../assets/landing/landing-peoplesay-1.jpg";
+import img21 from "../../assets/landing/landing-peoplesay-2.jpg";
+import img22 from "../../assets/landing/landing-peoplesay-3.jpg";
 import Flickity from "flickity";
 import { useRef, useEffect } from "react";
+import LandingPeoplesayTab from "./LandingPeoplesayTab";
+import text from "./landingtexts.json";
 const LandingTestimonial = () => {
 	const flickityRef = useRef<HTMLDivElement | null>(null);
 
@@ -20,16 +22,16 @@ const LandingTestimonial = () => {
 	}, []);
 
 	return (
-		<section className='py-7 py-md-9 border-bottom'>
+		<section className='py-7 py-md-9 border-bottom landing-peoplesay'>
 			<div className='container'>
 				<div className='row justify-content-center'>
 					<div className='col-12 col-md-8 col-lg-6 text-center'>
 						{/* <!--Heading  --> */}
-						<h2 className='mb-2'>What clients say about us</h2>
+						<h2 className='mb-2'>Beauty of Time Management</h2>
 
 						{/* <!--Subheading  --> */}
 						<p className='mb-6'>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							Harmonizing Efficiency and Elegance through Time Mastery.
 						</p>
 					</div>
 				</div>
@@ -40,99 +42,18 @@ const LandingTestimonial = () => {
 							data-flickity='{"imagesLoaded": true, "wrapAround": true}'
 							ref={flickityRef}
 						>
-							<div className='w-100'>
-								<div className='row align-items-center justify-content-center'>
-									<div className='col-8 col-md-3 order-md-1'>
-										{/* <!--Avatar  --> */}
-										<img
-											className='img-fluid rounded-circle mb-5 mb-md-0'
-											src={img20}
-											alt='...'
-										/>
-									</div>
-									<div className='col-md-7 order-md-0'>
-										{/* <!--Blockquote  --> */}
-										<figure
-											className='mx-auto mb-0'
-											// style='max-width: 500px;'
-										>
-											<blockquote className='blockquote mb-0'>
-												<p className='font-serif text-black mb-5'>
-													Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Eos at veritatis vitae modi ex quis quibusdam
-													error repudiandae adipisci dolore perspiciatis iste,
-													vel fuga a, libero architecto ratione deleniti sequi.
-												</p>
-											</blockquote>
-											<figcaption className='blockquote-footer text-xs mb-0'>
-												Liam Smith
-											</figcaption>
-										</figure>
-									</div>
-								</div>
-							</div>
-							<div className='w-100'>
-								<div className='row align-items-center justify-content-center'>
-									<div className='col-8 col-md-3 order-md-1'>
-										{/* <!--Avatar  --> */}
-										<img
-											className='img-fluid rounded-circle mb-5 mb-md-0'
-											src={img21}
-											alt='...'
-										/>
-									</div>
-									<div className='col-md-7 order-md-0'>
-										{/* <!--Blockquote  --> */}
-										<figure
-											className='mx-auto mb-0'
-											// style='max-width: 500px;'
-										>
-											<blockquote className='blockquote mb-0'>
-												<p className='font-serif text-black mb-5'>
-													Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Eos at veritatis vitae modi ex quis quibusdam
-													error repudiandae adipisci dolore perspiciatis iste,
-													vel fuga a, libero architecto ratione deleniti sequi.
-												</p>
-											</blockquote>
-											<figcaption className='blockquote-footer text-xs mb-0'>
-												Olivia Johnson
-											</figcaption>
-										</figure>
-									</div>
-								</div>
-							</div>
-							<div className='w-100'>
-								<div className='row align-items-center justify-content-center'>
-									<div className='col-8 col-md-3 order-md-1'>
-										{/* <!--Avatar  --> */}
-										<img
-											className='img-fluid rounded-circle mb-5 mb-md-0'
-											src={img22}
-											alt='...'
-										/>
-									</div>
-									<div className='col-md-7 order-md-0'>
-										{/* <!--Blockquote  --> */}
-										<figure
-											className='mx-auto mb-0'
-											// style='max-width: 500px;'
-										>
-											<blockquote className='blockquote mb-0'>
-												<p className='font-serif text-black mb-5'>
-													Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Eos at veritatis vitae modi ex quis quibusdam
-													error repudiandae adipisci dolore perspiciatis iste,
-													vel fuga a, libero architecto ratione deleniti sequi.
-												</p>
-											</blockquote>
-											<figcaption className='blockquote-footer text-xs mb-0'>
-												Emma Williams
-											</figcaption>
-										</figure>
-									</div>
-								</div>
-							</div>
+							<LandingPeoplesayTab
+								imgSrc={img20}
+								saying={text.timeusefulness.sayings[0]}
+							/>
+							<LandingPeoplesayTab
+								imgSrc={img21}
+								saying={text.timeusefulness.sayings[1]}
+							/>
+							<LandingPeoplesayTab
+								imgSrc={img22}
+								saying={text.timeusefulness.sayings[2]}
+							/>
 						</div>
 					</div>
 				</div>
