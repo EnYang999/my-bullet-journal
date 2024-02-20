@@ -8,16 +8,16 @@
     overflow: visible;
 }
 
-// Dots 
+// Dots
 
 .flickity-page-dots {
     position: static;
     margin-top: map-get($spacers, 5);
 }
 
-.flickity-page-dots>.dot {
-    margin-left: .25rem;
-    margin-right: .25rem;
+.flickity-page-dots > .dot {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
     opacity: 1;
     background-color: $light;
 
@@ -62,8 +62,12 @@
     box-shadow: none;
 }
 
-.flickity-prev-next-button>.flickity-button-icon {
+.flickity-prev-next-button > .flickity-button-icon {
     position: static;
     width: 1rem;
     height: 1rem;
+}
+// custom
+.flickity-button:focus {
+    box-shadow: 0 0 0 5px #f5a637;
 }

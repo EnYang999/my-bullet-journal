@@ -10,7 +10,9 @@ const LandingDishTab = ({ imgSrc, heading, textHeading }: Props) => {
 				{/* <!--Card  --> */}
 				<div className='card border-0'>
 					{/* <!--Image  --> */}
-					<img className='card-img-top' src={imgSrc} alt='...' />
+					<div className='ratio ratio-4x3 card-img-top'>
+						<img src={imgSrc} alt='...' />
+					</div>
 
 					{/* <!--Body  --> */}
 					<div className='card-body'>
