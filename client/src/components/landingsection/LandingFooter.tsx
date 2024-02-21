@@ -119,7 +119,10 @@ const LandingFooter = () => {
 							{/* <!-- Copyright --> */}
 							<div className='d-flex align-items-center'>
 								<hr className='hr-sm me-3' style={{ height: "1px" }} />© 2024
-								En. All rights reserved.
+								<span className='mx-1' style={{ fontFamily: "Marck Script" }}>
+									En.
+								</span>{" "}
+								All rights reserved.
 							</div>
 						</div>
 					</div>
