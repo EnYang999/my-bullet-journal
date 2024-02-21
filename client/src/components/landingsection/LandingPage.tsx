@@ -7,6 +7,7 @@ import LandingMenu from "./LandingMenu";
 import LandingDish from "./LandingDish";
 import LandingTestimonial from "./LandingPeoplesay";
 import LandingGallary from "./LandingGallary";
+import LandingFooter from "./LandingFooter";
 const LandingPage = () => {
 	return (
 		<>
@@ -19,6 +20,7 @@ const LandingPage = () => {
 			<LandingDish />
 			<LandingTestimonial />
 			<LandingGallary />
+			<LandingFooter />
 		</>
 	);
 };
