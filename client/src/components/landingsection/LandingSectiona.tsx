@@ -1,7 +1,7 @@
 import img2 from "../../assets/landing/landing-03.jpg";
 const LandingSectiona = () => {
 	return (
-		<section className='pt-7 pt-md-9'>
+		<section className='pt-7 pt-md-9 landing-section'>
 			<div className='container'>
 				<div className='row'>
 					<div className='col-md-2'>

@@ -1,5 +1,3 @@
-import React from "react";
-
 const LandingFooter = () => {
 	return (
 		<>
@@ -12,12 +10,16 @@ const LandingFooter = () => {
 
 							{/* <!-- Text --> */}
 							<p className='mb-6'>
-								Hi, I'm En, a software engineering graduate student at the
-								University of Western Ontario. I love designing web pages and
-								bringing them to life for users to interact with. In my free
-								time, I'm frequent about efficient time management techniques
-								like bullet journaling. This site is dedicated to bullet
-								journaling inspiration, fueled by the{" "}
+								Hi, I'm
+								<span className='mx-1' style={{ fontFamily: "Marck Script" }}>
+									En.
+								</span>
+								, a software engineering graduate student at the University of
+								Western Ontario. I love designing web pages and bringing them to
+								life for users to interact with. In my free time, I'm frequent
+								about efficient time management techniques like bullet
+								journaling. This site is dedicated to bullet journaling
+								inspiration, fueled by the{" "}
 								<a href='https://space.bilibili.com/3608590?spm_id_from=333.337.0.0'>
 									"Joy"
 								</a>
@@ -121,7 +123,7 @@ const LandingFooter = () => {
 								<hr className='hr-sm me-3' style={{ height: "1px" }} />© 2024
 								<span className='mx-1' style={{ fontFamily: "Marck Script" }}>
 									En.
-								</span>{" "}
+								</span>
 								All rights reserved.
 							</div>
 						</div>

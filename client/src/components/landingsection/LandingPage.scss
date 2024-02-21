@@ -84,12 +84,17 @@
         }
     }
 }
-
-@keyframes typing {
-    from {
-        width: 0;
+.landing-section {
+    @media (prefers-reduced-motion: no-preference) {
+        .media-decoration-img {
+            animation: fade-in linear forwards;
+            animation-timeline: view();
+            animation-range-start: cover; //enrey
+            animation-range-end: contain;
+        }
     }
 }
+
 .landing-dish {
     .img-overlay {
         overflow: hidden;
@@ -124,7 +129,7 @@
     }
 }
 .landing-gallery {
-    min-width: 100vh;
+    min-height: 100vh;
     /* Colorize-zoom Container */
     .img-hover-zoom--colorize img {
         transition:

@@ -1,7 +1,7 @@
 import img7 from "../../assets/landing/landing-04.jpg";
 const LandingSectionb = () => {
 	return (
-		<section className='py-7 py-md-9'>
+		<section className='py-7 py-md-9 landing-section'>
 			<div className='container'>
 				<div className='row'>
 					<div className='col-md-2 order-md-2 align-self-end'>
