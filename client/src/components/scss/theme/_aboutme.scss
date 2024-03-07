@@ -1,0 +1,14 @@
+.aboutme {
+    main {
+        @supports (scroll-snap-align: start) {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            & > section {
+                height: 100vh;
+                scroll-snap-align: center;
+                scroll-snap-stop: always;
+            }
+        }
+    }
+}

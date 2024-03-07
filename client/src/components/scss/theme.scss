@@ -26,7 +26,8 @@
 
 // Custom core
 // @import 'user';
-@import "./theme/bundle";
+@import "./theme/bundle"; // general
+
 @import "./theme/animation";
 @import "./theme/svg";
 @import "./theme/utilities/background";
@@ -65,3 +66,6 @@
 @import "./theme/sidebar";
 
 // @import "./themebau/fullpage";
+
+// about me
+@import "./theme/aboutme";

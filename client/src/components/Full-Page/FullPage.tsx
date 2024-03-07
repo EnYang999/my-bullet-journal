@@ -55,27 +55,10 @@ const FullPage = () => {
 
 	return (
 		<div
-			className={`fp-responsive`}
+			className={`fp-responsive aboutme`}
 			style={{ overflow: "visible", height: "initial" }}
 		>
-			<main
-				className='fp-wrapper fullpage-wrapper'
-				style={{
-					height: "100%",
-					position: "relative",
-					transition: "all 700ms cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s",
-					transform:
-						activeSection === "hero"
-							? "translate3d(0px, 0px, 0px)"
-							: activeSection === "about1"
-							? "translate3d(0px, -678px, 0px)"
-							: activeSection === "about2"
-							? "translate3d(0px,-1357px, 0px)"
-							: activeSection === "promo"
-							? "translate3d(0px, -2035px, 0px)"
-							: "",
-				}}
-			>
+			<main className='fp-wrapper fullpage-wrapper'>
 				<FullPageHero
 					heroRef={heroRef}
 					about1Ref={about1Ref}
@@ -83,7 +66,7 @@ const FullPage = () => {
 					promoRef={promoRef}
 					activeSection={activeSection}
 				/>
-				<hr />
+				{/* <hr /> */}
 				{/* ABOUT */}
 				<FullPageAbout1
 					heroRef={heroRef}
@@ -92,7 +75,7 @@ const FullPage = () => {
 					promoRef={promoRef}
 					activeSection={activeSection}
 				/>
-				<hr />
+				{/* <hr /> */}
 				{/* ABOUT */}
 				<FullPageAbout2
 					heroRef={heroRef}
@@ -101,15 +84,15 @@ const FullPage = () => {
 					promoRef={promoRef}
 					activeSection={activeSection}
 				/>
-				<hr />
+				{/* <hr /> */}
 				{/* PROMO */}
-				{/* <FullPagePromo
+				<FullPagePromo
 					heroRef={heroRef}
 					about1Ref={about1Ref}
 					about2Ref={about2Ref}
 					promoRef={promoRef}
 					activeSection={activeSection}
-				/> */}
+				/>
 			</main>
 		</div>
 	);

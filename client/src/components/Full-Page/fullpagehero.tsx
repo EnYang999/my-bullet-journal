@@ -1,4 +1,4 @@
-import img54 from "../../assets/about/54.jpg";
+import img54 from "../../assets/about/aboutme-hero-1.jpg";
 interface FullPageHeroProps {
 	heroRef: React.RefObject<HTMLDivElement>;
 	about1Ref: React.RefObject<HTMLDivElement>;
@@ -17,23 +17,13 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 				className={`fp-section fp-table ${
 					activeSection === "hero" ? "active fp-completely" : ""
 				}`}
-				data-fp-styles='null'
-				data-anchor='hero'
-				style={{ height: "100vh" }}
+				style={{ height: "100vh", backgroundImage: `url(${img54})` }}
 				ref={heroRef}
 			>
-				<h1 style={{ zIndex: "9999" }}>{activeSection}</h1>
-				<div className='fp-tableCell' style={{ height: "100vh" }}>
+				<div className='fp-tableCell' style={{ height: "100%" }}>
 					<div className='section section-top'>
 						{/* Cover */}
-						<div
-							className='bg-cover'
-							style={{
-								backgroundImage: `url(${img54})`,
-								backgroundSize: "cover",
-								transitionDelay: "1000ms",
-							}}
-						/>
+						<div className='bg-cover' />
 						{/* Overlay */}
 						<div className='bg-overlay' />
 						{/* Triangles */}
@@ -99,13 +89,10 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 										</a>
 									</p>
 								</div>
-							</div>{" "}
-							{/* / .row */}
-						</div>{" "}
-						{/* / .container */}
+							</div>
+						</div>
 					</div>
 				</div>
-				<h1 style={{ zIndex: "9999" }}>{activeSection}</h1>
 			</section>
 		</>
 	);

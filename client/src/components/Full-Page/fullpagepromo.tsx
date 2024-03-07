@@ -84,10 +84,8 @@ const FullPagePromo: React.FC<FullPagePromoProps> = ({
 									</a>
 								</div>
 							</div>
-						</div>{" "}
-						{/* / .row */}
-					</div>{" "}
-					{/* / .container */}
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
