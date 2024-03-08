@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./login.css";
 import axios from "axios";
-import PasswordValidation from "../passwordvalidation/PasswordValidation";
 import { toast } from "../errortoast/ErrorToastManager";
+import FormField from "./formAccount";
+import OverlayPanel from "./overlayPanel";
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
 	const [type, setType] = useState("password");
@@ -74,7 +75,7 @@ const Login: React.FC = () => {
 		} catch (error: any) {
 			if (error.response) {
 				toast.show({
-					title: "Error",
+					title: "Error From catch",
 					content: error.response.data.error,
 					duration: 3000,
 				});
@@ -165,122 +166,75 @@ const Login: React.FC = () => {
 							</a>
 						</div>
 						<span>or use your email for registration</span> */}
-						<div
-							className={`form-floating mb-2 mt-2 name-input ${
-								isValidNameLength && isValidNameCharacters
-									? "validated-box"
-									: "not-validated-box"
-							}`}
-						>
-							<input
-								type='text'
-								className='form-control'
-								id='floatingName'
-								placeholder='Username'
-								aria-label='Username'
-								onChange={(e) => {
-									handleUserNameChange(e.target.value),
-										setUserName(e.target.value);
-								}}
-							/>
-							<label htmlFor='floatingName'>name</label>
-							<div className='tracker-box email-check-box'>
-								<PasswordValidation
-									className='validation-message  threechr'
-									validated={isValidNameLength}
-									text='username must be 3 to 16 characters long'
-								/>
-								<PasswordValidation
-									className='validation-message  validchr'
-									validated={isValidNameCharacters}
-									text='only alphanumeric characters, (_), or
-								 (-).'
-								/>
-							</div>
-						</div>
-						<div
-							className={`form-floating mb-2 email-input ${
-								isValidEmail ? "validated-box" : "not-validated-box"
-							}`}
-						>
-							<input
-								type='email'
-								className='form-control'
-								id='floatingEmail-signup'
-								placeholder='name@example.com'
-								onChange={(e) => {
-									handleEmailChange(e.target.value), setEmail(e.target.value);
-								}}
-							/>
-							<label htmlFor='floatingEmail-signup'>Email address</label>
-							<div className='tracker-box email-check-box'>
-								<PasswordValidation
-									className='validation-message  valid-email'
-									validated={isValidEmail}
-									text='please enter valid email addresss'
-								/>
-							</div>
-						</div>
-
-						<div
-							className={`form-floating mb-2 password-input ${
-								lowerValidated &&
-								upperValidated &&
-								numberValidated &&
-								specialValidated &&
-								lengthValidated
-									? "validated-box"
-									: "not-validated-box"
-							}`}
-						>
-							<input
-								type={type}
-								className='form-control'
-								id='floatingPassword-signup'
-								placeholder='Password'
-								onChange={(e) => {
-									handlePasswordChange(e.target.value),
-										setPassword(e.target.value);
-								}}
-							/>
-							<span
-								className='icon-span'
-								onClick={() => setType(type === "text" ? "password" : "text")}
-							>
-								<i
-									className={`bi bi-eye${type === "text" ? "-slash" : ""}`}
-								></i>
-							</span>
-
-							<label htmlFor='floatingPassword-signup'>Password</label>
-							<div className='tracker-box password-check-box'>
-								<PasswordValidation
-									className='validation-message lowercase'
-									validated={lowerValidated}
-									text='At least one lowercase letter'
-								/>
-								<PasswordValidation
-									className='validation-message  uppercase'
-									validated={upperValidated}
-									text='At least one uppercase letter'
-								/>
-								<PasswordValidation
-									className='validation-message  number'
-									validated={numberValidated}
-									text='At least one number'
-								/>
-								<PasswordValidation
-									className='validation-message  specialchr'
-									validated={specialValidated}
-									text='At least one special character'
-								/>
-								<PasswordValidation
-									className='validation-message  eightchr'
-									validated={lengthValidated}
-									text='At least 8 characters'
-								/>
-							</div>
-						</div>
+						<FormField
+							id='floatingEmail-signup'
+							type='email'
+							label='Email address'
+							placeholder='name@example.com'
+							valueChange={setEmail}
+							validations={[
+								{
+									isValid: isValidEmail,
+									message: "Please enter valid email address",
+									className: "valid-email",
+								},
+							]}
+						/>
+						<FormField
+							id='floatingName'
+							type='text'
+							label='Username'
+							placeholder='Username'
+							valueChange={setUserName}
+							validations={[
+								{
+									isValid: isValidNameLength,
+									message: "Username must be 3 to 16 characters long",
+									className: "threechr",
+								},
+								{
+									isValid: isValidNameCharacters,
+									message: "Only alphanumeric characters, (_), or (-).",
+									className: "validchr",
+								},
+							]}
+						/>
+						<FormField
+							id='floatingPassword-signup'
+							type={type} // Assuming 'type' state exists in your parent component for toggling visibility
+							label='Password'
+							placeholder='Password'
+							valueChange={setPassword}
+							extraAction={() => setType(type === "text" ? "password" : "text")}
+							extraIconClass={`bi bi-eye${type === "text" ? "-slash" : ""}`}
+							validations={[
+								{
+									isValid: lowerValidated,
+									message: "At least one lowercase letter",
+									className: "lowercase",
+								},
+								{
+									isValid: upperValidated,
+									message: "At least one uppercase letter",
+									className: "uppercase",
+								},
+								{
+									isValid: numberValidated,
+									message: "At least one number",
+									className: "number",
+								},
+								{
+									isValid: specialValidated,
+									message: "At least one special character",
+									className: "specialchr",
+								},
+								{
+									isValid: lengthValidated,
+									message: "At least 8 characters",
+									className: "eightchr",
+								},
+							]}
+						/>
 
 						<button type='submit'>Sign Up</button>
 					</form>
@@ -300,58 +254,49 @@ const Login: React.FC = () => {
 							</a>
 						</div>
 						<span>or use your account</span> */}
-						<div className='form-floating mb-2 email-input'>
-							<input
-								type='email'
-								className='form-control'
-								id='floatingEmail-login'
-								placeholder='name@example.com'
-								onChange={(e) => setEmail(e.target.value)}
-							/>
-							<label htmlFor='floatingEmail-login'>Email address</label>
-						</div>
 
-						<div className='form-floating  mb-2 password-input'>
-							<input
-								type={type}
-								className='form-control'
-								id='floatingPassword-login'
-								placeholder='Password'
-								onChange={(e) => setPassword(e.target.value)}
-							/>
-							<span
-								className='icon-span'
-								onClick={() => setType(type === "text" ? "password" : "text")}
-							>
-								<i
-									className={`bi bi-eye${type === "text" ? "-slash" : ""}`}
-								></i>
-							</span>
+						<FormField
+							id='floatingEmail-login'
+							type='email'
+							label='Email address'
+							placeholder='name@example.com'
+							valueChange={setEmail}
+							isSignup={false}
+						/>
 
-							<label htmlFor='floatingPassword-login'>Password</label>
-						</div>
+						<FormField
+							id='floatingPassword-login'
+							type={type}
+							label='Password'
+							placeholder='Password'
+							valueChange={setPassword}
+							isSignup={false}
+						/>
 						{/* <a href='#'>Forgot your password?</a> */}
 						<button>Sign In</button>
 					</form>
 				</div>
 				<div className='overlay-container'>
 					<div className='overlay'>
-						<div className='overlay-panel overlay-left'>
-							<h1>Welcome Back!</h1>
-							<p>
-								To keep connected with us please login with your personal info
-							</p>
-							<button className='ghost' id='signIn' onClick={handleSignInClick}>
-								Sign In
-							</button>
-						</div>
-						<div className='overlay-panel overlay-right'>
-							<h1>Hello, Friend!</h1>
-							<p>Enter your personal details and start journey with us</p>
-							<button className='ghost' id='signUp' onClick={handleSignUpClick}>
-								Sign Up
-							</button>
-						</div>
+						<OverlayPanel
+							h1Text={"Welcome Back!"}
+							pText={
+								"To keep connected with us please login with your personal info"
+							}
+							id={"signIn"}
+							buttonClick={handleSignInClick}
+							buttonText={"Sign In"}
+							className={"left"}
+						/>
+
+						<OverlayPanel
+							h1Text={"Hello, Friend!"}
+							pText={"Enter your personal details and start journey with us"}
+							id={"signUp"}
+							buttonClick={handleSignUpClick}
+							buttonText={"Sign Up"}
+							className={"right"}
+						/>
 					</div>
 				</div>
 			</div>

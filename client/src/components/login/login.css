@@ -12,8 +12,8 @@
 	overflow: hidden;
 	width: max(768px, 80%);
 	height: auto;
+	min-height: 600px;
 	max-width: 100%;
-	min-height: 480px;
 }
 .log-container form {
 	background-color: #ffffff;

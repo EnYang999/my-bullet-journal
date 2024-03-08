@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 // create json web token
 const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id, username, email) => {
-	return jwt.sign({ id, username, email }, "secret", {
+	return jwt.sign({ id, username, email }, process.env.PASSCODE_STRING, {
 		expiresIn: maxAge,
 	});
 };
