@@ -154,7 +154,7 @@ const Login: React.FC = () => {
 						noValidate
 						onSubmit={handleSignup}
 					>
-						{/*<div className='social-container'>
+						<div className='social-container'>
 							<a href='#' className='social'>
 								<i className='fab fa-facebook-f'></i>
 							</a>
@@ -165,7 +165,7 @@ const Login: React.FC = () => {
 								<i className='fab fa-linkedin-in'></i>
 							</a>
 						</div>
-						<span>or use your email for registration</span> */}
+						<span>or use your email for registration</span>
 						<FormField
 							id='floatingEmail-signup'
 							type='email'
@@ -201,7 +201,7 @@ const Login: React.FC = () => {
 						/>
 						<FormField
 							id='floatingPassword-signup'
-							type={type} // Assuming 'type' state exists in your parent component for toggling visibility
+							type={type}
 							label='Password'
 							placeholder='Password'
 							valueChange={setPassword}
@@ -242,7 +242,7 @@ const Login: React.FC = () => {
 				<div className='form-container sign-in-container'>
 					<form noValidate onSubmit={handleLogin}>
 						<h1>Sign in</h1>
-						{/* <div className='social-container'>
+						<div className='social-container'>
 							<a href='#' className='social'>
 								<i className='fab fa-facebook-f'></i>
 							</a>
@@ -253,7 +253,7 @@ const Login: React.FC = () => {
 								<i className='fab fa-linkedin-in'></i>
 							</a>
 						</div>
-						<span>or use your account</span> */}
+						<span>or use your account</span>
 
 						<FormField
 							id='floatingEmail-login'
@@ -272,7 +272,7 @@ const Login: React.FC = () => {
 							valueChange={setPassword}
 							isSignup={false}
 						/>
-						{/* <a href='#'>Forgot your password?</a> */}
+						<a href='#'>Forgot your password?</a>
 						<button>Sign In</button>
 					</form>
 				</div>
