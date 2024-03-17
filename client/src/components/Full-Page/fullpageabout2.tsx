@@ -88,44 +88,12 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 											Pricing options
 										</a>
 									</div>
-								</div>{" "}
-								{/* / .row */}
-							</div>{" "}
-							{/* / .container */}
+								</div>
+							</div>
 						</div>
-					</div>
-					<div
-						className='iScrollVerticalScrollbar iScrollLoneScrollbar'
-						style={{
-							position: "absolute",
-							zIndex: 9999,
-							width: 7,
-							bottom: 2,
-							top: 2,
-							right: 1,
-							overflow: "hidden",
-						}}
-					>
-						<div
-							className='iScrollIndicator'
-							style={{
-								boxSizing: "border-box",
-								position: "absolute",
-								background: "rgba(0, 0, 0, 0.5)",
-								border: "1px solid rgba(255, 255, 255, 0.9)",
-								borderRadius: 3,
-								width: "100%",
-								transitionDuration: "0ms",
-								display: "block",
-								height: 590,
-								transform: "translate(0px, 0px) translateZ(0px)",
-								transitionTimingFunction: "cubic-bezier(0.1, 0.57, 0.1, 1)",
-							}}
-						/>
 					</div>
 				</div>
 			</div>
-			<h1 style={{ zIndex: "9999" }}>{activeSection}</h1>
 		</section>
 	);
 };

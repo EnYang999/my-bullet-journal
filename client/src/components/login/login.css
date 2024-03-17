@@ -143,7 +143,7 @@
 	transform: translateX(-100%);
 }
 
-.overlay {
+.overlay-container .overlay {
 	background: #ff416c;
 	background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
 	background-color: #86b6f6;
@@ -163,7 +163,7 @@
 	transform: translateX(50%);
 }
 
-.overlay-panel {
+.overlay-container .overlay-panel {
 	position: absolute;
 	display: flex;
 	align-items: center;

@@ -4,9 +4,8 @@
     .container > .row:nth-child(3) {
         min-height: 80%;
         .row > .col-12.col-md-6 {
-            // min-height: calc(100% / 3);
-            // max-height: calc(100% / 3);
-            height: calc(100% / 3) !important;
+            min-height: calc(100% / 3); // unless it is evenly
+            max-height: calc(100% / 3); // unless it is evenly
             .py-3 {
                 height: 100% !important;
             }
@@ -85,9 +84,64 @@
         }
     }
 }
+.landing-section {
+    @media (prefers-reduced-motion: no-preference) {
+        .media-decoration-img {
+            animation: fade-in linear forwards;
+            animation-timeline: view();
+            animation-range-start: cover; //enrey
+            animation-range-end: contain;
+        }
+    }
+}
 
-@keyframes typing {
-    from {
-        width: 0;
+.landing-dish {
+    .img-overlay {
+        overflow: hidden;
+        width: 0 !important;
+        height: 100%;
+        transition: 0.5s ease-in-out;
+    }
+    .card:hover .img-overlay {
+        width: 100% !important;
+    }
+    .card.border-0:hover {
+        .img-overlay {
+            width: 100%;
+        }
+    }
+}
+.landing-peoplesay {
+    min-height: 60vh;
+    /* Brightness-zoom Container */
+    .img-hover-zoom--brightness img {
+        transition:
+            transform 1s,
+            filter 1s ease-in-out;
+        transform-origin: center center;
+        filter: brightness(80%);
+    }
+
+    /* The Transformation */
+    .img-hover-zoom--brightness:hover img {
+        filter: brightness(100%);
+        transform: scale(0.8);
+    }
+}
+.landing-gallery {
+    min-height: 100vh;
+    /* Colorize-zoom Container */
+    .img-hover-zoom--colorize img {
+        transition:
+            transform 0.5s,
+            filter 1s ease-in-out;
+        filter: grayscale(40%) blur(1px);
+        cursor: pointer;
+    }
+
+    /* The Transformation */
+    .img-hover-zoom--colorize:hover img {
+        filter: grayscale(0);
+        transform: scale(0.9);
     }
 }

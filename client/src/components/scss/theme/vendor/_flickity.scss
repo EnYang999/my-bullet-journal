@@ -67,7 +67,15 @@
     width: 1rem;
     height: 1rem;
 }
+
 // custom
+
 .flickity-button:focus {
-    box-shadow: 0 0 0 5px #f5a637;
+    box-shadow: 0 0 0 4px #f5a637 !important;
+}
+.flickity-button-icon {
+    fill: #f5a637 !important;
+}
+.flickity-button:hover .flickity-button-icon {
+    opacity: 0.8;
 }
