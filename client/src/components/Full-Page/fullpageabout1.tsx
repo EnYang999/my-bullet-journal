@@ -26,15 +26,7 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 			{/* <h1>{activeSection}</h1> */}
 			<div className='fp-tableCell' style={{ height: "100%" }}>
 				<div className='fp-scrollable' style={{ height: "100%" }}>
-					<div
-						className='fp-scroller'
-						style={{
-							transitionTimingFunction: "cubic-bezier(0.1, 0.57, 0.1, 1)",
-							transitionDuration: "0ms",
-							transform: "translate(0px, 0px) translateZ(0px)",
-							transitionDelay: "1000ms",
-						}}
-					>
+					<div className='fp-scroller'>
 						<div className='section section-top'>
 							{/* Content */}
 							<div className='container'>
@@ -48,10 +40,10 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 									<div className='col-md-6 col-lg-4 offset-lg-1'>
 										{/* Heading */}
 										<h2
-											className={`mb-4 animate`}
-											data-toggle={`${
-												activeSection === "about1" ? "animation" : ""
+											className={`mb-4 ${
+												activeSection === "about1" ? "animate" : ""
 											}`}
+											data-toggle={`animation`}
 											data-animation='fadeUp'
 											data-animation-order={0}
 											data-animation-trigger='load'
@@ -60,10 +52,10 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 										</h2>
 										{/* Content */}
 										<p
-											className={`text-muted animate`}
-											data-toggle={`${
-												activeSection === "about1" ? "animation" : ""
+											className={`text-muted ${
+												activeSection === "about1" ? "animate" : ""
 											}`}
+											data-toggle={`animation`}
 											data-animation='fadeUp'
 											data-animation-order={1}
 											data-animation-trigger='load'
@@ -77,10 +69,10 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 										{/* Button */}
 										<a
 											href='contact.html'
-											className={`btn btn-outline-primary animate`}
-											data-toggle={`${
-												activeSection === "about1" ? "animation" : ""
+											className={`btn btn-outline-primary ${
+												activeSection === "about1" ? "animate" : ""
 											}`}
+											data-toggle={`animation`}
 											data-animation='fadeUp'
 											data-animation-order={2}
 											data-animation-trigger='load'
