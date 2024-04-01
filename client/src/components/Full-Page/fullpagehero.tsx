@@ -24,7 +24,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 					<div className='section section-top'>
 						{/* Cover */}
 						<div
-							className='bg-cover'
+							className='bg-cover animated-bg-cover'
 							style={{ backgroundImage: `url(${img54})` }}
 						/>
 						{/* Overlay */}
@@ -42,7 +42,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 											activeSection === "hero" ? "animate" : ""
 										}`}
 										data-toggle={`animation`}
-										data-animation='fadeUp'
+										data-animation='fadeOut'
 										data-animation-order={0}
 										data-animation-trigger='load'
 									>
@@ -54,7 +54,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 											activeSection === "hero" ? "animate" : ""
 										}`}
 										data-toggle={`animation`}
-										data-animation='fadeUp'
+										data-animation='fadeOut'
 										data-animation-order={1}
 										data-animation-trigger='load'
 									>
@@ -66,7 +66,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 											activeSection === "hero" ? "animate" : ""
 										}`}
 										data-toggle={`animation`}
-										data-animation='fadeUp'
+										data-animation='fadeOut'
 										data-animation-order={2}
 										data-animation-trigger='load'
 									>
@@ -80,7 +80,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 											activeSection === "hero" ? "animate" : ""
 										}`}
 										data-toggle='animation'
-										data-animation='fadeUp'
+										data-animation='fadeOut'
 										data-animation-order={3}
 										data-animation-trigger='load'
 									>
