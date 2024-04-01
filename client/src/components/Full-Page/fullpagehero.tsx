@@ -38,10 +38,10 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 								<div className='col-md-8 col-lg-7'>
 									{/* Preheading */}
 									<p
-										className={`font-weight-medium text-center text-xs text-uppercase text-white text-muted animate`}
-										data-toggle={`${
-											activeSection === "about1" ? "animation" : ""
+										className={`font-weight-medium text-center text-xs text-uppercase text-white text-muted ${
+											activeSection === "hero" ? "animate" : ""
 										}`}
+										data-toggle={`animation`}
 										data-animation='fadeUp'
 										data-animation-order={0}
 										data-animation-trigger='load'
@@ -50,10 +50,10 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 									</p>
 									{/* Heading */}
 									<h1
-										className={`text-white text-center mb-4 animate`}
-										data-toggle={`${
-											activeSection === "about1" ? "animation" : ""
+										className={`text-white text-center mb-4 ${
+											activeSection === "hero" ? "animate" : ""
 										}`}
+										data-toggle={`animation`}
 										data-animation='fadeUp'
 										data-animation-order={1}
 										data-animation-trigger='load'
@@ -62,10 +62,10 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 									</h1>
 									{/* Subheading */}
 									<p
-										className={`lead text-white text-muted text-center mb-5 animate`}
-										data-toggle={`${
-											activeSection === "about1" ? "animation" : ""
+										className={`lead text-white text-muted text-center mb-5 ${
+											activeSection === "hero" ? "animate" : ""
 										}`}
+										data-toggle={`animation`}
 										data-animation='fadeUp'
 										data-animation-order={2}
 										data-animation-trigger='load'
