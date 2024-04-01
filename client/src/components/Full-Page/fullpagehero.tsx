@@ -17,13 +17,16 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 				className={`fp-section fp-table ${
 					activeSection === "hero" ? "active fp-completely" : ""
 				}`}
-				style={{ height: "100vh", backgroundImage: `url(${img54})` }}
+				style={{ height: "100vh" }}
 				ref={heroRef}
 			>
 				<div className='fp-tableCell' style={{ height: "100%" }}>
 					<div className='section section-top'>
 						{/* Cover */}
-						<div className='bg-cover' />
+						<div
+							className='bg-cover'
+							style={{ backgroundImage: `url(${img54})` }}
+						/>
 						{/* Overlay */}
 						<div className='bg-overlay' />
 						{/* Triangles */}
@@ -43,7 +46,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 										data-animation-order={0}
 										data-animation-trigger='load'
 									>
-										by Simpleqode
+										About Us
 									</p>
 									{/* Heading */}
 									<h1
@@ -55,7 +58,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 										data-animation-order={1}
 										data-animation-trigger='load'
 									>
-										Language professionals on demand
+										Greetings, My name is En
 									</h1>
 									{/* Subheading */}
 									<p
@@ -67,9 +70,9 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 										data-animation-order={2}
 										data-animation-trigger='load'
 									>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Veniam officia unde aperiam totam, labore obcaecati dolore
-										repellendus.
+										I'm currently pursuing my academic journey at UWO, I'm
+										dedicated to honing my skills and exploring my interests to
+										their fullest potential
 									</p>
 									{/* Button */}
 									<p
@@ -91,7 +94,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>{" "}
 				</div>
 			</section>
 		</>
