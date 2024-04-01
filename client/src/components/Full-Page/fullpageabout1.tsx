@@ -20,10 +20,10 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 			}`}
 			data-fp-styles='null'
 			data-anchor='about-1'
-			style={{ height: "100vh" }}
+			style={{ height: "100vh", overflow: "hidden" }}
 			ref={about1Ref}
 		>
-			{/* <h1>{activeSection}</h1> */}
+			<h1>{activeSection}</h1>
 			<div className='fp-tableCell' style={{ height: "100%" }}>
 				<div className='fp-scrollable' style={{ height: "100%" }}>
 					<div className='fp-scroller'>
@@ -40,7 +40,7 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 									<div className='col-md-6 col-lg-4 offset-lg-1'>
 										{/* Heading */}
 										<h2
-											className={`mb-4 ${
+											className={`mb-4 animate ${
 												activeSection === "about1" ? "animate" : ""
 											}`}
 											data-toggle={`animation`}
@@ -48,11 +48,11 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 											data-animation-order={0}
 											data-animation-trigger='load'
 										>
-											Fast and professional multilingual translation services
+											Professional in
 										</h2>
 										{/* Content */}
 										<p
-											className={`text-muted ${
+											className={`text-muted animate ${
 												activeSection === "about1" ? "animate" : ""
 											}`}
 											data-toggle={`animation`}
@@ -69,7 +69,7 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 										{/* Button */}
 										<a
 											href='contact.html'
-											className={`btn btn-outline-primary ${
+											className={`btn btn-outline-primary animate ${
 												activeSection === "about1" ? "animate" : ""
 											}`}
 											data-toggle={`animation`}

@@ -50,7 +50,7 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 										<h2
 											className={`text-center mb-4  animate`}
 											data-toggle={`${
-												activeSection === "about1" ? "animation" : ""
+												activeSection === "about2" ? "animation" : ""
 											}`}
 											data-animation='fadeUp'
 											data-animation-order={0}
@@ -62,7 +62,7 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 										<p
 											className={`lead text-muted text-center mb-5 animate`}
 											data-toggle={`${
-												activeSection === "about1" ? "animation" : ""
+												activeSection === "about2" ? "animation" : ""
 											}`}
 											data-animation='fadeUp'
 											data-animation-order={1}
@@ -79,7 +79,7 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 											href='#pricing'
 											className={`btn btn-outline-primary animate`}
 											data-toggle={`${
-												activeSection === "about1" ? "animation" : ""
+												activeSection === "about2" ? "animation" : ""
 											}`}
 											data-animation='fadeUp'
 											data-animation-order={2}
