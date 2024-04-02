@@ -1,5 +1,6 @@
 import React from "react";
 import img47 from "../../assets/about/47.jpg";
+import ScrollText from "./ScrollText";
 interface FullPageAbout1Props {
 	heroRef: React.RefObject<HTMLDivElement>;
 	about1Ref: React.RefObject<HTMLDivElement>;
@@ -37,6 +38,18 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 											<img src={img47} className='img-fluid' alt='...' />
 										</div>
 									</div>
+									<ScrollText
+										texts={[
+											"React",
+											"TypeScript",
+											"HTML",
+											"CSS",
+											"WebDev",
+											"animation",
+											"UI/UX",
+											"RESTAPI",
+										]}
+									/>
 									<div className='col-md-6 col-lg-4 offset-lg-1'>
 										{/* Heading */}
 										<h2
@@ -48,7 +61,7 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 											data-animation-order={0}
 											data-animation-trigger='load'
 										>
-											Professional in
+											Professional in FullStack
 										</h2>
 										{/* Content */}
 										<p
