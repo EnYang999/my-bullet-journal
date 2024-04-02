@@ -57,7 +57,7 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 									direction='right'
 								/>
 								<div className='row align-items-center'>
-									<div className='col-md-6 col-lg-4 offset-lg-1'>
+									<div className='col-md-6 col-lg-3 offset-lg-1'>
 										{/* Image */}
 										<div className=' img-effect img-effect-border mb-5 mb-md-0 img-hover-zoom--colorize'>
 											<img src={img47} className='img-fluid' alt='...' />

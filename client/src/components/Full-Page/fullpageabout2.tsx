@@ -1,5 +1,8 @@
 import React from "react";
-import img55 from "../../assets/about/55.jpg";
+import imgbg from "../../assets/about/about-me-2.jpg";
+import img55 from "../../assets/about/about-me-5.jpg";
+// import UnityComponent from "../../assets/unity/UnityComponent";
+import GameUnityComponent from "../GameUnity/GameUnityComponent";
 interface FullPageAbout2Props {
 	heroRef: React.RefObject<HTMLDivElement>;
 	about1Ref: React.RefObject<HTMLDivElement>;
@@ -26,17 +29,15 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 			<h1>{activeSection}</h1>
 			<div className='fp-tableCell' style={{ height: "100vh" }}>
 				<div className='fp-scrollable' style={{ height: "100vh" }}>
-					<div
-						className='fp-scroller'
-						style={{
-							transitionTimingFunction: "cubic-bezier(0.1, 0.57, 0.1, 1)",
-							transitionDuration: "0ms",
-							transform: "translate(0px, 0px) translateZ(0px)",
-							transitionDelay: "2000ms",
-						}}
-					>
-						<div className='section section-top'>
+					<div className='fp-scroller h-100'>
+						<div className='section section-top h-100'>
 							{/* Content */}
+							<div
+								className='bg-cover animated-bg-cover'
+								style={{ backgroundImage: `url(${imgbg})` }}
+							/>
+							{/* Overlay */}
+							<div className='bg-overlay' />
 							<div className='container'>
 								<div className='row align-items-center'>
 									<div className='col-md-6 col-lg-5 offset-lg-1 order-md-2'>
@@ -47,7 +48,7 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 									</div>
 									<div className='col-md-6 col-lg-4 offset-lg-1 order-md-1'>
 										{/* Heading */}
-										<h2
+										{/* <h2
 											className={`text-center mb-4  animate`}
 											data-toggle={`${
 												activeSection === "about2" ? "animation" : ""
@@ -56,24 +57,9 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 											data-animation-order={0}
 											data-animation-trigger='fpAfterLoad'
 										>
-											Guarantee of quality at the most competitive rates
-										</h2>
-										{/* Content */}
-										<p
-											className={`lead text-muted text-center mb-5 animate`}
-											data-toggle={`${
-												activeSection === "about2" ? "animation" : ""
-											}`}
-											data-animation='fadeUp'
-											data-animation-order={1}
-											data-animation-trigger='fpAfterLoad'
-										>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Sint, maiores, aperiam. Excepturi assumenda non quasi ipsa
-											quidem harum debitis aut alias dicta. Laudantium
-											reprehenderit ea, suscipit nulla deleniti excepturi
-											repudiandae!
-										</p>
+											Passion In Game Design
+										</h2> */}
+										<GameUnityComponent />
 										{/* Button */}
 										<a
 											href='#pricing'

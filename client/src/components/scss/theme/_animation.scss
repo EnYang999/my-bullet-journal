@@ -15,11 +15,11 @@
 }
 .scroll-text-container {
     z-index: 100;
-    -webkit-transform: skewY(-20deg);
-    -moz-transform: skewY(-20deg);
-    -ms-transform: skewY(-20deg);
-    -o-transform: skewY(-20deg);
-    transform: skewY(-20deg);
+    -webkit-transform: skewY(20deg);
+    -moz-transform: skewY(20deg);
+    -ms-transform: skewY(20deg);
+    -o-transform: skewY(20deg);
+    transform: skewY(20deg);
     > * {
         z-index: 100;
         -webkit-transform: skewY(0deg);
