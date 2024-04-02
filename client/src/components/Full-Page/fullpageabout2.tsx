@@ -40,39 +40,44 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 							<div className='bg-overlay' />
 							<div className='container'>
 								<div className='row align-items-center'>
-									<div className='col-md-6 col-lg-5 offset-lg-1 order-md-2'>
+									<div className='col-md-6 col-lg-5 offset-lg-1 order-md-1'>
+										{/* Button */}
+										<a
+											href='#pricing'
+											className={`btn btn-outline-primary animate`}
+											data-toggle={`animation`}
+											data-animation='fadeUp'
+											data-animation-order={2}
+											data-animation-trigger='load'
+											style={{ alignSelf: "flex-end" }}
+										>
+											Pricing options
+										</a>
+										{/* Heading */}
+										<h2
+											className={`text-center mb-4 animate ${
+												activeSection === "about2" ? "animate" : ""
+											}`}
+											data-toggle={`animation`}
+											data-animation='fadeUp'
+											data-animation-order={0}
+											data-animation-trigger='load'
+										>
+											Passion In Game Design
+										</h2>
 										{/* Image */}
 										<div className='img-effect img-effect-dotted mb-5 mb-md-0'>
 											<img src={img55} className='img-fluid' alt='...' />
 										</div>
 									</div>
-									<div className='col-md-6 col-lg-4 offset-lg-1 order-md-1'>
-										{/* Heading */}
-										{/* <h2
-											className={`text-center mb-4  animate`}
-											data-toggle={`${
-												activeSection === "about2" ? "animation" : ""
-											}`}
-											data-animation='fadeUp'
-											data-animation-order={0}
-											data-animation-trigger='fpAfterLoad'
-										>
-											Passion In Game Design
-										</h2> */}
-										<GameUnityComponent />
-										{/* Button */}
-										<a
-											href='#pricing'
-											className={`btn btn-outline-primary animate`}
-											data-toggle={`${
-												activeSection === "about2" ? "animation" : ""
-											}`}
-											data-animation='fadeUp'
-											data-animation-order={2}
-											data-animation-trigger='fpAfterLoad'
-										>
-											Pricing options
-										</a>
+									<div className='col-md-6 col-lg-4 offset-lg-1 order-md-2'>
+										<GameUnityComponent
+											style={{
+												backgroundColor: "orange",
+												width: "100%",
+												height: "500px",
+											}}
+										/>
 									</div>
 								</div>
 							</div>
