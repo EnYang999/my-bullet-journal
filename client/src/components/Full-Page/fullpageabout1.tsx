@@ -1,5 +1,5 @@
 import React from "react";
-import img47 from "../../assets/about/47.jpg";
+import img47 from "../../assets/about/about-me-4.jpg";
 import ScrollText from "./ScrollText";
 interface FullPageAbout1Props {
 	heroRef: React.RefObject<HTMLDivElement>;
@@ -31,26 +31,38 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 						<div className='section section-top'>
 							{/* Content */}
 							<div className='container'>
+								<ScrollText
+									texts={[
+										"animation",
+										"TypeScript",
+										"HTML",
+										"CSS",
+										"React",
+										"RESTful-API",
+										"WebDev",
+										"UI/UX",
+									]}
+								/>
+								<div className='my-2' />
+								<ScrollText
+									texts={[
+										"NodeJS",
+										"C/C++",
+										"PyThon",
+										"  ",
+										"Cloud-Deployment",
+										"MongoDB",
+										"Git",
+									]}
+									direction='right'
+								/>
 								<div className='row align-items-center'>
-									<div className='col-md-6 col-lg-5 offset-lg-1'>
+									<div className='col-md-6 col-lg-4 offset-lg-1'>
 										{/* Image */}
-										<div className='img-effect img-effect-solid mb-5 mb-md-0'>
+										<div className=' img-effect img-effect-border mb-5 mb-md-0 img-hover-zoom--colorize'>
 											<img src={img47} className='img-fluid' alt='...' />
 										</div>
-									</div>
-									<ScrollText
-										texts={[
-											"React",
-											"TypeScript",
-											"HTML",
-											"CSS",
-											"WebDev",
-											"animation",
-											"UI/UX",
-											"RESTAPI",
-										]}
-									/>
-									<div className='col-md-6 col-lg-4 offset-lg-1'>
+
 										{/* Heading */}
 										<h2
 											className={`mb-4 animate ${
@@ -63,6 +75,9 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 										>
 											Professional in FullStack
 										</h2>
+									</div>
+
+									<div className='col-md-6 col-lg-8 offset-lg-1'>
 										{/* Content */}
 										<p
 											className={`text-muted animate ${
@@ -73,11 +88,12 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 											data-animation-order={1}
 											data-animation-trigger='load'
 										>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Sint, maiores, aperiam. Excepturi assumenda non quasi ipsa
-											quidem harum debitis aut alias dicta. Laudantium
-											reprehenderit ea, suscipit nulla deleniti excepturi
-											repudiandae!
+											The website is where I've put my heart into creating an
+											amazing user experience by using tools like React,
+											Typescript, Node, and MongoDB. I've also utilized a strong
+											REST API and Google Cloud for deployment. My goal is to
+											provide a top-notch bullet journal experience with
+											beautifully designed pages to inspire and motivate you.
 										</p>
 										{/* Button */}
 										<a

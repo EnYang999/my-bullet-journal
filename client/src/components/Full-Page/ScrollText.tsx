@@ -11,16 +11,16 @@ const ScrollText: React.FC<ScrollTextProps> = ({
 }) => {
 	return (
 		<div
-			className='scroll-text-container d-flex justify-content-center'
+			className='scroll-text-container d-flex justify-content-center align-items-center zindex-sticky'
 			data-animated='true'
 			data-direction={direction}
-			style={{ backgroundColor: "#D6DEE7", overflow: "hidden" }}
+			style={{ backgroundColor: "#FFC94A", overflow: "hidden" }}
 		>
 			{texts.map((text, index) => (
 				<div
 					key={index}
 					className={`scroll-text d-inline-block px-2 mx-1`}
-					style={{ backgroundColor: "#DBE2EB" }}
+					style={{ backgroundColor: "rgba(255, 235, 178, 0.4)" }}
 				>
 					{text}
 				</div>
