@@ -34,7 +34,24 @@ const FullPageAbout3: React.FC<FullPageAbout3Props> = ({}) => {
 											<img src={img55} className='img-fluid' alt='...' />
 										</div>
 									</div>
-									<div className='col-md-6 col-lg-4 offset-lg-1 order-md-1'></div>
+									<div className='col-md-6 col-lg-4 offset-lg-1 order-md-1'>
+										<p
+											className={`text-muted animate animate`}
+											data-toggle={`animation`}
+											data-animation='fadeUp'
+											data-animation-order={1}
+											data-animation-trigger='load'
+										>
+											In my CS master's program, I fully immersed myself in
+											machine learning for three years, during which I worked
+											for top companies, JD and ByteDance. At ByteDance, I
+											helped develop the popular HELO app in southern Asia by
+											developing recommendation algorithms that increased user
+											engagement. My time at ByteDance taught me to think
+											creatively, and I gained valuable experience and
+											knowledge.
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
