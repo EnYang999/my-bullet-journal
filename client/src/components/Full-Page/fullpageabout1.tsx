@@ -1,6 +1,6 @@
 import React from "react";
 import img47 from "../../assets/about/about-me-4.jpg";
-import ScrollText from "./ScrollText";
+import ScrollText from "../decorationelements/ScrollText";
 interface FullPageAbout1Props {
 	heroRef: React.RefObject<HTMLDivElement>;
 	about1Ref: React.RefObject<HTMLDivElement>;

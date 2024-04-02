@@ -10,7 +10,9 @@ import React, { useEffect, useRef, useState } from "react";
 import FullPageAbout1 from "./fullpageabout1";
 import FullPageAbout2 from "./fullpageabout2";
 import FullPagePromo from "./fullpagepromo";
-
+import FullPageAbout3 from "./fullpageabout3";
+import LandingNavbar from "../landingsection/LandingNavbar";
+import LandingFooter from "../landingsection/LandingFooter";
 const FullPage = () => {
 	const heroRef = useRef(null);
 	const about1Ref = useRef(null);
@@ -58,6 +60,7 @@ const FullPage = () => {
 			className={`fp-responsive aboutme`}
 			style={{ overflow: "visible", height: "initial" }}
 		>
+			<LandingNavbar />
 			<main className='fp-wrapper fullpage-wrapper'>
 				<FullPageHero
 					heroRef={heroRef}
@@ -86,14 +89,16 @@ const FullPage = () => {
 				/>
 				{/* <hr /> */}
 				{/* PROMO */}
-				<FullPagePromo
+				{/* <FullPagePromo
 					heroRef={heroRef}
 					about1Ref={about1Ref}
 					about2Ref={about2Ref}
 					promoRef={promoRef}
 					activeSection={activeSection}
-				/>
+				/> */}
+				<FullPageAbout3 />
 			</main>
+			<LandingFooter />
 		</div>
 	);
 };
