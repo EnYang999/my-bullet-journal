@@ -33,11 +33,11 @@ const FullPagePromo: React.FC<FullPagePromoProps> = ({
 							<div className='col-md-10 col-lg-8'>
 								{/* Promo */}
 								<div
-									className='bg-white text-center shadow py-5 px-4 p-md-6'
+									className='bg-white text-center shadow py-5 px-4 p-md-6 animate'
 									data-toggle='animation'
-									data-animation='fadeIn'
+									data-animation='fadeUp'
 									data-animation-order={0}
-									data-animation-trigger='fpAfterLoad'
+									data-animation-trigger='load'
 								>
 									{/* Icon */}
 									<div

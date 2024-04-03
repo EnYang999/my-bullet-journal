@@ -114,34 +114,8 @@
 .landing-peoplesay {
     min-height: 60vh;
     /* Brightness-zoom Container */
-    .img-hover-zoom--brightness img {
-        transition:
-            transform 1s,
-            filter 1s ease-in-out;
-        transform-origin: center center;
-        filter: brightness(80%);
-    }
-
-    /* The Transformation */
-    .img-hover-zoom--brightness:hover img {
-        filter: brightness(100%);
-        transform: scale(0.8);
-    }
 }
 .landing-gallery {
     min-height: 100vh;
     /* Colorize-zoom Container */
-    .img-hover-zoom--colorize img {
-        transition:
-            transform 0.5s,
-            filter 1s ease-in-out;
-        filter: grayscale(40%) blur(1px);
-        cursor: pointer;
-    }
-
-    /* The Transformation */
-    .img-hover-zoom--colorize:hover img {
-        filter: grayscale(0);
-        transform: scale(0.9);
-    }
 }

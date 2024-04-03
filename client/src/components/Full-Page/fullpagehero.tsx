@@ -17,13 +17,16 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 				className={`fp-section fp-table ${
 					activeSection === "hero" ? "active fp-completely" : ""
 				}`}
-				style={{ height: "100vh", backgroundImage: `url(${img54})` }}
+				style={{ height: "100vh" }}
 				ref={heroRef}
 			>
 				<div className='fp-tableCell' style={{ height: "100%" }}>
 					<div className='section section-top'>
 						{/* Cover */}
-						<div className='bg-cover' />
+						<div
+							className='bg-cover animated-bg-cover'
+							style={{ backgroundImage: `url(${img54})` }}
+						/>
 						{/* Overlay */}
 						<div className='bg-overlay' />
 						{/* Triangles */}
@@ -35,41 +38,41 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 								<div className='col-md-8 col-lg-7'>
 									{/* Preheading */}
 									<p
-										className={`font-weight-medium text-center text-xs text-uppercase text-white text-muted animate`}
-										data-toggle={`${
-											activeSection === "about1" ? "animation" : ""
+										className={`font-weight-medium text-center text-xs text-uppercase text-white text-muted ${
+											activeSection === "hero" ? "animate" : ""
 										}`}
+										data-toggle={`animation`}
 										data-animation='fadeUp'
 										data-animation-order={0}
 										data-animation-trigger='load'
 									>
-										by Simpleqode
+										About Us
 									</p>
 									{/* Heading */}
 									<h1
-										className={`text-white text-center mb-4 animate`}
-										data-toggle={`${
-											activeSection === "about1" ? "animation" : ""
+										className={`text-white text-center mb-4 ${
+											activeSection === "hero" ? "animate" : ""
 										}`}
+										data-toggle={`animation`}
 										data-animation='fadeUp'
 										data-animation-order={1}
 										data-animation-trigger='load'
 									>
-										Language professionals on demand
+										Greetings, My name is En
 									</h1>
 									{/* Subheading */}
 									<p
-										className={`lead text-white text-muted text-center mb-5 animate`}
-										data-toggle={`${
-											activeSection === "about1" ? "animation" : ""
+										className={`lead text-white text-muted text-center mb-5 ${
+											activeSection === "hero" ? "animate" : ""
 										}`}
+										data-toggle={`animation`}
 										data-animation='fadeUp'
 										data-animation-order={2}
 										data-animation-trigger='load'
 									>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-										Veniam officia unde aperiam totam, labore obcaecati dolore
-										repellendus.
+										I'm currently pursuing my academic journey at UWO, I'm
+										dedicated to honing my skills and exploring my interests to
+										their fullest potential
 									</p>
 									{/* Button */}
 									<p
@@ -91,7 +94,7 @@ const FullPageHero: React.FC<FullPageHeroProps> = ({
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>{" "}
 				</div>
 			</section>
 		</>
