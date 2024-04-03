@@ -41,18 +41,6 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 							<div className='container'>
 								<div className='row align-items-center'>
 									<div className='col-md-6 col-lg-5 offset-lg-1 order-md-1'>
-										{/* Button */}
-										<a
-											href='#pricing'
-											className={`btn btn-outline-primary animate`}
-											data-toggle={`animation`}
-											data-animation='fadeUp'
-											data-animation-order={2}
-											data-animation-trigger='load'
-											style={{ alignSelf: "flex-end" }}
-										>
-											Pricing options
-										</a>
 										{/* Heading */}
 										<h2
 											className={`text-center mb-4 animate ${

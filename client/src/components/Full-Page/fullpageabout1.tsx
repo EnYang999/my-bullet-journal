@@ -95,19 +95,6 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 											provide a top-notch bullet journal experience with
 											beautifully designed pages to inspire and motivate you.
 										</p>
-										{/* Button */}
-										<a
-											href='contact.html'
-											className={`btn btn-outline-primary animate ${
-												activeSection === "about1" ? "animate" : ""
-											}`}
-											data-toggle={`animation`}
-											data-animation='fadeUp'
-											data-animation-order={2}
-											data-animation-trigger='load'
-										>
-											Get a free quote
-										</a>
 									</div>
 								</div>
 							</div>
