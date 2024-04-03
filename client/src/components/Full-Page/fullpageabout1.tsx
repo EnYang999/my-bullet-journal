@@ -65,13 +65,10 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 
 										{/* Heading */}
 										<h2
-											className={`mb-4 animate text-nowrap ${
-												activeSection === "about1" ? "animate" : ""
-											}`}
+											className={`mb-4 animate text-nowrap`}
 											data-toggle={`animation`}
-											data-animation='fadeUp'
+											data-animation='fadeDown'
 											data-animation-order={0}
-											data-animation-trigger='load'
 										>
 											Professional in FullStack
 										</h2>

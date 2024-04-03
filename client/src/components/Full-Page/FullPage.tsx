@@ -1,15 +1,7 @@
-import img55 from "../../assets/about/55.jpg";
-import img56 from "../../assets/about/56.jpg";
-import img47 from "../../assets/about/47.jpg";
-import img16 from "../../assets/about/16.jpg";
-import img18 from "../../assets/about/18.jpg";
-import img17 from "../../assets/about/17.jpg";
 import FullPageHero from "./fullpagehero";
-import img54 from "../../assets/about/54.jpg";
 import React, { useEffect, useRef, useState } from "react";
 import FullPageAbout1 from "./fullpageabout1";
 import FullPageAbout2 from "./fullpageabout2";
-import FullPagePromo from "./fullpagepromo";
 import FullPageAbout3 from "./fullpageabout3";
 import LandingNavbar from "../landingsection/LandingNavbar";
 import LandingFooter from "../landingsection/LandingFooter";
@@ -31,7 +23,7 @@ const FullPage = () => {
 						setActiveSection(name);
 					}
 				});
-				console.log(name);
+				// console.log(name);
 			});
 
 			if (elementRef.current) {
