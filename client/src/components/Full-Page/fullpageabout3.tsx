@@ -1,5 +1,6 @@
 import React from "react";
 import img55 from "../../assets/about/about-me-5.jpg";
+import ScrollText from "../decorationelements/ScrollText";
 interface FullPageAbout3Props {}
 const FullPageAbout3: React.FC<FullPageAbout3Props> = ({}) => {
 	return (
@@ -17,6 +18,30 @@ const FullPageAbout3: React.FC<FullPageAbout3Props> = ({}) => {
 						<div className='section section-top h-100'>
 							{/* Content */}
 							<div className='container'>
+								<ScrollText
+									texts={[
+										"Machine Learning",
+										"Deep Learning",
+										"Recommendation",
+										"Data Mining",
+										"Python",
+										"        ",
+									]}
+									angle='reverse'
+								/>
+								<div className='my-2' />
+								<ScrollText
+									texts={[
+										"SQL",
+										"Ensembel Model",
+										"Adversarial Learning",
+										"  ",
+										"conda",
+										"pip",
+									]}
+									direction='right'
+									angle='reverse'
+								/>
 								<div className='row align-items-center'>
 									<div className='col-md-6 col-lg-5 offset-lg-1 order-md-2'>
 										{/* Heading */}
@@ -30,7 +55,7 @@ const FullPageAbout3: React.FC<FullPageAbout3Props> = ({}) => {
 											Experienced in Machine Learning
 										</h2>
 										{/* Image */}
-										<div className='img-effect img-effect-solid mb-5 mb-md-0'>
+										<div className='img-effect img-effect-solid mb-5 mb-md-0 img-hover-zoom--colorize'>
 											<img src={img55} className='img-fluid' alt='...' />
 										</div>
 									</div>

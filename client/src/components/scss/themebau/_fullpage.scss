@@ -12903,6 +12903,12 @@ h1 {
     transition: background-size 1s ease;
 }
 @keyframes hero-image-animation {
+    0.1% {
+        background-size: 100%;
+    }
+    10% {
+        background-size: 160%;
+    }
     20% {
         opacity: 1;
         background-size: 180%;

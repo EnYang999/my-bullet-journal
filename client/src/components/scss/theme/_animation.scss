@@ -29,11 +29,27 @@
         transform: skewY(0deg);
     }
 }
+.scroll-text-container[data-angle="reverse"] {
+    z-index: 100;
+    -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    transform: skewY(-5deg);
+    > * {
+        z-index: 100;
+        -webkit-transform: skewY(0deg);
+        -moz-transform: skewY(0deg);
+        -ms-transform: skewY(0deg);
+        -o-transform: skewY(0deg);
+        transform: skewY(0deg);
+    }
+}
 .scroll-text-container[data-animated="true"] {
     overflow: hidden;
     overflow-x: scroll;
-    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, white -20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white -20%, white 80%, transparent);
 }
 .scroll-text-container[data-animated="true"] .scroll-text {
     width: max-content;
