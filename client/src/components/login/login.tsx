@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./login.css";
 import axios from "axios";
 import { toast } from "../errortoast/ErrorToastManager";
 import FormField from "./formAccount";
@@ -172,6 +171,8 @@ const Login: React.FC = () => {
 							label='Email address'
 							placeholder='name@example.com'
 							valueChange={setEmail}
+							handleChange={handleEmailChange}
+							isSignup={true}
 							validations={[
 								{
 									isValid: isValidEmail,
@@ -186,6 +187,8 @@ const Login: React.FC = () => {
 							label='Username'
 							placeholder='Username'
 							valueChange={setUserName}
+							handleChange={handleUserNameChange}
+							isSignup={true}
 							validations={[
 								{
 									isValid: isValidNameLength,
@@ -206,7 +209,9 @@ const Login: React.FC = () => {
 							placeholder='Password'
 							valueChange={setPassword}
 							extraAction={() => setType(type === "text" ? "password" : "text")}
+							handleChange={handlePasswordChange}
 							extraIconClass={`bi bi-eye${type === "text" ? "-slash" : ""}`}
+							isSignup={true}
 							validations={[
 								{
 									isValid: lowerValidated,

@@ -16,7 +16,8 @@ const PasswordValidation: React.FC<ValidationItemProps> = ({
 				validated ? "validated" : "not-validated"
 			}`}
 		>
-			{validated ? (
+			{/* no more than icons */}
+			{/* {validated ? (
 				<span className='list-icon green'>
 					<i className='bi bi-check2-circle'></i>
 				</span>
@@ -24,7 +25,7 @@ const PasswordValidation: React.FC<ValidationItemProps> = ({
 				<span className='list-icon'>
 					<i className='bi bi-circle'></i>
 				</span>
-			)}
+			)} */}
 			<span className='error-message'>{text}</span>
 		</div>
 	);

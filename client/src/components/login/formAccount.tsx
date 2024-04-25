@@ -10,6 +10,7 @@ interface FormFieldProps {
 		className: string;
 	}[];
 	valueChange: (value: string) => void;
+	handleChange?: (value: string) => void;
 	extraAction?: () => void; // Optional for additional actions like toggling password visibility
 	extraIconClass?: string; // Optional for icons like eye for password visibility
 	isSignup?: boolean;
@@ -22,6 +23,7 @@ const FormField: React.FC<FormFieldProps> = ({
 	placeholder,
 	validations,
 	valueChange,
+	handleChange,
 	extraAction,
 	extraIconClass,
 	isSignup,
@@ -38,7 +40,12 @@ const FormField: React.FC<FormFieldProps> = ({
 				className='form-control'
 				id={id}
 				placeholder={placeholder}
-				onChange={(e) => valueChange(e.target.value)}
+				onChange={(e) => {
+					valueChange(e.target.value);
+					if (handleChange) {
+						handleChange(e.target.value);
+					}
+				}}
 			/>
 			{extraAction && extraIconClass && (
 				<span className='icon-span' onClick={extraAction}>
@@ -51,7 +58,7 @@ const FormField: React.FC<FormFieldProps> = ({
 					{validations?.map((validation, index) => (
 						<PasswordValidation
 							key={index}
-							className={`validation-message ${validation.className}`}
+							className={`${validation.className}`}
 							validated={validation.isValid}
 							text={validation.message}
 						/>
