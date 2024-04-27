@@ -46,6 +46,7 @@ const FormField: React.FC<FormFieldProps> = ({
 						handleChange(e.target.value);
 					}
 				}}
+				required
 			/>
 			{extraAction && extraIconClass && (
 				<span className='icon-span' onClick={extraAction}>

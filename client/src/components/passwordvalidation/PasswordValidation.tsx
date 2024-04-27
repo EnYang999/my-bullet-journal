@@ -12,7 +12,7 @@ const PasswordValidation: React.FC<ValidationItemProps> = ({
 }) => {
 	return (
 		<div
-			className={`validation-message-wrapper ${className} ${
+			className={`validation-message-wrapper ${className} invalid-feedback ${
 				validated ? "validated" : "not-validated"
 			}`}
 		>
