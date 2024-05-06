@@ -1,20 +1,27 @@
-import React from "react";
-import "./PasswordValidation.css";
-interface ValidationItemProps {
+import React, { Ref, HTMLAttributes } from "react";
+
+interface ValidationItemProps extends HTMLAttributes<HTMLDivElement> {
 	validated: boolean;
 	text: string;
 	className: string;
+	ref: (el: any) => void;
+	style: React.CSSProperties;
 }
+
 const PasswordValidation: React.FC<ValidationItemProps> = ({
 	validated,
 	text,
 	className,
+	ref,
+	style,
 }) => {
 	return (
 		<div
 			className={`validation-message-wrapper ${className} invalid-feedback ${
 				validated ? "validated" : "not-validated"
 			}`}
+			ref={ref}
+			style={style} // Spread the rest of the props
 		>
 			{/* no more than icons */}
 			{/* {validated ? (
@@ -26,8 +33,9 @@ const PasswordValidation: React.FC<ValidationItemProps> = ({
 					<i className='bi bi-circle'></i>
 				</span>
 			)} */}
-			<span className='error-message'>{text}</span>
+			{text}
 		</div>
 	);
 };
+
 export default PasswordValidation;

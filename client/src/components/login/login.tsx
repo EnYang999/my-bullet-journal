@@ -167,7 +167,7 @@ const Login: React.FC = () => {
 						</div>
 						<span>or use your email for registration</span>
 						<FormField
-							id='floatingEmail-signup'
+							id='floating-Email-signup'
 							type='email'
 							label='Email address'
 							placeholder='name@example.com'
@@ -183,7 +183,7 @@ const Login: React.FC = () => {
 							]}
 						/>
 						<FormField
-							id='floatingName'
+							id='floating-Name'
 							type='text'
 							label='Username'
 							placeholder='Username'
@@ -204,7 +204,7 @@ const Login: React.FC = () => {
 							]}
 						/>
 						<FormField
-							id='floatingPassword-signup'
+							id='floating-Password-signup'
 							type={type}
 							label='Password'
 							placeholder='Password'
@@ -262,7 +262,7 @@ const Login: React.FC = () => {
 						<span>or use your account</span>
 
 						<FormField
-							id='floatingEmail-login'
+							id='floating-Email-login'
 							type='email'
 							label='Email address'
 							placeholder='name@example.com'
@@ -271,7 +271,7 @@ const Login: React.FC = () => {
 						/>
 
 						<FormField
-							id='floatingPassword-login'
+							id='floating-Password-login'
 							type={type}
 							label='Password'
 							placeholder='Password'

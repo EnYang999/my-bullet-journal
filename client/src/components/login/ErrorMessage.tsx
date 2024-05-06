@@ -1,7 +1,7 @@
 import React from "react";
 
-const ErrorMessage = () => {
+const ErrorPopover = () => {
 	return <div></div>;
 };
 
-export default ErrorMessage;
+export default ErrorPopover;
