@@ -1,5 +1,4 @@
 import React from "react";
-import "./ErrorPage.css"; // Ensure you have this CSS file for styling
 
 interface ErrorPageProps {
 	title: string; // Title of the error, e.g., "Access Denied"

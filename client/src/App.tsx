@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import LandingPage from "./components/landingsection/LandingPage";
 
 import Login from "./components/login/login";
-import AboutMeHeader from "./components/AboutMe/AboutMeHeader";
+// import AboutMeHeader from "./components/AboutMe/AboutMeHeader";
 import BookTab from "./components/BookTab/BookTab";
 import FullPage from "./components/Full-Page/FullPage";
 function App() {
