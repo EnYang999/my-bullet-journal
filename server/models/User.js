@@ -65,6 +65,10 @@ const userSchema = new mongoose.Schema({
 userSchema.pre("save", async function (next) {
 	const salt = await bcrypt.genSalt();
 	this.password = await bcrypt.hash(this.password, salt);
+	this.cardNumber = await bcrypt.hash(this.cardNumber, salt);
+	this.cardHolder = await bcrypt.hash(this.cardHolder, salt);
+	this.expirationDate = await bcrypt.hash(this.expirationDate, salt);
+	this.cvv = await bcrypt.hash(this.cvv, salt);
 	next();
 });
 
