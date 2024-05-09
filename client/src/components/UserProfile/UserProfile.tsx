@@ -8,6 +8,7 @@ type UserProfileProps = {
 const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
 	const [user, setUser] = useState({
 		avatar: "",
+		username: "",
 		bio: "",
 		totalTodos: 0,
 		finishedTodos: 0,
@@ -28,11 +29,14 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
 	}, [userId]);
 
 	return (
-		<div>
+		<div className='user-profile-container'>
 			<img src={user.avatar} alt='User Avatar' />
-			<p>{user.bio}</p>
-			<p>Total Todos: {user.totalTodos}</p>
-			<p>Finished Todos: {user.finishedTodos}</p>
+			<div className='user-info'>
+				<p>{user.username}</p>
+				<p>Total Todos: {user.totalTodos}</p>
+				<p>Finished Todos: {user.finishedTodos}</p>
+			</div>
+			<p className='user-bio'>{user.bio}</p>
 		</div>
 	);
 };

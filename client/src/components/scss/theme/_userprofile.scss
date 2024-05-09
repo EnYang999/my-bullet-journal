@@ -1,0 +1,62 @@
+.user-profile-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+
+    img {
+        align-self: flex-start;
+        width: 100px; // Adjust as necessary
+        height: auto;
+        margin: 0 0 20px;
+    }
+
+    .user-info {
+        align-self: flex-end;
+        text-align: right;
+        margin-bottom: 20px;
+
+        p {
+            margin: 0 0 10px; // Spacing between paragraphs
+
+            &:first-child {
+                font-weight: bold;
+                margin-bottom: 15px; // More space under the username
+            }
+        }
+    }
+
+    .user-bio {
+        text-align: justify;
+        max-width: 80%;
+        margin-top: 20px; // Separation from the todo items
+    }
+}
+
+@media (min-width: 768px) {
+    .user-profile-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+
+        img {
+            margin: 0 20px 0 0;
+        }
+
+        .user-info {
+            align-self: center;
+            margin: 0; // Reset margin for desktop
+
+            p {
+                margin-bottom: 5px; // Closer paragraphs on desktop
+            }
+        }
+
+        .user-bio {
+            flex-grow: 1;
+            margin-top: 0; // Reset margin for desktop layout
+            margin-left: 20px; // Space from user info
+        }
+    }
+}
