@@ -17,7 +17,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
 		const fetchUser = async () => {
 			try {
 				const { data } = await axios.get(
-					`http://localhost:5000/api/users/${userId}`
+					`http://localhost:8000/user/${userId}`
 				);
 				setUser(data);
 			} catch (error) {
