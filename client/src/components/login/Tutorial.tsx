@@ -11,6 +11,7 @@ const Tutorial = () => {
 	const arrowRef = useRef(null);
 	const { refs, floatingStyles, middlewareData } = useFloating({
 		placement: "bottom",
+
 		middleware: [
 			flip(),
 			offset(6),
