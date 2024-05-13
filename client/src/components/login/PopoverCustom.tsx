@@ -6,7 +6,6 @@ import {
 	shift,
 	arrow as floatingArrow,
 } from "@floating-ui/react-dom";
-import "./popover.scss"; // Adjust the import path as needed
 
 interface PopoverProps {
 	children: React.ReactNode;

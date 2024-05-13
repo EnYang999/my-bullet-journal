@@ -77,28 +77,26 @@ const FormField: React.FC<FormFieldProps> = ({
 				{label}
 			</label>
 			{isSignup && isOpen && (
-				<Popover>
-					<PopoverTrigger>My trigger</PopoverTrigger>
-					<PopoverContent className='Popover'>
-						<PopoverHeading>My popover heading</PopoverHeading>
-						<PopoverDescription>My popover description</PopoverDescription>
-						<PopoverClose>Close</PopoverClose>
-					</PopoverContent>
-				</Popover>
-				// <div className='tracker-box'>
-				// 	{validations?.map((validation, index) => (
-				// 		// <PasswordValidation
-				// 		// 	key={index}
-				// 		// 	className={validation.className}
-				// 		// 	validated={validation.isValid}
-				// 		// 	text={validation.message}
-				// 		// 	ref={(el) => refs.setFloating(el)} // Changed to capture the reference correctly
-				// 		// 	style={floatingStyles}
-				// 		// 	{...getFloatingProps()}
-				// 		// />
-
-				// 	))}
-				// </div>
+				// <Popover>
+				// 	<PopoverTrigger>My trigger</PopoverTrigger>
+				// 	<PopoverContent className='Popover'>
+				// 		<PopoverHeading>My popover heading</PopoverHeading>
+				// 		<PopoverDescription>My popover description</PopoverDescription>
+				// 		<PopoverClose>Close</PopoverClose>
+				// 	</PopoverContent>
+				// </Popover>
+				<div className='tracker-box'>
+					{validations?.map((validation, index) => (
+						<PasswordValidation
+							key={index}
+							className={validation.className}
+							validated={validation.isValid}
+							text={validation.message}
+							ref={refs.setFloating} // Changed to capture the reference correctly
+							style={floatingStyles}
+						/>
+					))}
+				</div>
 			)}
 		</div>
 	);
