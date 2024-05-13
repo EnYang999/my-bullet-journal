@@ -46,10 +46,6 @@ $log-container-button-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         margin: 20px 0 30px;
     }
 
-    span {
-        font-size: 12px;
-    }
-
     a {
         color: #333;
         font-size: 14px;
@@ -82,16 +78,7 @@ $log-container-button-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             background-color: transparent;
         }
     }
-    .not-validated-box {
-        input {
-            border: #dd5746 2px solid;
-        }
-    }
-    .validated-box {
-        input {
-            border: #afd198 2px solid;
-        }
-    }
+
     input {
         background-color: #eee;
         border: none;
@@ -223,37 +210,27 @@ $log-container-button-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             }
         }
     }
-
-    .invalid-feedback {
-        display: inline-block;
-    }
-
-    .floating-Password-signup-input {
+    .form-floating {
         position: relative;
-
         .icon-span {
             position: absolute;
             transform: translate(-50%, -50%);
-            top: 50%;
+            top: max(20%, 5px);
             right: 10px;
-            height: 50px;
-            width: 50px;
-            * {
-                height: 100%;
-                width: 100%;
-            }
         }
     }
-
     .tracker-box {
-        display: block;
-        justify-content: space-between;
         white-space: nowrap;
         flex-wrap: wrap;
-        font-size: 0.5rem;
-        width: 100%;
-    }
-    .form-floating:focus-visible .not-validated-box.tracker-box {
-        // display: block;
+        font-size: 0.7rem;
+        background-color: rgb(251, 247, 221);
+        .input-feedback {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &.validated {
+                color: rgb(169, 225, 169);
+            }
+        }
     }
 }

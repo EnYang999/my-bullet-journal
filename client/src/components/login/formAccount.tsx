@@ -1,14 +1,15 @@
-import PasswordValidation from "../passwordvalidation/PasswordValidation";
 import {
-	Popover,
-	PopoverTrigger,
-	PopoverContent,
-	PopoverDescription,
-	PopoverHeading,
-	PopoverClose,
-} from "./Popover";
-import { useFocus, useFloating, useInteractions } from "@floating-ui/react";
-import { useState } from "react";
+	useFocus,
+	useFloating,
+	useInteractions,
+	arrow,
+	flip,
+	offset,
+	shift,
+	useHover,
+	FloatingArrow,
+} from "@floating-ui/react";
+import { useState, useRef } from "react";
 interface FormFieldProps {
 	id: string;
 	type: string;
@@ -40,15 +41,33 @@ const FormField: React.FC<FormFieldProps> = ({
 }) => {
 	const overallValid = validations?.every((validation) => validation.isValid);
 	const [isOpen, setIsOpen] = useState(true);
-
+	const arrowRef = useRef(null);
 	const { refs, floatingStyles, context } = useFloating({
+		placement: "top",
+		strategy: "absolute",
 		open: isOpen,
-		onOpenChange: setIsOpen,
+		onOpenChange(isOpen, event, reason) {
+			setIsOpen(isOpen);
+			event && console.log(event); // e.g. MouseEvent
+			reason && console.log(reason); // e.g. 'hover'
+		},
+		middleware: [
+			flip(),
+			offset(6),
+			shift({ padding: 5 }),
+			arrow({
+				element: arrowRef,
+				padding: 5,
+			}),
+		],
 	});
-
+	const hover = useHover(context);
 	const focus = useFocus(context);
 
-	const { getReferenceProps, getFloatingProps } = useInteractions([focus]);
+	const { getReferenceProps, getFloatingProps } = useInteractions([
+		hover,
+		focus,
+	]);
 	return (
 		<div
 			className={`form-floating mb-2 ${id}-input ${
@@ -67,38 +86,51 @@ const FormField: React.FC<FormFieldProps> = ({
 					}
 				}}
 				required
+				ref={refs.setReference}
+				{...getReferenceProps({
+					onClick: () => console.log("clicked"),
+					onFocus: () => console.log("focused"),
+				})}
 			/>
+			<label htmlFor={id}>{label}</label>
 			{extraAction && extraIconClass && (
 				<span className='icon-span' onClick={extraAction}>
 					<i className={extraIconClass}></i>
 				</span>
 			)}
-			<label htmlFor={id} ref={refs.setReference} {...getReferenceProps()}>
-				{label}
-			</label>
 			{isSignup && isOpen && (
-				<Popover>
-					<PopoverTrigger>My trigger</PopoverTrigger>
-					<PopoverContent className='Popover'>
-						<PopoverHeading>My popover heading</PopoverHeading>
-						<PopoverDescription>My popover description</PopoverDescription>
-						<PopoverClose>Close</PopoverClose>
-					</PopoverContent>
-				</Popover>
-				// <div className='tracker-box'>
-				// 	{validations?.map((validation, index) => (
-				// 		// <PasswordValidation
-				// 		// 	key={index}
-				// 		// 	className={validation.className}
-				// 		// 	validated={validation.isValid}
-				// 		// 	text={validation.message}
-				// 		// 	ref={(el) => refs.setFloating(el)} // Changed to capture the reference correctly
-				// 		// 	style={floatingStyles}
-				// 		// 	{...getFloatingProps()}
-				// 		// />
-
-				// 	))}
-				// </div>
+				<div
+					className='tracker-box'
+					ref={refs.setFloating}
+					style={floatingStyles}
+					{...getFloatingProps()}
+				>
+					{validations?.map((validation) => (
+						<div
+							className={`validation-message-wrapper ${
+								validation.className
+							} input-feedback ${
+								validation.isValid ? "validated" : "not-validated"
+							}`}
+						>
+							{validation.isValid ? (
+								<span className='list-icon green'>
+									<i className='bi bi-check2-circle'></i>
+								</span>
+							) : (
+								<span className='list-icon'>
+									<i className='bi bi-circle'></i>
+								</span>
+							)}
+							{validation.message}
+						</div>
+					))}
+					<FloatingArrow
+						ref={arrowRef}
+						context={context}
+						fill='rgb(251, 247, 221)'
+					/>
+				</div>
 			)}
 		</div>
 	);

@@ -1,0 +1,32 @@
+// src/styles/popover.scss
+$popover-background: white;
+$popover-border: #ccc;
+$arrow-size: 8px;
+$popover-valid-bg: #d4edda;
+$popover-invalid-bg: #f8d7da;
+
+.popover-container {
+    max-width: 320px;
+    border: 1px solid $popover-border;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: $popover-background;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.popover-arrow {
+    width: $arrow-size;
+    height: $arrow-size;
+    background-color: $popover-background;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.popover-valid {
+    background-color: $popover-valid-bg;
+}
+
+.popover-invalid {
+    background-color: $popover-invalid-bg;
+}
