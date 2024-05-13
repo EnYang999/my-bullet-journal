@@ -1,12 +1,3 @@
-import PasswordValidation from "../passwordvalidation/PasswordValidation";
-import {
-	Popover,
-	PopoverTrigger,
-	PopoverContent,
-	PopoverDescription,
-	PopoverHeading,
-	PopoverClose,
-} from "./Popover";
 import {
 	useFocus,
 	useFloating,
@@ -49,7 +40,7 @@ const FormField: React.FC<FormFieldProps> = ({
 	isSignup,
 }) => {
 	const overallValid = validations?.every((validation) => validation.isValid);
-	const [isOpen, setIsOpen] = useState(false);
+	const [isOpen, setIsOpen] = useState(true);
 	const arrowRef = useRef(null);
 	const { refs, floatingStyles, context } = useFloating({
 		placement: "top",
@@ -101,12 +92,12 @@ const FormField: React.FC<FormFieldProps> = ({
 					onFocus: () => console.log("focused"),
 				})}
 			/>
+			<label htmlFor={id}>{label}</label>
 			{extraAction && extraIconClass && (
 				<span className='icon-span' onClick={extraAction}>
 					<i className={extraIconClass}></i>
 				</span>
 			)}
-			<label htmlFor={id}>{label}</label>
 			{isSignup && isOpen && (
 				<div
 					className='tracker-box'
@@ -118,7 +109,7 @@ const FormField: React.FC<FormFieldProps> = ({
 						<div
 							className={`validation-message-wrapper ${
 								validation.className
-							} invalid-feedback ${
+							} input-feedback ${
 								validation.isValid ? "validated" : "not-validated"
 							}`}
 						>
@@ -134,7 +125,11 @@ const FormField: React.FC<FormFieldProps> = ({
 							{validation.message}
 						</div>
 					))}
-					<FloatingArrow ref={arrowRef} context={context} />
+					<FloatingArrow
+						ref={arrowRef}
+						context={context}
+						fill='rgb(251, 247, 221)'
+					/>
 				</div>
 			)}
 		</div>
