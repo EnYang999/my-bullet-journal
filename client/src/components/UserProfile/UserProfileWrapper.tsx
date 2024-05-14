@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import UserProfile from "./UserProfile"; // Adjust the import path as necessary
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const UserProfileWrapper: React.FC = () => {
 	// Using useParams to access the userId route parameter
@@ -9,7 +10,11 @@ const UserProfileWrapper: React.FC = () => {
 	return userId ? (
 		<UserProfile userId={userId} />
 	) : (
-		<div>User ID is missing</div>
+		<ErrorPage
+			title={"Error"}
+			message={"The user is missing"}
+			recommendation={"Input the valid userID"}
+		/>
 	);
 };
 
