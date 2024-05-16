@@ -1,6 +1,8 @@
-const express = require("express");
-const router = express.Router();
-const User = require("../models/User");
+import { Router } from "express";
+import { DOMAIN } from "../constants";
+import { Profile, User } from "../models";
+import uploader from "../middlewares/uploader";
+import { userAuth } from "../middlewares/auth-guard";
 
 // Get user profile
 router.get("/user/:id", async (req, res) => {

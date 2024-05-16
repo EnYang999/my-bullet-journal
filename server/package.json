@@ -3,19 +3,24 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm .",
+    "dev": "nodemon -r esm ."
   },
   "author": "",
+  "type": "module",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "esm": "^3.2.25",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.3",
+    "passport": "^0.7.0",
     "validator": "^13.11.0"
   }
 }
