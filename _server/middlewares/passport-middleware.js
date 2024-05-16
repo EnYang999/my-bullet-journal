@@ -1,7 +1,7 @@
 import passport from "passport";
-import { User } from "../src/models";
+import User from "../models/User.js";
 import { Strategy, ExtractJwt } from "passport-jwt";
-import { SECRET as secretOrKey } from "../constants";
+import { SECRET as secretOrKey } from "../constants.js";
 
 const opts = {
 	secretOrKey,
