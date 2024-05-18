@@ -8,7 +8,7 @@ import { User } from "../models";
 import { Router } from "express";
 import { randomBytes } from "crypto";
 import { DOMAIN } from "../constants";
-// import sgMail from "../functions/email-sender";
+import sendMail from "../functions/email-sender";
 import { userAuth } from "../middlewares/auth-guard";
 import Validator from "../middlewares/validator-middleware";
 
@@ -26,7 +26,7 @@ router.post(
 	Validator,
 	async (req, res) => {
 		try {
-			let { username, email } = req.body;
+			let { email } = req.body;
 
 			// Check if the user exists with that email
 			let user = await User.findOne({ email });
@@ -43,13 +43,7 @@ router.post(
 			});
 			await user.save();
 			// Send the email to the user with a varification link
-			let html = `
-        <div>
-            <h1>Hello, ${user.username}</h1>
-            <p>Please click the following link to verify your account</p>
-            <a href="${DOMAIN}users/verify-now/${user.verificationCode}">Verify Now</a>
-        </div>
-    `;
+			let html = `<div><h1>Hello, ${user.username}</h1><p>Please click the following link to verify your account</p><a href="${DOMAIN}users/verify-now/${user.verificationCode}">Verify Now</a></div>`;
 			await sendMail(
 				user.email,
 				"Verify Account",
