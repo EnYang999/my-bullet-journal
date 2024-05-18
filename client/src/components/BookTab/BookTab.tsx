@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import RightSideBar from "../sidebarpage/RightPage";
 import SidePage from "../sidebarpage/SidePage";
-import { useParams } from "react-router-dom";
-const BookTab = () => {
-	const { month, week } = useParams();
+import ErrorPage from "../ErrorPage/ErrorPage";
 
-	if (month && week) {
+// Simplified version without separate loadError state
+const BookTab = () => {
+	const { month, week } = useParams<{ month: string; week: string }>();
+	const [Component, setComponent] = useState<React.ElementType | null>(null);
+
+	useEffect(() => {
 		const monthMap: { [key: string]: string } = {
 			"01": "January",
 			"02": "February",
@@ -20,28 +24,49 @@ const BookTab = () => {
 			"11": "November",
 			"12": "December",
 		};
+		if (!month || !week || !(month in monthMap) || !/^week[1-5]$/.test(week)) {
+			setComponent(() => () => (
+				<ErrorPage
+					title='Invalid Parameters'
+					message='The specified month or week is invalid or missing from the URL.'
+				/>
+			));
+			return;
+		}
 
-		const componentPath = `../${monthMap[month]}/${week}`;
-		const DynamicComponent = React.lazy(() => import(`${componentPath}`));
+		const componentPath = `${monthMap[month]}/${week}`;
+		import(`../${componentPath}`)
+			.then((mod) => setComponent(() => mod.default))
+			.catch(() =>
+				setComponent(() => () => (
+					<ErrorPage
+						title='Content Not Found'
+						message={`The page for ${monthMap[month]} ${week} hasn't been built yet.`}
+					/>
+				))
+			);
+	}, [month, week]);
 
-		return (
-			<div className='week-container-layout'>
-				<div
-					className={`container py-8 px-6 d-flex week-box-container align-items-center justify-content-center w-100 ${
-						monthMap[month].toLowerCase() + "-" + week
-					} ${week} ${monthMap[month].toLowerCase()}`}
-				>
-					<SidePage className='sidebar' />
-					<RightSideBar className='rightside' />
-					<React.Suspense fallback={<div>Loading...</div>}>
-						<DynamicComponent />
-					</React.Suspense>
-				</div>
-			</div>
-		);
-	} else {
-		console.error("Month is undefined"); // add additional page
+	// Handle the loading state
+	if (!Component) {
+		return <div>Loading...</div>; // Adjust this as needed
 	}
+
+	return (
+		<div className='week-container-layout'>
+			<div
+				className={`container py-8 px-6 d-flex week-box-container align-items-center justify-content-center w-100 ${
+					month?.toLowerCase() + "-" + week
+				} ${week} ${month?.toLowerCase()}`}
+			>
+				<SidePage className='sidebar' />
+				<RightSideBar className='rightside' />
+				<React.Suspense fallback={<div>Loading...</div>}>
+					<Component />
+				</React.Suspense>
+			</div>
+		</div>
+	);
 };
 
 export default BookTab;
