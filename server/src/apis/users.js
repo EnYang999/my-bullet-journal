@@ -8,7 +8,7 @@ import { User } from "../models";
 import { Router } from "express";
 import { randomBytes } from "crypto";
 import { DOMAIN } from "../constants";
-// import sendMail from "../functions/email-sender";
+// import sgMail from "../functions/email-sender";
 import { userAuth } from "../middlewares/auth-guard";
 import Validator from "../middlewares/validator-middleware";
 
@@ -19,7 +19,7 @@ const router = Router();
  * @api /users/api/register
  * @access Public
  * @type POST
-
+ */
 router.post(
 	"/api/register",
 	RegisterValidations,
@@ -27,16 +27,9 @@ router.post(
 	async (req, res) => {
 		try {
 			let { username, email } = req.body;
-			// Check if the username is taken or not
-			let user = await User.findOne({ username });
-			if (user) {
-				return res.status(400).json({
-					success: false,
-					message: "Username is already taken.",
-				});
-			}
+
 			// Check if the user exists with that email
-			user = await User.findOne({ email });
+			let user = await User.findOne({ email });
 			if (user) {
 				return res.status(400).json({
 					success: false,
@@ -76,7 +69,6 @@ router.post(
 		}
 	}
 );
- */
 
 /**
  * @description To verify a new user's account via email
@@ -107,7 +99,7 @@ router.get("/verify-now/:verificationCode", async (req, res) => {
 });
 
 /**
- * @description To authenticate an user and get auth token
+ * @description To authenticate an user and get auth token --- login
  * @api /users/api/authenticate
  * @access PUBLIC
  * @type POST
@@ -118,12 +110,12 @@ router.post(
 	Validator,
 	async (req, res) => {
 		try {
-			let { username, password } = req.body;
-			let user = await User.findOne({ username });
+			let { email, password } = req.body;
+			let user = await User.findOne({ email });
 			if (!user) {
 				return res.status(404).json({
 					success: false,
-					message: "Username not found.",
+					message: "email not found.",
 				});
 			}
 			if (!(await user.comparePassword(password))) {
@@ -133,6 +125,7 @@ router.post(
 				});
 			}
 			let token = await user.generateJWT();
+			res.cookie("userid", token, { maxAge: maxAge * 1000 }); // not sure if I should put it here
 			return res.status(200).json({
 				success: true,
 				user: user.getUserInfo(),
