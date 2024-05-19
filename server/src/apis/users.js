@@ -11,6 +11,7 @@ import { DOMAIN, LOGIN_URL, SIGNUP_URL } from "../constants";
 import sendMail from "../functions/email-sender";
 import { userAuth } from "../middlewares/auth-guard";
 import Validator from "../middlewares/validator-middleware";
+import { log } from "console";
 
 const router = Router();
 
@@ -22,6 +23,7 @@ const router = Router();
  */
 router.post(SIGNUP_URL, RegisterValidations, Validator, async (req, res) => {
 	try {
+		console.log(SIGNUP_URL);
 		let { email } = req.body;
 
 		// Check if the user exists with that email

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../scss/theme/_toast.scss";
 import ballonicon from "../../assets/login/balloon-heart.svg";
 export interface ToastProps {
@@ -10,12 +10,15 @@ export interface ToastProps {
 }
 
 const Toast: React.FC<ToastProps> = (props) => {
-	const { destroy, content, title, duration = 3000, id } = props;
-
+	const [visible, setVisible] = useState(false);
+	const { destroy, content, title, duration = 5000, id } = props;
+	setTimeout(() => setVisible(true), 10);
 	useEffect(() => {
 		if (!duration) return;
 
 		const timer = setTimeout(() => {
+			setVisible(false);
+			setTimeout(() => destroy(), 300); // Allow some time for fade-out animation
 			destroy();
 		}, duration);
 
@@ -24,7 +27,7 @@ const Toast: React.FC<ToastProps> = (props) => {
 
 	return (
 		<div
-			className={`toast`}
+			className={`toast ${visible ? "slide-in" : "slide-out"}`}
 			role='alert'
 			aria-live='assertive'
 			aria-atomic='true'
@@ -39,7 +42,10 @@ const Toast: React.FC<ToastProps> = (props) => {
 					className='btn-close'
 					data-bs-dismiss='toast'
 					aria-label='Close'
-					onClick={destroy}
+					onClick={() => {
+						setVisible(false);
+						setTimeout(destroy, 500);
+					}}
 				></button>
 			</div>
 			<div className='toast-body'>{content}</div>

@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "../errortoast/ErrorToastManager";
 import FormField from "./formAccount";
 import OverlayPanel from "./overlayPanel";
+import * as Constants from "../../../../common/Constants";
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
 	const [type, setType] = useState("password");
@@ -27,17 +28,22 @@ const Login: React.FC = () => {
 	};
 	const handleLogin = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
+		console.log();
+
 		try {
-			await axios.post("http://localhost:8000/login", {
-				email,
-				password,
-			});
+			await axios.post(
+				`${Constants.API_ENDPOINT}${Constants.APP_USER_API}${Constants.APP_LOGIN_URL}`,
+				{
+					email,
+					password,
+				}
+			);
 		} catch (error: any) {
 			if (error.response) {
 				toast.show({
 					title: "Error",
 					content: error.response.data.error,
-					duration: 3000,
+					duration: 360000000,
 				});
 			}
 		}
@@ -55,11 +61,17 @@ const Login: React.FC = () => {
 				isValidNameCharacters &&
 				isValidEmail
 			) {
-				const response = await axios.post("http://localhost:8000/signup", {
-					email,
-					username: userName,
-					password,
-				});
+				const response = await axios.post(
+					`${Constants.API_ENDPOINT}${Constants.APP_USER_API}${Constants.APP_SIGNUP_URL}`,
+					{
+						email,
+						username: userName,
+						password,
+					}
+				);
+				console.log("====================================");
+				console.log(response.data);
+				console.log("====================================");
 				if (response.status === 201) {
 					console.log("User signed up successfully:", response.data.user);
 				} else {
@@ -69,7 +81,7 @@ const Login: React.FC = () => {
 				toast.show({
 					title: "Error",
 					content: "please enter valid input",
-					duration: 3000,
+					duration: 360000000,
 				});
 			}
 		} catch (error: any) {
@@ -77,7 +89,7 @@ const Login: React.FC = () => {
 				toast.show({
 					title: "Error From catch",
 					content: error.response.data.error,
-					duration: 3000,
+					duration: 360000000,
 				});
 			}
 		}

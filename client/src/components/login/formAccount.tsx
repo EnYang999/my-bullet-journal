@@ -48,8 +48,8 @@ const FormField: React.FC<FormFieldProps> = ({
 		open: isOpen,
 		onOpenChange(isOpen, event, reason) {
 			setIsOpen(isOpen);
-			event && console.log(event); // e.g. MouseEvent
-			reason && console.log(reason); // e.g. 'hover'
+			// event && console.log(event); // e.g. MouseEvent
+			// reason && console.log(reason); // e.g. 'hover'
 		},
 		middleware: [
 			flip(),
@@ -88,8 +88,8 @@ const FormField: React.FC<FormFieldProps> = ({
 				required
 				ref={refs.setReference}
 				{...getReferenceProps({
-					onClick: () => console.log("clicked"),
-					onFocus: () => console.log("focused"),
+					// onClick: () => console.log("clicked"),
+					// onFocus: () => console.log("focused"),
 				})}
 			/>
 			<label htmlFor={id}>{label}</label>
