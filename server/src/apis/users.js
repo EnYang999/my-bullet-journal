@@ -7,7 +7,7 @@ import { join } from "path";
 import { User } from "../models";
 import { Router } from "express";
 import { randomBytes } from "crypto";
-import { DOMAIN } from "../constants";
+import { DOMAIN, LOGIN_URL, SIGNUP_URL } from "../constants";
 import sendMail from "../functions/email-sender";
 import { userAuth } from "../middlewares/auth-guard";
 import Validator from "../middlewares/validator-middleware";
@@ -20,49 +20,44 @@ const router = Router();
  * @access Public
  * @type POST
  */
-router.post(
-	"/api/register",
-	RegisterValidations,
-	Validator,
-	async (req, res) => {
-		try {
-			let { email } = req.body;
+router.post(SIGNUP_URL, RegisterValidations, Validator, async (req, res) => {
+	try {
+		let { email } = req.body;
 
-			// Check if the user exists with that email
-			let user = await User.findOne({ email });
-			if (user) {
-				return res.status(400).json({
-					success: false,
-					message:
-						"Email is already registered. Did you forget the password. Try resetting it.",
-				});
-			}
-			user = new User({
-				...req.body,
-				verificationCode: randomBytes(20).toString("hex"),
-			});
-			await user.save();
-			// Send the email to the user with a varification link
-			let html = `<div><h1>Hello, ${user.username}</h1><p>Please click the following link to verify your account</p><a href="${DOMAIN}users/verify-now/${user.verificationCode}">Verify Now</a></div>`;
-			await sendMail(
-				user.email,
-				"Verify Account",
-				"Please verify Your Account.",
-				html
-			);
-			return res.status(201).json({
-				success: true,
-				message:
-					"Hurray! your account is created please verify your email address.",
-			});
-		} catch (err) {
-			return res.status(500).json({
+		// Check if the user exists with that email
+		let user = await User.findOne({ email });
+		if (user) {
+			return res.status(400).json({
 				success: false,
-				message: "An error occurred.",
+				message:
+					"Email is already registered. Did you forget the password. Try resetting it.",
 			});
 		}
+		user = new User({
+			...req.body,
+			verificationCode: randomBytes(20).toString("hex"),
+		});
+		await user.save();
+		// Send the email to the user with a varification link
+		let html = `<div><h1>Hello, ${user.username}</h1><p>Please click the following link to verify your account</p><a href="${DOMAIN}users/verify-now/${user.verificationCode}">Verify Now</a></div>`;
+		await sendMail(
+			user.email,
+			"Verify Account",
+			"Please verify Your Account.",
+			html
+		);
+		return res.status(201).json({
+			success: true,
+			message:
+				"Hurray! your account is created please verify your email address.",
+		});
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
+			message: "An error occurred.",
+		});
 	}
-);
+});
 
 /**
  * @description To verify a new user's account via email
@@ -98,42 +93,37 @@ router.get("/verify-now/:verificationCode", async (req, res) => {
  * @access PUBLIC
  * @type POST
  */
-router.post(
-	"/api/authenticate",
-	AuthenticateValidations,
-	Validator,
-	async (req, res) => {
-		try {
-			let { email, password } = req.body;
-			let user = await User.findOne({ email });
-			if (!user) {
-				return res.status(404).json({
-					success: false,
-					message: "email not found.",
-				});
-			}
-			if (!(await user.comparePassword(password))) {
-				return res.status(401).json({
-					success: false,
-					message: "Incorrect password.",
-				});
-			}
-			let token = await user.generateJWT();
-			res.cookie("userid", token, { maxAge: maxAge * 1000 }); // not sure if I should put it here
-			return res.status(200).json({
-				success: true,
-				user: user.getUserInfo(),
-				token: `Bearer ${token}`,
-				message: "Hurray! You are now logged in.",
-			});
-		} catch (err) {
-			return res.status(500).json({
+router.post(LOGIN_URL, AuthenticateValidations, Validator, async (req, res) => {
+	try {
+		let { email, password } = req.body;
+		let user = await User.findOne({ email });
+		if (!user) {
+			return res.status(404).json({
 				success: false,
-				message: "An error occurred.",
+				message: "email not found.",
 			});
 		}
+		if (!(await user.comparePassword(password))) {
+			return res.status(401).json({
+				success: false,
+				message: "Incorrect password.",
+			});
+		}
+		let token = await user.generateJWT();
+		res.cookie("userid", token, { maxAge: maxAge * 1000 }); // not sure if I should put it here
+		return res.status(200).json({
+			success: true,
+			user: user.getUserInfo(),
+			token: `Bearer ${token}`,
+			message: "Hurray! You are now logged in.",
+		});
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
+			message: "An error occurred.",
+		});
 	}
-);
+});
 
 /**
  * @description To get the authenticated user's profile
@@ -141,7 +131,7 @@ router.post(
  * @access Private
  * @type GET
  */
-router.get("/api/authenticate", userAuth, async (req, res) => {
+router.get("/authenticate", userAuth, async (req, res) => {
 	return res.status(200).json({
 		user: req.user,
 	});
@@ -153,24 +143,20 @@ router.get("/api/authenticate", userAuth, async (req, res) => {
  * @access Public
  * @type POST
  */
-router.put(
-	"/api/reset-password",
-	ResetPassword,
-	Validator,
-	async (req, res) => {
-		try {
-			let { email } = req.body;
-			let user = await User.findOne({ email });
-			if (!user) {
-				return res.status(404).json({
-					success: false,
-					message: "User with the email is not found.",
-				});
-			}
-			user.generatePasswordReset();
-			await user.save();
-			// Sent the password reset Link in the email.
-			let html = `
+router.put("/reset-password", ResetPassword, Validator, async (req, res) => {
+	try {
+		let { email } = req.body;
+		let user = await User.findOne({ email });
+		if (!user) {
+			return res.status(404).json({
+				success: false,
+				message: "User with the email is not found.",
+			});
+		}
+		user.generatePasswordReset();
+		await user.save();
+		// Sent the password reset Link in the email.
+		let html = `
         <div>
             <h1>Hello, ${user.username}</h1>
             <p>Please click the following link to reset your password.</p>
@@ -178,24 +164,23 @@ router.put(
             <a href="${DOMAIN}users/reset-password-now/${user.resetPasswordToken}">Verify Now</a>
         </div>
       `;
-			await sendMail(
-				user.email,
-				"Reset Password",
-				"Please reset your password.",
-				html
-			);
-			return res.status(404).json({
-				success: true,
-				message: "Password reset link is sent your email.",
-			});
-		} catch (err) {
-			return res.status(500).json({
-				success: false,
-				message: "An error occurred.",
-			});
-		}
+		await sendMail(
+			user.email,
+			"Reset Password",
+			"Please reset your password.",
+			html
+		);
+		return res.status(404).json({
+			success: true,
+			message: "Password reset link is sent your email.",
+		});
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
+			message: "An error occurred.",
+		});
 	}
-);
+});
 
 /**
  * @description To resnder reset password page
@@ -228,7 +213,7 @@ router.get("/reset-password-now/:resetPasswordToken", async (req, res) => {
  * @access Restricted via email
  * @type POST
  */
-router.post("/api/reset-password-now", async (req, res) => {
+router.post("/reset-password-now", async (req, res) => {
 	try {
 		let { resetPasswordToken, password } = req.body;
 		let user = await User.findOne({

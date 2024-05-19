@@ -7,7 +7,7 @@ import passport from "passport";
 import { json } from "body-parser";
 
 // Import Application Constants
-import { DB, PORT } from "./constants";
+import { DB, PORT, USER_API, PROFILE_API } from "./constants";
 
 // Router imports
 import userApis from "./apis/users";
@@ -26,8 +26,8 @@ app.use(passport.initialize());
 app.use(express.static(join(__dirname, "./uploads")));
 
 // Inject Sub router and apis
-app.use("/users", userApis);
-app.use("/profiles", profileApis);
+app.use(USER_API, userApis);
+app.use(PROFILE_API, profileApis);
 
 const main = async () => {
 	try {

@@ -1,0 +1,9 @@
+// export const API_ENDPOINT = "https://localhost:8000";
+export const APP_NAME = "MyBulletJournal";
+export const APP_BACKEND_PORT = 8000;
+export const APP_FRONTEND_PORT = 5123;
+export const APP_USER_API = "/api/users";
+export const APP_PROFILE_API = "/api/profiles";
+export const APP_SIGNUP_URL = "/register";
+export const APP_LOGIN_URL = "/authenticate";
+export const APP_VERIFYACCOUNTCODE_URL = "/verify-now/:verificationCode";
