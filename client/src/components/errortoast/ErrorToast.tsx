@@ -10,7 +10,7 @@ export interface ToastProps {
 }
 
 const Toast: React.FC<ToastProps> = (props) => {
-	const { destroy, content, title, duration = 3000, id } = props;
+	const { destroy, content, title, duration = 0, id } = props;
 
 	useEffect(() => {
 		if (!duration) return;
@@ -33,7 +33,7 @@ const Toast: React.FC<ToastProps> = (props) => {
 			<div className='toast-header'>
 				<img src={ballonicon} className='rounded me-2' alt='...' />
 				<strong className='me-auto'>{title}</strong>
-				<small className='text-body-secondary'>11 mins ago</small>
+				{/* <small className='text-body-secondary'>11 mins ago</small> */}
 				<button
 					type='button'
 					className='btn-close'

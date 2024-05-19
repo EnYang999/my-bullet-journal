@@ -46,10 +46,8 @@ const FormField: React.FC<FormFieldProps> = ({
 		placement: "top",
 		strategy: "absolute",
 		open: isOpen,
-		onOpenChange(isOpen, event, reason) {
+		onOpenChange(isOpen) {
 			setIsOpen(isOpen);
-			event && console.log(event); // e.g. MouseEvent
-			reason && console.log(reason); // e.g. 'hover'
 		},
 		middleware: [
 			flip(),
@@ -87,10 +85,7 @@ const FormField: React.FC<FormFieldProps> = ({
 				}}
 				required
 				ref={refs.setReference}
-				{...getReferenceProps({
-					onClick: () => console.log("clicked"),
-					onFocus: () => console.log("focused"),
-				})}
+				{...getReferenceProps({})}
 			/>
 			<label htmlFor={id}>{label}</label>
 			{extraAction && extraIconClass && (
