@@ -44,6 +44,8 @@ const Login: React.FC = () => {
 	const handleSignup = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		try {
+			console.log("signup click");
+
 			if (
 				lowerValidated &&
 				upperValidated &&
