@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "../errortoast/ErrorToastManager";
 import FormField from "./formAccount";
 import OverlayPanel from "./overlayPanel";
+import * as constants from "../../../../common/constants";
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
 	const [type, setType] = useState("password");
@@ -28,10 +29,13 @@ const Login: React.FC = () => {
 	const handleLogin = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		try {
-			await axios.post("http://localhost:8000/login", {
-				email,
-				password,
-			});
+			await axios.post(
+				`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_LOGIN_URL}`,
+				{
+					email,
+					password,
+				}
+			);
 		} catch (error: any) {
 			if (error.response) {
 				toast.show({
@@ -55,15 +59,28 @@ const Login: React.FC = () => {
 				isValidNameCharacters &&
 				isValidEmail
 			) {
-				const response = await axios.post("http://localhost:8000/signup", {
-					email,
-					username: userName,
-					password,
-				});
+				const response = await axios.post(
+					`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_SIGNUP_URL}`,
+					{
+						email,
+						username: userName,
+						password,
+					}
+				);
 				if (response.status === 201) {
 					console.log("User signed up successfully:", response.data.user);
+					toast.show({
+						title: "Successfully",
+						content: "Please Verify ",
+						duration: 10000,
+					});
 				} else {
 					console.error("Error:", response.data.error);
+					toast.show({
+						title: "Error",
+						content: response.data.error,
+						duration: 10000,
+					});
 				}
 			} else {
 				toast.show({
