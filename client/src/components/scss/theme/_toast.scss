@@ -7,8 +7,11 @@
     flex-direction: column;
     width: 250px;
     height: 200px;
+    background-color: rgb(25, 0, 255);
 }
-
+.my-toast {
+    background-color: red;
+}
 #toast-container-main > div {
     background-color: rgba(0, 0, 0, 0.15);
     color: white;
@@ -19,8 +22,8 @@
     flex-direction: column;
     justify-content: center;
     padding: 12px;
-    animation: slide-in 0.2s;
-    transition: all 0.3s ease;
+    // animation: slide-in 0.2s;
+    // transition: all 0.3s ease;
 }
 
 #toast-container-main .toast-header {

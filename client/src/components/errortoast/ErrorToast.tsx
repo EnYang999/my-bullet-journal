@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import "../scss/theme/_toast.scss";
+import React, { useEffect, memo } from "react";
+// import "../scss/theme/_toast.scss";
 import ballonicon from "../../assets/login/balloon-heart.svg";
 export interface ToastProps {
 	id: string;
@@ -14,6 +14,7 @@ const Toast: React.FC<ToastProps> = (props) => {
 
 	useEffect(() => {
 		if (!duration) return;
+		console.log(duration);
 
 		const timer = setTimeout(() => {
 			destroy();
@@ -24,7 +25,7 @@ const Toast: React.FC<ToastProps> = (props) => {
 
 	return (
 		<div
-			className={`toast`}
+			className={`my-toast`}
 			role='alert'
 			aria-live='assertive'
 			aria-atomic='true'
@@ -50,4 +51,4 @@ const Toast: React.FC<ToastProps> = (props) => {
 const shouldRerender = (prevProps: ToastProps, nextProps: ToastProps) => {
 	return prevProps.id === nextProps.id;
 };
-export default React.memo(Toast, shouldRerender);
+export default memo(Toast, shouldRerender);

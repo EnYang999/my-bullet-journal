@@ -69,7 +69,7 @@ const Login: React.FC = () => {
 				toast.show({
 					title: "Error",
 					content: "please enter valid input",
-					duration: 5000,
+					duration: 3000,
 				});
 			}
 		} catch (error: any) {
@@ -77,7 +77,7 @@ const Login: React.FC = () => {
 				toast.show({
 					title: "Error From catch",
 					content: error.response.data.error,
-					duration: 5000,
+					duration: 3000,
 				});
 			}
 		}
