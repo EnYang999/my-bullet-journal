@@ -26,8 +26,6 @@ export class ToastManager {
 
 	public show(options: ToastOptions): void {
 		this.initialize();
-		console.log(options.title);
-		console.log(options.duration);
 
 		const toastId = Math.random().toString(36);
 		const toast: ToastProps = {

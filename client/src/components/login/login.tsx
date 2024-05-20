@@ -71,7 +71,7 @@ const Login: React.FC = () => {
 					console.log("User signed up successfully:", response.data.user);
 					toast.show({
 						title: "Successfully",
-						content: "Please Verify ",
+						content: "Please Verify Your Email",
 						duration: 10000,
 					});
 				} else {
@@ -86,15 +86,17 @@ const Login: React.FC = () => {
 				toast.show({
 					title: "Error",
 					content: "please enter valid input",
-					duration: 3000,
+					duration: 10000,
 				});
 			}
 		} catch (error: any) {
 			if (error.response) {
+				console.log(error.response.data.error);
+
 				toast.show({
-					title: "Error From catch",
-					content: error.response.data.error,
-					duration: 3000,
+					title: "Error",
+					content: "You might registered, try login first",
+					duration: 10000,
 				});
 			}
 		}

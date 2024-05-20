@@ -14,7 +14,6 @@ const Toast: React.FC<ToastProps> = (props) => {
 
 	useEffect(() => {
 		if (!duration) return;
-		console.log(duration);
 
 		const timer = setTimeout(() => {
 			destroy();
