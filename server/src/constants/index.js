@@ -15,3 +15,5 @@ export const USER_API = Constants.APP_USER_API;
 export const PROFILE_API = Constants.APP_PROFILE_API;
 export const SIGNUP_URL = Constants.APP_SIGNUP_URL;
 export const LOGIN_URL = Constants.APP_LOGIN_URL;
+export const RESET_PASSWORD = Constants.APP_RESET_PASSWORD;
+export const RESET_PASSWORD_NOW = Constants.APP_RESET_PASSWORD_NOW;

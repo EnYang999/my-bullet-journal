@@ -29,14 +29,25 @@ const Login: React.FC = () => {
 	const handleLogin = async (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		try {
-			await axios.post(
+			const response = await axios.post(
 				`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_LOGIN_URL}`,
 				{
 					email,
 					password,
-				},
-				{ withCredentials: true }
+				}
+				// { withCredentials: true }
 			);
+			console.log(response);
+
+			if (response.data.success) {
+				console.log("User signed up successfully:", response.data.user);
+				toast.show({
+					title: "Successfully",
+					content: "Login successfully",
+					duration: 15000,
+				});
+				window.location.assign("/");
+			}
 		} catch (error: any) {
 			console.log("error from client", error);
 

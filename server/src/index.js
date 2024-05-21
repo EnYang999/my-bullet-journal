@@ -20,7 +20,13 @@ require("./middlewares/passport-middleware");
 const app = express();
 
 // Apply Application Middlewares
-app.use(cors());
+const corsOptions = {
+	origin: "http://localhost:5173",
+	credentials: true,
+	// access-control-allow-credentials:true,
+	optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use(json());
 app.use(passport.initialize());
 app.use(express.static(join(__dirname, "./uploads")));
