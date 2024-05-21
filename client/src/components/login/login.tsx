@@ -34,9 +34,12 @@ const Login: React.FC = () => {
 				{
 					email,
 					password,
-				}
+				},
+				{ withCredentials: true }
 			);
 		} catch (error: any) {
+			console.log("error from client", error);
+
 			if (error.response) {
 				toast.show({
 					title: "Error",
@@ -65,15 +68,17 @@ const Login: React.FC = () => {
 						email,
 						username: userName,
 						password,
-					}
+					},
+					{ withCredentials: true }
 				);
 				if (response.status === 201) {
 					console.log("User signed up successfully:", response.data.user);
 					toast.show({
 						title: "Successfully",
 						content: "Please Verify Your Email",
-						duration: 10000,
+						duration: 15000,
 					});
+					window.location.assign("/");
 				} else {
 					console.error("Error:", response.data.error);
 					toast.show({

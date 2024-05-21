@@ -5,7 +5,7 @@ import express from "express";
 import mongoose from "mongoose";
 import passport from "passport";
 import { json } from "body-parser";
-
+// import cookieParser from "cookie-parser";
 // Import Application Constants
 import { DB, PORT, USER_API, PROFILE_API } from "./constants";
 
@@ -24,7 +24,7 @@ app.use(cors());
 app.use(json());
 app.use(passport.initialize());
 app.use(express.static(join(__dirname, "./uploads")));
-
+// app.use(cookieParser());
 // Inject Sub router and apis
 app.use(USER_API, userApis);
 app.use(PROFILE_API, profileApis);

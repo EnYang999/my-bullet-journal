@@ -110,7 +110,7 @@ router.post(LOGIN_URL, AuthenticateValidations, Validator, async (req, res) => {
 			});
 		}
 		let token = await user.generateJWT();
-		res.cookie("userid", token, { maxAge: maxAge * 1000 }); // not sure if I should put it here
+		// res.cookie("userid", token); // not sure if I should put it here
 		return res.status(200).json({
 			success: true,
 			user: user.getUserInfo(),
