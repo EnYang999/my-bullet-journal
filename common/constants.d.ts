@@ -6,4 +6,6 @@ export const APP_PROFILE_API  : string;
 export const APP_SIGNUP_URL : string;
 export const APP_LOGIN_URL  : string;
 export const APP_VERIFYACCOUNTCODE_URL : string;
-export const API_ENDPOINT : string;
+export const API_ENDPOINT: string;
+export const APP_RESET_PASSWORD : string;
+export const APP_RESET_PASSWORD_NOW : string;

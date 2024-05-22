@@ -100,8 +100,9 @@ const FormField: React.FC<FormFieldProps> = ({
 					style={floatingStyles}
 					{...getFloatingProps()}
 				>
-					{validations?.map((validation) => (
+					{validations?.map((validation, index) => (
 						<div
+							key={index}
 							className={`validation-message-wrapper ${
 								validation.className
 							} input-feedback ${

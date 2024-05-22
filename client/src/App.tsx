@@ -8,6 +8,7 @@ import AboutMeHeader from "./components/AboutMe/AboutMeHeader";
 import BookTab from "./components/BookTab/BookTab";
 import FullPage from "./components/Full-Page/FullPage";
 import UserProfileWrapper from "./components/UserProfile/UserProfileWrapper";
+import ResetPassword from "./components/login/ResetPassword";
 function App() {
 	return (
 		<Routes>
@@ -19,6 +20,7 @@ function App() {
 				<Route path=':month/:week' element={<BookTab />} />
 			</Route>
 			<Route path='/user/:userId' element={<UserProfileWrapper />} />
+			<Route path='/reset-password' element={<ResetPassword />} />
 		</Routes>
 	);
 }

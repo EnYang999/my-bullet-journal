@@ -5,6 +5,7 @@ import { toast } from "../errortoast/ErrorToastManager";
 import FormField from "./formAccount";
 import OverlayPanel from "./overlayPanel";
 import * as constants from "../../../../common/constants";
+import { useNavigate } from "react-router-dom";
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
 	const [type, setType] = useState("password");
@@ -19,7 +20,7 @@ const Login: React.FC = () => {
 	const [userName, setUserName] = useState("");
 	const [isValidEmail, setIsValidEmail] = useState(false);
 	const [email, setEmail] = useState("");
-
+	const navigate = useNavigate();
 	const handleSignUpClick = () => {
 		setSignUp(true);
 	};
@@ -40,7 +41,7 @@ const Login: React.FC = () => {
 			console.log(response);
 
 			if (response.data.success) {
-				console.log("User signed up successfully:", response.data.user);
+				console.log("User log in successfully:", response.data.user);
 				toast.show({
 					title: "Successfully",
 					content: "Login successfully",
@@ -58,6 +59,7 @@ const Login: React.FC = () => {
 					duration: 3000,
 				});
 			}
+			navigate("/");
 		}
 	};
 	const handleSignup = async (e: React.SyntheticEvent) => {
@@ -313,7 +315,9 @@ const Login: React.FC = () => {
 							valueChange={setPassword}
 							isSignup={false}
 						/>
-						<a href='#'>Forgot your password?</a>
+						<a href={`${constants.APP_RESET_PASSWORD}`}>
+							Forgot your password?
+						</a>
 						<button>Sign In</button>
 					</form>
 				</div>
