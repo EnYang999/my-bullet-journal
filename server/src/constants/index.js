@@ -17,3 +17,5 @@ export const SIGNUP_URL = Constants.APP_SIGNUP_URL;
 export const LOGIN_URL = Constants.APP_LOGIN_URL;
 export const RESET_PASSWORD = Constants.APP_RESET_PASSWORD;
 export const RESET_PASSWORD_NOW = Constants.APP_RESET_PASSWORD_NOW;
+export const API_ENDPOINT = Constants.API_ENDPOINT;
+export const FRONTEND_PORT = Constants.APP_FRONTEND_PORT;

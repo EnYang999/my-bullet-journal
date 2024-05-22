@@ -13,11 +13,14 @@ import {
 	SIGNUP_URL,
 	RESET_PASSWORD,
 	USER_API,
+	API_ENDPOINT,
+	FRONTEND_PORT,
 	RESET_PASSWORD_NOW,
 } from "../constants";
 import sendMail from "../functions/email-sender";
 import { userAuth } from "../middlewares/auth-guard";
 import Validator from "../middlewares/validator-middleware";
+import { log } from "console";
 
 const router = Router();
 
@@ -168,7 +171,7 @@ router.put(RESET_PASSWORD, ResetPassword, Validator, async (req, res) => {
             <h1>Hello, ${user.username}</h1>
             <p>Please click the following link to reset your password.</p>
             <p>If this password reset request is not created by your then you can inore this email.</p>
-            <a href="${DOMAIN}${USER_API}${RESET_PASSWORD_NOW}/${user.resetPasswordToken}">Verify Now</a>
+            <a href="${API_ENDPOINT}${FRONTEND_PORT}${RESET_PASSWORD_NOW}/${user.resetPasswordToken}">Verify Now</a>
         </div>
       `;
 		await sendMail(
@@ -195,9 +198,11 @@ router.put(RESET_PASSWORD, ResetPassword, Validator, async (req, res) => {
  * @access Restricted via email
  * @type GET
  */
-router.get(`${RESET_PASSWORD_NOW}/:resetPasswordToken`, async (req, res) => {
+router.post(`${RESET_PASSWORD_NOW}/:resetPasswordToken`, async (req, res) => {
 	try {
+		consola.log(`${RESET_PASSWORD_NOW}/:resetPasswordToken`);
 		let { resetPasswordToken } = req.params;
+		let { password } = req.body;
 		let user = await User.findOne({
 			resetPasswordToken,
 			resetPasswordExpiresIn: { $gt: Date.now() },
@@ -208,9 +213,35 @@ router.get(`${RESET_PASSWORD_NOW}/:resetPasswordToken`, async (req, res) => {
 				message: "Password reset token is invalid or has expired.",
 			});
 		}
-		return res.sendFile(join(__dirname, "../templates/password-reset.html"));
+		user.password = password;
+		user.resetPasswordToken = undefined;
+		user.resetPasswordExpiresIn = undefined;
+		await user.save();
+		// Send notification email about the password reset successfull process
+		let html = `
+        <div>
+            <h1>Hello, ${user.username}</h1>
+            <p>Your password is resetted successfully.</p>
+            <p>If this rest is not done by you then you can contact our team.</p>
+        </div>
+      `;
+		await sendMail(
+			user.email,
+			"Reset Password Successful",
+			"Your password is changed.",
+			html
+		);
+		return res.status(200).json({
+			success: true,
+			message:
+				"Your password reset request is complete and your password is resetted successfully. Login into your account with your new password.",
+		});
 	} catch (err) {
-		return res.sendFile(join(__dirname, "../templates/errors.html"));
+		// return res.sendFile(join(__dirname, "../templates/errors.html"));
+		return res.status(500).json({
+			success: false,
+			message: "something error.",
+		});
 	}
 });
 
@@ -219,7 +250,7 @@ router.get(`${RESET_PASSWORD_NOW}/:resetPasswordToken`, async (req, res) => {
  * @api /users/api/reset-password-now
  * @access Restricted via email
  * @type POST
- */
+
 router.post(`${RESET_PASSWORD_NOW}`, async (req, res) => {
 	try {
 		let { resetPasswordToken, password } = req.body;
@@ -263,5 +294,5 @@ router.post(`${RESET_PASSWORD_NOW}`, async (req, res) => {
 		});
 	}
 });
-
+ */
 export default router;

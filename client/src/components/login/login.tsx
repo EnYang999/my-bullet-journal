@@ -31,7 +31,7 @@ const Login: React.FC = () => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(
-				`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_LOGIN_URL}`,
+				`${constants.API_ENDPOINT}${constants.APP_BACKEND_PORT}${constants.APP_USER_API}${constants.APP_LOGIN_URL}`,
 				{
 					email,
 					password,
@@ -44,10 +44,12 @@ const Login: React.FC = () => {
 				console.log("User log in successfully:", response.data.user);
 				toast.show({
 					title: "Successfully",
-					content: "Login successfully",
+					content: "Login successfully, will direct you to the main page",
 					duration: 15000,
 				});
-				window.location.assign("/");
+				setTimeout(() => {
+					navigate("/");
+				}, 5000);
 			}
 		} catch (error: any) {
 			console.log("error from client", error);
@@ -59,7 +61,6 @@ const Login: React.FC = () => {
 					duration: 3000,
 				});
 			}
-			navigate("/");
 		}
 	};
 	const handleSignup = async (e: React.SyntheticEvent) => {
@@ -76,7 +77,7 @@ const Login: React.FC = () => {
 				isValidEmail
 			) {
 				const response = await axios.post(
-					`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_SIGNUP_URL}`,
+					`${constants.API_ENDPOINT}${constants.APP_BACKEND_PORT}${constants.APP_USER_API}${constants.APP_SIGNUP_URL}`,
 					{
 						email,
 						username: userName,
@@ -91,7 +92,9 @@ const Login: React.FC = () => {
 						content: "Please Verify Your Email",
 						duration: 15000,
 					});
-					window.location.assign("/");
+					setTimeout(() => {
+						navigate("/login");
+					}, 3000);
 				} else {
 					console.error("Error:", response.data.error);
 					toast.show({

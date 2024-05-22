@@ -12,11 +12,11 @@ const ResetPassword = () => {
 		e.preventDefault();
 		try {
 			console.log(
-				`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_RESET_PASSWORD}`
+				`${constants.API_ENDPOINT}${constants.APP_BACKEND_PORT}${constants.APP_USER_API}${constants.APP_RESET_PASSWORD}`
 			);
 
 			const response = await axios.put(
-				`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_RESET_PASSWORD}`,
+				`${constants.API_ENDPOINT}${constants.APP_BACKEND_PORT}${constants.APP_USER_API}${constants.APP_RESET_PASSWORD}`,
 				{ email }
 			);
 			if (response.data.success) {

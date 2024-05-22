@@ -4,7 +4,7 @@ import LandingPage from "./components/landingsection/LandingPage";
 
 import Login from "./components/login/login";
 import AboutMeHeader from "./components/AboutMe/AboutMeHeader";
-
+import ResetPasswordNow from "./components/login/ResetPasswordNow";
 import BookTab from "./components/BookTab/BookTab";
 import FullPage from "./components/Full-Page/FullPage";
 import UserProfileWrapper from "./components/UserProfile/UserProfileWrapper";
@@ -21,6 +21,10 @@ function App() {
 			</Route>
 			<Route path='/user/:userId' element={<UserProfileWrapper />} />
 			<Route path='/reset-password' element={<ResetPassword />} />
+			<Route
+				path='/reset-password-now/:resetPasswordToken'
+				element={<ResetPasswordNow />}
+			/>
 		</Routes>
 	);
 }
