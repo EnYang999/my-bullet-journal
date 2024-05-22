@@ -177,7 +177,7 @@ router.put(RESET_PASSWORD, ResetPassword, Validator, async (req, res) => {
 			"Please reset your password.",
 			html
 		);
-		return res.status(404).json({
+		return res.status(200).json({
 			success: true,
 			message: "Password reset link is sent your email.",
 		});

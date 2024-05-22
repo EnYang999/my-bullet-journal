@@ -23,10 +23,12 @@ const ResetPassword = () => {
 				setMessage("Password reset link has been sent to your email address.");
 				toast.show({
 					title: "Success",
-					content: "find the reset link in your email",
+					content:
+						"find the reset link in your email, page will direct to the main page",
 					duration: 15000,
 				});
 			} else {
+				console.log("in else");
 				console.log(response.data.message);
 
 				setMessage("Error: " + response.data.message);
@@ -36,8 +38,11 @@ const ResetPassword = () => {
 					duration: 15000,
 				});
 			}
-			navigate("/");
+			setTimeout(() => {
+				navigate("/");
+			}, 5000);
 		} catch (error) {
+			console.log("in catch");
 			console.log(error);
 
 			toast.show({
@@ -73,7 +78,7 @@ const ResetPassword = () => {
 							</div>
 						</form>
 
-						{message && <p>{message}</p>}
+						{message && <p color='black'>{message}</p>}
 					</div>
 				</div>
 			</div>
