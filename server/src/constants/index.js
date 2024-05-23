@@ -19,3 +19,4 @@ export const RESET_PASSWORD = Constants.APP_RESET_PASSWORD;
 export const RESET_PASSWORD_NOW = Constants.APP_RESET_PASSWORD_NOW;
 export const API_ENDPOINT = Constants.API_ENDPOINT;
 export const FRONTEND_PORT = Constants.APP_FRONTEND_PORT;
+export const AUTHENTICATE_TOKEN_NAME = Constants.APP_AUTHENTICATE_TOKEN_NAME;

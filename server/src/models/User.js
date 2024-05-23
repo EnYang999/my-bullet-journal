@@ -56,11 +56,11 @@ UserSchema.methods.generateJWT = async function () {
 		email: this.email,
 		id: this._id,
 	};
-	return await sign(payload, SECRET, { expiresIn: "1 day" });
+	return await sign(payload, SECRET, { expiresIn: "3 day" });
 };
 
 UserSchema.methods.generatePasswordReset = function () {
-	this.resetPasswordExpiresIn = Date.now() + 36000000;
+	this.resetPasswordExpiresIn = Date.now() + 60 * 60 * 10000;
 	this.resetPasswordToken = randomBytes(20).toString("hex");
 };
 

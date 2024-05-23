@@ -35,8 +35,8 @@ const Login: React.FC = () => {
 				{
 					email,
 					password,
-				}
-				// { withCredentials: true }
+				},
+				{ withCredentials: true }
 			);
 			console.log(response);
 

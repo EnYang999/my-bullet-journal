@@ -96,8 +96,8 @@ const LandingNavbar = () => {
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./gallery'>
-								Gallery
+							<a className='nav-link ' href='./profile'>
+								Profile
 							</a>
 						</li>
 						<li className='nav-item'>

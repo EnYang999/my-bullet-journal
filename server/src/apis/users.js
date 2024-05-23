@@ -16,11 +16,11 @@ import {
 	API_ENDPOINT,
 	FRONTEND_PORT,
 	RESET_PASSWORD_NOW,
+	AUTHENTICATE_TOKEN_NAME,
 } from "../constants";
 import sendMail from "../functions/email-sender";
 import { userAuth } from "../middlewares/auth-guard";
 import Validator from "../middlewares/validator-middleware";
-import { log } from "console";
 
 const router = Router();
 
@@ -120,7 +120,9 @@ router.post(LOGIN_URL, AuthenticateValidations, Validator, async (req, res) => {
 			});
 		}
 		let token = await user.generateJWT();
-		// res.cookie("userid", token); // not sure if I should put it here
+		res.cookie(AUTHENTICATE_TOKEN_NAME, token, {
+			maxAge: 3 * 24 * 60 * 60 * 1000,
+		}); // max-age: 3 days. not sure if I should put it here
 		return res.status(200).json({
 			success: true,
 			user: user.getUserInfo(),

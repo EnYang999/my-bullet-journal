@@ -9,3 +9,4 @@ export const APP_LOGIN_URL = "/authenticate";
 // export const APP_VERIFYACCOUNTCODE_URL = "/verify-now/:verificationCode";
 export const APP_RESET_PASSWORD = "/reset-password";
 export const APP_RESET_PASSWORD_NOW = "/reset-password-now";
+export const APP_AUTHENTICATE_TOKEN_NAME = "AUTHENTICATE-GUARD";
