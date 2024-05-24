@@ -4,7 +4,14 @@ import axios from "axios";
 import { toast } from "../errortoast/ErrorToastManager";
 import FormField from "./formAccount";
 import OverlayPanel from "./overlayPanel";
-import * as constants from "../../../../common/constants";
+import {
+	API_ENDPOINT,
+	APP_BACKEND_PORT,
+	APP_USER_API,
+	APP_LOGIN_URL,
+	APP_SIGNUP_URL,
+	APP_RESET_PASSWORD,
+} from "../../../../common/constants";
 import { useNavigate } from "react-router-dom";
 const Login: React.FC = () => {
 	const [isSignUp, setSignUp] = useState<boolean>(false);
@@ -31,7 +38,7 @@ const Login: React.FC = () => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(
-				`${constants.API_ENDPOINT}${constants.APP_BACKEND_PORT}${constants.APP_USER_API}${constants.APP_LOGIN_URL}`,
+				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}${APP_LOGIN_URL}`,
 				{
 					email,
 					password,
@@ -77,7 +84,7 @@ const Login: React.FC = () => {
 				isValidEmail
 			) {
 				const response = await axios.post(
-					`${constants.API_ENDPOINT}${constants.APP_BACKEND_PORT}${constants.APP_USER_API}${constants.APP_SIGNUP_URL}`,
+					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}${APP_SIGNUP_URL}`,
 					{
 						email,
 						username: userName,
@@ -318,9 +325,7 @@ const Login: React.FC = () => {
 							valueChange={setPassword}
 							isSignup={false}
 						/>
-						<a href={`${constants.APP_RESET_PASSWORD}`}>
-							Forgot your password?
-						</a>
+						<a href={`${APP_RESET_PASSWORD}`}>Forgot your password?</a>
 						<button>Sign In</button>
 					</form>
 				</div>

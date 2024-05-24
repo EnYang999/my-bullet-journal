@@ -1,8 +1,43 @@
 import { useState, useEffect } from "react";
+import Cookies from "universal-cookie";
+import { jwtDecode } from "jwt-decode";
+import { APP_AUTHENTICATE_TOKEN_NAME } from "../../../../common/constants";
+interface User {
+	id: string;
+	username: string;
+	_id: string;
+}
 const LandingNavbar = () => {
 	const [prevScrollPos, setPrevScrollPos] = useState(0);
 	const [visible, setVisible] = useState(true);
 	const [showCollapse, setShowCollapse] = useState(false);
+	const cookies = new Cookies();
+	const [user, setUser] = useState<User | null>(null);
+	const [currentCookie, setCurrentCookie] = useState<string | null>(null);
+	let jwtCookie = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
+	console.log(APP_AUTHENTICATE_TOKEN_NAME);
+
+	console.log(jwtCookie);
+	useEffect(() => {
+		let jwtCookie = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
+		console.log(APP_AUTHENTICATE_TOKEN_NAME);
+
+		console.log(jwtCookie);
+
+		if (jwtCookie && jwtCookie !== currentCookie) {
+			setCurrentCookie(jwtCookie);
+
+			const decodedToken: User = jwtDecode(jwtCookie);
+			console.log(decodedToken);
+			// console.log(decodedToken);
+			setUser((prevUser) => {
+				if (!prevUser) {
+					return decodedToken;
+				}
+				return prevUser;
+			});
+		}
+	}, [cookies, currentCookie, setUser]);
 	const handleScroll = () => {
 		const currentScrollPos = window.scrollY;
 		setVisible(
@@ -97,12 +132,12 @@ const LandingNavbar = () => {
 						</li>
 						<li className='nav-item'>
 							<a className='nav-link ' href='./profile'>
-								Profile
+								{user ? user.username : "Profile"}
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./login'>
-								Log In
+							<a className='nav-link ' href={user ? "./logout" : "./login"}>
+								{user ? "Log Out" : "Log In"}
 							</a>
 						</li>
 					</ul>

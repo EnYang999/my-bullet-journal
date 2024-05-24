@@ -29,6 +29,7 @@
     "isotope-layout": "^3.0.6",
     "jarallax": "^2.1.4",
     "jquery": "^3.7.1",
+    "jwt-decode": "^4.0.0",
     "konva": "^9.3.3",
     "mapbox-gl": "^3.0.1",
     "node-sass": "^9.0.0",
@@ -44,7 +45,8 @@
     "react-scripts": "^3.0.1",
     "react-unity-webgl": "^9.5.1",
     "reactstrap": "^9.2.2",
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.5",
+    "universal-cookie": "^7.1.4"
   },
   "devDependencies": {
     "@types/flickity": "^2.2.11",
