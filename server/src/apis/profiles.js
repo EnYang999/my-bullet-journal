@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { DOMAIN } from "../constants";
+import { DOMAIN, PORT } from "../constants";
 import { Profile, User } from "../models";
 import uploader from "../middlewares/uploader";
 import { userAuth } from "../middlewares/auth-guard";
@@ -13,13 +13,13 @@ const router = Router();
  * @access Private
  */
 router.post(
-	"/api/create-profile",
+	"/create-profile",
 	userAuth,
 	uploader.single("avatar"),
 	async (req, res) => {
 		try {
 			let { body, file, user } = req;
-			let path = DOMAIN + file.path.split("uploads/")[1];
+			let path = DOMAIN + PORT + file.path.split("uploads")[1];
 			let profile = new Profile({
 				social: body,
 				account: user._id,
@@ -45,7 +45,7 @@ router.post(
  * @access Private
  * @type GET
  */
-router.get("/api/my-profile", userAuth, async (req, res) => {
+router.get("/my-profile", userAuth, async (req, res) => {
 	try {
 		let profile = await Profile.findOne({ account: req.user._id }).populate(
 			"account",
@@ -76,13 +76,13 @@ router.get("/api/my-profile", userAuth, async (req, res) => {
  * @access Private
  */
 router.put(
-	"/api/update-profile",
+	"/update-profile",
 	userAuth,
 	uploader.single("avatar"),
 	async (req, res) => {
 		try {
 			let { body, file, user } = req;
-			let path = DOMAIN + file.path.split("uploads/")[1];
+			let path = DOMAIN + PORT + file.path.split("uploads/")[1];
 			let profile = await Profile.findOneAndUpdate(
 				{ account: user._id },
 				{ social: body, avatar: path },
@@ -108,7 +108,7 @@ router.put(
  * @access Public
  * @type GET
  */
-router.get("/api/profile-user/:username", async (req, res) => {
+router.get("/profile-user/:username", async (req, res) => {
 	try {
 		let { username } = req.params;
 		let user = await User.findOne({ username });
