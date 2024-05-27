@@ -82,7 +82,7 @@ router.put(
 	async (req, res) => {
 		try {
 			let { body, file, user } = req;
-			let path = DOMAIN + PORT + file.path.split("uploads/")[1];
+			let path = DOMAIN + PORT + file.path.split("uploads")[1];
 			let profile = await Profile.findOneAndUpdate(
 				{ account: user._id },
 				{ social: body, avatar: path },
@@ -108,10 +108,10 @@ router.put(
  * @access Public
  * @type GET
  */
-router.get("/profile-user/:username", async (req, res) => {
+router.get("/profile-user/:_id", async (req, res) => {
 	try {
-		let { username } = req.params;
-		let user = await User.findOne({ username });
+		let { _id } = req.params;
+		let user = await User.findOne({ _id });
 		if (!user) {
 			return res.status(404).json({
 				success: false,
