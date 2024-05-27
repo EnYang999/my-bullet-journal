@@ -13,6 +13,7 @@ import {
 	SIGNUP_URL,
 	RESET_PASSWORD,
 	USER_API,
+	PORT,
 	API_ENDPOINT,
 	FRONTEND_PORT,
 	RESET_PASSWORD_NOW,
@@ -49,7 +50,7 @@ router.post(SIGNUP_URL, RegisterValidations, Validator, async (req, res) => {
 		});
 		await user.save();
 		// Send the email to the user with a varification link
-		let html = `<div><h1>Hello, ${user.username}</h1><p>Please click the following link to verify your account</p><a href="${DOMAIN}users/verify-now/${user.verificationCode}">Verify Now</a></div>`;
+		let html = `<div><h1>Hello, ${user.username}</h1><p>Please click the following link to verify your account</p><a href="${DOMAIN}${PORT}/users/verify-now/${user.verificationCode}">Verify Now</a></div>`;
 		await sendMail(
 			user.email,
 			"Verify Account",
