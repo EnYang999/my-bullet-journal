@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import {
+	API_ENDPOINT,
+	APP_BACKEND_PORT,
+	APP_PROFILE_API,
+	APP_PROFILE_GET_BY_USERID,
+} from "../../../../common/constants";
 type UserProfileProps = {
 	userId: string;
 };
@@ -18,7 +23,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
 		const fetchUser = async () => {
 			try {
 				const { data } = await axios.get(
-					`http://localhost:8000/user/${userId}`
+					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}${APP_PROFILE_GET_BY_USERID}/:${userId}`
 				);
 				setUser(data);
 			} catch (error) {

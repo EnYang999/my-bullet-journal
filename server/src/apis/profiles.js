@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { DOMAIN, PORT } from "../constants";
+import { DOMAIN, PORT, PROFILE_GET_BY_USERID } from "../constants";
 import { Profile, User } from "../models";
 import uploader from "../middlewares/uploader";
 import { userAuth } from "../middlewares/auth-guard";
@@ -82,12 +82,32 @@ router.put(
 	async (req, res) => {
 		try {
 			let { body, file, user } = req;
-			let path = DOMAIN + PORT + file.path.split("uploads")[1];
+			if (!user) {
+				return res.status(404).json({
+					success: false,
+					message: "Can't find the user.",
+				});
+			}
+
+			let updateFields = { social: body };
+
+			if (file) {
+				let path = `${DOMAIN}${PORT}${file.path.split("uploads")[1]}`;
+				updateFields.avatar = path;
+			}
+
 			let profile = await Profile.findOneAndUpdate(
 				{ account: user._id },
-				{ social: body, avatar: path },
+				updateFields,
 				{ new: true }
 			);
+
+			if (!profile) {
+				return res.status(404).json({
+					success: false,
+					message: "Your profile is not available.",
+				});
+			}
 			return res.status(200).json({
 				success: true,
 				message: "Your profile is now updated",
@@ -96,7 +116,7 @@ router.put(
 		} catch (err) {
 			return res.status(400).json({
 				success: false,
-				message: "Unable to get the profile.",
+				message: "Unable to update the profile.",
 			});
 		}
 	}
@@ -108,7 +128,7 @@ router.put(
  * @access Public
  * @type GET
  */
-router.get("/profile-user/:_id", async (req, res) => {
+router.get(`${PROFILE_GET_BY_USERID}/:_id`, async (req, res) => {
 	try {
 		let { _id } = req.params;
 		let user = await User.findOne({ _id });
