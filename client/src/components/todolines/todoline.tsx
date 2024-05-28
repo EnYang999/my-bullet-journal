@@ -6,7 +6,7 @@ interface Props {
 
 export const ToDoLine = ({
 	className,
-	boxId, // sep-week-3-tuesday
+	boxId, // sep-week-3-tuesday-num
 }: Props): JSX.Element => {
 	const [inputValue, setInputValue] = useState<string>("");
 	const [isChecked, setIsChecked] = useState<boolean>(false);

@@ -7,12 +7,12 @@ import passport from "passport";
 import { json } from "body-parser";
 // import cookieParser from "cookie-parser";
 // Import Application Constants
-import { DB, PORT, USER_API, PROFILE_API } from "./constants";
+import { DB, PORT, USER_API, PROFILE_API, TODO_API } from "./constants";
 
 // Router imports
 import userApis from "./apis/users";
 import profileApis from "./apis/profiles";
-
+import todoApis from "./apis/todos";
 // Import passport middleware
 require("./middlewares/passport-middleware");
 
@@ -34,6 +34,7 @@ app.use(express.static(join(__dirname, "./uploads")));
 // Inject Sub router and apis
 app.use(USER_API, userApis);
 app.use(PROFILE_API, profileApis);
+app.use(TODO_API, todoApis);
 
 const main = async () => {
 	try {

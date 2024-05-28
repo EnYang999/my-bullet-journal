@@ -11,3 +11,4 @@ export const APP_RESET_PASSWORD : string;
 export const APP_RESET_PASSWORD_NOW: string;
 export const APP_AUTHENTICATE_TOKEN_NAME: string;
 export const APP_PROFILE_GET_BY_USERID: string;
+export const APP_TODO_API: string;

@@ -49,7 +49,7 @@ router.get("/my-profile", userAuth, async (req, res) => {
 	try {
 		let profile = await Profile.findOne({ account: req.user._id }).populate(
 			"account",
-			"name email username"
+			"email username"
 		);
 		if (!profile) {
 			return res.status(404).json({
@@ -75,7 +75,7 @@ router.get("/my-profile", userAuth, async (req, res) => {
  * @api /profiles/api/update-profile
  * @access Private
  */
-router.put(
+router.patch(
 	"/update-profile",
 	userAuth,
 	uploader.single("avatar"),
