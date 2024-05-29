@@ -16,10 +16,6 @@ router.post(
 		try {
 			const { body, user } = req;
 			const { todoMonth, todoWeek, todoDay, todoNum } = req.params;
-			console.log("============================");
-			console.log(body);
-			console.log(user);
-			console.log(todoMonth, todoWeek, todoDay, todoNum);
 			const todo = new Todo({
 				account: user._id,
 				description: body.description,
@@ -29,12 +25,7 @@ router.post(
 					todoDay: todoDay,
 					todoNum: todoNum,
 				},
-				completed: body.completed,
 			});
-			console.log(todo);
-			// const savedTodo = await todo.save();
-			// console.log(savedTodo);
-			// return res.status(201).json(savedTodo);
 			await todo.save();
 			return res.status(201).json({
 				success: true,
@@ -55,24 +46,28 @@ router.post(
  * @access Private
  * @type POST
  */
-router.post(
+router.patch(
 	"/to-do-check/:todoMonth/:todoWeek/:todoDay/:todoNum",
 	userAuth,
 	async (req, res) => {
 		try {
 			const { body, user } = req;
 			const { todoMonth, todoWeek, todoDay, todoNum } = req.params;
-			console.log(body);
-			const todo = new Todo({
-				completed: body.completed,
-			});
-
-			const savedTodo = await todo.save();
-			res.status(201).json(savedTodo);
-		} catch {
+			const todoDate = {
+				todoMonth: todoMonth,
+				todoWeek: todoWeek,
+				todoDay: todoDay,
+				todoNum: todoNum,
+			};
+			const todos = await Todo.findOne({ todoDate, account: req.user._id });
+			todos.completed = body.completed;
+			await todos.save();
+			res.status(201).json(todos);
+		} catch (err) {
 			return res.status(400).json({
 				success: false,
-				message: "Unable to create the todo.",
+				message: "Unable to create the todo check.",
+				error: err.message,
 			});
 		}
 	}
@@ -90,12 +85,13 @@ router.get(
 		try {
 			const { todoMonth, todoWeek, todoDay, todoNum } = req.params;
 
-			const todos = await Todo.find({
+			const todoDate = {
 				todoMonth: todoMonth,
 				todoWeek: todoWeek,
 				todoDay: todoDay,
 				todoNum: todoNum,
-			});
+			};
+			const todos = await Todo.findOne({ todoDate, account: req.user._id });
 
 			if (todos.length === 0) {
 				return res
