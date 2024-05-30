@@ -79,7 +79,7 @@ router.patch(
  * @type GET
  */
 router.get(
-	"to-do/:todoMonth/:todoWeek/:todoDay/:todoNum",
+	"/to-do/:todoMonth/:todoWeek/:todoDay/:todoNum",
 	userAuth,
 	async (req, res) => {
 		try {
@@ -111,25 +111,25 @@ router.get(
  * @access Private
  * @type GET
  */
-router.patch("/:id", async (req, res) => {
-	try {
-		const updatedTodoData = {
-			description: req.body.description,
-			todoDate: req.body.todoDate,
-			completed: req.body.completed,
-		};
+// router.patch("/:id", async (req, res) => {
+// 	try {
+// 		const updatedTodoData = {
+// 			description: req.body.description,
+// 			todoDate: req.body.todoDate,
+// 			completed: req.body.completed,
+// 		};
 
-		const updatedTodo = await Todo.findByIdAndUpdate(
-			req.params.id,
-			updatedTodoData,
-			{ new: true }
-		);
-		if (!updatedTodo)
-			return res.status(404).json({ message: "Todo not found" });
+// 		const updatedTodo = await Todo.findByIdAndUpdate(
+// 			req.params.id,
+// 			updatedTodoData,
+// 			{ new: true }
+// 		);
+// 		if (!updatedTodo)
+// 			return res.status(404).json({ message: "Todo not found" });
 
-		res.status(200).json(updatedTodo);
-	} catch (err) {
-		res.status(400).json({ message: err.message });
-	}
-});
+// 		res.status(200).json(updatedTodo);
+// 	} catch (err) {
+// 		res.status(400).json({ message: err.message });
+// 	}
+// });
 export default router;

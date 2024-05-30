@@ -33,6 +33,7 @@ const TodosSchema = new Schema(
 		},
 		description: {
 			type: String,
+			default: "",
 			trim: true,
 		},
 		todoDate: {
