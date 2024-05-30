@@ -1,36 +1,63 @@
 import { userAuth } from "../middlewares/auth-guard";
 import { Todo } from "../models";
 import { Router } from "express";
+import { TODO_POST } from "../constants";
 const router = Router();
 
 /**
- * @description To Create User's today's todo
+ * @description To Create or Update User's today's todo
  * @api /api/todos/to-do
  * @access Private
  * @type POST
  */
 router.post(
-	"/to-do-line/:todoMonth/:todoWeek/:todoDay/:todoNum",
+	`${TODO_POST}/:todoMonth/:todoWeek/:todoDay/:todoNum`,
 	userAuth,
 	async (req, res) => {
 		try {
+			// get data
 			const { body, user } = req;
 			const { todoMonth, todoWeek, todoDay, todoNum } = req.params;
-			const todo = new Todo({
-				account: user._id,
-				description: body.description,
-				todoDate: {
-					todoMonth: todoMonth,
-					todoWeek: todoWeek,
-					todoDay: todoDay,
-					todoNum: todoNum,
-				},
-			});
-			await todo.save();
-			return res.status(201).json({
-				success: true,
-				message: "todo created successfully.",
-			});
+			// find data
+			const todoDate = {
+				todoMonth: todoMonth,
+				todoWeek: todoWeek,
+				todoDay: todoDay,
+				todoNum: todoNum,
+			};
+			const todos = await Todo.findOne({ todoDate, account: req.user._id });
+			console.log(todos);
+			if (!todos) {
+				// create data
+				const todos = new Todo({
+					account: user._id,
+					description: body.description,
+					completed: body.completed,
+					todoDate: {
+						todoMonth: todoMonth,
+						todoWeek: todoWeek,
+						todoDay: todoDay,
+						todoNum: todoNum,
+					},
+				});
+				await todos.save();
+				return res.status(201).json({
+					todos,
+					success: true,
+					message: "todo created successfully.",
+				});
+			} else {
+				todos.completed = body.completed;
+				todos.description = body.description;
+				console.log(todos);
+				console.log("================================");
+				await todos.save();
+				res.status(201).json({
+					todos,
+					success: true,
+					message: "todo updated successfully.",
+				});
+			}
 		} catch (err) {
 			return res.status(400).json({
 				success: false,
@@ -46,32 +73,32 @@ router.post(
  * @access Private
  * @type POST
  */
-router.patch(
-	"/to-do-check/:todoMonth/:todoWeek/:todoDay/:todoNum",
-	userAuth,
-	async (req, res) => {
-		try {
-			const { body, user } = req;
-			const { todoMonth, todoWeek, todoDay, todoNum } = req.params;
-			const todoDate = {
-				todoMonth: todoMonth,
-				todoWeek: todoWeek,
-				todoDay: todoDay,
-				todoNum: todoNum,
-			};
-			const todos = await Todo.findOne({ todoDate, account: req.user._id });
-			todos.completed = body.completed;
-			await todos.save();
-			res.status(201).json(todos);
-		} catch (err) {
-			return res.status(400).json({
-				success: false,
-				message: "Unable to create the todo check.",
-				error: err.message,
-			});
-		}
-	}
-);
+// router.patch(
+// 	"/to-do-check/:todoMonth/:todoWeek/:todoDay/:todoNum",
+// 	userAuth,
+// 	async (req, res) => {
+// 		try {
+// 			const { body, user } = req;
+// 			const { todoMonth, todoWeek, todoDay, todoNum } = req.params;
+// 			const todoDate = {
+// 				todoMonth: todoMonth,
+// 				todoWeek: todoWeek,
+// 				todoDay: todoDay,
+// 				todoNum: todoNum,
+// 			};
+// 			const todos = await Todo.findOne({ todoDate, account: req.user._id });
+// 			todos.completed = body.completed;
+// 			await todos.save();
+// 			res.status(201).json(todos);
+// 		} catch (err) {
+// 			return res.status(400).json({
+// 				success: false,
+// 				message: "Unable to create the todo check.",
+// 				error: err.message,
+// 			});
+// 		}
+// 	}
+// );
 /**
  * @description To get User's today's todo by
  * @api /api/todos/to-do
@@ -79,7 +106,7 @@ router.patch(
  * @type GET
  */
 router.get(
-	"/to-do/:todoMonth/:todoWeek/:todoDay/:todoNum",
+	"/to-do-line/:todoMonth/:todoWeek/:todoDay/:todoNum",
 	userAuth,
 	async (req, res) => {
 		try {

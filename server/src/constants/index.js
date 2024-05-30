@@ -22,3 +22,4 @@ export const FRONTEND_PORT = Constants.APP_FRONTEND_PORT;
 export const AUTHENTICATE_TOKEN_NAME = Constants.APP_AUTHENTICATE_TOKEN_NAME;
 export const PROFILE_GET_BY_USERID = Constants.APP_PROFILE_GET_BY_USERID;
 export const TODO_API = Constants.APP_TODO_API;
+export const TODO_POST = Constants.APP_TODO_POST;
