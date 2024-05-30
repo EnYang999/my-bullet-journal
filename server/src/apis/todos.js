@@ -106,7 +106,7 @@ router.post(
  * @type GET
  */
 router.get(
-	"/to-do-line/:todoMonth/:todoWeek/:todoDay/:todoNum",
+	`${TODO_POST}/:todoMonth/:todoWeek/:todoDay/:todoNum`,
 	userAuth,
 	async (req, res) => {
 		try {
