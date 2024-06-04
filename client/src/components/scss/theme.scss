@@ -27,7 +27,7 @@
 // Custom core
 // @import 'user';
 @import "./theme/bundle"; // general
-
+@import "./themeProfile/profile.scss"; // general for whole user profile
 @import "./theme/animation";
 @import "./theme/svg";
 @import "./theme/utilities/background";
