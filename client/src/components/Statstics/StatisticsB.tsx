@@ -1,6 +1,7 @@
 import ReactECharts from "echarts-for-react";
 
 const StatisticsB = () => {
+	// Past month trend -> data is to fill
 	const option = {
 		xAxis: {
 			type: "category",

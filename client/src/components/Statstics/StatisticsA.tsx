@@ -1,6 +1,7 @@
 import ReactECharts from "echarts-for-react";
 
 const StatisticsA = () => {
+	// Past seven days -> data is the number of to_do  (filling data and description != '')
 	const option = {
 		xAxis: {
 			type: "category",
@@ -33,7 +34,7 @@ const StatisticsA = () => {
 			<div className='card h-md-100 ecommerce-card-min-width'>
 				<div className='card-header pb-0'>
 					<h6 className='mb-0 mt-2 d-flex align-items-center'>
-						Weekly Todos
+						7-days Todos
 						<span
 							className='ms-1 text-400'
 							data-bs-toggle='tooltip'
