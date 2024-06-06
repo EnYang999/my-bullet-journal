@@ -1,7 +1,7 @@
 // import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./components/landingsection/LandingPage";
-
+import ProfilePersonalInformation from "./components/Statstics/ProfilePersonalInformation";
 import Login from "./components/login/login";
 import Statstics from "./components/Statstics/Statstics";
 import ResetPasswordNow from "./components/login/ResetPasswordNow";
@@ -15,7 +15,7 @@ function App() {
 			{/* <Route path='/' element={<LandingPage />} /> */}
 			<Route path='/login' element={<Login />} />
 			<Route path='/about-us' element={<FullPage />} />
-			<Route path='/' element={<Statstics />} />
+			<Route path='/' element={<ProfilePersonalInformation />} />
 			<Route path='/themes'>
 				<Route index element={<BookTab />} />
 				<Route path=':month/:week' element={<BookTab />} />
