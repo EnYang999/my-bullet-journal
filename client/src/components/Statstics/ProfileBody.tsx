@@ -31,13 +31,11 @@ const ProfileBody = () => {
 							>
 								<li>
 									<a className='dropdown-item' href='#'>
-										{" "}
 										<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
 									</a>
 								</li>
 								<li>
 									<a className='dropdown-item' href='#'>
-										{" "}
 										<i className='bi bi-trash fa-fw pe-2'></i>Delete
 									</a>
 								</li>
@@ -49,7 +47,7 @@ const ProfileBody = () => {
 						Devonshire difficulty gay assistance joy. Handsome met debating sir
 						dwelling age material. As style lived he worse dried. Offered
 						related so visitors we private removed. Moderate do subjects to
-						distance.{" "}
+						distance.
 					</p>
 				</div>
 				<div className='row g-4'>
@@ -58,7 +56,7 @@ const ProfileBody = () => {
 						<div className='d-flex align-items-center rounded border px-3 py-2'>
 							{/* <!-- Date --> */}
 							<p className='mb-0'>
-								<i className='bi bi-calendar-date fa-fw me-2'></i> Born:{" "}
+								<i className='bi bi-calendar-date fa-fw me-2'></i> Born:
 								<strong> October 20, 1990</strong>
 							</p>
 							<div className='dropdown ms-auto'>
@@ -79,13 +77,11 @@ const ProfileBody = () => {
 								>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
 										</a>
 									</li>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-trash fa-fw pe-2'></i>Delete
 										</a>
 									</li>
@@ -99,7 +95,7 @@ const ProfileBody = () => {
 						<div className='d-flex align-items-center rounded border px-3 py-2'>
 							{/* <!-- Date --> */}
 							<p className='mb-0'>
-								<i className='bi bi-heart fa-fw me-2'></i> Status:{" "}
+								<i className='bi bi-heart fa-fw me-2'></i> Status:
 								<strong> Single </strong>
 							</p>
 							<div className='dropdown ms-auto'>
@@ -120,13 +116,11 @@ const ProfileBody = () => {
 								>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
 										</a>
 									</li>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-trash fa-fw pe-2'></i>Delete
 										</a>
 									</li>
@@ -140,7 +134,7 @@ const ProfileBody = () => {
 						<div className='d-flex align-items-center rounded border px-3 py-2'>
 							{/* <!-- Date --> */}
 							<p className='mb-0'>
-								<i className='bi bi-briefcase fa-fw me-2'></i>{" "}
+								<i className='bi bi-briefcase fa-fw me-2'></i>
 								<strong> Lead Developer </strong>
 							</p>
 							<div className='dropdown ms-auto'>
@@ -161,13 +155,11 @@ const ProfileBody = () => {
 								>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
 										</a>
 									</li>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-trash fa-fw pe-2'></i>Delete
 										</a>
 									</li>
@@ -181,7 +173,7 @@ const ProfileBody = () => {
 						<div className='d-flex align-items-center rounded border px-3 py-2'>
 							{/* <!-- Date --> */}
 							<p className='mb-0'>
-								<i className='bi bi-geo-alt fa-fw me-2'></i> Lives in:{" "}
+								<i className='bi bi-geo-alt fa-fw me-2'></i> Lives in:
 								<strong> New Hampshire</strong>
 							</p>
 							<div className='dropdown ms-auto'>
@@ -202,13 +194,11 @@ const ProfileBody = () => {
 								>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
 										</a>
 									</li>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-trash fa-fw pe-2'></i>Delete
 										</a>
 									</li>
@@ -222,7 +212,7 @@ const ProfileBody = () => {
 						<div className='d-flex align-items-center rounded border px-3 py-2'>
 							{/* <!-- Date --> */}
 							<p className='mb-0'>
-								<i className='bi bi-geo-alt fa-fw me-2'></i> Joined on:{" "}
+								<i className='bi bi-geo-alt fa-fw me-2'></i> Joined on:
 								<strong> Nov 26, 2019</strong>
 							</p>
 							<div className='dropdown ms-auto'>
@@ -243,13 +233,11 @@ const ProfileBody = () => {
 								>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
 										</a>
 									</li>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-trash fa-fw pe-2'></i>Delete
 										</a>
 									</li>
@@ -263,7 +251,7 @@ const ProfileBody = () => {
 						<div className='d-flex align-items-center rounded border px-3 py-2'>
 							{/* <!-- Date --> */}
 							<p className='mb-0'>
-								<i className='bi bi-envelope fa-fw me-2'></i> Email:{" "}
+								<i className='bi bi-envelope fa-fw me-2'></i> Email:
 								<strong> webestica@gmail.com</strong>
 							</p>
 							<div className='dropdown ms-auto'>
@@ -284,13 +272,11 @@ const ProfileBody = () => {
 								>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
 										</a>
 									</li>
 									<li>
 										<a className='dropdown-item' href='#'>
-											{" "}
 											<i className='bi bi-trash fa-fw pe-2'></i>Delete
 										</a>
 									</li>
@@ -302,7 +288,6 @@ const ProfileBody = () => {
 					<div className='col-sm-6 position-relative'>
 						{/* <!-- Workplace on START --> */}
 						<a className='btn btn-dashed rounded w-100' href='#!'>
-							{" "}
 							<i className='bi bi-plus-circle-dotted me-1'></i>Add a workplace
 						</a>
 						{/* <!-- Workplace on END --> */}
@@ -310,7 +295,6 @@ const ProfileBody = () => {
 					<div className='col-sm-6 position-relative'>
 						{/* <!-- Education on START --> */}
 						<a className='btn btn-dashed rounded w-100' href='#!'>
-							{" "}
 							<i className='bi bi-plus-circle-dotted me-1'></i>Add a education
 						</a>
 						{/* <!-- Education on END --> */}

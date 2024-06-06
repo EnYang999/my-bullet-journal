@@ -12,10 +12,10 @@ import ResetPassword from "./components/login/ResetPassword";
 function App() {
 	return (
 		<Routes>
-			{/* <Route path='/' element={<LandingPage />} /> */}
+			<Route path='/' element={<LandingPage />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/about-us' element={<FullPage />} />
-			<Route path='/' element={<ProfilePersonalInformation />} />
+			<Route path='/profile' element={<ProfilePersonalInformation />} />
 			<Route path='/themes'>
 				<Route index element={<BookTab />} />
 				<Route path=':month/:week' element={<BookTab />} />

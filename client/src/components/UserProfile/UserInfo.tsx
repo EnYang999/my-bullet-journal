@@ -1,5 +1,5 @@
 import React from "react";
-
+import ProfilePersonalInformation from "../Statstics/ProfilePersonalInformation";
 // Assuming you fetch this data from your backend.
 const fakeUserData = {
 	email: "user@example.com",
