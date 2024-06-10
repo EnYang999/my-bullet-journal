@@ -1,6 +1,39 @@
-import backgroundImageUrl from "../../assets/landing/14.jpg";
+import backgroundImageUrl from "../../assets/landing/15.jpg";
 import avatar from "../../assets/landing/8.jpg";
+import { useState, useRef } from "react";
+import {
+	useClick,
+	useFloating,
+	useInteractions,
+	arrow,
+	flip,
+	offset,
+	shift,
+	FloatingArrow,
+} from "@floating-ui/react";
 const ProfileHeader = () => {
+	const [isOpen, setIsOpen] = useState(true);
+	const arrowRef = useRef(null);
+	const { refs, floatingStyles, context } = useFloating({
+		placement: "top",
+		strategy: "absolute",
+		open: isOpen,
+		onOpenChange(isOpen) {
+			setIsOpen(isOpen);
+		},
+		middleware: [
+			flip(),
+			offset(6),
+			shift({ padding: 5 }),
+			arrow({
+				element: arrowRef,
+				padding: 5,
+			}),
+		],
+	});
+	const click = useClick(context);
+
+	const { getReferenceProps, getFloatingProps } = useInteractions([click]);
 	return (
 		// {/* <!-- Card START --> */}
 		<div className='card'>
@@ -11,6 +44,7 @@ const ProfileHeader = () => {
 					backgroundPosition: "center",
 					backgroundSize: "cover",
 					backgroundRepeat: "no-repeat",
+					height: "200px",
 				}}
 			></div>
 			{/* <!-- Card body START --> */}
@@ -28,59 +62,59 @@ const ProfileHeader = () => {
 					</div>
 					<div className='ms-sm-4 mt-sm-3'>
 						{/* <!-- Info --> */}
-						<h1 className='mb-0 h5'>
-							Sam Lanson
-							<i className='bi bi-patch-check-fill text-success small'></i>
-						</h1>
-						<p>250 connections</p>
+						<h1 className='mb-0 h5'>Sam Lanson</h1>
 					</div>
 					{/* <!-- Button --> */}
 					<div className='d-flex mt-3 justify-content-center ms-sm-auto'>
-						<button className='btn btn-danger-soft me-2' type='button'>
-							<i className='bi bi-pencil-fill pe-1'></i> Edit profile
-						</button>
 						<div className='dropdown'>
 							{/* <!-- Card share action menu --> */}
 							<button
 								className='icon-md btn btn-light'
 								type='button'
 								id='profileAction2'
-								data-bs-toggle='dropdown'
-								aria-expanded='false'
+								// data-bs-toggle='dropdown'
+								// aria-expanded='true'
+								ref={refs.setReference}
+								{...getReferenceProps({})}
 							>
-								<i className='bi bi-three-dots'></i>
+								<i className='bi bi-pencil-fill pe-1'></i> Edit profile
 							</button>
 							{/* <!-- Card share action dropdown menu --> */}
-							<ul
-								className='dropdown-menu dropdown-menu-end'
-								aria-labelledby='profileAction2'
-							>
-								<li>
-									<a className='dropdown-item' href='#'>
-										<i className='bi bi-bookmark fa-fw pe-2'></i>Share profile
-										in a message
-									</a>
-								</li>
-								<li>
-									<a className='dropdown-item' href='#'>
-										<i className='bi bi-file-earmark-pdf fa-fw pe-2'></i>
-										Save your profile to PDF
-									</a>
-								</li>
-								<li>
-									<a className='dropdown-item' href='#'>
-										<i className='bi bi-lock fa-fw pe-2'></i>Lock profile
-									</a>
-								</li>
-								<li>
-									<hr className='dropdown-divider' />
-								</li>
-								<li>
-									<a className='dropdown-item' href='#'>
-										<i className='bi bi-gear fa-fw pe-2'></i>Profile settings
-									</a>
-								</li>
-							</ul>
+							{isOpen && (
+								<ul
+									className='dropdown-menu dropdown-menu-end'
+									// aria-labelledby='profileAction2'
+									ref={refs.setFloating}
+									style={{ ...floatingStyles, backgroundColor: "red" }}
+									{...getFloatingProps()}
+								>
+									<li>
+										<a className='dropdown-item' href='#'>
+											<i className='bi bi-bookmark fa-fw pe-2'></i>Share profile
+											in a message
+										</a>
+									</li>
+									<li>
+										<a className='dropdown-item' href='#'>
+											<i className='bi bi-file-earmark-pdf fa-fw pe-2'></i>
+											Save your profile to PDF
+										</a>
+									</li>
+									<li>
+										<a className='dropdown-item' href='#'>
+											<i className='bi bi-lock fa-fw pe-2'></i>Lock profile
+										</a>
+									</li>
+									<li>
+										<hr className='dropdown-divider' />
+									</li>
+									<li>
+										<a className='dropdown-item' href='#'>
+											<i className='bi bi-gear fa-fw pe-2'></i>Profile settings
+										</a>
+									</li>
+								</ul>
+							)}
 						</div>
 					</div>
 				</div>
@@ -100,26 +134,6 @@ const ProfileHeader = () => {
 			{/* <!-- Card body END --> */}
 			<div className='card-footer mt-3 pt-2 pb-0'>
 				{/* <!-- Nav profile pages --> */}
-				<ul className='nav nav-bottom-line align-items-center justify-content-center justify-content-md-start mb-0 border-0'>
-					<li className='nav-item'>
-						<a className='nav-link' href='my-profile.html'>
-							Posts
-						</a>
-					</li>
-					<li className='nav-item'>
-						<a className='nav-link active' href='my-profile-about.html'>
-							About
-						</a>
-					</li>
-					<li className='nav-item'>
-						<a className='nav-link' href='my-profile-connections.html'>
-							Connections
-							<span className='badge bg-success bg-opacity-10 text-success small'>
-								230
-							</span>
-						</a>
-					</li>
-				</ul>
 			</div>
 		</div>
 	);

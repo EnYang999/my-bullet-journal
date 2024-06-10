@@ -285,20 +285,6 @@ const ProfileBody = () => {
 						</div>
 						{/* <!-- Joined on END --> */}
 					</div>
-					<div className='col-sm-6 position-relative'>
-						{/* <!-- Workplace on START --> */}
-						<a className='btn btn-dashed rounded w-100' href='#!'>
-							<i className='bi bi-plus-circle-dotted me-1'></i>Add a workplace
-						</a>
-						{/* <!-- Workplace on END --> */}
-					</div>
-					<div className='col-sm-6 position-relative'>
-						{/* <!-- Education on START --> */}
-						<a className='btn btn-dashed rounded w-100' href='#!'>
-							<i className='bi bi-plus-circle-dotted me-1'></i>Add a education
-						</a>
-						{/* <!-- Education on END --> */}
-					</div>
 				</div>
 			</div>
 			{/* <!-- Card body END --> */}
