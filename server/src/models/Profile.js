@@ -9,7 +9,7 @@ const ProfileSchema = new Schema(
 		},
 		avatar: {
 			type: String,
-			default: URL("../uploads/post-images/img-1612019385734.jpg"),
+			// default: "../uploads/post-images/img-1612019385734.jpg",
 			required: false,
 		},
 		social: {
@@ -34,15 +34,15 @@ const ProfileSchema = new Schema(
 				required: false,
 			},
 		},
-		interests: [{ type: String, default: "" }],
-		goals: [{ type: String, default: "" }],
-		habits: [{ type: String, default: "" }],
-		Notes: {
+		interests: { type: String, default: "" },
+		goals: { type: String, default: "" },
+		habits: { type: String, default: "" },
+		notes: {
 			type: String,
 			default: "",
 			required: false,
 		},
-		Bios: {
+		bio: {
 			type: String,
 			default: "",
 			required: false,

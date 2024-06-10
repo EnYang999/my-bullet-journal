@@ -12,6 +12,7 @@ const router = Router();
  * @api /profiles/api/create-profile
  * @access Private
  */
+/**
 router.post(
 	"/create-profile",
 	userAuth,
@@ -34,11 +35,74 @@ router.post(
 			return res.status(400).json({
 				success: false,
 				message: "Unable to create your profile.",
+				err: err.message,
 			});
 		}
 	}
 );
+ */
+/**
+ * @description To create profile of the authenticated User
+ * @type POST <multipart-form> request
+ * @api /profiles/api/create-profile
+ * @access Private
+ */
+router.put(
+	"/put-profile",
+	userAuth,
+	uploader.single("avatar"),
+	async (req, res) => {
+		try {
+			let { body, file, user } = req;
+			if (!user) {
+				return res.status(404).json({
+					success: false,
+					message: "Can't find the user.",
+				});
+			}
 
+			let updateFields = {
+				account: user._id, // Ensure account is included in the updateFields
+			};
+
+			// Assign each field from the request body if it's specified.
+			if (body.facebook) updateFields["social.facebook"] = body.facebook;
+			if (body.twitter) updateFields["social.twitter"] = body.twitter;
+			if (body.linkedin) updateFields["social.linkedin"] = body.linkedin;
+			if (body.instagram) updateFields["social.instagram"] = body.instagram;
+			if (body.github) updateFields["social.github"] = body.github;
+
+			if (body.interests) updateFields.interests = body.interests;
+			if (body.goals) updateFields.goals = body.goals;
+			if (body.habits) updateFields.habits = body.habits;
+			if (body.notes) updateFields.notes = body.notes;
+			if (body.bio) updateFields.bio = body.bio;
+
+			if (file) {
+				let path = `${DOMAIN}${PORT}${file.path.split("uploads")[1]}`;
+				updateFields.avatar = path;
+			}
+
+			let profile = await Profile.findOneAndUpdate(
+				{ account: user._id },
+				updateFields,
+				{ new: true, upsert: true } // upsert option to create if not found
+			);
+
+			return res.status(200).json({
+				success: true,
+				message: "Your profile has been successfully updated or created.",
+				profile,
+			});
+		} catch (err) {
+			return res.status(400).json({
+				success: false,
+				message: "Unable to update or create the profile.",
+				err: err.message,
+			});
+		}
+	}
+);
 /**
  * @description To Get the authenticated user's profile
  * @api /profiles/api/my-profile
@@ -75,6 +139,7 @@ router.get("/my-profile", userAuth, async (req, res) => {
  * @api /profiles/api/update-profile
  * @access Private
  */
+/**
 router.patch(
 	"/update-profile",
 	userAuth,
@@ -121,7 +186,7 @@ router.patch(
 		}
 	}
 );
-
+ */
 /**
  * @description To get user's profile with the username
  * @api /profiles/api/update-profile
