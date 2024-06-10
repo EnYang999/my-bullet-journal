@@ -13,3 +13,5 @@ export const APP_AUTHENTICATE_TOKEN_NAME: string;
 export const APP_PROFILE_GET_BY_USERID: string;
 export const APP_TODO_API: string;
 export const APP_TODO_POST: string;
+export const APP_PROFILE_PUT: string;
+export const APP_PROFILE_GET_BY_OWN: string;

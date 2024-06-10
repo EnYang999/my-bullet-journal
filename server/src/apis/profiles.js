@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { DOMAIN, PORT, PROFILE_GET_BY_USERID } from "../constants";
+import { DOMAIN, PORT, PROFILE_GET_BY_USERID, PROFILE_PUT } from "../constants";
 import { Profile, User } from "../models";
 import uploader from "../middlewares/uploader";
 import { userAuth } from "../middlewares/auth-guard";
@@ -48,7 +48,7 @@ router.post(
  * @access Private
  */
 router.put(
-	"/put-profile",
+	PROFILE_PUT,
 	userAuth,
 	uploader.single("avatar"),
 	async (req, res) => {
@@ -189,7 +189,7 @@ router.patch(
  */
 /**
  * @description To get user's profile with the username
- * @api /profiles/api/update-profile
+ * @api /profiles/api/
  * @access Public
  * @type GET
  */

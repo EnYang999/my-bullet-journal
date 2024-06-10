@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import ProfileItem from "./ProfileItem";
 const ProfileBody = () => {
 	const [bio, setBio] = useState<string>("");
 	const handleBioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,6 +32,7 @@ const ProfileBody = () => {
 						value={bio}
 						onKeyUp={handleBioPost}
 						onChange={handleBioChange}
+						placeholder='Input Your Introduction'
 						style={{ border: "none", width: "100%", height: "100%" }}
 					/>
 				</div>
@@ -236,6 +237,10 @@ const ProfileBody = () => {
 						</div>
 						{/* <!-- Joined on END --> */}
 					</div>
+					<ProfileItem iconClass='' label='interests' />
+					<ProfileItem iconClass='' label='goals' />
+					<ProfileItem iconClass='' label='habits' />
+					<ProfileItem iconClass='' label='notes' />
 				</div>
 			</div>
 			{/* <!-- Card body END --> */}
