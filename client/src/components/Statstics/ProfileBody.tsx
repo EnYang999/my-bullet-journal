@@ -1,6 +1,15 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 const ProfileBody = () => {
+	const [bio, setBio] = useState<string>("");
+	const handleBioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setBio(e.target.value);
+	};
+	const handleBioPost = async (e: React.KeyboardEvent<HTMLInputElement>) => {
+		e.preventDefault();
+		if (e.key === "Enter") {
+		}
+	};
 	return (
 		<div className='card'>
 			{/* <!-- Card header START --> */}
@@ -13,42 +22,18 @@ const ProfileBody = () => {
 				<div className='rounded border px-3 py-2 mb-3'>
 					<div className='d-flex align-items-center justify-content-between'>
 						<h6>Overview</h6>
-						<div className='dropdown ms-auto'>
-							{/* <!-- Card share action menu --> */}
-							<a
-								className='nav nav-link text-secondary mb-0'
-								href='#'
-								id='aboutAction'
-								data-bs-toggle='dropdown'
-								aria-expanded='false'
-							>
-								<i className='bi bi-three-dots'></i>
-							</a>
-							{/* <!-- Card share action dropdown menu --> */}
-							<ul
-								className='dropdown-menu dropdown-menu-end'
-								aria-labelledby='aboutAction'
-							>
-								<li>
-									<a className='dropdown-item' href='#'>
-										<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
-									</a>
-								</li>
-								<li>
-									<a className='dropdown-item' href='#'>
-										<i className='bi bi-trash fa-fw pe-2'></i>Delete
-									</a>
-								</li>
-							</ul>
-						</div>
 					</div>
-					<p>
-						He moonlights difficult engrossed it, sportsmen. Interested has all
-						Devonshire difficulty gay assistance joy. Handsome met debating sir
-						dwelling age material. As style lived he worse dried. Offered
-						related so visitors we private removed. Moderate do subjects to
-						distance.
-					</p>
+
+					<label htmlFor='bio' />
+					<input
+						type='text'
+						id='bio'
+						name='bio'
+						value={bio}
+						onKeyUp={handleBioPost}
+						onChange={handleBioChange}
+						style={{ border: "none", width: "100%", height: "100%" }}
+					/>
 				</div>
 				<div className='row g-4'>
 					<div className='col-sm-6'>
@@ -56,8 +41,8 @@ const ProfileBody = () => {
 						<div className='d-flex align-items-center rounded border px-3 py-2'>
 							{/* <!-- Date --> */}
 							<p className='mb-0'>
-								<i className='bi bi-calendar-date fa-fw me-2'></i> Born:
-								<strong> October 20, 1990</strong>
+								<i className='bi bi-calendar-date fa-fw me-2'></i> Interests:
+								<strong>Fitness, Swimming</strong>
 							</p>
 							<div className='dropdown ms-auto'>
 								{/* <!-- Card share action menu --> */}
@@ -223,25 +208,8 @@ const ProfileBody = () => {
 									id='aboutAction6'
 									data-bs-toggle='dropdown'
 									aria-expanded='false'
-								>
-									<i className='bi bi-three-dots'></i>
-								</a>
+								></a>
 								{/* <!-- Card share action dropdown menu --> */}
-								<ul
-									className='dropdown-menu dropdown-menu-end'
-									aria-labelledby='aboutAction6'
-								>
-									<li>
-										<a className='dropdown-item' href='#'>
-											<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
-										</a>
-									</li>
-									<li>
-										<a className='dropdown-item' href='#'>
-											<i className='bi bi-trash fa-fw pe-2'></i>Delete
-										</a>
-									</li>
-								</ul>
 							</div>
 						</div>
 						{/* <!-- Joined on END --> */}
@@ -262,25 +230,8 @@ const ProfileBody = () => {
 									id='aboutAction7'
 									data-bs-toggle='dropdown'
 									aria-expanded='false'
-								>
-									<i className='bi bi-three-dots'></i>
-								</a>
+								></a>
 								{/* <!-- Card share action dropdown menu --> */}
-								<ul
-									className='dropdown-menu dropdown-menu-end'
-									aria-labelledby='aboutAction7'
-								>
-									<li>
-										<a className='dropdown-item' href='#'>
-											<i className='bi bi-pencil-square fa-fw pe-2'></i>Edit
-										</a>
-									</li>
-									<li>
-										<a className='dropdown-item' href='#'>
-											<i className='bi bi-trash fa-fw pe-2'></i>Delete
-										</a>
-									</li>
-								</ul>
 							</div>
 						</div>
 						{/* <!-- Joined on END --> */}
