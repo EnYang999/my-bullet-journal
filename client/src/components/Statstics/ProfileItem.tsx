@@ -10,25 +10,35 @@ import {
 	APP_PROFILE_PUT,
 	APP_PROFILE_GET_BY_OWN,
 } from "../../../../common/constants";
+
 interface Props {
 	iconClass: string;
 	label: string;
+	placeholder: string;
 }
-const ProfileItem = ({ iconClass, label }: Props) => {
+
+const ProfileItem: React.FC<Props> = ({ iconClass, label, placeholder }) => {
 	const [inputValue, setInputValue] = useState<string>("");
 	const cookies = new Cookies();
 	const bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
+
+	// Helper function to capitalize label
+	const capitalize = (str: string): string => {
+		return str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
+	};
+
 	const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setInputValue(e.target.value);
 	};
+
 	const handleValuePost = async (e: React.KeyboardEvent<HTMLInputElement>) => {
 		e.preventDefault();
 		if (e.key === "Enter") {
 			try {
-				await axios.post(
+				const res = await axios.put(
 					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}${APP_PROFILE_PUT}`,
 					{
-						description: inputValue,
+						[label]: inputValue,
 					},
 					{
 						headers: {
@@ -36,9 +46,9 @@ const ProfileItem = ({ iconClass, label }: Props) => {
 						},
 					}
 				);
+				console.log(res);
 			} catch (error: any) {
-				console.log("error from client", error);
-
+				console.log("Error from client:", error);
 				if (error.response) {
 					toast.show({
 						title: "Error",
@@ -49,6 +59,7 @@ const ProfileItem = ({ iconClass, label }: Props) => {
 			}
 		}
 	};
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -59,10 +70,10 @@ const ProfileItem = ({ iconClass, label }: Props) => {
 					}
 				);
 				if (response?.data) {
-					setInputValue(response.data[label]);
+					setInputValue(response.data.profile[label]);
 				}
 			} catch (error: any) {
-				console.error("Error fetching data", error);
+				console.error("Error fetching data:", error);
 				if (error.response) {
 					toast.show({
 						title: "Error",
@@ -74,17 +85,20 @@ const ProfileItem = ({ iconClass, label }: Props) => {
 		};
 
 		fetchData();
-	}, []);
+	}, []); // Added bearToken and label to the dependencies
+
 	return (
 		<div className='col-sm-6'>
 			<div className='d-flex align-items-center rounded border px-3 py-2'>
 				<p className='mb-0'>
 					<i className={`bi ${iconClass} fa-fw me-2`} />
-					{label}:
+					{capitalize(label)}:
 					<input
 						value={inputValue}
 						onKeyUp={handleValuePost}
 						onChange={handleValueChange}
+						placeholder={placeholder}
+						style={{ border: "none", width: "100%", height: "100%" }}
 					/>
 				</p>
 			</div>
