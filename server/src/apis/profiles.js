@@ -109,7 +109,7 @@ router.get("/my-profile", userAuth, async (req, res) => {
 	try {
 		let profile = await Profile.findOne({ account: req.user._id }).populate(
 			"account",
-			"email username"
+			"email username createdAt"
 		);
 		if (!profile) {
 			return res.status(404).json({

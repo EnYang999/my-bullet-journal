@@ -4,13 +4,13 @@ import {
 	APP_BACKEND_PORT,
 	APP_PROFILE_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
-	APP_PROFILE_PUT,
 	APP_PROFILE_GET_BY_OWN,
 } from "../../../../common/constants";
 import Avatar from "./Avatar";
 import axios from "axios";
 import { useState, useRef, useEffect } from "react";
 import Cookies from "universal-cookie";
+import timeAgo from "../../utils/timeDifference";
 import { toast } from "../errortoast/ErrorToastManager";
 import {
 	useClick,
@@ -28,6 +28,8 @@ const ProfileHeader = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const arrowRef = useRef(null);
 	const [accountName, setAccountName] = useState("");
+	const [accountID, setAccountID] = useState("");
+	const [joinDate, setJoinDate] = useState("");
 	const { refs, floatingStyles, context } = useFloating({
 		placement: "bottom-start",
 		strategy: "absolute",
@@ -57,7 +59,9 @@ const ProfileHeader = () => {
 				);
 				if (response?.data) {
 					setAccountName(response.data.profile["account"].username);
-					console.log(response.data.profile);
+					setAccountID(response.data.profile["account"]._id);
+					setJoinDate(response.data.profile["account"].createdAt);
+					console.log(response.data.profile["account"]);
 				}
 			} catch (error: any) {
 				if (error.response) {
@@ -88,16 +92,16 @@ const ProfileHeader = () => {
 				<div className='d-sm-flex align-items-start text-center text-sm-start'>
 					<div>
 						<div className='avatar avatar-xxl mt-n5 mb-3'>
-							{/* <img
-								className='avatar-img rounded-circle border border-white border-3'
-								src={defaultAvatar}
-								alt='Profile'
-							/> */}
 							<Avatar />
 						</div>
 					</div>
 					<div className='ms-sm-4 mt-sm-3'>
-						<h1 className='mb-0 h5'>{accountName}</h1>
+						<h1 className='mb-0 h5'>
+							<strong>User Name: </strong>
+							{accountName}
+						</h1>
+						<p>{accountID}</p>
+						<p>{timeAgo(joinDate)}</p>
 					</div>
 					<div className='d-flex mt-3 justify-content-center ms-sm-auto'>
 						<div className='dropdown'>
