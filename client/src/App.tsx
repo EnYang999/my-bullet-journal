@@ -10,6 +10,7 @@ import FullPage from "./components/Full-Page/FullPage";
 import UserProfileWrapper from "./components/UserProfile/UserProfileWrapper";
 import ResetPassword from "./components/login/ResetPassword";
 import Avatar from "./components/Statstics/Avatar";
+import AvatarEditor from "./components/Statstics/AvatarComponent";
 function App() {
 	return (
 		<Routes>

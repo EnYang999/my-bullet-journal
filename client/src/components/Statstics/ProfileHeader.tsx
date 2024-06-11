@@ -1,6 +1,9 @@
 import backgroundImageUrl from "../../assets/landing/15.jpg";
-import avatar from "../../assets/landing/8.jpg";
-import { useState, useRef } from "react";
+import defaultAvatar from "../../assets/landing/8.jpg";
+
+import Avatar from "./Avatar";
+import { useState, useRef, useEffect } from "react";
+
 import {
 	useClick,
 	useFloating,
@@ -50,11 +53,12 @@ const ProfileHeader = () => {
 				<div className='d-sm-flex align-items-start text-center text-sm-start'>
 					<div>
 						<div className='avatar avatar-xxl mt-n5 mb-3'>
-							<img
+							{/* <img
 								className='avatar-img rounded-circle border border-white border-3'
-								src={avatar}
+								src={defaultAvatar}
 								alt='Profile'
-							/>
+							/> */}
+							<Avatar />
 						</div>
 					</div>
 					<div className='ms-sm-4 mt-sm-3'>

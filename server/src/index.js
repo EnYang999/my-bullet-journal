@@ -27,7 +27,7 @@ const corsOptions = {
 	optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
-app.use(json());
+app.use(json({ limit: "50mb" }));
 app.use(passport.initialize());
 app.use(express.static(join(__dirname, "./uploads")));
 // app.use(cookieParser());

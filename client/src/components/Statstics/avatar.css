@@ -1,0 +1,26 @@
+.avatar-container {
+	position: relative;
+	width: 200px;
+	height: 200px;
+}
+
+.avatar-img:hover + .avatar-overlay,
+.avatar-overlay:hover {
+	display: flex;
+}
+
+.avatar-overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+}
