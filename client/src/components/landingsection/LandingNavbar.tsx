@@ -1,7 +1,14 @@
 import { useState, useEffect } from "react";
-import Cookies from "universal-cookie";
 import { jwtDecode } from "jwt-decode";
-import { APP_AUTHENTICATE_TOKEN_NAME } from "../../../../common/constants";
+import axios from "axios";
+import Cookies from "universal-cookie";
+import {
+	API_ENDPOINT,
+	APP_BACKEND_PORT,
+	APP_USER_API,
+	APP_AUTHENTICATE_TOKEN_NAME,
+} from "../../../../common/constants";
+import { toast } from "../errortoast/ErrorToastManager";
 interface User {
 	id: string;
 	username: string;
@@ -15,21 +22,47 @@ const LandingNavbar = () => {
 	const [user, setUser] = useState<User | null>(null);
 	const [currentCookie, setCurrentCookie] = useState<string | null>(null);
 	let jwtCookie = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
-	console.log(APP_AUTHENTICATE_TOKEN_NAME);
+	const handleLogout = async () => {
+		cookies.remove(jwtCookie);
+		localStorage.removeItem(APP_AUTHENTICATE_TOKEN_NAME);
+		localStorage.removeItem(jwtCookie);
+		try {
+			const response = await axios.get(
+				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}/logout`,
+				{ withCredentials: true }
+			);
+			console.log(`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}/logout`);
 
-	console.log(jwtCookie);
+			console.log(response);
+
+			if (response.status == 200) {
+				window.location.href = "/login";
+			} else {
+				console.error("Logout failed");
+			}
+		} catch (error: any) {
+			console.error("Error fetching data", error);
+			if (error.response) {
+				toast.show({
+					title: "Error",
+					content: error.response.data.error,
+					duration: 3000,
+				});
+			}
+		}
+		// setUser((prevUser) => {
+		// 	if (prevUser !== null) {
+		// 		return null;
+		// 	}
+		// 	return prevUser;
+		// });
+	};
 	useEffect(() => {
 		let jwtCookie = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
-		console.log(APP_AUTHENTICATE_TOKEN_NAME);
-
-		console.log(jwtCookie);
-
 		if (jwtCookie && jwtCookie !== currentCookie) {
 			setCurrentCookie(jwtCookie);
 
 			const decodedToken: User = jwtDecode(jwtCookie);
-			console.log(decodedToken);
-			// console.log(decodedToken);
 			setUser((prevUser) => {
 				if (!prevUser) {
 					return decodedToken;
@@ -135,10 +168,8 @@ const LandingNavbar = () => {
 								{user ? user.username : "Profile"}
 							</a>
 						</li>
-						<li className='nav-item'>
-							<a className='nav-link ' href={user ? "./logout" : "./login"}>
-								{user ? "Log Out" : "Log In"}
-							</a>
+						<li className='nav-item' onClick={handleLogout}>
+							<a className='nav-link '>{user ? "Log Out" : "Log In"}</a>
 						</li>
 					</ul>
 				</div>

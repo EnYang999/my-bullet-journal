@@ -66,6 +66,7 @@ router.post(SIGNUP_URL, RegisterValidations, Validator, async (req, res) => {
 		return res.status(500).json({
 			success: false,
 			message: "An error occurred.",
+			error: err.message,
 		});
 	}
 });
@@ -134,6 +135,7 @@ router.post(LOGIN_URL, AuthenticateValidations, Validator, async (req, res) => {
 		return res.status(500).json({
 			success: false,
 			message: "An error occurred.",
+			error: err.message,
 		});
 	}
 });
@@ -191,6 +193,7 @@ router.put(RESET_PASSWORD, ResetPassword, Validator, async (req, res) => {
 		return res.status(500).json({
 			success: false,
 			message: "An error occurred.",
+			error: err.message,
 		});
 	}
 });
@@ -244,6 +247,7 @@ router.post(`${RESET_PASSWORD_NOW}/:resetPasswordToken`, async (req, res) => {
 		return res.status(500).json({
 			success: false,
 			message: "something error.",
+			error: err.message,
 		});
 	}
 });
@@ -298,4 +302,32 @@ router.post(`${RESET_PASSWORD_NOW}`, async (req, res) => {
 	}
 });
  */
+/**
+ * @description To reset the password
+ * @api /users/api/reset-password-now
+ * @access Restricted via email
+ * @type POST
+ */
+router.get("/logout", (req, res) => {
+	try {
+		res.cookie(AUTHENTICATE_TOKEN_NAME, " ", {
+			maxAge: 1,
+			path: "/",
+			overwrite: true,
+			httpOnly: false,
+		});
+		console.log(AUTHENTICATE_TOKEN_NAME);
+		return res.status(200).json({
+			success: true,
+			message: "Logged out successfully",
+			// cookie: cook,
+		});
+	} catch (err) {
+		res.status(500).json({
+			success: false,
+			message: "Something went wrong.",
+			error: err.message,
+		});
+	}
+});
 export default router;

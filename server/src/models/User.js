@@ -1,12 +1,21 @@
+import { Mongoose } from "mongoose";
 import { Schema, model } from "mongoose";
 import { compare, hash } from "bcryptjs";
 import { SECRET } from "../constants";
 import { randomBytes } from "crypto";
 import { sign } from "jsonwebtoken";
 import { pick } from "lodash";
-
+const generateRandom9DigitNumber = () => {
+	return Math.floor(100000000 + Math.random() * 900000000);
+};
 const UserSchema = new Schema(
 	{
+		_id: {
+			type: String,
+			required: true,
+			unique: true,
+			default: generateRandom9DigitNumber,
+		},
 		username: {
 			type: String,
 			required: true,
@@ -37,13 +46,24 @@ const UserSchema = new Schema(
 			required: false,
 		},
 	},
-	{ timestamps: true }
+	{ timestamps: true, _id: false }
 );
 
 UserSchema.pre("save", async function (next) {
 	let user = this;
 	if (!user.isModified("password")) return next();
 	user.password = await hash(user.password, 10);
+	if (this.isNew) {
+		let isUnique = false;
+
+		while (!isUnique) {
+			this.userId = generateRandom9DigitNumber();
+			const user = await User.findOne({ userId: this.userId });
+			if (!user) {
+				isUnique = true;
+			}
+		}
+	}
 	next();
 });
 
