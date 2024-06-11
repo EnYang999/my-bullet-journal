@@ -1,6 +1,5 @@
-import React, { useState, ChangeEvent, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Dialog } from "primereact/dialog";
-import defaultAvatar from "../../assets/landing/9.jpg";
 import { Button, IconButton, Avatar } from "@mui/material";
 import { useDropzone } from "react-dropzone";
 import AvatarEditor from "react-avatar-editor";
