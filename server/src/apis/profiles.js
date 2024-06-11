@@ -53,7 +53,7 @@ router.put(
 	uploader.single("avatar"),
 	async (req, res) => {
 		try {
-			let { body, file, user } = req;
+			let { body, user } = req;
 			if (!user) {
 				return res.status(404).json({
 					success: false,
@@ -62,7 +62,7 @@ router.put(
 			}
 
 			let updateFields = {
-				account: user._id, // Ensure account is included in the updateFields
+				account: user._id,
 			};
 
 			// Assign each field from the request body if it's specified.
@@ -77,11 +77,7 @@ router.put(
 			if (body.habits) updateFields.habits = body.habits;
 			if (body.notes) updateFields.notes = body.notes;
 			if (body.bio) updateFields.bio = body.bio;
-
-			if (file) {
-				let path = `${DOMAIN}${PORT}${file.path.split("uploads")[1]}`;
-				updateFields.avatar = path;
-			}
+			if (body.avatar) updateFields.avatar = body.avatar;
 
 			let profile = await Profile.findOneAndUpdate(
 				{ account: user._id },

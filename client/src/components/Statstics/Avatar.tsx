@@ -19,7 +19,7 @@ import {
 
 const MyAvatar: React.FC = () => {
 	const [image, setImage] = useState<File | null>(null);
-	const [imagePreviewUrl, setImagePreviewUrl] = useState<string>(defaultAvatar);
+	const [imagePreviewUrl, setImagePreviewUrl] = useState<string>("");
 	const [displayBasic, setDisplayBasic] = useState<boolean>(false);
 	const editorRef = useRef<AvatarEditor>(null);
 	const toastRef = useRef<Toast>(null);
@@ -45,22 +45,6 @@ const MyAvatar: React.FC = () => {
 		},
 	});
 
-	const handleFileChange = (e: ChangeEvent<HTMLInputElement>): void => {
-		const file = e.target.files ? e.target.files[0] : null;
-		if (file && file.type.substring(0, 5) === "image") {
-			setImage(file);
-			const reader = new FileReader();
-			reader.onloadend = () => {
-				setImagePreviewUrl(reader.result as string);
-				setDisplayBasic(true);
-			};
-			reader.readAsDataURL(file);
-		} else {
-			setImage(null);
-			setImagePreviewUrl("");
-		}
-	};
-
 	const handleUpload = async () => {
 		if (editorRef.current) {
 			const canvas = editorRef.current.getImage();
@@ -78,38 +62,13 @@ const MyAvatar: React.FC = () => {
 				);
 				setImagePreviewUrl(dataUrl);
 				setDisplayBasic(false);
+				console.log(dataUrl);
 
 				toastRef.current?.show({
 					severity: "success",
 					summary: "Success",
 					detail: "Profile image updated successfully!",
 				});
-			} catch (error: any) {
-				if (error.response) {
-					toast.show({
-						title: "Error",
-						content: error.response.data.error,
-						duration: 3000,
-					});
-				}
-			}
-		}
-	};
-
-	const handleAvatarPost = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-		e.preventDefault();
-		if (e.key === "Enter") {
-			try {
-				const res = await axios.put(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}${APP_PROFILE_PUT}`,
-					{ avatar: imagePreviewUrl },
-					{
-						headers: {
-							Authorization: `Bearer ${bearToken}`,
-						},
-					}
-				);
-				console.log(res);
 			} catch (error: any) {
 				if (error.response) {
 					toast.show({
@@ -133,6 +92,7 @@ const MyAvatar: React.FC = () => {
 				);
 				if (response?.data) {
 					setImagePreviewUrl(response.data.profile["avatar"]);
+					console.log(response.data.profile);
 				}
 			} catch (error: any) {
 				if (error.response) {
@@ -159,7 +119,7 @@ const MyAvatar: React.FC = () => {
 						className='avatar-img rounded-circle border border-white border-3'
 						alt='Profile'
 						onClick={() => setDisplayBasic(true)}
-						sx={{ width: 56, height: 56 }}
+						sx={{ width: 106, height: 106 }}
 					/>
 				</div>
 			</div>
