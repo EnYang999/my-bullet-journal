@@ -10,11 +10,11 @@ import FullPage from "./components/Full-Page/FullPage";
 import UserProfileWrapper from "./components/UserProfile/UserProfileWrapper";
 import ResetPassword from "./components/login/ResetPassword";
 import Avatar from "./components/Statstics/Avatar";
-import AvatarEditor from "./components/Statstics/AvatarComponent";
+import MyEditor from "./components/Statstics/AvatarComponent";
 function App() {
 	return (
 		<Routes>
-			<Route path='/' element={<Avatar />} />
+			<Route path='/' element={<MyEditor />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/about-us' element={<FullPage />} />
 			<Route path='/profile' element={<ProfilePersonalInformation />} />
