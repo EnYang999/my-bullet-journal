@@ -11,114 +11,116 @@ import monShape from "../../assets/jan2024/mondayShape.png";
 const JanuaryWeek1 = () => {
 	return (
 		<>
-			<div
-				className='d-flex position-absolute align-items-center justify-content-center'
-				style={{ right: "0.5%", top: "5%" }}
-			>
-				<p
-					className='d-flex align-items-center justify-content-center m-0 px-2'
-					style={{ fontFamily: "Aleo" }}
+			<div className='container text-center mw-100 mh-100'>
+				<div
+					className='d-flex position-absolute align-items-center justify-content-center'
+					style={{ right: "0.5%", top: "5%" }}
 				>
-					My Year
-				</p>
-				<Square backgroundColor='#424769' />
-			</div>
-			<div
-				className='d-flex position-absolute'
-				style={{ right: "0.5%", bottom: "5%" }}
-			>
-				<LineDots lineLeft={false} backgroundColor='#424769' />
-			</div>
-			<div className='row outer-row'>
-				<div className='col-lg-3 text-center d-flex flex-column align-items-center justify-content-around'>
-					<Calendar
-						month={1}
-						year={2024}
-						rowfontstyle='italic'
-						headerfont='Protest Riot'
-						rowfont='Protest Riot'
-					/>
+					<p
+						className='d-flex align-items-center justify-content-center m-0 px-2'
+						style={{ fontFamily: "Aleo" }}
+					>
+						My Year
+					</p>
+					<Square backgroundColor='#424769' />
 				</div>
-				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
-							<WeekBox
-								day='Monday'
-								shapeImage={monShape}
-								boxIds={[
-									`jan-week-1-monday-1`,
-									`jan-week-1-monday-2`,
-									`jan-week-1-monday-3`,
-									`jan-week-1-monday-4`,
-									`jan-week-1-monday-5`,
-								]}
-							/>
-						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
-							<WeekBox
-								day='Tuesday'
-								shapeImage={tuesShape}
-								boxIds={[
-									`jan-week-1-tuesday-1`,
-									`jan-week-1-tuesday-2`,
-									`jan-week-1-tuesday-3`,
-									`jan-week-1-tuesday-4`,
-									`jan-week-1-tuesday-5`,
-								]}
-							/>
-						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
-							<WeekBox
-								day='Wednesday'
-								shapeImage={wedShape}
-								boxIds={[
-									`jan-week-1-wednesday-1`,
-									`jan-week-1-wednesday-2`,
-									`jan-week-1-wednesday-3`,
-									`jan-week-1-wednesday-4`,
-									`jan-week-1-wednesday-5`,
-								]}
-							/>
-						</div>
+				<div
+					className='d-flex position-absolute'
+					style={{ right: "0.5%", bottom: "5%" }}
+				>
+					<LineDots lineLeft={false} backgroundColor='#424769' />
+				</div>
+				<div className='row outer-row'>
+					<div className='col-lg-3 text-center d-flex flex-column align-items-center justify-content-around'>
+						<Calendar
+							month={1}
+							year={2024}
+							rowfontstyle='italic'
+							headerfont='Protest Riot'
+							rowfont='Protest Riot'
+						/>
+					</div>
+					<div className='col-lg-9 h-100'>
+						<div className='row inner-row h-100'>
+							<div className='col-lg-4 col-md-6 d-flex day-box'>
+								<WeekBox
+									day='Monday'
+									shapeImage={monShape}
+									boxIds={[
+										`jan-week-1-monday-1`,
+										`jan-week-1-monday-2`,
+										`jan-week-1-monday-3`,
+										`jan-week-1-monday-4`,
+										`jan-week-1-monday-5`,
+									]}
+								/>
+							</div>
+							<div className='col-lg-4 col-md-6 d-flex day-box'>
+								<WeekBox
+									day='Tuesday'
+									shapeImage={tuesShape}
+									boxIds={[
+										`jan-week-1-tuesday-1`,
+										`jan-week-1-tuesday-2`,
+										`jan-week-1-tuesday-3`,
+										`jan-week-1-tuesday-4`,
+										`jan-week-1-tuesday-5`,
+									]}
+								/>
+							</div>
+							<div className='col-lg-4 col-md-6 d-flex day-box'>
+								<WeekBox
+									day='Wednesday'
+									shapeImage={wedShape}
+									boxIds={[
+										`jan-week-1-wednesday-1`,
+										`jan-week-1-wednesday-2`,
+										`jan-week-1-wednesday-3`,
+										`jan-week-1-wednesday-4`,
+										`jan-week-1-wednesday-5`,
+									]}
+								/>
+							</div>
 
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
-							<WeekBox
-								day='Thursday'
-								shapeImage={thursShape}
-								boxIds={[
-									`jan-week-1-thursday-1`,
-									`jan-week-1-thursday-2`,
-									`jan-week-1-thursday-3`,
-									`jan-week-1-thursday-4`,
-									`jan-week-1-thursday-5`,
-								]}
-							/>
-						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
-							<WeekBox
-								day='Friday'
-								shapeImage={friShape}
-								boxIds={[
-									`jan-week-1-friday-1`,
-									`jan-week-1-friday-2`,
-									`jan-week-1-friday-3`,
-									`jan-week-1-friday-4`,
-									`jan-week-1-friday-5`,
-								]}
-							/>
-						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
-							<WeekBox
-								day='Weekend'
-								shapeImage={weekendShape}
-								boxIds={[
-									`jan-week-1-weekend-1`,
-									`jan-week-1-weekend-2`,
-									`jan-week-1-weekend-3`,
-									`jan-week-1-weekend-4`,
-									`jan-week-1-weekend-5`,
-								]}
-							/>
+							<div className='col-lg-4 col-md-6 d-flex day-box'>
+								<WeekBox
+									day='Thursday'
+									shapeImage={thursShape}
+									boxIds={[
+										`jan-week-1-thursday-1`,
+										`jan-week-1-thursday-2`,
+										`jan-week-1-thursday-3`,
+										`jan-week-1-thursday-4`,
+										`jan-week-1-thursday-5`,
+									]}
+								/>
+							</div>
+							<div className='col-lg-4 col-md-6 d-flex day-box'>
+								<WeekBox
+									day='Friday'
+									shapeImage={friShape}
+									boxIds={[
+										`jan-week-1-friday-1`,
+										`jan-week-1-friday-2`,
+										`jan-week-1-friday-3`,
+										`jan-week-1-friday-4`,
+										`jan-week-1-friday-5`,
+									]}
+								/>
+							</div>
+							<div className='col-lg-4 col-md-6 d-flex day-box'>
+								<WeekBox
+									day='Weekend'
+									shapeImage={weekendShape}
+									boxIds={[
+										`jan-week-1-weekend-1`,
+										`jan-week-1-weekend-2`,
+										`jan-week-1-weekend-3`,
+										`jan-week-1-weekend-4`,
+										`jan-week-1-weekend-5`,
+									]}
+								/>
+							</div>
 						</div>
 					</div>
 				</div>

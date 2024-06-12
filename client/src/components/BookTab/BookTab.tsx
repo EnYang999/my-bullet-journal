@@ -57,7 +57,7 @@ const BookTab: React.FC = () => {
 			<div
 				className={`container py-8 px-6 d-flex week-box-container align-items-center justify-content-center w-100 ${
 					monthMap[month as string]?.toLowerCase() + "-" + week
-				} ${week} ${month?.toLowerCase()}`}
+				} ${week} ${monthMap[month as string]?.toLowerCase()}`}
 			>
 				<SidePage className='sidebar' />
 				<RightSideBar className='rightside' />
