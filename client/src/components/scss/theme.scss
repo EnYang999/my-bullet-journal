@@ -26,8 +26,11 @@
 
 // Custom core
 // @import 'user';
-@import "./theme/bundle"; // general
-@import "./themeProfile/profile.scss"; // general for whole user profile
+// @import "./theme/bundle"; // general
+// @import "./themeProfile/profile.scss"; // general for whole user profile
+// @import "./themebau/fullpage";
+// import "./components/scss/themebau/_themebau.scss";
+
 @import "./theme/animation";
 @import "./theme/svg";
 @import "./theme/utilities/background";
@@ -43,9 +46,10 @@
 @import "./theme/toast";
 @import "./theme/login";
 @import "./theme/errorpage";
-@import "./theme/userprofile";
-@import "./theme/popover_hint";
+// @import "./theme/userprofile";
+// @import "./theme/popover_hint";
 @import "../landingsection/landingpage.scss";
+@import "./themebau/myfullpage";
 
 @import "./theme/journalbookpage";
 
@@ -68,8 +72,6 @@
 
 @import "./theme/rightsidebar";
 @import "./theme/sidebar";
-
-@import "./themebau/fullpage";
 
 @import "./themeProfileBody/variable";
 @import "./themeProfileBody/utilities";
