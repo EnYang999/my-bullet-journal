@@ -4,26 +4,26 @@ import RightSideBar from "../sidebarpage/RightPage";
 import SidePage from "../sidebarpage/SidePage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
-// Simplified version without separate loadError state
-const BookTab = () => {
+const BookTab: React.FC = () => {
 	const { month, week } = useParams<{ month: string; week: string }>();
 	const [Component, setComponent] = useState<React.ElementType | null>(null);
 
+	const monthMap: { [key: string]: string } = {
+		"01": "January",
+		"02": "February",
+		"03": "March",
+		"04": "April",
+		"05": "May",
+		"06": "June",
+		"07": "July",
+		"08": "August",
+		"09": "September",
+		"10": "October",
+		"11": "November",
+		"12": "December",
+	};
+
 	useEffect(() => {
-		const monthMap: { [key: string]: string } = {
-			"01": "January",
-			"02": "February",
-			"03": "March",
-			"04": "April",
-			"05": "May",
-			"06": "June",
-			"07": "July",
-			"08": "August",
-			"09": "September",
-			"10": "October",
-			"11": "November",
-			"12": "December",
-		};
 		if (!month || !week || !(month in monthMap) || !/^week[1-5]$/.test(week)) {
 			setComponent(() => () => (
 				<ErrorPage
@@ -56,7 +56,7 @@ const BookTab = () => {
 		<div className='week-container-layout'>
 			<div
 				className={`container py-8 px-6 d-flex week-box-container align-items-center justify-content-center w-100 ${
-					month?.toLowerCase() + "-" + week
+					monthMap[month as string]?.toLowerCase() + "-" + week
 				} ${week} ${month?.toLowerCase()}`}
 			>
 				<SidePage className='sidebar' />

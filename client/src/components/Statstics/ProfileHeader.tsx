@@ -6,6 +6,7 @@ import {
 	APP_AUTHENTICATE_TOKEN_NAME,
 	APP_PROFILE_GET_BY_OWN,
 } from "../../../../common/constants";
+import { useNavigate } from "react-router-dom";
 import Avatar from "./Avatar";
 import axios from "axios";
 import { useState, useRef, useEffect } from "react";
@@ -30,6 +31,7 @@ const ProfileHeader = () => {
 	const [accountName, setAccountName] = useState("");
 	const [accountID, setAccountID] = useState("");
 	const [joinDate, setJoinDate] = useState("");
+	const navigate = useNavigate(); // Initialize the useNavigate hook
 	const { refs, floatingStyles, context } = useFloating({
 		placement: "bottom-start",
 		strategy: "absolute",
@@ -45,7 +47,11 @@ const ProfileHeader = () => {
 	});
 	const cookies = new Cookies();
 	const bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
-
+	useEffect(() => {
+		if (!bearToken) {
+			navigate("/permissiondeniedpage");
+		}
+	}, [bearToken, navigate]);
 	const click = useClick(context);
 	const { getReferenceProps, getFloatingProps } = useInteractions([click]);
 	useEffect(() => {
