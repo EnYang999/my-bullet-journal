@@ -77,14 +77,16 @@
             width: 100%;
 
             &:after {
+                // stokeline
                 content: "";
                 position: absolute;
-                top: 0.7em;
+                top: 50%;
                 left: 0;
-                height: 1px;
+                height: 2px;
                 width: 100%;
                 transform-origin: 0 0;
                 transform: scaleX(0);
+                background-color: rgb(192, 181, 181);
             }
         }
 

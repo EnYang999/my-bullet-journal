@@ -80,13 +80,13 @@ export const ToDoLine = ({
 				}
 			} catch (error: any) {
 				console.error("Error fetching data", error);
-				if (error.response) {
-					toast.show({
-						title: "Error",
-						content: error.response.data.error,
-						duration: 3000,
-					});
-				}
+				// if (error.response) {
+				// 	toast.show({
+				// 		title: "Error",
+				// 		content: error.response.data.error,
+				// 		duration: 3000,
+				// 	});
+				// }
 			}
 		};
 
@@ -96,13 +96,10 @@ export const ToDoLine = ({
 		<div className={`todo-wrapper ${className}`}>
 			<input
 				type='checkbox'
-				className={`tick-box`}
+				className='tick-box'
 				id={`cbx-${boxId}`}
 				checked={isChecked}
-				onChange={() => {
-					handleCheckboxChange;
-				}}
-				style={{ display: "none" }}
+				onChange={handleCheckboxChange}
 			/>
 
 			<label className='cbx' htmlFor={`cbx-${boxId}`}>
@@ -111,7 +108,7 @@ export const ToDoLine = ({
 						<polyline points='1 5 4 8 11 1'></polyline>
 					</svg>
 				</span>
-				<span className={`input-box`}>
+				<span className='input-box'>
 					<input
 						value={inputValue}
 						onKeyUp={handleTodoPost}
