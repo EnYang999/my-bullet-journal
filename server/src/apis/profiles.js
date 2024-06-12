@@ -19,19 +19,17 @@ const router = Router();
  * @api /profiles/api/create-profile
  * @access Private
  */
-/**
+/** */
 router.post(
 	"/create-profile",
 	userAuth,
 	uploader.single("avatar"),
 	async (req, res) => {
 		try {
-			let { body, file, user } = req;
-			let path = DOMAIN + PORT + file.path.split("uploads")[1];
+			let { user } = req;
+			console.log(user);
 			let profile = new Profile({
-				social: body,
 				account: user._id,
-				avatar: path,
 			});
 			await profile.save();
 			return res.status(201).json({
@@ -47,7 +45,7 @@ router.post(
 		}
 	}
 );
- */
+
 /**
  * @description To create profile of the authenticated User
  * @type POST <multipart-form> request
@@ -118,7 +116,7 @@ router.get(PROFILE_GET_BY_OWN, userAuth, async (req, res) => {
 		console.log(req.user._id);
 		let profile = await Profile.findOne({
 			account: req.user._id,
-		}).populate("account", "email username createdAt");
+		}).populate("account", "userid email username createdAt");
 		if (!profile) {
 			return res.status(404).json({
 				success: false,

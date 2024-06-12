@@ -65,7 +65,7 @@ const ProfileHeader = () => {
 				);
 				if (response?.data) {
 					setAccountName(response.data.profile["account"].username);
-					setAccountID(response.data.profile["account"]._id);
+					setAccountID(response.data.profile["account"].userid);
 					setJoinDate(response.data.profile["account"].createdAt);
 					console.log(response.data.profile["account"]);
 				}

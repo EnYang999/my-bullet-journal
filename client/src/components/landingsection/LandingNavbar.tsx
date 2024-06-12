@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 import {
 	API_ENDPOINT,
 	APP_BACKEND_PORT,
 	APP_USER_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
+	APP_PROFILE_API,
+	APP_PROFILE_PUT,
 } from "../../../../common/constants";
 import { toast } from "../errortoast/ErrorToastManager";
 interface User {
@@ -19,13 +22,12 @@ const LandingNavbar = () => {
 	const [visible, setVisible] = useState(true);
 	const [showCollapse, setShowCollapse] = useState(false);
 	const cookies = new Cookies();
+	const navigate = useNavigate();
 	const [user, setUser] = useState<User | null>(null);
 	const [currentCookie, setCurrentCookie] = useState<string | null>(null);
-	let jwtCookie = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
+	let bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
 	const handleLogout = async () => {
-		cookies.remove(jwtCookie);
-		localStorage.removeItem(APP_AUTHENTICATE_TOKEN_NAME);
-		localStorage.removeItem(jwtCookie);
+		cookies.remove(bearToken);
 		try {
 			const response = await axios.get(
 				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}/logout`,
@@ -57,12 +59,36 @@ const LandingNavbar = () => {
 		// 	return prevUser;
 		// });
 	};
+	const handleProfileCreate = async () => {
+		try {
+			const response = await axios.post(
+				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}/create-profile`,
+				{},
+				{
+					headers: {
+						Authorization: `Bearer ${bearToken}`,
+					},
+				}
+			);
+			console.log(response);
+			navigate("/profile");
+		} catch (error: any) {
+			console.log("Error from client:", error);
+			if (error.response) {
+				toast.show({
+					title: "Error",
+					content: error.response.data.error,
+					duration: 3000,
+				});
+			}
+		}
+	};
 	useEffect(() => {
-		let jwtCookie = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
-		if (jwtCookie && jwtCookie !== currentCookie) {
-			setCurrentCookie(jwtCookie);
+		let bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
+		if (bearToken && bearToken !== currentCookie) {
+			setCurrentCookie(bearToken);
 
-			const decodedToken: User = jwtDecode(jwtCookie);
+			const decodedToken: User = jwtDecode(bearToken);
 			setUser((prevUser) => {
 				if (!prevUser) {
 					return decodedToken;
@@ -163,10 +189,8 @@ const LandingNavbar = () => {
 								Themes
 							</a>
 						</li>
-						<li className='nav-item'>
-							<a className='nav-link ' href='./profile'>
-								{user ? user.username : "Profile"}
-							</a>
+						<li className='nav-item' onClick={handleProfileCreate}>
+							<a className='nav-link'>{user ? user.username : "Profile"}</a>
 						</li>
 						<li className='nav-item' onClick={handleLogout}>
 							<a className='nav-link '>{user ? "Log Out" : "Log In"}</a>
