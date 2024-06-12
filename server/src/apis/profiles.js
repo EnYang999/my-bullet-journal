@@ -1,8 +1,15 @@
 import { Router } from "express";
-import { DOMAIN, PORT, PROFILE_GET_BY_USERID, PROFILE_PUT } from "../constants";
+import {
+	DOMAIN,
+	PORT,
+	PROFILE_GET_BY_USERID,
+	PROFILE_PUT,
+	PROFILE_GET_BY_OWN,
+} from "../constants";
 import { Profile, User } from "../models";
 import uploader from "../middlewares/uploader";
 import { userAuth } from "../middlewares/auth-guard";
+import mongoose, { Schema } from "mongoose";
 
 const router = Router();
 
@@ -105,12 +112,13 @@ router.put(
  * @access Private
  * @type GET
  */
-router.get("/my-profile", userAuth, async (req, res) => {
+router.get(PROFILE_GET_BY_OWN, userAuth, async (req, res) => {
 	try {
-		let profile = await Profile.findOne({ account: req.user._id }).populate(
-			"account",
-			"email username createdAt"
-		);
+		console.log("-----------------------");
+		console.log(req.user._id);
+		let profile = await Profile.findOne({
+			account: req.user._id,
+		}).populate("account", "email username createdAt");
 		if (!profile) {
 			return res.status(404).json({
 				success: false,
@@ -125,6 +133,7 @@ router.get("/my-profile", userAuth, async (req, res) => {
 		return res.status(400).json({
 			success: false,
 			message: "Unable to get the profile.",
+			error: err.message,
 		});
 	}
 });
