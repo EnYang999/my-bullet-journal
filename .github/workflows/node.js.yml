@@ -23,9 +23,11 @@ jobs:
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: ls -la package-lock.json
 
-      - name: Install dependencies for client
+      - name: Clean install client dependencies
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
-        run: npm install
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install --legacy-peer-deps
 
       - name: Build client
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
@@ -41,9 +43,11 @@ jobs:
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: ls -la package-lock.json
 
-      - name: Install dependencies for server
+      - name: Clean install server dependencies
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
-        run: npm install
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install --legacy-peer-deps
 
       # Deployment steps
       - name: Deploy client
