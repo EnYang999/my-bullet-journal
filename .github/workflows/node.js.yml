@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "20.9.0" # Specify the Node.js version needed for the client
 
-      - name: Install client dependencies
+      - name: install client dependencies
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: |
           npm install
@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: "20.9.0" # Specify the Node.js version needed for the server
 
-      - name: Install server dependencies
+      - name: install server dependencies
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: |
           npm install
