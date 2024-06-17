@@ -34,16 +34,10 @@ jobs:
         with:
           node-version: "20.9.0" # Specify the Node.js version needed for the server
 
-      - name: Check Server lock file
-        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
-        run: ls -la package-lock.json
-
-      - name: Clean install server dependencies
+      - name: Install server dependencies
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: |
-          rm -rf node_modules package-lock.json
-          npm install --legacy-peer-deps
-
+          npm install
       # Deployment steps
       - name: Deploy client
         run: |
