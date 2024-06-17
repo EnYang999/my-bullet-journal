@@ -13,39 +13,46 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v2
 
+      # Client setup and build
       - name: Set up Node.js for Client
         uses: actions/setup-node@v4
         with:
           node-version: "20.9.0" # Specify the Node.js version needed for the client
-          cache: "npm" # Enable cache for npm
-          cache-dependency-path: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client/package-lock.json # Path to the client's lock file
+
+      - name: Check Client lock file
+        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: ls -la package-lock.json
 
       - name: Install dependencies for client
-        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: npm install
 
       - name: Build client
-        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: npm run build
 
+      # Server setup
       - name: Set up Node.js for Server
         uses: actions/setup-node@v4
         with:
           node-version: "20.9.0" # Specify the Node.js version needed for the server
-          cache: "npm" # Enable cache for npm
-          cache-dependency-path: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server/package-lock.json # Path to the server's lock file
+
+      - name: Check Server lock file
+        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        run: ls -la package-lock.json
 
       - name: Install dependencies for server
-        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: npm install
 
+      # Deployment steps
       - name: Deploy client
         run: |
           # Replace with your actual deployment commands
-          rsync -avz /var/www/my-bullet-journal/_work/my-bulletjournal/my-bullet-journal/client/build/ your-user@your-server:/path/to/deployment
+          rsync -avz ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client/build/ your-user@your-server:/path/to/deployment
 
       - name: Deploy server
         run: |
           # Replace with your actual deployment commands
-          rsync -avz /var/www/my-bullet-journal/_work/my-bulletjournal/my-bullet-journal/server/ your-user@your-server:/path/to/deployment
+          rsync -avz ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server/ your-user@your-server:/path/to/deployment
           ssh your-user@your-server 'pm2 restart all'
