@@ -1,47 +1,51 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: Deploy
 
 on:
   push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+    branches:
+      - main # Replace with your target branch
 
 jobs:
   build:
     runs-on: self-hosted
 
-    strategy:
-      matrix:
-        node-version: [20.9.0]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out the repository
+        uses: actions/checkout@v2
 
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
-      #     cache: "npm"
+      - name: Set up Node.js for Client
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.9.0" # Specify the Node.js version needed for the client
+          cache: "npm" # Enable cache for npm
+          cache-dependency-path: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client/package-lock.json # Path to the client's lock file
 
-      - name: Install client dependencies
-        # working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+      - name: Install dependencies for client
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: npm install
+
+      - name: Build client
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: npm run build
+
+      - name: Set up Node.js for Server
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.9.0" # Specify the Node.js version needed for the server
+          cache: "npm" # Enable cache for npm
+          cache-dependency-path: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server/package-lock.json # Path to the server's lock file
+
+      - name: Install dependencies for server
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        run: npm install
+
+      - name: Deploy client
         run: |
-          cd client
-          npm i
-          npm run build --if-present
+          # Replace with your actual deployment commands
+          rsync -avz /var/www/my-bullet-journal/_work/my-bulletjournal/my-bullet-journal/client/build/ your-user@your-server:/path/to/deployment
 
-      - name: Install server dependencies
-        # working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+      - name: Deploy server
         run: |
-          cd server
-          npm i
-
-      # - name: Build the project
-      #   run: npm run build --if-present
-
-      - name: Run tests
-        run: npm test
+          # Replace with your actual deployment commands
+          rsync -avz /var/www/my-bullet-journal/_work/my-bulletjournal/my-bullet-journal/server/ your-user@your-server:/path/to/deployment
+          ssh your-user@your-server 'pm2 restart all'
