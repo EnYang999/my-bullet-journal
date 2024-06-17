@@ -20,15 +20,15 @@ jobs:
           node-version: "20.9.0" # Specify the Node.js version needed for the client
 
       - name: Check Client lock file
-        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: ls -la package-lock.json
 
       - name: Install dependencies for client
-        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: npm install
 
       - name: Build client
-        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: npm run build
 
       # Server setup
@@ -38,21 +38,21 @@ jobs:
           node-version: "20.9.0" # Specify the Node.js version needed for the server
 
       - name: Check Server lock file
-        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: ls -la package-lock.json
 
       - name: Install dependencies for server
-        working-directory: ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: npm install
 
       # Deployment steps
       - name: Deploy client
         run: |
           # Replace with your actual deployment commands
-          rsync -avz ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client/build/ your-user@your-server:/path/to/deployment
+          rsync -avz /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client/build/ your-user@your-server:/path/to/deployment
 
       - name: Deploy server
         run: |
           # Replace with your actual deployment commands
-          rsync -avz ./var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server/ your-user@your-server:/path/to/deployment
+          rsync -avz /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server/ your-user@your-server:/path/to/deployment
           ssh your-user@your-server 'pm2 restart all'
