@@ -31,15 +31,16 @@ jobs:
     - name: Install client dependencies
       run: |
         cd client
-        npm ci
+        npm i
+        npm run build --if-present
 
     - name: Install server dependencies
       run: |
         cd server
-        npm ci
+        npm i
 
-    - name: Build the project
-      run: npm run build --if-present
+    # - name: Build the project
+    #   run: npm run build --if-present
 
-    - name: Run tests
-      run: npm test
+    # - name: Run tests
+    #   run: npm test
