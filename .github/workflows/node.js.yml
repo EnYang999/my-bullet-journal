@@ -23,7 +23,7 @@ jobs:
       - name: install client dependencies
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: |
-          npm install
+          npm install --legacy-peer-deps
 
       - name: Build client
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
