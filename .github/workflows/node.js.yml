@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "20.9.0" # Specify the Node.js version needed for the client
 
-      - name: install client dependencies
+      - name: Install client dependencies
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: |
           npm install --legacy-peer-deps
@@ -35,8 +35,15 @@ jobs:
         with:
           node-version: "20.9.0" # Specify the Node.js version needed for the server
 
-      - name: install server dependencies
+      - name: Install server dependencies
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: |
           npm install
+
       # Deployment steps
+      - name: Deploy client
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: |
+          pm2 restart 1
+          pm2 save
+          sudo service nginx restart
