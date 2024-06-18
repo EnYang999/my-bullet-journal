@@ -12,7 +12,7 @@ const SignupSuccessful: React.FC = () => {
 		}, 1000);
 
 		setTimeout(() => {
-			history.push("/");
+			navigate("/");
 		}, 5000);
 
 		return () => clearInterval(timer);

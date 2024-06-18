@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Dialog } from "primereact/dialog";
-import { Button, IconButton, Avatar } from "@mui/material";
+import { Button, Avatar } from "@mui/material";
 import { useDropzone } from "react-dropzone";
 import AvatarEditor from "react-avatar-editor";
 import { Toast } from "primereact/toast";
@@ -17,7 +17,7 @@ import {
 } from "../../../../common/constants";
 
 const MyAvatar: React.FC = () => {
-	const [image, setImage] = useState<File | null>(null);
+	// const [image, setImage] = useState<File | null>(null);
 	const [imagePreviewUrl, setImagePreviewUrl] = useState<string>("");
 	const [displayBasic, setDisplayBasic] = useState<boolean>(false);
 	const editorRef = useRef<AvatarEditor>(null);
@@ -27,7 +27,7 @@ const MyAvatar: React.FC = () => {
 
 	const handleDrop = (acceptedFiles: File[]) => {
 		const file = acceptedFiles[0];
-		setImage(file);
+		// setImage(file);
 		const reader = new FileReader();
 		reader.onloadend = () => {
 			setImagePreviewUrl(reader.result as string);
@@ -61,7 +61,6 @@ const MyAvatar: React.FC = () => {
 				);
 				setImagePreviewUrl(dataUrl);
 				setDisplayBasic(false);
-				console.log(dataUrl);
 
 				toastRef.current?.show({
 					severity: "success",

@@ -1,5 +1,5 @@
 // import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LandingPage from "./components/landingsection/LandingPage";
 import ProfilePersonalInformation from "./components/Statstics/ProfilePersonalInformation";
 import Login from "./components/login/login";
@@ -8,10 +8,10 @@ import BookTab from "./components/BookTab/BookTab";
 import FullPage from "./components/Full-Page/FullPage";
 import UserProfileWrapper from "./components/UserProfile/UserProfileWrapper";
 import ResetPassword from "./components/login/ResetPassword";
-import Avatar from "./components/Statstics/Avatar";
-import Logout from "./components/login/Logout";
+// import Avatar from "./components/Statstics/Avatar";
+// import Logout from "./components/login/Logout";
 import PermissionDeniedPage from "./components/ErrorPage/PermissionPage";
-import ControlledCheckboxInput from "./components/todolines/todoComp";
+// import ControlledCheckboxInput from "./components/todolines/todoComp";
 function App() {
 	return (
 		<Routes>

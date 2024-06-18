@@ -9,7 +9,6 @@ import {
 	APP_USER_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
 	APP_PROFILE_API,
-	APP_PROFILE_PUT,
 } from "../../../../common/constants";
 import { toast } from "../errortoast/ErrorToastManager";
 interface User {

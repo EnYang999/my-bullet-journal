@@ -1,12 +1,9 @@
 // src/components/DropdownMenu.tsx
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import {
-	useClick,
 	useFloating,
 	autoUpdate,
-	useInteractions,
-	arrow,
 	flip,
 	offset,
 	shift,
@@ -43,7 +40,7 @@ const DropdownMenu: React.FC = ({}) => {
 				className='dropdown-menu show'
 				ref={refs.setFloating}
 				style={{ ...floatingStyles }}
-				{...getFloatingProps()}
+				// {...getFloatingProps()}
 			>
 				{menuItems.map((item, index) =>
 					item.isDivider ? (

@@ -1,4 +1,3 @@
-import React from "react";
 import { ToDoLine } from "../todolines/todoline";
 import MondayShape from "../../assets/oct2020/MONDAY.svg";
 import stampa from "../../assets/oct2020/stampa.png";

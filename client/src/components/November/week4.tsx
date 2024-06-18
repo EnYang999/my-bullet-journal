@@ -1,5 +1,5 @@
 import WeekBox from "./weekday5";
-import FourSquares from "../decorationelements/lineanddots/squares";
+// import FourSquares from "../decorationelements/lineanddots/squares";
 import Circles from "../decorationelements/lineanddots/circles";
 import Calendar from "../calender/Calendar";
 const NovemberWeek4 = () => {
