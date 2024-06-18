@@ -54,8 +54,7 @@ jobs:
       # Deployment steps
       - name: Deploy client
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
-        run:
-          npm run preview
-          # pm2 start npm --name "my-bullet-journal" -- run preview
-          # pm2 save
-          # sudo service nginx restart
+        run: |
+          pm2 start npm --name "my-bullet-journal" -- run preview
+          pm2 save
+          sudo service nginx restart
