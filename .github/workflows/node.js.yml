@@ -12,10 +12,10 @@ jobs:
 
     steps:
       # Fix permissions before proceeding
-      - name: Fix permissions for GitHub Actions Runner
-        run: |
-          sudo chmod -R 777 /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal
-          sudo chown -R $(whoami) /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal
+      # - name: Fix permissions for GitHub Actions Runner
+      #   run: |
+      #     sudo chmod -R 777 /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal
+      #     sudo chown -R $(whoami) /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal
 
       - name: Check out the repository
         uses: actions/checkout@v2
