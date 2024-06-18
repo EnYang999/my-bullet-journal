@@ -46,6 +46,11 @@ jobs:
         run: |
           npm install
 
+      # Install PM2
+      - name: Install PM2
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: npm install -g pm2
+
       # Deployment steps
       - name: Deploy client
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
