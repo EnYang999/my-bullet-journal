@@ -40,13 +40,3 @@ jobs:
         run: |
           npm install
       # Deployment steps
-      - name: Deploy client
-        run: |
-          # Replace with your actual deployment commands
-          rsync -avz /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client/build/ your-user@your-server:/path/to/deployment
-
-      - name: Deploy server
-        run: |
-          # Replace with your actual deployment commands
-          rsync -avz /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server/ your-user@your-server:/path/to/deployment
-          ssh your-user@your-server 'pm2 restart all'
