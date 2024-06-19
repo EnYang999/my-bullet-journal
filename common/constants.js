@@ -1,4 +1,4 @@
-export const API_ENDPOINT = "http://localhost:";
+export const API_ENDPOINT = "http://147.182.217.227:";
 export const APP_NAME = "MyBulletJournal";
 export const APP_BACKEND_PORT = 8000;
 export const APP_FRONTEND_PORT = 5173;
