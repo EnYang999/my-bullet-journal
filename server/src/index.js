@@ -20,11 +20,24 @@ require("./middlewares/passport-middleware");
 const app = express();
 
 // Apply Application Middlewares
+// const corsOptions = {
+// 	origin: "http://localhost:5173" 'http://147.182.217.227',
+// 	credentials: true,
+// 	// access-control-allow-credentials:true,
+// 	optionSuccessStatus: 200,
+// };
+const allowedOrigins = ["http://localhost:5173", "http://147.182.217.227"];
+
 const corsOptions = {
-	origin: "http://localhost:5173",
+	origin: (origin, callback) => {
+		if (allowedOrigins.includes(origin) || !origin) {
+			callback(null, true);
+		} else {
+			callback(new Error("Not allowed by CORS"));
+		}
+	},
 	credentials: true,
-	// access-control-allow-credentials:true,
-	optionSuccessStatus: 200,
+	optionsSuccessStatus: 200, // for legacy browsers
 };
 app.set("trust proxy", true);
 app.use(cors(corsOptions));
