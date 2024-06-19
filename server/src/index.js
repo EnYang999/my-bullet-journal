@@ -26,6 +26,7 @@ const corsOptions = {
 	// access-control-allow-credentials:true,
 	optionSuccessStatus: 200,
 };
+app.set("trust proxy", true);
 app.use(cors(corsOptions));
 app.use(json({ limit: "50mb" }));
 app.use(passport.initialize());
