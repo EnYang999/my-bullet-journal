@@ -35,16 +35,38 @@ const BookTab: React.FC = () => {
 		}
 
 		const componentPath = `${monthMap[month]}/${week}`;
-		import(`../${componentPath}`)
-			.then((mod) => setComponent(() => mod.default))
-			.catch(() =>
+		// import(`../${componentPath}`)
+		// 	.then((mod) => setComponent(() => mod.default))
+		// 	.catch((error) => {
+		// 		console.error(
+		// 			`Error loading module at path: ../${componentPath}`,
+		// 			error
+		// 		);
+		// 		setComponent(() => () => (
+		// 			<ErrorPage
+		// 				title='Content Not Found'
+		// 				message={`The page for ${monthMap[month]} ${week} hasn't been built yet.`}
+		// 			/>
+		// 		));
+		// 	});
+		const loadComponent = async () => {
+			try {
+				const mod = await import(`../${componentPath}`);
+				setComponent(() => mod.default);
+			} catch (error) {
+				console.error(
+					`Error loading module at path: ../${componentPath}`,
+					error
+				);
 				setComponent(() => () => (
 					<ErrorPage
 						title='Content Not Found'
 						message={`The page for ${monthMap[month]} ${week} hasn't been built yet.`}
 					/>
-				))
-			);
+				));
+			}
+		};
+		loadComponent();
 	}, [month, week]);
 
 	// Handle the loading state
