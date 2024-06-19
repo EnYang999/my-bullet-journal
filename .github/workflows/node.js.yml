@@ -46,7 +46,7 @@ jobs:
         run: |
           npm install
 
-      # Install PM2
+      # Install PM2 in client
       - name: Install PM2
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
         run: npm install -g pm2
@@ -59,6 +59,12 @@ jobs:
           pm2 save
           sudo service nginx restart
 
+      # Install PM2 in server
+      - name: Install PM2
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        run: npm install -g pm2
+
+      # Deploy in server
       - name: Deploy server
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: |
