@@ -8,7 +8,7 @@ import { json } from "body-parser";
 // import cookieParser from "cookie-parser";
 // Import Application Constants
 import { DB, PORT, USER_API, PROFILE_API, TODO_API } from "./constants";
-
+consola.log(USER_API, PROFILE_API, TODO_API);
 // Router imports
 import userApis from "./apis/users";
 import profileApis from "./apis/profiles";
