@@ -314,7 +314,6 @@ router.get("/logout", (req, res) => {
 			maxAge: 1,
 			path: "/",
 			overwrite: true,
-			httpOnly: false,
 		});
 		console.log(AUTHENTICATE_TOKEN_NAME);
 		return res.status(200).json({
