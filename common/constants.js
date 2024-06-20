@@ -1,4 +1,4 @@
-export const API_ENDPOINT = "http://www.enbujo.com";
+export const API_ENDPOINT = "http://www.enbujo.com:";
 // "http://147.182.217.227:";
 export const APP_NAME = "MyBulletJournal";
 export const APP_BACKEND_PORT = 8000;
