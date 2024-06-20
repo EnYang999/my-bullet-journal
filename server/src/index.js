@@ -76,3 +76,6 @@ const main = async () => {
 };
 
 main();
+app.listen(port, "127.0.0.1", () => {
+	console.log(`Backend server listening at http://localhost:${port}`);
+});
