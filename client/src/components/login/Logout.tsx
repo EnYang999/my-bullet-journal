@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Cookies from "universal-cookie";
 import {
 	API_ENDPOINT,
-	APP_BACKEND_PORT,
 	APP_TODO_POST,
 	APP_TODO_API,
 	APP_AUTHENTICATE_TOKEN_NAME,

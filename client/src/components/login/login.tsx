@@ -6,7 +6,6 @@ import FormField from "./formAccount";
 import OverlayPanel from "./overlayPanel";
 import {
 	API_ENDPOINT,
-	APP_BACKEND_PORT,
 	APP_USER_API,
 	APP_LOGIN_URL,
 	APP_SIGNUP_URL,

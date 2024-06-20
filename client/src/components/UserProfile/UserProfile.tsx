@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
 	API_ENDPOINT,
-	APP_BACKEND_PORT,
 	APP_PROFILE_API,
 	APP_PROFILE_GET_BY_USERID,
 } from "../../../../common/constants";

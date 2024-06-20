@@ -9,7 +9,6 @@ import axios from "axios";
 import { toast } from "../errortoast/ErrorToastManager";
 import {
 	API_ENDPOINT,
-	APP_BACKEND_PORT,
 	APP_PROFILE_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
 	APP_PROFILE_PUT,

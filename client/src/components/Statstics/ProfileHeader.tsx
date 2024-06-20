@@ -1,7 +1,6 @@
 import backgroundImageUrl from "../../assets/landing/15.jpg";
 import {
 	API_ENDPOINT,
-	APP_BACKEND_PORT,
 	APP_PROFILE_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
 	APP_PROFILE_GET_BY_OWN,

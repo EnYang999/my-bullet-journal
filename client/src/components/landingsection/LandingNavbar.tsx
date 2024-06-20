@@ -5,7 +5,6 @@ import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 import {
 	API_ENDPOINT,
-	APP_BACKEND_PORT,
 	APP_USER_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
 	APP_PROFILE_API,
