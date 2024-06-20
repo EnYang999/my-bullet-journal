@@ -176,7 +176,7 @@ router.put(RESET_PASSWORD, ResetPassword, Validator, async (req, res) => {
             <h1>Hello, ${user.username}</h1>
             <p>Please click the following link to reset your password.</p>
             <p>If this password reset request is not created by your then you can inore this email.</p>
-            <a href="${API_ENDPOINT}${FRONTEND_PORT}${RESET_PASSWORD_NOW}/${user.resetPasswordToken}">Verify Now</a>
+            <a href="${API_ENDPOINT}:${FRONTEND_PORT}${RESET_PASSWORD_NOW}/${user.resetPasswordToken}">Verify Now</a>
         </div>
       `;
 		await sendMail(

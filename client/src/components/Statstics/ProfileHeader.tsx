@@ -58,7 +58,7 @@ const ProfileHeader = () => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}${APP_PROFILE_GET_BY_OWN}`,
+					`${API_ENDPOINT}${APP_PROFILE_API}${APP_PROFILE_GET_BY_OWN}`,
 					{
 						headers: { Authorization: `Bearer ${bearToken}` },
 					}

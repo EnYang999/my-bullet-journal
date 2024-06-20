@@ -23,7 +23,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
 		const fetchUser = async () => {
 			try {
 				const { data } = await axios.get(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}${APP_PROFILE_GET_BY_USERID}/:${userId}`
+					`${API_ENDPOINT}${APP_PROFILE_API}${APP_PROFILE_GET_BY_USERID}/:${userId}`
 				);
 				setUser(data);
 			} catch (error) {

@@ -38,7 +38,7 @@ const Login: React.FC = () => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(
-				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}${APP_LOGIN_URL}`,
+				`${API_ENDPOINT}${APP_USER_API}${APP_LOGIN_URL}`,
 				{
 					email,
 					password,
@@ -84,7 +84,7 @@ const Login: React.FC = () => {
 				isValidEmail
 			) {
 				const response = await axios.post(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}${APP_SIGNUP_URL}`,
+					`${API_ENDPOINT}${APP_USER_API}${APP_SIGNUP_URL}`,
 					{
 						email,
 						username: userName,

@@ -17,7 +17,7 @@ const Logout = async () => {
 		async () => {
 			try {
 				const response = await axios.get(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_TODO_API}${APP_TODO_POST}`,
+					`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}`,
 					{
 						headers: { Authorization: `Bearer ${bearToken}` },
 					}

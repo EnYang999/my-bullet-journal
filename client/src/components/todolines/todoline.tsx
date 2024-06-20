@@ -41,7 +41,7 @@ export const ToDoLine = ({
 		if (e.key === "Enter") {
 			try {
 				await axios.post(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
+					`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
 					{
 						completed: isChecked,
 						description: inputValue,
@@ -69,7 +69,7 @@ export const ToDoLine = ({
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
+					`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
 					{
 						headers: { Authorization: `Bearer ${bearToken}` },
 					}

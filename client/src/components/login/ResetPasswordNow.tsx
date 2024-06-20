@@ -62,11 +62,11 @@ const ResetPasswordNow: React.FC = () => {
 				lengthValidated
 			) {
 				console.log(
-					`${constants.API_ENDPOINT}${constants.APP_BACKEND_PORT}${constants.APP_USER_API}${constants.APP_RESET_PASSWORD_NOW}/${resetPasswordToken}`
+					`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_RESET_PASSWORD_NOW}/${resetPasswordToken}`
 				);
 
 				const response = await axios.post(
-					`${constants.API_ENDPOINT}${constants.APP_BACKEND_PORT}${constants.APP_USER_API}${constants.APP_RESET_PASSWORD_NOW}/${resetPasswordToken}`,
+					`${constants.API_ENDPOINT}${constants.APP_USER_API}${constants.APP_RESET_PASSWORD_NOW}/${resetPasswordToken}`,
 					{
 						password,
 					}

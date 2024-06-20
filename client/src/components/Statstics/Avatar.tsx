@@ -51,7 +51,7 @@ const MyAvatar: React.FC = () => {
 
 			try {
 				await axios.put(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}${APP_PROFILE_PUT}`,
+					`${API_ENDPOINT}${APP_PROFILE_API}${APP_PROFILE_PUT}`,
 					{ avatar: dataUrl },
 					{
 						headers: {
@@ -83,7 +83,7 @@ const MyAvatar: React.FC = () => {
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
-					`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}${APP_PROFILE_GET_BY_OWN}`,
+					`${API_ENDPOINT}${APP_PROFILE_API}${APP_PROFILE_GET_BY_OWN}`,
 					{
 						headers: { Authorization: `Bearer ${bearToken}` },
 					}

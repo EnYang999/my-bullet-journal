@@ -29,10 +29,10 @@ const LandingNavbar = () => {
 		cookies.remove(bearToken);
 		try {
 			const response = await axios.get(
-				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}/logout`,
+				`${API_ENDPOINT}${APP_USER_API}/logout`,
 				{ withCredentials: true }
 			);
-			console.log(`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}/logout`);
+			console.log(`${API_ENDPOINT}${APP_USER_API}/logout`);
 
 			console.log(response);
 
@@ -61,7 +61,7 @@ const LandingNavbar = () => {
 	const handleProfileCreate = async () => {
 		try {
 			const response = await axios.post(
-				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}/create-profile`,
+				`${API_ENDPOINT}${APP_PROFILE_API}/create-profile`,
 				{},
 				{
 					headers: {
