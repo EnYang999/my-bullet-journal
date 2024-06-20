@@ -106,7 +106,7 @@ router.put(
 );
 /**
  * @description To Get the authenticated user's profile
- * @api /profiles/api/my-profile
+ * @api /api/profiles/my-profile
  * @access Private
  * @type GET
  */

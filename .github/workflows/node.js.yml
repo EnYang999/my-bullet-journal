@@ -68,6 +68,7 @@ jobs:
       - name: Deploy server
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: |
-          pm2 start npm start 
+          npm start
+          pm2 start npm --name "my-backend" -- start
           pm2 save
           sudo service nginx restart
