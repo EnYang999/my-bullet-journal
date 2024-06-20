@@ -67,7 +67,7 @@ const main = async () => {
 		});
 		consola.success("DATABASE CONNECTED...");
 		// Start application listening for request on server
-		app.listen(PORT, "0.0.0.0", () =>
+		app.listen(PORT, "127.0.0.1", () =>
 			consola.success(`Sever started on port ${PORT}`)
 		);
 	} catch (err) {
@@ -76,6 +76,3 @@ const main = async () => {
 };
 
 main();
-app.listen(port, "127.0.0.1", () => {
-	console.log(`Backend server listening at http://localhost:${port}`);
-});
