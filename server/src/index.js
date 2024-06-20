@@ -26,7 +26,11 @@ const app = express();
 // 	// access-control-allow-credentials:true,
 // 	optionSuccessStatus: 200,
 // };
-const allowedOrigins = ["http://localhost:5173", "http://147.182.217.227"];
+const allowedOrigins = [
+	"http://localhost:5173",
+	"http://147.182.217.227",
+	"http://www.enbujo.com",
+];
 
 const corsOptions = {
 	origin: (origin, callback) => {
