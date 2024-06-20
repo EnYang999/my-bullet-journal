@@ -30,6 +30,9 @@ const allowedOrigins = [
 	"http://localhost:5173",
 	"http://147.182.217.227",
 	"http://www.enbujo.com",
+	"https://localhost:5173",
+	"https://147.182.217.227",
+	"https://www.enbujo.com",
 ];
 
 const corsOptions = {

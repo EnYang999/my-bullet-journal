@@ -1,7 +1,5 @@
 export const API_ENDPOINT =
-	"https://www.enbujo.com:" ||
-	"https://enbujo.com:" ||
-	"https://147.182.217.227:";
+	"www.enbujo.com:" || "enbujo.com:" || "147.182.217.227:";
 // "http://147.182.217.227:";
 export const APP_NAME = "MyBulletJournal";
 export const APP_BACKEND_PORT = 8000;
