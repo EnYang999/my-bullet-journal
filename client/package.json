@@ -33,6 +33,7 @@
     "echarts": "^5.5.0",
     "echarts-for-react": "^3.0.2",
     "flickity": "^2.3.0",
+    "framer-motion": "^11.2.11",
     "i": "^0.3.7",
     "isotope-layout": "^3.0.6",
     "jarallax": "^2.1.4",

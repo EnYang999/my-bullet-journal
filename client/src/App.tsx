@@ -12,6 +12,7 @@ import ResetPassword from "./components/login/ResetPassword";
 // import Logout from "./components/login/Logout";
 import PermissionDeniedPage from "./components/ErrorPage/PermissionPage";
 // import ControlledCheckboxInput from "./components/todolines/todoComp";
+import SymptomForm from "./components/medical/SymptomForm";
 function App() {
 	return (
 		<Routes>
@@ -31,6 +32,7 @@ function App() {
 				path='/reset-password-now/:resetPasswordToken'
 				element={<ResetPasswordNow />}
 			/>
+			<Route path='/month-planner' element={<SymptomForm />} />
 		</Routes>
 	);
 }
