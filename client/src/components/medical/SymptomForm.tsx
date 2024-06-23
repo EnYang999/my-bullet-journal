@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import symptomsData from "./symptoms.json";
+import colorsData from "./colors.json";
 import { motion } from "framer-motion";
-import chroma from "chroma-js";
 import "./SymptomForm.scss";
 
 // Type definitions based on symptom data
@@ -12,8 +12,6 @@ interface SymptomData {
 }
 
 const symptomData: SymptomData = symptomsData;
-
-const colorScale = chroma.scale(["#fafa6e", "#2A4858"]).mode("lch").colors(50);
 
 const SymptomForm: React.FC = () => {
 	const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
@@ -30,12 +28,16 @@ const SymptomForm: React.FC = () => {
 		let colorIndex = 0;
 
 		Object.keys(symptomData).forEach((category) => {
-			initialColorMap[category] = colorScale[colorIndex % colorScale.length];
+			initialColorMap[category] = `#${
+				colorsData.colors[colorIndex % colorsData.colors.length]
+			}`;
 			colorIndex++;
 
 			Object.keys(symptomData[category]).forEach((symptom) => {
 				const key = `${category}-${symptom}`;
-				initialColorMap[key] = colorScale[colorIndex % colorScale.length];
+				initialColorMap[key] = `#${
+					colorsData.colors[colorIndex % colorsData.colors.length]
+				}`;
 				colorIndex++;
 			});
 		});
@@ -83,8 +85,10 @@ const SymptomForm: React.FC = () => {
 					<motion.div
 						key={`${category}`}
 						onClick={() => handleCategoryClick(category)}
-						className='icon category'
-						whileHover={{ scale: 1.2 }}
+						className={`icon ${
+							selectedCategories.has(category) ? "selected" : ""
+						}`}
+						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.8 }}
 						style={{ backgroundColor: getColor(category) }}
 					>
@@ -102,7 +106,7 @@ const SymptomForm: React.FC = () => {
 									className={`icon ${
 										selectedSymptoms.has(key) ? "selected" : ""
 									}`}
-									whileHover={{ scale: 1.2 }}
+									whileHover={{ scale: 1.1 }}
 									whileTap={{ scale: 0.8 }}
 									style={{ backgroundColor: getColor(key) }}
 								>
@@ -121,11 +125,9 @@ const SymptomForm: React.FC = () => {
 							className={`icon symptom-detail ${
 								clickedDetails.has(`${key}-${index}`) ? "clicked" : ""
 							}`}
-							whileHover={{ scale: 1.2 }}
+							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.8 }}
-							style={{
-								backgroundColor: getColor(key),
-							}}
+							style={{ backgroundColor: getColor(key) }}
 						>
 							{detail}
 						</motion.div>
