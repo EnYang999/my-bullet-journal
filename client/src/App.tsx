@@ -13,6 +13,7 @@ import ResetPassword from "./components/login/ResetPassword";
 import PermissionDeniedPage from "./components/ErrorPage/PermissionPage";
 // import ControlledCheckboxInput from "./components/todolines/todoComp";
 import SymptomForm from "./components/medical/SymptomForm";
+import WelcomePage from "./components/medical/WelcomePage";
 function App() {
 	return (
 		<Routes>
@@ -33,6 +34,7 @@ function App() {
 				element={<ResetPasswordNow />}
 			/>
 			<Route path='/month-planner' element={<SymptomForm />} />
+			<Route path='/habits' element={<WelcomePage />} />
 		</Routes>
 	);
 }

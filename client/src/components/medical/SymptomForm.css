@@ -1,14 +1,12 @@
-/* src/App.css */
 .icon-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 20px;
-	padding: 20px;
+	margin: auto;
 }
 
 .icon-item {
 	position: relative;
+	padding: 10px;
+	margin: 2px;
+	background-color: rgba(137, 43, 226, 0.358);
 }
 
 .icon {
@@ -17,11 +15,31 @@
 }
 
 .sub-icons {
+	background-color: antiquewhite;
+}
+.container {
 	display: flex;
-	position: absolute;
-	top: 50px;
-	left: 50%;
-	transform: translateX(-50%);
-	gap: 10px;
-	margin-top: 10px;
+	flex-direction: column;
+	align-items: center;
+}
+
+.category-container,
+.symptom-container,
+.detail-container {
+	display: flex;
+	gap: 10px; /* adjust gap as needed */
+}
+
+.category-item,
+.symptom-item,
+.symptom-detail {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px; /* adjust margin as needed */
+}
+
+.symptom-label,
+.symptom-detail-label {
+	/* Add your desired styles for the labels here */
 }
