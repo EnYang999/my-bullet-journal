@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import chroma from "chroma-js";
 import "./SymptomForm.scss";
 
-// Type definitions based on JSON structure
+// Type definitions based on symptom data
 interface SymptomData {
 	[category: string]: {
 		[symptom: string]: string[];
@@ -13,7 +13,6 @@ interface SymptomData {
 
 const symptomData: SymptomData = symptomsData;
 
-// Generate a color scale using chroma-js
 const colorScale = chroma.scale(["#fafa6e", "#2A4858"]).mode("lch").colors(50);
 
 const SymptomForm: React.FC = () => {
@@ -27,11 +26,9 @@ const SymptomForm: React.FC = () => {
 	const [colorMap, setColorMap] = useState<{ [key: string]: string }>({});
 
 	useEffect(() => {
-		// Initialize color map
 		const initialColorMap: { [key: string]: string } = {};
 		let colorIndex = 0;
 
-		// Assign colors to categories and symptoms
 		Object.keys(symptomData).forEach((category) => {
 			initialColorMap[category] = colorScale[colorIndex % colorScale.length];
 			colorIndex++;
@@ -57,9 +54,9 @@ const SymptomForm: React.FC = () => {
 	};
 
 	const handleSymptomClick = (category: string, symptom: string) => {
-		const key = `${category}-${symptom}`;
 		setSelectedSymptoms((prevState) => {
 			const newSet = new Set(prevState);
+			const key = `${category}-${symptom}`;
 			if (newSet.has(key)) newSet.delete(key);
 			else newSet.add(key);
 
@@ -80,15 +77,13 @@ const SymptomForm: React.FC = () => {
 	const getColor = (key: string) => colorMap[key];
 
 	return (
-		<div className='container icons-container '>
-			<div className='d-inline-flex flex-wrap'>
+		<div className='container'>
+			<div className='icons-container'>
 				{Object.keys(symptomData).map((category) => (
 					<motion.div
 						key={`${category}`}
 						onClick={() => handleCategoryClick(category)}
-						className={`icon ${
-							selectedCategories.has(category) ? "selected" : ""
-						}`}
+						className='icon category'
 						whileHover={{ scale: 1.2 }}
 						whileTap={{ scale: 0.8 }}
 						style={{ backgroundColor: getColor(category) }}
@@ -97,7 +92,7 @@ const SymptomForm: React.FC = () => {
 					</motion.div>
 				))}
 				{Array.from(selectedCategories).map((category) => (
-					<div key={category}>
+					<div key={category} className='category-details'>
 						{Object.keys(symptomData[category]).map((symptom) => {
 							const key = `${category}-${symptom}`;
 							return (
