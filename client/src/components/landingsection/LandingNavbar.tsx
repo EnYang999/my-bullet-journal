@@ -161,8 +161,8 @@ const LandingNavbar = () => {
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./month-planner'>
-								Planner
+							<a className='nav-link ' href='./demo'>
+								Demo
 							</a>
 						</li>
 						<li className='nav-item'>

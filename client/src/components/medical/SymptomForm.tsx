@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import symptomsData from "./symptoms.json";
 import colorsData from "./colors.json";
 import { motion } from "framer-motion";
+import { Container, Grid, Box, Paper } from "@mui/material";
 import "./SymptomForm.scss";
 
 // Type definitions based on symptom data
@@ -79,62 +80,81 @@ const SymptomForm: React.FC = () => {
 	const getColor = (key: string) => colorMap[key];
 
 	return (
-		<div className='container'>
-			<div className='icons-container'>
-				{Object.keys(symptomData).map((category) => (
-					<motion.div
-						key={`${category}`}
-						onClick={() => handleCategoryClick(category)}
-						className={`icon ${
-							selectedCategories.has(category) ? "selected" : ""
-						}`}
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.8 }}
-						style={{ backgroundColor: getColor(category) }}
+		<Grid
+			container
+			justifyContent='center'
+			alignItems='center'
+			style={{ height: "100vh" }}
+		>
+			<Grid item xs={12}>
+				<Box
+					display='flex'
+					justifyContent='center'
+					flexDirection='column'
+					alignItems='center'
+				>
+					<Paper
+						elevation={3}
+						style={{ padding: "20px", maxWidth: "800px", width: "100%" }}
 					>
-						{category}
-					</motion.div>
-				))}
-				{Array.from(selectedCategories).map((category) => (
-					<div key={category} className='category-details'>
-						{Object.keys(symptomData[category]).map((symptom) => {
-							const key = `${category}-${symptom}`;
-							return (
+						<div className='icons-container'>
+							{Object.keys(symptomData).map((category) => (
 								<motion.div
-									key={key}
-									onClick={() => handleSymptomClick(category, symptom)}
+									key={`${category}`}
+									onClick={() => handleCategoryClick(category)}
 									className={`icon ${
-										selectedSymptoms.has(key) ? "selected" : ""
+										selectedCategories.has(category) ? "selected" : ""
 									}`}
 									whileHover={{ scale: 1.1 }}
 									whileTap={{ scale: 0.8 }}
-									style={{ backgroundColor: getColor(key) }}
+									style={{ backgroundColor: getColor(category) }}
 								>
-									{symptom}
+									{category}
 								</motion.div>
-							);
-						})}
-					</div>
-				))}
-				{Array.from(selectedSymptoms).map((key) => {
-					const [category, symptom] = key.split("-");
-					return symptomData[category][symptom].map((detail, index) => (
-						<motion.div
-							key={`${key}-${index}`}
-							onClick={() => handleDetailClick(`${key}-${index}`)}
-							className={`icon symptom-detail ${
-								clickedDetails.has(`${key}-${index}`) ? "clicked" : ""
-							}`}
-							whileHover={{ scale: 1.1 }}
-							whileTap={{ scale: 0.8 }}
-							style={{ backgroundColor: getColor(key) }}
-						>
-							{detail}
-						</motion.div>
-					));
-				})}
-			</div>
-		</div>
+							))}
+							{Array.from(selectedCategories).map((category) => (
+								<div key={category} className='category-details'>
+									{Object.keys(symptomData[category]).map((symptom) => {
+										const key = `${category}-${symptom}`;
+										return (
+											<motion.div
+												key={key}
+												onClick={() => handleSymptomClick(category, symptom)}
+												className={`icon ${
+													selectedSymptoms.has(key) ? "selected" : ""
+												}`}
+												whileHover={{ scale: 1.1 }}
+												whileTap={{ scale: 0.8 }}
+												style={{ backgroundColor: getColor(key) }}
+											>
+												{symptom}
+											</motion.div>
+										);
+									})}
+								</div>
+							))}
+							{Array.from(selectedSymptoms).map((key) => {
+								const [category, symptom] = key.split("-");
+								return symptomData[category][symptom].map((detail, index) => (
+									<motion.div
+										key={`${key}-${index}`}
+										onClick={() => handleDetailClick(`${key}-${index}`)}
+										className={`icon symptom-detail ${
+											clickedDetails.has(`${key}-${index}`) ? "clicked" : ""
+										}`}
+										whileHover={{ scale: 1.1 }}
+										whileTap={{ scale: 0.8 }}
+										style={{ backgroundColor: getColor(key) }}
+									>
+										{detail}
+									</motion.div>
+								));
+							})}
+						</div>
+					</Paper>
+				</Box>
+			</Grid>
+		</Grid>
 	);
 };
 

@@ -21,12 +21,13 @@
 	padding: 6px;
 	word-wrap: break-word;
 	width: 100%;
-	box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+	box-sizing: border-box;
+	align-items: center;
 }
 
 .icon.selected,
 .symptom-detail.clicked {
 	font-weight: bold;
-	color: #c7b7a3;
+	color: #7b7b7b;
 	border-inline-start: 10px #f6f5f2 solid;
 }
