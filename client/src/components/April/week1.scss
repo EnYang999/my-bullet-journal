@@ -14,19 +14,18 @@
     }
     .outer-row {
         .inner-row {
-            .day-box {
-                .week-header {
-                    color: white;
-                    font-family: "Josefin Slab", serif;
-                    font-size: 1.5rem;
-                }
-                &:nth-child(even) .week-header {
-                    background-color: rgb(56, 93, 67);
-                }
-                &:nth-child(odd) .week-header {
-                    background-color: rgb(176, 199, 183);
-                }
+            .week-header {
+                color: white;
+                font-family: "Josefin Slab", serif;
+                font-size: 1.5rem;
             }
+            &:nth-child(even) .week-header {
+                background-color: rgb(56, 93, 67);
+            }
+            &:nth-child(odd) .week-header {
+                background-color: rgb(176, 199, 183);
+            }
+
             .week-overlap {
                 border: rgb(136, 159, 132) solid 1.5px;
                 background-color: rgba(#fff, 0.5);

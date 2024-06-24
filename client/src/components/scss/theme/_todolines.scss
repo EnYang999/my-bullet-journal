@@ -12,12 +12,14 @@
     input {
         appearance: none;
     }
-
+    input.tick-box {
+        position: absolute;
+    }
     .cbx {
         -webkit-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
-        height: 80%;
+        // height: 80%;
         width: 100%;
         position: relative;
         display: grid;
