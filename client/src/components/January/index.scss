@@ -7,13 +7,13 @@
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 40%;
-    .row {
-        padding: 0;
-        & > * {
-            padding: 0.5em;
-        }
-        margin-right: 0;
-    }
+    // .row {
+    //     padding: 0;
+    //     & > * {
+    //         padding: 0.5em;
+    //     }
+    //     margin-right: 0;
+    // }
     .outer-row {
         .inner-row {
             .day-box {
@@ -58,13 +58,13 @@
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
-    .row {
-        padding: 0;
-        & > * {
-            padding: 0.5em;
-        }
-        margin-right: 0;
-    }
+    // .row {
+    //     padding: 0;
+    //     & > * {
+    //         padding: 0.5em;
+    //     }
+    //     margin-right: 0;
+    // }
     .outer-row {
         .inner-row {
             .day-box {

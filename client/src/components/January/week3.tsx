@@ -10,11 +10,11 @@ import monShape from "../../assets/jan2024/mondayShape.png";
 const week3 = () => {
 	return (
 		<>
-			<div className='container text-center'>
-				<div className='row'>
+			<div className='container text-center h-100'>
+				<div className='row h-50 overflow-auto mb-2'>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
-							shapeImage={monShape}
+							day='Monday'
 							boxIds={[
 								`jan-week-3-monday-1`,
 								`jan-week-3-monday-2`,
@@ -26,7 +26,7 @@ const week3 = () => {
 					</div>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
-							shapeImage={tuesShape}
+							day='Tuesday'
 							boxIds={[
 								`jan-week-3-tuesday-1`,
 								`jan-week-3-tuesday-2`,
@@ -38,7 +38,7 @@ const week3 = () => {
 					</div>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
-							shapeImage={wedShape}
+							day='Wednesday'
 							boxIds={[
 								`jan-week-3-wednesday-1`,
 								`jan-week-3-wednesday-2`,
@@ -50,7 +50,7 @@ const week3 = () => {
 					</div>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
-							shapeImage={thursShape}
+							day='Thursday'
 							boxIds={[
 								`jan-week-3-thursday-1`,
 								`jan-week-3-thursday-2`,
@@ -66,10 +66,10 @@ const week3 = () => {
 					className='d-none d-md-block background-img'
 					style={{ width: "100%" }}
 				></div>
-				<div className='row'>
+				<div className='row h-50 overflow-auto'>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
-							shapeImage={friShape}
+							day='Friday'
 							boxIds={[
 								`jan-week-3-friday-1`,
 								`jan-week-3-friday-2`,
@@ -81,7 +81,7 @@ const week3 = () => {
 					</div>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
-							shapeImage={satShape}
+							day='Saturday'
 							boxIds={[
 								`jan-week-3-saturday-1`,
 								`jan-week-3-saturday-2`,
@@ -93,7 +93,7 @@ const week3 = () => {
 					</div>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
-							shapeImage={sunShape}
+							day='Sunday'
 							boxIds={[
 								`jan-week-3-saturday-1`,
 								`jan-week-3-saturday-2`,

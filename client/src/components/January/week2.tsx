@@ -30,9 +30,9 @@ const janilWeek1 = () => {
 			>
 				<LineDots lineLeft={true} backgroundColor='#637A9F' />
 			</div>
-			<div className='row outer-row'>
+			<div className='row outer-row h-100'>
 				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
+					<div className='row inner-row h-50 overflow-auto mb-2'>
 						<div className='col-lg-4 col-md-6 d-flex day-box'>
 							<WeekBox
 								day='Monday'
@@ -72,7 +72,8 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-
+					</div>
+					<div className='row inner-row h-50 overflow-hidden'>
 						<div className='col-lg-4 col-md-6 d-flex day-box'>
 							<WeekBox
 								day='Thursday'

@@ -14,7 +14,7 @@ interface Props {
 }
 
 export const ToDoLine = ({
-	className,
+	// className,
 	boxId, // sep-week-3-tuesday-num
 }: Props): JSX.Element => {
 	const [inputValue, setInputValue] = useState<string>("");
@@ -92,7 +92,7 @@ export const ToDoLine = ({
 		fetchData();
 	}, []);
 	return (
-		<div className={`todo-wrapper ${className}`}>
+		<div className={`todo-wrapper `}>
 			<input
 				type='checkbox'
 				className='tick-box'

@@ -30,7 +30,7 @@ const JanuaryWeek1 = () => {
 			>
 				<LineDots lineLeft={false} backgroundColor='#424769' />
 			</div>
-			<div className='row outer-row'>
+			<div className='row outer-row h-100'>
 				<div className='col-lg-3 text-center d-flex flex-column align-items-center justify-content-around'>
 					<Calendar
 						month={1}
@@ -41,7 +41,7 @@ const JanuaryWeek1 = () => {
 					/>
 				</div>
 				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-50 overflow-auto'>
+					<div className='row inner-row h-50 overflow-auto mb-2'>
 						<div className='col-lg-4 col-md-6 d-flex day-box'>
 							<WeekBox
 								day='Monday'
