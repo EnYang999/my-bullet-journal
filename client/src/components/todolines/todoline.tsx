@@ -102,7 +102,7 @@ export const ToDoLine = ({
 			/>
 
 			<label className='cbx' htmlFor={`cbx-${boxId}`}>
-				<span className='tick-box ratio ratio-1x1'>
+				<span className='tick-box'>
 					<svg viewBox='0 0 12 9'>
 						<polyline points='1 5 4 8 11 1'></polyline>
 					</svg>
