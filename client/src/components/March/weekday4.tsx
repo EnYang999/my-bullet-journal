@@ -31,7 +31,7 @@ const WeekBox = ({ boxIds, day, cusClassName }: Props) => {
 				</div>
 			</div>
 			<div
-				className={`to-do-lines-container flex-grow-1 d-flex mx-3 flex-column my-2`}
+				className={`to-do-lines-container flex-grow-1 d-flex mx-3 flex-column my-2 h-80 overflow-auto`}
 			>
 				{boxIds.map((boxId, index) => (
 					<ToDoLine key={index} className='my-todo-list' boxId={boxId} />

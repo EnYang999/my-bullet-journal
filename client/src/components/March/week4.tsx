@@ -16,7 +16,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Monday'
 								shapeImage={monShape}
-								cusClassName='h-50 overflow-auto'
+								cusClassName='h-50'
 								boxIds={[
 									`mar-week-4-monday-1`,
 									`mar-week-4-monday-2`,
@@ -28,7 +28,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Tuesday'
 								shapeImage={tuesShape}
-								cusClassName='h-50 overflow-auto'
+								cusClassName='h-50'
 								boxIds={[
 									`mar-week-4-tuesday-1`,
 									`mar-week-4-tuesday-2`,
@@ -42,7 +42,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Wednesday'
 								shapeImage={wedShape}
-								cusClassName='h-50 overflow-auto'
+								cusClassName='h-50'
 								boxIds={[
 									`mar-week-4-wednesday-1`,
 									`mar-week-4-wednesday-2`,
@@ -54,7 +54,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Thursday'
 								shapeImage={thursShape}
-								cusClassName='h-50 overflow-auto'
+								cusClassName='h-50'
 								boxIds={[
 									`mar-week-4-thursday-1`,
 									`mar-week-4-thursday-2`,
@@ -78,7 +78,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Friday'
 								shapeImage={friShape}
-								cusClassName='h-50 overflow-auto'
+								cusClassName='h-50'
 								boxIds={[
 									`mar-week-4-friday-1`,
 									`mar-week-4-friday-2`,
@@ -90,7 +90,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Saturday'
 								shapeImage={satShape}
-								cusClassName='h-50 overflow-auto'
+								cusClassName='h-50'
 								boxIds={[
 									`mar-week-4-saturday-1`,
 									`mar-week-4-saturday-2`,
@@ -104,7 +104,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Sunday'
 								shapeImage={sunShape}
-								cusClassName='h-50 overflow-auto'
+								cusClassName='h-50'
 								boxIds={[
 									`mar-week-4-sunday-1`,
 									`mar-week-4-sunday-2`,
@@ -116,7 +116,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Notes'
 								shapeImage={sunShape}
-								cusClassName='h-50 overflow-auto'
+								cusClassName='h-50'
 								boxIds={[
 									`jan-week-4-notes-1`,
 									`jan-week-4-notes-2`,

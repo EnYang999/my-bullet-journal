@@ -30,7 +30,7 @@ const MarchWeek1 = () => {
 				<LineDots lineLeft={true} backgroundColor='#176B87' />
 			</div>
 			<div className='row h-80'>
-				<div className='col d-flex day-box'>
+				<div className='col d-flex'>
 					<WeekBox
 						day='25'
 						boxIds={[
@@ -42,7 +42,7 @@ const MarchWeek1 = () => {
 						]}
 					/>
 				</div>
-				<div className='col d-flex day-box'>
+				<div className='col d-flex'>
 					<WeekBox
 						day='26'
 						boxIds={[
@@ -54,7 +54,7 @@ const MarchWeek1 = () => {
 						]}
 					/>
 				</div>
-				<div className='col d-flex day-box'>
+				<div className='col d-flex'>
 					<WeekBox
 						day='27'
 						boxIds={[
@@ -67,7 +67,7 @@ const MarchWeek1 = () => {
 					/>
 				</div>
 
-				<div className='col d-flex day-box'>
+				<div className='col d-flex'>
 					<WeekBox
 						day='28'
 						boxIds={[
@@ -79,7 +79,7 @@ const MarchWeek1 = () => {
 						]}
 					/>
 				</div>
-				<div className='col d-flex day-box'>
+				<div className='col d-flex'>
 					<WeekBox
 						day='29'
 						boxIds={[
@@ -91,7 +91,7 @@ const MarchWeek1 = () => {
 						]}
 					/>
 				</div>
-				<div className='col d-flex day-box'>
+				<div className='col d-flex'>
 					<WeekBox
 						day='30'
 						boxIds={[
