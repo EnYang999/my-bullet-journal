@@ -8,7 +8,7 @@ import { json } from "body-parser";
 // import cookieParser from "cookie-parser";
 // Import Application Constants
 import { DB, PORT, USER_API, PROFILE_API, TODO_API } from "./constants";
-
+consola.log(USER_API, PROFILE_API, TODO_API);
 // Router imports
 import userApis from "./apis/users";
 import profileApis from "./apis/profiles";
@@ -20,12 +20,33 @@ require("./middlewares/passport-middleware");
 const app = express();
 
 // Apply Application Middlewares
+// const corsOptions = {
+// 	origin: "http://localhost:5173" 'http://147.182.217.227',
+// 	credentials: true,
+// 	// access-control-allow-credentials:true,
+// 	optionSuccessStatus: 200,
+// };
+const allowedOrigins = [
+	"http://localhost:5173",
+	"http://147.182.217.227",
+	"http://www.enbujo.com",
+	"https://localhost:5173",
+	"https://147.182.217.227",
+	"https://www.enbujo.com",
+];
+
 const corsOptions = {
-	origin: "http://localhost:5173",
+	origin: (origin, callback) => {
+		if (allowedOrigins.includes(origin) || !origin) {
+			callback(null, true);
+		} else {
+			callback(new Error("Not allowed by CORS"));
+		}
+	},
 	credentials: true,
-	// access-control-allow-credentials:true,
-	optionSuccessStatus: 200,
+	optionsSuccessStatus: 200, // for legacy browsers
 };
+app.set("trust proxy", true);
 app.use(cors(corsOptions));
 app.use(json({ limit: "50mb" }));
 app.use(passport.initialize());
@@ -46,7 +67,9 @@ const main = async () => {
 		});
 		consola.success("DATABASE CONNECTED...");
 		// Start application listening for request on server
-		app.listen(PORT, () => consola.success(`Sever started on port ${PORT}`));
+		app.listen(PORT, "127.0.0.1", () =>
+			consola.success(`Sever started on port ${PORT}`)
+		);
 	} catch (err) {
 		consola.error(`Unable to start the server \n${err.message}`);
 	}

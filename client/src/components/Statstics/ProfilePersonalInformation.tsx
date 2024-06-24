@@ -1,7 +1,5 @@
-import React from "react";
 import ProfileHeader from "./ProfileHeader";
 import ProfileBody from "./ProfileBody";
-import Statstics from "./Statstics";
 import StatisticsA from "./StatisticsA";
 import StatisticsB from "./StatisticsB";
 import StatisticsC from "./StatisticsC";

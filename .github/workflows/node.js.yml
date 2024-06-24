@@ -1,45 +1,73 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: self-hosted
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    environment: Production
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    
-    - name: Install client dependencies
-      run: |
-        cd client
-        npm ci
+      # Fix permissions before proceeding
+      # - name: Fix permissions for GitHub Actions Runner
+      #   run: |
+      #     sudo chmod -R 777 /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal
+      #     sudo chown -R $(whoami) /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal
 
-    - name: Install server dependencies
-      run: |
-        cd server
-        npm ci
+      - name: Check out the repository
+        uses: actions/checkout@v2
 
-    - name: Build the project
-      run: npm run build --if-present
+      # Client setup and build
+      - name: Set up Node.js for Client
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.9.0" # Specify the Node.js version needed for the client
 
-    - name: Run tests
-      run: npm test
+      - name: Install client dependencies
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: |
+          npm install --legacy-peer-deps
+
+      - name: Build client
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: npm run build
+
+      # Server setup
+      - name: Set up Node.js for Server
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.9.0" # Specify the Node.js version needed for the server
+
+      - name: Install server dependencies
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        run: |
+          npm install
+
+      # Install PM2 in client
+      - name: Install PM2
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: npm install -g pm2
+
+      # Deployment steps
+      - name: Deploy client
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/client
+        run: |
+          pm2 start npm --name "my-bullet-journal" -- run preview
+          pm2 save
+          sudo service nginx restart
+
+      # Install PM2 in server
+      - name: Install PM2
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        run: npm install -g pm2
+
+      # Deploy in server
+      - name: Deploy server
+        working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
+        run: |
+          pm2 start npm --name "my-app" -- start
+          pm2 save
+          sudo service nginx restart

@@ -22,7 +22,6 @@ const MarchWeek3 = () => {
 						<span className='d-flex'>{25}</span>
 					</div>
 					<WeekBox
-						day='25'
 						shapeImage={monShape}
 						boxIds={[
 							`may-week-4-monday-1`,
@@ -38,7 +37,6 @@ const MarchWeek3 = () => {
 						<span className='d-flex'>{25}</span>
 					</div>
 					<WeekBox
-						day='26'
 						shapeImage={tuesShape}
 						boxIds={[
 							`may-week-4-tuesday-1`,
@@ -54,7 +52,6 @@ const MarchWeek3 = () => {
 						<span className='d-flex'>{25}</span>
 					</div>
 					<WeekBox
-						day='27'
 						shapeImage={wedShape}
 						boxIds={[
 							`may-week-4-wednesday-1`,
@@ -70,7 +67,6 @@ const MarchWeek3 = () => {
 						<span className='d-flex'>{25}</span>
 					</div>
 					<WeekBox
-						day='28'
 						shapeImage={thursShape}
 						boxIds={[
 							`may-week-4-thursday-1`,
@@ -86,7 +82,6 @@ const MarchWeek3 = () => {
 						<span className='d-flex'>{25}</span>
 					</div>
 					<WeekBox
-						day='29'
 						shapeImage={friShape}
 						boxIds={[
 							`may-week-4-friday-1`,
@@ -103,7 +98,6 @@ const MarchWeek3 = () => {
 						<span className='d-flex'>{25}</span>
 					</div>
 					<WeekBox
-						day='30'
 						shapeImage={satShape}
 						boxIds={[
 							`may-week-4-saturday-1`,
@@ -119,7 +113,6 @@ const MarchWeek3 = () => {
 						<span className='d-flex'>{25}</span>
 					</div>
 					<WeekBox
-						day='31'
 						shapeImage={sunShape}
 						boxIds={[
 							`may-week-4-sunday-1`,

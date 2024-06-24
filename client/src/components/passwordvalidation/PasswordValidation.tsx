@@ -1,4 +1,4 @@
-import React, { Ref, HTMLAttributes } from "react";
+import React, { HTMLAttributes } from "react";
 
 interface ValidationItemProps extends HTMLAttributes<HTMLDivElement> {
 	validated: boolean;

@@ -5,11 +5,9 @@ import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 import {
 	API_ENDPOINT,
-	APP_BACKEND_PORT,
 	APP_USER_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
 	APP_PROFILE_API,
-	APP_PROFILE_PUT,
 } from "../../../../common/constants";
 import { toast } from "../errortoast/ErrorToastManager";
 interface User {
@@ -30,10 +28,10 @@ const LandingNavbar = () => {
 		cookies.remove(bearToken);
 		try {
 			const response = await axios.get(
-				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}/logout`,
+				`${API_ENDPOINT}${APP_USER_API}/logout`,
 				{ withCredentials: true }
 			);
-			console.log(`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_USER_API}/logout`);
+			console.log(`${API_ENDPOINT}${APP_USER_API}/logout`);
 
 			console.log(response);
 
@@ -62,7 +60,7 @@ const LandingNavbar = () => {
 	const handleProfileCreate = async () => {
 		try {
 			const response = await axios.post(
-				`${API_ENDPOINT}${APP_BACKEND_PORT}${APP_PROFILE_API}/create-profile`,
+				`${API_ENDPOINT}${APP_PROFILE_API}/create-profile`,
 				{},
 				{
 					headers: {
@@ -163,8 +161,8 @@ const LandingNavbar = () => {
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./month-planner'>
-								Planner
+							<a className='nav-link ' href='./demo'>
+								Demo
 							</a>
 						</li>
 						<li className='nav-item'>

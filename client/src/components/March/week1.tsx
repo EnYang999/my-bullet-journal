@@ -2,7 +2,6 @@ import WeekBox from "./weekday1";
 import LineDots from "../decorationelements/lineanddots/lineanddots";
 import FourSquares from "../decorationelements/lineanddots/squares";
 import marchShape from "../../assets/mar2022/marchShape.png";
-import Calendar from "../calender/Calendar";
 const MarchWeek1 = () => {
 	return (
 		<>

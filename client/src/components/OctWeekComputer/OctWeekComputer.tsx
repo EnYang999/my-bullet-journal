@@ -1,4 +1,3 @@
-import React from "react";
 import "./OctWeekComputer.css";
 import MondayOct from "./MondayOct";
 import OctoberTitle from "./OctoberTitle";

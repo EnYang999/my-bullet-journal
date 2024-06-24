@@ -92,7 +92,7 @@ import { BrowserRouter } from "react-router-dom";
 // import "./components/scss/themeProfileBody/_card.scss"; // about me
 // import "./theme/aboutme";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<App />
