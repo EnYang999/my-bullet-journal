@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import symptomsData from "./symptoms.json";
 import colorsData from "./colors.json";
 import { motion } from "framer-motion";
-import { Container, Grid, Box, Paper } from "@mui/material";
+import { Grid, Box, Paper } from "@mui/material";
 import "./SymptomForm.scss";
 
 // Type definitions based on symptom data
