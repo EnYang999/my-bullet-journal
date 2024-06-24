@@ -1,17 +1,17 @@
 import WeekBox from "./weekday3";
 import Calendar from "../calender/Calendar";
-import satShape from "../../assets/jan2024/saturdayShape.png";
-import sunShape from "../../assets/jan2024/sundayShape.png";
-import friShape from "../../assets/jan2024/fridayShape.png";
-import thursShape from "../../assets/jan2024/thursdayShape.png";
-import wedShape from "../../assets/jan2024/wednesdayShape.png";
-import tuesShape from "../../assets/jan2024/tuesdayShape.png";
-import monShape from "../../assets/jan2024/mondayShape.png";
+// import satShape from "../../assets/jan2024/saturdayShape.png";
+// import sunShape from "../../assets/jan2024/sundayShape.png";
+// import friShape from "../../assets/jan2024/fridayShape.png";
+// import thursShape from "../../assets/jan2024/thursdayShape.png";
+// import wedShape from "../../assets/jan2024/wednesdayShape.png";
+// import tuesShape from "../../assets/jan2024/tuesdayShape.png";
+// import monShape from "../../assets/jan2024/mondayShape.png";
 const week3 = () => {
 	return (
 		<>
-			<div className='container text-center h-100'>
-				<div className='row h-50 overflow-auto mb-2'>
+			<div className='container text-center justify-content-center h-100'>
+				<div className='row mb-2'>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
 							day='Monday'
@@ -61,12 +61,11 @@ const week3 = () => {
 						/>
 					</div>
 				</div>
-
 				<div
 					className='d-none d-md-block background-img'
-					style={{ width: "100%" }}
+					style={{ width: "105%" }}
 				></div>
-				<div className='row h-50 overflow-auto'>
+				<div className='row'>
 					<div className='col-lg-3 col-md-4 d-flex day-box'>
 						<WeekBox
 							day='Friday'

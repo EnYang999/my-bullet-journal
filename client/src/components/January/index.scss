@@ -16,10 +16,8 @@
     // }
     .outer-row {
         .inner-row {
-            .day-box {
-                & .week-fig::after {
-                    background-color: #aea7ca;
-                }
+            .week-fig::after {
+                background-color: #aea7ca;
             }
 
             .week-overlap {
@@ -67,16 +65,15 @@
     // }
     .outer-row {
         .inner-row {
-            .day-box {
-                .week-header {
-                    color: white;
-                    font-family: "Josefin Slab", serif;
-                    font-size: 1.5rem;
-                }
-                .week-header {
-                    background-color: #3d5c8a;
-                }
+            .week-header {
+                color: white;
+                font-family: "Josefin Slab", serif;
+                font-size: 1.5rem;
             }
+            .week-header {
+                background-color: #3d5c8a;
+            }
+
             .week-overlap {
                 border: #3d5c8a solid 1.5px;
                 background-color: rgba(#fff, 0.5);
@@ -95,7 +92,13 @@
         background-size: contain, cover;
         height: 10vh;
     }
+    .container > .row {
+        height: 42%;
+    }
     .row {
+        .day-box {
+            height: 100%;
+        }
         &:nth-child(-n + 1) .day-box {
             position: relative;
             &::before {
@@ -106,36 +109,48 @@
             }
             &:first-child::before {
                 background-color: #e7c8d3;
-                bottom: 0;
+                bottom: -20px;
                 height: 80%;
                 left: 0;
             }
             &:nth-child(2)::before {
                 background-color: #e7c8d3;
-                bottom: 0;
+                bottom: -20px;
                 height: 50%;
                 left: -1rem;
             }
+            &:nth-child(3)::before {
+                background-color: #dbc8e7;
+                bottom: -20px;
+                height: 60%;
+                left: 0;
+            }
+            &:nth-child(4)::before {
+                background-color: #e7c8e2;
+                bottom: -20px;
+                height: 70%;
+                left: 1rem;
+            }
 
             &:nth-child(odd) {
-                .week-fig::after {
+                &::after {
                     background-color: #e7c8d3;
                 }
             }
             &:nth-child(even) {
-                .week-fig::after {
+                &::after {
                     background-color: #bbb2da;
                 }
             }
         }
         &:nth-child(n + 2) .day-box {
             &:nth-child(odd) {
-                .week-fig::after {
+                &::after {
                     background-color: #e7c8d3;
                 }
             }
             &:nth-child(even) {
-                .week-fig::after {
+                &::after {
                     background-color: #bbb2da;
                 }
             }

@@ -41,8 +41,8 @@ const JanuaryWeek1 = () => {
 					/>
 				</div>
 				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-50 overflow-auto mb-2'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					<div className='row inner-row h-50 mb-2'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Monday'
 								shapeImage={monShape}
@@ -55,7 +55,7 @@ const JanuaryWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Tuesday'
 								shapeImage={tuesShape}
@@ -68,7 +68,7 @@ const JanuaryWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Wednesday'
 								shapeImage={wedShape}
@@ -83,7 +83,7 @@ const JanuaryWeek1 = () => {
 						</div>
 					</div>
 					<div className='row inner-row h-50 overflow-auto'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Thursday'
 								shapeImage={thursShape}
@@ -96,7 +96,7 @@ const JanuaryWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Friday'
 								shapeImage={friShape}
@@ -109,7 +109,7 @@ const JanuaryWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Weekend'
 								shapeImage={weekendShape}
