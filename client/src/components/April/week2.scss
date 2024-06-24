@@ -14,13 +14,11 @@
     }
     .outer-row {
         .inner-row {
-            .day-box {
-                &:nth-child(odd) .week-fig::after {
-                    background-color: rgba(155, 197, 149, 0.726);
-                }
-                &:nth-child(even) .week-fig::after {
-                    background-color: rgba(82, 127, 86, 0.726);
-                }
+            &:nth-child(odd) .week-fig::after {
+                background-color: rgba(155, 197, 149, 0.726);
+            }
+            &:nth-child(even) .week-fig::after {
+                background-color: rgba(82, 127, 86, 0.726);
             }
 
             .week-overlap {

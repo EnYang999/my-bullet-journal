@@ -29,7 +29,7 @@ const AprilWeek2 = () => {
 			>
 				<LineDots lineLeft={false} />
 			</div>
-			<div className='row outer-row'>
+			<div className='row outer-row h-100'>
 				<div className='col-lg-3 text-center d-flex flex-column align-items-center justify-content-around'>
 					<FourSquares />
 					<p
@@ -45,8 +45,8 @@ const AprilWeek2 = () => {
 					</p>
 				</div>
 				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					<div className='row inner-row h-50'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Monday'
 								shapeImage={monShape}
@@ -59,7 +59,7 @@ const AprilWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Tuesday'
 								shapeImage={tuesShape}
@@ -72,7 +72,7 @@ const AprilWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Wednesday'
 								shapeImage={wedShape}
@@ -85,8 +85,9 @@ const AprilWeek2 = () => {
 								]}
 							/>
 						</div>
-
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					</div>
+					<div className='row inner-row h-50'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Thursday'
 								shapeImage={thursShape}
@@ -99,7 +100,7 @@ const AprilWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Friday'
 								shapeImage={friShape}
@@ -112,7 +113,7 @@ const AprilWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='Weekend'
 								shapeImage={weekendShape}
