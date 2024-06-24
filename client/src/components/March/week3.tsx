@@ -29,7 +29,7 @@ const MarchWeek3 = () => {
 			>
 				<LineDots lineLeft={false} backgroundColor='#81689D' />
 			</div>
-			<div className='row outer-row'>
+			<div className='row outer-row h-100'>
 				<div className='col-lg-3 text-center d-flex align-items-center'>
 					<div className='d-flex flex-column'>
 						<p
@@ -55,7 +55,7 @@ const MarchWeek3 = () => {
 					</div>
 				</div>
 				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
+					<div className='row inner-row h-50 overflow-auto mb-2'>
 						<div className='col-lg-4 col-md-6 d-flex day-box'>
 							<WeekBox
 								day='Monday'
@@ -95,7 +95,8 @@ const MarchWeek3 = () => {
 								]}
 							/>
 						</div>
-
+					</div>
+					<div className='row inner-row h-50 overflow-auto'>
 						<div className='col-lg-4 col-md-6 d-flex day-box'>
 							<WeekBox
 								day='Thursday'

@@ -4,7 +4,7 @@ interface Props {
 	shapeImage: string;
 	boxIds: string[];
 }
-const WeekBox = ({ day, shapeImage, boxIds }: Props) => {
+const WeekBox = ({ day, boxIds }: Props) => {
 	return (
 		<div className={`week-overlap d-flex flex-column align-items-center`}>
 			{/* <figure className={`week-fig fig-${day.toLowerCase()}`}>

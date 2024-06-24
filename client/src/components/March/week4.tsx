@@ -12,10 +12,11 @@ const MarchWeek4 = () => {
 			<div className='row justify-content-md-center w-100 justify-content-lg-space-between align-items-center h-100'>
 				<div className='col col-lg-6 h-100'>
 					<div className='row position-relative h-100'>
-						<div className='col col-lg-5 d-flex flex-column justify-content-end g-1'>
+						<div className='col col-lg-5 d-flex flex-column justify-content-end g-1 h-100'>
 							<WeekBox
 								day='Monday'
 								shapeImage={monShape}
+								cusClassName='h-50 overflow-auto'
 								boxIds={[
 									`mar-week-4-monday-1`,
 									`mar-week-4-monday-2`,
@@ -27,6 +28,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Tuesday'
 								shapeImage={tuesShape}
+								cusClassName='h-50 overflow-auto'
 								boxIds={[
 									`mar-week-4-tuesday-1`,
 									`mar-week-4-tuesday-2`,
@@ -36,10 +38,11 @@ const MarchWeek4 = () => {
 								]}
 							/>
 						</div>
-						<div className='col col-lg-5'>
+						<div className='col col-lg-5 h-100'>
 							<WeekBox
 								day='Wednesday'
 								shapeImage={wedShape}
+								cusClassName='h-50 overflow-auto'
 								boxIds={[
 									`mar-week-4-wednesday-1`,
 									`mar-week-4-wednesday-2`,
@@ -51,6 +54,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Thursday'
 								shapeImage={thursShape}
+								cusClassName='h-50 overflow-auto'
 								boxIds={[
 									`mar-week-4-thursday-1`,
 									`mar-week-4-thursday-2`,
@@ -67,13 +71,14 @@ const MarchWeek4 = () => {
 				</div>
 				<div className='col col-lg-6 h-100'>
 					<div className='row h-100'>
-						<div className='col col-lg-2 position-relative'>
+						<div className='col col-lg-2 position-relative h-100'>
 							<div className='hydrangea-img h-100 position-absolute'></div>
 						</div>
-						<div className='col col-lg-5'>
+						<div className='col col-lg-5 h-100'>
 							<WeekBox
 								day='Friday'
 								shapeImage={friShape}
+								cusClassName='h-50 overflow-auto'
 								boxIds={[
 									`mar-week-4-friday-1`,
 									`mar-week-4-friday-2`,
@@ -85,6 +90,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Saturday'
 								shapeImage={satShape}
+								cusClassName='h-50 overflow-auto'
 								boxIds={[
 									`mar-week-4-saturday-1`,
 									`mar-week-4-saturday-2`,
@@ -94,10 +100,11 @@ const MarchWeek4 = () => {
 								]}
 							/>
 						</div>
-						<div className='col col-lg-5  d-flex flex-column justify-content-end g-1'>
+						<div className='col col-lg-5  d-flex flex-column justify-content-end g-1 h-100'>
 							<WeekBox
 								day='Sunday'
 								shapeImage={sunShape}
+								cusClassName='h-50 overflow-auto'
 								boxIds={[
 									`mar-week-4-sunday-1`,
 									`mar-week-4-sunday-2`,
@@ -109,6 +116,7 @@ const MarchWeek4 = () => {
 							<WeekBox
 								day='Notes'
 								shapeImage={sunShape}
+								cusClassName='h-50 overflow-auto'
 								boxIds={[
 									`jan-week-4-notes-1`,
 									`jan-week-4-notes-2`,

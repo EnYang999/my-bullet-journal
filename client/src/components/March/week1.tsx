@@ -29,7 +29,7 @@ const MarchWeek1 = () => {
 			>
 				<LineDots lineLeft={true} backgroundColor='#176B87' />
 			</div>
-			<div className='row h-100'>
+			<div className='row h-80'>
 				<div className='col d-flex day-box'>
 					<WeekBox
 						day='25'
