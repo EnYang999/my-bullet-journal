@@ -38,7 +38,6 @@ const MarchWeek2 = () => {
 						/>
 					</div>
 					<div className='row'>
-						{" "}
 						<WeekBox
 							day='Wednesday'
 							shapeImage={wedShape}

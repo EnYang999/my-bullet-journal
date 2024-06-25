@@ -14,6 +14,9 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .h-100 > .row {
+        height: calc(100% / 3);
+    }
     .week-fig {
         width: 55%;
         position: relative;

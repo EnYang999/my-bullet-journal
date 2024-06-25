@@ -5,12 +5,12 @@ import thursShape from "../../assets/jan2024/thursdayShape.png";
 import wedShape from "../../assets/jan2024/wednesdayShape.png";
 import tuesShape from "../../assets/jan2024/tuesdayShape.png";
 import monShape from "../../assets/jan2024/mondayShape.png";
-const MarchWeek1 = () => {
+const MayWeek1 = () => {
 	return (
 		<>
-			<div className='row justify-content-between'>
-				<div className='col-lg-2 col-md-2 flower-bg'></div>
-				<div className='col-lg-4 col-md-2'>
+			<div className='row justify-content-between h-100'>
+				<div className='col-lg-2 col-md-2 flower-bg h-100'></div>
+				<div className='col-lg-4 col-md-2 h-100'>
 					<div className='row'>
 						<WeekBox
 							day='Monday'
@@ -52,7 +52,7 @@ const MarchWeek1 = () => {
 						/>
 					</div>
 				</div>
-				<div className='col-lg-4 col-md-2'>
+				<div className='col-lg-4 col-md-2 h-100'>
 					<div className='row'>
 						<WeekBox
 							day='Thursday'
@@ -93,10 +93,10 @@ const MarchWeek1 = () => {
 						/>
 					</div>
 				</div>
-				<div className='col-lg-2 col-md-2 flower-bg-re'></div>
+				<div className='col-lg-2 col-md-2 flower-bg-re h-100'></div>
 			</div>
 		</>
 	);
 };
 
-export default MarchWeek1;
+export default MayWeek1;
