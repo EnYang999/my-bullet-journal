@@ -1,5 +1,5 @@
 import WeekBox from "./weekday1";
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 import LineDots from "../decorationelements/lineanddots/lineanddots";
 import Square from "../decorationelements/lineanddots/square";
 import weekendShape from "../../assets/jan2024/weekendShape.png";
@@ -35,9 +35,12 @@ const JanuaryWeek1 = () => {
 					<Calendar
 						month={1}
 						year={2024}
-						rowfontstyle='italic'
-						headerfont='Protest Riot'
-						rowfont='Protest Riot'
+						dayColor='white'
+						headingColor='white'
+						dayStyle={{ fontStyle: "italic" }}
+						// rowfontstyle='italic'
+						headingFontFamily='Protest Riot'
+						dayFontFamily='Protest Riot'
 					/>
 				</div>
 				<div className='col-lg-9 h-100'>

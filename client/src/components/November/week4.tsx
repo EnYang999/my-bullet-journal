@@ -1,7 +1,7 @@
 import WeekBox from "./weekday5";
 // import FourSquares from "../decorationelements/lineanddots/squares";
 import Circles from "../decorationelements/lineanddots/circles";
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 const NovemberWeek4 = () => {
 	return (
 		<>
@@ -26,17 +26,17 @@ const NovemberWeek4 = () => {
 						<Calendar
 							month={11}
 							year={2024}
-							rowColor='#4A55A2'
-							headerColor='#4A55A2'
+							dayColor='#4A55A2'
+							headingColor='#4A55A2'
 							cusName='nove-week4-cal'
-							headerfont='Indie Flower'
-							rowfont='Caveat'
-							containerStyle={{
-								width: "80%",
-								minWidth: "150px",
-								zIndex: 1,
-							}}
-							rowStyle={{ padding: "1px", margin: "0" }}
+							headingFontFamily='Indie Flower'
+							dayFontFamily='Caveat'
+							// containerStyle={{
+							// 	width: "80%",
+							// 	minWidth: "150px",
+							// 	zIndex: 1,
+							// }}
+							dayStyle={{ padding: "1px", margin: "0" }}
 						/>
 					</div>
 				</div>

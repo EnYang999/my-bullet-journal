@@ -1,5 +1,5 @@
 import WeekBox from "./weekday2";
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 const MayWeek2 = () => {
 	return (
 		<>
@@ -132,8 +132,11 @@ const MayWeek2 = () => {
 							<Calendar
 								month={5}
 								year={2024}
-								headerStyle={{ fontWeight: "bold" }}
-								rowStyle={{ padding: "2px" }}
+								headingStyle={{ fontWeight: "bold" }}
+								// headingFontSize='16px'
+								dayStyle={{ padding: "2px" }}
+								headingColor='white'
+								dayColor='white'
 							/>
 						</div>
 					</div>

@@ -1,5 +1,5 @@
 import WeekBox from "./weekday3";
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 // import satShape from "../../assets/jan2024/saturdayShape.png";
 // import sunShape from "../../assets/jan2024/sundayShape.png";
 // import friShape from "../../assets/jan2024/fridayShape.png";
@@ -106,10 +106,10 @@ const week3 = () => {
 						<Calendar
 							month={1}
 							year={2022}
-							headerColor='#bfb8dd'
-							headerStyle={{ marginBottom: "2px", fontFamily: "Protest Riot" }}
-							rowColor='#bfb8dd'
-							rowStyle={{ fontFamily: "Protest Riot" }}
+							headingColor='#bfb8dd'
+							headingStyle={{ marginBottom: "2px", fontFamily: "Protest Riot" }}
+							dayColor='#bfb8dd'
+							dayStyle={{ fontFamily: "Protest Riot" }}
 						/>
 					</div>
 				</div>

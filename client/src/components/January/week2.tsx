@@ -2,7 +2,7 @@ import WeekBox from "./weekday2";
 import LineDots from "../decorationelements/lineanddots/lineanddots";
 import FourSquares from "../decorationelements/lineanddots/squares";
 import Square from "../decorationelements/lineanddots/square";
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 import weekendShape from "../../assets/jan2024/weekendShape.png";
 import friShape from "../../assets/jan2024/fridayShape.png";
 import thursShape from "../../assets/jan2024/thursdayShape.png";
@@ -139,18 +139,17 @@ const janilWeek1 = () => {
 						<Calendar
 							month={1}
 							year={2024}
-							rowfontstyle='italic'
-							headerfont='Protest Riot'
-							rowfont='Protest Riot'
-							containerStyle={{
-								display: "flex",
-								flexDirection: "column",
-							}}
-							headerStyle={{
+							dayStyle={{ fontStyle: "italic" }}
+							headingFontFamily='Protest Riot'
+							dayFontFamily='Protest Riot'
+							dayColor='white'
+							headingColor='white'
+							// containerStyle={{
+							// 	display: "flex",
+							// 	flexDirection: "column",
+							// }}
+							headingStyle={{
 								marginBottom: "2px",
-							}}
-							rowStyle={{
-								padding: "0px auto",
 							}}
 						/>
 					</div>

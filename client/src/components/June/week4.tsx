@@ -1,5 +1,5 @@
 import WeekBox from "./weekday4";
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 const JuneWeek4 = () => {
 	return (
 		<>
@@ -52,9 +52,8 @@ const JuneWeek4 = () => {
 						]}
 					/>
 				</div>
-
-				<div className='w-100 d-none d-md-block mt-7'></div>
-
+			</div>
+			<div className='row'>
 				<div className='col-lg-3'>
 					<WeekBox
 						day='Friday'
@@ -98,13 +97,13 @@ const JuneWeek4 = () => {
 					<Calendar
 						month={6}
 						year={2023}
-						headerColor='#B0A4A4'
-						rowColor='#B0A4A4'
-						rowfont='Kalam'
-						rowStyle={{ padding: "1px" }}
-						containerStyle={{
-							border: "#8095c0 solid 4px;",
-						}}
+						headingColor='#B0A4A4'
+						dayColor='#B0A4A4'
+						dayFontFamily='Kalam'
+						dayStyle={{ padding: "1px" }}
+						// containerStyle={{
+						// 	border: "#8095c0 solid 4px;",
+						// }}
 					/>
 				</div>
 			</div>

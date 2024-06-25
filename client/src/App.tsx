@@ -13,7 +13,7 @@ import ResetPassword from "./components/login/ResetPassword";
 import PermissionDeniedPage from "./components/ErrorPage/PermissionPage";
 // import ControlledCheckboxInput from "./components/todolines/todoComp";
 import FullMedical from "./components/medical/FullMedical";
-
+import Calendar from "./components/calender/CalendarPro";
 function App() {
 	return (
 		<Routes>
@@ -34,6 +34,18 @@ function App() {
 				element={<ResetPasswordNow />}
 			/>
 			<Route path='/demo' element={<FullMedical />} />
+			<Route
+				path='/planner'
+				element={
+					<Calendar
+						month={1}
+						year={2024}
+						// rowColor='black'
+						// headerColor='black'
+						dayColor='black'
+					/>
+				}
+			/>
 		</Routes>
 	);
 }

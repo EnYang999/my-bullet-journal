@@ -1,4 +1,4 @@
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 import fridayShape from "../../assets/img/friday-sepweek2.svg";
 import tuesdayShape from "../../assets/img/tuesday-sepweek2.svg";
 import mondayShape from "../../assets/img/monday-sepweek2.svg";
@@ -102,7 +102,12 @@ const SeptemberWeek2 = () => {
 						<img src={walkingrabbit} alt='' />
 					</figure>
 					<SeptemberLabel className={"septemberlabel align-self-center"} />
-					<Calendar month={9} year={2023} />
+					<Calendar
+						month={9}
+						year={2023}
+						dayColor='#97D1eb'
+						headingColor='#00a3d7'
+					/>
 				</div>
 			</div>
 		</>
