@@ -68,5 +68,5 @@ jobs:
       - name: Deploy server
         working-directory: /var/www/my-bullet-journal/_work/my-bullet-journal/my-bullet-journal/server
         run: |
-          pm2 start npm --name "my-app" -- start
+          pm2 start npm --name "server" -- start
           pm2 save
