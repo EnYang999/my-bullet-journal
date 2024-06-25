@@ -12,10 +12,10 @@ import walkingrabbit from "../../assets/img/walkingrabbit.png";
 const SeptemberWeek2 = () => {
 	return (
 		<>
-			<div className='row outer-row'>
+			<div className='row outer-row h-100'>
 				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					<div className='row inner-row h-50'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='monday'
 								shapeImage={mondayShape}
@@ -28,7 +28,7 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='tuesday'
 								shapeImage={tuesdayShape}
@@ -41,7 +41,7 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='wednesday'
 								shapeImage={wednesdayShape}
@@ -54,8 +54,9 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					</div>
+					<div className='row inner-row h-50'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='thursday'
 								shapeImage={thursdayShape}
@@ -68,7 +69,7 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='friday'
 								shapeImage={fridayShape}
@@ -81,7 +82,7 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-lg-4 col-md-6 d-flex h-100'>
 							<WeekBox
 								day='weekend'
 								shapeImage={weekendShape}

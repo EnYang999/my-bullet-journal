@@ -11,7 +11,7 @@ import WeekBox from "./weekday4";
 const SeptemberWeek4 = () => {
 	return (
 		<>
-			<div className='row'>
+			<div className='row h-100 justify-content-center align-items-center'>
 				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 					<WeekBox
 						day='monday'
@@ -55,7 +55,7 @@ const SeptemberWeek4 = () => {
 					<RabbitStamp stampWidth={10} className='rabbit' />
 				</div>
 
-				<div className='w-100 d-none d-md-block mt-7'></div>
+				<div className='w-100 d-none d-md-block mt-5'></div>
 				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
 					<RabbitMother className='rabbitmother' />
 				</div>
