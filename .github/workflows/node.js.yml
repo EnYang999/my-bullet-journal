@@ -70,4 +70,3 @@ jobs:
         run: |
           pm2 start npm --name "my-app" -- start
           pm2 save
-          sudo service nginx restart
