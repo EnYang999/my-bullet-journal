@@ -13,7 +13,7 @@ const WeekBox = ({ shapeImage, boxIds }: Props) => {
 				<img className={`week-shape`} src={shapeImage} />
 			</figure>
 			<div
-				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column justify-content-center`}
+				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column h-80 overflow-auto`}
 			>
 				{boxIds.map((boxId, index) => (
 					<ToDoLine key={index} className='my-todo-list' boxId={boxId} />
