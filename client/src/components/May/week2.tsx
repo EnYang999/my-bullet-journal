@@ -132,7 +132,10 @@ const MayWeek2 = () => {
 							<Calendar
 								month={5}
 								year={2024}
-								headingStyle={{ fontWeight: "bold" }}
+								headingStyle={{
+									fontWeight: "bold",
+								}}
+								weekDayFormat='short'
 								// headingFontSize='16px'
 								dayStyle={{ padding: "2px" }}
 								headingColor='white'

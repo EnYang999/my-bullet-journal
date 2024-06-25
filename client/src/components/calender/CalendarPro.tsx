@@ -21,6 +21,7 @@ interface Props {
 	dayStyle?: React.CSSProperties;
 	headingStyle?: React.CSSProperties;
 	cusName?: string;
+	weekDayFormat?: "full" | "short";
 }
 
 const Calendar: React.FC<Props> = ({
@@ -35,6 +36,7 @@ const Calendar: React.FC<Props> = ({
 	cusName = "",
 	dayStyle = {},
 	headingStyle = {},
+	weekDayFormat = "full",
 }) => {
 	const currentMonth = new Date(year, month - 1);
 	const firstDayOfMonth = startOfMonth(currentMonth);
@@ -51,7 +53,11 @@ const Calendar: React.FC<Props> = ({
 		daysInLastRow === 7
 			? calendarDays
 			: [...calendarDays, ...Array(daysInLastRow).fill(null)];
-	const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+	const weekDays =
+		weekDayFormat === "short"
+			? ["M", "T", "W", "T", "F", "S", "S"]
+			: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 	return (
 		<Box className={cusName}>
@@ -82,7 +88,6 @@ const Calendar: React.FC<Props> = ({
 								<Grid item xs key={index}>
 									<Box
 										style={{
-											// height: "50px",
 											display: "flex",
 											alignItems: "center",
 											justifyContent: "center",
