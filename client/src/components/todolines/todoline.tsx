@@ -26,13 +26,7 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 	const todoNum = separatedComponents[4];
 
 	const handleTodoPost = async () => {
-		console.log("todo----");
 		try {
-			console.log("todo inside----");
-			console.log(
-				`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`
-			);
-
 			await axios.post(
 				`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
 				{
@@ -85,13 +79,6 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				}
 			} catch (error: any) {
 				console.error("Error fetching data", error);
-				// if (error.response) {
-				//   toast.show({
-				//     title: "Error",
-				//     content: error.response.data.error,
-				//     duration: 3000,
-				//   });
-				// }
 			}
 		};
 
