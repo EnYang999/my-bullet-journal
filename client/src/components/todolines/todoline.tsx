@@ -13,57 +13,63 @@ interface Props {
 	boxId: string;
 }
 
-export const ToDoLine = ({
-	// className,
-	boxId, // sep-week-3-tuesday-num
-}: Props): JSX.Element => {
+export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 	const [inputValue, setInputValue] = useState<string>("");
 	const [isChecked, setIsChecked] = useState<boolean>(false);
 	const cookies = new Cookies();
 	const bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
 
-	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setInputValue(event.target.value);
-	};
-	const handleCheckboxChange = () => {
-		setIsChecked(!isChecked);
-	};
 	const separatedComponents = boxId.split("-");
 	const todoMonth = separatedComponents[0];
 	const todoWeek = separatedComponents[2];
 	const todoDay = separatedComponents[3];
 	const todoNum = separatedComponents[4];
 
-	const handleTodoPost = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-		e.preventDefault();
+	const handleTodoPost = async () => {
+		console.log("todo----");
+		try {
+			console.log("todo inside----");
+			console.log(
+				`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`
+			);
 
-		if (e.key === "Enter") {
-			try {
-				await axios.post(
-					`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
-					{
-						completed: isChecked,
-						description: inputValue,
+			await axios.post(
+				`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
+				{
+					completed: isChecked,
+					description: inputValue,
+				},
+				{
+					headers: {
+						Authorization: `Bearer ${bearToken}`,
 					},
-					{
-						headers: {
-							Authorization: `Bearer ${bearToken}`,
-						},
-					}
-				);
-			} catch (error: any) {
-				console.log("error from client", error);
-
-				if (error.response) {
-					toast.show({
-						title: "Error",
-						content: error.response.data.error,
-						duration: 3000,
-					});
 				}
+			);
+		} catch (error: any) {
+			if (error.response) {
+				toast.show({
+					title: "Error",
+					content: error.response.data.error,
+					duration: 3000,
+				});
 			}
 		}
 	};
+
+	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setInputValue(event.target.value);
+	};
+
+	const handleCheckboxChange = () => {
+		setIsChecked(!isChecked);
+	};
+
+	const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+		if (event.key === "Enter") {
+			handleTodoPost();
+		}
+	};
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -80,27 +86,31 @@ export const ToDoLine = ({
 			} catch (error: any) {
 				console.error("Error fetching data", error);
 				// if (error.response) {
-				// 	toast.show({
-				// 		title: "Error",
-				// 		content: error.response.data.error,
-				// 		duration: 3000,
-				// 	});
+				//   toast.show({
+				//     title: "Error",
+				//     content: error.response.data.error,
+				//     duration: 3000,
+				//   });
 				// }
 			}
 		};
 
 		fetchData();
-	}, []);
+	}, [boxId, bearToken, todoMonth, todoWeek, todoDay, todoNum]);
+
 	return (
-		<div className={`todo-wrapper `}>
+		<div className={`todo-wrapper`}>
 			<input
 				type='checkbox'
 				className='tick-box'
 				id={`cbx-${boxId}`}
 				checked={isChecked}
-				onChange={handleCheckboxChange}
+				onChange={() => {
+					handleCheckboxChange();
+					handleTodoPost();
+					console.log("change---------");
+				}}
 			/>
-
 			<label className='cbx' htmlFor={`cbx-${boxId}`}>
 				<span className='tick-box ratio ratio-1x1'>
 					<svg viewBox='0 0 12 9'>
@@ -110,8 +120,10 @@ export const ToDoLine = ({
 				<span className='input-box'>
 					<input
 						value={inputValue}
-						onKeyUp={handleTodoPost}
-						onChange={handleInputChange}
+						onChange={(e) => {
+							handleInputChange(e);
+						}}
+						onKeyUp={handleKeyUp}
 						className={`input-field ${isChecked ? "checked" : ""}`}
 						disabled={isChecked}
 					/>

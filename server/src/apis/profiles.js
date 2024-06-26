@@ -28,10 +28,12 @@ router.post(
 		try {
 			let { user } = req;
 			console.log(user);
-			let profile = new Profile({
-				account: user._id,
-			});
-			await profile.save();
+			if (!user) {
+				let profile = new Profile({
+					account: user._id,
+				});
+				await profile.save();
+			}
 			return res.status(201).json({
 				success: true,
 				message: "Profile created successfully.",
