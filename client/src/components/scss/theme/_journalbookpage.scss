@@ -40,3 +40,40 @@
         }
     }
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .week-box-container {
+        max-width: 100%;
+        min-height: 500px; /* Adjust as necessary for smaller screens */
+    }
+    .week-container-layout {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .week-box-container {
+        max-height: none; /* Allow height to grow as needed */
+        min-height: 400px; /* Adjust as necessary for smaller screens */
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .sidebar,
+    .rightside {
+        position: relative;
+        height: auto;
+        width: 100%;
+        top: auto;
+        transform: none;
+    }
+    .week-container-layout {
+        // min-width: max(100%, 100vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .week-box-container {
+        padding: 0.5rem;
+    }
+}

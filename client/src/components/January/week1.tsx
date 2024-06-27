@@ -31,7 +31,7 @@ const JanuaryWeek1 = () => {
 				<LineDots lineLeft={false} backgroundColor='#424769' />
 			</div>
 			<div className='row outer-row h-100'>
-				<div className='col-lg-3 text-center d-flex flex-column align-items-center justify-content-around'>
+				<div className='col-3 text-center d-flex flex-column align-items-center justify-content-around'>
 					<Calendar
 						month={1}
 						year={2024}
@@ -43,9 +43,9 @@ const JanuaryWeek1 = () => {
 						dayFontFamily='Protest Riot'
 					/>
 				</div>
-				<div className='col-lg-9 h-100'>
+				<div className='col-9 h-100'>
 					<div className='row inner-row h-50 mb-2'>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Monday'
 								shapeImage={monShape}
@@ -58,7 +58,7 @@ const JanuaryWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Tuesday'
 								shapeImage={tuesShape}
@@ -71,7 +71,7 @@ const JanuaryWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Wednesday'
 								shapeImage={wedShape}
@@ -86,7 +86,7 @@ const JanuaryWeek1 = () => {
 						</div>
 					</div>
 					<div className='row inner-row h-50 overflow-auto'>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Thursday'
 								shapeImage={thursShape}
@@ -99,7 +99,7 @@ const JanuaryWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Friday'
 								shapeImage={friShape}
@@ -112,7 +112,7 @@ const JanuaryWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Weekend'
 								shapeImage={weekendShape}

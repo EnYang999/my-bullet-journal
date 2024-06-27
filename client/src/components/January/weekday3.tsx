@@ -9,7 +9,7 @@ const WeekBox = ({ day, boxIds }: Props) => {
 			{/* <figure className={`week-fig my-1 w-75`}>
 				<img className={`week-shape`} src={shapeImage} />
 			</figure> */}
-			<div style={{ fontFamily: "cursive", fontSize: "3rem" }}>{day}</div>
+			<div style={{ fontFamily: "cursive" }}>{day}</div>
 
 			<div
 				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column h-80 overflow-auto`}

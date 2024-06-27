@@ -8,7 +8,16 @@
     position: relative;
     width: 100%;
     margin: 0.2em 0;
-
+    @media (max-width: 1200px) {
+        max-height: 25px;
+        .cbx {
+            height: 100%;
+            .input-field {
+                max-height: 25px;
+                border-radius: 0.2em;
+            }
+        }
+    }
     input {
         appearance: none;
     }

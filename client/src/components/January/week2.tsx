@@ -31,9 +31,9 @@ const janilWeek1 = () => {
 				<LineDots lineLeft={true} backgroundColor='#637A9F' />
 			</div>
 			<div className='row outer-row h-100'>
-				<div className='col-lg-9 h-100'>
+				<div className='col-9 h-100'>
 					<div className='row inner-row h-50 mb-2'>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Monday'
 								shapeImage={monShape}
@@ -46,7 +46,7 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Tuesday'
 								shapeImage={tuesShape}
@@ -59,7 +59,7 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Wednesday'
 								shapeImage={wedShape}
@@ -74,7 +74,7 @@ const janilWeek1 = () => {
 						</div>
 					</div>
 					<div className='row inner-row h-50 overflow-hidden'>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Thursday'
 								shapeImage={thursShape}
@@ -87,7 +87,7 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Friday'
 								shapeImage={friShape}
@@ -100,7 +100,7 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex h-100'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Weekend'
 								shapeImage={weekendShape}
@@ -115,7 +115,7 @@ const janilWeek1 = () => {
 						</div>
 					</div>
 				</div>
-				<div className='col-lg-3 text-center d-flex align-items-center'>
+				<div className='col-3 text-center d-flex align-items-center'>
 					<div className='d-flex flex-column'>
 						<p
 							style={{

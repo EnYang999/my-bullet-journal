@@ -38,6 +38,12 @@
         height: calc(100% / 3);
         overflow-y: auto;
     }
+    @media (max-width: 1200px) {
+        .row.justify-content-between > .col-lg-4,
+        .row.justify-content-between > .col-lg-4 {
+            width: 30%;
+        }
+    }
     .week-fig {
         width: 55%;
         position: relative;
@@ -162,6 +168,7 @@
         background-repeat: no-repeat;
         background-size: contain;
     }
+
     .week-box {
         width: 100%;
         height: auto;
@@ -201,5 +208,30 @@
                 }
             }
         }
+    }
+    @media (max-width: 1200px) {
+        .row {
+            & > .d-flex {
+                width: auto;
+            }
+            & > .bluerose-img,
+            & > .violet-img {
+                position: absolute;
+                min-width: 200px;
+                min-height: 200px;
+            }
+            & > .violet-img {
+                right: 0;
+                bottom: 0;
+            }
+            & > .bluerose-img {
+                right: 0;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+    }
+
+    @media (max-width: 480px) {
     }
 }

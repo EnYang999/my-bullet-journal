@@ -12,7 +12,7 @@ const week3 = () => {
 		<>
 			<div className='container text-center justify-content-center h-100'>
 				<div className='row mb-2'>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
 							day='Monday'
 							boxIds={[
@@ -24,7 +24,7 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
 							day='Tuesday'
 							boxIds={[
@@ -36,7 +36,7 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
 							day='Wednesday'
 							boxIds={[
@@ -48,7 +48,7 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
 							day='Thursday'
 							boxIds={[
@@ -66,7 +66,7 @@ const week3 = () => {
 					style={{ width: "105%" }}
 				></div>
 				<div className='row'>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
 							day='Friday'
 							boxIds={[
@@ -78,7 +78,7 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
 							day='Saturday'
 							boxIds={[
@@ -90,7 +90,7 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
 							day='Sunday'
 							boxIds={[
@@ -102,10 +102,10 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex'>
+					<div className='col-3 d-flex'>
 						<Calendar
 							month={1}
-							year={2022}
+							year={2023}
 							headingColor='#bfb8dd'
 							headingStyle={{ marginBottom: "2px", fontFamily: "Protest Riot" }}
 							dayColor='#bfb8dd'
