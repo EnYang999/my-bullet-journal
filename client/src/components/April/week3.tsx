@@ -25,11 +25,11 @@ const AprilWeek3 = () => {
 			</div>
 			<div className='row outer-row'>
 				<div
-					className='col-lg-10 h-100 d-flex align-items-center'
+					className='col-10 h-100 d-flex align-items-center'
 					style={{ border: "2px solid green" }}
 				>
 					<div className='row inner-row mx-3'>
-						<div className='col-lg-3 col-md-6 d-flex day-box'>
+						<div className='col-3 d-flex day-box'>
 							<WeekBox
 								day='Mon.'
 								boxIds={[
@@ -41,7 +41,7 @@ const AprilWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3 col-md-6 d-flex day-box'>
+						<div className='col-3 d-flex day-box'>
 							<WeekBox
 								day='Tue.'
 								boxIds={[
@@ -53,7 +53,7 @@ const AprilWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3 col-md-6 d-flex day-box'>
+						<div className='col-3 d-flex day-box'>
 							<WeekBox
 								day='Wed.'
 								boxIds={[
@@ -66,7 +66,7 @@ const AprilWeek3 = () => {
 							/>
 						</div>
 
-						<div className='col-lg-3 col-md-6 d-flex day-box'>
+						<div className='col-3 d-flex day-box'>
 							<WeekBox
 								day='Thur.'
 								boxIds={[
@@ -78,7 +78,7 @@ const AprilWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3 col-md-6 d-flex day-box'>
+						<div className='col-3 d-flex day-box'>
 							<WeekBox
 								day='Fri.'
 								boxIds={[
@@ -90,7 +90,7 @@ const AprilWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3 col-md-6 d-flex day-box'>
+						<div className='col-3 d-flex day-box'>
 							<WeekBox
 								day='Sat.'
 								boxIds={[
@@ -102,7 +102,7 @@ const AprilWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3 col-md-6 d-flex day-box'>
+						<div className='col-3 d-flex day-box'>
 							<WeekBox
 								day='Sun.'
 								boxIds={[
@@ -114,12 +114,12 @@ const AprilWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3 col-md-6 d-flex day-box'>
+						<div className='col-3 d-flex day-box'>
 							<div className='bg-img'></div>
 						</div>
 					</div>
 				</div>
-				<div className='col-lg-2 text-center d-flex align-items-start justify-content-center p-5'>
+				<div className='col-2 text-center d-flex align-items-start justify-content-center p-5'>
 					<FourSquares isVertical={true} />
 					<p
 						className='mt-1 mx-0'
