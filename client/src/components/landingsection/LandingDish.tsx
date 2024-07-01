@@ -47,7 +47,7 @@ const LandingDish = () => {
 						</p>
 					</div>
 				</div>
-				<div className='row'>
+				<div className='row' style={{ minWidth: "100%" }}>
 					<div className='col-12'>
 						{/* <!--Slider  --> */}
 						<div
