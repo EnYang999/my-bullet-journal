@@ -10,7 +10,7 @@ import Calendar from "../calender/CalendarPro";
 const week3 = () => {
 	return (
 		<>
-			<div className='container text-center justify-content-center h-100'>
+			<div className='container text-center justify-content-center h-100 mw-100'>
 				<div className='row mb-2'>
 					<div className='col-3 d-flex day-box'>
 						<WeekBox
@@ -62,7 +62,7 @@ const week3 = () => {
 					</div>
 				</div>
 				<div
-					className='d-none d-md-block background-img'
+					className='d-none d-sm-block background-img'
 					style={{ width: "105%" }}
 				></div>
 				<div className='row'>
