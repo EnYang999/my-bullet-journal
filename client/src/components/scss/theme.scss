@@ -75,3 +75,6 @@
 @import "./themeProfileBody/avatar";
 @import "./themeProfileBody/card"; // about me
 // @import "./theme/aboutme";
+html {
+    display: flex;
+}
