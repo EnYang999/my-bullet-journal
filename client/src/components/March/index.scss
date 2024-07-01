@@ -38,12 +38,12 @@
         height: calc(100% / 3);
         overflow-y: auto;
     }
-    @media (max-width: 1200px) {
-        .row.justify-content-between > .col-lg-4,
-        .row.justify-content-between > .col-lg-4 {
-            width: 30%;
-        }
-    }
+    // @media (max-width: 1200px) {
+    //     .row.justify-content-between > .col-lg-4,
+    //     .row.justify-content-between > .col-lg-4 {
+    //         width: 30%;
+    //     }
+    // }
     .week-fig {
         width: 55%;
         position: relative;
