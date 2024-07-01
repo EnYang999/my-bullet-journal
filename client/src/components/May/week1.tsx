@@ -9,8 +9,8 @@ const MayWeek1 = () => {
 	return (
 		<>
 			<div className='row justify-content-between h-100'>
-				<div className='col-lg-2 col-md-2 flower-bg h-100'></div>
-				<div className='col-lg-4 col-md-2 h-100'>
+				<div className='col-2 flower-bg h-100'></div>
+				<div className='col-4 h-100'>
 					<div className='row'>
 						<WeekBox
 							day='Monday'
@@ -52,7 +52,7 @@ const MayWeek1 = () => {
 						/>
 					</div>
 				</div>
-				<div className='col-lg-4 col-md-2 h-100'>
+				<div className='col-4 h-100'>
 					<div className='row'>
 						<WeekBox
 							day='Thursday'
@@ -93,7 +93,7 @@ const MayWeek1 = () => {
 						/>
 					</div>
 				</div>
-				<div className='col-lg-2 col-md-2 flower-bg-re h-100'></div>
+				<div className='col-2 flower-bg-re h-100'></div>
 			</div>
 		</>
 	);
