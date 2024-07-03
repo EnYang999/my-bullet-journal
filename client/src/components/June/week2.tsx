@@ -5,7 +5,7 @@ const JuneWeek2 = () => {
 	return (
 		<>
 			<div className='row justify-content-between'>
-				<div className='col-lg-2 col-md-2 left-banner d-flex flex-column justify-content-between'>
+				<div className='col-2 left-banner d-flex flex-column justify-content-between'>
 					<Calendar
 						month={6}
 						year={2024}
@@ -23,7 +23,7 @@ const JuneWeek2 = () => {
 					/>
 					<div className='row left-bg'></div>
 				</div>
-				<div className='col-lg-4 col-md-2 g-2 d-flex flex-column justify-content-evenly'>
+				<div className='col-4 g-2 d-flex flex-column justify-content-evenly'>
 					<div className='row'>
 						<WeekBox
 							day='Monday'
@@ -73,7 +73,7 @@ const JuneWeek2 = () => {
 						/>
 					</div>
 				</div>
-				<div className='col-lg-4 col-md-2 g-2 d-flex flex-column justify-content-evenly'>
+				<div className='col-4 g-2 d-flex flex-column justify-content-evenly'>
 					<div className='row'>
 						<WeekBox
 							day='Friday'
@@ -123,7 +123,7 @@ const JuneWeek2 = () => {
 						/>
 					</div>
 				</div>
-				<div className='col-lg-2 col-md-2 right-banner d-flex flex-column justify-content-between align-items-center'>
+				<div className='col-2 right-banner d-flex flex-column justify-content-between align-items-center'>
 					<div className='row right-bg'></div>
 					<FourLines
 						isVertical={true}

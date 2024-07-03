@@ -4,7 +4,7 @@ const JuneWeek4 = () => {
 	return (
 		<>
 			<div className='row'>
-				<div className='col-lg-3'>
+				<div className='col-3'>
 					<WeekBox
 						day='Monday'
 						boxIds={[
@@ -16,7 +16,7 @@ const JuneWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3'>
+				<div className='col-3'>
 					<WeekBox
 						day='Tuesday'
 						boxIds={[
@@ -28,7 +28,7 @@ const JuneWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3'>
+				<div className='col-3'>
 					<WeekBox
 						day='Wednesday'
 						boxIds={[
@@ -40,7 +40,7 @@ const JuneWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3'>
+				<div className='col-3'>
 					<WeekBox
 						day='Thursday'
 						boxIds={[
@@ -54,7 +54,7 @@ const JuneWeek4 = () => {
 				</div>
 			</div>
 			<div className='row'>
-				<div className='col-lg-3'>
+				<div className='col-3'>
 					<WeekBox
 						day='Friday'
 						boxIds={[
@@ -66,7 +66,7 @@ const JuneWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3'>
+				<div className='col-3'>
 					<WeekBox
 						day='Saturday'
 						boxIds={[
@@ -78,7 +78,7 @@ const JuneWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3'>
+				<div className='col-3'>
 					<WeekBox
 						day='Sunday'
 						boxIds={[
@@ -90,7 +90,7 @@ const JuneWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3'>
+				<div className='col-3'>
 					<span className='d-flex justify-content-center'>
 						<span style={{ fontFamily: "Kalam", fontSize: "2em" }}>June</span>
 					</span>
