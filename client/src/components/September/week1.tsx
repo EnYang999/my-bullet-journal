@@ -22,7 +22,7 @@ const SeptemberWeek1 = () => {
 	return (
 		<>
 			<div className='row'>
-				<div className='col-lg-2 col-md-4 d-flex day-box'>
+				<div className='col-2 d-flex day-box'>
 					<WeekBox
 						day='monday'
 						shapeImage={mondayShape}
@@ -36,7 +36,7 @@ const SeptemberWeek1 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2 col-md-4 d-flex day-box'>
+				<div className='col-2 d-flex day-box'>
 					<WeekBox
 						day='tuesday'
 						shapeImage={tuesdayShape}
@@ -50,7 +50,7 @@ const SeptemberWeek1 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2 col-md-4 d-flex day-box'>
+				<div className='col-2 d-flex day-box'>
 					<WeekBox
 						day='wednesday'
 						shapeImage={wednesdayShape}
@@ -65,7 +65,7 @@ const SeptemberWeek1 = () => {
 					/>
 				</div>
 
-				<div className='col-lg-2 col-md-4 d-flex day-box'>
+				<div className='col-2 d-flex day-box'>
 					<WeekBox
 						day='thursday'
 						shapeImage={thursdayShape}
@@ -79,7 +79,7 @@ const SeptemberWeek1 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2 col-md-4 d-flex day-box'>
+				<div className='col-2 d-flex day-box'>
 					<WeekBox
 						day='friday'
 						shapeImage={fridayShape}
@@ -93,7 +93,7 @@ const SeptemberWeek1 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2 col-md-4 d-flex day-box'>
+				<div className='col-2 d-flex day-box'>
 					<WeekBox
 						day='weekend'
 						shapeImage={weekendShape}
