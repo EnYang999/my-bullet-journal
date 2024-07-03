@@ -3,6 +3,7 @@ export const componentMap: Record<string, () => Promise<{ default: React.Compone
   'january/week2': () => import('../components/January/week2'),
   'january/week3': () => import('../components/January/week3'),
 
+  'february/week1': () => import('../components/February/week1'),
 
   'march/week1': () => import('../components/March/week1'),
   'march/week2': () => import('../components/March/week2'),
