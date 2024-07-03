@@ -49,7 +49,7 @@ const NovemberWeek2 = () => {
 				<div className='blob'></div>
 			</div>
 			<div className='row h-100 justify-content-center align-items-center'>
-				<div className='col-lg-2'>
+				<div className='col-2'>
 					<WeekBox
 						day='Monday'
 						boxIds={[
@@ -61,7 +61,7 @@ const NovemberWeek2 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2'>
+				<div className='col-2'>
 					<WeekBox
 						day='Tuesday'
 						boxIds={[
@@ -73,7 +73,7 @@ const NovemberWeek2 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2'>
+				<div className='col-2'>
 					<WeekBox
 						day='Wednesday'
 						boxIds={[
@@ -85,7 +85,7 @@ const NovemberWeek2 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2'>
+				<div className='col-2'>
 					<WeekBox
 						day='Thursday'
 						boxIds={[
@@ -97,7 +97,7 @@ const NovemberWeek2 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2'>
+				<div className='col-2'>
 					<WeekBox
 						day='Friday'
 						boxIds={[
@@ -109,7 +109,7 @@ const NovemberWeek2 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-2'>
+				<div className='col-2'>
 					<WeekBox
 						day='Weekend'
 						boxIds={[

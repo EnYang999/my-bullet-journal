@@ -6,7 +6,7 @@ const NovemberWeek4 = () => {
 	return (
 		<>
 			<div className='row outer-row'>
-				<div className='col-lg-3 text-center position-relative'>
+				<div className='col-3 text-center position-relative'>
 					<div className='img-dec-1 position-absolute'></div>
 					<div className='img-dec-2 position-absolute'></div>
 					<div className='doughnut dn-1 position-absolute'></div>
@@ -40,10 +40,10 @@ const NovemberWeek4 = () => {
 						/>
 					</div>
 				</div>
-				<div className='col-lg-9'>
+				<div className='col-9'>
 					<div className='row inner-row'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'></div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex day-box'></div>
+						<div className='col-4 d-flex day-box'>
 							<WeekBox
 								day='Monday'
 								boxIds={[
@@ -55,7 +55,7 @@ const NovemberWeek4 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex day-box'>
 							<WeekBox
 								day='Tuesday'
 								boxIds={[
@@ -67,7 +67,7 @@ const NovemberWeek4 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex day-box'>
 							<WeekBox
 								day='Wednesday'
 								boxIds={[
@@ -80,7 +80,7 @@ const NovemberWeek4 = () => {
 							/>
 						</div>
 
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex day-box'>
 							<WeekBox
 								day='Thursday'
 								boxIds={[
@@ -92,7 +92,7 @@ const NovemberWeek4 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex day-box'>
 							<WeekBox
 								day='Friday'
 								boxIds={[
@@ -105,7 +105,7 @@ const NovemberWeek4 = () => {
 							/>
 						</div>
 
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex day-box'>
 							<WeekBox
 								day='Saturday'
 								boxIds={[
@@ -117,7 +117,7 @@ const NovemberWeek4 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex day-box'>
 							<WeekBox
 								day='Sunday'
 								boxIds={[
@@ -129,7 +129,7 @@ const NovemberWeek4 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'></div>
+						<div className='col-4 d-flex day-box'></div>
 					</div>
 				</div>
 			</div>

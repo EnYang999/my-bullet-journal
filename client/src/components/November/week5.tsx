@@ -5,7 +5,7 @@ const NovemberWeek5 = () => {
 	return (
 		<>
 			<div className='row'>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='Monday'
 						boxIds={[
@@ -17,7 +17,7 @@ const NovemberWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='Tuesday'
 						boxIds={[
@@ -29,7 +29,7 @@ const NovemberWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='Wednesday'
 						boxIds={[
@@ -41,7 +41,7 @@ const NovemberWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex'>
+				<div className='col-3 d-flex'>
 					<figure className='flowersOnSea'></figure>
 					<figure className='fishUndSea'></figure>
 					<div className='doughnut dn-1' />
@@ -79,7 +79,7 @@ const NovemberWeek5 = () => {
 
 				<div className='w-100 d-none d-md-block mt-7'></div>
 
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='Thursday'
 						boxIds={[
@@ -91,7 +91,7 @@ const NovemberWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='Friday'
 						boxIds={[
@@ -103,7 +103,7 @@ const NovemberWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='Saturday'
 						boxIds={[
@@ -115,7 +115,7 @@ const NovemberWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='Sunday'
 						boxIds={[
