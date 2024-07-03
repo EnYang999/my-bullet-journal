@@ -75,6 +75,9 @@
 @import "./themeProfileBody/avatar";
 @import "./themeProfileBody/card"; // about me
 // @import "./theme/aboutme";
-html {
-    display: flex;
+
+@media (max-width: 1200px) {
+    html:has(.week-container-layout) {
+        display: flex;
+    }
 }
