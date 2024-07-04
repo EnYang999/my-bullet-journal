@@ -37,7 +37,7 @@ const FullPageAbout2: React.FC<FullPageAbout2Props> = ({
 			style={{ height: "100vh" }}
 			ref={about2Ref}
 		>
-			<h1>{activeSection}</h1>
+			{/* <h1>{activeSection}</h1> */}
 			<div className='fp-tableCell' style={{ height: "100%" }}>
 				<div className='fp-scrollable' style={{ height: "100%" }}>
 					<div className='fp-scroller h-100'>

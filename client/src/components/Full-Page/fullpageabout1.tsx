@@ -24,7 +24,7 @@ const FullPageAbout1: React.FC<FullPageAbout1Props> = ({
 			style={{ height: "100vh", overflow: "hidden" }}
 			ref={about1Ref}
 		>
-			<h1>{activeSection}</h1>
+			{/* <h1>{activeSection}</h1> */}
 			<div className='fp-tableCell' style={{ height: "100%" }}>
 				<div className='fp-scrollable' style={{ height: "100%" }}>
 					<div className='fp-scroller'>
