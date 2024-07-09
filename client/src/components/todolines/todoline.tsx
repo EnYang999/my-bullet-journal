@@ -76,6 +76,8 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				if (response?.data) {
 					setInputValue(response.data.description);
 					setIsChecked(response.data.completed);
+				} else {
+					console.log(response);
 				}
 			} catch (error: any) {
 				console.error("Error fetching data", error);
@@ -95,7 +97,7 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				onChange={() => {
 					handleCheckboxChange();
 					handleTodoPost();
-					console.log("change---------");
+					console.log("change----tickpost-----");
 				}}
 			/>
 			<label className='cbx' htmlFor={`cbx-${boxId}`}>
@@ -109,6 +111,8 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 						value={inputValue}
 						onChange={(e) => {
 							handleInputChange(e);
+							handleTodoPost();
+							console.log("change---------");
 						}}
 						onKeyUp={handleKeyUp}
 						className={`input-field ${isChecked ? "checked" : ""}`}

@@ -35,7 +35,7 @@ const LandingHeader = () => {
 							{/* <!--Button  --> */}
 							<a
 								className='btn btn-outline-primary text-white text-primary-hover mb-7 mb-md-0'
-								href='#reservation'
+								href='./themes/01/week1'
 							>
 								View Templates
 							</a>
