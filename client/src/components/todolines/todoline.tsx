@@ -78,11 +78,9 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				if (response?.data) {
 					setInputValue(response.data.description);
 					setIsChecked(response.data.completed);
-				} else {
-					console.log(response);
 				}
 			} catch (error: any) {
-				console.error("Error fetching data", error);
+				// console.error("Error fetching data", error);
 			}
 		};
 
