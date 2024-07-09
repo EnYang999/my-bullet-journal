@@ -54,10 +54,13 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setInputValue(event.target.value);
+		handleTodoPost();
 	};
 
 	const handleCheckboxChange = () => {
 		setIsChecked(!isChecked);
+		handleTodoPost();
+		console.log("change----tickpost-----");
 	};
 
 	const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -96,8 +99,6 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				checked={isChecked}
 				onChange={() => {
 					handleCheckboxChange();
-					handleTodoPost();
-					console.log("change----tickpost-----");
 				}}
 			/>
 			<label className='cbx' htmlFor={`cbx-${boxId}`}>
@@ -111,8 +112,6 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 						value={inputValue}
 						onChange={(e) => {
 							handleInputChange(e);
-							handleTodoPost();
-							console.log("change---------");
 						}}
 						onKeyUp={handleKeyUp}
 						className={`input-field ${isChecked ? "checked" : ""}`}
