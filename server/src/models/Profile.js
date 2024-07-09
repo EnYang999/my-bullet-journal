@@ -1,4 +1,5 @@
-import { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
 
 const ProfileSchema = new Schema(
 	{
@@ -27,9 +28,11 @@ const ProfileSchema = new Schema(
 			required: false,
 		},
 	},
-	{ _id: false },
 	{ timestamps: true }
 );
+
 ProfileSchema.index({ account: 1 }, { unique: true });
-const Profile = model("profiles", ProfileSchema);
-export default Profile;
+
+const Profile = model("Profile", ProfileSchema);
+
+module.exports = Profile;

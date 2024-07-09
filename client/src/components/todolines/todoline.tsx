@@ -8,6 +8,7 @@ import {
 	APP_TODO_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
 } from "../../../../common/constants";
+
 interface Props {
 	className: string;
 	boxId: string;
@@ -24,9 +25,32 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 	const todoWeek = separatedComponents[2];
 	const todoDay = separatedComponents[3];
 	const todoNum = separatedComponents[4];
+
 	useEffect(() => {
-		handleTodoPost();
-	}, [inputValue, isChecked]);
+		const fetchData = async () => {
+			try {
+				const response = await axios.get(
+					`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
+					{
+						headers: { Authorization: `Bearer ${bearToken}` },
+					}
+				);
+				if (response?.data) {
+					setInputValue(response.data.description || "");
+					setIsChecked(response.data.completed || false);
+				}
+			} catch (error: any) {
+				toast.show({
+					title: "Error",
+					content: "Error fetching data",
+					duration: 3000,
+				});
+			}
+		};
+
+		fetchData();
+	}, [bearToken, todoMonth, todoWeek, todoDay, todoNum]);
+
 	const handleTodoPost = async () => {
 		try {
 			const response = await axios.post(
@@ -44,13 +68,11 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 			console.log(response);
 			console.log("content:", isChecked);
 		} catch (error: any) {
-			if (error.response) {
-				toast.show({
-					title: "Error",
-					content: error.response.data.error,
-					duration: 3000,
-				});
-			}
+			toast.show({
+				title: "Error",
+				content: error.response?.data?.error || "Error updating data",
+				duration: 3000,
+			});
 		}
 	};
 
@@ -69,25 +91,8 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 	};
 
 	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await axios.get(
-					`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
-					{
-						headers: { Authorization: `Bearer ${bearToken}` },
-					}
-				);
-				if (response?.data) {
-					setInputValue(response.data.description);
-					setIsChecked(response.data.completed);
-				}
-			} catch (error: any) {
-				// console.error("Error fetching data", error);
-			}
-		};
-
-		fetchData();
-	}, [boxId, bearToken, todoMonth, todoWeek, todoDay, todoNum]);
+		handleTodoPost();
+	}, [inputValue, isChecked]);
 
 	return (
 		<div className={`todo-wrapper`}>
@@ -96,9 +101,7 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				className='tick-box'
 				id={`cbx-${boxId}`}
 				checked={isChecked}
-				onChange={() => {
-					handleCheckboxChange();
-				}}
+				onChange={handleCheckboxChange}
 			/>
 			<label className='cbx' htmlFor={`cbx-${boxId}`}>
 				<span className='tick-box ratio ratio-1x1'>
@@ -109,9 +112,7 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				<span className='input-box'>
 					<input
 						value={inputValue}
-						onChange={(e) => {
-							handleInputChange(e);
-						}}
+						onChange={handleInputChange}
 						onKeyUp={handleKeyUp}
 						className={`input-field ${isChecked ? "checked" : ""}`}
 						disabled={isChecked}
