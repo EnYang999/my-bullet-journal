@@ -35,9 +35,10 @@ router.post(
 				let existingProfile = await Profile.findOne({ account: user._id });
 
 				if (existingProfile) {
-					return res.status(400).json({
-						success: false,
-						message: "Profile already exists.",
+					return res.status(200).json({
+						success: true,
+						message: "Profile already exists. No new profile created.",
+						profile: existingProfile,
 					});
 				}
 
