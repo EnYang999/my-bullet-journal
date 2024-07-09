@@ -30,7 +30,7 @@ const janilWeek1 = () => {
 			>
 				<LineDots lineLeft={true} backgroundColor='#637A9F' />
 			</div>
-			<div className='row outer-row h-100'>
+			<div className='row outer-row h-80'>
 				<div className='col-9 h-100'>
 					<div className='row inner-row h-50 mb-2'>
 						<div className='col-4 d-flex h-100'>

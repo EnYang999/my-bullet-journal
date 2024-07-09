@@ -6,33 +6,12 @@ const ProfileSchema = new Schema(
 			ref: "users",
 			type: Schema.Types.ObjectId,
 			unique: true,
+			required: true,
 		},
 		avatar: {
 			type: String,
 			// default: "../uploads/post-images/img-1612019385734.jpg",
 			required: false,
-		},
-		social: {
-			facebook: {
-				type: String,
-				required: false,
-			},
-			twitter: {
-				type: String,
-				required: false,
-			},
-			linkedin: {
-				type: String,
-				required: false,
-			},
-			instagram: {
-				type: String,
-				required: false,
-			},
-			github: {
-				type: String,
-				required: false,
-			},
 		},
 		interests: { type: String, default: "" },
 		goals: { type: String, default: "" },
@@ -48,8 +27,9 @@ const ProfileSchema = new Schema(
 			required: false,
 		},
 	},
+	{ _id: false },
 	{ timestamps: true }
 );
-
+ProfileSchema.index({ account: 1 }, { unique: true });
 const Profile = model("profiles", ProfileSchema);
 export default Profile;
