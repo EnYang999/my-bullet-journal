@@ -27,7 +27,7 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 
 	const handleTodoPost = async () => {
 		try {
-			await axios.post(
+			const response = await axios.post(
 				`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
 				{
 					completed: isChecked,
@@ -39,6 +39,8 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 					},
 				}
 			);
+			console.log(response);
+			console.log("content:", isChecked);
 		} catch (error: any) {
 			if (error.response) {
 				toast.show({
