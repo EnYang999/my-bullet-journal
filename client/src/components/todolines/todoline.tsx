@@ -24,7 +24,9 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 	const todoWeek = separatedComponents[2];
 	const todoDay = separatedComponents[3];
 	const todoNum = separatedComponents[4];
-
+	useEffect(() => {
+		handleTodoPost();
+	}, [inputValue, isChecked]);
 	const handleTodoPost = async () => {
 		try {
 			const response = await axios.post(
@@ -54,13 +56,10 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setInputValue(event.target.value);
-		handleTodoPost();
 	};
 
 	const handleCheckboxChange = () => {
-		setIsChecked(!isChecked);
-		handleTodoPost();
-		console.log("change----tickpost-----");
+		setIsChecked((prevState) => !prevState);
 	};
 
 	const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
