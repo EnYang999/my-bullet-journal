@@ -56,6 +56,8 @@ router.post(
 
 				return res.status(201).json({
 					success: true,
+					user,
+					account,
 					message: "Profile created successfully.",
 					profile,
 				});
