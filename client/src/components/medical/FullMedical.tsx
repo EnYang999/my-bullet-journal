@@ -5,7 +5,7 @@ import WelcomePage from "./WelcomePage";
 import SymptomForm from "./SymptomForm";
 import { Box } from "@mui/material";
 import { UserProvider } from "./UserContext";
-
+import ConversationPage from "./ConversationPage";
 const FullMedical: React.FC = () => {
 	return (
 		<UserProvider>
@@ -69,7 +69,7 @@ const FullMedical: React.FC = () => {
 								"0px 4px 8px rgba(0, 0, 0, 0.1)";
 						}}
 					>
-						Symptom Form
+						AI Chat
 					</Link>
 
 					<Link
@@ -109,13 +109,16 @@ const FullMedical: React.FC = () => {
 
 				<Element
 					name='symptom-form'
-					style={{ height: "100vh", width: "100vw" }}
+					style={{ minHeight: "100vh", width: "100vw" }}
 				>
 					<SymptomForm />
 				</Element>
 
 				<Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
 					<SuggestionPage />
+				</Element>
+				<Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
+					<ConversationPage />
 				</Element>
 			</Box>
 		</UserProvider>
