@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import symptomsData from "./symptoms.json";
 import colorsData from "./colors.json";
 import { motion } from "framer-motion";
-import { Grid, Box, Paper } from "@mui/material";
+import { Grid, Box, Paper, Typography } from "@mui/material";
 import "./SymptomForm.scss";
+import { useUser } from "./UserContext";
 
 // Type definitions based on symptom data
 interface SymptomData {
@@ -15,6 +16,7 @@ interface SymptomData {
 const symptomData: SymptomData = symptomsData;
 
 const SymptomForm: React.FC = () => {
+	const { name } = useUser();
 	const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
 		new Set()
 	);
@@ -86,6 +88,13 @@ const SymptomForm: React.FC = () => {
 			alignItems='center'
 			style={{ height: "100vh" }}
 		>
+			{name == "" || (
+				<Typography variant='h6' gutterBottom>
+					{name
+						? `${name}, please select what you are not comfortable with ...`
+						: "Please select what you are not comfortable with ..."}
+				</Typography>
+			)}
 			<Grid item xs={12}>
 				<Box
 					display='flex'
