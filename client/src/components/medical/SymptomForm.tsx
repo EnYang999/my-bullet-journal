@@ -88,6 +88,13 @@ const SymptomForm: React.FC = () => {
 			alignItems='center'
 			style={{ height: "100vh" }}
 		>
+			{name == "" || (
+				<Typography variant='h6' gutterBottom>
+					{name
+						? `${name}, please select what you are not comfortable with ...`
+						: "Please select what you are not comfortable with ..."}
+				</Typography>
+			)}
 			<Grid item xs={12}>
 				<Box
 					display='flex'
@@ -99,11 +106,6 @@ const SymptomForm: React.FC = () => {
 						elevation={3}
 						style={{ padding: "20px", maxWidth: "800px", width: "100%" }}
 					>
-						<Typography variant='h6' gutterBottom>
-							{name
-								? `${name}, please select what you are not comfortable with ...`
-								: "Please select what you are not comfortable with ..."}
-						</Typography>
 						<div className='icons-container'>
 							{Object.keys(symptomData).map((category) => (
 								<motion.div
