@@ -1,3 +1,4 @@
+// no use
 import { useState, FC } from "react";
 import {
 	Dialog,
@@ -52,12 +53,9 @@ const SearchResultsPage: FC<SearchResultsPageProps> = ({ results }) => {
 			<DialogContent dividers>
 				{results.length > 0 ? (
 					<List>
-						{results.map((todo, index) => (
-							<ListItem key={index}>
-								<ListItemText
-									primary={"description"}
-									secondary={`Due Date: ${"sssss"}`}
-								/>
+						{results.map(() => (
+							<ListItem>
+								<ListItemText primary={""} secondary={`Due Date: ${"sssss"}`} />
 							</ListItem>
 						))}
 					</List>

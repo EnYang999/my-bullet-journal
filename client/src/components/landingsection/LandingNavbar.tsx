@@ -14,7 +14,6 @@ import {
 	ListItemText,
 	Avatar,
 	ListItemAvatar,
-	Chip,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
@@ -46,9 +45,6 @@ interface Todo {
 }
 import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
 
-interface SearchResultsPageProps {
-	results: Todo[];
-}
 interface User {
 	id: string;
 	username: string;
