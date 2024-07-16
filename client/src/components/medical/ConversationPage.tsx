@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	Box,
 	Paper,
@@ -73,7 +73,7 @@ const ConversationPage: React.FC = () => {
 		setConversation((prev) => [
 			...prev,
 			`You: ${recommendations[selectedOption!][index]}.`,
-			`Bot: Your Special Promo coupon for Uber: UBER2024. Also Don't forget to pack:`,
+			`Bot: Your Special Promo coupon for Uber: UBER2024. Also Choose Somethings to Bring With You to the ER:`,
 		]);
 		setShowSelectedOption(false);
 		setShowChecklistItems(true);
@@ -103,11 +103,17 @@ const ConversationPage: React.FC = () => {
 	};
 	const handleDoneClick = () => {
 		setShowChecklistItems(false);
-		setConversation((prev) => [
-			...prev,
-			`Bot: Great! So don't forget to pack: ${checkedItems}`,
-		]);
 	};
+	useEffect(() => {
+		if (!showChecklistItems && selectedOption) {
+			setConversation((prev) => [
+				...prev,
+				`Bot: Great! So don't forget to pack: ${Array.from(checkedItems).join(
+					", "
+				)}`,
+			]);
+		}
+	}, [showChecklistItems, checkedItems]);
 	return (
 		<Box
 			display='flex'
@@ -255,6 +261,9 @@ const ConversationPage: React.FC = () => {
 					onSubmit={handleFormSubmit}
 					style={{ marginTop: "20px", width: "100%", maxWidth: "800px" }}
 				>
+					<Typography variant='h6' component='h2'>
+						Now, Please submit your information for Pre-check in
+					</Typography>
 					<TextField
 						label='Name'
 						variant='outlined'
@@ -294,14 +303,19 @@ const ConversationPage: React.FC = () => {
 				</Box>
 			)}
 			{submitted && (
-				<Box
-					display='flex'
-					justifyContent='center'
-					alignItems='center'
-					style={{ marginTop: "20px" }}
-				>
-					<QRCode value='FAKEBARCODE1234567890' />
-				</Box>
+				<>
+					<Typography variant='h6' component='h2'>
+						Please save below QR code for you check in
+					</Typography>
+					<Box
+						display='flex'
+						justifyContent='center'
+						alignItems='center'
+						style={{ marginTop: "20px" }}
+					>
+						<QRCode value='FAKEBARCODE1234567890' />
+					</Box>
+				</>
 			)}
 		</Box>
 	);

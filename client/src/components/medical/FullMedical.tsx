@@ -107,17 +107,20 @@ const FullMedical: React.FC = () => {
 					<WelcomePage />
 				</Element>
 
-				<Element
+				{/* <Element
 					name='symptom-form'
 					style={{ minHeight: "100vh", width: "100vw" }}
 				>
 					<SymptomForm />
-				</Element>
+				</Element> */}
 
 				{/* <Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
 					<SuggestionPage />
 				</Element> */}
-				<Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
+				<Element
+					name='suggestion'
+					style={{ height: "100vh", width: "100vw", backgroundColor: "#FFF" }}
+				>
 					<ConversationPage />
 				</Element>
 			</Box>
