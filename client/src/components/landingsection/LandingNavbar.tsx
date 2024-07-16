@@ -1,17 +1,53 @@
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
-import { InputBase, IconButton } from "@mui/material";
+import {
+	InputBase,
+	IconButton,
+	Dialog,
+	DialogTitle,
+	DialogContent,
+	DialogActions,
+	Button,
+	List,
+	ListItem,
+	ListItemText,
+	Avatar,
+	ListItemAvatar,
+} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
+import ShortcutIcon from "@mui/icons-material/Shortcut";
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
+
 import {
 	API_ENDPOINT,
 	APP_USER_API,
 	APP_AUTHENTICATE_TOKEN_NAME,
 	APP_PROFILE_API,
+	APP_TODO_API,
+	APP_TODO_SEARCH,
 } from "../../../../common/constants";
 import { toast } from "../errortoast/ErrorToastManager";
+
+interface Todo {
+	account: string;
+	completed: boolean;
+	description: string;
+	updatedAt: string;
+	todoDate: {
+		todoDay: string;
+		todoMonth: string;
+		todoNum: string;
+		todoWeek: string;
+	};
+}
+import CalendarViewDayIcon from "@mui/icons-material/CalendarViewDay";
+
+interface SearchResultsPageProps {
+	results: Todo[];
+}
 interface User {
 	id: string;
 	username: string;
@@ -24,7 +60,10 @@ const LandingNavbar = () => {
 	const cookies = new Cookies();
 	const navigate = useNavigate();
 	const [searchOpen, setSearchOpen] = useState(false);
+	const [open, setOpen] = useState(false);
+
 	const [searchText, setSearchText] = useState("");
+	const [searchResults, setSearchResults] = useState<any[]>([]);
 	const [user, setUser] = useState<User | null>(null);
 	const [currentCookie, setCurrentCookie] = useState<string | null>(null);
 
@@ -62,6 +101,20 @@ const LandingNavbar = () => {
 		// 	return prevUser;
 		// });
 	};
+	const MonthFormate = [
+		{ abbreviation: "jan", full: "January" },
+		{ abbreviation: "feb", full: "February" },
+		{ abbreviation: "mar", full: "March" },
+		{ abbreviation: "apr", full: "April" },
+		{ abbreviation: "may", full: "May" },
+		{ abbreviation: "jun", full: "June" },
+		{ abbreviation: "jul", full: "July" },
+		{ abbreviation: "aug", full: "August" },
+		{ abbreviation: "sep", full: "September" },
+		{ abbreviation: "oct", full: "October" },
+		{ abbreviation: "nov", full: "November" },
+		{ abbreviation: "dec", full: "December" },
+	];
 	const handleProfileCreate = async () => {
 		try {
 			const response = await axios.post(
@@ -89,14 +142,36 @@ const LandingNavbar = () => {
 	const handleSearchClick = () => {
 		setSearchOpen(!searchOpen);
 	};
-
+	const handleClose = () => {
+		setOpen(false);
+	};
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setSearchText(event.target.value);
 	};
 
-	const handleSearchSubmit = () => {
-		// Implement your search logic here, e.g., query the database
-		console.log("Search submitted:", searchText);
+	const handleSearchSubmit = async () => {
+		try {
+			const response = await axios.get(
+				`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_SEARCH}?search_word=${searchText}`,
+				{
+					headers: {
+						Authorization: `Bearer ${bearToken}`,
+					},
+				}
+			);
+			console.log(response.data);
+			setSearchResults(response.data);
+			setOpen(true);
+		} catch (error: any) {
+			console.log("Error from client:", error);
+			if (error.response) {
+				toast.show({
+					title: "Error",
+					content: error.response.data.error,
+					duration: 3000,
+				});
+			}
+		}
 	};
 	useEffect(() => {
 		let bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
@@ -140,107 +215,157 @@ const LandingNavbar = () => {
 	}, []);
 
 	return (
-		<nav
-			className={`navbar ${
-				visible ? "navbar-light" : "navbar-dark"
-			} navbar-expand-lg navbar-togglable fixed-top`}
-		>
-			<div className='container'>
-				{/*  {/* <!--Navbar brand (mobile)  --> */}
-				<a className='navbar-brand d-lg-none' href='./index.html'>
-					Bullet Journal
-				</a>
-
-				{/*  {/* <!--Navbar toggler  --> */}
-				<button
-					className='navbar-toggler'
-					type='button'
-					data-bs-toggle='collapse'
-					data-bs-target='#navbarCollapse'
-					aria-controls='navbarCollapse'
-					aria-expanded={showCollapse ? "true" : "false"}
-					aria-label='Toggle navigation'
-					onClick={handleNavClick}
-				>
-					<span className='navbar-toggler-icon'></span>
-				</button>
-
-				{/*  <!--Navbar collaps --> */}
-				<div
-					className={`collapse navbar-collapse ${showCollapse ? "show" : ""}`}
-					id='navbarCollapse'
-				>
-					{/* <!--Navbar nav  --> */}
-					<ul className='navbar-nav'>
-						<li className='nav-item'>
-							<a className='nav-link ' href='./about-us'>
-								About Us
-							</a>
-						</li>
-						<li className='nav-item'>
-							<a className='nav-link ' href='./demo'>
-								Demo
-							</a>
-						</li>
-						<li className='nav-item'>
-							{searchOpen ? (
-								<InputBase
-									placeholder='Search…'
-									value={searchText}
-									onChange={handleInputChange}
-									onKeyUp={(event) => {
-										if (event.key === "Enter") {
-											handleSearchSubmit();
-										}
-									}}
-									endAdornment={
-										<IconButton onClick={handleSearchSubmit}>
-											<SearchIcon />
-										</IconButton>
-									}
-									style={{
-										backgroundColor: "#EEEDEB",
-										borderRadius: "4px",
-										padding: "0 8px",
-									}}
-								/>
-							) : (
-								<span
-									className='nav-link'
-									onClick={handleSearchClick}
-									style={{ cursor: "pointer" }}
-								>
-									Search
-								</span>
-							)}
-						</li>
-					</ul>
-
-					{/* <!--Navbar brand  --> */}
-					<a
-						className='navbar-brand d-none d-lg-flex mx-lg-auto'
-						href='./index'
-					>
+		<>
+			<nav
+				className={`navbar ${
+					visible ? "navbar-light" : "navbar-dark"
+				} navbar-expand-lg navbar-togglable fixed-top`}
+			>
+				<div className='container'>
+					{/*  {/* <!--Navbar brand (mobile)  --> */}
+					<a className='navbar-brand d-lg-none' href='./index.html'>
 						Bullet Journal
 					</a>
 
-					{/* <!--Navbar nav  --> */}
-					<ul className='navbar-nav'>
-						<li className='nav-item'>
-							<a className='nav-link ' href='./themes/01/week1'>
-								Themes
-							</a>
-						</li>
-						<li className='nav-item' onClick={handleProfileCreate}>
-							<a className='nav-link'>{user ? user.username : "Profile"}</a>
-						</li>
-						<li className='nav-item' onClick={handleLogout}>
-							<a className='nav-link '>{user ? "Log Out" : "Log In"}</a>
-						</li>
-					</ul>
+					{/*  {/* <!--Navbar toggler  --> */}
+					<button
+						className='navbar-toggler'
+						type='button'
+						data-bs-toggle='collapse'
+						data-bs-target='#navbarCollapse'
+						aria-controls='navbarCollapse'
+						aria-expanded={showCollapse ? "true" : "false"}
+						aria-label='Toggle navigation'
+						onClick={handleNavClick}
+					>
+						<span className='navbar-toggler-icon'></span>
+					</button>
+
+					{/*  <!--Navbar collaps --> */}
+					<div
+						className={`collapse navbar-collapse ${showCollapse ? "show" : ""}`}
+						id='navbarCollapse'
+					>
+						{/* <!--Navbar nav  --> */}
+						<ul className='navbar-nav'>
+							<li className='nav-item'>
+								<a className='nav-link ' href='./about-us'>
+									About Us
+								</a>
+							</li>
+							<li className='nav-item'>
+								<a className='nav-link ' href='./demo'>
+									Demo
+								</a>
+							</li>
+							<li className='nav-item'>
+								{searchOpen ? (
+									<InputBase
+										placeholder='Search…'
+										value={searchText}
+										onChange={handleInputChange}
+										onKeyUp={(event) => {
+											if (event.key === "Enter") {
+												handleSearchSubmit();
+											}
+										}}
+										endAdornment={
+											<IconButton onClick={handleSearchSubmit}>
+												<SearchIcon />
+											</IconButton>
+										}
+										style={{
+											backgroundColor: "#EEEDEB",
+											borderRadius: "4px",
+											padding: "0 8px",
+										}}
+									/>
+								) : (
+									<span
+										className='nav-link'
+										onClick={handleSearchClick}
+										style={{ cursor: "pointer" }}
+									>
+										Search
+									</span>
+								)}
+							</li>
+						</ul>
+
+						{/* <!--Navbar brand  --> */}
+						<a
+							className='navbar-brand d-none d-lg-flex mx-lg-auto'
+							href='./index'
+						>
+							Bullet Journal
+						</a>
+
+						{/* <!--Navbar nav  --> */}
+						<ul className='navbar-nav'>
+							<li className='nav-item'>
+								<a className='nav-link ' href='./themes/01/week1'>
+									Themes
+								</a>
+							</li>
+							<li className='nav-item' onClick={handleProfileCreate}>
+								<a className='nav-link'>{user ? user.username : "Profile"}</a>
+							</li>
+							<li className='nav-item' onClick={handleLogout}>
+								<a className='nav-link '>{user ? "Log Out" : "Log In"}</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-		</nav>
+			</nav>
+			{open && (
+				<Dialog open={open} onClose={handleClose} fullWidth maxWidth='sm'>
+					<DialogTitle>
+						Search Results
+						<IconButton
+							aria-label='close'
+							onClick={handleClose}
+							sx={{ position: "absolute", right: 8, top: 8 }}
+						>
+							<CloseIcon />
+						</IconButton>
+					</DialogTitle>
+					<DialogContent dividers>
+						{searchResults.length > 0 ? (
+							<List>
+								{searchResults.map((todo, index) => (
+									<ListItem
+										key={index}
+										secondaryAction={
+											<IconButton edge='end' aria-label='redirect'>
+												<ShortcutIcon />
+											</IconButton>
+										}
+									>
+										<ListItemAvatar>
+											<Avatar>
+												<CalendarViewDayIcon />
+											</Avatar>
+										</ListItemAvatar>
+
+										<ListItemText
+											primary={todo.description}
+											secondary={`Date: ${todo.todoDate.todoMonth} ${todo.todoDate.todoWeek} ${todo.todoDate.todoDay}`}
+										/>
+									</ListItem>
+								))}
+							</List>
+						) : (
+							<p>No results found.</p>
+						)}
+					</DialogContent>
+					<DialogActions>
+						<Button onClick={handleClose} color='primary'>
+							Close
+						</Button>
+					</DialogActions>
+				</Dialog>
+			)}
+		</>
 	);
 };
 

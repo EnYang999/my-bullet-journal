@@ -1,7 +1,7 @@
 import { userAuth } from "../middlewares/auth-guard";
 import { Todo } from "../models";
 import { Router } from "express";
-import { TODO_POST } from "../constants";
+import { TODO_POST, TODO_SEARCH } from "../constants";
 const router = Router();
 
 /**
@@ -137,28 +137,26 @@ router.get(
  * @access Private
  * @type GET
  */
-router.get(`/todo_search`, userAuth, async (req, res) => {
+router.get(`${TODO_SEARCH}`, userAuth, async (req, res) => {
 	try {
-		const { search_word } = req.query; // Changed to req.query for GET parameters
+		const { search_word } = req.query;
 
 		if (!search_word) {
 			return res.status(400).json({ message: "Search word is required." });
 		}
 
-		// Use regex for vague search (case-insensitive)
 		const searchRegex = new RegExp(search_word, "i");
 
-		// Find todos that match the search criteria
 		const todos = await Todo.find({
 			account: req.user._id,
 			description: { $regex: searchRegex },
 		});
 
-		if (todos.length === 0) {
-			return res
-				.status(404)
-				.json({ message: "No todos found matching the criteria." });
-		}
+		// if (todos.length === 0) {
+		// 	return res
+		// 		.status(200)
+		// 		.json({ message: "No todos found matching the criteria." });
+		// }
 
 		return res.status(200).json(todos);
 	} catch (err) {
