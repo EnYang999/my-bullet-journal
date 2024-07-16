@@ -42,7 +42,7 @@ const FullMedical: React.FC = () => {
 						Welcome
 					</Link>
 
-					<Link
+					{/* <Link
 						to='symptom-form'
 						smooth
 						duration={1000}
@@ -70,7 +70,7 @@ const FullMedical: React.FC = () => {
 						}}
 					>
 						AI Chat
-					</Link>
+					</Link> */}
 
 					<Link
 						to='suggestion'
@@ -114,9 +114,9 @@ const FullMedical: React.FC = () => {
 					<SymptomForm />
 				</Element>
 
-				<Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
+				{/* <Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
 					<SuggestionPage />
-				</Element>
+				</Element> */}
 				<Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
 					<ConversationPage />
 				</Element>
