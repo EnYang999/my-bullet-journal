@@ -14,6 +14,7 @@ import {
 	ListItemText,
 	Avatar,
 	ListItemAvatar,
+	Chip,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
@@ -101,20 +102,37 @@ const LandingNavbar = () => {
 		// 	return prevUser;
 		// });
 	};
-	const MonthFormate = [
-		{ abbreviation: "jan", full: "January" },
-		{ abbreviation: "feb", full: "February" },
-		{ abbreviation: "mar", full: "March" },
-		{ abbreviation: "apr", full: "April" },
-		{ abbreviation: "may", full: "May" },
-		{ abbreviation: "jun", full: "June" },
-		{ abbreviation: "jul", full: "July" },
-		{ abbreviation: "aug", full: "August" },
-		{ abbreviation: "sep", full: "September" },
-		{ abbreviation: "oct", full: "October" },
-		{ abbreviation: "nov", full: "November" },
-		{ abbreviation: "dec", full: "December" },
-	];
+	const MonthFormate: { [key: string]: string } = {
+		jan: "January",
+		feb: "February",
+		mar: "March",
+		apr: "April",
+		may: "May",
+		jun: "June",
+		jul: "July",
+		aug: "August",
+		sep: "September",
+		oct: "October",
+		nov: "November",
+		dec: "December",
+	};
+	const MonthLink: { [key: string]: string } = {
+		jan: "01",
+		feb: "02",
+		mar: "03",
+		apr: "04",
+		may: "05",
+		jun: "06",
+		jul: "07",
+		aug: "08",
+		sep: "09",
+		oct: "10",
+		nov: "11",
+		dec: "12",
+	};
+	const capitalizeFirstLetter = (string: string) => {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	};
 	const handleProfileCreate = async () => {
 		try {
 			const response = await axios.post(
@@ -172,6 +190,12 @@ const LandingNavbar = () => {
 				});
 			}
 		}
+	};
+	const handleRedirect = (todo: Todo) => {
+		const month = todo.todoDate.todoMonth;
+		const week = todo.todoDate.todoWeek;
+		const url = `/themes/${MonthLink[month]}/week${week}`;
+		navigate(url);
 	};
 	useEffect(() => {
 		let bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
@@ -336,7 +360,11 @@ const LandingNavbar = () => {
 									<ListItem
 										key={index}
 										secondaryAction={
-											<IconButton edge='end' aria-label='redirect'>
+											<IconButton
+												edge='end'
+												aria-label='redirect'
+												onClick={() => handleRedirect(todo)}
+											>
 												<ShortcutIcon />
 											</IconButton>
 										}
@@ -349,7 +377,11 @@ const LandingNavbar = () => {
 
 										<ListItemText
 											primary={todo.description}
-											secondary={`Date: ${todo.todoDate.todoMonth} ${todo.todoDate.todoWeek} ${todo.todoDate.todoDay}`}
+											secondary={`Date: ${
+												MonthFormate[todo.todoDate.todoMonth]
+											} Week-${todo.todoDate.todoWeek} ${capitalizeFirstLetter(
+												todo.todoDate.todoDay
+											)}`}
 										/>
 									</ListItem>
 								))}
