@@ -42,7 +42,7 @@ const ConversationPage: React.FC = () => {
 	const [userInput, setUserInput] = useState<string>("");
 	const [showSelectedOption, setShowSelectedOption] = useState(false);
 	const [selectedOption, setSelectedOption] = useState<string | null>(null);
-	const [checklistItems, setChecklistItems] = useState<string[]>([]);
+	// const [checklistItems, setChecklistItems] = useState<string[]>([]);
 	const [checkedItems, setCheckedItems] = useState<Set<string>>(new Set());
 	const [showChecklistItems, setShowChecklistItems] = useState(false);
 	const [showForm, setShowForm] = useState(false);
