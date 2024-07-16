@@ -69,10 +69,10 @@ const ConversationPage: React.FC = () => {
 		setSelectedOption(option);
 		setShowSelectedOption(true);
 	};
-	const handleCheckListClick = (option: string) => {
+	const handleCheckListClick = (index: number) => {
 		setConversation((prev) => [
 			...prev,
-			`You: ${recommendations[selectedOption!]}.`,
+			`You: ${recommendations[selectedOption!][index]}.`,
 			`Bot: Your Special Promo coupon for Uber: UBER2024. Also Don't forget to pack:`,
 		]);
 		setShowSelectedOption(false);
@@ -174,7 +174,7 @@ const ConversationPage: React.FC = () => {
 								key={Er}
 								variant='contained'
 								color='primary'
-								onClick={() => handleCheckListClick(Er)}
+								onClick={() => handleCheckListClick(index)}
 								style={{ margin: "5px" }}
 							>
 								{recommendations[selectedOption!][index]}
