@@ -8,12 +8,12 @@ import {
 	MenuItem,
 } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useUser } from "./UserContext";
 
 const WelcomePage: React.FC = () => {
 	const { name, setName } = useUser();
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 	const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 	const controls = useAnimation();
