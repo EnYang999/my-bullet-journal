@@ -5,9 +5,9 @@ const NovemberWeek1 = () => {
 	return (
 		<>
 			<div className='row outer-row'>
-				<div className='col-lg-9 h-100'>
+				<div className='col-9 h-100'>
 					<div className='row inner-row h-100'>
-						<div className='col-lg-6 col-md-6 d-flex day-box'>
+						<div className='col-6 d-flex day-box'>
 							<WeekBox
 								day='Monday'
 								boxIds={[
@@ -19,7 +19,7 @@ const NovemberWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-6 col-md-6 d-flex day-box'>
+						<div className='col-6 d-flex day-box'>
 							<WeekBox
 								day='Tuesday'
 								boxIds={[
@@ -31,7 +31,7 @@ const NovemberWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-6 col-md-6 d-flex day-box'>
+						<div className='col-6 d-flex day-box'>
 							<WeekBox
 								day='Wednesday'
 								boxIds={[
@@ -44,7 +44,7 @@ const NovemberWeek1 = () => {
 							/>
 						</div>
 
-						<div className='col-lg-6 col-md-6 d-flex day-box'>
+						<div className='col-6 d-flex day-box'>
 							<WeekBox
 								day='Thursday'
 								boxIds={[
@@ -56,7 +56,7 @@ const NovemberWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-6 col-md-6 d-flex day-box'>
+						<div className='col-6 d-flex day-box'>
 							<WeekBox
 								day='Friday'
 								boxIds={[
@@ -68,7 +68,7 @@ const NovemberWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-6 col-md-6 d-flex day-box'>
+						<div className='col-6 d-flex day-box'>
 							<WeekBox
 								day='Weekend'
 								boxIds={[
@@ -82,7 +82,7 @@ const NovemberWeek1 = () => {
 						</div>
 					</div>
 				</div>
-				<div className='col-lg-3 text-center d-flex align-items-center'>
+				<div className='col-3 text-center d-flex align-items-center'>
 					<div className='d-flex flex-column position-relative w-100 h-100 justify-content-center'>
 						<p
 							style={{

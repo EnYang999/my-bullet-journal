@@ -1,12 +1,12 @@
 import WeekBox from "./weekday2";
-import Calendar from "../calender/Calendar";
-const MarchWeek2 = () => {
+import Calendar from "../calender/CalendarPro";
+const MayWeek2 = () => {
 	return (
 		<>
 			<div className='row h-100 align-items-center'>
-				<div className='col-lg-9 h-100 d-flex flex-column justify-content-evenly'>
+				<div className='col-9 h-100 d-flex flex-column justify-content-evenly'>
 					<div className='row'>
-						<div className='col-lg-3'>
+						<div className='col-3'>
 							<WeekBox
 								day='M'
 								boxIds={[
@@ -18,7 +18,7 @@ const MarchWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3'>
+						<div className='col-3'>
 							<WeekBox
 								day='T'
 								boxIds={[
@@ -30,7 +30,7 @@ const MarchWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3'>
+						<div className='col-3'>
 							<WeekBox
 								day='W'
 								boxIds={[
@@ -42,7 +42,7 @@ const MarchWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3'>
+						<div className='col-3'>
 							<WeekBox
 								day='T'
 								boxIds={[
@@ -56,7 +56,7 @@ const MarchWeek2 = () => {
 						</div>
 					</div>
 					<div className='row'>
-						<div className='col-lg-3'>
+						<div className='col-3'>
 							<WeekBox
 								day='F'
 								boxIds={[
@@ -68,7 +68,7 @@ const MarchWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3'>
+						<div className='col-3'>
 							<WeekBox
 								day='S'
 								boxIds={[
@@ -80,7 +80,7 @@ const MarchWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3'>
+						<div className='col-3'>
 							<WeekBox
 								day='S'
 								boxIds={[
@@ -92,7 +92,7 @@ const MarchWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-3'>
+						<div className='col-3'>
 							<WeekBox
 								day='N'
 								boxIds={[
@@ -107,7 +107,7 @@ const MarchWeek2 = () => {
 					</div>
 				</div>
 
-				<div className='col col-lg-3 h-100'>
+				<div className='col col-3 h-100'>
 					<div className='row div-img-1 mb-1'>
 						<div className='img-1'></div>
 					</div>
@@ -132,8 +132,11 @@ const MarchWeek2 = () => {
 							<Calendar
 								month={5}
 								year={2024}
-								headerStyle={{ fontWeight: "bold" }}
-								rowStyle={{ padding: "2px" }}
+								headingStyle={{ fontWeight: "bold" }}
+								// headingFontSize='16px'
+								dayStyle={{ padding: "2px" }}
+								headingColor='white'
+								dayColor='white'
 							/>
 						</div>
 					</div>
@@ -143,4 +146,4 @@ const MarchWeek2 = () => {
 	);
 };
 
-export default MarchWeek2;
+export default MayWeek2;

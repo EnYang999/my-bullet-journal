@@ -120,13 +120,12 @@ router.get(
 			};
 			const todos = await Todo.findOne({ todoDate, account: req.user._id });
 
-			if (todos.length === 0) {
-				return res
-					.status(404)
-					.json({ message: "No todos found matching the criteria." });
+			if (todos) {
+				// return res
+				// 	.status(404)
+				// 	.json({ message: "No todos found matching the criteria." });
+				return res.status(200).json(todos);
 			}
-
-			return res.status(200).json(todos);
 		} catch (err) {
 			return res.status(500).json({ message: err.message });
 		}

@@ -28,14 +28,45 @@ router.post(
 		try {
 			let { user } = req;
 			console.log(user);
-			let profile = new Profile({
-				account: user._id,
-			});
-			await profile.save();
-			return res.status(201).json({
-				success: true,
-				message: "Profile created successfully.",
-			});
+
+			// Ensure that the user exists
+			if (user) {
+				// Check if the profile already exists for the user
+				let existingProfile = await Profile.findOne({ account: user._id });
+
+				if (existingProfile) {
+					return res.status(400).json({
+						success: true,
+						message: "Profile already exists. No new profile created.",
+						profile: existingProfile,
+					});
+				}
+
+				// Create a new profile
+				let profile = new Profile({
+					account: user._id,
+					avatar: req.file ? req.file.path : "",
+					interests: req.body.interests || "",
+					goals: req.body.goals || "",
+					habits: req.body.habits || "",
+					notes: req.body.notes || "",
+					bio: req.body.bio || "",
+				});
+				await profile.save();
+
+				return res.status(201).json({
+					success: true,
+					user: user,
+					account: account,
+					message: "Profile created successfully.",
+					profile: profile,
+				});
+			} else {
+				return res.status(400).json({
+					success: false,
+					message: "User not authenticated.",
+				});
+			}
 		} catch (err) {
 			return res.status(400).json({
 				success: false,

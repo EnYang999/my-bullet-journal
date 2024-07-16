@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -7,7 +7,8 @@ interface Props {
 }
 const RightSideBar = ({ className }: Props): JSX.Element => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
-	const { month } = useParams();
+	const [activeWeek, setActiveWeek] = useState<number | null>(null);
+	const { month, week } = useParams<{ month: string; week: string }>();
 	const handleMouseEnter = (index: number) => {
 		setActiveIndex(index);
 	};
@@ -34,7 +35,16 @@ const RightSideBar = ({ className }: Props): JSX.Element => {
 		{ abbreviation: "W-4", full: "Week4" },
 		{ abbreviation: "W-5", full: "Week5" },
 	];
-
+	useEffect(() => {
+		if (week) {
+			const weekIndex = labels.findIndex((m) => m.full === week);
+			if (weekIndex !== -1) {
+				setActiveWeek(weekIndex);
+				console.log(weekIndex);
+			}
+			console.log(activeWeek);
+		}
+	}, []);
 	return (
 		<div className={`right-pagination-container ${className}`}>
 			<div className='pagination-overlap'>
@@ -43,7 +53,7 @@ const RightSideBar = ({ className }: Props): JSX.Element => {
 						<li
 							key={index}
 							className={`position-relative h-100 d-flex align-items-center ${label.abbreviation.toLowerCase()} ${
-								index === activeIndex ? "active" : ""
+								index === activeIndex || index === activeWeek ? "active" : ""
 							}`}
 							onMouseEnter={() => handleMouseEnter(index)}
 							onMouseLeave={handleMouseLeave}

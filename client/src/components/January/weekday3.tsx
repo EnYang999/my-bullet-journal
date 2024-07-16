@@ -1,16 +1,18 @@
 import { ToDoLine } from "../todolines/todoline";
 interface Props {
-	shapeImage: string;
+	day: string;
 	boxIds: string[];
 }
-const WeekBox = ({ shapeImage, boxIds }: Props) => {
+const WeekBox = ({ day, boxIds }: Props) => {
 	return (
-		<div className={`week-overlap  d-flex flex-column align-items-center`}>
-			<figure className={`week-fig my-1 w-75`}>
+		<div className={`week-overlap  d-flex flex-column h-100`}>
+			{/* <figure className={`week-fig my-1 w-75`}>
 				<img className={`week-shape`} src={shapeImage} />
-			</figure>
+			</figure> */}
+			<div style={{ fontFamily: "cursive" }}>{day}</div>
+
 			<div
-				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column justify-content-center`}
+				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column h-80 overflow-auto`}
 			>
 				{boxIds.map((boxId, index) => (
 					<ToDoLine key={index} className='my-todo-list' boxId={boxId} />

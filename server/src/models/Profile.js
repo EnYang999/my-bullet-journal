@@ -1,4 +1,5 @@
-import { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
 
 const ProfileSchema = new Schema(
 	{
@@ -6,33 +7,12 @@ const ProfileSchema = new Schema(
 			ref: "users",
 			type: Schema.Types.ObjectId,
 			unique: true,
+			required: true,
 		},
 		avatar: {
 			type: String,
 			// default: "../uploads/post-images/img-1612019385734.jpg",
 			required: false,
-		},
-		social: {
-			facebook: {
-				type: String,
-				required: false,
-			},
-			twitter: {
-				type: String,
-				required: false,
-			},
-			linkedin: {
-				type: String,
-				required: false,
-			},
-			instagram: {
-				type: String,
-				required: false,
-			},
-			github: {
-				type: String,
-				required: false,
-			},
 		},
 		interests: { type: String, default: "" },
 		goals: { type: String, default: "" },
@@ -51,5 +31,8 @@ const ProfileSchema = new Schema(
 	{ timestamps: true }
 );
 
-const Profile = model("profiles", ProfileSchema);
-export default Profile;
+ProfileSchema.index({ account: 1 }, { unique: true });
+
+const Profile = model("Profile", ProfileSchema);
+
+module.exports = Profile;

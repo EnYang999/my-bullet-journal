@@ -6,7 +6,7 @@ import thursShape from "../../assets/jan2024/thursdayShape.png";
 import wedShape from "../../assets/jan2024/wednesdayShape.png";
 import tuesShape from "../../assets/jan2024/tuesdayShape.png";
 import monShape from "../../assets/jan2024/mondayShape.png";
-const MarchWeek3 = () => {
+const MayWeek3 = () => {
 	return (
 		<>
 			<div className='row'>
@@ -124,4 +124,4 @@ const MarchWeek3 = () => {
 	);
 };
 
-export default MarchWeek3;
+export default MayWeek3;

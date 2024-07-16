@@ -11,8 +11,8 @@ import WeekBox from "./weekday4";
 const SeptemberWeek4 = () => {
 	return (
 		<>
-			<div className='row'>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+			<div className='row h-100 justify-content-center align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='monday'
 						shapeImage={mondayShape}
@@ -25,7 +25,7 @@ const SeptemberWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='tuesday'
 						shapeImage={tuesdayShape}
@@ -38,7 +38,7 @@ const SeptemberWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='wednesday'
 						shapeImage={wednesdayShape}
@@ -51,15 +51,15 @@ const SeptemberWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center justify-content-center'>
+				<div className='col-3 d-flex align-items-center justify-content-center'>
 					<RabbitStamp stampWidth={10} className='rabbit' />
 				</div>
 
-				<div className='w-100 d-none d-md-block mt-7'></div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='w-100 d-none d-md-block mt-5'></div>
+				<div className='col-3 d-flex align-items-center'>
 					<RabbitMother className='rabbitmother' />
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='thursday'
 						shapeImage={thursdayShape}
@@ -72,7 +72,7 @@ const SeptemberWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='friday'
 						shapeImage={fridayShape}
@@ -85,7 +85,7 @@ const SeptemberWeek4 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex align-items-center'>
 					<WeekBox
 						day='weekend'
 						shapeImage={weekendShape}

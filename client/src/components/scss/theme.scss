@@ -25,11 +25,11 @@
 // @import 'theme/theme';
 
 // Custom core
-// @import 'user';
+// @import "user";
 // @import "./theme/bundle"; // general
 // @import "./themeProfile/profile.scss"; // general for whole user profile
 // @import "./themebau/fullpage";
-// import "./components/scss/themebau/_themebau.scss";
+// @import "./themebau/themebau";
 
 @import "./theme/animation";
 @import "./theme/svg";
@@ -64,10 +64,6 @@
 @import "../November/index.scss";
 @import "../December/index.scss";
 @import "../April/index.scss";
-@import "../April/week1.scss";
-@import "../April/week2.scss";
-@import "../April/week3.scss";
-@import "../April/week4.scss";
 
 @import "./theme/rightsidebar";
 @import "./theme/sidebar";
@@ -79,3 +75,9 @@
 @import "./themeProfileBody/avatar";
 @import "./themeProfileBody/card"; // about me
 // @import "./theme/aboutme";
+
+@media (max-width: 1200px) {
+    html:has(.week-container-layout) {
+        display: flex;
+    }
+}

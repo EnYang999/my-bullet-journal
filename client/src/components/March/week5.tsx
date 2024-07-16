@@ -33,8 +33,8 @@ const MarchWeek5 = () => {
 					]}
 				/>
 			</div>
-			<div className='row'>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+			<div className='row h-100'>
+				<div className='col-3 d-flex h-50 '>
 					<WeekBox
 						day='monday'
 						shapeImage={mondayShape}
@@ -47,7 +47,7 @@ const MarchWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex h-50'>
 					<WeekBox
 						day='tuesday'
 						shapeImage={tuesdayShape}
@@ -60,7 +60,7 @@ const MarchWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex h-50'>
 					<WeekBox
 						day='wednesday'
 						shapeImage={wednesdayShape}
@@ -73,11 +73,11 @@ const MarchWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center justify-content-center bluerose-img'></div>
+				<div className='col-3 d-flex justify-content-center bluerose-img'></div>
 
 				<div className='w-100 d-none d-md-block mt-7'></div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center violet-img'></div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex violet-img'></div>
+				<div className='col-3 d-flex h-50'>
 					<WeekBox
 						day='thursday'
 						shapeImage={thursdayShape}
@@ -90,7 +90,7 @@ const MarchWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex h-50'>
 					<WeekBox
 						day='friday'
 						shapeImage={fridayShape}
@@ -103,7 +103,7 @@ const MarchWeek5 = () => {
 						]}
 					/>
 				</div>
-				<div className='col-lg-3 col-md-6 d-flex align-items-center'>
+				<div className='col-3 d-flex h-50'>
 					<WeekBox
 						day='weekend'
 						shapeImage={weekendShape}

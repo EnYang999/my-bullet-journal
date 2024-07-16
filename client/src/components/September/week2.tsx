@@ -1,4 +1,4 @@
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 import fridayShape from "../../assets/img/friday-sepweek2.svg";
 import tuesdayShape from "../../assets/img/tuesday-sepweek2.svg";
 import mondayShape from "../../assets/img/monday-sepweek2.svg";
@@ -12,10 +12,10 @@ import walkingrabbit from "../../assets/img/walkingrabbit.png";
 const SeptemberWeek2 = () => {
 	return (
 		<>
-			<div className='row outer-row'>
-				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+			<div className='row outer-row h-100'>
+				<div className='col-9 h-100'>
+					<div className='row inner-row h-50'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='monday'
 								shapeImage={mondayShape}
@@ -28,7 +28,7 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='tuesday'
 								shapeImage={tuesdayShape}
@@ -41,7 +41,7 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='wednesday'
 								shapeImage={wednesdayShape}
@@ -54,8 +54,9 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					</div>
+					<div className='row inner-row h-50'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='thursday'
 								shapeImage={thursdayShape}
@@ -68,7 +69,7 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='friday'
 								shapeImage={fridayShape}
@@ -81,7 +82,7 @@ const SeptemberWeek2 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='weekend'
 								shapeImage={weekendShape}
@@ -96,12 +97,17 @@ const SeptemberWeek2 = () => {
 						</div>
 					</div>
 				</div>
-				<div className='col-lg-3 text-center'>
+				<div className='col-3 text-center'>
 					<figure className={"align-self-center"}>
 						<img src={walkingrabbit} alt='' />
 					</figure>
 					<SeptemberLabel className={"septemberlabel align-self-center"} />
-					<Calendar month={9} year={2023} />
+					<Calendar
+						month={9}
+						year={2023}
+						dayColor='#97D1eb'
+						headingColor='#00a3d7'
+					/>
 				</div>
 			</div>
 		</>

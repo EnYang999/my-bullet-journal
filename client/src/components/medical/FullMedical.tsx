@@ -107,7 +107,7 @@ const FullMedical: React.FC = () => {
 				<Element name='welcome' style={{ height: "100vh", width: "100vw" }}>
 					<WelcomePage />
 				</Element>
-				<Element name='patient' style={{ height: "100vh", width: "100vw" }}>
+				<Element name='patient' style={{ minHeight: "100vh", width: "100vw" }}>
 					<PatientProfile
 						avatarUrl='https://via.placeholder.com/150'
 						age={35}
@@ -117,17 +117,14 @@ const FullMedical: React.FC = () => {
 						allergies='Penicillin'
 					/>
 				</Element>
-				{/* <Element
-					name='symptom-form'
-					style={{ minHeight: "100vh", width: "100vw" }}
-				>
-					<SymptomForm />
-				</Element> */}
 
 				{/* <Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
 					<SuggestionPage />
 				</Element> */}
-				<Element name='AIChat' style={{ height: "100vh", width: "100vw" }}>
+				<Element
+					name='suggestion'
+					style={{ height: "100vh", width: "100vw", backgroundColor: "#FFF" }}
+				>
 					<ConversationPage />
 				</Element>
 			</Box>

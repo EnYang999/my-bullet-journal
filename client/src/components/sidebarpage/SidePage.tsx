@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+
 interface Props {
 	className: string;
 }
+
 const SidePage: React.FC<Props> = ({ className }) => {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null);
-	const { week } = useParams();
+	const [activeMonth, setActiveMonth] = useState<number | null>(null);
+	const { month, week } = useParams<{ month: string; week: string }>();
+
 	const months = [
 		{ abbreviation: "Jan", number: "01" },
 		{ abbreviation: "Feb", number: "02" },
@@ -21,6 +25,16 @@ const SidePage: React.FC<Props> = ({ className }) => {
 		{ abbreviation: "Nov", number: "11" },
 		{ abbreviation: "Dec", number: "12" },
 	];
+
+	useEffect(() => {
+		if (month) {
+			const monthIndex = months.findIndex((m) => m.number === month);
+			if (monthIndex !== -1) {
+				setActiveMonth(monthIndex);
+			}
+		}
+	}, [month]);
+
 	return (
 		<div className={`pagination-container ${className}`}>
 			<div className='pagination-overlap'>
@@ -29,19 +43,19 @@ const SidePage: React.FC<Props> = ({ className }) => {
 						<li
 							key={index}
 							className={`position-relative h-100 d-flex align-items-center ${month.abbreviation.toLowerCase()} ${
-								index === activeIndex ? "active" : ""
+								index === activeIndex || index === activeMonth ? "active" : ""
 							}`}
 							onMouseEnter={() => {
 								setActiveIndex(index);
 							}}
 							onMouseLeave={() => {
-								setActiveIndex(null);
+								if (index !== activeMonth) setActiveIndex(null);
 							}}
 							onFocus={() => {
 								setActiveIndex(index);
 							}}
 							onBlur={() => {
-								setActiveIndex(null);
+								if (index !== activeMonth) setActiveIndex(null);
 							}}
 						>
 							<Link

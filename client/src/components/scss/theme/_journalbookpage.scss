@@ -6,6 +6,7 @@
     min-width: 1200px;
     max-width: 2000px;
     .week-box-container {
+        max-height: 75vh;
         &.index {
             background-repeat: no-repeat;
             background-position: right center;
@@ -16,8 +17,9 @@
         box-shadow:
             rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px,
-            1px 0px 0px 2em #b3a492;
+            1px 0px 0px 2.5em #b3a492;
         border-radius: 0.5em;
+        margin: 3em 3.5em;
         min-height: 700px;
         .sidebar {
             position: absolute;
@@ -37,5 +39,42 @@
             top: 50%;
             transform: translateY(-50%);
         }
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .week-box-container {
+        max-width: 100%;
+        min-height: 500px; /* Adjust as necessary for smaller screens */
+    }
+    .week-container-layout {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .week-box-container {
+        max-height: none; /* Allow height to grow as needed */
+        min-height: 400px; /* Adjust as necessary for smaller screens */
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .sidebar,
+    .rightside {
+        position: relative;
+        height: auto;
+        width: 100%;
+        top: auto;
+        transform: none;
+    }
+    .week-container-layout {
+        // min-width: max(100%, 100vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .week-box-container {
+        padding: 0.5rem;
     }
 }

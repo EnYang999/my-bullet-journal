@@ -7,7 +7,9 @@ interface Props {
 }
 const WeekBox = ({ day, shapeImage, boxIds, dateTime }: Props) => {
 	return (
-		<div className={`week-overlap  d-flex flex-column align-items-center`}>
+		<div
+			className={`week-overlap  d-flex flex-column align-items-center h-100`}
+		>
 			<figure className={`week-fig fig-${day.toLowerCase()}`}>
 				<img
 					className={`week-shape ${day.toLowerCase()}-shape`}
@@ -17,7 +19,7 @@ const WeekBox = ({ day, shapeImage, boxIds, dateTime }: Props) => {
 			</figure>
 			<div className={`week-date-num fig-${day.toLowerCase()}`}>{dateTime}</div>
 			<div
-				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column justify-content-center`}
+				className={`to-do-lines-container mx-3 flex-grow-1 d-flex flex-column h-80 overflow-auto`}
 			>
 				{boxIds.map((boxId, index) => (
 					<ToDoLine key={index} className='my-todo-list' boxId={boxId} />

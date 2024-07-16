@@ -29,8 +29,8 @@ const MarchWeek3 = () => {
 			>
 				<LineDots lineLeft={false} backgroundColor='#81689D' />
 			</div>
-			<div className='row outer-row'>
-				<div className='col-lg-3 text-center d-flex align-items-center'>
+			<div className='row outer-row h-100'>
+				<div className='col-lg-3 col-md-2 col-sm-2 text-center d-flex align-items-center'>
 					<div className='d-flex flex-column'>
 						<p
 							style={{
@@ -54,9 +54,9 @@ const MarchWeek3 = () => {
 						/>
 					</div>
 				</div>
-				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+				<div className='col-lg-9 col-md-10 col-sm-10 h-100'>
+					<div className='row inner-row h-50 mb-2'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Monday'
 								shapeImage={monShape}
@@ -69,7 +69,7 @@ const MarchWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Tuesday'
 								shapeImage={tuesShape}
@@ -82,7 +82,7 @@ const MarchWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Wednesday'
 								shapeImage={wedShape}
@@ -95,8 +95,9 @@ const MarchWeek3 = () => {
 								]}
 							/>
 						</div>
-
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					</div>
+					<div className='row inner-row h-50'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Thursday'
 								shapeImage={thursShape}
@@ -109,7 +110,7 @@ const MarchWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Friday'
 								shapeImage={friShape}
@@ -122,7 +123,7 @@ const MarchWeek3 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Weekend'
 								shapeImage={weekendShape}

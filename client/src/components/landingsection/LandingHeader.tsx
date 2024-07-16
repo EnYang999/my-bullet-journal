@@ -35,7 +35,7 @@ const LandingHeader = () => {
 							{/* <!--Button  --> */}
 							<a
 								className='btn btn-outline-primary text-white text-primary-hover mb-7 mb-md-0'
-								href='#reservation'
+								href='./themes/01/week1'
 							>
 								View Templates
 							</a>
@@ -67,8 +67,8 @@ const LandingHeader = () => {
 						<div className='col-md'>
 							{/* <!--Address  --> */}
 							<p className='font-serif text-white-75 text-center text-md-end text-lg-end my-md-5'>
-								<i className='fas fa-map-marker-alt text-primary me-3'></i> 1234
-								Dining Str., Los Angeles, CA 12345-0000
+								<i className='fas fa-map-marker-alt text-primary me-3'></i> 999
+								Bullet Journal Str., London, ON 12345-0000
 							</p>
 						</div>
 					</div>

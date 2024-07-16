@@ -1,20 +1,20 @@
 import WeekBox from "./weekday3";
-import Calendar from "../calender/Calendar";
-import satShape from "../../assets/jan2024/saturdayShape.png";
-import sunShape from "../../assets/jan2024/sundayShape.png";
-import friShape from "../../assets/jan2024/fridayShape.png";
-import thursShape from "../../assets/jan2024/thursdayShape.png";
-import wedShape from "../../assets/jan2024/wednesdayShape.png";
-import tuesShape from "../../assets/jan2024/tuesdayShape.png";
-import monShape from "../../assets/jan2024/mondayShape.png";
+import Calendar from "../calender/CalendarPro";
+// import satShape from "../../assets/jan2024/saturdayShape.png";
+// import sunShape from "../../assets/jan2024/sundayShape.png";
+// import friShape from "../../assets/jan2024/fridayShape.png";
+// import thursShape from "../../assets/jan2024/thursdayShape.png";
+// import wedShape from "../../assets/jan2024/wednesdayShape.png";
+// import tuesShape from "../../assets/jan2024/tuesdayShape.png";
+// import monShape from "../../assets/jan2024/mondayShape.png";
 const week3 = () => {
 	return (
 		<>
-			<div className='container text-center'>
-				<div className='row'>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+			<div className='container text-center justify-content-center h-100 mw-100'>
+				<div className='row mb-2'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
-							shapeImage={monShape}
+							day='Monday'
 							boxIds={[
 								`jan-week-3-monday-1`,
 								`jan-week-3-monday-2`,
@@ -24,9 +24,9 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
-							shapeImage={tuesShape}
+							day='Tuesday'
 							boxIds={[
 								`jan-week-3-tuesday-1`,
 								`jan-week-3-tuesday-2`,
@@ -36,9 +36,9 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
-							shapeImage={wedShape}
+							day='Wednesday'
 							boxIds={[
 								`jan-week-3-wednesday-1`,
 								`jan-week-3-wednesday-2`,
@@ -48,9 +48,9 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
-							shapeImage={thursShape}
+							day='Thursday'
 							boxIds={[
 								`jan-week-3-thursday-1`,
 								`jan-week-3-thursday-2`,
@@ -61,15 +61,14 @@ const week3 = () => {
 						/>
 					</div>
 				</div>
-
 				<div
-					className='d-none d-md-block background-img'
-					style={{ width: "100%" }}
+					className='d-none d-sm-block background-img'
+					style={{ width: "105%" }}
 				></div>
 				<div className='row'>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
-							shapeImage={friShape}
+							day='Friday'
 							boxIds={[
 								`jan-week-3-friday-1`,
 								`jan-week-3-friday-2`,
@@ -79,9 +78,9 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
-							shapeImage={satShape}
+							day='Saturday'
 							boxIds={[
 								`jan-week-3-saturday-1`,
 								`jan-week-3-saturday-2`,
@@ -91,9 +90,9 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex day-box'>
+					<div className='col-3 d-flex day-box'>
 						<WeekBox
-							shapeImage={sunShape}
+							day='Sunday'
 							boxIds={[
 								`jan-week-3-saturday-1`,
 								`jan-week-3-saturday-2`,
@@ -103,14 +102,14 @@ const week3 = () => {
 							]}
 						/>
 					</div>
-					<div className='col-lg-3 col-md-4 d-flex'>
+					<div className='col-3 d-flex'>
 						<Calendar
 							month={1}
-							year={2022}
-							headerColor='#bfb8dd'
-							headerStyle={{ marginBottom: "2px", fontFamily: "Protest Riot" }}
-							rowColor='#bfb8dd'
-							rowStyle={{ fontFamily: "Protest Riot" }}
+							year={2023}
+							headingColor='#bfb8dd'
+							headingStyle={{ marginBottom: "2px", fontFamily: "Protest Riot" }}
+							dayColor='#bfb8dd'
+							dayStyle={{ fontFamily: "Protest Riot" }}
 						/>
 					</div>
 				</div>

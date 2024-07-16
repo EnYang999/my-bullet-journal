@@ -2,7 +2,7 @@ import WeekBox from "./weekday2";
 import LineDots from "../decorationelements/lineanddots/lineanddots";
 import FourSquares from "../decorationelements/lineanddots/squares";
 import Square from "../decorationelements/lineanddots/square";
-import Calendar from "../calender/Calendar";
+import Calendar from "../calender/CalendarPro";
 import weekendShape from "../../assets/jan2024/weekendShape.png";
 import friShape from "../../assets/jan2024/fridayShape.png";
 import thursShape from "../../assets/jan2024/thursdayShape.png";
@@ -30,10 +30,10 @@ const janilWeek1 = () => {
 			>
 				<LineDots lineLeft={true} backgroundColor='#637A9F' />
 			</div>
-			<div className='row outer-row'>
-				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+			<div className='row outer-row h-80'>
+				<div className='col-9 h-100'>
+					<div className='row inner-row h-50 mb-2'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Monday'
 								shapeImage={monShape}
@@ -46,7 +46,7 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Tuesday'
 								shapeImage={tuesShape}
@@ -59,7 +59,7 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Wednesday'
 								shapeImage={wedShape}
@@ -72,8 +72,9 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					</div>
+					<div className='row inner-row h-50 overflow-hidden'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Thursday'
 								shapeImage={thursShape}
@@ -86,7 +87,7 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Friday'
 								shapeImage={friShape}
@@ -99,7 +100,7 @@ const janilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Weekend'
 								shapeImage={weekendShape}
@@ -114,7 +115,7 @@ const janilWeek1 = () => {
 						</div>
 					</div>
 				</div>
-				<div className='col-lg-3 text-center d-flex align-items-center'>
+				<div className='col-3 text-center d-flex align-items-center'>
 					<div className='d-flex flex-column'>
 						<p
 							style={{
@@ -138,18 +139,17 @@ const janilWeek1 = () => {
 						<Calendar
 							month={1}
 							year={2024}
-							rowfontstyle='italic'
-							headerfont='Protest Riot'
-							rowfont='Protest Riot'
-							containerStyle={{
-								display: "flex",
-								flexDirection: "column",
-							}}
-							headerStyle={{
+							dayStyle={{ fontStyle: "italic" }}
+							headingFontFamily='Protest Riot'
+							dayFontFamily='Protest Riot'
+							dayColor='white'
+							headingColor='white'
+							// containerStyle={{
+							// 	display: "flex",
+							// 	flexDirection: "column",
+							// }}
+							headingStyle={{
 								marginBottom: "2px",
-							}}
-							rowStyle={{
-								padding: "0px auto",
 							}}
 						/>
 					</div>

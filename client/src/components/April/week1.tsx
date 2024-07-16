@@ -23,10 +23,10 @@ const AprilWeek1 = () => {
 			>
 				<LineDots lineLeft={true} />
 			</div>
-			<div className='row outer-row'>
-				<div className='col-lg-9 h-100'>
-					<div className='row inner-row h-100'>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+			<div className='row outer-row h-100'>
+				<div className='col-9 h-100'>
+					<div className='row inner-row h-50'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Monday'
 								boxIds={[
@@ -38,7 +38,7 @@ const AprilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Tuesday'
 								boxIds={[
@@ -50,7 +50,7 @@ const AprilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Wednesday'
 								boxIds={[
@@ -62,8 +62,9 @@ const AprilWeek1 = () => {
 								]}
 							/>
 						</div>
-
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+					</div>
+					<div className='row inner-row h-50'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Thursday'
 								boxIds={[
@@ -75,7 +76,7 @@ const AprilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Friday'
 								boxIds={[
@@ -87,7 +88,7 @@ const AprilWeek1 = () => {
 								]}
 							/>
 						</div>
-						<div className='col-lg-4 col-md-6 d-flex day-box'>
+						<div className='col-4 d-flex h-100'>
 							<WeekBox
 								day='Weekend'
 								boxIds={[
@@ -101,7 +102,7 @@ const AprilWeek1 = () => {
 						</div>
 					</div>
 				</div>
-				<div className='col-lg-3 text-center d-flex align-items-center'>
+				<div className='col-3 text-center d-flex align-items-center'>
 					<div className='d-flex flex-column'>
 						<p
 							style={{

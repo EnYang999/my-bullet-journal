@@ -183,7 +183,7 @@ const LandingNavbar = () => {
 					{/* <!--Navbar nav  --> */}
 					<ul className='navbar-nav'>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./themes'>
+							<a className='nav-link ' href='./themes/01/week1'>
 								Themes
 							</a>
 						</li>

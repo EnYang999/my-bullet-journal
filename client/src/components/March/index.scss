@@ -10,12 +10,6 @@
         left -20% top -35%,
         right -30% bottom -50%;
     align-items: center;
-    .row {
-        padding: 0;
-        & > * {
-            padding: 0.2em;
-        }
-    }
 
     .week-overlap {
         .square {
@@ -40,6 +34,16 @@
         background-image: url(../../assets/mar2022/flowerrepeated.jpeg);
         background-position: bottom left;
     }
+    .h-100 > .row {
+        height: calc(100% / 3);
+        overflow-y: auto;
+    }
+    // @media (max-width: 1200px) {
+    //     .row.justify-content-between > .col-lg-4,
+    //     .row.justify-content-between > .col-lg-4 {
+    //         width: 30%;
+    //     }
+    // }
     .week-fig {
         width: 55%;
         position: relative;
@@ -69,24 +73,22 @@
     }
     .outer-row {
         .inner-row {
-            .day-box {
-                .week-header {
-                    color: white;
-                    font-family: "Josefin Slab", serif;
-                    font-size: 1.5rem;
-                }
-                &:nth-child(even) .week-header {
-                    background-color: #ac87c5;
-                }
-                &:nth-child(odd) .week-header {
-                    background-color: #756ab6;
-                }
+            .week-header {
+                color: white;
+                font-family: "Josefin Slab", serif;
+                font-size: 1.5rem;
             }
-            .week-overlap {
-                border: rgb(108, 124, 187) solid 1.5px;
-                background-color: rgba(#fff, 0.5);
-                box-shadow: 10px 5px 5px rgb(164, 160, 187);
+            &:nth-child(even) .week-header {
+                background-color: #ac87c5;
             }
+            &:nth-child(odd) .week-header {
+                background-color: #756ab6;
+            }
+        }
+        .week-overlap {
+            border: rgb(108, 124, 187) solid 1.5px;
+            background-color: rgba(#fff, 0.5);
+            box-shadow: 10px 5px 5px rgb(164, 160, 187);
         }
     }
 }
@@ -166,6 +168,7 @@
         background-repeat: no-repeat;
         background-size: contain;
     }
+
     .week-box {
         width: 100%;
         height: auto;
@@ -197,14 +200,38 @@
                 display: grid;
                 grid-template-rows: repeat(5, 1fr);
                 grid-template-columns: 100%;
-                gap: 0.5rem;
-                .my-todo-list {
+                .todo-wrapper {
                     .tick-box {
                         width: var(--sep-friday-todolines-height);
-                        background-color: greenyellow;
+                        background-color: #a2b3cc;
                     }
                 }
             }
         }
+    }
+    @media (max-width: 1200px) {
+        .row {
+            & > .d-flex {
+                width: auto;
+            }
+            & > .bluerose-img,
+            & > .violet-img {
+                position: absolute;
+                min-width: 200px;
+                min-height: 200px;
+            }
+            & > .violet-img {
+                right: 0;
+                bottom: 0;
+            }
+            & > .bluerose-img {
+                right: 0;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+    }
+
+    @media (max-width: 480px) {
     }
 }
