@@ -27,6 +27,7 @@ const app = express();
 // 	optionSuccessStatus: 200,
 // };
 const allowedOrigins = [
+	"http://localhost:8000",
 	"http://localhost:5173",
 	"http://147.182.217.227",
 	"http://www.enbujo.com",

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
+import { InputBase, IconButton } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 import {
@@ -21,8 +23,11 @@ const LandingNavbar = () => {
 	const [showCollapse, setShowCollapse] = useState(false);
 	const cookies = new Cookies();
 	const navigate = useNavigate();
+	const [searchOpen, setSearchOpen] = useState(false);
+	const [searchText, setSearchText] = useState("");
 	const [user, setUser] = useState<User | null>(null);
 	const [currentCookie, setCurrentCookie] = useState<string | null>(null);
+
 	let bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
 	const handleLogout = async () => {
 		cookies.remove(bearToken);
@@ -80,6 +85,18 @@ const LandingNavbar = () => {
 				});
 			}
 		}
+	};
+	const handleSearchClick = () => {
+		setSearchOpen(!searchOpen);
+	};
+
+	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSearchText(event.target.value);
+	};
+
+	const handleSearchSubmit = () => {
+		// Implement your search logic here, e.g., query the database
+		console.log("Search submitted:", searchText);
 	};
 	useEffect(() => {
 		let bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
@@ -166,9 +183,36 @@ const LandingNavbar = () => {
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link ' href='./habits'>
-								Tracker
-							</a>
+							{searchOpen ? (
+								<InputBase
+									placeholder='Search…'
+									value={searchText}
+									onChange={handleInputChange}
+									onKeyUp={(event) => {
+										if (event.key === "Enter") {
+											handleSearchSubmit();
+										}
+									}}
+									endAdornment={
+										<IconButton onClick={handleSearchSubmit}>
+											<SearchIcon />
+										</IconButton>
+									}
+									style={{
+										backgroundColor: "#EEEDEB",
+										borderRadius: "4px",
+										padding: "0 8px",
+									}}
+								/>
+							) : (
+								<span
+									className='nav-link'
+									onClick={handleSearchClick}
+									style={{ cursor: "pointer" }}
+								>
+									Search
+								</span>
+							)}
 						</li>
 					</ul>
 

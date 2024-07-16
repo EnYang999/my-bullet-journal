@@ -132,6 +132,40 @@ router.get(
 	}
 );
 /**
+ * @description To search User's todo line and return today's when
+ * @api /api/todos/to-do
+ * @access Private
+ * @type GET
+ */
+router.get(`/todo_search`, userAuth, async (req, res) => {
+	try {
+		const { search_word } = req.query; // Changed to req.query for GET parameters
+
+		if (!search_word) {
+			return res.status(400).json({ message: "Search word is required." });
+		}
+
+		// Use regex for vague search (case-insensitive)
+		const searchRegex = new RegExp(search_word, "i");
+
+		// Find todos that match the search criteria
+		const todos = await Todo.find({
+			account: req.user._id,
+			description: { $regex: searchRegex },
+		});
+
+		if (todos.length === 0) {
+			return res
+				.status(404)
+				.json({ message: "No todos found matching the criteria." });
+		}
+
+		return res.status(200).json(todos);
+	} catch (err) {
+		return res.status(500).json({ message: err.message });
+	}
+});
+/**
  * @description To get User's today's todo
  * @api /api/todos/to-do
  * @access Private
