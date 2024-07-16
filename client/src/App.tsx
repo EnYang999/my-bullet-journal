@@ -13,7 +13,7 @@ import ResetPassword from "./components/login/ResetPassword";
 import PermissionDeniedPage from "./components/ErrorPage/PermissionPage";
 // import ControlledCheckboxInput from "./components/todolines/todoComp";
 import FullMedical from "./components/medical/FullMedical";
-
+// import PatientProfile from "./components/medical/patientProfile";
 function App() {
 	return (
 		<Routes>
