@@ -154,7 +154,7 @@ const ConversationPage: React.FC = () => {
 				{conversation[conversation.length - 1] ===
 					"Bot: Here are a few options: see a doctor (in person), Telemedicine, Home remedies" && (
 					<Box display='flex' alignItems='flex-start' mt={2}>
-						{Object.keys(recommendations).map((option, index) => (
+						{Object.keys(recommendations).map((option) => (
 							<Button
 								key={option}
 								variant='contained'

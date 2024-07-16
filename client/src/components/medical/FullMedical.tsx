@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Element } from "react-scroll";
-import SuggestionPage from "./SuggestionPage";
+// import SuggestionPage from "./SuggestionPage";
 import WelcomePage from "./WelcomePage";
 import SymptomForm from "./SymptomForm";
 import { Box } from "@mui/material";
