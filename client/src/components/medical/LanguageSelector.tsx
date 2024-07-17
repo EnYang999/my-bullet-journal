@@ -1,15 +1,15 @@
-import { Box, Button, Grid, Typography, IconButton } from "@mui/material";
+import { Box, Button, Grid, IconButton } from "@mui/material";
 import TranslateIcon from "@mui/icons-material/Translate";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 
 const languages = [
-	{ code: "ar", name: "Arabic" },
+	{ code: "ar", name: "العربية" },
 	{ code: "en", name: "English" },
-	{ code: "fr", name: "French" },
+	{ code: "fr", name: "français" },
 	{ code: "de", name: "Deutsch" },
-	{ code: "zh", name: "Chinese" },
-	{ code: "fa", name: "Persian" },
+	{ code: "zh", name: "中文" },
+	{ code: "fa", name: "فارسی" },
 ];
 
 const LanguageSelector = () => {
@@ -25,7 +25,7 @@ const LanguageSelector = () => {
 			flexDirection='column'
 			alignItems='center'
 			justifyContent='center'
-			height='100vh'
+			height='50vh'
 			bgcolor='#f5f5f5'
 			padding={4}
 		>
@@ -42,9 +42,6 @@ const LanguageSelector = () => {
 				<IconButton color='primary' size='large'>
 					<TranslateIcon fontSize='large' />
 				</IconButton>
-				<Typography variant='h5' gutterBottom>
-					{t("Select Language")}
-				</Typography>
 				<Grid container spacing={2} justifyContent='center'>
 					{languages.map((language) => (
 						<Grid item key={language.code}>
@@ -54,7 +51,7 @@ const LanguageSelector = () => {
 								onClick={() => changeLanguage(language.code)}
 								style={{ minWidth: "120px" }}
 							>
-								{language.name}
+								{t(language.name)}
 							</Button>
 						</Grid>
 					))}

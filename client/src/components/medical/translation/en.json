@@ -5,6 +5,8 @@
     "logout": "Log Out",
     "hello": "Hello, ",
     "enter_name": "Enter your name",
+    "enter_symptom": "Enter your symptom",
+    "you": "You",
     "patient_profile": "Patient Profile",
     "scroll-down": "Scroll down",
     "greeting": "Hi, what can I help you with?",

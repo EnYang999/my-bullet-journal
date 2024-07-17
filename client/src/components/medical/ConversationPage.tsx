@@ -43,7 +43,7 @@ const packList: string[] = [
 
 const ConversationPage: React.FC = () => {
 	const { name } = useUser();
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const [conversation, setConversation] = useState<string[]>([
 		`Bot: ${t("greeting")}`,
 	]);
@@ -51,12 +51,14 @@ const ConversationPage: React.FC = () => {
 		if (name) {
 			setConversation([`Bot: ${t("greeting")} ${name}`]);
 		}
-	}, [name]);
+	}, [name, i18n.language]);
+	useEffect(() => {
+		setConversation([`Bot: ${t("greeting")}`]);
+	}, [i18n.language]);
 	const [open, setOpen] = useState(false);
 	const [userInput, setUserInput] = useState<string>("");
 	const [showSelectedOption, setShowSelectedOption] = useState(false);
 	const [selectedOption, setSelectedOption] = useState<string | null>(null);
-	// const [checklistItems, setChecklistItems] = useState<string[]>([]);
 	const [checkedItems, setCheckedItems] = useState<Set<string>>(new Set());
 	const [showChecklistItems, setShowChecklistItems] = useState(false);
 	const [showForm, setShowForm] = useState(false);
@@ -76,7 +78,7 @@ const ConversationPage: React.FC = () => {
 		if (userInput.trim() !== "") {
 			setConversation((prev) => [
 				...prev,
-				`You: ${t("you_talk_1")} ${userInput}.`,
+				`${t("you")}: ${t("you_talk_1")} ${userInput}.`,
 				`Bot: ${t("bot_suggestion_1")}`,
 			]);
 			setUserInput("");
@@ -84,14 +86,14 @@ const ConversationPage: React.FC = () => {
 	};
 
 	const handleClickDecision = (option: string) => {
-		setConversation((prev) => [...prev, `You: ${option}.`]);
+		setConversation((prev) => [...prev, `${t("you")}: ${option}.`]);
 		setSelectedOption(option);
 		setShowSelectedOption(true);
 	};
 	const handleCheckListClick = (index: number) => {
 		setConversation((prev) => [
 			...prev,
-			`You: ${t(recommendations[selectedOption!][index])}.`,
+			`${t("you")}: ${t(recommendations[selectedOption!][index])}.`,
 			`Bot: ${t("bot_suggestion_2")}`,
 		]);
 		setShowSelectedOption(false);
@@ -156,7 +158,7 @@ const ConversationPage: React.FC = () => {
 						key={index}
 						display='flex'
 						justifyContent={
-							message.startsWith("You:") ? "flex-end" : "flex-start"
+							message.startsWith("Bot:") ? "flex-start" : "flex-end"
 						}
 						width='100%'
 						mb={1}
@@ -164,9 +166,9 @@ const ConversationPage: React.FC = () => {
 						<Typography
 							variant='body1'
 							style={{
-								backgroundColor: message.startsWith("You:")
-									? "#d1e7dd"
-									: "#f8d7da",
+								backgroundColor: message.startsWith("Bot:")
+									? "#f8d7da"
+									: "#d1e7dd",
 								padding: "10px",
 								borderRadius: "5px",
 								maxWidth: "70%",
@@ -202,10 +204,10 @@ const ConversationPage: React.FC = () => {
 								onClick={() => handleCheckListClick(index)}
 								style={{ margin: "5px" }}
 								disabled={
-									(selectedOption === t("see_a_doctor") &&
+									(selectedOption === "see_a_doctor" &&
 										(index === 3 || index === 4)) ||
-									selectedOption === t("telemedicine") ||
-									selectedOption === t("home_remedies")
+									selectedOption === "telemedicine" ||
+									selectedOption === "home_remedies"
 								}
 							>
 								{t(recommendations[selectedOption!][index])}
@@ -334,7 +336,7 @@ const ConversationPage: React.FC = () => {
 			{!showForm && (
 				<Box mt={2} width='80%'>
 					<TextField
-						label='Enter your symptom'
+						label={t("enter_symptom")}
 						value={userInput}
 						onChange={(e) => setUserInput(e.target.value)}
 						fullWidth
