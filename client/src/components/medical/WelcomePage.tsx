@@ -8,12 +8,12 @@ import {
 	MenuItem,
 } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
-// import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useUser } from "./UserContext";
 
 const WelcomePage: React.FC = () => {
 	const { name, setName } = useUser();
-	// const navigate = useNavigate();
+	const { t } = useTranslation();
 	const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 	const controls = useAnimation();
@@ -77,7 +77,7 @@ const WelcomePage: React.FC = () => {
 				custom={0}
 				variants={textVariant}
 			>
-				<Typography variant='h1'>Welcome to Our Service</Typography>
+				<Typography variant='h1'>{t("welcome")}</Typography>
 			</motion.div>
 			<motion.div
 				initial='hidden'
@@ -85,9 +85,7 @@ const WelcomePage: React.FC = () => {
 				custom={1}
 				variants={textVariant}
 			>
-				<Typography variant='h5'>
-					We're here to help guide you through your healthcare journey.
-				</Typography>
+				<Typography variant='h5'>{t("sub-welcome")}</Typography>
 			</motion.div>
 			<motion.div
 				initial='hidden'
@@ -110,18 +108,20 @@ const WelcomePage: React.FC = () => {
 							onClick={handleLogin}
 							disabled={!name}
 						>
-							Log in/Sign up right now
+							{t("login")}
 						</Button>
 					</Box>
 				) : (
 					<Box mt={4} display='flex' flexDirection='column' alignItems='center'>
-						<Typography variant='h5'>Hello, {name}</Typography>
+						<Typography variant='h5'>
+							{t("hello")} {name}
+						</Typography>
 						<Button
 							aria-controls='simple-menu'
 							aria-haspopup='true'
 							onClick={handleClick}
 						>
-							Menu
+							{t("menu")}
 						</Button>
 						<Menu
 							id='simple-menu'
@@ -130,10 +130,10 @@ const WelcomePage: React.FC = () => {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}
 						>
-							<MenuItem onClick={handleLogout}>Log Out</MenuItem>
+							<MenuItem onClick={handleLogout}>{t("logout")}</MenuItem>
 						</Menu>
 						<motion.div animate={controls} style={{ marginTop: 20 }}>
-							<Typography variant='body2'>Scroll down</Typography>
+							<Typography variant='body2'>{t("scroll-down")}</Typography>
 							<Typography variant='body2'>⬇️</Typography>
 						</motion.div>
 					</Box>
