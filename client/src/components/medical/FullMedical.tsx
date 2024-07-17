@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Element } from "react-scroll";
+import { Element } from "react-scroll";
 // import SuggestionPage from "./SuggestionPage";
 import WelcomePage from "./WelcomePage";
 // import SymptomForm from "./SymptomForm";
