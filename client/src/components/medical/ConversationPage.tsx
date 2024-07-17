@@ -14,40 +14,42 @@ import {
 	useTheme,
 } from "@mui/material";
 import { useUser } from "./UserContext";
+import { useTranslation } from "react-i18next";
 import CloseIcon from "@mui/icons-material/Close";
 import QRCode from "react-qr-code";
 
 const recommendations: { [key: string]: string[] } = {
-	"see a doctor (in person)": [
-		"Emergency Room #1 : You will wait for 4-9 hours, the distance from your home is 12km, contacting phone: 123-456-7890",
-		"Emergency Room #2: You will wait for 5-8 hours, the distance from your home is 19km, contacting phone: 223-456-7891",
-		"Emergency Room #3: You will wait for 8-9 hours, the distance from your home is 21km, contacting phone: 223-756-7891",
-		"Urgent Care: opens in 2 hours, 2km, phone: 233-456-7890",
-		"Walk-in Clinic: 1st appointment in 1 days, 3km, phone: 234-456-7890",
+	see_a_doctor: [
+		"emergency_room_1",
+		"emergency_room_2",
+		"emergency_room_3",
+		"urgent_care",
+		"walk_in_clinic",
 	],
-	"Telemedicine suggest": ["Checking available doctors..."],
-	"Home remedies": ["Home remedy #1, Home remedy #2, Home remedy #3"],
+	telemedicine: ["checking_available_doctors"],
+	home_remedies: ["home_remedy_1", "home_remedy_2", "home_remedy_3"],
 };
 const packList: string[] = [
-	"Health card",
-	"Medication list",
-	"Regular medication",
-	"Water",
-	"Snacks",
-	"Power bank",
-	"Charger",
-	"Blanket",
-	"Laptop",
+	"health_card",
+	"mdication_list",
+	"regular_medication",
+	"water",
+	"snacks",
+	"power_bank",
+	"charger",
+	"blanket",
+	"laptop",
 ];
 
 const ConversationPage: React.FC = () => {
 	const { name } = useUser();
+	const { t } = useTranslation();
 	const [conversation, setConversation] = useState<string[]>([
-		`Bot: Hi, what can I help you with?`,
+		`Bot: ${t("greeting")}`,
 	]);
 	useEffect(() => {
 		if (name) {
-			setConversation([`Bot: Hi ${name}, what can I help you with?`]);
+			setConversation([`Bot: ${t("greeting")} ${name}`]);
 		}
 	}, [name]);
 	const [open, setOpen] = useState(false);
@@ -74,8 +76,8 @@ const ConversationPage: React.FC = () => {
 		if (userInput.trim() !== "") {
 			setConversation((prev) => [
 				...prev,
-				`You: I have ${userInput}.`,
-				"Bot: Here are a few options: see a doctor (in person), Telemedicine, Home remedies",
+				`You: ${t("you_talk_1")} ${userInput}.`,
+				`Bot: ${t("bot_suggestion_1")}`,
 			]);
 			setUserInput("");
 		}
@@ -89,8 +91,8 @@ const ConversationPage: React.FC = () => {
 	const handleCheckListClick = (index: number) => {
 		setConversation((prev) => [
 			...prev,
-			`You: ${recommendations[selectedOption!][index]}.`,
-			`Bot: Your Special Promo coupon for Uber: UBER2024. Also Choose Somethings to Bring With You to the ER:`,
+			`You: ${t(recommendations[selectedOption!][index])}.`,
+			`Bot: ${t("bot_suggestion_2")}`,
 		]);
 		setShowSelectedOption(false);
 		setShowChecklistItems(true);
@@ -126,12 +128,11 @@ const ConversationPage: React.FC = () => {
 		if (!showChecklistItems && selectedOption) {
 			setConversation((prev) => [
 				...prev,
-				`Bot: Great! So don't forget to pack: ${Array.from(checkedItems).join(
-					", "
-				)}`,
+				`Bot: ${t("pack_your_choices")} ${Array.from(checkedItems).join(", ")}`,
 			]);
 		}
 	}, [showChecklistItems, checkedItems]);
+
 	return (
 		<Box
 			display='flex'
@@ -171,12 +172,12 @@ const ConversationPage: React.FC = () => {
 								maxWidth: "70%",
 							}}
 						>
-							{message}
+							{t(message)}
 						</Typography>
 					</Box>
 				))}
 				{conversation[conversation.length - 1] ===
-					"Bot: Here are a few options: see a doctor (in person), Telemedicine, Home remedies" && (
+					`Bot: ${t("bot_suggestion_1")}` && (
 					<Box display='flex' alignItems='flex-start' mt={2}>
 						{Object.keys(recommendations).map((option) => (
 							<Button
@@ -186,7 +187,7 @@ const ConversationPage: React.FC = () => {
 								onClick={() => handleClickDecision(option)}
 								style={{ margin: "5px" }}
 							>
-								{option}
+								{t(option)}
 							</Button>
 						))}
 					</Box>
@@ -201,13 +202,13 @@ const ConversationPage: React.FC = () => {
 								onClick={() => handleCheckListClick(index)}
 								style={{ margin: "5px" }}
 								disabled={
-									(selectedOption === "see a doctor (in person)" &&
+									(selectedOption === t("see_a_doctor") &&
 										(index === 3 || index === 4)) ||
-									selectedOption === "Telemedicine suggest" ||
-									selectedOption === "Home remedies"
+									selectedOption === t("telemedicine") ||
+									selectedOption === t("home_remedies")
 								}
 							>
-								{recommendations[selectedOption!][index]}
+								{t(recommendations[selectedOption!][index])}
 							</Button>
 						))}
 					</Box>
@@ -246,7 +247,7 @@ const ConversationPage: React.FC = () => {
 											name={item}
 										/>
 									}
-									label={item}
+									label={t(item)}
 								/>
 							</Typography>
 						))}
@@ -256,7 +257,7 @@ const ConversationPage: React.FC = () => {
 							onClick={handleDoneClick}
 							style={{ marginTop: "10px" }}
 						>
-							done
+							{t("submit")}
 						</Button>
 					</Paper>
 				)}
@@ -267,10 +268,10 @@ const ConversationPage: React.FC = () => {
 						style={{ marginTop: "20px", width: "100%", maxWidth: "800px" }}
 					>
 						<Typography variant='h6' component='h2'>
-							Now, Please submit your information for Pre-check in
+							{t("submit_information")}
 						</Typography>
 						<TextField
-							label='Name'
+							label={t("name")}
 							variant='outlined'
 							name='name'
 							fullWidth
@@ -279,7 +280,7 @@ const ConversationPage: React.FC = () => {
 							onChange={handleFormChange}
 						/>
 						<TextField
-							label='Address'
+							label={t("address")}
 							variant='outlined'
 							name='address'
 							fullWidth
@@ -288,7 +289,7 @@ const ConversationPage: React.FC = () => {
 							onChange={handleFormChange}
 						/>
 						<TextField
-							label='Insurance'
+							label={t("insurance")}
 							variant='outlined'
 							name='insurance'
 							fullWidth
@@ -303,14 +304,14 @@ const ConversationPage: React.FC = () => {
 							fullWidth
 							style={{ marginTop: "20px" }}
 						>
-							Submit
+							{t("submit")}
 						</Button>
 					</Box>
 				)}
 				{submitted && (
 					<Dialog open={open} onClose={handleClose} fullWidth maxWidth='sm'>
 						<DialogTitle>
-							Please save below QR code for you check in
+							{t("save_QRcode")}
 							<IconButton
 								aria-label='close'
 								onClick={handleClose}
@@ -346,7 +347,7 @@ const ConversationPage: React.FC = () => {
 						onClick={handleUserInputSubmit}
 						style={{ marginTop: "10px" }}
 					>
-						Submit
+						{t("submit")}
 					</Button>
 				</Box>
 			)}

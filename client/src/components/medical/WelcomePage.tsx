@@ -96,7 +96,7 @@ const WelcomePage: React.FC = () => {
 				{!isLoggedIn ? (
 					<Box mt={4} display='flex' flexDirection='column' alignItems='center'>
 						<TextField
-							label='Enter your name'
+							label={t("enter_name")}
 							variant='outlined'
 							value={name}
 							onChange={(e) => setName(e.target.value)}
