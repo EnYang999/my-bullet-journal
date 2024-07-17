@@ -7,8 +7,12 @@ import {
 	Button,
 	Checkbox,
 	FormControlLabel,
+	Dialog,
+	DialogTitle,
+	IconButton,
 } from "@mui/material";
 import { useUser } from "./UserContext";
+import CloseIcon from "@mui/icons-material/Close";
 import QRCode from "react-qr-code";
 
 const recommendations: { [key: string]: string[] } = {
@@ -19,8 +23,8 @@ const recommendations: { [key: string]: string[] } = {
 		"Urgent Care: opens in 2 hours, 2km, phone: 233-456-7890",
 		"Walk-in Clinic: 1st appointment in 1 days, 3km, phone: 234-456-7890",
 	],
-	"Telemedicine suggest": ["drink hot water and have enough sleep"],
-	"Home remedies": ["exercises, swim"],
+	"Telemedicine suggest": ["Checking available doctors..."],
+	"Home remedies": ["Home remedy #1, Home remedy #2, Home remedy #3"],
 };
 const packList: string[] = [
 	"Health card",
@@ -37,8 +41,14 @@ const packList: string[] = [
 const ConversationPage: React.FC = () => {
 	const { name } = useUser();
 	const [conversation, setConversation] = useState<string[]>([
-		`Bot: What can I help you with, ${name}?`,
+		`Bot: Hi, what can I help you with?`,
 	]);
+	useEffect(() => {
+		if (name) {
+			setConversation([`Bot: Hi ${name}, what can I help you with?`]);
+		}
+	}, [name]);
+	const [open, setOpen] = useState(false);
 	const [userInput, setUserInput] = useState<string>("");
 	const [showSelectedOption, setShowSelectedOption] = useState(false);
 	const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -52,7 +62,9 @@ const ConversationPage: React.FC = () => {
 		insurance: "",
 	});
 	const [submitted, setSubmitted] = useState(false);
-
+	const handleClose = () => {
+		setOpen(false);
+	};
 	const handleUserInputSubmit = () => {
 		if (userInput.trim() !== "") {
 			setConversation((prev) => [
@@ -100,6 +112,7 @@ const ConversationPage: React.FC = () => {
 	const handleFormSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		setSubmitted(true);
+		setOpen(true);
 	};
 	const handleDoneClick = () => {
 		setShowChecklistItems(false);
@@ -121,7 +134,7 @@ const ConversationPage: React.FC = () => {
 			alignItems='center'
 			justifyContent='center'
 			height='100vh'
-			width='100vw'
+			// width='100vw'
 			style={{ backgroundColor: "#f0f0f0" }}
 		>
 			<Box
@@ -130,7 +143,7 @@ const ConversationPage: React.FC = () => {
 				width='100%'
 				alignItems='center'
 				mt={4}
-				style={{ maxHeight: "70vh", overflowY: "auto" }}
+				style={{ maxHeight: "70vh", overflow: "auto" }}
 			>
 				{conversation.map((message, index) => (
 					<Box
@@ -182,12 +195,19 @@ const ConversationPage: React.FC = () => {
 								color='primary'
 								onClick={() => handleCheckListClick(index)}
 								style={{ margin: "5px" }}
+								disabled={
+									(selectedOption === "see a doctor (in person)" &&
+										(index === 3 || index === 4)) ||
+									selectedOption === "Telemedicine suggest" ||
+									selectedOption === "Home remedies"
+								}
 							>
 								{recommendations[selectedOption!][index]}
 							</Button>
 						))}
 					</Box>
 				)}
+
 				{showChecklistItems && (
 					<Paper
 						elevation={3}
@@ -233,6 +253,75 @@ const ConversationPage: React.FC = () => {
 						</Button>
 					</Paper>
 				)}
+				{showForm && !submitted && (
+					<Box
+						component='form'
+						onSubmit={handleFormSubmit}
+						style={{ marginTop: "20px", width: "100%", maxWidth: "800px" }}
+					>
+						<Typography variant='h6' component='h2'>
+							Now, Please submit your information for Pre-check in
+						</Typography>
+						<TextField
+							label='Name'
+							variant='outlined'
+							name='name'
+							fullWidth
+							margin='normal'
+							value={formData.name}
+							onChange={handleFormChange}
+						/>
+						<TextField
+							label='Address'
+							variant='outlined'
+							name='address'
+							fullWidth
+							margin='normal'
+							value={formData.address}
+							onChange={handleFormChange}
+						/>
+						<TextField
+							label='Insurance'
+							variant='outlined'
+							name='insurance'
+							fullWidth
+							margin='normal'
+							value={formData.insurance}
+							onChange={handleFormChange}
+						/>
+						<Button
+							type='submit'
+							variant='contained'
+							color='primary'
+							fullWidth
+							style={{ marginTop: "20px" }}
+						>
+							Submit
+						</Button>
+					</Box>
+				)}
+				{submitted && (
+					<Dialog open={open} onClose={handleClose} fullWidth maxWidth='sm'>
+						<DialogTitle>
+							Please save below QR code for you check in
+							<IconButton
+								aria-label='close'
+								onClick={handleClose}
+								sx={{ position: "absolute", right: 8, top: 8 }}
+							>
+								<CloseIcon />
+							</IconButton>
+						</DialogTitle>
+						<Box
+							display='flex'
+							justifyContent='center'
+							alignItems='center'
+							style={{ marginTop: "20px" }}
+						>
+							<QRCode value='FAKEBARCODE1234567890' />
+						</Box>
+					</Dialog>
+				)}
 			</Box>
 			{!showForm && (
 				<Box mt={2} width='80%'>
@@ -253,69 +342,6 @@ const ConversationPage: React.FC = () => {
 						Submit
 					</Button>
 				</Box>
-			)}
-
-			{showForm && !submitted && (
-				<Box
-					component='form'
-					onSubmit={handleFormSubmit}
-					style={{ marginTop: "20px", width: "100%", maxWidth: "800px" }}
-				>
-					<Typography variant='h6' component='h2'>
-						Now, Please submit your information for Pre-check in
-					</Typography>
-					<TextField
-						label='Name'
-						variant='outlined'
-						name='name'
-						fullWidth
-						margin='normal'
-						value={formData.name}
-						onChange={handleFormChange}
-					/>
-					<TextField
-						label='Address'
-						variant='outlined'
-						name='address'
-						fullWidth
-						margin='normal'
-						value={formData.address}
-						onChange={handleFormChange}
-					/>
-					<TextField
-						label='Insurance'
-						variant='outlined'
-						name='insurance'
-						fullWidth
-						margin='normal'
-						value={formData.insurance}
-						onChange={handleFormChange}
-					/>
-					<Button
-						type='submit'
-						variant='contained'
-						color='primary'
-						fullWidth
-						style={{ marginTop: "20px" }}
-					>
-						Submit
-					</Button>
-				</Box>
-			)}
-			{submitted && (
-				<>
-					<Typography variant='h6' component='h2'>
-						Please save below QR code for you check in
-					</Typography>
-					<Box
-						display='flex'
-						justifyContent='center'
-						alignItems='center'
-						style={{ marginTop: "20px" }}
-					>
-						<QRCode value='FAKEBARCODE1234567890' />
-					</Box>
-				</>
 			)}
 		</Box>
 	);
