@@ -10,6 +10,8 @@ import {
 	Dialog,
 	DialogTitle,
 	IconButton,
+	useMediaQuery,
+	useTheme,
 } from "@mui/material";
 import { useUser } from "./UserContext";
 import CloseIcon from "@mui/icons-material/Close";
@@ -62,6 +64,9 @@ const ConversationPage: React.FC = () => {
 		insurance: "",
 	});
 	const [submitted, setSubmitted] = useState(false);
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+	const isTablet = useMediaQuery("(max-width: 980px)");
 	const handleClose = () => {
 		setOpen(false);
 	};
@@ -142,7 +147,7 @@ const ConversationPage: React.FC = () => {
 				flexDirection='column'
 				width='100%'
 				alignItems='center'
-				mt={4}
+				mt={2}
 				style={{ maxHeight: "70vh", overflow: "auto" }}
 			>
 				{conversation.map((message, index) => (
@@ -187,7 +192,7 @@ const ConversationPage: React.FC = () => {
 					</Box>
 				)}
 				{showSelectedOption && (
-					<Box display='flex' alignItems='flex-start' mt={2}>
+					<Box display={isMobile ? "grid" : "flex"} mt={2} width={"100%"}>
 						{Object.keys(recommendations[selectedOption!]).map((Er, index) => (
 							<Button
 								key={Er}
@@ -210,12 +215,14 @@ const ConversationPage: React.FC = () => {
 
 				{showChecklistItems && (
 					<Paper
-						elevation={3}
 						style={{
-							display: "flex",
+							display: isTablet ? "grid" : "flex",
+							gridTemplateColumns: isTablet
+								? "repeat(auto-fill, minmax(150px, 1fr))"
+								: "none",
 							justifyContent: "center",
 							width: "100%",
-							// maxWidth: "800px",
+							maxWidth: "100%",
 							padding: "20px",
 							marginTop: "20px",
 						}}
@@ -268,7 +275,7 @@ const ConversationPage: React.FC = () => {
 							name='name'
 							fullWidth
 							margin='normal'
-							value={formData.name}
+							value={name || formData.name}
 							onChange={handleFormChange}
 						/>
 						<TextField
