@@ -128,9 +128,12 @@ const ConversationPage: React.FC = () => {
 	};
 	useEffect(() => {
 		if (!showChecklistItems && selectedOption) {
+			const translatedItems = Array.from(checkedItems)
+				.map((item) => t(item))
+				.join(", ");
 			setConversation((prev) => [
 				...prev,
-				`Bot: ${t("pack_your_choices")} ${Array.from(checkedItems).join(", ")}`,
+				`Bot: ${t("pack_your_choices")} ${translatedItems}`,
 			]);
 		}
 	}, [showChecklistItems, checkedItems]);
