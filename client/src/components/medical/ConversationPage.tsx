@@ -61,6 +61,7 @@ const ConversationPage: React.FC = () => {
 	const [selectedOption, setSelectedOption] = useState<string | null>(null);
 	const [checkedItems, setCheckedItems] = useState<Set<string>>(new Set());
 	const [showChecklistItems, setShowChecklistItems] = useState(false);
+	const [showWalkinClinicOption, setShowWalkinClinicOption] = useState(false);
 	const [showForm, setShowForm] = useState(false);
 	const [formData, setFormData] = useState({
 		name: "",
@@ -91,14 +92,26 @@ const ConversationPage: React.FC = () => {
 		setShowSelectedOption(true);
 	};
 	const handleCheckListClick = (index: number) => {
-		setConversation((prev) => [
-			...prev,
-			`${t("you")}: ${t(recommendations[selectedOption!][index])}.`,
-			`Bot: ${t("bot_suggestion_2")}`,
-		]);
-		setShowSelectedOption(false);
-		setShowChecklistItems(true);
-		setShowForm(true);
+		// if index === 4, Bot will say ""
+		if (index !== 4) {
+			setConversation((prev) => [
+				...prev,
+				`${t("you")}: ${t(recommendations[selectedOption!][index])}.`,
+				`Bot: ${t("bot_suggestion_2")}`,
+			]);
+			setShowSelectedOption(false);
+			setShowChecklistItems(true);
+			setShowForm(true);
+		} else {
+			setConversation((prev) => [
+				...prev,
+				`${t("you")}: ${t(recommendations[selectedOption!][index])}.`,
+			]);
+			setShowWalkinClinicOption(true);
+			setShowSelectedOption(false);
+			setShowChecklistItems(false);
+			setShowForm(false);
+		}
 	};
 	const handleCheckboxChange = (item: string) => {
 		setCheckedItems((prev) => {
@@ -207,8 +220,7 @@ const ConversationPage: React.FC = () => {
 								onClick={() => handleCheckListClick(index)}
 								style={{ margin: "5px" }}
 								disabled={
-									(selectedOption === "see_a_doctor" &&
-										(index === 3 || index === 4)) ||
+									(selectedOption === "see_a_doctor" && index === 3) ||
 									selectedOption === "telemedicine" ||
 									selectedOption === "home_remedies"
 								}
@@ -218,7 +230,18 @@ const ConversationPage: React.FC = () => {
 						))}
 					</Box>
 				)}
-
+				{showWalkinClinicOption && (
+					<Box display={isMobile ? "grid" : "flex"} mt={2} width={"100%"}>
+						<Button
+							variant='contained'
+							color='primary'
+							style={{ margin: "5px" }}
+							disabled
+						>
+							{t("bot_suggestion_3")}
+						</Button>
+					</Box>
+				)}
 				{showChecklistItems && (
 					<Paper
 						style={{
@@ -329,7 +352,7 @@ const ConversationPage: React.FC = () => {
 							display='flex'
 							justifyContent='center'
 							alignItems='center'
-							style={{ marginTop: "20px" }}
+							style={{ margin: "20px" }}
 						>
 							<QRCode value='FAKEBARCODE1234567890' />
 						</Box>
