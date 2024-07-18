@@ -100,7 +100,7 @@ router.get("/verify-now/:verificationCode", async (req, res) => {
 });
 
 /**
- * @description To authenticate an user and get auth token --- login
+ * @description To authenticate a user and get auth token --- login
  * @api /api/users/authenticate
  * @access PUBLIC
  * @type POST
@@ -129,7 +129,7 @@ router.post(LOGIN_URL, AuthenticateValidations, Validator, async (req, res) => {
 			success: true,
 			user: user.getUserInfo(),
 			token: `Bearer ${token}`,
-			message: "Hurray! You are now logged in.",
+			message: "Hurry! You are now logged in.",
 		});
 	} catch (err) {
 		return res.status(500).json({
