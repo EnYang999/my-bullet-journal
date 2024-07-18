@@ -64,7 +64,7 @@ const PatientProfile: React.FC<PatientProfileProps> = ({
 				</Row>
 				<Row className='mb-3'>
 					<Col>
-						<strong>{t("hallergies")}: </strong> {allergies}
+						<strong>{t("allergies")}: </strong> {allergies}
 					</Col>
 				</Row>
 			</Card>
