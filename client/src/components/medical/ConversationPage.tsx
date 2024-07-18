@@ -86,7 +86,7 @@ const ConversationPage: React.FC = () => {
 	};
 
 	const handleClickDecision = (option: string) => {
-		setConversation((prev) => [...prev, `${t("you")}: ${option}.`]);
+		setConversation((prev) => [...prev, `${t("you")}: ${t(option)}.`]);
 		setSelectedOption(option);
 		setShowSelectedOption(true);
 	};
