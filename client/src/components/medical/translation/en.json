@@ -45,7 +45,7 @@
     "emergency_room_2": "Emergency Room #2: You will wait for 5-8 hours, the distance from your home is 19km, contacting phone: 223-456-7891",
     "emergency_room_3": "Emergency Room #3: You will wait for 8-9 hours, the distance from your home is 21km, contacting phone: 223-756-7891",
     "urgent_care": "Urgent Care: opens in 2 hours, 2km, phone: 233-456-7890",
-    "walk_in_clinic": "Walk-in Clinic: 1st appointment in 1 days, 3km, phone: 234-456-7890",
+    "walk_in_clinic": "Walk-in Clinic",
     "checking_available_doctors": "Checking available doctors...",
     "home_remedy_1": "Home remedy #1",
     "home_remedy_2": "Home remedy #2",
