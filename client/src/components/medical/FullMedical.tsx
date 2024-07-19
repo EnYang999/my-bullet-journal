@@ -25,14 +25,7 @@ const FullMedical: React.FC = () => {
 						name='patient'
 						style={{ minHeight: "100vh", width: "100vw" }}
 					>
-						<PatientProfile
-							avatarUrl='https://via.placeholder.com/150'
-							age={35}
-							weight={75}
-							height={180}
-							historyOfSurgeries='Appendectomy in 2010'
-							allergies='Penicillin'
-						/>
+						<PatientProfile avatarUrl='https://via.placeholder.com/150' />
 					</Element>
 					{/* <Element name='suggestion' style={{ height: "100vh", width: "100vw" }}>
 					<SuggestionPage />

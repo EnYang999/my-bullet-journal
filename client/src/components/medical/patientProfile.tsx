@@ -7,21 +7,9 @@ import { useUser } from "./UserContext";
 
 interface PatientProfileProps {
 	avatarUrl: string;
-	age: number;
-	weight: number;
-	height: number;
-	historyOfSurgeries: string;
-	allergies: string;
 }
 
-const PatientProfile: React.FC<PatientProfileProps> = ({
-	avatarUrl,
-	age,
-	weight,
-	height,
-	historyOfSurgeries,
-	allergies,
-}) => {
+const PatientProfile: React.FC<PatientProfileProps> = ({ avatarUrl }) => {
 	const { name } = useUser();
 	const { t } = useTranslation();
 	return (
@@ -39,32 +27,33 @@ const PatientProfile: React.FC<PatientProfileProps> = ({
 							src={avatarUrl}
 							sx={{ width: 56, height: 56, marginRight: "1rem" }}
 						/>
-						<strong>{t("name")}: </strong> {name}
+						<strong>{t("name")}: </strong> {name || "Adam Smith"}
 					</Col>
 				</Row>
 				<Row className='mb-3'>
 					<Col>
-						<strong>{t("age")}: </strong> {age}
+						<strong>{t("age")}: </strong> 43
 					</Col>
 				</Row>
 				<Row className='mb-3'>
 					<Col>
-						<strong>{t("weight")}: </strong> {weight}
+						<strong>{t("Gender")}: </strong> Male
 					</Col>
 				</Row>
 				<Row className='mb-3'>
 					<Col>
-						<strong>{t("height")}: </strong> {height}
+						<strong>{t("weight")}: </strong> 70
 					</Col>
 				</Row>
 				<Row className='mb-3'>
 					<Col>
-						<strong>{t("history_surgery")}: </strong> {historyOfSurgeries}
+						<strong>{t("height")}: </strong> 170
 					</Col>
 				</Row>
+
 				<Row className='mb-3'>
 					<Col>
-						<strong>{t("allergies")}: </strong> {allergies}
+						<strong>{t("allergies")}: </strong> N/A
 					</Col>
 				</Row>
 			</Card>
