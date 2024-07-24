@@ -78,7 +78,7 @@ router.post(
 );
 
 /**
- * @description To create profile of the authenticated User
+ * @description To update profile of the authenticated User
  * @type POST <multipart-form> request
  * @api /profiles/api/create-profile
  * @access Private
@@ -102,11 +102,11 @@ router.put(
 			};
 
 			// Assign each field from the request body if it's specified.
-			if (body.facebook) updateFields["social.facebook"] = body.facebook;
-			if (body.twitter) updateFields["social.twitter"] = body.twitter;
-			if (body.linkedin) updateFields["social.linkedin"] = body.linkedin;
-			if (body.instagram) updateFields["social.instagram"] = body.instagram;
-			if (body.github) updateFields["social.github"] = body.github;
+			// if (body.facebook) updateFields["social.facebook"] = body.facebook;
+			// if (body.twitter) updateFields["social.twitter"] = body.twitter;
+			// if (body.linkedin) updateFields["social.linkedin"] = body.linkedin;
+			// if (body.instagram) updateFields["social.instagram"] = body.instagram;
+			// if (body.github) updateFields["social.github"] = body.github;
 
 			if (body.interests) updateFields.interests = body.interests;
 			if (body.goals) updateFields.goals = body.goals;

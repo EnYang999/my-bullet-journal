@@ -156,7 +156,7 @@ router.get("/authenticate", userAuth, async (req, res) => {
  * @description To initiate the password reset process
  * @api /users/api/reset-password
  * @access Public
- * @type POST
+ * @type PUT
  */
 router.put(RESET_PASSWORD, ResetPassword, Validator, async (req, res) => {
 	try {
