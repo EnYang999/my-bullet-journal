@@ -84,49 +84,42 @@ const StatisticsD = () => {
 		fetchWeatherData();
 	}, []);
 	return (
-		<div className='col-md-6 col-xxl-3'>
-			<div className='card h-md-100'>
-				<div className='card-header d-flex flex-between-center pb-0'>
-					<h6 className='mb-0'>Weather</h6>
-				</div>
-				<div className='card-body pt-2'>
-					<div className='row g-0 h-100 align-items-center'>
-						<div className='col'>
-							<div
-								className='d-flex align-items-center'
-								style={{ width: "60px" }}
-							>
-								<img
-									className='me-3'
-									src={weatherImageSrc}
-									alt=''
-									height='60'
-								/>
-								<div>
-									<h6 className='mb-2'>{weatherData?.name}</h6>
-									<div className='fs-11 fw-semi-bold'>
-										<div className='text-warning'>
-											{weatherData?.weather[0].main || "no data"}
-										</div>
-										Precipitation:
-										{weatherData ? `${weatherData.main.humidity} %` : "no data"}
+		<div className='card h-md-100'>
+			<div className='card-header d-flex flex-between-center pb-0'>
+				<h6 className='mb-0'>Weather</h6>
+			</div>
+			<div className='card-body pt-2'>
+				<div className='row g-0 h-100 align-items-center'>
+					<div className='col'>
+						<div
+							className='d-flex align-items-center'
+							style={{ width: "60px" }}
+						>
+							<img className='me-3' src={weatherImageSrc} alt='' height='60' />
+							<div>
+								<h6 className='mb-2'>{weatherData?.name}</h6>
+								<div className='fs-11 fw-semi-bold'>
+									<div className='text-warning'>
+										{weatherData?.weather[0].main || "no data"}
 									</div>
+									Precipitation:
+									{weatherData ? `${weatherData.main.humidity} %` : "no data"}
 								</div>
 							</div>
 						</div>
-						<div className='col-auto text-center ps-2'>
-							<div className='fs-5 fw-normal font-sans-serif text-primary mb-1 lh-1'>
-								{weatherData
-									? `${(weatherData.main.temp - 273.15).toFixed(1)}°`
-									: "no data"}
-							</div>
-							<div className='fs-10 text-800'>
-								{weatherData
-									? `${(weatherData.main.temp_max - 273.15).toFixed(1)}° / ${(
-											weatherData.main.temp_min - 273.15
-									  ).toFixed(1)}°`
-									: "no data"}
-							</div>
+					</div>
+					<div className='col-auto text-center ps-2'>
+						<div className='fs-5 fw-normal font-sans-serif text-primary mb-1 lh-1'>
+							{weatherData
+								? `${(weatherData.main.temp - 273.15).toFixed(1)}°`
+								: "no data"}
+						</div>
+						<div className='fs-10 text-800'>
+							{weatherData
+								? `${(weatherData.main.temp_max - 273.15).toFixed(1)}° / ${(
+										weatherData.main.temp_min - 273.15
+								  ).toFixed(1)}°`
+								: "no data"}
 						</div>
 					</div>
 				</div>

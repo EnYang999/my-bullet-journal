@@ -74,38 +74,36 @@ const StatisticsC = () => {
 		],
 	};
 	return (
-		<div className='col-md-6 col-xxl-3'>
-			<div className='card h-md-100'>
-				<div className='card-header pb-0'>
-					<h6 className='mt-1'>Day's To Do</h6>
-				</div>
-				<div className='card-body d-flex flex-column justify-content-end'>
-					<div className='row h-100 justify-content-between g-0'>
-						<div className='col-5 col-sm-6 col-xxl pe-2'>
-							<div className='fs-11 mt-3'>
-								{brandData.map((brand, index) => (
-									<BrandItem key={index} {...brand} />
-								))}
-							</div>
+		<div className='card h-md-100'>
+			<div className='card-header pb-0'>
+				<h6 className='mt-1'>Day's To Do</h6>
+			</div>
+			<div className='card-body d-flex flex-column justify-content-end'>
+				<div className='row h-100 justify-content-between g-0'>
+					<div className='col-5 col-sm-6 col-xxl pe-2'>
+						<div className='fs-11 mt-3'>
+							{brandData.map((brand, index) => (
+								<BrandItem key={index} {...brand} />
+							))}
 						</div>
-						<div className='col-auto position-relative justify-content-center align-items-center'>
-							<div
-								className='echart-market-share justify-content-center align-items-center'
+					</div>
+					<div className='col-auto position-relative justify-content-center align-items-center'>
+						<div
+							className='echart-market-share justify-content-center align-items-center'
+							style={{
+								userSelect: "none",
+								WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
+								position: "relative",
+								height: "120%",
+							}}
+						>
+							<ReactECharts
+								option={option}
 								style={{
-									userSelect: "none",
-									WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
-									position: "relative",
-									height: "120%",
+									height: "90%",
+									width: "100%",
 								}}
-							>
-								<ReactECharts
-									option={option}
-									style={{
-										height: "90%",
-										width: "100%",
-									}}
-								/>
-							</div>
+							/>
 						</div>
 					</div>
 				</div>

@@ -105,8 +105,14 @@ const ProfileHeader = () => {
 							<strong>User Name: </strong>
 							{accountName}
 						</h1>
-						<p>{accountID}</p>
-						<p>{timeAgo(joinDate)}</p>
+						<p>
+							<strong>User ID: </strong>
+							{accountID}
+						</p>
+						<p>
+							<strong>Signed Up: </strong>
+							{timeAgo(joinDate)}
+						</p>
 					</div>
 					<div className='d-flex mt-3 justify-content-center ms-sm-auto'>
 						<div className='dropdown'>
