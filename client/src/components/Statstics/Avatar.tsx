@@ -127,7 +127,7 @@ const MyAvatar: React.FC = () => {
 				footer={
 					<div>
 						<Button
-							// className='p-button p-component p-button-primary'
+							className='p-button p-component p-button-primary'
 							onClick={handleUpload}
 						>
 							Save
