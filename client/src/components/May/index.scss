@@ -1,6 +1,58 @@
 .may-index {
     background-image: url(../../assets/may2021/2021MayDigitalBujo.png);
 }
+.may {
+    .to-do-lines-container {
+        input {
+            box-shadow: 0.1em 0.1em 0.4em $border-shadow-may;
+        }
+        .cbx {
+            &:hover {
+                .tick-box {
+                    border-color: $focus-border-may;
+                }
+
+                .input-field {
+                    border-color: $focus-border-may;
+                }
+            }
+            input {
+                border-color: $input-border-default-may;
+                box-shadow: $border-shadow-may;
+            }
+            .tick-box {
+                background-color: $tick-box-background-may;
+                border: 0.1em solid $input-border-default-may;
+                &:before {
+                    background: $blink-color-may;
+                }
+            }
+            .input-box {
+                &::after {
+                    background: $strike-line-may;
+                }
+            }
+            .input-field {
+                background-color: $input-box-background-may;
+                border: 1.5px solid $input-border-default-may;
+                color: $font-active-may;
+            }
+        }
+        .tick-box {
+            &:checked + .cbx {
+                .tick-box {
+                    border-color: $tick-border-checked-may;
+                    background: $tick-box-checked-background-may;
+                }
+                .input-field {
+                    border-color: $tick-border-checked-may;
+                    color: $font-disabled-may;
+                    background-color: $tick-box-checked-background-may;
+                }
+            }
+        }
+    }
+}
 .may-week1 {
     .flower-bg {
         background-image: url(../../assets/may2021/VanGoghGreenWheatFields.jpg);
@@ -197,6 +249,56 @@
                         height: 100%;
                         object-fit: cover;
                     }
+                }
+            }
+        }
+    }
+    .to-do-lines-container {
+        input {
+            box-shadow: 0.1em 0.1em 0.4em $border-shadow-may-3;
+        }
+        .cbx {
+            &:hover {
+                .tick-box {
+                    border-color: $focus-border-may-3;
+                }
+
+                .input-field {
+                    border-color: $focus-border-may-3;
+                }
+            }
+            input {
+                border-color: $input-border-default-may-3;
+                box-shadow: $border-shadow-may-3;
+            }
+            .tick-box {
+                background-color: $tick-box-background-may-3;
+                border: 0.1em solid $input-border-default-may-3;
+                &:before {
+                    background: $blink-color-may-3;
+                }
+            }
+            .input-box {
+                &::after {
+                    background: $strike-line-may-3;
+                }
+            }
+            .input-field {
+                background-color: $input-box-background-may-3;
+                border: 1.5px solid $input-border-default-may-3;
+                color: $font-active-may-3;
+            }
+        }
+        .tick-box {
+            &:checked + .cbx {
+                .tick-box {
+                    border-color: $tick-border-checked-may-3;
+                    background: $tick-box-checked-background-may-3;
+                }
+                .input-field {
+                    border-color: $tick-border-checked-may-3;
+                    color: $font-disabled-may-3;
+                    background-color: $tick-box-checked-background-may-3;
                 }
             }
         }
