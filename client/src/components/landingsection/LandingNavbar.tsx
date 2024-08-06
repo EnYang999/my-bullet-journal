@@ -130,10 +130,17 @@ const LandingNavbar = () => {
 		return string.charAt(0).toUpperCase() + string.slice(1);
 	};
 	const handleProfileCreate = async () => {
+		const profileData = {
+			interests: "Reading, Music",
+			goals: "Become a better developer",
+			habits: "Daily exercise",
+			notes: "Keep track of progress",
+			bio: "Software developer with a passion for learning",
+		};
 		try {
 			const response = await axios.post(
 				`${API_ENDPOINT}${APP_PROFILE_API}/create-profile`,
-				{},
+				profileData,
 				{
 					headers: {
 						Authorization: `Bearer ${bearToken}`,

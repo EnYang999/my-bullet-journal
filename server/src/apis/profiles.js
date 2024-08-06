@@ -23,49 +23,53 @@ const router = Router();
 router.post(
 	"/create-profile",
 	userAuth,
-	uploader.single("avatar"),
+	// uploader.single("avatar"), // Uncomment if handling file uploads
 	async (req, res) => {
 		try {
 			let { user } = req;
 			console.log(user);
 
-			// Ensure that the user exists
-			if (user) {
-				// Check if the profile already exists for the user
-				let existingProfile = await Profile.findOne({ account: user._id });
-				return res.status(201).json({
-					success: true,
-					user: user,
-					account: account,
-					message: "Profile created successfully.",
-					profile: existingProfile,
-				});
-			} else {
-				// Create a new profile
-				let profile = new Profile({
-					account: user._id,
-					avatar: req.file ? req.file.path : "",
-					interests: req.body.interests || "",
-					goals: req.body.goals || "",
-					habits: req.body.habits || "",
-					notes: req.body.notes || "",
-					bio: req.body.bio || "",
-				});
-				await profile.save();
-
-				return res.status(201).json({
-					success: true,
-					user: user,
-					account: account,
-					message: "Profile created successfully.",
-					profile: profile,
+			if (!user) {
+				return res.status(401).json({
+					success: false,
+					message: "Unauthorized: User not authenticated.",
 				});
 			}
+
+			let existingProfile = await Profile.findOne({ account: user._id });
+			if (existingProfile) {
+				return res.status(200).json({
+					success: true,
+					user: user,
+					message: "Profile already exists.",
+					profile: existingProfile,
+				});
+			}
+
+			let profile = new Profile({
+				account: user._id,
+				avatar: req.file ? req.file.path : "",
+				interests: req.body.interests || "",
+				goals: req.body.goals || "",
+				habits: req.body.habits || "",
+				notes: req.body.notes || "",
+				bio: req.body.bio || "",
+			});
+
+			await profile.save();
+
+			return res.status(201).json({
+				success: true,
+				user: user,
+				message: "Profile created successfully.",
+				profile: profile,
+			});
 		} catch (err) {
+			console.error("Error creating profile:", err);
 			return res.status(400).json({
 				success: false,
 				message: "Unable to create your profile.",
-				err: err.message,
+				error: err.message || "Unknown error",
 			});
 		}
 	}
