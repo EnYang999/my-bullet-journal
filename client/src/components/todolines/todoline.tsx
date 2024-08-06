@@ -29,7 +29,6 @@ export const ToDoLine = ({ boxId }: Props) => {
 	const todoNum = separatedComponents[4];
 
 	useEffect(() => {
-		console.log(boxId);
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
