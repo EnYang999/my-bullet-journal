@@ -6,7 +6,7 @@ const ProfileSchema = new Schema(
 		account: {
 			ref: "users",
 			type: Schema.Types.ObjectId,
-			unique: true,
+			// unique: true,
 			required: true,
 		},
 		avatar: {
