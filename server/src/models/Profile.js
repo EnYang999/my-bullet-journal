@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const { Schema, model } = mongoose;
-
+// const mongoose = require("mongoose");
+// const { Schema, model } = mongoose;
+import { Schema, model } from "mongoose";
 const ProfileSchema = new Schema(
 	{
 		account: {
@@ -34,5 +34,5 @@ const ProfileSchema = new Schema(
 ProfileSchema.index({ account: 1 }, { unique: true });
 
 const Profile = model("Profile", ProfileSchema);
-
-module.exports = Profile;
+export default Profile;
+// module.exports = Profile;
