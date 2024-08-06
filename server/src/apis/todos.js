@@ -110,6 +110,7 @@ router.get(
 	userAuth,
 	async (req, res) => {
 		try {
+			console.log("Authorization header:", req.headers.authorization);
 			const { todoMonth, todoWeek, todoDay, todoNum } = req.params;
 
 			const todoDate = {
@@ -119,13 +120,12 @@ router.get(
 				todoNum: todoNum,
 			};
 			const todos = await Todo.findOne({ todoDate, account: req.user._id });
-
-			if (todos) {
-				// return res
-				// 	.status(404)
-				// 	.json({ message: "No todos found matching the criteria." });
-				return res.status(200).json(todos);
+			if (!todos) {
+				return res
+					.status(200)
+					.json({ message: "No todos found matching the criteria." });
 			}
+			return res.status(200).json(todos);
 		} catch (err) {
 			return res.status(500).json({ message: err.message });
 		}
