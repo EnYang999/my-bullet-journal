@@ -66,7 +66,7 @@ const NovemberWeek5 = () => {
 					</p>
 					<FourSquares
 						isVertical={true}
-						cusStyle={{ position: "absolute", left: "30%" }}
+						cusStyle={{ position: "absolute", right: "18%" }}
 						squareStyles={[
 							{ backgroundColor: "#ECE3CE" },
 							{ backgroundColor: "#739072" },

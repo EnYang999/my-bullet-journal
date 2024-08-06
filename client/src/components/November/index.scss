@@ -1,6 +1,8 @@
 .november-index {
     background-image: url(../../assets/nov2022/2022NovDigitalBujo.png);
 }
+.november {
+}
 .november-week1 {
     background: white;
     background-image: radial-gradient(#7895cb 1px, transparent 0);
@@ -137,6 +139,18 @@
             height: 30px;
         }
     }
+    .cbx {
+        span.tick-box {
+            svg {
+                stroke: #4a55a2;
+            }
+        }
+        span.input-box {
+            &::after {
+                background-color: #0519375b;
+            }
+        }
+    }
 }
 .november-week2 {
     background-image: url(../decorationelements/svgs/curveline2.svg), url(../decorationelements/svgs/blob1.svg),
@@ -212,6 +226,18 @@
             color: #176b87;
             .week-header {
                 justify-content: center !important;
+            }
+        }
+    }
+    .cbx {
+        span.tick-box {
+            svg {
+                stroke: #4a55a2;
+            }
+        }
+        span.input-box {
+            &::after {
+                background-color: #313c8d;
             }
         }
     }
@@ -357,6 +383,18 @@
             }
         }
     }
+    .cbx {
+        span.tick-box {
+            svg {
+                stroke: #95baca;
+            }
+        }
+        span.input-box {
+            &::after {
+                background-color: #5d8190;
+            }
+        }
+    }
 }
 .november-week5 {
     &.container {
@@ -482,6 +520,18 @@
                 border-radius: 6px;
                 color: aliceblue;
                 font-family: "Roboto Mono", monospace;
+            }
+        }
+    }
+    .cbx {
+        span.tick-box {
+            svg {
+                stroke: #91b17a;
+            }
+        }
+        span.input-box {
+            &::after {
+                background-color: #6e7e62;
             }
         }
     }
