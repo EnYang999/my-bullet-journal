@@ -1,6 +1,7 @@
 .march-index {
     background-image: url("../../assets/mar2022/2022MarDigitalBujo.png");
 }
+
 .march-week1 {
     background-image: url(../../assets/mar2022/NavyBlueWhiteFlowersWatercolorClipArtBouquet.png),
         url(../../assets/mar2022/NavyBlueWhiteFlowersWatercolorClipArtBouquet.png);
@@ -24,6 +25,57 @@
                 rgb(71, 83, 126) 0px 10px 10px 0px,
                 rgba(78, 78, 164, 0.995) 0px 10px 10px 2px;
         }
+        .to-do-lines-container {
+            height: 80%;
+            input {
+                box-shadow: 0.1em 0.1em 0.4em $border-shadow-mar-1;
+            }
+            .cbx {
+                &:hover {
+                    .tick-box {
+                        border-color: $focus-border-mar-1;
+                    }
+
+                    .input-field {
+                        border-color: $focus-border-mar-1;
+                    }
+                }
+                input {
+                    border-color: $input-border-default-mar-1;
+                    box-shadow: $border-shadow-mar-1;
+                }
+                .tick-box {
+                    background-color: $tick-box-background-mar-1;
+                    border: 0.1em solid $input-border-default-mar-1;
+                    &:before {
+                        background: $blink-color-mar-1;
+                    }
+                }
+                .input-box {
+                    &::after {
+                        background: $strike-line-mar-1;
+                    }
+                }
+                .input-field {
+                    background-color: $input-box-background-mar-1;
+                    border: 1.5px solid $input-border-default-mar-1;
+                    color: $font-active-mar-1;
+                }
+            }
+            .tick-box {
+                &:checked + .cbx {
+                    .tick-box {
+                        border-color: $tick-border-checked-mar-1;
+                        background: $tick-box-checked-background-mar-1;
+                    }
+                    .input-field {
+                        border-color: $tick-border-checked-mar-1;
+                        color: $font-disabled-mar-1;
+                        background-color: $tick-box-checked-background-mar-1;
+                    }
+                }
+            }
+        }
     }
 }
 .march-week2 {
@@ -38,12 +90,6 @@
         height: calc(100% / 3);
         overflow-y: auto;
     }
-    // @media (max-width: 1200px) {
-    //     .row.justify-content-between > .col-lg-4,
-    //     .row.justify-content-between > .col-lg-4 {
-    //         width: 30%;
-    //     }
-    // }
     .week-fig {
         width: 55%;
         position: relative;
@@ -56,6 +102,57 @@
             transform: translate(-25%, 0);
             height: 2px;
             background-color: #b2c0dd;
+        }
+    }
+    .to-do-lines-container {
+        height: 80%;
+        input {
+            box-shadow: 0.1em 0.1em 0.4em $border-shadow-mar-2;
+        }
+        .cbx {
+            &:hover {
+                .tick-box {
+                    border-color: $focus-border-mar-2;
+                }
+
+                .input-field {
+                    border-color: $focus-border-mar-2;
+                }
+            }
+            input {
+                border-color: $input-border-default-mar-2;
+                box-shadow: $border-shadow-mar-2;
+            }
+            .tick-box {
+                background-color: $tick-box-background-mar-2;
+                border: 0.1em solid $input-border-default-mar-2;
+                &:before {
+                    background: $blink-color-mar-2;
+                }
+            }
+            .input-box {
+                &::after {
+                    background: $strike-line-mar-2;
+                }
+            }
+            .input-field {
+                background-color: $input-box-background-mar-2;
+                border: 1.5px solid $input-border-default-mar-2;
+                color: $font-active-mar-2;
+            }
+        }
+        .tick-box {
+            &:checked + .cbx {
+                .tick-box {
+                    border-color: $tick-border-checked-mar-2;
+                    background: $tick-box-checked-background-mar-2;
+                }
+                .input-field {
+                    border-color: $tick-border-checked-mar-2;
+                    color: $font-disabled-mar-2;
+                    background-color: $tick-box-checked-background-mar-2;
+                }
+            }
         }
     }
 }
@@ -89,6 +186,57 @@
             border: rgb(108, 124, 187) solid 1.5px;
             background-color: rgba(#fff, 0.5);
             box-shadow: 10px 5px 5px rgb(164, 160, 187);
+            .to-do-lines-container {
+                height: 80%;
+                input {
+                    box-shadow: 0.1em 0.1em 0.4em $border-shadow-mar-3;
+                }
+                .cbx {
+                    &:hover {
+                        .tick-box {
+                            border-color: $focus-border-mar-3;
+                        }
+
+                        .input-field {
+                            border-color: $focus-border-mar-3;
+                        }
+                    }
+                    input {
+                        border-color: $input-border-default-mar-3;
+                        box-shadow: $border-shadow-mar-3;
+                    }
+                    .tick-box {
+                        background-color: $tick-box-background-mar-3;
+                        border: 0.1em solid $input-border-default-mar-3;
+                        &:before {
+                            background: $blink-color-mar-3;
+                        }
+                    }
+                    .input-box {
+                        &::after {
+                            background: $strike-line-mar-3;
+                        }
+                    }
+                    .input-field {
+                        background-color: $input-box-background-mar-3;
+                        border: 1.5px solid $input-border-default-mar-3;
+                        color: $font-active-mar-3;
+                    }
+                }
+                .tick-box {
+                    &:checked + .cbx {
+                        .tick-box {
+                            border-color: $tick-border-checked-mar-3;
+                            background: $tick-box-checked-background-mar-3;
+                        }
+                        .input-field {
+                            border-color: $tick-border-checked-mar-3;
+                            color: $font-disabled-mar-3;
+                            background-color: $tick-box-checked-background-mar-3;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -149,6 +297,57 @@
             }
             .week-overlap {
                 border: #6566aa solid 1.5px;
+                .to-do-lines-container {
+                    height: 80%;
+                    input {
+                        box-shadow: 0.1em 0.1em 0.4em $border-shadow-mar-4;
+                    }
+                    .cbx {
+                        &:hover {
+                            .tick-box {
+                                border-color: $focus-border-mar-4;
+                            }
+
+                            .input-field {
+                                border-color: $focus-border-mar-4;
+                            }
+                        }
+                        input {
+                            border-color: $input-border-default-mar-4;
+                            box-shadow: $border-shadow-mar-4;
+                        }
+                        .tick-box {
+                            background-color: $tick-box-background-mar-4;
+                            border: 0.1em solid $input-border-default-mar-4;
+                            &:before {
+                                background: $blink-color-mar-4;
+                            }
+                        }
+                        .input-box {
+                            &::after {
+                                background: $strike-line-mar-4;
+                            }
+                        }
+                        .input-field {
+                            background-color: $input-box-background-mar-4;
+                            border: 1.5px solid $input-border-default-mar-4;
+                            color: $font-active-mar-4;
+                        }
+                    }
+                    .tick-box {
+                        &:checked + .cbx {
+                            .tick-box {
+                                border-color: $tick-border-checked-mar-4;
+                                background: $tick-box-checked-background-mar-4;
+                            }
+                            .input-field {
+                                border-color: $tick-border-checked-mar-4;
+                                color: $font-disabled-mar-4;
+                                background-color: $tick-box-checked-background-mar-4;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -200,10 +399,52 @@
                 display: grid;
                 grid-template-rows: repeat(5, 1fr);
                 grid-template-columns: 100%;
-                .todo-wrapper {
+                input {
+                    box-shadow: 0.1em 0.1em 0.4em $border-shadow-mar-5;
+                }
+                .cbx {
+                    &:hover {
+                        .tick-box {
+                            border-color: $focus-border-mar-5;
+                        }
+
+                        .input-field {
+                            border-color: $focus-border-mar-5;
+                        }
+                    }
+                    input {
+                        border-color: $input-border-default-mar-5;
+                        box-shadow: $border-shadow-mar-5;
+                    }
                     .tick-box {
-                        width: var(--sep-friday-todolines-height);
-                        background-color: #a2b3cc;
+                        background-color: $tick-box-background-mar-5;
+                        border: 0.1em solid $input-border-default-mar-5;
+                        &:before {
+                            background: $blink-color-mar-5;
+                        }
+                    }
+                    .input-box {
+                        &::after {
+                            background: $strike-line-mar-5;
+                        }
+                    }
+                    .input-field {
+                        background-color: $input-box-background-mar-5;
+                        border: 1.5px solid $input-border-default-mar-5;
+                        color: $font-active-mar-5;
+                    }
+                }
+                .tick-box {
+                    &:checked + .cbx {
+                        .tick-box {
+                            border-color: $tick-border-checked-mar-5;
+                            background: $tick-box-checked-background-mar-5;
+                        }
+                        .input-field {
+                            border-color: $tick-border-checked-mar-5;
+                            color: $font-disabled-mar-5;
+                            background-color: $tick-box-checked-background-mar-5;
+                        }
                     }
                 }
             }
