@@ -22,9 +22,9 @@
                 transition: all 0.5s;
                 writing-mode: vertical-rl;
                 &.active {
-                    background-color: $sidebar-color;
+                    background-color: #bbe9ff;
                 }
-
+                &.active,
                 &:hover,
                 &:focus {
                     width: $sidebar-width-hover;

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 interface Props {
@@ -27,24 +26,29 @@ const RightSideBar = ({ className }: Props): JSX.Element => {
 
 	const labels = [
 		{ abbreviation: "Ind", full: "Index" },
-		{ abbreviation: "Mon", full: "Monthly" },
-		{ abbreviation: "Hab", full: "Habits" },
 		{ abbreviation: "W-1", full: "Week1" },
 		{ abbreviation: "W-2", full: "Week2" },
 		{ abbreviation: "W-3", full: "Week3" },
 		{ abbreviation: "W-4", full: "Week4" },
 		{ abbreviation: "W-5", full: "Week5" },
 	];
+	const weekLabels = [
+		{ index: "index", week: "index" },
+		{ index: "week1", week: "1" },
+		{ index: "week2", week: "2" },
+		{ index: "week3", week: "3" },
+		{ index: "week4", week: "4" },
+		{ index: "week5", week: "5" },
+	];
+
 	useEffect(() => {
 		if (week) {
-			const weekIndex = labels.findIndex((m) => m.full === week);
+			const weekIndex = weekLabels.findIndex((m) => m.index === week);
 			if (weekIndex !== -1) {
 				setActiveWeek(weekIndex);
-				console.log(weekIndex);
 			}
-			console.log(activeWeek);
 		}
-	}, []);
+	}, [week]);
 	return (
 		<div className={`right-pagination-container ${className}`}>
 			<div className='pagination-overlap'>

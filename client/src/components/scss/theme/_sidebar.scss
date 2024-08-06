@@ -23,7 +23,7 @@
                 padding-right: 0.5em;
                 width: $sidebar-width;
                 transition: all 0.5s;
-
+                &.active,
                 &:hover,
                 &:focus {
                     width: $sidebar-width-hover;
