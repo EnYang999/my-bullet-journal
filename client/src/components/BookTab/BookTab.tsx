@@ -76,7 +76,12 @@ const BookTab: React.FC = () => {
 	// }, [month, week]);
 
 	useEffect(() => {
-		if (!month || !week || !(month in monthMap) || !/^week[1-5]$/.test(week)) {
+		if (
+			!month ||
+			!week ||
+			!(month in monthMap) ||
+			!/^week[1-5]$|^index$/.test(week)
+		) {
 			setComponent(() =>
 				React.lazy(() =>
 					Promise.resolve({
