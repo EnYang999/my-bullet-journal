@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { toast } from "../errortoast/ErrorToastManager";
@@ -14,12 +14,14 @@ interface Props {
 	boxId: string;
 }
 
-export const ToDoLine = ({ boxId }: Props): JSX.Element => {
+export const ToDoLine = ({ boxId }: Props) => {
 	const [inputValue, setInputValue] = useState<string>("");
 	const [isChecked, setIsChecked] = useState<boolean>(false);
+	const [isDataFetched, setIsDataFetched] = useState<boolean>(false);
 	const cookies = new Cookies();
 	const bearToken = cookies.get(APP_AUTHENTICATE_TOKEN_NAME);
 
+	// Parse boxId for necessary components
 	const separatedComponents = boxId.split("-");
 	const todoMonth = separatedComponents[0];
 	const todoWeek = separatedComponents[2];
@@ -27,6 +29,7 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 	const todoNum = separatedComponents[4];
 
 	useEffect(() => {
+		console.log(boxId);
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(
@@ -38,8 +41,12 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				if (response?.data) {
 					setInputValue(response.data.description || "");
 					setIsChecked(response.data.completed || false);
+					setIsDataFetched(true); // Data is fetched successfully
+				} else {
+					console.error("No data found in response");
 				}
-			} catch (error: any) {
+			} catch (error) {
+				console.error("Error fetching data:", error);
 				toast.show({
 					title: "Error",
 					content: "Error fetching data",
@@ -51,57 +58,52 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 		fetchData();
 	}, [bearToken, todoMonth, todoWeek, todoDay, todoNum]);
 
-	const handleTodoPost = async () => {
-		try {
-			const response = await axios.post(
-				`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
-				{
-					completed: isChecked,
-					description: inputValue,
-				},
-				{
-					headers: {
-						Authorization: `Bearer ${bearToken}`,
-					},
-				}
-			);
-			console.log(response);
-			console.log("content:", isChecked);
-		} catch (error: any) {
-			toast.show({
-				title: "Error",
-				content: error.response?.data?.error || "Error updating data",
-				duration: 3000,
-			});
-		}
-	};
-
-	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setInputValue(event.target.value);
-	};
-
-	const handleCheckboxChange = () => {
-		setIsChecked((prevState) => !prevState);
-	};
-
-	const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
-		if (event.key === "Enter") {
-			handleTodoPost();
-		}
-	};
-
 	useEffect(() => {
-		handleTodoPost();
-	}, [inputValue, isChecked]);
+		if (isDataFetched) {
+			const postData = async () => {
+				try {
+					await axios.post(
+						`${API_ENDPOINT}${APP_TODO_API}${APP_TODO_POST}/${todoMonth}/${todoWeek}/${todoDay}/${todoNum}`,
+						{
+							description: inputValue,
+							completed: isChecked,
+						},
+						{
+							headers: { Authorization: `Bearer ${bearToken}` },
+						}
+					);
+					// console.log("Post response:", response.data);
+				} catch (error) {
+					console.error("Error posting data:", error);
+					toast.show({
+						title: "Error",
+						content: "Error saving data",
+						duration: 3000,
+					});
+				}
+			};
+
+			postData();
+		}
+	}, [
+		inputValue,
+		isChecked,
+		isDataFetched,
+		bearToken,
+		todoMonth,
+		todoWeek,
+		todoDay,
+		todoNum,
+	]);
 
 	return (
-		<div className={`todo-wrapper`}>
+		<div className='todo-wrapper'>
 			<input
 				type='checkbox'
 				className='tick-box'
 				id={`cbx-${boxId}`}
 				checked={isChecked}
-				onChange={handleCheckboxChange}
+				onChange={() => setIsChecked(!isChecked)}
 			/>
 			<label className='cbx' htmlFor={`cbx-${boxId}`}>
 				<span className='tick-box ratio ratio-1x1'>
@@ -112,8 +114,7 @@ export const ToDoLine = ({ boxId }: Props): JSX.Element => {
 				<span className='input-box'>
 					<input
 						value={inputValue}
-						onChange={handleInputChange}
-						onKeyUp={handleKeyUp}
+						onChange={(e) => setInputValue(e.target.value)}
 						className={`input-field ${isChecked ? "checked" : ""}`}
 						disabled={isChecked}
 					/>
