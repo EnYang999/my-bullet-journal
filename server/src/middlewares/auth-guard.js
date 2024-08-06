@@ -1,6 +1,6 @@
 import passport from "passport";
-import { AUTHENTICATE_TOKEN_NAME } from "../constants";
-export const userAuth = passport.authenticate(AUTHENTICATE_TOKEN_NAME, {
+// import { AUTHENTICATE_TOKEN_NAME } from "../constants";
+export const userAuth = passport.authenticate("jwt", {
 	session: false,
 });
 // passport.use(
