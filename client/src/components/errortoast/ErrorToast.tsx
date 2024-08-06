@@ -1,6 +1,7 @@
 import React, { useEffect, memo } from "react";
 // import "../scss/theme/_toast.scss";
-import ballonicon from "../../assets/login/balloon-heart.svg";
+// import ballonicon from "../../assets/login/balloon-heart.svg";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 export interface ToastProps {
 	id: string;
 	destroy: () => void;
@@ -31,7 +32,8 @@ const Toast: React.FC<ToastProps> = (props) => {
 			id={id}
 		>
 			<div className='toast-header'>
-				<img src={ballonicon} className='rounded me-2' alt='...' />
+				{/* <img src={ballonicon} className='rounded me-2' alt='...' /> */}
+				<ErrorOutlineIcon />
 				<strong className='me-auto'>{title}</strong>
 				{/* <small className='text-body-secondary'>11 mins ago</small> */}
 				<button
