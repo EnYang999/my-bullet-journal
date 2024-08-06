@@ -1,6 +1,58 @@
 .june-index {
     background-image: url(../../assets/june2021/2021JuneDigitalBujo.png);
 }
+.june {
+    .to-do-lines-container {
+        input {
+            box-shadow: 0.1em 0.1em 0.4em $border-shadow-jun;
+        }
+        .cbx {
+            &:hover {
+                .tick-box {
+                    border-color: $focus-border-jun;
+                }
+
+                .input-field {
+                    border-color: $focus-border-jun;
+                }
+            }
+            input {
+                border-color: $input-border-default-jun;
+                box-shadow: $border-shadow-jun;
+            }
+            .tick-box {
+                background-color: $tick-box-background-jun;
+                border: 0.1em solid $input-border-default-jun;
+                &:before {
+                    background: $blink-color-jun;
+                }
+            }
+            .input-box {
+                &::after {
+                    background: $strike-line-jun;
+                }
+            }
+            .input-field {
+                background-color: $input-box-background-jun;
+                border: 1.5px solid $input-border-default-jun;
+                color: $font-active-jun;
+            }
+        }
+        .tick-box {
+            &:checked + .cbx {
+                .tick-box {
+                    border-color: $tick-border-checked-jun;
+                    background: $tick-box-checked-background-jun;
+                }
+                .input-field {
+                    border-color: $tick-border-checked-jun;
+                    color: $font-disabled-jun;
+                    background-color: $tick-box-checked-background-jun;
+                }
+            }
+        }
+    }
+}
 .june-week1 {
     height: 100%;
     .row {
@@ -147,8 +199,8 @@
                         background-color: #b5a2bf;
                         background: linear-gradient(
                             0deg,
-                            rgba(172, 135, 197, 0.8701855742296919) 0%,
-                            rgb(192, 157, 195) 49%,
+                            rgb(172, 135, 197) 0%,
+                            rgb(191, 152, 194) 49%,
                             rgba(187, 156, 192, 0.7749474789915967) 100%
                         );
                         transform: translate(-50%, -50%);
