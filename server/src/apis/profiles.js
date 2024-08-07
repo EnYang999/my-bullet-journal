@@ -26,8 +26,7 @@ router.post(
 	// uploader.single("avatar"), // Uncomment if handling file uploads
 	async (req, res) => {
 		try {
-			let { user } = req;
-			console.log(user);
+			const { user } = req;
 
 			if (!user) {
 				return res.status(401).json({
@@ -61,7 +60,7 @@ router.post(
 			return res.status(201).json({
 				success: true,
 				user: user,
-				message: "Profile created successfully.",
+				message: "Profile created.",
 				profile: profile,
 			});
 		} catch (err) {
