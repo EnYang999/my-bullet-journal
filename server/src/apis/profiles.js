@@ -60,7 +60,7 @@ router.post(
 			return res.status(201).json({
 				success: true,
 				user: user,
-				message: "Profile created.",
+				message: "Profile created, keep going.",
 				profile: profile,
 			});
 		} catch (err) {
