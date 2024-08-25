@@ -14,6 +14,7 @@ import PermissionDeniedPage from "./components/ErrorPage/PermissionPage";
 // import ControlledCheckboxInput from "./components/todolines/todoComp";
 import FullMedical from "./components/medical/FullMedical";
 // import PatientProfile from "./components/medical/patientProfile";
+import MiniDrawer from "./components/ReadMe/ReadMe";
 function App() {
 	return (
 		<Routes>
@@ -34,6 +35,7 @@ function App() {
 				element={<ResetPasswordNow />}
 			/>
 			<Route path='/demo' element={<FullMedical />} />
+			<Route path='/thisWeb' element={<MiniDrawer />} />
 		</Routes>
 	);
 }

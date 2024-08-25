@@ -281,8 +281,8 @@ const LandingNavbar = () => {
 								</a>
 							</li>
 							<li className='nav-item'>
-								<a className='nav-link ' href='./demo'>
-									Demo
+								<a className='nav-link ' href='./thisWeb'>
+									This Web
 								</a>
 							</li>
 							<li className='nav-item'>
