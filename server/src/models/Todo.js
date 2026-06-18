@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import { compare, hash } from "bcryptjs";
-import { SECRET } from "../constants";
+import { SECRET } from "../constants/index.js";
 import { randomBytes } from "crypto";
 import { sign } from "jsonwebtoken";
 import { pick } from "lodash";

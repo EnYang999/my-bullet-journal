@@ -5,10 +5,10 @@ import {
 	PROFILE_GET_BY_USERID,
 	PROFILE_PUT,
 	PROFILE_GET_BY_OWN,
-} from "../constants";
-import { Profile, User } from "../models";
-import uploader from "../middlewares/uploader";
-import { userAuth } from "../middlewares/auth-guard";
+} from "../constants/index.js";
+import { Profile, User } from "../models/index.js";
+import uploader from "../middlewares/uploader.js";
+import { userAuth } from "../middlewares/auth-guard.js";
 import mongoose, { Schema } from "mongoose";
 
 const router = Router();

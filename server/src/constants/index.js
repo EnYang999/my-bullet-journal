@@ -1,5 +1,6 @@
 import { constant } from "lodash";
-import * as Constants from "../../../common/constants";
+
+import * as Constants from "../../../common/constants.js";
 import { config } from "dotenv";
 
 config();

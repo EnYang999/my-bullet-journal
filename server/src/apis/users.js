@@ -2,9 +2,9 @@ import {
 	ResetPassword,
 	RegisterValidations,
 	AuthenticateValidations,
-} from "../validators";
+} from "../validators/index.js";
 import { join } from "path";
-import { User } from "../models";
+import { User } from "../models/index.js";
 import { Router } from "express";
 import { randomBytes } from "crypto";
 import {
@@ -18,10 +18,10 @@ import {
 	FRONTEND_PORT,
 	RESET_PASSWORD_NOW,
 	AUTHENTICATE_TOKEN_NAME,
-} from "../constants";
-import sendMail from "../functions/email-sender";
-import { userAuth } from "../middlewares/auth-guard";
-import Validator from "../middlewares/validator-middleware";
+} from "../constants/index.js";
+import sendMail from "../functions/email-sender.js";
+import { userAuth } from "../middlewares/auth-guard.js";
+import Validator from "../middlewares/validator-middleware.js";
 
 const router = Router();
 

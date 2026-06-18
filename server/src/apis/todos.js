@@ -1,7 +1,7 @@
-import { userAuth } from "../middlewares/auth-guard";
-import { Todo } from "../models";
+import { userAuth } from "../middlewares/auth-guard.js";
+import { Todo } from "../models/index.js";
 import { Router } from "express";
-import { TODO_POST, TODO_SEARCH } from "../constants";
+import { TODO_POST, TODO_SEARCH } from "../constants/index.js";
 const router = Router();
 
 /**
