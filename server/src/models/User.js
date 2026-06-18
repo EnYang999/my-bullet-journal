@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
-import { Schema, model, Types } from "mongoose";
-import { compare, hash } from "bcryptjs";
+import bcryptjs from "bcryptjs";
+import lodash from "lodash";
 import { SECRET } from "../constants/index.js";
 import { randomBytes } from "crypto";
 import { sign } from "jsonwebtoken";
-import { pick } from "lodash";
+
+const { Schema, model, Types } = "mongoose";
+const { compare, hash } = "bcryptjs"
+const { pick } = "lodash";
 const generateRandom9DigitNumber = () => {
 	return Math.floor(100000000 + Math.random() * 900000000).toString();
 };

@@ -1,4 +1,4 @@
-import { constant } from "lodash";
+import { constant } from "lodash-es";
 
 import * as Constants from "../../../common/constants.js";
 import { config } from "dotenv";
