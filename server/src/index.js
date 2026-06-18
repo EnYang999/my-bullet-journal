@@ -1,33 +1,37 @@
 import cors from "cors";
-import { join } from "path";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 import consola from "consola";
 import express from "express";
 import mongoose from "mongoose";
 import passport from "passport";
 
-import bodyParser from "body-parser";	
-const { json } = bodyParser;
-// import cookieParser from "cookie-parser";
-// Import Application Constants
-import { DB, PORT, USER_API, PROFILE_API, TODO_API } from "./constants/index.js";
+import {
+	DB,
+	PORT,
+	USER_API,
+	PROFILE_API,
+	TODO_API,
+} from "./constants/index.js";
+
 consola.log(USER_API, PROFILE_API, TODO_API);
-// Router imports
+
 import userApis from "./apis/users.js";
 import profileApis from "./apis/profiles.js";
 import todoApis from "./apis/todos.js";
-// Import passport middleware
-require("./middlewares/passport-middleware");
 
-// Initialize express application
+// ESM replacement for __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Passport must be imported in ESM way
+import "./middlewares/passport-middleware.js";
+
 const app = express();
 
-// Apply Application Middlewares
-// const corsOptions = {
-// 	origin: "http://localhost:5173" 'http://147.182.217.227',
-// 	credentials: true,
-// 	// access-control-allow-credentials:true,
-// 	optionSuccessStatus: 200,
-// };
+/**
+ * CORS
+ */
 const allowedOrigins = [
 	"http://localhost:8000",
 	"http://localhost:5173",
@@ -42,41 +46,54 @@ const allowedOrigins = [
 
 const corsOptions = {
 	origin: (origin, callback) => {
-		if (allowedOrigins.includes(origin) || !origin) {
+		if (!origin || allowedOrigins.includes(origin)) {
 			callback(null, true);
 		} else {
 			callback(new Error("Not allowed by CORS"));
 		}
 	},
 	credentials: true,
-	optionsSuccessStatus: 200, // for legacy browsers
+	optionsSuccessStatus: 200,
 };
+
 app.set("trust proxy", true);
+
 app.use(cors(corsOptions));
-app.use(json({ limit: "50mb" }));
+
+/**
+ * Native Express body parser (NO body-parser package needed)
+ */
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true }));
+
 app.use(passport.initialize());
+
+/**
+ * Static files
+ */
 app.use(express.static(join(__dirname, "./uploads")));
-// app.use(cookieParser());
-// Inject Sub router and apis
+
+/**
+ * Routes
+ */
 app.use(USER_API, userApis);
 app.use(PROFILE_API, profileApis);
 app.use(TODO_API, todoApis);
 
+/**
+ * DB + Server start
+ */
 const main = async () => {
 	try {
-		// Connect with the database
-		await mongoose.connect(DB, {
-			useNewUrlParser: true,
-			useFindAndModify: false,
-			useUnifiedTopology: true,
-		});
+		await mongoose.connect(DB);
+
 		consola.success("DATABASE CONNECTED...");
-		// Start application listening for request on server
-		app.listen(PORT, "127.0.0.1", () =>
-			consola.success(`Sever started on port ${PORT}`)
-		);
+
+		app.listen(PORT, "0.0.0.0", () => {
+			consola.success(`Server started on port ${PORT}`);
+		});
 	} catch (err) {
-		consola.error(`Unable to start the server \n${err.message}`);
+		consola.error(`Unable to start server\n${err.message}`);
 	}
 };
 

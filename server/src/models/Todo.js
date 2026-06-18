@@ -1,38 +1,36 @@
 import mongoose from "mongoose";
-const { Schema, model } = "mongoose";
 import bcrypt from "bcryptjs";
-const { compare, hash } = "bcryptjs";
-import { SECRET } from "../constants/index.js";
-import { randomBytes } from "crypto";
 import jwt from "jsonwebtoken";
 import lodash from "lodash";
-const { pick } = "lodash";
+import { randomBytes } from "crypto";
+import { SECRET } from "../constants/index.js";
+
+const { Schema, model } = mongoose;
+const { compare, hash } = bcrypt;
+const { pick } = lodash;
 const { sign, verify } = jwt;
+
 const TodoDateSchema = new Schema(
 	{
-		todoMonth: {
-			type: String,
-		},
+		todoMonth: String,
 		todoWeek: {
 			type: String,
 			enum: ["1", "2", "3", "4", "5"],
 		},
-		todoDay: {
-			type: String,
-		},
+		todoDay: String,
 		todoNum: {
 			type: String,
 			enum: ["1", "2", "3", "4", "5"],
 		},
 	},
-	{ _id: false } // Disable automatic _id generation for subdocuments
+	{ _id: false }
 );
+
 const TodosSchema = new Schema(
 	{
 		account: {
-			ref: "users",
 			type: Schema.Types.ObjectId,
-			// unique: true,
+			ref: "users",
 			required: true,
 		},
 		description: {
@@ -43,7 +41,6 @@ const TodosSchema = new Schema(
 		todoDate: {
 			type: TodoDateSchema,
 			required: true,
-			unique: true,
 		},
 		completed: {
 			type: Boolean,
@@ -52,6 +49,7 @@ const TodosSchema = new Schema(
 	},
 	{ timestamps: true }
 );
+
 TodosSchema.index(
 	{
 		account: 1,
@@ -62,8 +60,7 @@ TodosSchema.index(
 	},
 	{ unique: true }
 );
-// TodosSchema.pre("save", async function (next) {
-// 	next();
-// });
+
 const Todo = model("todos", TodosSchema);
+
 export default Todo;

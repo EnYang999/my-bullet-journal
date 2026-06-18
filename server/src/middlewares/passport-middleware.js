@@ -1,23 +1,29 @@
 import passport from "passport";
-import { User } from "../models";
-import { Strategy, ExtractJwt } from "passport-jwt";
+import pkg from "passport-jwt";
+import { User } from "../models/index.js";
 import { SECRET as secretOrKey } from "../constants/index.js";
 
+const { Strategy, ExtractJwt } = pkg;
+
 const opts = {
-  secretOrKey,
-  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+	secretOrKey,
+	jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 };
 
 passport.use(
-  new Strategy(opts, async ({ id }, done) => {
-    try {
-      let user = await User.findById(id);
-      if (!user) {
-        throw new Error("User not found.");
-      }
-      return done(null, user.getUserInfo());
-    } catch (err) {
-      done(null, false);
-    }
-  })
+	new Strategy(opts, async (payload, done) => {
+		try {
+			const user = await User.findById(payload.id);
+
+			if (!user) {
+				return done(null, false);
+			}
+
+			return done(null, user.getUserInfo());
+		} catch (err) {
+			return done(err, false);
+		}
+	})
 );
+
+export default passport;
