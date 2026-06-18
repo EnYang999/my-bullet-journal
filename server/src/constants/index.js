@@ -7,7 +7,7 @@ config();
 
 export const DB =
 	process.env.APP_DB ||
-	"mongodb+srv://BookLib:SAZ4VN2fjJTL4Cl7@cluster0.tweiseh.mongodb.net/?retryWrites=true";
+	"mongodb+srv://BookLib:S5aPnheDcuJF0NVr@cluster0.tweiseh.mongodb.net/?retryWrites=true";
 export const SECRET = process.env.APP_SECRET || "secret@every@one";
 export const DOMAIN = process.env.APP_DOMAIN;
 export const HOST_EMAIL = process.env.APP_HOST_EMAIL;
