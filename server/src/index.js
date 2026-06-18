@@ -4,7 +4,9 @@ import consola from "consola";
 import express from "express";
 import mongoose from "mongoose";
 import passport from "passport";
-import { json } from "body-parser";
+
+import bodyParser from "body-parser";	
+const { json } = bodyParser;
 // import cookieParser from "cookie-parser";
 // Import Application Constants
 import { DB, PORT, USER_API, PROFILE_API, TODO_API } from "./constants/index.js";

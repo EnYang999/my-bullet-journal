@@ -9,7 +9,8 @@ import {
 import { Profile, User } from "../models/index.js";
 import uploader from "../middlewares/uploader.js";
 import { userAuth } from "../middlewares/auth-guard.js";
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
+const { Schema, model } = "mongoose";
 
 const router = Router();
 

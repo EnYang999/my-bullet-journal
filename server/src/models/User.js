@@ -3,11 +3,13 @@ import bcryptjs from "bcryptjs";
 import lodash from "lodash";
 import { SECRET } from "../constants/index.js";
 import { randomBytes } from "crypto";
-import { sign } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 const { Schema, model, Types } = "mongoose";
 const { compare, hash } = "bcryptjs"
 const { pick } = "lodash";
+const { sign, verify } = jwt;
+
 const generateRandom9DigitNumber = () => {
 	return Math.floor(100000000 + Math.random() * 900000000).toString();
 };

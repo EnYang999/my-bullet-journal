@@ -1,9 +1,13 @@
-import { Schema, model } from "mongoose";
-import { compare, hash } from "bcryptjs";
+import mongoose from "mongoose";
+const { Schema, model } = "mongoose";
+import bcrypt from "bcryptjs";
+const { compare, hash } = "bcryptjs";
 import { SECRET } from "../constants/index.js";
 import { randomBytes } from "crypto";
-import { sign } from "jsonwebtoken";
-import { pick } from "lodash";
+import jwt from "jsonwebtoken";
+import lodash from "lodash";
+const { pick } = "lodash";
+const { sign, verify } = jwt;
 const TodoDateSchema = new Schema(
 	{
 		todoMonth: {

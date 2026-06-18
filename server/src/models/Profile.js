@@ -1,6 +1,7 @@
 // const mongoose = require("mongoose");
 // const { Schema, model } = mongoose;
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
+const { Schema, model } = "mongoose";
 const ProfileSchema = new Schema(
 	{
 		account: {
