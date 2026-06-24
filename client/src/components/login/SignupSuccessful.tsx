@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./RedirectPage.css"; // Import your CSS file
+import "./RedirectPage.css";
 
 const SignupSuccessful: React.FC = () => {
 	const navigate = useNavigate();
